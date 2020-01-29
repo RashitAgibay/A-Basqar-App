@@ -31,12 +31,22 @@ class FirstPageVC: UIViewController,  UITextFieldDelegate {
     var factSum: Int = 0
     var comment: String = " "
     
+    
+    var company_id: Int = 0
+//    var company_name_from_company_list_api: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        
         if history_id_in_list != 0 {
             getHistoryApi()
         }
+        
+        debug_print(message: "here is a company name", object: companyName)
+        debug_print(message: "here is a company id", object: company_id)
         
         factMoneyTextField.placeholder = "0"
         factMoneyTextField.text = nil

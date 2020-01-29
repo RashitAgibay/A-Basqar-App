@@ -17,6 +17,9 @@ class IncomeKassaVC: UIViewController {
     var history_id_from_list: Int = 0
     var segment_id: Int = 0
     
+    var company_id: Int = 0
+    var company_name: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,8 +39,11 @@ class IncomeKassaVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
     if let vc = segue.destination as? FirstPageVC,
-           segue.identifier == "onemoremoreid" {
-           vc.history_id_in_list = history_id_from_list
+        segue.identifier == "onemoremoreid" {
+        
+        vc.history_id_in_list = history_id_from_list
+        vc.company_id = company_id
+        vc.companyName = company_name
         }
     }
     

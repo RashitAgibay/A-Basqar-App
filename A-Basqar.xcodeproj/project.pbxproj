@@ -184,6 +184,7 @@
 		FDA8BF7423D56ED0006DFF71 /* BoughtItemsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA8BF7323D56ED0006DFF71 /* BoughtItemsHistoryVC.swift */; };
 		FDBDD50123D807FE007FE38F /* SellingGoodsBasketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */; };
 		FDC8A5DB23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */; };
+		FDF3C9B523E1342800D2E08D /* IncomeContagentNamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */; };
 		FDFCE7A523D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFCE7A423D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -467,6 +468,7 @@
 		FDA8BF7323D56ED0006DFF71 /* BoughtItemsHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoughtItemsHistoryVC.swift; sourceTree = "<group>"; };
 		FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingGoodsBasketVC.swift; sourceTree = "<group>"; };
 		FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeKassaHistoryListVC.swift; sourceTree = "<group>"; };
+		FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeContagentNamesVC.swift; sourceTree = "<group>"; };
 		FDFCE7A423D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyHistoryNameListCellCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -980,6 +982,7 @@
 				2899AF78239A1E000023A867 /* SecondPage.swift */,
 				2899AF7A239A20B30023A867 /* IncomeKassaHistoryItem.swift */,
 				FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */,
+				FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */,
 			);
 			path = IncomKassaVC;
 			sourceTree = "<group>";
@@ -1352,6 +1355,7 @@
 				280901A82394D54100CA68BD /* AddBuyerVC.swift in Sources */,
 				288CC48723A89C38008D5218 /* SDWebImageDownloaderResponseModifier.m in Sources */,
 				2812AAF62362B45A001D65C8 /* SceneDelegate.swift in Sources */,
+				FDF3C9B523E1342800D2E08D /* IncomeContagentNamesVC.swift in Sources */,
 				288CC47E23A89C38008D5218 /* SDWebImageCacheKeyFilter.m in Sources */,
 				288CC49A23A89C38008D5218 /* MKAnnotationView+WebCache.m in Sources */,
 				2899AF79239A1E000023A867 /* SecondPage.swift in Sources */,

@@ -10,8 +10,8 @@ import UIKit
 
 class BuyerCompanyVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-       var reacibility: Reachability?
-       var userTokenForUserStandart: String = "userToken"
+    var reacibility: Reachability?
+    var userTokenForUserStandart: String = "userToken"
     
     var companyNameInList: String = "Контрагент..."
     var companyId: Int = 0
