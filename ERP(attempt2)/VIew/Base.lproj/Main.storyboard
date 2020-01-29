@@ -1215,12 +1215,20 @@
                                 <segue destination="7eV-d1-wlX" kind="presentation" modalPresentationStyle="fullScreen" id="H3Y-h8-ahJ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle" catalog="system" id="Gsn-MC-5Ak">
-                            <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="2Ku-hZ-pfm" kind="presentation" modalPresentationStyle="fullScreen" id="3LV-1F-9HZ"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="plus.circle" catalog="system" id="Gsn-MC-5Ak">
+                                <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="2Ku-hZ-pfm" kind="presentation" modalPresentationStyle="fullScreen" id="3LV-1F-9HZ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="barcode.viewfinder" catalog="system" id="9uB-fB-Xhn">
+                                <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="c7D-Dp-KiI" kind="presentation" modalPresentationStyle="fullScreen" id="N2e-hX-hby"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
@@ -2535,6 +2543,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bau-4g-Eby" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2951.1999999999998" y="3754.2728635682161"/>
+        </scene>
+        <!--Buy Prod Read Bar CodeVC-->
+        <scene sceneID="3Mm-Zz-v9k">
+            <objects>
+                <viewController id="c7D-Dp-KiI" customClass="BuyProdReadBarCodeVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5is-m3-HOW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5G-vv-vYL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="B5G-vv-vYL" firstAttribute="top" secondItem="xSx-Rn-yd3" secondAttribute="top" id="Dfz-Gm-Ngo"/>
+                            <constraint firstItem="xSx-Rn-yd3" firstAttribute="trailing" secondItem="B5G-vv-vYL" secondAttribute="trailing" id="apm-UV-nht"/>
+                            <constraint firstItem="B5G-vv-vYL" firstAttribute="leading" secondItem="xSx-Rn-yd3" secondAttribute="leading" id="bZr-rx-6WR"/>
+                            <constraint firstItem="xSx-Rn-yd3" firstAttribute="bottom" secondItem="B5G-vv-vYL" secondAttribute="bottom" id="pTX-eq-DcZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xSx-Rn-yd3"/>
+                    </view>
+                    <connections>
+                        <outlet property="videoView" destination="B5G-vv-vYL" id="ads-6k-wJx"/>
+                        <segue destination="Pkt-O0-D2i" kind="presentation" identifier="frombarcodetoimport" modalPresentationStyle="fullScreen" id="QPw-cq-WU5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jPf-xI-YHC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5401" y="2953"/>
         </scene>
         <!--Add BuyerVC-->
         <scene sceneID="TcA-XR-lUu">
@@ -3954,7 +3993,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L6y-S6-BnH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7762.3999999999996" y="4764.4677661169417"/>
+            <point key="canvasLocation" x="8145" y="4798"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sp6-3D-DKZ">
@@ -6671,7 +6710,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="czn-CU-OMq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8928.7999999999993" y="4726.6866566716644"/>
+            <point key="canvasLocation" x="10367" y="4727"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="peG-9p-wrR">
@@ -6689,7 +6728,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H4N-8W-kep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7991.1999999999998" y="4725.7871064467772"/>
+            <point key="canvasLocation" x="9430" y="4726"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZwL-2H-pIp">
@@ -7180,6 +7219,7 @@
     <resources>
         <image name="Line_for_TextField" width="284" height="40"/>
         <image name="arrowshape.turn.up.right.fill" catalog="system" width="64" height="52"/>
+        <image name="barcode.viewfinder" catalog="system" width="64" height="56"/>
         <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="house.fill" catalog="system" width="64" height="52"/>
         <image name="magnifyingglass" catalog="system" width="64" height="56"/>
@@ -7201,15 +7241,15 @@
     <inferredMetricsTieBreakers>
         <segue reference="yZx-ZR-ePn"/>
         <segue reference="FoC-7e-k4T"/>
-        <segue reference="s1g-76-fTZ"/>
+        <segue reference="cV1-SB-D9k"/>
         <segue reference="jdj-3L-A66"/>
-        <segue reference="d6m-kp-dik"/>
+        <segue reference="bsG-Vf-CQs"/>
         <segue reference="6pu-6u-RW8"/>
         <segue reference="3LV-1F-9HZ"/>
-        <segue reference="owU-Rv-egH"/>
+        <segue reference="QPw-cq-WU5"/>
         <segue reference="ZJ2-I0-hTz"/>
         <segue reference="GKp-99-c5l"/>
-        <segue reference="qJ9-OL-G5u"/>
+        <segue reference="H3Y-h8-ahJ"/>
         <segue reference="wye-L7-wbB"/>
         <segue reference="B0i-x1-3MK"/>
         <segue reference="ohR-aM-fCl"/>

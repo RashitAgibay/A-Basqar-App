@@ -186,6 +186,7 @@
 		FDC8A5DB23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */; };
 		FDF3C9B523E1342800D2E08D /* IncomeContagentNamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */; };
 		FDF3C9B723E1449800D2E08D /* OutcomeContragentsNamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9B623E1449800D2E08D /* OutcomeContragentsNamesVC.swift */; };
+		FDF3C9DB23E1625500D2E08D /* BuyProdReadBarCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9DA23E1625500D2E08D /* BuyProdReadBarCodeVC.swift */; };
 		FDFCE7A523D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFCE7A423D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -471,6 +472,7 @@
 		FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeKassaHistoryListVC.swift; sourceTree = "<group>"; };
 		FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeContagentNamesVC.swift; sourceTree = "<group>"; };
 		FDF3C9B623E1449800D2E08D /* OutcomeContragentsNamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeContragentsNamesVC.swift; sourceTree = "<group>"; };
+		FDF3C9DA23E1625500D2E08D /* BuyProdReadBarCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyProdReadBarCodeVC.swift; sourceTree = "<group>"; };
 		FDFCE7A423D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyHistoryNameListCellCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -655,6 +657,7 @@
 				28D76D20239632FC00D5B055 /* KassaDocVC.swift */,
 				284EE89A23A9F5B600B470A5 /* BuyProductAddGoodsPageVC.swift */,
 				FDA8BF7323D56ED0006DFF71 /* BoughtItemsHistoryVC.swift */,
+				FDF3C9DA23E1625500D2E08D /* BuyProdReadBarCodeVC.swift */,
 			);
 			path = BuyProductsVC;
 			sourceTree = "<group>";
@@ -1262,6 +1265,7 @@
 				288CC48923A89C38008D5218 /* SDWebImageIndicator.m in Sources */,
 				286E7081239E2420002CD53D /* ReportsCell.swift in Sources */,
 				281D237F2366B7B800BF8D7A /* SignInViewController.swift in Sources */,
+				FDF3C9DB23E1625500D2E08D /* BuyProdReadBarCodeVC.swift in Sources */,
 				288CC48323A89C38008D5218 /* SDWebImageDownloaderConfig.m in Sources */,
 				28D295602366C49200927F5C /* ForgetPasswordViewController1.swift in Sources */,
 				FDBDD50123D807FE007FE38F /* SellingGoodsBasketVC.swift in Sources */,

@@ -32,6 +32,8 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
     var totalCashAfterPersontage: Int = 0
     var companyIdFromList: Int = 0
     
+    var barcode_from_main  = String()
+    
 //    let buyProductVC = BuyProductVC()
 //    let buyerCompanyVC = BuyerCompanyVC()
     
@@ -49,6 +51,8 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        toTestVarcode()
         
         //MARK: - страница новой покупки
 //        print(" страница новой покупки ")
@@ -129,6 +133,11 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
         ShowAlertControllerWithOneTextFields()
     }
     
+    
+    func toTestVarcode(){
+        debug_print(message: "here is a bar code in BuyProductVCFirstPage's test function ", object: barcode_from_main)
+        ShowErrorsAlertWithOneCancelButton(message: barcode_from_main)
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return goodsInBasket.count

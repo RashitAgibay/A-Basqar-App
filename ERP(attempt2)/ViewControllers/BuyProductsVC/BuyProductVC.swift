@@ -22,6 +22,7 @@ class BuyProductVC: UIViewController {
     var goodPriceInBuscket: String = "goodPriceInBuscket"
     var buyProductFirstPage: BuyProductVCFirstPage!
     var selectedSegmentId: Int = 0
+    var barcode = String()
     
     
     
@@ -35,6 +36,7 @@ class BuyProductVC: UIViewController {
         // MARK: - (id123)
     
     
+        
 //        print("here is a \(selectedSegmentId)")
         
         segmentView.addUnderlineForSelectedSegment()
@@ -63,6 +65,7 @@ class BuyProductVC: UIViewController {
             // if you already have your data object
             self.buyProductFirstPage.companyNameFromList = companyNameBuyProductVC
             self.buyProductFirstPage.companyIdFromList = companyNameIdBuyProductVC
+            self.buyProductFirstPage.barcode_from_main = barcode
             
         }
 
