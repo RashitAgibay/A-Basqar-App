@@ -33,12 +33,24 @@ class OutcomeKassaFirstPage: UIViewController,  UITextFieldDelegate  {
     
     var emptyString: String = "***"
     
+     var company_id: Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         if history_id_in_list != 0 {
             getHistoryApi()
         }
+        
+        
+        if companyName == "" {
+            provider.setTitle("Выбрать", for: .normal)
+        }
+        
+        else {
+            provider.setTitle(companyName, for: .normal)
+        }
+        
         
 //        print("here is the \(history_id_in_list)")
         factMoneyTextfield.placeholder = "0"
@@ -96,19 +108,37 @@ class OutcomeKassaFirstPage: UIViewController,  UITextFieldDelegate  {
     @IBAction func tappedAcceptButton(_ sender: Any) {
         
 
-        if commentTextField.text == "" {
-                    comment = "*"
-        //            debug_print(message: "here is a comment:", object: comment)
-                    
-                }
-                else {
-                    comment = commentTextField.text as! String
-        //            debug_print(message: "here is a comment:", object: comment)
-                }
+//        sum = factMoneyTextField.text as! String
         
-        send_Check_To_CheckList_Api()
-        ShowErrorsAlertWithOneCancelButton(title: "Успешно", message: "Добавлен новый кассовый документ", buttomMessage: "Закрыть")
-        makeNullAllUIValues()
+        if commentTextField.text == "" {
+            comment = "*"
+        //            debug_print(message: "here is a comment:", object: comment)
+        
+        }
+        else {
+            comment = commentTextField.text as! String
+        //            debug_print(message: "here is a comment:", object: comment)
+        }
+                
+        //        //
+        //                print("here is the history id \(history_id_in_list)")
+        //                print("here is the fact_mooney \(sum)")
+        //                print("here is the comment \(comment)")
+        
+        if factMoneyTextfield.text == "" {
+            ShowErrorsAlertWithOneCancelButton(message: "Введите фактическую сумму")
+        }
+        
+        else {
+            
+            if checkName == "" {
+                send_Null_Check_To_CheckList_Api()
+            }
+            
+            ShowErrorsAlertWithOneCancelButton(title: "Успешно", message: "Добавлен новый кассовый документ", buttomMessage: "Закрыть")
+            send_Check_To_CheckList_Api()
+            makeNullAllUIValues()
+        }
     }
     
      
@@ -295,6 +325,54 @@ class OutcomeKassaFirstPage: UIViewController,  UITextFieldDelegate  {
             self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
     }
+    
+    func send_Null_Check_To_CheckList_Api() {
+            
+            
+            do {
+                
+                reacibility = try Reachability.init()
+            }
+            
+            catch {
+                
+                print("unable to start notifier")
+            }
+            
+            if ((reacibility!.connection) != .none){
+                
+                let token = UserDefaults.standard.string(forKey: userTokenForUserStandart) as! String
+                
+                let headers: HTTPHeaders = [
+                    
+                    "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                    "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+                ]
+                
+                let params = [
+                    
+                    "company":"\(self.company_id)".trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+                    "fac_money":self.factMoneyTextfield.text?.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+                    "comments":self.comment.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+                ]
+                
+                let encodeURL = nullOutcomeKassaUrl
+                let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+                requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                        
+    //                    print(response.request!)
+    //                    print(response.result)
+    //                    print(response.response)
+                })
+            }
+            
+            else {
+                
+                print("internet is not working")
+                MBProgressHUD.hide(for: self.view, animated: true)
+                self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+            }
+        }
     
 
     func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {

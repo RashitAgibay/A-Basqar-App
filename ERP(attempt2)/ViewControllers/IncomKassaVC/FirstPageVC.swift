@@ -198,6 +198,7 @@ class FirstPageVC: UIViewController,  UITextFieldDelegate {
             }
             
             
+            
             ShowErrorsAlertWithOneCancelButton(title: "Успешно", message: "Добавлен новый кассовый документ", buttomMessage: "Закрыть")
             send_Check_To_CheckList_Api()
             makeNullAllUIValues()

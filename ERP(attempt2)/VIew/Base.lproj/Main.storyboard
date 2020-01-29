@@ -3448,7 +3448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5A-Nx-fL9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8428" y="5766.5667166416797"/>
+            <point key="canvasLocation" x="9367.2000000000007" y="5766.5667166416797"/>
         </scene>
         <!--Selleing Prods First PageVC-->
         <scene sceneID="lYj-Sr-Y8q">
@@ -4081,7 +4081,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9aU-xf-p39" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14525.6" y="5797.1514242878566"/>
+            <point key="canvasLocation" x="15464.799999999999" y="5797.1514242878566"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Zh-Rb-GnS">
@@ -4100,7 +4100,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKO-fi-RGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13584.799999999999" y="5795.3523238380812"/>
+            <point key="canvasLocation" x="14524" y="5795.3523238380812"/>
         </scene>
         <!--Change SellerVC-->
         <scene sceneID="28b-4Q-WCb">
@@ -4208,7 +4208,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8WX-FQ-iQu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16437.599999999999" y="5778.2608695652179"/>
+            <point key="canvasLocation" x="17376.799999999999" y="5778.2608695652179"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aar-U6-ayK">
@@ -4227,7 +4227,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyr-FD-Z5H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15501.6" y="5776.4617691154426"/>
+            <point key="canvasLocation" x="16440.799999999999" y="5776.4617691154426"/>
         </scene>
         <!--Selling Kassa-->
         <scene sceneID="QTE-jS-zHp">
@@ -4417,7 +4417,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGy-Xa-fNn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12647.200000000001" y="6598.6506746626692"/>
+            <point key="canvasLocation" x="13586.4" y="6598.6506746626692"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dDh-I5-0m0">
@@ -4436,7 +4436,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aaa-mW-97e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11704.799999999999" y="6598.6506746626692"/>
+            <point key="canvasLocation" x="12644" y="6598.6506746626692"/>
         </scene>
         <!--Selling History ItemVC-->
         <scene sceneID="AO8-Sk-1hI">
@@ -4638,7 +4638,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V0v-fT-3LX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10644" y="5732.3838080959522"/>
+            <point key="canvasLocation" x="11583.200000000001" y="5732.3838080959522"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xYJ-wY-FZu">
@@ -4657,7 +4657,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXg-No-fed" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9706.3999999999996" y="5733.2833583208403"/>
+            <point key="canvasLocation" x="10645.6" y="5733.2833583208403"/>
         </scene>
         <!--Income KassaVC-->
         <scene sceneID="03i-AO-UxF">
@@ -5595,6 +5595,9 @@
                                         <state key="normal" title="Выбрать">
                                             <color key="titleColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="B7f-i0-epF" kind="presentation" modalPresentationStyle="fullScreen" id="Abr-SK-J6q"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQV-93-zIW">
                                         <rect key="frame" x="186.5" y="190" width="120" height="20"/>
@@ -5791,7 +5794,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vg9-HP-uo7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5175.1999999999998" y="5996.8515742128939"/>
+            <point key="canvasLocation" x="6114.3999999999996" y="5996.8515742128939"/>
         </scene>
         <!--Outcome Kassa History Item-->
         <scene sceneID="pd1-Rq-2fl">
@@ -6705,7 +6708,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5QJ-D7-mog" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4237.6000000000004" y="5996.8515742128939"/>
+            <point key="canvasLocation" x="5176.8000000000002" y="5996.8515742128939"/>
         </scene>
         <!--Bought Items HistoryVC-->
         <scene sceneID="wyR-zO-tNB">
@@ -7067,6 +7070,112 @@
             </objects>
             <point key="canvasLocation" x="757.60000000000002" y="5370.7646176911549"/>
         </scene>
+        <!--Outcome Contragents NamesVC-->
+        <scene sceneID="ynZ-Sf-bGl">
+            <objects>
+                <viewController id="Rtp-1f-HTe" customClass="OutcomeContragentsNamesVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6cQ-68-f00">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите котрагента" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="El3-mQ-sZ6">
+                                <rect key="frame" x="20" y="64" width="335" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="U2a-G0-534">
+                                <rect key="frame" x="0.0" y="101" width="375" height="566"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="TRI-Aq-EYl">
+                                    <size key="itemSize" width="350" height="34"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="buyerCell" id="QsT-us-LN7" customClass="BuyerCompanyCell" customModule="A_Basqar" customModuleProvider="target">
+                                        <rect key="frame" x="12.5" y="0.0" width="350" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="7HG-QC-Zt2">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="34"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdD-gx-gjR">
+                                                    <rect key="frame" x="20" y="6.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XdD-gx-gjR" firstAttribute="leading" secondItem="7HG-QC-Zt2" secondAttribute="leading" constant="20" id="DzU-Yw-ZwG"/>
+                                                <constraint firstItem="XdD-gx-gjR" firstAttribute="centerY" secondItem="7HG-QC-Zt2" secondAttribute="centerY" id="Pjf-7Y-97G"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="350" height="34"/>
+                                        <connections>
+                                            <outlet property="BuyerCompanyName" destination="XdD-gx-gjR" id="LjW-gc-hCu"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rtp-1f-HTe" id="h1k-zg-Kwy"/>
+                                    <outlet property="delegate" destination="Rtp-1f-HTe" id="b6P-xl-Zcc"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Pdo-0n-qG3" firstAttribute="trailing" secondItem="U2a-G0-534" secondAttribute="trailing" id="5Oo-oc-bRb"/>
+                            <constraint firstItem="U2a-G0-534" firstAttribute="top" secondItem="El3-mQ-sZ6" secondAttribute="bottom" constant="15" id="J3r-ch-0sm"/>
+                            <constraint firstItem="Pdo-0n-qG3" firstAttribute="trailing" secondItem="El3-mQ-sZ6" secondAttribute="trailing" constant="20" id="OeQ-hx-4dZ"/>
+                            <constraint firstItem="U2a-G0-534" firstAttribute="leading" secondItem="Pdo-0n-qG3" secondAttribute="leading" id="Upn-BU-bJL"/>
+                            <constraint firstItem="El3-mQ-sZ6" firstAttribute="top" secondItem="Pdo-0n-qG3" secondAttribute="top" constant="20" id="a22-Zo-hYA"/>
+                            <constraint firstItem="El3-mQ-sZ6" firstAttribute="leading" secondItem="Pdo-0n-qG3" secondAttribute="leading" constant="20" id="cUA-Uv-BpY"/>
+                            <constraint firstItem="Pdo-0n-qG3" firstAttribute="bottom" secondItem="U2a-G0-534" secondAttribute="bottom" id="tci-9d-fG4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pdo-0n-qG3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NOD-aN-ZL0">
+                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="hJY-8l-hPZ">
+                            <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="tWg-1w-srC" kind="presentation" modalPresentationStyle="fullScreen" id="yeI-iW-AJj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="collectionView" destination="U2a-G0-534" id="WoD-5U-gnf"/>
+                        <segue destination="tWg-1w-srC" kind="presentation" identifier="totheoutcomepageskassa" modalPresentationStyle="fullScreen" id="yZx-ZR-ePn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XGa-We-9qc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2399.1999999999998" y="6187.5562218890564"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TZu-OA-fZy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="B7f-i0-epF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rwS-wY-CMp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Rtp-1f-HTe" kind="relationship" relationship="rootViewController" id="pjf-nl-Ho2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DRl-wY-gt4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1460" y="6187.5562218890564"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Line_for_TextField" width="284" height="40"/>
@@ -7090,9 +7199,7 @@
         <image name="trash.fill" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m2W-uK-1Fg"/>
-        <segue reference="S6M-6g-pKs"/>
-        <segue reference="6D5-AF-8cA"/>
+        <segue reference="yZx-ZR-ePn"/>
         <segue reference="FoC-7e-k4T"/>
         <segue reference="s1g-76-fTZ"/>
         <segue reference="jdj-3L-A66"/>

@@ -185,6 +185,7 @@
 		FDBDD50123D807FE007FE38F /* SellingGoodsBasketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */; };
 		FDC8A5DB23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */; };
 		FDF3C9B523E1342800D2E08D /* IncomeContagentNamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */; };
+		FDF3C9B723E1449800D2E08D /* OutcomeContragentsNamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9B623E1449800D2E08D /* OutcomeContragentsNamesVC.swift */; };
 		FDFCE7A523D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFCE7A423D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -469,6 +470,7 @@
 		FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingGoodsBasketVC.swift; sourceTree = "<group>"; };
 		FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeKassaHistoryListVC.swift; sourceTree = "<group>"; };
 		FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeContagentNamesVC.swift; sourceTree = "<group>"; };
+		FDF3C9B623E1449800D2E08D /* OutcomeContragentsNamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeContragentsNamesVC.swift; sourceTree = "<group>"; };
 		FDFCE7A423D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyHistoryNameListCellCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -609,6 +611,7 @@
 				2838ED69239E086700C8FE80 /* OutcomeKassaFirstPage.swift */,
 				2838ED6B239E0B6000C8FE80 /* OutcomeKassaSecondPageVC.swift */,
 				286CE101239E104F00E71557 /* OutcomeKassaHistoryItem.swift */,
+				FDF3C9B623E1449800D2E08D /* OutcomeContragentsNamesVC.swift */,
 			);
 			path = OutcomeKassa;
 			sourceTree = "<group>";
@@ -1323,6 +1326,7 @@
 				288CC47823A89C38008D5218 /* SDImageIOAnimatedCoder.m in Sources */,
 				288CC4A323A89C38008D5218 /* SDInternalMacros.m in Sources */,
 				288CC3CB23A89BFD008D5218 /* Result+Alamofire.swift in Sources */,
+				FDF3C9B723E1449800D2E08D /* OutcomeContragentsNamesVC.swift in Sources */,
 				288CC48223A89C38008D5218 /* SDWebImageDownloader.m in Sources */,
 				2812AAF42362B45A001D65C8 /* AppDelegate.swift in Sources */,
 				286318572398D37900556226 /* SellingKassa.swift in Sources */,
