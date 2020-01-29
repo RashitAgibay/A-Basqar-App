@@ -26,7 +26,7 @@ class FirstPageVC: UIViewController,  UITextFieldDelegate {
     var history_id_in_list: Int = 0
     var checkName: String = ""
     var date: String = ""
-    var companyName: String = ""
+    var companyName: String = "Выбрать"
     var sum: String = ""
     var factSum: Int = 0
     var comment: String = " "
@@ -38,6 +38,7 @@ class FirstPageVC: UIViewController,  UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+       
         
         
         
@@ -45,8 +46,16 @@ class FirstPageVC: UIViewController,  UITextFieldDelegate {
             getHistoryApi()
         }
         
-        debug_print(message: "here is a company name", object: companyName)
-        debug_print(message: "here is a company id", object: company_id)
+        if companyName == "" {
+                   companyNameButton.setTitle("Выбрать", for: .normal)
+        }
+        
+        else {
+            companyNameButton.setTitle(companyName, for: .normal)
+        }
+        
+//        debug_print(message: "here is a company name", object: companyName)
+//        debug_print(message: "here is a company id", object: company_id)
         
         factMoneyTextField.placeholder = "0"
         factMoneyTextField.text = nil
@@ -150,12 +159,14 @@ class FirstPageVC: UIViewController,  UITextFieldDelegate {
     
     
     @IBAction func tappedContragentSelectButton(_ sender: Any) {
-        let company_button_title = companyNameButton.titleLabel?.text as! String
-        print(company_button_title)
+//        let company_button_title = companyNameButton.titleLabel?.text as! String
+//        print(company_button_title)
     }
     
     
     @IBAction func tappedAcceptButton(_ sender: Any) {
+        
+        
         
         sum = factMoneyTextField.text as! String
         
@@ -175,9 +186,24 @@ class FirstPageVC: UIViewController,  UITextFieldDelegate {
 //                print("here is the comment \(comment)")
         
         
-        ShowErrorsAlertWithOneCancelButton(title: "Успешно", message: "Добавлен новый кассовый документ", buttomMessage: "Закрыть")
-        send_Check_To_CheckList_Api()
-        makeNullAllUIValues()
+        if sum == "" {
+            ShowErrorsAlertWithOneCancelButton(message: "Введите фактическую сумму")
+        }
+        
+        else {
+            
+            if checkName == "" {
+            
+                send_Null_Check_To_CheckList_Api()
+            }
+            
+            
+            ShowErrorsAlertWithOneCancelButton(title: "Успешно", message: "Добавлен новый кассовый документ", buttomMessage: "Закрыть")
+            send_Check_To_CheckList_Api()
+            makeNullAllUIValues()
+        }
+        
+        
     }
     
     @IBAction func tappedCancelButton(_ sender: Any) {
@@ -304,9 +330,9 @@ extension FirstPageVC {
             let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
                     
-//                    print(response.request!)
-//                    print(response.result)
-//                    print(response.response)
+                    print(response.request!)
+                    print(response.result)
+                    print(response.response)
             })
         }
         
@@ -317,8 +343,59 @@ extension FirstPageVC {
             self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
     }
+    
+    
+    func send_Null_Check_To_CheckList_Api() {
+            
+            
+            do {
+                
+                reacibility = try Reachability.init()
+            }
+            
+            catch {
+                
+                print("unable to start notifier")
+            }
+            
+            if ((reacibility!.connection) != .none){
+                
+                let token = UserDefaults.standard.string(forKey: userTokenForUserStandart) as! String
+                
+                let headers: HTTPHeaders = [
+                    
+                    "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                    "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+                ]
+                
+                let params = [
+                    
+                    "company":"\(self.company_id)".trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+                    "fac_money":self.factMoneyTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+                    "comments":self.comment.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+                ]
+                
+                let encodeURL = nullIncomeKassaUrl
+                let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+                requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                        
+    //                    print(response.request!)
+    //                    print(response.result)
+    //                    print(response.response)
+                })
+            }
+            
+            else {
+                
+                print("internet is not working")
+                MBProgressHUD.hide(for: self.view, animated: true)
+                self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+            }
+        }
 
-}
+    }
+
+
 
 
 extension FirstPageVC {

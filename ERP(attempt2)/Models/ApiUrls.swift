@@ -42,4 +42,6 @@ let goodReportUrl: String = mainUrl + "goods-billing/"
 let moneyReportUrl: String = mainUrl + "money-billing/"
 
 
+let nullIncomeKassaUrl: String = mainUrl + "export-null-checks/"
+
 
