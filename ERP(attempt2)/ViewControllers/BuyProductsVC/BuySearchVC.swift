@@ -70,7 +70,9 @@ extension BuySearchVC: UITableViewDelegate, UITableViewDataSource {
         let id = eachGood["id"] as! Int
         self.goodID = id
         
-        debug_print(message: "here is an id", object: id)
+//        debug_print(message: "here is an id", object: id)
+        
+        SendGoodToBasketApi()
         
         performSegue(withIdentifier: "afterselectedgoodfromsearch", sender: self)
     }
@@ -167,6 +169,53 @@ extension BuySearchVC {
                 self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
             }
         }
+    
+    
+    func SendGoodToBasketApi() {
+        
+        do {
+            reacibility = try Reachability.init()
+        }
+        catch {
+            print("unable to start notifier")
+        }
+        
+        if ((reacibility!.connection) != .none){
+            
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenForUserStandart) as! String
+            
+            let headers: HTTPHeaders = [
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+            let params = [
+                
+                "goods":"\(self.goodID)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
+                "nums":"\(1)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
+            ]
+            
+            
+            let encodeURL = buyingBasketURL
+            
+            let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                
+                print(response.request!)
+                print(response.result)
+                print(response.response)
+            })
+        
+        }
+        
+        else {
+            print("internet is not working")
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
     
     
     func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
