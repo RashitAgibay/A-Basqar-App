@@ -17,8 +17,10 @@ class BuyProdReadBarCodeVC: UIViewController, AVCaptureMetadataOutputObjectsDele
     
     @IBOutlet weak var videoView: UIView!
     
+    var goodListArray = NSArray()
     
     var string = String()
+    var goodID = Int()
     
     enum error: Error {
            case noCamereAvailable
@@ -50,8 +52,9 @@ class BuyProdReadBarCodeVC: UIViewController, AVCaptureMetadataOutputObjectsDele
     //                print("here is a I can make performsegue")
 //                print("here is a var code result: \(string)")
                 
-                testForApi()
-                connection.isEnabled = false
+//                testForApi()
+                connection.isEnabled = false // MARK: - код бір ақ рет шығару үшін
+                getGoodByBarCode()
                 performSegue(withIdentifier: "frombarcodetoimport", sender: self)
                 
                 }
@@ -60,8 +63,9 @@ class BuyProdReadBarCodeVC: UIViewController, AVCaptureMetadataOutputObjectsDele
                 //                print("here is a I can make performsegue")
 //                print("here is a var code result: \(string)")
                 
-                testForApi()
+//                testForApi()
                 connection.isEnabled = false // MARK: - код бір ақ рет шығару үшін
+                getGoodByBarCode()
                 performSegue(withIdentifier: "frombarcodetoimport", sender: self)
             }
         }
@@ -76,9 +80,7 @@ class BuyProdReadBarCodeVC: UIViewController, AVCaptureMetadataOutputObjectsDele
           }
       }
     
-    func testForApi(){
-        debug_print(message: "it is a barcode: ", object: string)
-    }
+    
     
    func scanQrCode() throws {
         let avCaptureSession = AVCaptureSession()
@@ -113,6 +115,137 @@ class BuyProdReadBarCodeVC: UIViewController, AVCaptureMetadataOutputObjectsDele
         
        
         
+    }
+    
+    
+    func getGoodByBarCode() {
+        
+        do {
+            reacibility = try Reachability.init()
+        }
+        
+        catch {
+        
+        }
+        
+        if ((reacibility!.connection) != .unavailable){
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenForUserStandart) as! String
+            
+            let headers: HTTPHeaders = [
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+            let encodeURL = goodListUrl
+            
+            let requestOfApi = AF.request(encodeURL + "?code=\(string)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                
+//                print(response.request)
+//                print(response.result)
+//                print(response.response)
+                
+                switch response.result {
+                
+                case .success(let payload):
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    
+                    if let x = payload as? Dictionary<String,AnyObject> {
+                        
+//                        print(x)
+                    }
+                    else {
+                        
+                        let resultValue = payload as! NSArray
+                        self.goodListArray = NSMutableArray(array: resultValue)
+                        
+                        let good = self.goodListArray[0] as! NSDictionary
+                        self.goodID = good["id"] as! Int
+                        
+                        self.SendGoodToBasketApi()
+                        
+//                        debug_print(message: "here is a goodListArray", object: self.goodID)
+                    }
+                case .failure(let error):
+                    
+                    print(error)
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")}
+            })
+        
+        }
+        
+        else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
+    
+    
+    func SendGoodToBasketApi() {
+        do {
+            reacibility = try Reachability.init()
+        }
+        catch {
+            print("unable to start notifier")
+        }
+        
+        if ((reacibility!.connection) != .none){
+            
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenForUserStandart) as! String
+            
+            let headers: HTTPHeaders = [
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+            let params = [
+                
+                "goods":"\(self.goodID)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
+                "nums":"\(1)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
+            ]
+            
+            
+            let encodeURL = buyingBasketURL
+            
+            let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                
+                print(response.request!)
+                print(response.result)
+                print(response.response)
+            })
+        
+        }
+        
+        else {
+            print("internet is not working")
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
+    
+    func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: buttomMessage, style: .cancel) { (action) in
+        }
+        
+        alertController.addAction(action)
+        self.present(alertController,animated: true, completion: nil)
+    }
+    
+    func ShowErrorsAlertWithOneCancelButton(message: String) {
+        
+        let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Закрыть", style: .cancel) { (action) in
+        }
+        alertController.addAction(action)
+        self.present(alertController,animated: true, completion: nil)
     }
 
 }
