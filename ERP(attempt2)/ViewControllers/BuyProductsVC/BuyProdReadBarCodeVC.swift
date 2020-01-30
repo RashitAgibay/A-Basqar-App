@@ -37,6 +37,7 @@ class BuyProdReadBarCodeVC: UIViewController, AVCaptureMetadataOutputObjectsDele
         }
     }
     
+    
 
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
@@ -47,15 +48,20 @@ class BuyProdReadBarCodeVC: UIViewController, AVCaptureMetadataOutputObjectsDele
             if machineReadableCode.type == AVMetadataObject.ObjectType.code128 {
                 string = machineReadableCode.stringValue!
     //                print("here is a I can make performsegue")
-                print("here is a var code result: \(string)")
+//                print("here is a var code result: \(string)")
                 
+                testForApi()
+                connection.isEnabled = false
                 performSegue(withIdentifier: "frombarcodetoimport", sender: self)
+                
                 }
             if machineReadableCode.type == AVMetadataObject.ObjectType.qr {
                 string = machineReadableCode.stringValue!
                 //                print("here is a I can make performsegue")
-                print("here is a var code result: \(string)")
+//                print("here is a var code result: \(string)")
                 
+                testForApi()
+                connection.isEnabled = false // MARK: - код бір ақ рет шығару үшін
                 performSegue(withIdentifier: "frombarcodetoimport", sender: self)
             }
         }
@@ -70,6 +76,9 @@ class BuyProdReadBarCodeVC: UIViewController, AVCaptureMetadataOutputObjectsDele
           }
       }
     
+    func testForApi(){
+        debug_print(message: "it is a barcode: ", object: string)
+    }
     
    func scanQrCode() throws {
         let avCaptureSession = AVCaptureSession()

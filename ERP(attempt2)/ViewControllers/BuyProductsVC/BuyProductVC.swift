@@ -36,6 +36,7 @@ class BuyProductVC: UIViewController {
         // MARK: - (id123)
     
     
+//        print("barcode in the BuyProductVC: \(barcode)")
         
 //        print("here is a \(selectedSegmentId)")
         

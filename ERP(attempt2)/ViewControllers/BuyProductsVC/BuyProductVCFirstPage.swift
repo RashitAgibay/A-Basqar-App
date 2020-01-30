@@ -52,7 +52,9 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
         
         super.viewDidLoad()
         
-        toTestVarcode()
+//        debug_print(message: "here is a bar code in BuyProductVCFirstPage's test function ", object: barcode_from_main)
+        
+        
         
         //MARK: - страница новой покупки
 //        print(" страница новой покупки ")
@@ -104,6 +106,8 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
         
 //        print("array \(priceInBusket[1])")
 //        print("array \(companyNameInBusket[1])")
+        
+//        toTestVarcode()
         
     }
     
