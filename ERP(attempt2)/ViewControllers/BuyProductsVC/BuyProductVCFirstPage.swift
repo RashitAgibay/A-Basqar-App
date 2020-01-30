@@ -32,6 +32,11 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
     var totalCashAfterPersontage: Int = 0
     var companyIdFromList: Int = 0
     
+    var import_price  = Int()
+    var export_price  = Int()
+    var good_amount = Int()
+    
+    
     var barcode_from_main  = String()
     
 //    let buyProductVC = BuyProductVC()
@@ -220,6 +225,122 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
     }
     
     @IBAction func tapCompanyNameButton(_ sender: Any) {
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let good = goodsInBasket[indexPath.row] as! NSDictionary
+        let goodId = good["id"] as! Int
+        
+        let goods = good["goods"] as! NSDictionary
+        let nums = good["nums"] as! Int
+        
+        let importPrice = goods["import_price"] as! Int
+        let exportPrice = goods["export_price"] as! Int
+        
+        self.good_amount = nums
+        self.import_price = importPrice
+        self.export_price = exportPrice
+        
+        ShowAlertControllerWithTwoTextFields()
+    }
+    
+    func ShowAlertControllerWithTwoTextFields() {
+        let alertController = UIAlertController(title: "", message: "Введите количество и цену...", preferredStyle: .alert)
+        let addAction = UIAlertAction(title: "Изменить", style: .default) { (action) in
+            
+            
+            
+            let amountAlertTextField = alertController.textFields?[0].text
+            let cashAlertTextField  = alertController.textFields?[1].text
+//            self.import_price = cashAlertTextField as! String
+            
+
+            
+//            if amountAlertTextField != "1" {
+//                self.amountFromAlert = amountAlertTextField
+//            }
+//
+//            else {
+//                self.amountFromAlert = "1"
+//            }
+//
+//            self.cashFromAlert = cashAlertTextField
+//            self.priceToSendToBuscket = cashAlertTextField as! String
+//
+//            if cashAlertTextField != "" {
+//                self.SendGoodToBasketApi()
+//                self.SendGoodsPriceToBasketApi()
+//                self.goToTheBackPAge()
+//            }
+            
+            
+            
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (action) in
+            
+        }
+        alertController.addTextField { (textfield) in
+            textfield.placeholder = "Введите количество..."
+            textfield.keyboardType = .numberPad
+            textfield.text = "\(self.good_amount)"
+        }
+        alertController.addTextField { (textfield) in
+            textfield.placeholder = "Введите цену..."
+            textfield.keyboardType = .numberPad
+            textfield.text = "\(self.import_price)"
+            
+        }
+        
+        
+        
+        alertController.addAction(addAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController,animated: true, completion: nil)
+    }
+    
+    
+    func SendGoodsPriceToBasketApi() {
+        
+        do {
+            
+            self.reacibility = try Reachability.init()
+        }
+        
+        catch {
+            print("unable to start notifier")
+        }
+        
+        if ((reacibility!.connection) != .none){
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: self.userTokenForUserStandart) as! String
+            
+            let headers: HTTPHeaders = [
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+//            let params = [
+//
+//                "export_price":export_price.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+//                "import_price":import_price.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+//            ]
+//
+//            let encodeURL = goodListUrl
+//            let requestOfApi = AF.request(encodeURL + "\(goodIdFromVC)/", method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+//            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+//
+//    //                           print(response.request!)
+//    //                           print(response.result)
+//    //                           print(response.response)
+//            })
+        }
+        else {
+            print("internet is not working")
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
     }
     
     @IBAction func tapSellButton(_ sender: Any) {
