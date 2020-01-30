@@ -183,6 +183,7 @@
 		FD6F84AC23C7446D0076BE0A /* GoodInBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F84AB23C7446D0076BE0A /* GoodInBasket.swift */; };
 		FDA8BF7423D56ED0006DFF71 /* BoughtItemsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA8BF7323D56ED0006DFF71 /* BoughtItemsHistoryVC.swift */; };
 		FDB6036423E2D1770012D65D /* BuySearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6036323E2D1770012D65D /* BuySearchVC.swift */; };
+		FDB6036623E2E6830012D65D /* SellingBarcodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6036523E2E6830012D65D /* SellingBarcodeVC.swift */; };
 		FDBDD50123D807FE007FE38F /* SellingGoodsBasketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */; };
 		FDC8A5DB23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */; };
 		FDF3C9B523E1342800D2E08D /* IncomeContagentNamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */; };
@@ -470,6 +471,7 @@
 		FD6F84AB23C7446D0076BE0A /* GoodInBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodInBasket.swift; sourceTree = "<group>"; };
 		FDA8BF7323D56ED0006DFF71 /* BoughtItemsHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoughtItemsHistoryVC.swift; sourceTree = "<group>"; };
 		FDB6036323E2D1770012D65D /* BuySearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySearchVC.swift; sourceTree = "<group>"; };
+		FDB6036523E2E6830012D65D /* SellingBarcodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingBarcodeVC.swift; sourceTree = "<group>"; };
 		FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingGoodsBasketVC.swift; sourceTree = "<group>"; };
 		FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeKassaHistoryListVC.swift; sourceTree = "<group>"; };
 		FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeContagentNamesVC.swift; sourceTree = "<group>"; };
@@ -528,6 +530,7 @@
 				286318592398D83300556226 /* SellingHistory.swift */,
 				28D3B0632398D985009627C7 /* SellingHistoryItemVC.swift */,
 				FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */,
+				FDB6036523E2E6830012D65D /* SellingBarcodeVC.swift */,
 			);
 			path = SellingProductsVC;
 			sourceTree = "<group>";
@@ -1330,6 +1333,7 @@
 				288CC46D23A89C38008D5218 /* SDImageCache.m in Sources */,
 				28B4978A239E199A0002C690 /* MainReportPageVC.swift in Sources */,
 				288CC48523A89C38008D5218 /* SDWebImageDownloaderOperation.m in Sources */,
+				FDB6036623E2E6830012D65D /* SellingBarcodeVC.swift in Sources */,
 				288CC3B823A89BFD008D5218 /* DispatchQueue+Alamofire.swift in Sources */,
 				288CC47823A89C38008D5218 /* SDImageIOAnimatedCoder.m in Sources */,
 				288CC4A323A89C38008D5218 /* SDInternalMacros.m in Sources */,

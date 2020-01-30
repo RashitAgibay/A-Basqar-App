@@ -711,13 +711,13 @@
                                                 <rect key="frame" x="142.5" y="95" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Перемещение" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6R-pE-AS7">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_2" translatesAutoresizingMaskIntoConstraints="NO" id="2vA-bZ-8IF">
-                                                        <rect key="frame" x="14" y="16" width="62" height="86"/>
+                                                        <rect key="frame" x="14" y="16" width="62" height="48"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -737,13 +737,13 @@
                                                 <rect key="frame" x="247.5" y="95" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Продажа" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAX-Ln-2Sz">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_3" translatesAutoresizingMaskIntoConstraints="NO" id="wqh-X6-CE5">
-                                                        <rect key="frame" x="16" y="12" width="58" height="95"/>
+                                                        <rect key="frame" x="16" y="12" width="58.000000000000014" height="57"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -763,10 +763,10 @@
                                                 <rect key="frame" x="37.5" y="95" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_1" translatesAutoresizingMaskIntoConstraints="NO" id="0Tt-bw-Ccf">
-                                                        <rect key="frame" x="12" y="8" width="66" height="96"/>
+                                                        <rect key="frame" x="12" y="8" width="66.000000000000014" height="58"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Поступление товаров" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUl-wb-F81">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -789,10 +789,10 @@
                                                 <rect key="frame" x="142.5" y="225" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_5" translatesAutoresizingMaskIntoConstraints="NO" id="vS3-8I-azN">
-                                                        <rect key="frame" x="18" y="10" width="54" height="92"/>
+                                                        <rect key="frame" x="18" y="10" width="54" height="54"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Заявки" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beU-0Y-fkw">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -815,10 +815,10 @@
                                                 <rect key="frame" x="247.5" y="225" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_6" translatesAutoresizingMaskIntoConstraints="NO" id="lbc-o0-5Py">
-                                                        <rect key="frame" x="16" y="10" width="58" height="89.5"/>
+                                                        <rect key="frame" x="16" y="10" width="58" height="49.5"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Касса, Расход" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTL-lX-IIQ">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="70" width="90" height="40"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -841,10 +841,10 @@
                                                 <rect key="frame" x="37.5" y="225" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_4" translatesAutoresizingMaskIntoConstraints="NO" id="HDQ-es-Y8v">
-                                                        <rect key="frame" x="18" y="8" width="54" height="92"/>
+                                                        <rect key="frame" x="18" y="8" width="54" height="54.5"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Касса, Приход" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zv-Qb-1AO">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72.5" width="90" height="37.5"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -867,13 +867,13 @@
                                                 <rect key="frame" x="142.5" y="355" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Отчеты" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjk-gq-oez">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_8" translatesAutoresizingMaskIntoConstraints="NO" id="yCg-9W-K8f">
-                                                        <rect key="frame" x="16" y="10" width="58" height="89"/>
+                                                        <rect key="frame" x="16" y="10" width="58" height="51"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -893,10 +893,10 @@
                                                 <rect key="frame" x="247.5" y="355" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_9" translatesAutoresizingMaskIntoConstraints="NO" id="G27-uc-YfO">
-                                                        <rect key="frame" x="18" y="10" width="54" height="91"/>
+                                                        <rect key="frame" x="18" y="10" width="54" height="53"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Профиль" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lug-qr-rSt">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -919,13 +919,13 @@
                                                 <rect key="frame" x="37.5" y="355" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Управление" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pa-qu-GNP">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="75" width="90" height="35"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_7" translatesAutoresizingMaskIntoConstraints="NO" id="5J4-3G-Ap6">
-                                                        <rect key="frame" x="16" y="10" width="58" height="92"/>
+                                                        <rect key="frame" x="16" y="10" width="58" height="57"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -945,13 +945,13 @@
                                                 <rect key="frame" x="142.5" y="485" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Добавить товар в базу" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eA-hw-mpD">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="74" width="90" height="36"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_10" translatesAutoresizingMaskIntoConstraints="NO" id="pt2-hj-aGn">
-                                                        <rect key="frame" x="17" y="10" width="56" height="86.5"/>
+                                                        <rect key="frame" x="17" y="10" width="56" height="50.5"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1233,7 +1233,7 @@
                             <barButtonItem title="Item" image="barcode.viewfinder" catalog="system" id="9uB-fB-Xhn">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <segue destination="umP-X6-CYB" kind="presentation" modalPresentationStyle="fullScreen" id="N2e-hX-hby"/>
+                                    <segue destination="umP-X6-CYB" kind="presentation" id="N2e-hX-hby"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -1293,46 +1293,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="porfile_page_default_icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="uVC-X5-eFQ">
-                                <rect key="frame" x="110" y="94" width="155" height="322"/>
+                                <rect key="frame" x="110" y="93.999999999999986" width="155" height="161.00000000000003"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ильяс Шомат" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlr-Mn-ohY">
-                                <rect key="frame" x="20" y="426" width="335" height="30"/>
+                                <rect key="frame" x="20" y="265" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер/логин:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhw-Dj-pL6">
-                                <rect key="frame" x="60" y="486" width="113" height="20"/>
+                                <rect key="frame" x="60" y="325" width="113" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mow-GW-gD0">
-                                <rect key="frame" x="60" y="516" width="84" height="20"/>
+                                <rect key="frame" x="60" y="355" width="84" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKk-Yl-biB">
-                                <rect key="frame" x="60" y="546" width="22" height="20"/>
+                                <rect key="frame" x="60" y="385" width="22" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Должность:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WI-s1-mNT">
-                                <rect key="frame" x="60" y="576" width="97" height="20"/>
+                                <rect key="frame" x="60" y="415" width="97" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ТОО &quot;Тағам&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHF-yB-X3x">
-                                <rect key="frame" x="181" y="516" width="97" height="20"/>
+                                <rect key="frame" x="181" y="355" width="97" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="132456789AA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aY-Tr-ZxL">
-                                <rect key="frame" x="182" y="546" width="105" height="20"/>
+                                <rect key="frame" x="182" y="385" width="105" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1372,13 +1372,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 708 954 65 58" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UV2-Mo-meg">
-                                <rect key="frame" x="181" y="486" width="124" height="20"/>
+                                <rect key="frame" x="181" y="325" width="124" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Управляющий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKo-fc-jCQ">
-                                <rect key="frame" x="181" y="576" width="107" height="20"/>
+                                <rect key="frame" x="181" y="415" width="107" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -2557,11 +2557,11 @@
             <objects>
                 <viewController id="c7D-Dp-KiI" customClass="BuyProdReadBarCodeVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5is-m3-HOW">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B5G-vv-vYL">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                         </subviews>
@@ -3342,18 +3342,31 @@
                         <viewLayoutGuide key="safeArea" id="xS8-dS-mHV"/>
                     </view>
                     <navigationItem key="navigationItem" id="Kqd-e8-MNr">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="house.fill" catalog="system" id="8KX-n5-a0e">
-                            <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="7eV-d1-wlX" kind="presentation" modalPresentationStyle="fullScreen" id="qJ9-OL-G5u"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle" catalog="system" id="Xrt-1z-yVU">
-                            <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <connections>
-                                <segue destination="CW8-pe-SBY" kind="presentation" modalPresentationStyle="fullScreen" id="s1g-76-fTZ"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem title="Item" image="house.fill" catalog="system" id="8KX-n5-a0e">
+                                <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="7eV-d1-wlX" kind="presentation" modalPresentationStyle="fullScreen" id="qJ9-OL-G5u"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="o8J-hH-jbz">
+                                <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="plus.circle" catalog="system" id="Xrt-1z-yVU">
+                                <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="CW8-pe-SBY" kind="presentation" modalPresentationStyle="fullScreen" id="s1g-76-fTZ"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="barcode.viewfinder" catalog="system" id="cnj-Cd-tkc">
+                                <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="fd1-Pp-Tqp" kind="presentation" id="K0a-Ay-vWA"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
@@ -3366,7 +3379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Wx-b2-ni6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5402" y="4882"/>
+            <point key="canvasLocation" x="4374" y="4764"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qyP-e0-Hkd">
@@ -3385,7 +3398,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="31D-Ri-Nqq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3298.4000000000001" y="4808.5457271364321"/>
+            <point key="canvasLocation" x="3052" y="4798"/>
         </scene>
         <!--Selling History-->
         <scene sceneID="tvc-Ki-RKW">
@@ -3503,7 +3516,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5A-Nx-fL9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9367.2000000000007" y="5766.5667166416797"/>
+            <point key="canvasLocation" x="9255" y="5758"/>
         </scene>
         <!--Selleing Prods First PageVC-->
         <scene sceneID="lYj-Sr-Y8q">
@@ -3778,7 +3791,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7C-hY-A3H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4028" y="4726.6866566716644"/>
+            <point key="canvasLocation" x="7730" y="5816"/>
         </scene>
         <!--Add Prod To Selling PageVC-->
         <scene sceneID="oxs-uN-R11">
@@ -4136,7 +4149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9aU-xf-p39" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="15464.799999999999" y="5797.1514242878566"/>
+            <point key="canvasLocation" x="16404" y="5797.1514242878566"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Zh-Rb-GnS">
@@ -4155,7 +4168,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qKO-fi-RGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14524" y="5795.3523238380812"/>
+            <point key="canvasLocation" x="15463.200000000001" y="5795.3523238380812"/>
         </scene>
         <!--Change SellerVC-->
         <scene sceneID="28b-4Q-WCb">
@@ -4472,7 +4485,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGy-Xa-fNn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13586.4" y="6598.6506746626692"/>
+            <point key="canvasLocation" x="14525.6" y="6598.6506746626692"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dDh-I5-0m0">
@@ -4491,7 +4504,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aaa-mW-97e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12644" y="6598.6506746626692"/>
+            <point key="canvasLocation" x="13583.200000000001" y="6598.6506746626692"/>
         </scene>
         <!--Selling History ItemVC-->
         <scene sceneID="AO8-Sk-1hI">
@@ -5772,85 +5785,6 @@
             </objects>
             <point key="canvasLocation" x="-2102" y="6090"/>
         </scene>
-        <!--Bought Items HistoryVC-->
-        <scene sceneID="Ltd-JY-DHv">
-            <objects>
-                <viewController id="wxt-CJ-ztL" customClass="BoughtItemsHistoryVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hlw-p7-11p">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HW4-YP-1d9">
-                                <rect key="frame" x="0.0" y="101" width="375" height="566"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="O6b-Zf-JTM">
-                                    <size key="itemSize" width="350" height="40"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="historyNamecell" id="2Pr-sh-1gh" customClass="BuyHistoryNameListCellCollectionViewCell" customModule="A_Basqar" customModuleProvider="target">
-                                        <rect key="frame" x="12.5" y="0.0" width="350" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2zl-42-Uxu" customClass="BuyHistoryNameListCellCollectionViewCell" customModule="A_Basqar" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="350" height="40"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgs-uO-3Wj">
-                                                    <rect key="frame" x="5" y="8" width="340" height="24"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="Fgs-uO-3Wj" firstAttribute="top" secondItem="2zl-42-Uxu" secondAttribute="top" constant="8" id="Mcd-vD-jHK"/>
-                                                <constraint firstAttribute="trailing" secondItem="Fgs-uO-3Wj" secondAttribute="trailing" constant="5" id="tyk-nW-EBf"/>
-                                                <constraint firstItem="Fgs-uO-3Wj" firstAttribute="leading" secondItem="2zl-42-Uxu" secondAttribute="leading" constant="5" id="wyL-Ml-G9h"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <connections>
-                                            <outlet property="historyNameLabel" destination="Fgs-uO-3Wj" id="zXq-xp-6QJ"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="wxt-CJ-ztL" id="3wj-PI-2CL"/>
-                                    <outlet property="delegate" destination="wxt-CJ-ztL" id="cDa-I3-s8e"/>
-                                </connections>
-                            </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Выберите историю" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2S-4k-g17">
-                                <rect key="frame" x="10" y="64" width="355" height="27"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="i2S-4k-g17" firstAttribute="leading" secondItem="QXt-Dg-Xfw" secondAttribute="leading" constant="10" id="0C1-yc-qLd"/>
-                            <constraint firstItem="QXt-Dg-Xfw" firstAttribute="trailing" secondItem="i2S-4k-g17" secondAttribute="trailing" constant="10" id="R4X-qu-hNX"/>
-                            <constraint firstItem="HW4-YP-1d9" firstAttribute="top" secondItem="i2S-4k-g17" secondAttribute="bottom" constant="10" id="S8I-Pi-0se"/>
-                            <constraint firstItem="HW4-YP-1d9" firstAttribute="leading" secondItem="QXt-Dg-Xfw" secondAttribute="leading" id="VaJ-jU-J2J"/>
-                            <constraint firstItem="QXt-Dg-Xfw" firstAttribute="bottom" secondItem="HW4-YP-1d9" secondAttribute="bottom" id="kpS-4S-BAf"/>
-                            <constraint firstItem="i2S-4k-g17" firstAttribute="top" secondItem="QXt-Dg-Xfw" secondAttribute="top" constant="20" id="nCO-cJ-rkx"/>
-                            <constraint firstItem="QXt-Dg-Xfw" firstAttribute="trailing" secondItem="HW4-YP-1d9" secondAttribute="trailing" id="s2i-Jp-2yx"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="QXt-Dg-Xfw"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Q3z-cQ-kGY">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="ZFz-mf-6KL">
-                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </barButtonItem>
-                    </navigationItem>
-                    <size key="freeformSize" width="375" height="667"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vg9-HP-uo7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6114.3999999999996" y="5996.8515742128939"/>
-        </scene>
         <!--Outcome Kassa History Item-->
         <scene sceneID="pd1-Rq-2fl">
             <objects>
@@ -6746,25 +6680,6 @@
             </objects>
             <point key="canvasLocation" x="9430" y="4726"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ZwL-2H-pIp">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gbB-84-eAn" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fXh-th-NgY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="wxt-CJ-ztL" kind="relationship" relationship="rootViewController" id="SFI-Sd-NNb"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5QJ-D7-mog" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5176.8000000000002" y="5996.8515742128939"/>
-        </scene>
         <!--Bought Items HistoryVC-->
         <scene sceneID="wyR-zO-tNB">
             <objects>
@@ -7302,7 +7217,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="umP-X6-CYB" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="rvS-fV-RzO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -7332,6 +7247,64 @@
             </objects>
             <point key="canvasLocation" x="5400.8000000000002" y="2193.5532233883059"/>
         </scene>
+        <!--Selling BarcodeVC-->
+        <scene sceneID="zE1-BM-61S">
+            <objects>
+                <viewController id="1Op-df-InD" customClass="SellingBarcodeVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Lou-3l-GLR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0C5-1A-4qA">
+                                <rect key="frame" x="0.0" y="56" width="375" height="591"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0C5-1A-4qA" firstAttribute="leading" secondItem="ubj-vd-sxy" secondAttribute="leading" id="2SW-7D-1n7"/>
+                            <constraint firstItem="0C5-1A-4qA" firstAttribute="top" secondItem="ubj-vd-sxy" secondAttribute="top" id="AeQ-6L-xpQ"/>
+                            <constraint firstItem="ubj-vd-sxy" firstAttribute="trailing" secondItem="0C5-1A-4qA" secondAttribute="trailing" id="eDg-Gd-Q6w"/>
+                            <constraint firstItem="ubj-vd-sxy" firstAttribute="bottom" secondItem="0C5-1A-4qA" secondAttribute="bottom" id="qHO-ew-Ge5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ubj-vd-sxy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jdD-12-ZhF">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="huX-yY-cBt">
+                            <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Fpv-eL-Ygm" kind="presentation" modalPresentationStyle="fullScreen" id="8aK-dc-WJy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="videoView" destination="0C5-1A-4qA" id="90n-io-xZU"/>
+                        <segue destination="Fpv-eL-Ygm" kind="presentation" identifier="fromvarcodetoselling" modalPresentationStyle="fullScreen" id="fuj-us-UFY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ItQ-NY-20u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4807" y="5758"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="FNp-Wj-ral">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fd1-Pp-Tqp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cZH-CP-Y84">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1Op-df-InD" kind="relationship" relationship="rootViewController" id="6e1-cV-mF4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aoa-4f-T6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3868" y="5758"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Line_for_TextField" width="284" height="40"/>
@@ -7358,15 +7331,15 @@
     <inferredMetricsTieBreakers>
         <segue reference="yZx-ZR-ePn"/>
         <segue reference="FoC-7e-k4T"/>
-        <segue reference="cV1-SB-D9k"/>
+        <segue reference="s1g-76-fTZ"/>
         <segue reference="jdj-3L-A66"/>
-        <segue reference="bsG-Vf-CQs"/>
+        <segue reference="8aK-dc-WJy"/>
         <segue reference="6pu-6u-RW8"/>
         <segue reference="3LV-1F-9HZ"/>
         <segue reference="vVS-VM-7oJ"/>
         <segue reference="ZJ2-I0-hTz"/>
         <segue reference="GKp-99-c5l"/>
-        <segue reference="H3Y-h8-ahJ"/>
+        <segue reference="qJ9-OL-G5u"/>
         <segue reference="wye-L7-wbB"/>
         <segue reference="B0i-x1-3MK"/>
         <segue reference="9me-9b-5ND"/>
