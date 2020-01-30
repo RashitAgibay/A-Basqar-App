@@ -43,15 +43,37 @@ class BuySearchVC: UIViewController {
 extension BuySearchVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return goodListArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tablecell")
         
+        let eachGood = goodListArray[indexPath.row] as! NSDictionary
+        let goods = eachGood["goods"] as! NSDictionary
+        
+        let goodName = goods["name"] as! String
+        
+        cell?.textLabel?.text = goodName
+        
         return cell!
+        
+        
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let eachGood = goodListArray[indexPath.row] as! NSDictionary
+        
+        
+        let id = eachGood["id"] as! Int
+        self.goodID = id
+        
+        debug_print(message: "here is an id", object: id)
+        
+        performSegue(withIdentifier: "afterselectedgoodfromsearch", sender: self)
+    }
     
 }
 
@@ -64,7 +86,7 @@ extension BuySearchVC: UISearchBarDelegate {
         getGoodByBarCode()
         
         searching = true
-        tableView.reloadData()
+        
     
         }
     
@@ -98,7 +120,7 @@ extension BuySearchVC {
                 
                 let encodeURL = goodListUrl
                 
-                //MARK: -api ға запрос жібергенде кирилиццамен жіберуге мүмкіндік болу үшін 
+                //MARK: -api ға запрос жібергенде кирилиццамен жіберуге мүмкіндік болу үшін
                 let allowedURL = (encodeURL + "?goods_name=\(string)").addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlFragmentAllowed)!
                 
                 let requestOfApi = AF.request(allowedURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
@@ -127,7 +149,9 @@ extension BuySearchVC {
                             
 //                            self.SendGoodToBasketApi()
                             
-                            debug_print(message: "here is a goodListArray", object: self.goodListArray)
+//                            debug_print(message: "here is a goodListArray", object: self.goodListArray)
+                            
+                            self.tableView.reloadData()
                         }
                     case .failure(let error):
                         

@@ -7289,6 +7289,7 @@
                     <connections>
                         <outlet property="searchBar" destination="RYo-wG-JQI" id="FcZ-D8-RZn"/>
                         <outlet property="tableView" destination="90P-CX-20t" id="5CV-XX-g7e"/>
+                        <segue destination="Pkt-O0-D2i" kind="presentation" identifier="afterselectedgoodfromsearch" modalPresentationStyle="fullScreen" id="vVS-VM-7oJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usM-qd-JYg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -7362,7 +7363,7 @@
         <segue reference="bsG-Vf-CQs"/>
         <segue reference="6pu-6u-RW8"/>
         <segue reference="3LV-1F-9HZ"/>
-        <segue reference="RAA-2h-my7"/>
+        <segue reference="vVS-VM-7oJ"/>
         <segue reference="ZJ2-I0-hTz"/>
         <segue reference="GKp-99-c5l"/>
         <segue reference="H3Y-h8-ahJ"/>
