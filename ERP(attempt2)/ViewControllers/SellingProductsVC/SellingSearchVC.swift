@@ -1,5 +1,5 @@
 //
-//  BuySearchVC.swift
+//  SellingSearchVC.swift
 //  A-Basqar
 //
 //  Created by Ilyas Shomat on 1/30/20.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class BuySearchVC: UIViewController {
+class SellingSearchVC: UIViewController {
 
-    
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    
     
     var searching = false
     var goodListArray = NSArray()
@@ -23,7 +23,6 @@ class BuySearchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-              
     }
     
 
@@ -31,8 +30,9 @@ class BuySearchVC: UIViewController {
 
 }
 
+//fromsearchtoselling
 
-extension BuySearchVC: UITableViewDelegate, UITableViewDataSource {
+extension SellingSearchVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return goodListArray.count
@@ -66,12 +66,12 @@ extension BuySearchVC: UITableViewDelegate, UITableViewDataSource {
         
         SendGoodToBasketApi()
         
-        performSegue(withIdentifier: "afterselectedgoodfromsearch", sender: self)
+        performSegue(withIdentifier: "fromsearchtoselling", sender: self)
     }
     
 }
 
-extension BuySearchVC: UISearchBarDelegate {
+extension SellingSearchVC: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
@@ -90,7 +90,7 @@ extension BuySearchVC: UISearchBarDelegate {
     
 }
 
-extension BuySearchVC {
+extension SellingSearchVC {
     
     func getGoodByBarCode() {
             
@@ -190,7 +190,7 @@ extension BuySearchVC {
             ]
             
             
-            let encodeURL = buyingBasketURL
+            let encodeURL = basketUrl
             
             let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in

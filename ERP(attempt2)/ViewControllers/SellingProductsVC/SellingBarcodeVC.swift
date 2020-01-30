@@ -200,9 +200,9 @@ class SellingBarcodeVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate
                 let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
                 requestOfApi.responseJSON(completionHandler: {(response)-> Void in
                     
-                    print(response.request!)
-                    print(response.result)
-                    print(response.response)
+//                    print(response.request!)
+//                    print(response.result)
+//                    print(response.response)
                 })
             
             }

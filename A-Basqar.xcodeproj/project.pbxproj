@@ -184,6 +184,7 @@
 		FDA8BF7423D56ED0006DFF71 /* BoughtItemsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA8BF7323D56ED0006DFF71 /* BoughtItemsHistoryVC.swift */; };
 		FDB6036423E2D1770012D65D /* BuySearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6036323E2D1770012D65D /* BuySearchVC.swift */; };
 		FDB6036623E2E6830012D65D /* SellingBarcodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6036523E2E6830012D65D /* SellingBarcodeVC.swift */; };
+		FDB6036823E2E9720012D65D /* SellingSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6036723E2E9720012D65D /* SellingSearchVC.swift */; };
 		FDBDD50123D807FE007FE38F /* SellingGoodsBasketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */; };
 		FDC8A5DB23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */; };
 		FDF3C9B523E1342800D2E08D /* IncomeContagentNamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */; };
@@ -472,6 +473,7 @@
 		FDA8BF7323D56ED0006DFF71 /* BoughtItemsHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoughtItemsHistoryVC.swift; sourceTree = "<group>"; };
 		FDB6036323E2D1770012D65D /* BuySearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySearchVC.swift; sourceTree = "<group>"; };
 		FDB6036523E2E6830012D65D /* SellingBarcodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingBarcodeVC.swift; sourceTree = "<group>"; };
+		FDB6036723E2E9720012D65D /* SellingSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingSearchVC.swift; sourceTree = "<group>"; };
 		FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingGoodsBasketVC.swift; sourceTree = "<group>"; };
 		FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeKassaHistoryListVC.swift; sourceTree = "<group>"; };
 		FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeContagentNamesVC.swift; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 				28D3B0632398D985009627C7 /* SellingHistoryItemVC.swift */,
 				FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */,
 				FDB6036523E2E6830012D65D /* SellingBarcodeVC.swift */,
+				FDB6036723E2E9720012D65D /* SellingSearchVC.swift */,
 			);
 			path = SellingProductsVC;
 			sourceTree = "<group>";
@@ -1237,6 +1240,7 @@
 				280901AA2394D91600CA68BD /* ChangeBuyerVC.swift in Sources */,
 				288CC3B423A89BFD008D5218 /* AFError.swift in Sources */,
 				28CAE45D238B924E0015DE56 /* CaterogyCell.swift in Sources */,
+				FDB6036823E2E9720012D65D /* SellingSearchVC.swift in Sources */,
 				288CC3C123A89BFD008D5218 /* OperationQueue+Alamofire.swift in Sources */,
 				28D3B0642398D985009627C7 /* SellingHistoryItemVC.swift in Sources */,
 				2867428F238CF2BD008884AF /* BuyProductVCFirstPage.swift in Sources */,
