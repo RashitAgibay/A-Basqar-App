@@ -41,7 +41,11 @@ class SelleingProdsFirstPageVC: UIViewController, UICollectionViewDataSource, UI
     var sumOfPriceForAllGoods: Array<Int> = []
     var sumOfCountForAllGoods: Array<Int> = []
     
-    
+    var import_price  = String()
+    var export_price  = String()
+    var good_amount = String()
+    var goodIdFromVC = Int()
+    var selected_good_id = Int()
     
     
     let refreshControl: UIRefreshControl = {
@@ -205,6 +209,161 @@ class SelleingProdsFirstPageVC: UIViewController, UICollectionViewDataSource, UI
         return cell
     }
    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+            let good = goodsInBasket[indexPath.row] as! NSDictionary
+            
+            let nums = good["nums"] as! Int
+            self.selected_good_id = good["id"] as! Int
+            
+            
+            
+            let goods = good["goods"] as! NSDictionary
+            
+            
+            let goodId = goods["id"] as! Int
+            self.goodIdFromVC = goodId
+            
+            let importPrice = goods["import_price"] as! Int
+            let exportPrice = goods["export_price"] as! Int
+            
+            self.good_amount = "\(nums)"
+            self.import_price = "\(importPrice)"
+            self.export_price = "\(exportPrice)"
+            
+            ShowAlertControllerWithTwoTextFields()
+        }
+        
+        func ShowAlertControllerWithTwoTextFields() {
+            let alertController = UIAlertController(title: "", message: "Введите количество и цену...", preferredStyle: .alert)
+            let addAction = UIAlertAction(title: "Изменить", style: .default) { (action) in
+                
+                
+                
+                let amountAlertTextField = alertController.textFields?[0].text
+                let cashAlertTextField  = alertController.textFields?[1].text
+                self.good_amount = amountAlertTextField as! String
+                self.export_price = cashAlertTextField as! String
+                
+
+    //            debug_print(message: "import price", object: self.import_price)
+    //            debug_print(message: "goods_amount", object: self.good_amount)
+                
+
+                self.sendSelectedGoodsPrice()
+                self.sendSelectedGoodsAmount()
+                self.update_page_info()
+                
+                
+                
+            }
+            let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (action) in
+                
+            }
+            alertController.addTextField { (textfield) in
+                textfield.placeholder = "Введите количество..."
+                textfield.keyboardType = .numberPad
+                textfield.text = "\(self.good_amount)"
+            }
+            alertController.addTextField { (textfield) in
+                textfield.placeholder = "Введите цену..."
+                textfield.keyboardType = .numberPad
+                textfield.text = "\(self.export_price)"
+                
+            }
+            
+            
+            
+            alertController.addAction(addAction)
+            alertController.addAction(cancelAction)
+            self.present(alertController,animated: true, completion: nil)
+        }
+        
+        
+        func sendSelectedGoodsPrice() {
+            
+            do {
+                
+                self.reacibility = try Reachability.init()
+            }
+            
+            catch {
+                print("unable to start notifier")
+            }
+            
+            if ((reacibility!.connection) != .none){
+                
+                let token = UserDefaults.standard.string(forKey: self.userTokenForUserStandart) as! String
+                
+                let headers: HTTPHeaders = [
+                    "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                    "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+                ]
+                
+                let params = [
+
+                    "export_price":export_price.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+                    "import_price":import_price.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+                ]
+
+                let encodeURL = goodListUrl
+                let requestOfApi = AF.request(encodeURL + "\(goodIdFromVC)/", method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+                requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+
+        //                           print(response.request!)
+        //                           print(response.result)
+        //                           print(response.response)
+                })
+            }
+            else {
+                print("internet is not working")
+                self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+            }
+        }
+        
+        
+        func sendSelectedGoodsAmount() {
+            
+            do {
+                self.reacibility = try Reachability.init()
+            }
+            
+            catch {
+                print("unable to start notifier")
+            }
+            
+            if ((reacibility!.connection) != .none){
+                
+                let token = UserDefaults.standard.string(forKey: self.userTokenForUserStandart) as! String
+                let headers: HTTPHeaders = [
+                    "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                    "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+                ]
+                
+                let params = [
+                    
+                    "goods":"\(self.goodIdFromVC)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
+                    "nums":self.good_amount.trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
+                ]
+                
+                let encodeURL = basketUrl
+                let requestOfApi = AF.request(encodeURL+"\(self.selected_good_id)/", method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+                requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                               
+        //                       print(response.request!)
+        //                       print(response.result)
+        //                       print(response.response)
+                
+                })
+            }
+            
+            else {
+                
+                print("internet is not working")
+                self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+            }
+        }
+    
+    
     
     public func hexStringToUIColor (hex:String) -> UIColor {
            var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
@@ -228,16 +387,16 @@ class SelleingProdsFirstPageVC: UIViewController, UICollectionViewDataSource, UI
            )
        }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let good = goodsInBasket[indexPath.row] as! NSDictionary
-        
-        let goodCardID = good["id"] as! Int
-        
-        idForDeleting = goodCardID
-        
-        
-        print(goodCardID)
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let good = goodsInBasket[indexPath.row] as! NSDictionary
+//        
+//        let goodCardID = good["id"] as! Int
+//        
+//        idForDeleting = goodCardID
+//        
+//        
+//        print(goodCardID)
+//    }
     
     @objc func tapDeleteButton(){
 //        print("\(idForDeleting) in \(testName)")
