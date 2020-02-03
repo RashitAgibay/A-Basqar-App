@@ -296,7 +296,7 @@ class SellingGoodsBasketVC: UIViewController, UICollectionViewDelegate, UICollec
 
 //            print("export price \(self.export_price)")
             
-            if amountAlertTextField != "1" {
+            if amountAlertTextField != "" {
                 self.good_amount = amountAlertTextField!
 //                print("good amout is more than 1")
             }
@@ -305,17 +305,12 @@ class SellingGoodsBasketVC: UIViewController, UICollectionViewDelegate, UICollec
                 self.good_amount = "1"
 //                print("good amout is  1")
             }
-                
             
-            if cashAlertTextField != "" || amountAlertTextField != "" {
-                self.send_good_price_api()
-                self.SendGoodToBasketApi()
-                self.send_good_price_api() // 2 рет запрос жібермесе жасамай тұр
-                self.go_to_the_next_page()
-//                self.SendGoodsPriceToBasketApi()
-//                self.goToTheBackPAge()
-                
-            }
+            self.send_good_price_api()
+            self.SendGoodToBasketApi()
+            self.send_good_price_api() // 2 рет запрос жібермесе жасамай тұр
+            self.go_to_the_next_page()
+            
             
             
             
@@ -324,14 +319,14 @@ class SellingGoodsBasketVC: UIViewController, UICollectionViewDelegate, UICollec
             
         }
         alertController.addTextField { (textfield) in
-            textfield.placeholder = "Введите количество..."
+            textfield.placeholder = "1"
             textfield.keyboardType = .numberPad
-            textfield.text = "1"
+//            textfield.text = "1"
         }
         alertController.addTextField { (textfield) in
-            textfield.placeholder = "Введите цену..."
+            textfield.placeholder = "\(self.export_price)"
             textfield.keyboardType = .numberPad
-            textfield.text = self.export_price
+//            textfield.text = self.export_price
         }
         
         

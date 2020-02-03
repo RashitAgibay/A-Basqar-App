@@ -430,24 +430,25 @@ class BuyProductAddGoodsPageVC: UIViewController, UICollectionViewDelegate, UICo
             let cashAlertTextField  = alertController.textFields?[1].text
             self.import_price = cashAlertTextField as! String
             
+            
 
             
-            if amountAlertTextField != "1" {
+            if amountAlertTextField != "" {
                 self.amountFromAlert = amountAlertTextField
             }
 
             else {
                 self.amountFromAlert = "1"
             }
+            
                 
             self.cashFromAlert = cashAlertTextField
             self.priceToSendToBuscket = cashAlertTextField as! String
             
-            if cashAlertTextField != "" {
-                self.SendGoodToBasketApi()
-                self.SendGoodsPriceToBasketApi()
-                self.goToTheBackPAge()
-            }
+            self.SendGoodToBasketApi()
+            self.SendGoodsPriceToBasketApi()
+            self.goToTheBackPAge()
+            
             
             
             
@@ -456,14 +457,14 @@ class BuyProductAddGoodsPageVC: UIViewController, UICollectionViewDelegate, UICo
             
         }
         alertController.addTextField { (textfield) in
-            textfield.placeholder = "Введите количество..."
+            textfield.placeholder = "1"
             textfield.keyboardType = .numberPad
-            textfield.text = "1"
+//            textfield.text = "1"
         }
         alertController.addTextField { (textfield) in
-            textfield.placeholder = "Введите цену..."
+            textfield.placeholder = "\(self.import_price)"
             textfield.keyboardType = .numberPad
-            textfield.text = self.import_price
+//            textfield.text = self.import_price
             
         }
         

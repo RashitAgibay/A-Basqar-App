@@ -260,14 +260,14 @@ class SelleingProdsFirstPageVC: UIViewController, UICollectionViewDataSource, UI
                 
             }
             alertController.addTextField { (textfield) in
-                textfield.placeholder = "Введите количество..."
+                textfield.placeholder = "\(self.good_amount)"
                 textfield.keyboardType = .numberPad
-                textfield.text = "\(self.good_amount)"
+//                textfield.text = "\(self.good_amount)"
             }
             alertController.addTextField { (textfield) in
-                textfield.placeholder = "Введите цену..."
+                textfield.placeholder = "\(self.export_price)"
                 textfield.keyboardType = .numberPad
-                textfield.text = "\(self.export_price)"
+//                textfield.text = "\(self.export_price)"
                 
             }
             

@@ -38,6 +38,9 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
     var goodIdFromVC = Int()
     var selected_good_id = Int()
     
+    var get_import_price = String()
+    var get_count = String()
+    
     
     var barcode_from_main  = String()
     
@@ -102,6 +105,8 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
         updatePageInfo()
         
     }
+    
+    
     
     
     func updatePageInfo(){
@@ -224,6 +229,11 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
         ShowAlertControllerWithTwoTextFields()
     }
     
+//    @objc func textFieldDidChange(_ textField: UITextField) {
+//        textField.text = nil
+//
+//    }
+    
     func ShowAlertControllerWithTwoTextFields() {
         let alertController = UIAlertController(title: "", message: "Введите количество и цену...", preferredStyle: .alert)
         let addAction = UIAlertAction(title: "Изменить", style: .default) { (action) in
@@ -236,6 +246,10 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
             self.import_price = cashAlertTextField as! String
             
 
+//            if amountAlertTextField == "" || cashAlertTextField == "" {
+//                self.goo
+//            }
+            
 //            debug_print(message: "import price", object: self.import_price)
 //            debug_print(message: "goods_amount", object: self.good_amount)
             
@@ -251,14 +265,16 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
             
         }
         alertController.addTextField { (textfield) in
-            textfield.placeholder = "Введите количество..."
+            textfield.placeholder = "\(self.good_amount)"
             textfield.keyboardType = .numberPad
-            textfield.text = "\(self.good_amount)"
+//            textfield.text = "\(self.good_amount)"
+            
+//            textfield.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         }
         alertController.addTextField { (textfield) in
-            textfield.placeholder = "Введите цену..."
+            textfield.placeholder = "\(self.import_price)"
             textfield.keyboardType = .numberPad
-            textfield.text = "\(self.import_price)"
+//            textfield.text = "\(self.import_price)"
             
         }
         
