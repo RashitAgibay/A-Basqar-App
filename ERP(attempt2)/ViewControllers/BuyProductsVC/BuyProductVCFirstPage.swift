@@ -104,6 +104,16 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
         self.totalPrice.text = "0"
         updatePageInfo()
         
+        
+        let companyNameDbValue = UserDefaults.standard.string(forKey: buyerCompanyNameInLocalDB)
+        
+        if companyNameDbValue == nil {
+            companyName.setTitle("Котрагент...", for: .normal)
+        }
+        else {
+            companyName.setTitle(companyNameDbValue, for: .normal)
+        }
+        
     }
     
     
@@ -441,13 +451,13 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
     
     @IBAction func tapSellButton(_ sender: Any) {
         
-        if companyNameFromList != "Контрагент..." {
+//        if companyNameFromList != "Контрагент..." {
             SendGoodsToBuyingHistory()
             performSegue(withIdentifier: "tobuyingkassapagefrombuying", sender: self)
-        }
-        else {
-            ShowErrorsAlertWithOneCancelButton(message: "Выберите контрагента...")
-        }
+//        }
+//        else {
+//            ShowErrorsAlertWithOneCancelButton(message: "Выберите контрагента...")
+//        }
         
         
     }
@@ -776,6 +786,10 @@ extension BuyProductVCFirstPage: BuyingGoodsCellDelegate {
     
     func SendGoodsToBuyingHistory() {
                    
+        
+        
+        companyIdFromList = UserDefaults.standard.integer(forKey: buyerCompaynuIdIdLocalDB)
+        
                    do {
                      self.reacibility = try Reachability.init()
                    }

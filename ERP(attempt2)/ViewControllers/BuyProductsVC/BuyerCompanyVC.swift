@@ -8,6 +8,10 @@
 
 import UIKit
 
+
+public var buyerCompanyNameInLocalDB: String = "buyerCompanyNameInLocalDB"
+public var buyerCompaynuIdIdLocalDB:String = "buyerCompaynuIdIdLocalDB"
+
 class BuyerCompanyVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var reacibility: Reachability?
@@ -93,6 +97,9 @@ class BuyerCompanyVC: UIViewController, UICollectionViewDataSource, UICollection
 
         companyNameInList = companiesData["company_name"] as! String
         companyId = companiesData["id"] as! Int
+        
+        UserDefaults.standard.set(companyNameInList, forKey: buyerCompanyNameInLocalDB)
+        UserDefaults.standard.set(companyId, forKey: buyerCompaynuIdIdLocalDB)
         
 //        print(companyId)
 //        dict["companyId"] = companyId
