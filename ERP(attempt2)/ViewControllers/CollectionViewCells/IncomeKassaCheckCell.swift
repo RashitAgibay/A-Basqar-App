@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class IncomeKassaCheckCell: UICollectionViewCell {
+class IncomeKassaCheckCell: SwipeCollectionViewCell {
 
     
     @IBOutlet weak var imageView: UIImageView!
