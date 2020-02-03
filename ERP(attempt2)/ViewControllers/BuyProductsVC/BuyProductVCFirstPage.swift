@@ -451,13 +451,13 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
     
     @IBAction func tapSellButton(_ sender: Any) {
         
-//        if companyNameFromList != "Контрагент..." {
+        if companyName.titleLabel?.text != "Котрагент..." {
             SendGoodsToBuyingHistory()
             performSegue(withIdentifier: "tobuyingkassapagefrombuying", sender: self)
-//        }
-//        else {
-//            ShowErrorsAlertWithOneCancelButton(message: "Выберите контрагента...")
-//        }
+        }
+        else {
+            ShowErrorsAlertWithOneCancelButton(message: "Выберите контрагента...")
+        }
         
         
     }

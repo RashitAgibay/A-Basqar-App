@@ -88,6 +88,16 @@ class SelleingProdsFirstPageVC: UIViewController, UICollectionViewDataSource, UI
         
         sellingTotalPrice.text = "\(totalCash!)"
         
+        
+        let companyNameDbValue = UserDefaults.standard.string(forKey: sellerCompanyNameInLocalDB)
+        
+        if companyNameDbValue == nil {
+            sellingCompany.setTitle("Котрагент...", for: .normal)
+        }
+        else {
+            sellingCompany.setTitle(companyNameDbValue, for: .normal)
+        }
+        
     }
     
     func update_page_info() {
@@ -101,7 +111,9 @@ class SelleingProdsFirstPageVC: UIViewController, UICollectionViewDataSource, UI
         
 //        print(" here is the \(companyNameFromLi/st)" )
         
-        if companyNameFromList != "Покупатель..." {
+//        debug_print(message: "here is button title", object: sellingCompany.titleLabel?.text)
+        
+        if  sellingCompany.titleLabel?.text != "Котрагент..." {
             
             
             
@@ -677,6 +689,9 @@ extension SelleingProdsFirstPageVC: SellingGoodsCellDelegate {
     func send_goods_to_selling_history_api() {
         
 //        debug_print(anyObject: totalCashAfterPercentaging)
+        
+        
+        companyIdFromList = UserDefaults.standard.integer(forKey: sellerCompaynuIdIdLocalDB)
         
         do {
             

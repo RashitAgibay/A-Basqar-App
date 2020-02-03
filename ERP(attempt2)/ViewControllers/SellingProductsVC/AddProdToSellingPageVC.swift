@@ -9,6 +9,9 @@
 import UIKit
 
 
+public var sellerCompanyNameInLocalDB: String = "sellerCompanyNameInLocalDB"
+public var sellerCompaynuIdIdLocalDB:String = "sellerCompaynuIdIdLocalDB"
+
 //MARK: - Покупательдер тізімі
 class AddProdToSellingPageVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -77,6 +80,9 @@ class AddProdToSellingPageVC: UIViewController, UICollectionViewDataSource, UICo
 
             companyNameInList = companiesData["company_name"] as! String
             companyID = companiesData["id"] as! Int
+            
+            UserDefaults.standard.set(companyNameInList, forKey: sellerCompanyNameInLocalDB)
+            UserDefaults.standard.set(companyID, forKey: sellerCompaynuIdIdLocalDB)
             
     //        PassCompanyNameToTheBasket(data: companyNameInList)
             
