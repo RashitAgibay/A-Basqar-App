@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class ByuingHistoryViewCell: UICollectionViewCell {
+class ByuingHistoryViewCell: SwipeCollectionViewCell {
     
     @IBOutlet weak var imageVIew: UIImageView!
     @IBOutlet weak var buyingName: UILabel!
     @IBOutlet weak var buyerName: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var price: UILabel!
+    
+    
 }

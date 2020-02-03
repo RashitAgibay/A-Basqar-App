@@ -8,6 +8,7 @@ target 'A-Basqar' do
   # Pods for ERP(attempt2)
 
  pod 'IQKeyboardManagerSwift'
+ pod 'SwipeCellKit'
 
 
 

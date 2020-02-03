@@ -7,11 +7,16 @@
 //
 
 import UIKit
+import SwipeCellKit
 
 var reacibility: Reachability?
 var userTokenForUserStandart: String = "userToken"
 
-class BuyingHistoryVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class BuyingHistoryVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, SwipeCollectionViewCellDelegate {
+    
+    
+    
+    
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -35,6 +40,8 @@ class BuyingHistoryVC: UIViewController, UICollectionViewDataSource, UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "historyCell", for: indexPath) as! ByuingHistoryViewCell
+        
+        cell.delegate = self
         
         cell.contentView.layer.cornerRadius = 10
         cell.layer.shadowColor = UIColor.gray.cgColor
@@ -70,9 +77,43 @@ class BuyingHistoryVC: UIViewController, UICollectionViewDataSource, UICollectio
         cell.price.text = "\(totalSum)"
         cell.imageVIew.image = UIImage(named: "img1")
         
+        
+        
+//        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(self.cellSwipedToLeft))
+//        swipeLeft.direction = UISwipeGestureRecognizer.Direction.left
+//        cell.addGestureRecognizer(swipeLeft)
+        
         return cell
         
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        
+        guard orientation == .right else { return nil }
+        
+        let deleteAction = SwipeAction(style: .destructive, title: "Удалить") { action, indexPath in
+               
+            let dict = buyingHistoryInfo[indexPath.row] as! NSDictionary
+            let id = dict["id"] as! Int
+            debug_print(message: "here is a history id", object: id)
+            
+           }
+        
+        
+        return [deleteAction]
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .border
+        return options
+    }
+    
+//    @objc func cellSwipedToLeft(){
+//        print("swiped left")
+//    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
