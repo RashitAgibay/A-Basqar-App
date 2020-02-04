@@ -58,6 +58,9 @@ class SelleingProdsFirstPageVC: UIViewController, UICollectionViewDataSource, UI
     
     
     override func viewDidLoad() {
+        
+        update_page_info()
+        
         super.viewDidLoad()
 
 //        print("here is the company id \(companyIdFromList)")
@@ -82,7 +85,7 @@ class SelleingProdsFirstPageVC: UIViewController, UICollectionViewDataSource, UI
         
         collectionView.refreshControl = refreshControl
         
-        update_page_info()
+        
 
         self.makeSaleButton.setTitle("0%", for: .normal)
         
@@ -321,6 +324,8 @@ class SelleingProdsFirstPageVC: UIViewController, UICollectionViewDataSource, UI
                 let requestOfApi = AF.request(encodeURL + "\(goodIdFromVC)/", method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
                 requestOfApi.responseJSON(completionHandler: {(response)-> Void in
 
+                    self.update_page_info()
+                    
         //                           print(response.request!)
         //                           print(response.result)
         //                           print(response.response)
@@ -361,6 +366,8 @@ class SelleingProdsFirstPageVC: UIViewController, UICollectionViewDataSource, UI
                 let requestOfApi = AF.request(encodeURL+"\(self.selected_good_id)/", method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
                 requestOfApi.responseJSON(completionHandler: {(response)-> Void in
                                
+                    self.update_page_info()
+                    
         //                       print(response.request!)
         //                       print(response.result)
         //                       print(response.response)
@@ -609,7 +616,9 @@ extension SelleingProdsFirstPageVC: SellingGoodsCellDelegate {
                     let requestOfApi = AF.request(encodeURL+"\(idForDeleting!)/", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
 
                            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                                                      
+                            
+                            self.update_page_info()
+                            
 //                                                      print(response.request)
 //                                                      print(response.result)
 //                                                      print(response.response)

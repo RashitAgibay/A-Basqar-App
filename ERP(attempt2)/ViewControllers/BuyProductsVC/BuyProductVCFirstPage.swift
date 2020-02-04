@@ -370,7 +370,9 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
             let encodeURL = buyingBasketURL
             let requestOfApi = AF.request(encodeURL+"\(self.selected_good_id)/", method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                           
+                
+                self.updatePageInfo()
+                
     //                       print(response.request!)
     //                       print(response.result)
     //                       print(response.response)
