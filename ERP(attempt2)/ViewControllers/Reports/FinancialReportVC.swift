@@ -198,7 +198,7 @@ extension FinancialReportVC {
             
             let encodeURL = moneyReportUrl
             
-            debug_print(message: "full url", object: encodeURL + "?start_date=\(startDateString)&end_date=\(endDateString)")
+//            debug_print(message: "full url", object: encodeURL + "?start_date=\(startDateString)&end_date=\(endDateString)")
             
             let requestOfApi = AF.request(encodeURL + "?start_date=\(startDateString)&end_date=\(endDateString)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
