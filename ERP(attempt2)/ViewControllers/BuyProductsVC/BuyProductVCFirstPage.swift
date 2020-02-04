@@ -60,7 +60,9 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
     
     override func viewDidLoad() {
         
+        updatePageInfo()
         super.viewDidLoad()
+        
         
 //        debug_print(message: "here is a bar code in BuyProductVCFirstPage's test function ", object: barcode_from_main)
         
@@ -102,7 +104,7 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
         
         
         self.totalPrice.text = "0"
-        updatePageInfo()
+        
         
         
         let companyNameDbValue = UserDefaults.standard.string(forKey: buyerCompanyNameInLocalDB)
@@ -326,6 +328,9 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
             let requestOfApi = AF.request(encodeURL + "\(goodIdFromVC)/", method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
 
+                
+                self.updatePageInfo()
+                
     //                           print(response.request!)
     //                           print(response.result)
     //                           print(response.response)
@@ -627,7 +632,8 @@ class BuyProductVCFirstPage: UIViewController, UICollectionViewDataSource, UICol
                         let requestOfApi = AF.request(encodeURL+"\(idForDeleting!)/", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
 
                                requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                                                          
+                                                  
+                                self.updatePageInfo()
     //                                                      print(response.request)
     //                                                      print(response.result)
     //                                                      print(response.response)
