@@ -96,7 +96,9 @@ class BuyingHistoryVC: UIViewController, UICollectionViewDataSource, UICollectio
                
             let dict = buyingHistoryInfo[indexPath.row] as! NSDictionary
             let id = dict["id"] as! Int
-            debug_print(message: "here is a history id", object: id)
+//            debug_print(message: "here is a history id", object: id)
+            self.delete_check_Api(checId: id)
+            self.collectionView.reloadData()
             
            }
         
@@ -104,12 +106,7 @@ class BuyingHistoryVC: UIViewController, UICollectionViewDataSource, UICollectio
         return [deleteAction]
     }
     
-    func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
-        var options = SwipeOptions()
-        options.expansionStyle = .destructive
-        options.transitionStyle = .border
-        return options
-    }
+    
     
 //    @objc func cellSwipedToLeft(){
 //        print("swiped left")
@@ -216,6 +213,66 @@ extension BuyingHistoryVC {
             
         }
         
+        
+    }
+    
+    func delete_check_Api(checId: Int) {
+        
+        do {
+            reacibility = try Reachability.init()
+        }
+        
+        catch {
+        
+        }
+        
+        if ((reacibility!.connection) != .unavailable){
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenForUserStandart) as! String
+            
+            let headers: HTTPHeaders = [
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+            let encodeURL = buyingHistoryUrl
+            
+            let requestOfApi = AF.request(encodeURL+"\(checId)/", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                
+                self.getHistoryListApi()
+                self.collectionView.reloadData()
+                                
+    //                            print(response.request)
+    //                            print(response.result)
+    //                            print(response.response)
+                
+                switch response.result {
+                
+                case .success(let payload):
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    if let x = payload as? Dictionary<String,AnyObject> {
+                    }
+                    
+                    else {
+                    
+                    }
+                
+                case .failure(let error):
+                    print(error)
+                    
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+                }
+            })
+        }
+        
+        else {
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
     }
     
     func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {

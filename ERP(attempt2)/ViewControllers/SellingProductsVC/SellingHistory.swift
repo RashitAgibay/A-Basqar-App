@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class SellingHistory: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
+class SellingHistory: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, SwipeCollectionViewCellDelegate  {
 
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -31,6 +32,8 @@ class SellingHistory: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "historyCell", for: indexPath) as! ByuingHistoryViewCell
+        
+        cell.delegate = self
         
         cell.contentView.layer.cornerRadius = 10
         cell.layer.shadowColor = UIColor.gray.cgColor
@@ -72,6 +75,25 @@ class SellingHistory: UIViewController, UICollectionViewDataSource, UICollection
         performSegue(withIdentifier: "sellItem", sender: self)
         
        }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+            
+            guard orientation == .right else { return nil }
+            
+            let deleteAction = SwipeAction(style: .destructive, title: "Удалить") { action, indexPath in
+                   
+                let oneHistory = self.category_list[indexPath.row] as! NSDictionary
+                let id = oneHistory["id"] as! Int
+    //            debug_print(message: "here is a history id", object: id)
+                self.delete_check_Api(checId: id)
+                self.collectionView.reloadData()
+                
+               }
+            
+            
+            return [deleteAction]
+        }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "sellItem" {
@@ -165,6 +187,65 @@ extension SellingHistory {
         
         
         
+    }
+    
+    func delete_check_Api(checId: Int) {
+        
+        do {
+            reacibility = try Reachability.init()
+        }
+        
+        catch {
+        
+        }
+        
+        if ((reacibility!.connection) != .unavailable){
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenForUserStandart) as! String
+            
+            let headers: HTTPHeaders = [
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+            let encodeURL = sellingHistoryUrl
+            
+            let requestOfApi = AF.request(encodeURL+"\(checId)/", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                
+                self.getHistoryListApi()
+                self.collectionView.reloadData()
+                                
+    //                            print(response.request)
+    //                            print(response.result)
+    //                            print(response.response)
+                
+                switch response.result {
+                
+                case .success(let payload):
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    if let x = payload as? Dictionary<String,AnyObject> {
+                    }
+                    
+                    else {
+                    
+                    }
+                
+                case .failure(let error):
+                    print(error)
+                    
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+                }
+            })
+        }
+        
+        else {
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
     }
     
     func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
