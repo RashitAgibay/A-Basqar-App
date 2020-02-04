@@ -199,22 +199,7 @@ extension SecondPage {
                                 
                                 self.collectionView.reloadData()
                                 
-//                                print("here is a: \(self.reversed_info_array)")
-//                                let last_element = self.reversed_history_list[0] as! NSDictionary
-//
-//                                self.checkName = last_element["history_name"] as! String
-//                                self.historyId = last_element["id"] as! Int
-//                                self.date = last_element["add_time"] as! String
-//                                self.factSum = last_element["sum"] as! Int
-//
-//                                let company = last_element["company"] as! NSDictionary
-//
-//                                self.companyName = company["company_name"] as! String
 
-                              
-                                
-    //                            print("here is the \(self.reversed_history_list)")
-    //                            print("here os the first elemtn \(self.reversed_history_list[0])")
                             }
                         case .failure(let error):
                             print(error)
@@ -261,11 +246,12 @@ extension SecondPage {
                         
                         requestOfApi.responseJSON(completionHandler: {(response)-> Void in
                             
+                            self.get_CheckList_Api()
                             self.collectionView.reloadData()
                             
-                            print(response.request)
-                            print(response.result)
-                            print(response.response)
+//                            print(response.request)
+//                            print(response.result)
+//                            print(response.response)
                             
                             switch response.result {
 

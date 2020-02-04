@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-class OutcomeKassaSecondPageVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
+class OutcomeKassaSecondPageVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, SwipeCollectionViewCellDelegate  {
 
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -48,6 +49,8 @@ class OutcomeKassaSecondPageVC: UIViewController, UICollectionViewDataSource, UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "incomeCell", for: indexPath) as! IncomeKassaCheckCell
+        
+        cell.delegate = self
         
         cell.contentView.layer.cornerRadius = 10
         cell.layer.shadowColor = UIColor.gray.cgColor
@@ -95,6 +98,24 @@ class OutcomeKassaSecondPageVC: UIViewController, UICollectionViewDataSource, UI
         return cell
         
     }
+    
+    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+               
+            guard orientation == .right else { return nil }
+            
+            let deleteAction = SwipeAction(style: .destructive, title: "Удалить") { action, indexPath in
+                
+                let check = self.reversed_info_array[indexPath.row] as! NSDictionary
+                let check_id = check["id"] as! Int
+    //            debug_print(message: "here is a check id", object: check_id)
+                
+                self.delete_check_Api(checId: check_id)
+                self.collectionView.reloadData()
+               }
+            
+            
+            return [deleteAction]
+           }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
@@ -220,6 +241,74 @@ extension OutcomeKassaSecondPageVC {
                 }
                 
             }
+    
+    func delete_check_Api(checId: Int) {
+                
+                        do {
+                            reacibility = try Reachability.init()
+                            
+                        }
+                        catch {
+                            
+                        }
+                        if ((reacibility!.connection) != .unavailable){
+                            MBProgressHUD.showAdded(to: self.view, animated: true)
+                            
+                            //MARK: - Токенді optional түрден String типіне алып келу керек, әйтпесе токен дұрыс жіберілмейді.
+                            let token = UserDefaults.standard.string(forKey: userTokenForUserStandart) as! String
+                            
+                            let headers: HTTPHeaders = [
+                                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                                "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+                            ]
+                            
+                            let encodeURL = buyingChecsUrl
+                            
+                            let requestOfApi = AF.request(encodeURL+"\(checId)/", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+                            
+                            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                                
+                                self.get_CheckList_Api()
+                                self.collectionView.reloadData()
+                                
+    //                            print(response.request)
+    //                            print(response.result)
+    //                            print(response.response)
+                                
+                                switch response.result {
+
+                                case .success(let payload):
+                                    MBProgressHUD.hide(for: self.view, animated: true)
+
+                                    if let x = payload as? Dictionary<String,AnyObject> {
+    //                                    print(x)
+                                        
+
+                                    }
+
+                                    else {
+                                        
+    //                                    let resultValue = payload as! NSArray
+                                        
+                                    }
+                                case .failure(let error):
+                                    print(error)
+                                    MBProgressHUD.hide(for: self.view, animated: true)
+                                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+
+                                }
+
+                            })
+                            
+                        }
+                        else {
+                            //print("internet is not working")
+                            MBProgressHUD.hide(for: self.view, animated: true)
+                            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+                            
+                        }
+                        
+                    }
 }
 
 
