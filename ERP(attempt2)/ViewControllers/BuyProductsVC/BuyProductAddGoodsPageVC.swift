@@ -75,7 +75,7 @@ class BuyProductAddGoodsPageVC: UIViewController, UICollectionViewDelegate, UICo
         let importPrice = good["import_price"] as! Int
         let goods = good["goods"] as! NSDictionary
         let goodName = goods["name"] as! String
-        let goodAmount = goods["goods_amount"] as! Int
+        let goodAmount = good["nums"] as! Int
         let catDict = goods["category"] as! NSDictionary
         let catId = catDict["id"] as! Int
         let goodImageUrl = goods["goods_image"] as! String
