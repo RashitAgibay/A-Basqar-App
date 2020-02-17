@@ -62,26 +62,33 @@ class MenuViewController: UIViewController {
         let tapGestureForProfileCard = UITapGestureRecognizer(target: self, action: #selector(tapProfileCard))
         cardView9.addGestureRecognizer(tapGestureForProfileCard)
         
-        cardView10.isUserInteractionEnabled = true
-        let tapGestureForAddingProductCard = UITapGestureRecognizer(target: self, action: #selector(tapAddProductCard))
-        cardView10.addGestureRecognizer(tapGestureForAddingProductCard)
+//        cardView10.isUserInteractionEnabled = true
+//        let tapGestureForAddingProductCard = UITapGestureRecognizer(target: self, action: #selector(tapAddProductCard))
+//        cardView10.addGestureRecognizer(tapGestureForAddingProductCard)
         
         
         // MARK: - (2)
         var cardViews: Set<UIView> = []
         cardViews.insert(cardView1)
-        cardViews.insert(cardView2)
         cardViews.insert(cardView3)
         cardViews.insert(cardView4)
-        cardViews.insert(cardView5)
         cardViews.insert(cardView6)
-        cardViews.insert(cardView7)
         cardViews.insert(cardView8)
         cardViews.insert(cardView9)
-        cardViews.insert(cardView10)
+        
+        
+        
+        
+        var unusableCards: Set<UIView> = []
+        
+        unusableCards.insert(cardView2)
+        unusableCards.insert(cardView5)
+        unusableCards.insert(cardView7)
+        unusableCards.insert(cardView10)
         
         
         makeCardStandart(someCardViews: cardViews)
+        makeUnsebleCardStandart(someCardViews: unusableCards)
         
     }
    
@@ -128,6 +135,14 @@ class MenuViewController: UIViewController {
     func makeCardStandart(someCardViews: Set<UIView>){
         for someCardView in someCardViews {
             someCardView.layer.backgroundColor = UIColor.white.cgColor
+            someCardView.layer.cornerRadius = 10
+            someCardView.dropShadow()
+        }
+        
+    }
+    
+    func makeUnsebleCardStandart(someCardViews: Set<UIView>){
+        for someCardView in someCardViews {
             someCardView.layer.cornerRadius = 10
             someCardView.dropShadow()
         }

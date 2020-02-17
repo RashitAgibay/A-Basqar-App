@@ -64,7 +64,7 @@ class FinancialReportVC: UIViewController, UICollectionViewDataSource, UICollect
         
         let date = Date()
         startDate = date
-        startDateMinusOneDay = Calendar.current.date(byAdding: .day, value: -1, to: startDate)!
+        startDateMinusOneDay = Calendar.current.date(byAdding: .day, value: 0, to: startDate)!
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -97,7 +97,7 @@ class FinancialReportVC: UIViewController, UICollectionViewDataSource, UICollect
         startTextField.text = formatter.string(from: datePicker!.date)
         
         startDate = datePicker!.date
-        startDateMinusOneDay = Calendar.current.date(byAdding: .day, value: -1, to: startDate)!
+        startDateMinusOneDay = Calendar.current.date(byAdding: .day, value: 0, to: startDate)!
         startDateString = formatter.string(from: startDateMinusOneDay)
         
     }
