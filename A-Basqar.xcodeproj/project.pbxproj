@@ -1583,6 +1583,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = kz.dalasoft.ERP;
 				PRODUCT_NAME = "A-Basqar";
 				SWIFT_OBJC_BRIDGING_HEADER = "ERP(attempt2)/Libraries/MBProgressHUD/ERP(attempt2)-Bridging-Header.h";
@@ -1606,6 +1607,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = kz.dalasoft.ERP;
 				PRODUCT_NAME = "A-Basqar";
 				SWIFT_OBJC_BRIDGING_HEADER = "ERP(attempt2)/Libraries/MBProgressHUD/ERP(attempt2)-Bridging-Header.h";
