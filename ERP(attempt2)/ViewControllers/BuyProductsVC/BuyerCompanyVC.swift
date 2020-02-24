@@ -22,15 +22,29 @@ class BuyerCompanyVC: UIViewController, UICollectionViewDataSource, UICollection
     
     var dict = ["companyId": 0]
     
+ 
     
     @IBOutlet weak var collecionView: UICollectionView!
     
 
+    let refreshControl: UIRefreshControl = {
+         
+         let refControl = UIRefreshControl()
+         refControl.addTarget(self, action: #selector(refreshData(sender:)), for: .valueChanged)
+         return refControl
+        }()
+     
+     @objc private func refreshData(sender: UIRefreshControl){
+     GetBuyerCompaniesApi()
+     sender.endRefreshing()
+     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        collecionView.refreshControl = refreshControl
+        
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         }

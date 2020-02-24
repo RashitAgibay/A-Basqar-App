@@ -2399,7 +2399,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecH-GI-T18">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecH-GI-T18">
                                                     <rect key="frame" x="255" y="2" width="80" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="76A-Dr-vv7"/>
@@ -3775,7 +3775,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="at0-AW-jWI">
+                                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="at0-AW-jWI">
                                                     <rect key="frame" x="255" y="2" width="80" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="gt2-qH-mve"/>
@@ -7338,11 +7338,12 @@
         <image name="trash.fill" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="a1l-Rk-hPg"/>
         <segue reference="yeI-iW-AJj"/>
         <segue reference="FoC-7e-k4T"/>
         <segue reference="cV1-SB-D9k"/>
         <segue reference="7YZ-1T-eGf"/>
-        <segue reference="d2k-id-fBV"/>
+        <segue reference="O3q-13-Qt3"/>
         <segue reference="WvY-r6-i5B"/>
         <segue reference="fjk-sw-Ffy"/>
         <segue reference="aqz-3w-lgT"/>

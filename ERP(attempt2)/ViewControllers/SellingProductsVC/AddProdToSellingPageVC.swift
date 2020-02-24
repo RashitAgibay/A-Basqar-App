@@ -25,9 +25,23 @@ class AddProdToSellingPageVC: UIViewController, UICollectionViewDataSource, UICo
     var companyNameInList: String = "Покупатель..."
     var companyID: Int = 0
     
+    
+    let refreshControl: UIRefreshControl = {
+        
+        let refControl = UIRefreshControl()
+        refControl.addTarget(self, action: #selector(refreshData(sender:)), for: .valueChanged)
+        return refControl
+       }()
+    
+    @objc private func refreshData(sender: UIRefreshControl){
+    GetBuyerCompaniesApi()
+    sender.endRefreshing()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        collectionView.refreshControl = refreshControl
         GetBuyerCompaniesApi()
         
     }
