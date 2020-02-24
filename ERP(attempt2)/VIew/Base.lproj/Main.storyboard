@@ -3995,14 +3995,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lxL-8e-HdB">
                                 <rect key="frame" x="20" y="214" width="335" height="190"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ИИН..." textAlignment="natural" minimumFontSize="17" background="Line_for_TextField" translatesAutoresizingMaskIntoConstraints="NO" id="adR-0e-Nxg">
-                                        <rect key="frame" x="10" y="30" width="315" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="3ka-b9-fpR"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Номер телефона..." textAlignment="natural" minimumFontSize="17" background="Line_for_TextField" translatesAutoresizingMaskIntoConstraints="NO" id="oHE-Ex-d5h">
                                         <rect key="frame" x="10" y="80" width="315" height="40"/>
                                         <constraints>
@@ -4012,10 +4004,17 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название..." textAlignment="natural" minimumFontSize="17" background="Line_for_TextField" translatesAutoresizingMaskIntoConstraints="NO" id="GsN-90-6rY">
+                                        <rect key="frame" x="10" y="30" width="315" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="FMs-3m-kqt"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ИИН..." textAlignment="natural" minimumFontSize="17" background="Line_for_TextField" translatesAutoresizingMaskIntoConstraints="NO" id="adR-0e-Nxg">
                                         <rect key="frame" x="10" y="130" width="315" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Rht-7c-h7q"/>
-                                            <constraint firstAttribute="height" constant="40" id="vqe-vx-iZv"/>
+                                            <constraint firstAttribute="height" constant="40" id="sXe-24-hdc"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -4023,16 +4022,16 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="GsN-90-6rY" secondAttribute="bottom" constant="20" id="7dU-gI-bUi"/>
-                                    <constraint firstItem="oHE-Ex-d5h" firstAttribute="top" secondItem="adR-0e-Nxg" secondAttribute="bottom" constant="10" id="Jkk-jw-eA9"/>
+                                    <constraint firstAttribute="trailing" secondItem="adR-0e-Nxg" secondAttribute="trailing" constant="10" id="1fd-WR-z5H"/>
+                                    <constraint firstItem="GsN-90-6rY" firstAttribute="top" secondItem="lxL-8e-HdB" secondAttribute="top" constant="30" id="HP7-2b-Vpw"/>
+                                    <constraint firstAttribute="trailing" secondItem="GsN-90-6rY" secondAttribute="trailing" constant="10" id="Hsg-uc-LtI"/>
                                     <constraint firstItem="oHE-Ex-d5h" firstAttribute="leading" secondItem="lxL-8e-HdB" secondAttribute="leading" constant="10" id="Mfs-Zt-7TK"/>
-                                    <constraint firstAttribute="trailing" secondItem="adR-0e-Nxg" secondAttribute="trailing" constant="10" id="OZq-2n-f98"/>
-                                    <constraint firstItem="adR-0e-Nxg" firstAttribute="top" secondItem="lxL-8e-HdB" secondAttribute="top" constant="30" id="Oq1-5b-c44"/>
-                                    <constraint firstItem="GsN-90-6rY" firstAttribute="top" secondItem="oHE-Ex-d5h" secondAttribute="bottom" constant="10" id="PsG-zT-5aZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="GsN-90-6rY" secondAttribute="trailing" constant="10" id="dmX-uu-F5P"/>
+                                    <constraint firstItem="adR-0e-Nxg" firstAttribute="leading" secondItem="lxL-8e-HdB" secondAttribute="leading" constant="10" id="QLB-Ss-cGH"/>
+                                    <constraint firstItem="adR-0e-Nxg" firstAttribute="top" secondItem="oHE-Ex-d5h" secondAttribute="bottom" constant="10" id="TCN-vS-wg6"/>
                                     <constraint firstAttribute="trailing" secondItem="oHE-Ex-d5h" secondAttribute="trailing" constant="10" id="gUI-We-98B"/>
-                                    <constraint firstItem="GsN-90-6rY" firstAttribute="leading" secondItem="lxL-8e-HdB" secondAttribute="leading" constant="10" id="kDN-hU-Zbq"/>
-                                    <constraint firstItem="adR-0e-Nxg" firstAttribute="leading" secondItem="lxL-8e-HdB" secondAttribute="leading" constant="10" id="kaj-Kt-FEp"/>
+                                    <constraint firstItem="GsN-90-6rY" firstAttribute="leading" secondItem="lxL-8e-HdB" secondAttribute="leading" constant="10" id="rB0-Tc-4Xz"/>
+                                    <constraint firstItem="oHE-Ex-d5h" firstAttribute="top" secondItem="GsN-90-6rY" secondAttribute="bottom" constant="10" id="t6W-0D-euD"/>
+                                    <constraint firstAttribute="bottom" secondItem="adR-0e-Nxg" secondAttribute="bottom" constant="20" id="tsw-9C-zpM"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AFj-0Z-wMn">
@@ -4080,11 +4079,12 @@
                         <outlet property="iinTextView" destination="adR-0e-Nxg" id="Zax-k5-Apn"/>
                         <outlet property="nameOfCompanyTextView" destination="GsN-90-6rY" id="Te8-tN-C5A"/>
                         <outlet property="phoneTextView" destination="oHE-Ex-d5h" id="F2Q-SZ-66p"/>
+                        <segue destination="qtJ-53-iaj" kind="presentation" identifier="backtotothesellerlist" modalPresentationStyle="fullScreen" id="Vmc-Zi-2jN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9aU-xf-p39" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16404" y="5797.1514242878566"/>
+            <point key="canvasLocation" x="14343" y="5815"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0Zh-Rb-GnS">
@@ -4122,14 +4122,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ET4-Nk-BGD">
                                 <rect key="frame" x="20" y="214" width="335" height="190"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ИИН..." textAlignment="natural" minimumFontSize="17" background="Line_for_TextField" translatesAutoresizingMaskIntoConstraints="NO" id="aFd-zc-pbO">
-                                        <rect key="frame" x="10" y="30" width="315" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="OkO-Y1-nw7"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Номер телефона..." textAlignment="natural" minimumFontSize="17" background="Line_for_TextField" translatesAutoresizingMaskIntoConstraints="NO" id="0Dy-ws-U7q">
                                         <rect key="frame" x="10" y="80" width="315" height="40"/>
                                         <constraints>
@@ -4139,10 +4131,17 @@
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название..." textAlignment="natural" minimumFontSize="17" background="Line_for_TextField" translatesAutoresizingMaskIntoConstraints="NO" id="s2O-Wk-rCx">
+                                        <rect key="frame" x="10" y="30" width="315" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="aFD-E8-UnW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ИИН..." textAlignment="natural" minimumFontSize="17" background="Line_for_TextField" translatesAutoresizingMaskIntoConstraints="NO" id="aFd-zc-pbO">
                                         <rect key="frame" x="10" y="130" width="315" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="1pr-h9-OFl"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="NPl-73-diO"/>
+                                            <constraint firstAttribute="height" constant="40" id="Jc7-lf-JRJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -4150,16 +4149,16 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="s2O-Wk-rCx" secondAttribute="bottom" constant="20" id="Bi5-5a-RqH"/>
-                                    <constraint firstAttribute="trailing" secondItem="aFd-zc-pbO" secondAttribute="trailing" constant="10" id="L9R-2J-VaA"/>
+                                    <constraint firstAttribute="trailing" secondItem="aFd-zc-pbO" secondAttribute="trailing" constant="10" id="16c-9n-sBr"/>
+                                    <constraint firstItem="s2O-Wk-rCx" firstAttribute="top" secondItem="ET4-Nk-BGD" secondAttribute="top" constant="30" id="6AC-KO-uat"/>
+                                    <constraint firstItem="aFd-zc-pbO" firstAttribute="top" secondItem="0Dy-ws-U7q" secondAttribute="bottom" constant="10" id="8bd-En-n4z"/>
+                                    <constraint firstAttribute="trailing" secondItem="s2O-Wk-rCx" secondAttribute="trailing" constant="10" id="EjU-bk-6i6"/>
+                                    <constraint firstItem="0Dy-ws-U7q" firstAttribute="top" secondItem="s2O-Wk-rCx" secondAttribute="bottom" constant="10" id="MSh-CF-irF"/>
+                                    <constraint firstAttribute="bottom" secondItem="aFd-zc-pbO" secondAttribute="bottom" constant="20" id="O4O-EW-bnf"/>
+                                    <constraint firstItem="s2O-Wk-rCx" firstAttribute="leading" secondItem="ET4-Nk-BGD" secondAttribute="leading" constant="10" id="V27-5F-9um"/>
                                     <constraint firstItem="0Dy-ws-U7q" firstAttribute="leading" secondItem="ET4-Nk-BGD" secondAttribute="leading" constant="10" id="WMD-Ta-WYT"/>
-                                    <constraint firstAttribute="trailing" secondItem="s2O-Wk-rCx" secondAttribute="trailing" constant="10" id="YQW-8L-A81"/>
                                     <constraint firstAttribute="trailing" secondItem="0Dy-ws-U7q" secondAttribute="trailing" constant="10" id="cW3-Zd-lbh"/>
-                                    <constraint firstItem="aFd-zc-pbO" firstAttribute="top" secondItem="ET4-Nk-BGD" secondAttribute="top" constant="30" id="dSm-eX-LDi"/>
-                                    <constraint firstItem="aFd-zc-pbO" firstAttribute="leading" secondItem="ET4-Nk-BGD" secondAttribute="leading" constant="10" id="fCi-hM-xni"/>
-                                    <constraint firstItem="0Dy-ws-U7q" firstAttribute="top" secondItem="aFd-zc-pbO" secondAttribute="bottom" constant="10" id="gjb-z3-FLQ"/>
-                                    <constraint firstItem="s2O-Wk-rCx" firstAttribute="top" secondItem="0Dy-ws-U7q" secondAttribute="bottom" constant="10" id="v1E-rl-Ild"/>
-                                    <constraint firstItem="s2O-Wk-rCx" firstAttribute="leading" secondItem="ET4-Nk-BGD" secondAttribute="leading" constant="10" id="xbb-l6-VEV"/>
+                                    <constraint firstItem="aFd-zc-pbO" firstAttribute="leading" secondItem="ET4-Nk-BGD" secondAttribute="leading" constant="10" id="pAl-M4-EZw"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZLL-LJ-iLs">
