@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6x-bt-nCS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-553" y="-561"/>
+            <point key="canvasLocation" x="-801" y="-492"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="XXf-hd-ZKB">
@@ -230,31 +230,6 @@
                                     <constraint firstItem="pKa-KK-SL0" firstAttribute="leading" secondItem="z1t-IB-gm5" secondAttribute="leading" constant="10" id="xP8-CB-E6m"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="d7b-OA-4QU">
-                                <rect key="frame" x="23.5" y="385" width="328.5" height="30"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="У вас уже есть аккаунт?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hH-qN-IvR">
-                                        <rect key="frame" x="0.0" y="0.0" width="172.5" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="weP-NX-PHE">
-                                        <rect key="frame" x="179.5" y="0.0" width="149" height="30"/>
-                                        <state key="normal" title="Зарегистрироваться">
-                                            <color key="titleColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="clickSignInButton:" destination="Zs6-76-c2H" eventType="touchUpInside" id="ap6-tK-XjH"/>
-                                            <action selector="regisTrationButtonTap:" destination="hmw-aj-DSl" eventType="touchUpInside" id="wCv-Y9-a0u"/>
-                                            <segue destination="Zs6-76-c2H" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="2Iw-SY-tHQ"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="8hH-qN-IvR" firstAttribute="top" secondItem="d7b-OA-4QU" secondAttribute="top" id="ooF-mC-z7g"/>
-                                </constraints>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jlh-jI-WFv">
                                 <rect key="frame" x="20" y="340" width="335" height="45"/>
                                 <color key="backgroundColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -270,21 +245,6 @@
                                     <action selector="clickSignUpButton:" destination="Zs6-76-c2H" eventType="touchUpInside" id="huS-69-mXC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Arj-48-hTJ">
-                                <rect key="frame" x="239" y="295" width="116" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="lpa-hK-iKp"/>
-                                    <constraint firstAttribute="width" constant="116" id="noN-U1-ZfD"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <state key="normal" title="Забыли пароль?">
-                                    <color key="titleColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="forgetPasswordButton:" destination="hmw-aj-DSl" eventType="touchUpInside" id="0Zs-ea-JAB"/>
-                                    <segue destination="z9u-M2-WCU" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="B0i-x1-3MK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -293,14 +253,10 @@
                             <constraint firstItem="CXu-aU-1ne" firstAttribute="leading" secondItem="EJ5-Hx-wZB" secondAttribute="leading" constant="30" id="Qhj-WM-LAX"/>
                             <constraint firstItem="z1t-IB-gm5" firstAttribute="leading" secondItem="EJ5-Hx-wZB" secondAttribute="leading" constant="20" id="YEy-vN-SbH"/>
                             <constraint firstItem="z1t-IB-gm5" firstAttribute="top" secondItem="CXu-aU-1ne" secondAttribute="bottom" constant="10" id="ZoQ-iB-SR5"/>
-                            <constraint firstItem="EJ5-Hx-wZB" firstAttribute="trailing" secondItem="Arj-48-hTJ" secondAttribute="trailing" constant="20" id="a9H-IJ-sjq"/>
                             <constraint firstItem="EJ5-Hx-wZB" firstAttribute="trailing" secondItem="z1t-IB-gm5" secondAttribute="trailing" constant="20" id="aAb-1M-Iv8"/>
-                            <constraint firstItem="d7b-OA-4QU" firstAttribute="centerX" secondItem="xpQ-lZ-6O0" secondAttribute="centerX" id="ajT-nM-P66"/>
                             <constraint firstItem="EJ5-Hx-wZB" firstAttribute="trailing" secondItem="Jlh-jI-WFv" secondAttribute="trailing" constant="20" id="dWD-lD-LAF"/>
                             <constraint firstItem="CXu-aU-1ne" firstAttribute="top" secondItem="EJ5-Hx-wZB" secondAttribute="top" constant="100" id="eOx-zM-Rjw"/>
                             <constraint firstItem="Jlh-jI-WFv" firstAttribute="leading" secondItem="EJ5-Hx-wZB" secondAttribute="leading" constant="20" id="eno-CU-5G2"/>
-                            <constraint firstItem="d7b-OA-4QU" firstAttribute="top" secondItem="Jlh-jI-WFv" secondAttribute="bottom" id="n4h-3B-2dt"/>
-                            <constraint firstItem="Arj-48-hTJ" firstAttribute="top" secondItem="z1t-IB-gm5" secondAttribute="bottom" constant="5" id="ydx-C0-7w6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EJ5-Hx-wZB"/>
                     </view>
@@ -390,7 +346,7 @@
                         <viewLayoutGuide key="safeArea" id="cy8-XQ-PED"/>
                     </view>
                     <navigationItem key="navigationItem" id="qKw-Ae-B0F">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="Nyl-1T-zIc">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="Nyl-1T-zIc">
                             <color key="tintColor" red="0.65843504667282104" green="0.65854781866073608" blue="0.6584201455116272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="hmw-aj-DSl" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="gaJ-as-hhv"/>
@@ -515,7 +471,7 @@
                         <viewLayoutGuide key="safeArea" id="7Fp-mv-ncW"/>
                     </view>
                     <navigationItem key="navigationItem" id="deH-eS-eVI">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="IhO-p4-Gqq">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="IhO-p4-Gqq">
                             <color key="tintColor" red="0.65843504667282104" green="0.65854781866073608" blue="0.6584201455116272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="z9u-M2-WCU" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="49v-dH-tgm"/>
@@ -613,7 +569,7 @@
                         <viewLayoutGuide key="safeArea" id="yvw-Cz-chw"/>
                     </view>
                     <navigationItem key="navigationItem" id="vtG-dB-km1">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="Bmx-xt-ej9">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="Bmx-xt-ej9">
                             <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="8ri-lw-GGp" kind="presentation" modalPresentationStyle="fullScreen" id="4f7-8k-HY9"/>
@@ -711,13 +667,13 @@
                                                 <rect key="frame" x="142.5" y="95" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Перемещение" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6R-pE-AS7">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_2" translatesAutoresizingMaskIntoConstraints="NO" id="2vA-bZ-8IF">
-                                                        <rect key="frame" x="14" y="16" width="62" height="86"/>
+                                                        <rect key="frame" x="14" y="16" width="62" height="48"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -737,13 +693,13 @@
                                                 <rect key="frame" x="247.5" y="95" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Продажа" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAX-Ln-2Sz">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_3" translatesAutoresizingMaskIntoConstraints="NO" id="wqh-X6-CE5">
-                                                        <rect key="frame" x="16" y="12" width="58" height="95"/>
+                                                        <rect key="frame" x="16" y="12" width="58.000000000000014" height="57"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -763,10 +719,10 @@
                                                 <rect key="frame" x="37.5" y="95" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_1" translatesAutoresizingMaskIntoConstraints="NO" id="0Tt-bw-Ccf">
-                                                        <rect key="frame" x="12" y="8" width="66" height="96"/>
+                                                        <rect key="frame" x="12" y="8" width="66.000000000000014" height="58"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Поступление товаров" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUl-wb-F81">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -789,10 +745,10 @@
                                                 <rect key="frame" x="142.5" y="225" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_5" translatesAutoresizingMaskIntoConstraints="NO" id="vS3-8I-azN">
-                                                        <rect key="frame" x="18" y="10" width="54" height="92"/>
+                                                        <rect key="frame" x="18" y="10" width="54" height="54"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Заявки" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beU-0Y-fkw">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -815,10 +771,10 @@
                                                 <rect key="frame" x="247.5" y="225" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_6" translatesAutoresizingMaskIntoConstraints="NO" id="lbc-o0-5Py">
-                                                        <rect key="frame" x="16" y="10" width="58" height="89.5"/>
+                                                        <rect key="frame" x="16" y="10" width="58" height="49.5"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Касса, Расход" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTL-lX-IIQ">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="70" width="90" height="40"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -841,10 +797,10 @@
                                                 <rect key="frame" x="37.5" y="225" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_4" translatesAutoresizingMaskIntoConstraints="NO" id="HDQ-es-Y8v">
-                                                        <rect key="frame" x="18" y="8" width="54" height="92"/>
+                                                        <rect key="frame" x="18" y="8" width="54" height="54.5"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Касса, Приход" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zv-Qb-1AO">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72.5" width="90" height="37.5"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -867,13 +823,13 @@
                                                 <rect key="frame" x="142.5" y="355" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Отчеты" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjk-gq-oez">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_8" translatesAutoresizingMaskIntoConstraints="NO" id="yCg-9W-K8f">
-                                                        <rect key="frame" x="16" y="10" width="58" height="89"/>
+                                                        <rect key="frame" x="16" y="10" width="58" height="51"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -893,10 +849,10 @@
                                                 <rect key="frame" x="247.5" y="355" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_9" translatesAutoresizingMaskIntoConstraints="NO" id="G27-uc-YfO">
-                                                        <rect key="frame" x="18" y="10" width="54" height="91"/>
+                                                        <rect key="frame" x="18" y="10" width="54" height="53"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Профиль" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lug-qr-rSt">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -919,13 +875,13 @@
                                                 <rect key="frame" x="37.5" y="355" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Управление" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pa-qu-GNP">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="75" width="90" height="35"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_7" translatesAutoresizingMaskIntoConstraints="NO" id="5J4-3G-Ap6">
-                                                        <rect key="frame" x="16" y="10" width="58" height="92"/>
+                                                        <rect key="frame" x="16" y="10" width="58" height="57"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -945,13 +901,13 @@
                                                 <rect key="frame" x="142.5" y="485" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Добавить товар в базу" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eA-hw-mpD">
-                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="74" width="90" height="36"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_10" translatesAutoresizingMaskIntoConstraints="NO" id="pt2-hj-aGn">
-                                                        <rect key="frame" x="17" y="10" width="56" height="86.5"/>
+                                                        <rect key="frame" x="17" y="10" width="56" height="50.5"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1138,13 +1094,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="9DN-t6-nF8">
                         <leftBarButtonItems>
-                            <barButtonItem title="Item" image="house.fill" catalog="system" id="P4v-oh-0qK">
+                            <barButtonItem title="Item" image="home" id="P4v-oh-0qK">
                                 <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="7eV-d1-wlX" kind="presentation" modalPresentationStyle="fullScreen" id="qPs-r3-ISF"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="pNp-LE-XQq">
+                            <barButtonItem title="Item" image="search" id="pNp-LE-XQq">
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </barButtonItem>
                         </leftBarButtonItems>
@@ -1210,13 +1166,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="9Sa-pq-a53">
                         <leftBarButtonItems>
-                            <barButtonItem title="Item" image="house.fill" catalog="system" id="kEy-Cj-Grd">
+                            <barButtonItem title="Item" image="home" id="kEy-Cj-Grd">
                                 <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="7eV-d1-wlX" kind="presentation" modalPresentationStyle="fullScreen" id="H3Y-h8-ahJ"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="hTd-BV-lgb">
+                            <barButtonItem title="Item" image="search" id="hTd-BV-lgb">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="TIp-WN-lZg" kind="presentation" id="02h-Lv-OBQ"/>
@@ -1224,13 +1180,13 @@
                             </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="plus.circle" catalog="system" id="Gsn-MC-5Ak">
+                            <barButtonItem title="Item" image="more" id="Gsn-MC-5Ak">
                                 <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="2Ku-hZ-pfm" kind="presentation" modalPresentationStyle="fullScreen" id="3LV-1F-9HZ"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="barcode.viewfinder" catalog="system" id="9uB-fB-Xhn">
+                            <barButtonItem title="Item" image="scan" id="9uB-fB-Xhn">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="umP-X6-CYB" kind="presentation" id="N2e-hX-hby"/>
@@ -1272,7 +1228,8 @@
                         <viewLayoutGuide key="safeArea" id="Hlu-vp-ETH"/>
                     </view>
                     <navigationItem key="navigationItem" id="eyc-Br-iDB">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="fc1-dt-cQq">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="fc1-dt-cQq">
+                            <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="4Vd-0d-bQL" kind="presentation" modalPresentationStyle="fullScreen" id="XRE-q8-u8B"/>
                             </connections>
@@ -1293,46 +1250,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="porfile_page_default_icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="uVC-X5-eFQ">
-                                <rect key="frame" x="110" y="94" width="155" height="322"/>
+                                <rect key="frame" x="110" y="93.999999999999986" width="155" height="161.00000000000003"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ильяс Шомат" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlr-Mn-ohY">
-                                <rect key="frame" x="20" y="426" width="335" height="30"/>
+                                <rect key="frame" x="20" y="265" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер/логин:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhw-Dj-pL6">
-                                <rect key="frame" x="60" y="486" width="113" height="20"/>
+                                <rect key="frame" x="60" y="325" width="113" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mow-GW-gD0">
-                                <rect key="frame" x="60" y="516" width="84" height="20"/>
+                                <rect key="frame" x="60" y="355" width="84" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKk-Yl-biB">
-                                <rect key="frame" x="60" y="546" width="22" height="20"/>
+                                <rect key="frame" x="60" y="385" width="22" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Должность:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WI-s1-mNT">
-                                <rect key="frame" x="60" y="576" width="97" height="20"/>
+                                <rect key="frame" x="60" y="415" width="97" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ТОО &quot;Тағам&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHF-yB-X3x">
-                                <rect key="frame" x="181" y="516" width="97" height="20"/>
+                                <rect key="frame" x="181" y="355" width="97" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="132456789AA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aY-Tr-ZxL">
-                                <rect key="frame" x="182" y="546" width="105" height="20"/>
+                                <rect key="frame" x="182" y="385" width="105" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1372,13 +1329,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 708 954 65 58" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UV2-Mo-meg">
-                                <rect key="frame" x="181" y="486" width="124" height="20"/>
+                                <rect key="frame" x="181" y="325" width="124" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Управляющий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKo-fc-jCQ">
-                                <rect key="frame" x="181" y="576" width="107" height="20"/>
+                                <rect key="frame" x="181" y="415" width="107" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1419,13 +1376,13 @@
                         <viewLayoutGuide key="safeArea" id="vdq-LO-Ci9"/>
                     </view>
                     <navigationItem key="navigationItem" id="349-hf-rsv">
-                        <barButtonItem key="leftBarButtonItem" image="house.fill" catalog="system" id="Abt-Iy-Aew">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="Abt-Iy-Aew">
                             <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="7eV-d1-wlX" kind="presentation" modalPresentationStyle="fullScreen" id="Os0-Wi-rxL"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrowshape.turn.up.right.fill" catalog="system" id="y89-Cs-yvy">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="exit" id="y89-Cs-yvy">
                             <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="tappedLogoutButton:" destination="jEI-32-wnX" id="ecv-3l-5nD"/>
@@ -1537,7 +1494,7 @@
                         <viewLayoutGuide key="safeArea" id="g5w-2Y-DNy"/>
                     </view>
                     <navigationItem key="navigationItem" id="RhF-Dw-My4">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="TN0-5c-TbR">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="TN0-5c-TbR">
                             <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="o8t-yZ-BJZ" kind="presentation" modalPresentationStyle="fullScreen" id="tzo-M3-1D0"/>
@@ -1647,7 +1604,7 @@
                         <viewLayoutGuide key="safeArea" id="uke-9i-mNf"/>
                     </view>
                     <navigationItem key="navigationItem" id="EsV-TH-IYo">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="JLz-T4-rZk">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="JLz-T4-rZk">
                             <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="o8t-yZ-BJZ" kind="presentation" modalPresentationStyle="fullScreen" id="tFr-7S-Ir6"/>
@@ -2250,7 +2207,7 @@
                         <viewLayoutGuide key="safeArea" id="0bR-e5-ua0"/>
                     </view>
                     <navigationItem key="navigationItem" id="I82-NP-N8E">
-                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="B1W-1D-od4">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="B1W-1D-od4">
                             <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="Pkt-O0-D2i" kind="presentation" modalPresentationStyle="fullScreen" id="oRM-Rm-y9o"/>
@@ -2370,7 +2327,7 @@
                         <viewLayoutGuide key="safeArea" id="QX4-tm-WXp"/>
                     </view>
                     <navigationItem key="navigationItem" id="hvm-I8-9pY">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="AtS-9t-0bd">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="AtS-9t-0bd">
                             <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="2Ku-hZ-pfm" kind="presentation" modalPresentationStyle="fullScreen" id="fjk-sw-Ffy"/>
@@ -2494,13 +2451,13 @@
                         <viewLayoutGuide key="safeArea" id="WVP-FD-Xwv"/>
                     </view>
                     <navigationItem key="navigationItem" id="huZ-oY-6yI">
-                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="TPe-Zu-L4X">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="TPe-Zu-L4X">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="Pkt-O0-D2i" kind="presentation" modalPresentationStyle="fullScreen" id="owU-Rv-egH"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle.fill" catalog="system" id="7Rp-hN-rwn">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="more" id="7Rp-hN-rwn">
                             <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="w74-GD-Tdl" kind="presentation" modalPresentationStyle="fullScreen" id="HUS-pL-GuA"/>
@@ -2560,7 +2517,7 @@
                         <viewLayoutGuide key="safeArea" id="xSx-Rn-yd3"/>
                     </view>
                     <navigationItem key="navigationItem" id="2pm-vw-fOm">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="Gxn-TY-duA">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="Gxn-TY-duA">
                             <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="Pkt-O0-D2i" kind="presentation" modalPresentationStyle="fullScreen" id="PVJ-KZ-YBo"/>
@@ -2664,7 +2621,7 @@
                         <viewLayoutGuide key="safeArea" id="x45-9D-63D"/>
                     </view>
                     <navigationItem key="navigationItem" id="CdH-ez-9Lm">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="w3n-mx-R5m">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="w3n-mx-R5m">
                             <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="JCY-nZ-FyJ" kind="presentation" modalPresentationStyle="fullScreen" id="WvY-r6-i5B"/>
@@ -2792,7 +2749,7 @@
                         <viewLayoutGuide key="safeArea" id="Zre-9c-roP"/>
                     </view>
                     <navigationItem key="navigationItem" id="oFd-dz-xVh">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="ba1-XV-WfY">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="ba1-XV-WfY">
                             <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="JCY-nZ-FyJ" kind="presentation" modalPresentationStyle="fullScreen" id="dmo-T6-GN5"/>
@@ -2946,7 +2903,7 @@
                                     <outlet property="delegate" destination="Hrb-ms-Eg7" id="g6F-5S-5kZ"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkH-xa-vxq">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CkH-xa-vxq">
                                 <rect key="frame" x="20" y="592" width="335" height="45"/>
                                 <color key="backgroundColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -3015,7 +2972,7 @@
                         <viewLayoutGuide key="safeArea" id="KhF-Jw-U5y"/>
                     </view>
                     <navigationItem key="navigationItem" id="U8c-Tt-seE">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="WAg-eb-RxB">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="WAg-eb-RxB">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="tappedBackButton:" destination="Hrb-ms-Eg7" id="itp-mR-hId"/>
@@ -3212,7 +3169,7 @@
                         <viewLayoutGuide key="safeArea" id="PRh-1F-BGd"/>
                     </view>
                     <navigationItem key="navigationItem" id="g8W-vM-tcc">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="KRN-wY-EJ2">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="KRN-wY-EJ2">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="Pkt-O0-D2i" kind="presentation" modalPresentationStyle="fullScreen" id="4hv-c3-kJN"/>
@@ -3328,13 +3285,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="Kqd-e8-MNr">
                         <leftBarButtonItems>
-                            <barButtonItem title="Item" image="house.fill" catalog="system" id="8KX-n5-a0e">
+                            <barButtonItem title="Item" image="home" id="8KX-n5-a0e">
                                 <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="7eV-d1-wlX" kind="presentation" modalPresentationStyle="fullScreen" id="qJ9-OL-G5u"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="o8J-hH-jbz">
+                            <barButtonItem title="Item" image="search" id="o8J-hH-jbz">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="p9d-ON-11C" kind="presentation" id="LBC-ds-SiJ"/>
@@ -3342,13 +3299,13 @@
                             </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
-                            <barButtonItem title="Item" image="plus.circle" catalog="system" id="Xrt-1z-yVU">
+                            <barButtonItem title="Item" image="more" id="Xrt-1z-yVU">
                                 <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="CW8-pe-SBY" kind="presentation" modalPresentationStyle="fullScreen" id="s1g-76-fTZ"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Item" image="barcode.viewfinder" catalog="system" id="cnj-Cd-tkc">
+                            <barButtonItem title="Item" image="scan" id="cnj-Cd-tkc">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="fd1-Pp-Tqp" kind="presentation" id="K0a-Ay-vWA"/>
@@ -3869,13 +3826,13 @@
                         <viewLayoutGuide key="safeArea" id="6et-SJ-Rqb"/>
                     </view>
                     <navigationItem key="navigationItem" id="gUj-sl-oSz">
-                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="c40-N4-g78">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="c40-N4-g78">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="Fpv-eL-Ygm" kind="presentation" identifier="tomainpagefrombuyerlist" modalPresentationStyle="fullScreen" id="O3q-13-Qt3"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle.fill" catalog="system" id="nVB-AP-NoL">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="more" id="nVB-AP-NoL">
                             <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="xub-Mt-V1S" kind="presentation" modalPresentationStyle="fullScreen" id="dGa-mV-PnI"/>
@@ -3985,7 +3942,7 @@
                         <viewLayoutGuide key="safeArea" id="t2L-Xb-Qi6"/>
                     </view>
                     <navigationItem key="navigationItem" id="Fs9-d7-Ucb">
-                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="byy-xs-2CK">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="byy-xs-2CK">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="Fpv-eL-Ygm" kind="presentation" modalPresentationStyle="fullScreen" id="bsG-Vf-CQs"/>
@@ -4109,7 +4066,7 @@
                         <viewLayoutGuide key="safeArea" id="3cZ-Z0-xrC"/>
                     </view>
                     <navigationItem key="navigationItem" id="HEy-9r-L43">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="Cku-jc-6LQ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="Cku-jc-6LQ">
                             <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="qtJ-53-iaj" kind="presentation" modalPresentationStyle="fullScreen" id="EFO-Zx-mPb"/>
@@ -4236,7 +4193,7 @@
                         <viewLayoutGuide key="safeArea" id="Udx-l0-44V"/>
                     </view>
                     <navigationItem key="navigationItem" id="O69-yO-92z">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="Mv5-jO-X4s">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="Mv5-jO-X4s">
                             <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="qtJ-53-iaj" kind="presentation" modalPresentationStyle="fullScreen" id="7YZ-1T-eGf"/>
@@ -4441,7 +4398,7 @@
                         <viewLayoutGuide key="safeArea" id="lL9-SP-TPF"/>
                     </view>
                     <navigationItem key="navigationItem" id="fUf-XO-rTJ">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="OTD-CK-l5y">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="OTD-CK-l5y">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="Fpv-eL-Ygm" kind="presentation" modalPresentationStyle="fullScreen" id="d2k-id-fBV"/>
@@ -4600,7 +4557,7 @@
                                     <outlet property="delegate" destination="bzm-Fa-klt" id="1az-2P-I0L"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czQ-4v-tFO">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czQ-4v-tFO">
                                 <rect key="frame" x="20" y="592" width="335" height="45"/>
                                 <color key="backgroundColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -4666,7 +4623,7 @@
                         <viewLayoutGuide key="safeArea" id="YOU-2U-uL2"/>
                     </view>
                     <navigationItem key="navigationItem" id="VeG-Tg-E9v">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="ZLr-dD-5PI">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="ZLr-dD-5PI">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="tappedBackButton:" destination="bzm-Fa-klt" id="ee7-Hz-PhU"/>
@@ -4757,14 +4714,11 @@
                         <viewLayoutGuide key="safeArea" id="2Tq-d3-bgg"/>
                     </view>
                     <navigationItem key="navigationItem" id="3cr-8M-ogh">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="house.fill" catalog="system" id="H9Q-Cl-DmZ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="H9Q-Cl-DmZ">
                             <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="7eV-d1-wlX" kind="presentation" modalPresentationStyle="fullScreen" id="YdE-v3-2o7"/>
                             </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus.circle" catalog="system" id="h0g-NY-L5z">
-                            <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
@@ -5295,7 +5249,7 @@
                         <viewLayoutGuide key="safeArea" id="3L8-cJ-X1p"/>
                     </view>
                     <navigationItem key="navigationItem" id="8R0-kC-gZf">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="wJo-oI-Vxi">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="wJo-oI-Vxi">
                             <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="tappedBackButton:" destination="OWW-dF-dqK" id="Xyr-cy-5sh"/>
@@ -5389,7 +5343,7 @@
                         <viewLayoutGuide key="safeArea" id="WpV-jD-9Vw"/>
                     </view>
                     <navigationItem key="navigationItem" id="9ha-ou-a49">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="house.fill" catalog="system" id="E8U-K7-tjo">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="E8U-K7-tjo">
                             <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="7eV-d1-wlX" kind="presentation" modalPresentationStyle="fullScreen" id="zIf-KI-1SE"/>
@@ -5925,7 +5879,7 @@
                         <viewLayoutGuide key="safeArea" id="er1-nc-sCu"/>
                     </view>
                     <navigationItem key="navigationItem" id="3Aq-9e-N7p">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="Dlh-cY-hhK">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="Dlh-cY-hhK">
                             <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="tappedBackButton:" destination="u6r-uo-CLs" id="xH1-H7-AGg"/>
@@ -6019,7 +5973,7 @@
                         <viewLayoutGuide key="safeArea" id="2WV-5t-9NF"/>
                     </view>
                     <navigationItem key="navigationItem" id="SfA-P4-AEv">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="house.fill" catalog="system" id="ouF-lf-tlg">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="ouF-lf-tlg">
                             <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="7eV-d1-wlX" kind="presentation" modalPresentationStyle="fullScreen" id="YA4-PZ-t87"/>
@@ -6620,7 +6574,7 @@
                         <viewLayoutGuide key="safeArea" id="Bvr-Vb-fUK"/>
                     </view>
                     <navigationItem key="navigationItem" id="Bow-Fq-u89">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="7KO-23-xXH">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="7KO-23-xXH">
                             <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="CW8-pe-SBY" kind="presentation" modalPresentationStyle="fullScreen" id="cV1-SB-D9k"/>
@@ -6745,7 +6699,7 @@
                         <viewLayoutGuide key="safeArea" id="StM-b6-c2o"/>
                     </view>
                     <navigationItem key="navigationItem" id="mNI-Jm-gwb">
-                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="jtN-dX-WLv">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="jtN-dX-WLv">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="tWg-1w-srC" kind="presentation" modalPresentationStyle="fullScreen" id="ZUW-hC-SnB"/>
@@ -6872,7 +6826,7 @@
                         <viewLayoutGuide key="safeArea" id="Yxd-0k-Mpu"/>
                     </view>
                     <navigationItem key="navigationItem" id="C5h-CQ-9m7">
-                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="m8o-8r-Bk0">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="m8o-8r-Bk0">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="t88-DG-TN1" kind="presentation" modalPresentationStyle="fullScreen" id="Jbb-3y-lQR"/>
@@ -6978,7 +6932,7 @@
                         <viewLayoutGuide key="safeArea" id="Tpj-Wg-NAC"/>
                     </view>
                     <navigationItem key="navigationItem" id="bi4-yh-FBk">
-                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="cCY-gH-1hh">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="cCY-gH-1hh">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="t88-DG-TN1" kind="presentation" modalPresentationStyle="fullScreen" id="FoC-7e-k4T"/>
@@ -7084,7 +7038,7 @@
                         <viewLayoutGuide key="safeArea" id="Pdo-0n-qG3"/>
                     </view>
                     <navigationItem key="navigationItem" id="NOD-aN-ZL0">
-                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="hJY-8l-hPZ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="hJY-8l-hPZ">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="tWg-1w-srC" kind="presentation" modalPresentationStyle="fullScreen" id="yeI-iW-AJj"/>
@@ -7168,7 +7122,7 @@
                         <viewLayoutGuide key="safeArea" id="Rn5-HO-UkL"/>
                     </view>
                     <navigationItem key="navigationItem" id="WIn-bS-s6P">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="3CF-C7-EF0">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="3CF-C7-EF0">
                             <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="Pkt-O0-D2i" kind="presentation" modalPresentationStyle="fullScreen" id="RAA-2h-my7"/>
@@ -7244,7 +7198,7 @@
                         <viewLayoutGuide key="safeArea" id="ubj-vd-sxy"/>
                     </view>
                     <navigationItem key="navigationItem" id="jdD-12-ZhF">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="huX-yY-cBt">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="huX-yY-cBt">
                             <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="Fpv-eL-Ygm" kind="presentation" modalPresentationStyle="fullScreen" id="8aK-dc-WJy"/>
@@ -7327,7 +7281,7 @@
                         <viewLayoutGuide key="safeArea" id="9Kr-gl-eqb"/>
                     </view>
                     <navigationItem key="navigationItem" id="Sv7-Dl-fwr">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="chevron.left" catalog="system" id="eao-eU-R00">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="eao-eU-R00">
                             <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="Fpv-eL-Ygm" kind="presentation" modalPresentationStyle="fullScreen" id="5hN-gA-kCZ"/>
@@ -7365,11 +7319,9 @@
     </scenes>
     <resources>
         <image name="Line_for_TextField" width="284" height="40"/>
-        <image name="arrowshape.turn.up.right.fill" catalog="system" width="64" height="52"/>
-        <image name="barcode.viewfinder" catalog="system" width="64" height="56"/>
-        <image name="chevron.left" catalog="system" width="48" height="64"/>
-        <image name="house.fill" catalog="system" width="64" height="52"/>
-        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="back" width="30" height="30"/>
+        <image name="exit" width="30" height="30"/>
+        <image name="home" width="30" height="28.5"/>
         <image name="menu_icon_1" width="49" height="58"/>
         <image name="menu_icon_10" width="53" height="50.5"/>
         <image name="menu_icon_2" width="56.5" height="48"/>
@@ -7380,25 +7332,25 @@
         <image name="menu_icon_7" width="59" height="57"/>
         <image name="menu_icon_8" width="61" height="51"/>
         <image name="menu_icon_9" width="53" height="53"/>
-        <image name="plus.circle" catalog="system" width="64" height="60"/>
-        <image name="plus.circle.fill" catalog="system" width="64" height="60"/>
+        <image name="more" width="30" height="30"/>
         <image name="porfile_page_default_icon_user" width="149" height="161"/>
+        <image name="scan" width="30" height="24"/>
+        <image name="search" width="30" height="30"/>
         <image name="trash.fill" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OFF-qA-Pln"/>
-        <segue reference="wj7-S5-WJi"/>
+        <segue reference="yeI-iW-AJj"/>
+        <segue reference="FoC-7e-k4T"/>
         <segue reference="cV1-SB-D9k"/>
-        <segue reference="jdj-3L-A66"/>
-        <segue reference="O4S-9G-Jzh"/>
-        <segue reference="6pu-6u-RW8"/>
+        <segue reference="7YZ-1T-eGf"/>
+        <segue reference="d2k-id-fBV"/>
+        <segue reference="WvY-r6-i5B"/>
         <segue reference="fjk-sw-Ffy"/>
-        <segue reference="JPu-ua-Y0j"/>
-        <segue reference="ZJ2-I0-hTz"/>
-        <segue reference="GKp-99-c5l"/>
-        <segue reference="Os0-Wi-rxL"/>
-        <segue reference="wye-L7-wbB"/>
-        <segue reference="B0i-x1-3MK"/>
-        <segue reference="9me-9b-5ND"/>
+        <segue reference="aqz-3w-lgT"/>
+        <segue reference="XRE-q8-u8B"/>
+        <segue reference="tFr-7S-Ir6"/>
+        <segue reference="qJ9-OL-G5u"/>
+        <segue reference="4f7-8k-HY9"/>
+        <segue reference="ohR-aM-fCl"/>
     </inferredMetricsTieBreakers>
 </document>
