@@ -11,7 +11,7 @@ import Printer
 
 class KassaDocVC: UIViewController,  UITextFieldDelegate {
 
-    private let bluetoothPrinterManager = BluetoothPrinterManager()
+    private var bluetoothPrinterManager = BluetoothPrinterManager()
     private let dummyPrinter = DummyPrinter()
     
     @IBOutlet weak var cardView: UIView!
@@ -101,7 +101,7 @@ class KassaDocVC: UIViewController,  UITextFieldDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? BluetoothPrinterSelectTableViewController {
-            vc.sectionTitle = "Choose Bluetooth Printer"
+            vc.sectionTitle = "Выберите принтер"
             vc.printerManager = bluetoothPrinterManager
         }
     }
@@ -134,6 +134,8 @@ class KassaDocVC: UIViewController,  UITextFieldDelegate {
     }
     
     func generateBillToPrint(number: String, date: String, contr: String, factMoney: String, totalSum: String, comment: String) {
+        
+        
         
         let ticket = Ticket(
             .plainText("--------------------------------"),

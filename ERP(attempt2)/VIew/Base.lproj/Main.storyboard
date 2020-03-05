@@ -3183,7 +3183,8 @@
                                 <segue destination="Pkt-O0-D2i" kind="presentation" modalPresentationStyle="fullScreen" id="4hv-c3-kJN"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="akb-PV-VsD">
+                        <barButtonItem key="rightBarButtonItem" image="printer" id="akb-PV-VsD">
+                            <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="NxA-64-dfc" kind="show" identifier="ShowSelectPrintVC" id="8G5-N5-j2I"/>
                             </connections>
@@ -7427,6 +7428,7 @@
         <image name="menu_icon_9" width="53" height="53"/>
         <image name="more" width="30" height="30"/>
         <image name="porfile_page_default_icon_user" width="149" height="161"/>
+        <image name="printer" width="30" height="28"/>
         <image name="scan" width="30" height="24"/>
         <image name="search" width="30" height="30"/>
         <image name="trash.fill" catalog="system" width="60" height="64"/>
