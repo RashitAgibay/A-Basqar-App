@@ -923,14 +923,6 @@
                                                     <constraint firstItem="pt2-hj-aGn" firstAttribute="leading" secondItem="JAa-5j-L6P" secondAttribute="leading" constant="17" id="xhI-Oo-Thp"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBY-wp-1gs">
-                                                <rect key="frame" x="59" y="40" width="46" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Button"/>
-                                                <connections>
-                                                    <segue destination="Ue2-XS-lef" kind="presentation" modalPresentationStyle="fullScreen" id="310-HA-Bbb"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -4417,6 +4409,12 @@
                                 <segue destination="Fpv-eL-Ygm" kind="presentation" modalPresentationStyle="fullScreen" id="d2k-id-fBV"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="printer" id="j6Z-gz-Oum">
+                            <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="NxA-64-dfc" kind="show" id="OwK-eB-N2y"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
@@ -6278,41 +6276,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fN7-mb-I3i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3230" y="702"/>
-        </scene>
-        <!--Test View Controller-->
-        <scene sceneID="JeA-lA-zhB">
-            <objects>
-                <viewController id="K41-Je-dFw" customClass="TestViewController" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hI0-fp-nyA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qZ-jl-OeS">
-                                <rect key="frame" x="130" y="264" width="73" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Принтеры"/>
-                                <connections>
-                                    <segue destination="NxA-64-dfc" kind="show" identifier="" id="PeC-EZ-xK6"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkS-ii-zTO">
-                                <rect key="frame" x="141" y="327" width="51" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Печать"/>
-                                <connections>
-                                    <action selector="tappedPrintButton:" destination="K41-Je-dFw" eventType="touchUpInside" id="BE6-IN-ody"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="GW6-Gg-qbj"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Ytj-je-qgE"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gd5-jc-BOO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1208.8" y="689.5052473763119"/>
+            <point key="canvasLocation" x="-4306" y="-49"/>
         </scene>
         <!--Financial ReportVC-->
         <scene sceneID="L0g-gv-Kop">
@@ -7392,24 +7356,6 @@
             </objects>
             <point key="canvasLocation" x="4845.6000000000004" y="6663.4182908545736"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Sd1-Vg-qbb">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ue2-XS-lef" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BXK-aR-okh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="K41-Je-dFw" kind="relationship" relationship="rootViewController" id="VxR-k3-vwD"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jlz-lB-AeJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2148" y="689.5052473763119"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Line_for_TextField" width="284" height="40"/>
@@ -7434,15 +7380,15 @@
         <image name="trash.fill" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8G5-N5-j2I"/>
+        <segue reference="OwK-eB-N2y"/>
         <segue reference="OFF-qA-Pln"/>
         <segue reference="wj7-S5-WJi"/>
         <segue reference="cV1-SB-D9k"/>
         <segue reference="7YZ-1T-eGf"/>
-        <segue reference="O4S-9G-Jzh"/>
+        <segue reference="d6m-kp-dik"/>
         <segue reference="WvY-r6-i5B"/>
         <segue reference="fjk-sw-Ffy"/>
-        <segue reference="aZN-TL-ZD3"/>
+        <segue reference="JRa-Xv-mkw"/>
         <segue reference="ZJ2-I0-hTz"/>
         <segue reference="GKp-99-c5l"/>
         <segue reference="qJ9-OL-G5u"/>

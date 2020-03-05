@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Printer
 
 class SellingKassa: UIViewController,  UITextFieldDelegate {
 
@@ -78,6 +79,12 @@ class SellingKassa: UIViewController,  UITextFieldDelegate {
        
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if let vc = segue.destination as? BluetoothPrinterSelectTableViewController {
+               vc.sectionTitle = "Выберите принтер"
+               vc.printerManager = bluetoothPrinterManager
+           }
+       }
     
     @IBAction func tappedAcceptButton(_ sender: Any) {
         
@@ -97,9 +104,28 @@ class SellingKassa: UIViewController,  UITextFieldDelegate {
                     comment = commentTextField.text as! String
         //            debug_print(message: "here is a comment:", object: comment)
                 }
-        
+        generateBillToPrint(number: sellingCheckLabel.text!, date: sellingDateLabel.text!, contr: sellingCompanyNameButton.titleLabel!.text!, factMoney: sumTextField.text!, totalSum: factMoneyLabel.text!, comment: commentTextField.text!)
         send_Check_To_CheckList_Api()
         performSegue(withIdentifier: "onemoreidentifre123", sender: self)
+    }
+    
+    func generateBillToPrint(number: String, date: String, contr: String, factMoney: String, totalSum: String, comment: String) {
+        
+        
+        
+        let ticket = Ticket(
+            .plainText("--------------------------------"),
+            .plainText("Nomer checka: \(number)"),
+            .plainText("Data: \(date)"),
+            .plainText("fact summa: \(factMoney)"),
+            .plainText("summa pokupki: \(totalSum)"),
+            .plainText("--------------------------------")
+            
+        )
+        
+        if bluetoothPrinterManager.canPrint {
+            bluetoothPrinterManager.print(ticket)
+        }
     }
     
     @IBAction func tappedCancelButton(_ sender: Any) {
