@@ -667,13 +667,13 @@
                                                 <rect key="frame" x="142.5" y="95" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Перемещение" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6R-pE-AS7">
-                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
+                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_2" translatesAutoresizingMaskIntoConstraints="NO" id="2vA-bZ-8IF">
-                                                        <rect key="frame" x="14" y="16" width="62" height="48"/>
+                                                        <rect key="frame" x="14" y="16" width="62" height="86"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -693,13 +693,13 @@
                                                 <rect key="frame" x="247.5" y="95" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Продажа" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAX-Ln-2Sz">
-                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
+                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_3" translatesAutoresizingMaskIntoConstraints="NO" id="wqh-X6-CE5">
-                                                        <rect key="frame" x="16" y="12" width="58.000000000000014" height="57"/>
+                                                        <rect key="frame" x="16" y="12" width="58" height="95"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -719,10 +719,10 @@
                                                 <rect key="frame" x="37.5" y="95" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_1" translatesAutoresizingMaskIntoConstraints="NO" id="0Tt-bw-Ccf">
-                                                        <rect key="frame" x="12" y="8" width="66.000000000000014" height="58"/>
+                                                        <rect key="frame" x="12" y="8" width="66" height="96"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Поступление товаров" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUl-wb-F81">
-                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
+                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -745,10 +745,10 @@
                                                 <rect key="frame" x="142.5" y="225" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_5" translatesAutoresizingMaskIntoConstraints="NO" id="vS3-8I-azN">
-                                                        <rect key="frame" x="18" y="10" width="54" height="54"/>
+                                                        <rect key="frame" x="18" y="10" width="54" height="92"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Заявки" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beU-0Y-fkw">
-                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
+                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -771,10 +771,10 @@
                                                 <rect key="frame" x="247.5" y="225" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_6" translatesAutoresizingMaskIntoConstraints="NO" id="lbc-o0-5Py">
-                                                        <rect key="frame" x="16" y="10" width="58" height="49.5"/>
+                                                        <rect key="frame" x="16" y="10" width="58" height="89.5"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Касса, Расход" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UTL-lX-IIQ">
-                                                        <rect key="frame" x="0.0" y="70" width="90" height="40"/>
+                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -797,10 +797,10 @@
                                                 <rect key="frame" x="37.5" y="225" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_4" translatesAutoresizingMaskIntoConstraints="NO" id="HDQ-es-Y8v">
-                                                        <rect key="frame" x="18" y="8" width="54" height="54.5"/>
+                                                        <rect key="frame" x="18" y="8" width="54" height="92"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Касса, Приход" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zv-Qb-1AO">
-                                                        <rect key="frame" x="0.0" y="72.5" width="90" height="37.5"/>
+                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -823,13 +823,13 @@
                                                 <rect key="frame" x="142.5" y="355" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Отчеты" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjk-gq-oez">
-                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
+                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_8" translatesAutoresizingMaskIntoConstraints="NO" id="yCg-9W-K8f">
-                                                        <rect key="frame" x="16" y="10" width="58" height="51"/>
+                                                        <rect key="frame" x="16" y="10" width="58" height="89"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -849,10 +849,10 @@
                                                 <rect key="frame" x="247.5" y="355" width="90" height="110"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_9" translatesAutoresizingMaskIntoConstraints="NO" id="G27-uc-YfO">
-                                                        <rect key="frame" x="18" y="10" width="54" height="53"/>
+                                                        <rect key="frame" x="18" y="10" width="54" height="91"/>
                                                     </imageView>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Профиль" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lug-qr-rSt">
-                                                        <rect key="frame" x="0.0" y="72" width="90" height="38"/>
+                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -875,13 +875,13 @@
                                                 <rect key="frame" x="37.5" y="355" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Управление" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Pa-qu-GNP">
-                                                        <rect key="frame" x="0.0" y="75" width="90" height="35"/>
+                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_7" translatesAutoresizingMaskIntoConstraints="NO" id="5J4-3G-Ap6">
-                                                        <rect key="frame" x="16" y="10" width="58" height="57"/>
+                                                        <rect key="frame" x="16" y="10" width="58" height="92"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -901,13 +901,13 @@
                                                 <rect key="frame" x="142.5" y="485" width="90" height="110"/>
                                                 <subviews>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Добавить товар в базу" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eA-hw-mpD">
-                                                        <rect key="frame" x="0.0" y="74" width="90" height="36"/>
+                                                        <rect key="frame" x="0.0" y="110" width="90" height="0.0"/>
                                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                     </textView>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="menu_icon_10" translatesAutoresizingMaskIntoConstraints="NO" id="pt2-hj-aGn">
-                                                        <rect key="frame" x="17" y="10" width="56" height="50.5"/>
+                                                        <rect key="frame" x="17" y="10" width="56" height="86.5"/>
                                                     </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -923,6 +923,14 @@
                                                     <constraint firstItem="pt2-hj-aGn" firstAttribute="leading" secondItem="JAa-5j-L6P" secondAttribute="leading" constant="17" id="xhI-Oo-Thp"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBY-wp-1gs">
+                                                <rect key="frame" x="59" y="40" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <segue destination="Ue2-XS-lef" kind="presentation" modalPresentationStyle="fullScreen" id="310-HA-Bbb"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -995,7 +1003,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr4-9I-Q6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-521" y="704"/>
+            <point key="canvasLocation" x="416.80000000000001" y="703.89805097451278"/>
         </scene>
         <!--Add New ProductVC-->
         <scene sceneID="xOT-p9-wxK">
@@ -1250,46 +1258,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="porfile_page_default_icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="uVC-X5-eFQ">
-                                <rect key="frame" x="110" y="93.999999999999986" width="155" height="161.00000000000003"/>
+                                <rect key="frame" x="110" y="94" width="155" height="322"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ильяс Шомат" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlr-Mn-ohY">
-                                <rect key="frame" x="20" y="265" width="335" height="30"/>
+                                <rect key="frame" x="20" y="426" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Номер/логин:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhw-Dj-pL6">
-                                <rect key="frame" x="60" y="325" width="113" height="20"/>
+                                <rect key="frame" x="60" y="486" width="113" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mow-GW-gD0">
-                                <rect key="frame" x="60" y="355" width="84" height="20"/>
+                                <rect key="frame" x="60" y="516" width="84" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKk-Yl-biB">
-                                <rect key="frame" x="60" y="385" width="22" height="20"/>
+                                <rect key="frame" x="60" y="546" width="22" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Должность:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6WI-s1-mNT">
-                                <rect key="frame" x="60" y="415" width="97" height="20"/>
+                                <rect key="frame" x="60" y="576" width="97" height="20"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ТОО &quot;Тағам&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OHF-yB-X3x">
-                                <rect key="frame" x="181" y="355" width="97" height="20"/>
+                                <rect key="frame" x="181" y="516" width="97" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="132456789AA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aY-Tr-ZxL">
-                                <rect key="frame" x="182" y="385" width="105" height="20"/>
+                                <rect key="frame" x="182" y="546" width="105" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1329,13 +1337,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 708 954 65 58" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UV2-Mo-meg">
-                                <rect key="frame" x="181" y="325" width="124" height="20"/>
+                                <rect key="frame" x="181" y="486" width="124" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Управляющий" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iKo-fc-jCQ">
-                                <rect key="frame" x="181" y="415" width="107" height="20"/>
+                                <rect key="frame" x="181" y="576" width="107" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -1402,7 +1410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jbq-ET-gnT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2359.1999999999998" y="823.53823088455783"/>
+            <point key="canvasLocation" x="3298.4000000000001" y="823.53823088455783"/>
         </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="GIn-bg-CDt">
@@ -1512,7 +1520,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chM-53-DNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4216.8000000000002" y="818.14092953523243"/>
+            <point key="canvasLocation" x="5156" y="818.14092953523243"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="1Ka-Jp-VDD">
@@ -1622,7 +1630,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mu5-Yd-Q3b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5828" y="824"/>
+            <point key="canvasLocation" x="6767.1999999999998" y="823.53823088455783"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="n4s-6k-AWY">
@@ -1641,7 +1649,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mSm-MY-2eG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1420" y="823.53823088455783"/>
+            <point key="canvasLocation" x="2359.1999999999998" y="823.53823088455783"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="blL-Q1-PMh">
@@ -1660,7 +1668,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vhB-QW-2lP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3277.5999999999999" y="818.14092953523243"/>
+            <point key="canvasLocation" x="4216.8000000000002" y="818.14092953523243"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wwu-ta-FlB">
@@ -1679,7 +1687,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AaV-ZL-hPV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5028" y="818"/>
+            <point key="canvasLocation" x="5967.1999999999998" y="817.24137931034488"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3xV-dM-ihJ">
@@ -6237,6 +6245,69 @@
             </objects>
             <point key="canvasLocation" x="-3647.1999999999998" y="2691.9040479760124"/>
         </scene>
+        <!--Bluetooth Printer Select Table View Controller-->
+        <scene sceneID="aGw-o9-KmF">
+            <objects>
+                <tableViewController id="NxA-64-dfc" customClass="BluetoothPrinterSelectTableViewController" customModule="Printer" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pmM-a3-JKS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Swu-80-Naf">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Swu-80-Naf" id="Ocf-mF-bZ3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NxA-64-dfc" id="He9-Lw-Wmb"/>
+                            <outlet property="delegate" destination="NxA-64-dfc" id="Vaf-b3-ukR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="a42-g7-Mvc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fN7-mb-I3i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3230" y="702"/>
+        </scene>
+        <!--Test View Controller-->
+        <scene sceneID="JeA-lA-zhB">
+            <objects>
+                <viewController id="K41-Je-dFw" customClass="TestViewController" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hI0-fp-nyA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7qZ-jl-OeS">
+                                <rect key="frame" x="130" y="264" width="73" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Принтеры"/>
+                                <connections>
+                                    <segue destination="NxA-64-dfc" kind="show" identifier="ShowSelectPrintVC" id="PeC-EZ-xK6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkS-ii-zTO">
+                                <rect key="frame" x="141" y="327" width="51" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Печать"/>
+                                <connections>
+                                    <action selector="tappedPrintButton:" destination="K41-Je-dFw" eventType="touchUpInside" id="BE6-IN-ody"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="GW6-Gg-qbj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ytj-je-qgE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gd5-jc-BOO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1208.8" y="689.5052473763119"/>
+        </scene>
         <!--Financial ReportVC-->
         <scene sceneID="L0g-gv-Kop">
             <objects>
@@ -7315,6 +7386,24 @@
             </objects>
             <point key="canvasLocation" x="4845.6000000000004" y="6663.4182908545736"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Sd1-Vg-qbb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ue2-XS-lef" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BXK-aR-okh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="K41-Je-dFw" kind="relationship" relationship="rootViewController" id="VxR-k3-vwD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jlz-lB-AeJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2148" y="689.5052473763119"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Line_for_TextField" width="284" height="40"/>
@@ -7338,17 +7427,16 @@
         <image name="trash.fill" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="a1l-Rk-hPg"/>
-        <segue reference="yeI-iW-AJj"/>
-        <segue reference="FoC-7e-k4T"/>
+        <segue reference="OFF-qA-Pln"/>
+        <segue reference="wj7-S5-WJi"/>
         <segue reference="cV1-SB-D9k"/>
         <segue reference="7YZ-1T-eGf"/>
-        <segue reference="O3q-13-Qt3"/>
+        <segue reference="O4S-9G-Jzh"/>
         <segue reference="WvY-r6-i5B"/>
         <segue reference="fjk-sw-Ffy"/>
-        <segue reference="aqz-3w-lgT"/>
-        <segue reference="XRE-q8-u8B"/>
-        <segue reference="tFr-7S-Ir6"/>
+        <segue reference="JRa-Xv-mkw"/>
+        <segue reference="ZJ2-I0-hTz"/>
+        <segue reference="GKp-99-c5l"/>
         <segue reference="qJ9-OL-G5u"/>
         <segue reference="4f7-8k-HY9"/>
         <segue reference="ohR-aM-fCl"/>
