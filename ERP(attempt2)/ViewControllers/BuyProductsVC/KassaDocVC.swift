@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Printer
 
 class KassaDocVC: UIViewController,  UITextFieldDelegate {
 
+//    private var bluetoothPrinterManager = BluetoothPrinterManager()
+//    private let dummyPrinter = DummyPrinter()
+    
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var checkNumberLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -95,6 +99,13 @@ class KassaDocVC: UIViewController,  UITextFieldDelegate {
     }
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? BluetoothPrinterSelectTableViewController {
+            vc.sectionTitle = "Выберите принтер"
+            vc.printerManager = bluetoothPrinterManager
+        }
+    }
+    
     @IBAction func tapAcceptButton(_ sender: Any) {
         sum = fact_sum.text!
         
@@ -107,8 +118,38 @@ class KassaDocVC: UIViewController,  UITextFieldDelegate {
         //            debug_print(message: "here is a comment:", object: comment)
         }
         
+//        let ticket = Ticket(
+//            .plainText("этот принтер работает")
+//        )
+//
+//        if bluetoothPrinterManager.canPrint {
+//            bluetoothPrinterManager.print(ticket)
+//        }
+//
+//        dummyPrinter.print(ticket)
+//
+        generateBillToPrint(number: checkNumberLabel.text!, date: dateLabel.text!, contr: companyNameButton.titleLabel!.text!, factMoney: fact_sum.text!, totalSum: buy_sum.text!, comment: commentTextView.text!)
         send_Check_To_CheckList_Api()
         performSegue(withIdentifier: "fromkassadoctobuypage", sender: self)
+    }
+    
+    func generateBillToPrint(number: String, date: String, contr: String, factMoney: String, totalSum: String, comment: String) {
+        
+        
+        
+        let ticket = Ticket(
+            .plainText("--------------------------------"),
+            .plainText("Nomer checka: \(number)"),
+            .plainText("Data: \(date)"),
+            .plainText("fact summa: \(factMoney)"),
+            .plainText("summa pokupki: \(totalSum)"),
+            .plainText("--------------------------------")
+            
+        )
+        
+        if bluetoothPrinterManager.canPrint {
+            bluetoothPrinterManager.print(ticket)
+        }
     }
     
     @IBAction func tapCancelButton(_ sender: Any) {

@@ -181,6 +181,8 @@
 		AA5DF4DA597D0C7F758AB506 /* Pods_A_Basqar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451E8E7CD502E401E3BBD264 /* Pods_A_Basqar.framework */; };
 		FD3680A423C4712B00914B94 /* SellingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3680A323C4712B00914B94 /* SellingModel.swift */; };
 		FD6F84AC23C7446D0076BE0A /* GoodInBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F84AB23C7446D0076BE0A /* GoodInBasket.swift */; };
+		FD7C5A3F2410C0960077AAF3 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7C5A3E2410C0960077AAF3 /* TestViewController.swift */; };
+		FD7E17482410DD3600F54748 /* PrinterActivate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7E17472410DD3600F54748 /* PrinterActivate.swift */; };
 		FDA8BF7423D56ED0006DFF71 /* BoughtItemsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA8BF7323D56ED0006DFF71 /* BoughtItemsHistoryVC.swift */; };
 		FDB6036423E2D1770012D65D /* BuySearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6036323E2D1770012D65D /* BuySearchVC.swift */; };
 		FDB6036623E2E6830012D65D /* SellingBarcodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6036523E2E6830012D65D /* SellingBarcodeVC.swift */; };
@@ -470,6 +472,8 @@
 		D5F0E550815B74E5DD782B02 /* Pods-ERP(attempt2).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ERP(attempt2).debug.xcconfig"; path = "Target Support Files/Pods-ERP(attempt2)/Pods-ERP(attempt2).debug.xcconfig"; sourceTree = "<group>"; };
 		FD3680A323C4712B00914B94 /* SellingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingModel.swift; sourceTree = "<group>"; };
 		FD6F84AB23C7446D0076BE0A /* GoodInBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodInBasket.swift; sourceTree = "<group>"; };
+		FD7C5A3E2410C0960077AAF3 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		FD7E17472410DD3600F54748 /* PrinterActivate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterActivate.swift; sourceTree = "<group>"; };
 		FDA8BF7323D56ED0006DFF71 /* BoughtItemsHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoughtItemsHistoryVC.swift; sourceTree = "<group>"; };
 		FDB6036323E2D1770012D65D /* BuySearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySearchVC.swift; sourceTree = "<group>"; };
 		FDB6036523E2E6830012D65D /* SellingBarcodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingBarcodeVC.swift; sourceTree = "<group>"; };
@@ -571,6 +575,8 @@
 		2812AAF22362B45A001D65C8 /* ERP(attempt2) */ = {
 			isa = PBXGroup;
 			children = (
+				FD7E17462410DD2500F54748 /* New Group */,
+				FD7C5A3D2410BF8D0077AAF3 /* TestVC */,
 				2867428C238CF18D008884AF /* Models */,
 				2867428D238CF1A0008884AF /* ViewControllers */,
 				284599B82386607100D9C23E /* VIew */,
@@ -1047,6 +1053,22 @@
 			path = ModelForSelling;
 			sourceTree = "<group>";
 		};
+		FD7C5A3D2410BF8D0077AAF3 /* TestVC */ = {
+			isa = PBXGroup;
+			children = (
+				FD7C5A3E2410C0960077AAF3 /* TestViewController.swift */,
+			);
+			path = TestVC;
+			sourceTree = "<group>";
+		};
+		FD7E17462410DD2500F54748 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				FD7E17472410DD3600F54748 /* PrinterActivate.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1309,6 +1331,7 @@
 				288CC4A023A89C38008D5218 /* SDFileAttributeHelper.m in Sources */,
 				288CC47223A89C38008D5218 /* SDImageCoderHelper.m in Sources */,
 				288CC3B623A89BFD008D5218 /* AlamofireExtended.swift in Sources */,
+				FD7C5A3F2410C0960077AAF3 /* TestViewController.swift in Sources */,
 				288CC46923A89C38008D5218 /* SDAnimatedImageView+WebCache.m in Sources */,
 				286318512398CB7E00556226 /* SellingCategoryCell.swift in Sources */,
 				288CC48623A89C38008D5218 /* SDWebImageDownloaderRequestModifier.m in Sources */,
@@ -1335,6 +1358,7 @@
 				28ACEA40236BEADE0067BD46 /* ProfilePageViewController.swift in Sources */,
 				288CC49423A89C38008D5218 /* UIImage+MultiFormat.m in Sources */,
 				288CC46D23A89C38008D5218 /* SDImageCache.m in Sources */,
+				FD7E17482410DD3600F54748 /* PrinterActivate.swift in Sources */,
 				28B4978A239E199A0002C690 /* MainReportPageVC.swift in Sources */,
 				288CC48523A89C38008D5218 /* SDWebImageDownloaderOperation.m in Sources */,
 				FDB6036623E2E6830012D65D /* SellingBarcodeVC.swift in Sources */,

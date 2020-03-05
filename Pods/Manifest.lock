@@ -1,20 +1,24 @@
 PODS:
   - IQKeyboardManagerSwift (6.5.1)
+  - Printer (4.0.1)
   - SwipeCellKit (2.7.1)
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
+  - Printer
   - SwipeCellKit
 
 SPEC REPOS:
   trunk:
     - IQKeyboardManagerSwift
+    - Printer
     - SwipeCellKit
 
 SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 9ac7524fad9f9fe9a3b98c927e7772471ca546d2
+  Printer: 9054c0de769f1e25eb06356c70769f9fcf074e33
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: adb5efda3cedbab7c0d26704d226c43ef27d64ec
+PODFILE CHECKSUM: 25b505b1f8893f52d6a800e28cf8394f3d58e241
 
 COCOAPODS: 1.8.4
