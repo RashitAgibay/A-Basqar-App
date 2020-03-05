@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Printer
 
 class IncomeKassaVC: UIViewController {
 
@@ -37,13 +38,18 @@ class IncomeKassaVC: UIViewController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-    
-    if let vc = segue.destination as? FirstPageVC,
-        segue.identifier == "onemoremoreid" {
         
-        vc.history_id_in_list = history_id_from_list
-        vc.company_id = company_id
-        vc.companyName = company_name
+        if let vc = segue.destination as? BluetoothPrinterSelectTableViewController {
+            
+            vc.sectionTitle = "Выберите принтер"
+            vc.printerManager = bluetoothPrinterManager
+        }
+        
+        if let vc = segue.destination as? FirstPageVC,
+            segue.identifier == "onemoremoreid" {
+            vc.history_id_in_list = history_id_from_list
+            vc.company_id = company_id
+            vc.companyName = company_name
         }
     }
     

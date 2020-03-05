@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Printer
 
 class OutcomeKassaFirstPage: UIViewController,  UITextFieldDelegate  {
 
@@ -104,6 +105,24 @@ class OutcomeKassaFirstPage: UIViewController,  UITextFieldDelegate  {
          someTextField.leftViewMode = UITextField.ViewMode.always
      }
      
+    func generateBillToPrint(number: String, date: String, contr: String, factMoney: String, totalSum: String, comment: String) {
+        
+        
+        
+        let ticket = Ticket(
+            .plainText("--------------------------------"),
+            .plainText("Nomer checka: \(number)"),
+            .plainText("Data: \(date)"),
+            .plainText("fact summa: \(factMoney)"),
+            .plainText("summa pokupki: \(totalSum)"),
+            .plainText("--------------------------------")
+            
+        )
+        
+        if bluetoothPrinterManager.canPrint {
+            bluetoothPrinterManager.print(ticket)
+        }
+    }
     
     @IBAction func tappedAcceptButton(_ sender: Any) {
         
@@ -134,6 +153,8 @@ class OutcomeKassaFirstPage: UIViewController,  UITextFieldDelegate  {
             if checkName == "" {
                 send_Null_Check_To_CheckList_Api()
             }
+            
+            generateBillToPrint(number: checkNumberButton.titleLabel!.text!, date: dateLabel.text!, contr: provider.titleLabel!.text!, factMoney: factMoneyTextfield.text!, totalSum: totalMoneyLabel.text!, comment: commentTextField.text!)
             
             ShowErrorsAlertWithOneCancelButton(title: "Успешно", message: "Добавлен новый кассовый документ", buttomMessage: "Закрыть")
             send_Check_To_CheckList_Api()
