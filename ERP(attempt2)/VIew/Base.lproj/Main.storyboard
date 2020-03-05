@@ -4731,6 +4731,12 @@
                                 <segue destination="7eV-d1-wlX" kind="presentation" modalPresentationStyle="fullScreen" id="YdE-v3-2o7"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="printer" id="mVx-F1-qfF">
+                            <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="NxA-64-dfc" kind="show" id="6Ob-Hz-5F0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
@@ -7380,9 +7386,10 @@
         <image name="trash.fill" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="OwK-eB-N2y"/>
+        <segue reference="zL8-CF-3PE"/>
+        <segue reference="6Ob-Hz-5F0"/>
         <segue reference="OFF-qA-Pln"/>
-        <segue reference="wj7-S5-WJi"/>
+        <segue reference="Mlk-h6-hQz"/>
         <segue reference="cV1-SB-D9k"/>
         <segue reference="7YZ-1T-eGf"/>
         <segue reference="d6m-kp-dik"/>
@@ -7391,7 +7398,7 @@
         <segue reference="JRa-Xv-mkw"/>
         <segue reference="ZJ2-I0-hTz"/>
         <segue reference="GKp-99-c5l"/>
-        <segue reference="qJ9-OL-G5u"/>
+        <segue reference="YdE-v3-2o7"/>
         <segue reference="4f7-8k-HY9"/>
         <segue reference="ohR-aM-fCl"/>
     </inferredMetricsTieBreakers>

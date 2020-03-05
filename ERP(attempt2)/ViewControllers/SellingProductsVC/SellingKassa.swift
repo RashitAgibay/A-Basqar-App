@@ -104,7 +104,7 @@ class SellingKassa: UIViewController,  UITextFieldDelegate {
                     comment = commentTextField.text as! String
         //            debug_print(message: "here is a comment:", object: comment)
                 }
-        generateBillToPrint(number: sellingCheckLabel.text!, date: sellingDateLabel.text!, contr: sellingCompanyNameButton.titleLabel!.text!, factMoney: sumTextField.text!, totalSum: factMoneyLabel.text!, comment: commentTextField.text!)
+        generateBillToPrint(number: sellingCheckLabel.text!, date: sellingDateLabel.text!, contr: sellingCompanyNameButton.titleLabel!.text!, factMoney: factMoneyLabel.text!, totalSum: sumTextField.text!, comment: commentTextField.text!)
         send_Check_To_CheckList_Api()
         performSegue(withIdentifier: "onemoreidentifre123", sender: self)
     }
