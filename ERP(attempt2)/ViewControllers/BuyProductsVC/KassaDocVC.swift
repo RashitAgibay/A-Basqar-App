@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Printer
 
 class KassaDocVC: UIViewController,  UITextFieldDelegate {
 
+    private let bluetoothPrinterManager = BluetoothPrinterManager()
+    private let dummyPrinter = DummyPrinter()
+    
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var checkNumberLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -95,6 +99,13 @@ class KassaDocVC: UIViewController,  UITextFieldDelegate {
     }
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? BluetoothPrinterSelectTableViewController {
+            vc.sectionTitle = "Choose Bluetooth Printer"
+            vc.printerManager = bluetoothPrinterManager
+        }
+    }
+    
     @IBAction func tapAcceptButton(_ sender: Any) {
         sum = fact_sum.text!
         
@@ -106,6 +117,16 @@ class KassaDocVC: UIViewController,  UITextFieldDelegate {
             comment = commentTextView.text as! String
         //            debug_print(message: "here is a comment:", object: comment)
         }
+        
+        let ticket = Ticket(
+            .plainText("этот принтер работает")
+        )
+        
+        if bluetoothPrinterManager.canPrint {
+            bluetoothPrinterManager.print(ticket)
+        }
+        
+        dummyPrinter.print(ticket)
         
         send_Check_To_CheckList_Api()
         performSegue(withIdentifier: "fromkassadoctobuypage", sender: self)

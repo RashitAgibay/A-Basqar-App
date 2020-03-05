@@ -3183,6 +3183,11 @@
                                 <segue destination="Pkt-O0-D2i" kind="presentation" modalPresentationStyle="fullScreen" id="4hv-c3-kJN"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="akb-PV-VsD">
+                            <connections>
+                                <segue destination="NxA-64-dfc" kind="show" identifier="ShowSelectPrintVC" id="8G5-N5-j2I"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
@@ -6287,7 +6292,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Принтеры"/>
                                 <connections>
-                                    <segue destination="NxA-64-dfc" kind="show" identifier="ShowSelectPrintVC" id="PeC-EZ-xK6"/>
+                                    <segue destination="NxA-64-dfc" kind="show" identifier="" id="PeC-EZ-xK6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkS-ii-zTO">
@@ -7427,6 +7432,7 @@
         <image name="trash.fill" catalog="system" width="60" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="8G5-N5-j2I"/>
         <segue reference="OFF-qA-Pln"/>
         <segue reference="wj7-S5-WJi"/>
         <segue reference="cV1-SB-D9k"/>
@@ -7434,7 +7440,7 @@
         <segue reference="O4S-9G-Jzh"/>
         <segue reference="WvY-r6-i5B"/>
         <segue reference="fjk-sw-Ffy"/>
-        <segue reference="JRa-Xv-mkw"/>
+        <segue reference="aZN-TL-ZD3"/>
         <segue reference="ZJ2-I0-hTz"/>
         <segue reference="GKp-99-c5l"/>
         <segue reference="qJ9-OL-G5u"/>
