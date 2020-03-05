@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Printer
 
 class OutcomeKassaVC: UIViewController {
 
@@ -58,14 +59,18 @@ class OutcomeKassaVC: UIViewController {
     
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
+    if let vc = segue.destination as? BluetoothPrinterSelectTableViewController {
+        
+        vc.sectionTitle = "Выберите принтер"
+        vc.printerManager = bluetoothPrinterManager
+    }
+    
     if let vc = segue.destination as? OutcomeKassaFirstPage,
         segue.identifier == "huiid" {
         vc.history_id_in_list = history_id_from_list
         vc.company_id = company_id
         vc.companyName = company_name
-    
     }
-    
     }
 
 }
