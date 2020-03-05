@@ -118,18 +118,36 @@ class KassaDocVC: UIViewController,  UITextFieldDelegate {
         //            debug_print(message: "here is a comment:", object: comment)
         }
         
+//        let ticket = Ticket(
+//            .plainText("этот принтер работает")
+//        )
+//
+//        if bluetoothPrinterManager.canPrint {
+//            bluetoothPrinterManager.print(ticket)
+//        }
+//
+//        dummyPrinter.print(ticket)
+//
+        generateBillToPrint(number: checkNumberLabel.text!, date: dateLabel.text!, contr: companyNameButton.titleLabel!.text!, factMoney: fact_sum.text!, totalSum: buy_sum.text!, comment: commentTextView.text!)
+        send_Check_To_CheckList_Api()
+        performSegue(withIdentifier: "fromkassadoctobuypage", sender: self)
+    }
+    
+    func generateBillToPrint(number: String, date: String, contr: String, factMoney: String, totalSum: String, comment: String) {
+        
         let ticket = Ticket(
-            .plainText("этот принтер работает")
+            .plainText("--------------------------------"),
+            .plainText("Nomer checka: \(number)"),
+            .plainText("Data: \(date)"),
+            .plainText("fact summa: \(factMoney)"),
+            .plainText("summa pokupki: \(totalSum)"),
+            .plainText("--------------------------------")
+            
         )
         
         if bluetoothPrinterManager.canPrint {
             bluetoothPrinterManager.print(ticket)
         }
-        
-        dummyPrinter.print(ticket)
-        
-        send_Check_To_CheckList_Api()
-        performSegue(withIdentifier: "fromkassadoctobuypage", sender: self)
     }
     
     @IBAction func tapCancelButton(_ sender: Any) {
