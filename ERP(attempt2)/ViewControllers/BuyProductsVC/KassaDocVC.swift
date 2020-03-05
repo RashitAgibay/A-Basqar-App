@@ -11,8 +11,8 @@ import Printer
 
 class KassaDocVC: UIViewController,  UITextFieldDelegate {
 
-    private var bluetoothPrinterManager = BluetoothPrinterManager()
-    private let dummyPrinter = DummyPrinter()
+//    private var bluetoothPrinterManager = BluetoothPrinterManager()
+//    private let dummyPrinter = DummyPrinter()
     
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var checkNumberLabel: UILabel!

@@ -11,8 +11,8 @@ import Printer
 
 class TestViewController: UIViewController {
 
-    private let bluetoothPrinterManager = BluetoothPrinterManager()
-    private let dummyPrinter = DummyPrinter()
+//    private let bluetoothPrinterManager = BluetoothPrinterManager()
+//    private let dummyPrinter = DummyPrinter()
 
     
     override func viewDidLoad() {
