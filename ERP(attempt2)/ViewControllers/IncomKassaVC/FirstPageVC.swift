@@ -175,6 +175,7 @@ class FirstPageVC: UIViewController,  UITextFieldDelegate {
             .plainText("Data: \(date)"),
             .plainText("fact summa: \(factMoney)"),
             .plainText("summa pokupki: \(totalSum)"),
+            .plainText("---- made in DalaService.kz ----"),
             .plainText("--------------------------------")
             
         )

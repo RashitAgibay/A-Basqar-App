@@ -1600,7 +1600,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = RH4ADBYDUN;
 				INFOPLIST_FILE = "ERP(attempt2)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1608,7 +1608,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = kz.dalasoft.ERP;
 				PRODUCT_NAME = "A-Basqar";
 				SWIFT_OBJC_BRIDGING_HEADER = "ERP(attempt2)/Libraries/MBProgressHUD/ERP(attempt2)-Bridging-Header.h";
@@ -1625,7 +1625,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = RH4ADBYDUN;
 				INFOPLIST_FILE = "ERP(attempt2)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1633,7 +1633,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 0.2.3;
 				PRODUCT_BUNDLE_IDENTIFIER = kz.dalasoft.ERP;
 				PRODUCT_NAME = "A-Basqar";
 				SWIFT_OBJC_BRIDGING_HEADER = "ERP(attempt2)/Libraries/MBProgressHUD/ERP(attempt2)-Bridging-Header.h";
