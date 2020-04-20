@@ -178,12 +178,14 @@
 		28D76CFD239620D500D5B055 /* BuyingHistoryItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D76CFC239620D500D5B055 /* BuyingHistoryItemVC.swift */; };
 		28D76CFF2396246A00D5B055 /* BuyingHistoryItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D76CFE2396246A00D5B055 /* BuyingHistoryItemsModel.swift */; };
 		28D76D21239632FC00D5B055 /* KassaDocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D76D20239632FC00D5B055 /* KassaDocVC.swift */; };
+		6138C2E7244E44C5005CD38C /* MovementProductListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6138C2E6244E44C5005CD38C /* MovementProductListVC.swift */; };
 		61560A81244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61560A80244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard */; };
 		61560A83244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61560A82244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift */; };
 		61560A86244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61560A85244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift */; };
 		61560A88244E26E100FAAFB0 /* file in Resources */ = {isa = PBXBuildFile; fileRef = 61560A87244E26E100FAAFB0 /* file */; };
 		61560A8A244E33A300FAAFB0 /* MovementFirstCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61560A89244E33A300FAAFB0 /* MovementFirstCategoryVC.swift */; };
 		61560A8C244E33BE00FAAFB0 /* MovementFirstCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61560A8B244E33BE00FAAFB0 /* MovementFirstCategory.storyboard */; };
+		61560A8E244E404B00FAAFB0 /* MovementProductList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61560A8D244E404B00FAAFB0 /* MovementProductList.storyboard */; };
 		6159FA8D244DEAFD00FE1BED /* MainMovement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */; };
 		6159FA8F244DEB0F00FE1BED /* MainMovementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */; };
 		6159FA91244DF06C00FE1BED /* NewMovementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159FA90244DF06C00FE1BED /* NewMovementVC.swift */; };
@@ -483,12 +485,14 @@
 		28D76CFE2396246A00D5B055 /* BuyingHistoryItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyingHistoryItemsModel.swift; sourceTree = "<group>"; };
 		28D76D20239632FC00D5B055 /* KassaDocVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KassaDocVC.swift; sourceTree = "<group>"; };
 		451E8E7CD502E401E3BBD264 /* Pods_A_Basqar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A_Basqar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6138C2E6244E44C5005CD38C /* MovementProductListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementProductListVC.swift; sourceTree = "<group>"; };
 		61560A80244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovementHistoryDetail.storyboard; sourceTree = "<group>"; };
 		61560A82244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementHistoryDeatilVC.swift; sourceTree = "<group>"; };
 		61560A85244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementHistoryDetailCell.swift; sourceTree = "<group>"; };
 		61560A87244E26E100FAAFB0 /* file */ = {isa = PBXFileReference; lastKnownFileType = text; path = file; sourceTree = "<group>"; };
 		61560A89244E33A300FAAFB0 /* MovementFirstCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementFirstCategoryVC.swift; sourceTree = "<group>"; };
 		61560A8B244E33BE00FAAFB0 /* MovementFirstCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovementFirstCategory.storyboard; sourceTree = "<group>"; };
+		61560A8D244E404B00FAAFB0 /* MovementProductList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovementProductList.storyboard; sourceTree = "<group>"; };
 		6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMovement.storyboard; sourceTree = "<group>"; };
 		6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMovementVC.swift; sourceTree = "<group>"; };
 		6159FA90244DF06C00FE1BED /* NewMovementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMovementVC.swift; sourceTree = "<group>"; };
@@ -1094,6 +1098,7 @@
 				6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */,
 				6159FA94244DF0E700FE1BED /* NewMovement.storyboard */,
 				61560A8B244E33BE00FAAFB0 /* MovementFirstCategory.storyboard */,
+				61560A8D244E404B00FAAFB0 /* MovementProductList.storyboard */,
 				6159FA96244DF19D00FE1BED /* MovementHistory.storyboard */,
 				61560A80244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard */,
 				6159FA9C244E145A00FE1BED /* PlaceList.storyboard */,
@@ -1107,6 +1112,7 @@
 				6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */,
 				6159FA90244DF06C00FE1BED /* NewMovementVC.swift */,
 				61560A89244E33A300FAAFB0 /* MovementFirstCategoryVC.swift */,
+				6138C2E6244E44C5005CD38C /* MovementProductListVC.swift */,
 				6159FA92244DF08100FE1BED /* MovementHistoryVC.swift */,
 				61560A82244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift */,
 				6159FA9E244E14DB00FE1BED /* PlaceListVC.swift */,
@@ -1254,6 +1260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6159FA9D244E145B00FE1BED /* PlaceList.storyboard in Resources */,
+				61560A8E244E404B00FAAFB0 /* MovementProductList.storyboard in Resources */,
 				6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */,
 				2812AB002362B45B001D65C8 /* LaunchScreen.storyboard in Resources */,
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
@@ -1342,6 +1349,7 @@
 				28D76CFB239620AD00D5B055 /* BuyingHistoryItemCell.swift in Sources */,
 				6159FA91244DF06C00FE1BED /* NewMovementVC.swift in Sources */,
 				2899AF77239A1C0B0023A867 /* FirstPageVC.swift in Sources */,
+				6138C2E7244E44C5005CD38C /* MovementProductListVC.swift in Sources */,
 				288CC3C523A89BFD008D5218 /* RedirectHandler.swift in Sources */,
 				288CC49523A89C38008D5218 /* UIImage+Transform.m in Sources */,
 				280901AA2394D91600CA68BD /* ChangeBuyerVC.swift in Sources */,
