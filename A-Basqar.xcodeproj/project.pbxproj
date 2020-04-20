@@ -178,6 +178,12 @@
 		28D76CFD239620D500D5B055 /* BuyingHistoryItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D76CFC239620D500D5B055 /* BuyingHistoryItemVC.swift */; };
 		28D76CFF2396246A00D5B055 /* BuyingHistoryItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D76CFE2396246A00D5B055 /* BuyingHistoryItemsModel.swift */; };
 		28D76D21239632FC00D5B055 /* KassaDocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D76D20239632FC00D5B055 /* KassaDocVC.swift */; };
+		6159FA8D244DEAFD00FE1BED /* MainMovement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */; };
+		6159FA8F244DEB0F00FE1BED /* MainMovementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */; };
+		6159FA91244DF06C00FE1BED /* NewMovementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159FA90244DF06C00FE1BED /* NewMovementVC.swift */; };
+		6159FA93244DF08100FE1BED /* MovementHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159FA92244DF08100FE1BED /* MovementHistoryVC.swift */; };
+		6159FA95244DF0E700FE1BED /* NewMovement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6159FA94244DF0E700FE1BED /* NewMovement.storyboard */; };
+		6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6159FA96244DF19D00FE1BED /* MovementHistory.storyboard */; };
 		AA5DF4DA597D0C7F758AB506 /* Pods_A_Basqar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451E8E7CD502E401E3BBD264 /* Pods_A_Basqar.framework */; };
 		FD3680A423C4712B00914B94 /* SellingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3680A323C4712B00914B94 /* SellingModel.swift */; };
 		FD6F84AC23C7446D0076BE0A /* GoodInBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F84AB23C7446D0076BE0A /* GoodInBasket.swift */; };
@@ -468,6 +474,12 @@
 		28D76CFE2396246A00D5B055 /* BuyingHistoryItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyingHistoryItemsModel.swift; sourceTree = "<group>"; };
 		28D76D20239632FC00D5B055 /* KassaDocVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KassaDocVC.swift; sourceTree = "<group>"; };
 		451E8E7CD502E401E3BBD264 /* Pods_A_Basqar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A_Basqar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMovement.storyboard; sourceTree = "<group>"; };
+		6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMovementVC.swift; sourceTree = "<group>"; };
+		6159FA90244DF06C00FE1BED /* NewMovementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMovementVC.swift; sourceTree = "<group>"; };
+		6159FA92244DF08100FE1BED /* MovementHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementHistoryVC.swift; sourceTree = "<group>"; };
+		6159FA94244DF0E700FE1BED /* NewMovement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewMovement.storyboard; sourceTree = "<group>"; };
+		6159FA96244DF19D00FE1BED /* MovementHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovementHistory.storyboard; sourceTree = "<group>"; };
 		C7FC59907306329939555855 /* Pods-A-Basqar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A-Basqar.release.xcconfig"; path = "Target Support Files/Pods-A-Basqar/Pods-A-Basqar.release.xcconfig"; sourceTree = "<group>"; };
 		D5F0E550815B74E5DD782B02 /* Pods-ERP(attempt2).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ERP(attempt2).debug.xcconfig"; path = "Target Support Files/Pods-ERP(attempt2)/Pods-ERP(attempt2).debug.xcconfig"; sourceTree = "<group>"; };
 		FD3680A323C4712B00914B94 /* SellingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingModel.swift; sourceTree = "<group>"; };
@@ -575,7 +587,8 @@
 		2812AAF22362B45A001D65C8 /* ERP(attempt2) */ = {
 			isa = PBXGroup;
 			children = (
-				FD7E17462410DD2500F54748 /* New Group */,
+				6159FA89244DEAB900FE1BED /* Movements */,
+				FD7E17462410DD2500F54748 /* PrinterBase */,
 				FD7C5A3D2410BF8D0077AAF3 /* TestVC */,
 				2867428C238CF18D008884AF /* Models */,
 				2867428D238CF1A0008884AF /* ViewControllers */,
@@ -1037,6 +1050,35 @@
 			path = Reports;
 			sourceTree = "<group>";
 		};
+		6159FA89244DEAB900FE1BED /* Movements */ = {
+			isa = PBXGroup;
+			children = (
+				6159FA8B244DEAD300FE1BED /* ViewControllers */,
+				6159FA8A244DEAC800FE1BED /* Storyboards */,
+			);
+			path = Movements;
+			sourceTree = "<group>";
+		};
+		6159FA8A244DEAC800FE1BED /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */,
+				6159FA94244DF0E700FE1BED /* NewMovement.storyboard */,
+				6159FA96244DF19D00FE1BED /* MovementHistory.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		6159FA8B244DEAD300FE1BED /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */,
+				6159FA90244DF06C00FE1BED /* NewMovementVC.swift */,
+				6159FA92244DF08100FE1BED /* MovementHistoryVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		6933A8CD5D21CD4797FA02A4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1061,12 +1103,12 @@
 			path = TestVC;
 			sourceTree = "<group>";
 		};
-		FD7E17462410DD2500F54748 /* New Group */ = {
+		FD7E17462410DD2500F54748 /* PrinterBase */ = {
 			isa = PBXGroup;
 			children = (
 				FD7E17472410DD3600F54748 /* PrinterActivate.swift */,
 			);
-			path = "New Group";
+			path = PrinterBase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1176,8 +1218,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */,
 				2812AB002362B45B001D65C8 /* LaunchScreen.storyboard in Resources */,
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
+				6159FA95244DF0E700FE1BED /* NewMovement.storyboard in Resources */,
+				6159FA8D244DEAFD00FE1BED /* MainMovement.storyboard in Resources */,
 				2812AAFB2362B45A001D65C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1256,6 +1301,7 @@
 				288CC47423A89C38008D5218 /* SDImageFrame.m in Sources */,
 				288CC3D223A89BFD008D5218 /* URLRequest+Alamofire.swift in Sources */,
 				28D76CFB239620AD00D5B055 /* BuyingHistoryItemCell.swift in Sources */,
+				6159FA91244DF06C00FE1BED /* NewMovementVC.swift in Sources */,
 				2899AF77239A1C0B0023A867 /* FirstPageVC.swift in Sources */,
 				288CC3C523A89BFD008D5218 /* RedirectHandler.swift in Sources */,
 				288CC49523A89C38008D5218 /* UIImage+Transform.m in Sources */,
@@ -1329,6 +1375,7 @@
 				288CC3BF23A89BFD008D5218 /* NetworkReachabilityManager.swift in Sources */,
 				288CC46823A89C38008D5218 /* SDAnimatedImageRep.m in Sources */,
 				288CC4A023A89C38008D5218 /* SDFileAttributeHelper.m in Sources */,
+				6159FA93244DF08100FE1BED /* MovementHistoryVC.swift in Sources */,
 				288CC47223A89C38008D5218 /* SDImageCoderHelper.m in Sources */,
 				288CC3B623A89BFD008D5218 /* AlamofireExtended.swift in Sources */,
 				FD7C5A3F2410C0960077AAF3 /* TestViewController.swift in Sources */,
@@ -1376,6 +1423,7 @@
 				286CE102239E104F00E71557 /* OutcomeKassaHistoryItem.swift in Sources */,
 				288CC47123A89C38008D5218 /* SDImageCoder.m in Sources */,
 				288CC49223A89C38008D5218 /* UIImage+MemoryCacheCost.m in Sources */,
+				6159FA8F244DEB0F00FE1BED /* MainMovementVC.swift in Sources */,
 				288CC4A123A89C38008D5218 /* SDImageAssetManager.m in Sources */,
 				FD3680A423C4712B00914B94 /* SellingModel.swift in Sources */,
 				288CC4A423A89C38008D5218 /* SDWeakProxy.m in Sources */,

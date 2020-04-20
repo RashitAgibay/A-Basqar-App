@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6QV-KR-pDI">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main MovementVC-->
+        <scene sceneID="GP7-zq-rXR">
+            <objects>
+                <viewController id="Inu-6C-kXp" customClass="MainMovementVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vky-r4-69T">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4Le-BQ-B1H">
+                                <rect key="frame" x="0.0" y="44" width="375" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cRN-Xf-Ytn"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Новое перемещение"/>
+                                    <segment title="История перемещений"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="switchSegmentAction:" destination="Inu-6C-kXp" eventType="valueChanged" id="HVa-vA-OVw"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3TK-5S-loo">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <connections>
+                                    <segue destination="eU7-bM-qQD" kind="embed" id="4Mc-oW-9IN"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmi-WT-Pe0">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <connections>
+                                    <segue destination="EhA-lB-IMc" kind="embed" id="QZo-ux-Hql"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="qmi-WT-Pe0" firstAttribute="leading" secondItem="AqM-aw-jLr" secondAttribute="leading" id="0be-Wf-F0L"/>
+                            <constraint firstItem="qmi-WT-Pe0" firstAttribute="top" secondItem="4Le-BQ-B1H" secondAttribute="bottom" id="A3f-Cy-ZPy"/>
+                            <constraint firstItem="AqM-aw-jLr" firstAttribute="trailing" secondItem="3TK-5S-loo" secondAttribute="trailing" id="DVf-VI-bAL"/>
+                            <constraint firstItem="3TK-5S-loo" firstAttribute="leading" secondItem="vky-r4-69T" secondAttribute="leading" id="OHv-lt-Z5R"/>
+                            <constraint firstItem="3TK-5S-loo" firstAttribute="bottom" secondItem="AqM-aw-jLr" secondAttribute="bottom" id="Ubh-lm-Ta4"/>
+                            <constraint firstItem="AqM-aw-jLr" firstAttribute="bottom" secondItem="qmi-WT-Pe0" secondAttribute="bottom" id="X18-oS-gte"/>
+                            <constraint firstItem="4Le-BQ-B1H" firstAttribute="leading" secondItem="AqM-aw-jLr" secondAttribute="leading" id="elP-AQ-ptM"/>
+                            <constraint firstItem="AqM-aw-jLr" firstAttribute="trailing" secondItem="qmi-WT-Pe0" secondAttribute="trailing" id="jnp-JQ-qiY"/>
+                            <constraint firstItem="3TK-5S-loo" firstAttribute="top" secondItem="4Le-BQ-B1H" secondAttribute="bottom" id="kNf-Kn-UG4"/>
+                            <constraint firstItem="4Le-BQ-B1H" firstAttribute="top" secondItem="AqM-aw-jLr" secondAttribute="top" id="mm2-Us-6EI"/>
+                            <constraint firstItem="AqM-aw-jLr" firstAttribute="trailing" secondItem="4Le-BQ-B1H" secondAttribute="trailing" id="x9j-h1-yfp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AqM-aw-jLr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dlq-Q3-mZi">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Item" image="home" id="X7U-cF-Ckn">
+                                <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="KYs-Fv-NM4" kind="presentation" modalPresentationStyle="fullScreen" id="XTd-zJ-Sig"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="search" id="M5H-AY-sQK">
+                                <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="more" id="Hva-mc-47S">
+                                <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="scan" id="eGM-hY-EXw">
+                                <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="barcodeBarButton" destination="eGM-hY-EXw" id="qBk-En-MWT"/>
+                        <outlet property="homeBarButton" destination="X7U-cF-Ckn" id="cR1-JV-gaa"/>
+                        <outlet property="movementHistoryView" destination="3TK-5S-loo" id="XOa-8Y-kNF"/>
+                        <outlet property="newMovementView" destination="qmi-WT-Pe0" id="AZm-tW-Dkx"/>
+                        <outlet property="plusBarButton" destination="Hva-mc-47S" id="tba-tt-rhd"/>
+                        <outlet property="searchBarButton" destination="M5H-AY-sQK" id="nKM-3a-H7j"/>
+                        <outlet property="segmentView" destination="4Le-BQ-B1H" id="xJt-Xm-LA9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fZf-H1-c3O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968.84057971014499" y="-27.120535714285712"/>
+        </scene>
+        <!--menuStoryboadrid-->
+        <scene sceneID="dkx-bM-hgb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="menuStoryboadrid" id="KYs-Fv-NM4" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VUu-1T-BmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1714" y="-201"/>
+        </scene>
+        <!--NewMovement-->
+        <scene sceneID="M2J-az-23u">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewMovement" id="EhA-lB-IMc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xuv-IA-8GZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1696" y="-90"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ytl-5X-t8m">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6QV-KR-pDI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yv5-wY-ptK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Inu-6C-kXp" kind="relationship" relationship="rootViewController" id="D7d-Ws-4wI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SEL-Tt-ZeV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="57.971014492753625" y="-27.455357142857142"/>
+        </scene>
+        <!--MovementHistory-->
+        <scene sceneID="6EE-tm-hfd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MovementHistory" id="eU7-bM-qQD" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7zO-YD-mSt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1714" y="-138"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home" width="30" height="28.5"/>
+        <image name="more" width="30" height="30"/>
+        <image name="scan" width="30" height="24"/>
+        <image name="search" width="30" height="30"/>
+    </resources>
+</document>

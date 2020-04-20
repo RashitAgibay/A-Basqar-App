@@ -10,6 +10,7 @@ target 'A-Basqar' do
  pod 'IQKeyboardManagerSwift'
  pod 'SwipeCellKit'
  pod 'Printer'
+ pod 
 
 
 
