@@ -178,6 +178,9 @@
 		28D76CFD239620D500D5B055 /* BuyingHistoryItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D76CFC239620D500D5B055 /* BuyingHistoryItemVC.swift */; };
 		28D76CFF2396246A00D5B055 /* BuyingHistoryItemsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D76CFE2396246A00D5B055 /* BuyingHistoryItemsModel.swift */; };
 		28D76D21239632FC00D5B055 /* KassaDocVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D76D20239632FC00D5B055 /* KassaDocVC.swift */; };
+		61560A81244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61560A80244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard */; };
+		61560A83244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61560A82244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift */; };
+		61560A86244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61560A85244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift */; };
 		6159FA8D244DEAFD00FE1BED /* MainMovement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */; };
 		6159FA8F244DEB0F00FE1BED /* MainMovementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */; };
 		6159FA91244DF06C00FE1BED /* NewMovementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159FA90244DF06C00FE1BED /* NewMovementVC.swift */; };
@@ -477,6 +480,9 @@
 		28D76CFE2396246A00D5B055 /* BuyingHistoryItemsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyingHistoryItemsModel.swift; sourceTree = "<group>"; };
 		28D76D20239632FC00D5B055 /* KassaDocVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KassaDocVC.swift; sourceTree = "<group>"; };
 		451E8E7CD502E401E3BBD264 /* Pods_A_Basqar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_A_Basqar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		61560A80244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovementHistoryDetail.storyboard; sourceTree = "<group>"; };
+		61560A82244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementHistoryDeatilVC.swift; sourceTree = "<group>"; };
+		61560A85244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementHistoryDetailCell.swift; sourceTree = "<group>"; };
 		6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMovement.storyboard; sourceTree = "<group>"; };
 		6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMovementVC.swift; sourceTree = "<group>"; };
 		6159FA90244DF06C00FE1BED /* NewMovementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMovementVC.swift; sourceTree = "<group>"; };
@@ -750,6 +756,7 @@
 		288C79A9238652BE003282C3 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				61560A84244E1BD000FAAFB0 /* Movement */,
 				28CAE45C238B924E0015DE56 /* CaterogyCell.swift */,
 				28674294238CF50E008884AF /* BuyProductFirstPageCell.swift */,
 				2809019E2394C39A00CA68BD /* AddProdInBuyProdCell.swift */,
@@ -763,7 +770,6 @@
 				286E7080239E2420002CD53D /* ReportsCell.swift */,
 				284EE89C23A9F6A400B470A5 /* BuyProductAddGoodCell.swift */,
 				FDFCE7A423D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift */,
-				6159FA9A244E0E9A00FE1BED /* MovementHistoryCell.swift */,
 			);
 			path = CollectionViewCells;
 			sourceTree = "<group>";
@@ -1057,6 +1063,15 @@
 			path = Reports;
 			sourceTree = "<group>";
 		};
+		61560A84244E1BD000FAAFB0 /* Movement */ = {
+			isa = PBXGroup;
+			children = (
+				6159FA9A244E0E9A00FE1BED /* MovementHistoryCell.swift */,
+				61560A85244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift */,
+			);
+			path = Movement;
+			sourceTree = "<group>";
+		};
 		6159FA89244DEAB900FE1BED /* Movements */ = {
 			isa = PBXGroup;
 			children = (
@@ -1072,6 +1087,7 @@
 				6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */,
 				6159FA94244DF0E700FE1BED /* NewMovement.storyboard */,
 				6159FA96244DF19D00FE1BED /* MovementHistory.storyboard */,
+				61560A80244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard */,
 				6159FA9C244E145A00FE1BED /* PlaceList.storyboard */,
 			);
 			path = Storyboards;
@@ -1083,6 +1099,7 @@
 				6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */,
 				6159FA90244DF06C00FE1BED /* NewMovementVC.swift */,
 				6159FA92244DF08100FE1BED /* MovementHistoryVC.swift */,
+				61560A82244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift */,
 				6159FA9E244E14DB00FE1BED /* PlaceListVC.swift */,
 			);
 			path = ViewControllers;
@@ -1231,6 +1248,7 @@
 				6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */,
 				2812AB002362B45B001D65C8 /* LaunchScreen.storyboard in Resources */,
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
+				61560A81244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard in Resources */,
 				6159FA95244DF0E700FE1BED /* NewMovement.storyboard in Resources */,
 				6159FA8D244DEAFD00FE1BED /* MainMovement.storyboard in Resources */,
 				2812AAFB2362B45A001D65C8 /* Main.storyboard in Resources */,
@@ -1399,6 +1417,7 @@
 				28D76CFD239620D500D5B055 /* BuyingHistoryItemVC.swift in Sources */,
 				288CC46323A89C38008D5218 /* NSButton+WebCache.m in Sources */,
 				288CC3C623A89BFD008D5218 /* Request.swift in Sources */,
+				61560A83244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift in Sources */,
 				280901A32394CDE400CA68BD /* BuyerCompanyVC.swift in Sources */,
 				280901B02394E66C00CA68BD /* ByuingHistoryViewCell.swift in Sources */,
 				284F4287237BC6F00083933E /* GoodCategoryAndInfo.swift in Sources */,
@@ -1445,6 +1464,7 @@
 				288CC3C823A89BFD008D5218 /* RequestTaskMap.swift in Sources */,
 				288CC46623A89C38008D5218 /* SDAnimatedImage.m in Sources */,
 				288CC3D323A89BFD008D5218 /* URLSessionConfiguration+Alamofire.swift in Sources */,
+				61560A86244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift in Sources */,
 				288CC3CA23A89BFD008D5218 /* ResponseSerialization.swift in Sources */,
 				288CC48A23A89C38008D5218 /* SDWebImageManager.m in Sources */,
 				2838ED68239E03BD00C8FE80 /* OutcomeKassaVC.swift in Sources */,

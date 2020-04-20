@@ -20,10 +20,15 @@ class MainMovementVC: UIViewController {
     @IBOutlet weak var newMovementView: UIView!
     @IBOutlet weak var movementHistoryView: UIView!
     
+    var selectedView = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
+        if selectedView != nil {
+            setStartState(selectedSegment: selectedView, segmentView: segmentView, firstView: newMovementView, secondView: movementHistoryView)
+        }
+            
         segmentView.addUnderlineForSelectedSegment()
 
     }
@@ -47,6 +52,23 @@ class MainMovementVC: UIViewController {
         }
     }
     
+    private func setStartState(selectedSegment: Int, segmentView: UISegmentedControl, firstView: UIView, secondView: UIView) {
+        
+        if selectedSegment == 0 {
+            
+            segmentView.selectedSegmentIndex = 0
+            firstView.alpha = 1
+            secondView.alpha = 0
+        }
+        
+        if selectedSegment == 1 {
+            
+            segmentView.selectedSegmentIndex = 1
+            firstView.alpha = 0
+            secondView.alpha = 1
+        }
+        
+    }
     
 
 }

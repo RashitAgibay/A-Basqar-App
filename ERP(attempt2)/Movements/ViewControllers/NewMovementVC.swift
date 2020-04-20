@@ -67,7 +67,7 @@ class NewMovementVC: UIViewController, UICollectionViewDataSource, UICollectionV
         cancelButton.layer.cornerRadius = 10
         cancelButton.dropShadowforButton()
         
-        movementPlaceButton.layer.cornerRadius = 5
+        movementPlaceButton.layer.cornerRadius = 10
         movementPlaceButton.dropShadowforButton()
 
         

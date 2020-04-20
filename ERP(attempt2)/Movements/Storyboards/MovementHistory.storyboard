@@ -119,11 +119,20 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="collectionView" destination="ypv-De-BEN" id="ChI-7L-YYt"/>
+                        <segue destination="Hjd-Mg-U5l" kind="presentation" identifier="fromMhToMhd" modalPresentationStyle="fullScreen" id="9nu-6b-EBc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Js3-R4-YO7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="83" y="78"/>
+        </scene>
+        <!--MovementHistoryDetail-->
+        <scene sceneID="Sb2-CX-akf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MovementHistoryDetail" id="Hjd-Mg-U5l" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LM6-nf-phY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="740" y="77"/>
         </scene>
     </scenes>
 </document>

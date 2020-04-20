@@ -32,6 +32,8 @@ class PlaceListVC: UIViewController, UICollectionViewDataSource, UICollectionVie
         return cell
     }
 
+
+    
     private func setupCell(cell: BuyerCompanyCell) {
         
         cell.contentView.layer.cornerRadius = 10
