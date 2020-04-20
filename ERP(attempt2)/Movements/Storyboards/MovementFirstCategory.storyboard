@@ -91,6 +91,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="collectionView" destination="qFN-r4-85d" id="ruy-IZ-vC9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XRG-GS-gq6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
