@@ -1891,7 +1891,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ipq-uo-e36">
-                                                    <rect key="frame" x="80" y="5" width="42" height="20.5"/>
+                                                    <rect key="frame" x="80" y="5" width="225" height="20.5"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1963,6 +1963,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="Mxo-ds-Efj" secondAttribute="trailing" constant="5" id="1UE-eu-cQv"/>
+                                                <constraint firstItem="Mxo-ds-Efj" firstAttribute="leading" secondItem="Ipq-uo-e36" secondAttribute="trailing" constant="10" id="3js-ZH-2eL"/>
                                                 <constraint firstAttribute="bottom" secondItem="bbs-Py-5Xq" secondAttribute="bottom" constant="5" id="62s-7r-TIw"/>
                                                 <constraint firstItem="AiR-Gl-Dzl" firstAttribute="leading" secondItem="F6n-kJ-r14" secondAttribute="leading" id="BjT-fR-dDS"/>
                                                 <constraint firstItem="bbs-Py-5Xq" firstAttribute="leading" secondItem="TiG-3X-XLu" secondAttribute="trailing" constant="50" id="Jrr-Ld-NLe"/>
@@ -3504,7 +3505,7 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WZO-Nc-z9U">
-                                                    <rect key="frame" x="80" y="5" width="42" height="20.5"/>
+                                                    <rect key="frame" x="80" y="5" width="225" height="20.5"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -3583,6 +3584,7 @@
                                                 <constraint firstItem="Txm-Za-wa7" firstAttribute="centerY" secondItem="v0a-tz-sUP" secondAttribute="centerY" id="OSf-Nq-gA7"/>
                                                 <constraint firstAttribute="bottom" secondItem="YGH-HG-Om2" secondAttribute="bottom" constant="5" id="SVo-vV-3XT"/>
                                                 <constraint firstItem="Txm-Za-wa7" firstAttribute="leading" secondItem="v0a-tz-sUP" secondAttribute="leading" id="Sfr-HS-Lkp"/>
+                                                <constraint firstItem="LA9-Ti-5Wb" firstAttribute="leading" secondItem="WZO-Nc-z9U" secondAttribute="trailing" constant="10" id="coJ-7B-ogY"/>
                                                 <constraint firstItem="cLk-Nf-0FG" firstAttribute="leading" secondItem="oPR-zm-r2j" secondAttribute="trailing" constant="5" id="ghi-8Q-87w"/>
                                                 <constraint firstItem="oPR-zm-r2j" firstAttribute="top" secondItem="WZO-Nc-z9U" secondAttribute="bottom" constant="1" id="lMR-nm-4GP"/>
                                                 <constraint firstItem="LA9-Ti-5Wb" firstAttribute="top" secondItem="v0a-tz-sUP" secondAttribute="top" constant="5" id="ldY-IF-saD"/>
@@ -7383,11 +7385,11 @@
         <segue reference="OFF-qA-Pln"/>
         <segue reference="4e1-mC-Th3"/>
         <segue reference="cV1-SB-D9k"/>
-        <segue reference="7YZ-1T-eGf"/>
+        <segue reference="jdj-3L-A66"/>
         <segue reference="6VS-bH-r3f"/>
         <segue reference="6pu-6u-RW8"/>
         <segue reference="3LV-1F-9HZ"/>
-        <segue reference="QPw-cq-WU5"/>
+        <segue reference="oRM-Rm-y9o"/>
         <segue reference="ZJ2-I0-hTz"/>
         <segue reference="GKp-99-c5l"/>
         <segue reference="H3Y-h8-ahJ"/>

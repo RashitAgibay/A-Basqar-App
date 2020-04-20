@@ -75,6 +75,9 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="more" id="Hva-mc-47S">
                                 <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="ZPi-7h-L85" kind="presentation" modalPresentationStyle="fullScreen" id="ZN5-AJ-gvn"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="scan" id="eGM-hY-EXw">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -96,13 +99,21 @@
             </objects>
             <point key="canvasLocation" x="968.84057971014499" y="-27.120535714285712"/>
         </scene>
+        <!--MovementFirstCategory-->
+        <scene sceneID="tst-Qj-ctL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MovementFirstCategory" id="ZPi-7h-L85" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SFj-ic-faB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1758" y="-214"/>
+        </scene>
         <!--menuStoryboadrid-->
         <scene sceneID="dkx-bM-hgb">
             <objects>
                 <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="menuStoryboadrid" id="KYs-Fv-NM4" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VUu-1T-BmP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="-201"/>
+            <point key="canvasLocation" x="1730" y="-273"/>
         </scene>
         <!--NewMovement-->
         <scene sceneID="M2J-az-23u">
@@ -110,7 +121,7 @@
                 <viewControllerPlaceholder storyboardName="NewMovement" id="EhA-lB-IMc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuv-IA-8GZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1694" y="-148"/>
+            <point key="canvasLocation" x="1707" y="184"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ytl-5X-t8m">
@@ -137,7 +148,7 @@
                 <viewControllerPlaceholder storyboardName="MovementHistory" id="eU7-bM-qQD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zO-YD-mSt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1707" y="-95"/>
+            <point key="canvasLocation" x="1707" y="231"/>
         </scene>
     </scenes>
     <resources>

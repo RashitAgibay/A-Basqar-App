@@ -181,6 +181,9 @@
 		61560A81244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61560A80244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard */; };
 		61560A83244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61560A82244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift */; };
 		61560A86244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61560A85244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift */; };
+		61560A88244E26E100FAAFB0 /* file in Resources */ = {isa = PBXBuildFile; fileRef = 61560A87244E26E100FAAFB0 /* file */; };
+		61560A8A244E33A300FAAFB0 /* MovementFirstCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61560A89244E33A300FAAFB0 /* MovementFirstCategoryVC.swift */; };
+		61560A8C244E33BE00FAAFB0 /* MovementFirstCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61560A8B244E33BE00FAAFB0 /* MovementFirstCategory.storyboard */; };
 		6159FA8D244DEAFD00FE1BED /* MainMovement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */; };
 		6159FA8F244DEB0F00FE1BED /* MainMovementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */; };
 		6159FA91244DF06C00FE1BED /* NewMovementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159FA90244DF06C00FE1BED /* NewMovementVC.swift */; };
@@ -483,6 +486,9 @@
 		61560A80244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovementHistoryDetail.storyboard; sourceTree = "<group>"; };
 		61560A82244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementHistoryDeatilVC.swift; sourceTree = "<group>"; };
 		61560A85244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementHistoryDetailCell.swift; sourceTree = "<group>"; };
+		61560A87244E26E100FAAFB0 /* file */ = {isa = PBXFileReference; lastKnownFileType = text; path = file; sourceTree = "<group>"; };
+		61560A89244E33A300FAAFB0 /* MovementFirstCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementFirstCategoryVC.swift; sourceTree = "<group>"; };
+		61560A8B244E33BE00FAAFB0 /* MovementFirstCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovementFirstCategory.storyboard; sourceTree = "<group>"; };
 		6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMovement.storyboard; sourceTree = "<group>"; };
 		6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMovementVC.swift; sourceTree = "<group>"; };
 		6159FA90244DF06C00FE1BED /* NewMovementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMovementVC.swift; sourceTree = "<group>"; };
@@ -611,6 +617,7 @@
 				2812AAFE2362B45B001D65C8 /* LaunchScreen.storyboard */,
 				2812AB012362B45B001D65C8 /* Info.plist */,
 				288CC38723A89B15008D5218 /* Libraries */,
+				61560A87244E26E100FAAFB0 /* file */,
 			);
 			path = "ERP(attempt2)";
 			sourceTree = "<group>";
@@ -1086,6 +1093,7 @@
 			children = (
 				6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */,
 				6159FA94244DF0E700FE1BED /* NewMovement.storyboard */,
+				61560A8B244E33BE00FAAFB0 /* MovementFirstCategory.storyboard */,
 				6159FA96244DF19D00FE1BED /* MovementHistory.storyboard */,
 				61560A80244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard */,
 				6159FA9C244E145A00FE1BED /* PlaceList.storyboard */,
@@ -1098,6 +1106,7 @@
 			children = (
 				6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */,
 				6159FA90244DF06C00FE1BED /* NewMovementVC.swift */,
+				61560A89244E33A300FAAFB0 /* MovementFirstCategoryVC.swift */,
 				6159FA92244DF08100FE1BED /* MovementHistoryVC.swift */,
 				61560A82244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift */,
 				6159FA9E244E14DB00FE1BED /* PlaceListVC.swift */,
@@ -1248,6 +1257,8 @@
 				6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */,
 				2812AB002362B45B001D65C8 /* LaunchScreen.storyboard in Resources */,
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
+				61560A8C244E33BE00FAAFB0 /* MovementFirstCategory.storyboard in Resources */,
+				61560A88244E26E100FAAFB0 /* file in Resources */,
 				61560A81244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard in Resources */,
 				6159FA95244DF0E700FE1BED /* NewMovement.storyboard in Resources */,
 				6159FA8D244DEAFD00FE1BED /* MainMovement.storyboard in Resources */,
@@ -1440,6 +1451,7 @@
 				28B4978A239E199A0002C690 /* MainReportPageVC.swift in Sources */,
 				288CC48523A89C38008D5218 /* SDWebImageDownloaderOperation.m in Sources */,
 				FDB6036623E2E6830012D65D /* SellingBarcodeVC.swift in Sources */,
+				61560A8A244E33A300FAAFB0 /* MovementFirstCategoryVC.swift in Sources */,
 				288CC3B823A89BFD008D5218 /* DispatchQueue+Alamofire.swift in Sources */,
 				288CC47823A89C38008D5218 /* SDImageIOAnimatedCoder.m in Sources */,
 				288CC4A323A89C38008D5218 /* SDInternalMacros.m in Sources */,
