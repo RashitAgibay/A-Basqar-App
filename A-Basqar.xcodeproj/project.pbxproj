@@ -185,6 +185,8 @@
 		6159FA95244DF0E700FE1BED /* NewMovement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6159FA94244DF0E700FE1BED /* NewMovement.storyboard */; };
 		6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6159FA96244DF19D00FE1BED /* MovementHistory.storyboard */; };
 		6159FA9B244E0E9A00FE1BED /* MovementHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159FA9A244E0E9A00FE1BED /* MovementHistoryCell.swift */; };
+		6159FA9D244E145B00FE1BED /* PlaceList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6159FA9C244E145A00FE1BED /* PlaceList.storyboard */; };
+		6159FA9F244E14DB00FE1BED /* PlaceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159FA9E244E14DB00FE1BED /* PlaceListVC.swift */; };
 		AA5DF4DA597D0C7F758AB506 /* Pods_A_Basqar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451E8E7CD502E401E3BBD264 /* Pods_A_Basqar.framework */; };
 		FD3680A423C4712B00914B94 /* SellingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3680A323C4712B00914B94 /* SellingModel.swift */; };
 		FD6F84AC23C7446D0076BE0A /* GoodInBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F84AB23C7446D0076BE0A /* GoodInBasket.swift */; };
@@ -482,6 +484,8 @@
 		6159FA94244DF0E700FE1BED /* NewMovement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewMovement.storyboard; sourceTree = "<group>"; };
 		6159FA96244DF19D00FE1BED /* MovementHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovementHistory.storyboard; sourceTree = "<group>"; };
 		6159FA9A244E0E9A00FE1BED /* MovementHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementHistoryCell.swift; sourceTree = "<group>"; };
+		6159FA9C244E145A00FE1BED /* PlaceList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlaceList.storyboard; sourceTree = "<group>"; };
+		6159FA9E244E14DB00FE1BED /* PlaceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceListVC.swift; sourceTree = "<group>"; };
 		C7FC59907306329939555855 /* Pods-A-Basqar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A-Basqar.release.xcconfig"; path = "Target Support Files/Pods-A-Basqar/Pods-A-Basqar.release.xcconfig"; sourceTree = "<group>"; };
 		D5F0E550815B74E5DD782B02 /* Pods-ERP(attempt2).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ERP(attempt2).debug.xcconfig"; path = "Target Support Files/Pods-ERP(attempt2)/Pods-ERP(attempt2).debug.xcconfig"; sourceTree = "<group>"; };
 		FD3680A323C4712B00914B94 /* SellingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingModel.swift; sourceTree = "<group>"; };
@@ -1068,6 +1072,7 @@
 				6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */,
 				6159FA94244DF0E700FE1BED /* NewMovement.storyboard */,
 				6159FA96244DF19D00FE1BED /* MovementHistory.storyboard */,
+				6159FA9C244E145A00FE1BED /* PlaceList.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1078,6 +1083,7 @@
 				6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */,
 				6159FA90244DF06C00FE1BED /* NewMovementVC.swift */,
 				6159FA92244DF08100FE1BED /* MovementHistoryVC.swift */,
+				6159FA9E244E14DB00FE1BED /* PlaceListVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1221,6 +1227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6159FA9D244E145B00FE1BED /* PlaceList.storyboard in Resources */,
 				6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */,
 				2812AB002362B45B001D65C8 /* LaunchScreen.storyboard in Resources */,
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
@@ -1323,6 +1330,7 @@
 				288CC38623A8975C008D5218 /* LoginModel.swift in Sources */,
 				288CC38A23A89B60008D5218 /* Reachability.swift in Sources */,
 				280901B42394E8AB00CA68BD /* BuyHistoryModel.swift in Sources */,
+				6159FA9F244E14DB00FE1BED /* PlaceListVC.swift in Sources */,
 				288CC47623A89C38008D5218 /* SDImageGraphics.m in Sources */,
 				28674293238CF30B008884AF /* BuyProductVCSecondPage.swift in Sources */,
 				288CC3D423A89BFD008D5218 /* Validation.swift in Sources */,

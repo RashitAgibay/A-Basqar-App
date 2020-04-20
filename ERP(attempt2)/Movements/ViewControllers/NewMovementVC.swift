@@ -26,7 +26,21 @@ class NewMovementVC: UIViewController, UICollectionViewDataSource, UICollectionV
     }
     
 
-
+    
+    @IBAction func tapMovemnetPlaceButton(_ sender: Any) {
+        
+        performSegue(withIdentifier: "fromNewMovemnetToSelectPlace", sender: self)
+        
+    }
+    
+    @IBAction func tapSendButton(_ sender: Any) {
+        
+    }
+    @IBAction func tapCancelButton(_ sender: Any) {
+        
+    }
+    
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }

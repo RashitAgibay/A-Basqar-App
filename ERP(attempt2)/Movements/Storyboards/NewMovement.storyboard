@@ -155,14 +155,17 @@
                                         <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="700 000 тенге" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zb6-Nm-92k">
-                                        <rect key="frame" x="201.5" y="7" width="102" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="700 000 тенге" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zb6-Nm-92k">
+                                        <rect key="frame" x="190" y="7" width="140" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="140" id="LiD-M4-hTj"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Место:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhB-Mk-dut">
-                                        <rect key="frame" x="15" y="32" width="50" height="18"/>
+                                        <rect key="frame" x="15" y="34" width="50" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -177,6 +180,9 @@
                                         <state key="normal" title="Отправить">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapSendButton:" destination="B17-Rb-oVG" eventType="touchUpInside" id="j9a-Bk-Ovl"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVf-QU-H22">
                                         <rect key="frame" x="190" y="30" width="140" height="30"/>
@@ -186,9 +192,12 @@
                                             <constraint firstAttribute="width" constant="140" id="osf-k4-y2Z"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="DALASOFT">
+                                        <state key="normal" title="Склад #1">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapMovemnetPlaceButton:" destination="B17-Rb-oVG" eventType="touchUpInside" id="1RH-ew-5A3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNc-DF-nNJ">
                                         <rect key="frame" x="190" y="69" width="140" height="40"/>
@@ -200,13 +209,15 @@
                                         <state key="normal" title="Отмена">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapCancelButton:" destination="B17-Rb-oVG" eventType="touchUpInside" id="hfT-tM-byT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="MVf-QU-H22" secondAttribute="trailing" constant="15" id="1Iy-gp-IQV"/>
-                                    <constraint firstItem="jhB-Mk-dut" firstAttribute="top" secondItem="UN4-Ah-Yw9" secondAttribute="bottom" constant="7" id="3IN-gO-gD2"/>
-                                    <constraint firstItem="Zb6-Nm-92k" firstAttribute="centerX" secondItem="aKb-eK-W2V" secondAttribute="centerX" constant="80" id="DFv-UL-72W"/>
+                                    <constraint firstItem="jhB-Mk-dut" firstAttribute="top" secondItem="UN4-Ah-Yw9" secondAttribute="bottom" constant="9" id="3IN-gO-gD2"/>
                                     <constraint firstItem="Aum-Sl-LaB" firstAttribute="leading" secondItem="aKb-eK-W2V" secondAttribute="leading" constant="15" id="LdO-g2-U2P"/>
                                     <constraint firstItem="MVf-QU-H22" firstAttribute="top" secondItem="Zb6-Nm-92k" secondAttribute="bottom" constant="5" id="N2b-vf-Ru6"/>
                                     <constraint firstItem="jhB-Mk-dut" firstAttribute="leading" secondItem="aKb-eK-W2V" secondAttribute="leading" constant="15" id="NwH-ML-9ET"/>
@@ -214,6 +225,7 @@
                                     <constraint firstItem="Zb6-Nm-92k" firstAttribute="top" secondItem="aKb-eK-W2V" secondAttribute="top" constant="7" id="YXA-7X-SNr"/>
                                     <constraint firstItem="UN4-Ah-Yw9" firstAttribute="top" secondItem="aKb-eK-W2V" secondAttribute="top" constant="7" id="aCj-a7-9dx"/>
                                     <constraint firstAttribute="bottom" secondItem="Aum-Sl-LaB" secondAttribute="bottom" constant="6" id="idF-zJ-Mqh"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zb6-Nm-92k" secondAttribute="trailing" constant="15" id="s6V-ak-WGu"/>
                                     <constraint firstAttribute="height" constant="115" id="u5z-e5-PEp"/>
                                     <constraint firstItem="UN4-Ah-Yw9" firstAttribute="leading" secondItem="aKb-eK-W2V" secondAttribute="leading" constant="15" id="wgh-XH-HcZ"/>
                                     <constraint firstAttribute="trailing" secondItem="rNc-DF-nNJ" secondAttribute="trailing" constant="15" id="xj2-dP-JbT"/>
@@ -240,11 +252,20 @@
                         <outlet property="movementPlaceButton" destination="MVf-QU-H22" id="LuY-6S-jEn"/>
                         <outlet property="sendButton" destination="Aum-Sl-LaB" id="cuL-K5-60s"/>
                         <outlet property="totalSumLabel" destination="Zb6-Nm-92k" id="inE-MS-aBU"/>
+                        <segue destination="MhA-eW-o9E" kind="presentation" identifier="fromNewMovemnetToSelectPlace" modalPresentationStyle="fullScreen" id="RTc-Tp-D2j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EcQ-XM-R5K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="82.400000000000006" y="77.811094452773617"/>
+        </scene>
+        <!--PlaceList-->
+        <scene sceneID="PPI-zi-VeO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PlaceList" id="MhA-eW-o9E" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6bt-K9-vtm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="671" y="76"/>
         </scene>
     </scenes>
     <resources>

@@ -110,7 +110,7 @@
                 <viewControllerPlaceholder storyboardName="NewMovement" id="EhA-lB-IMc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xuv-IA-8GZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1696" y="-90"/>
+            <point key="canvasLocation" x="1694" y="-148"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ytl-5X-t8m">
@@ -137,7 +137,7 @@
                 <viewControllerPlaceholder storyboardName="MovementHistory" id="eU7-bM-qQD" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7zO-YD-mSt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="-138"/>
+            <point key="canvasLocation" x="1707" y="-95"/>
         </scene>
     </scenes>
     <resources>
