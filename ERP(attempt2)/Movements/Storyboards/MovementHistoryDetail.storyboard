@@ -54,7 +54,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="imp-KU-451">
-                                                    <rect key="frame" x="274" y="38" width="56" height="27"/>
+                                                    <rect key="frame" x="284" y="38" width="56" height="27"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50 - кг" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kw5-JH-chg">
                                                             <rect key="frame" x="5" y="5" width="46" height="17"/>
@@ -76,7 +76,7 @@
                                                 <constraint firstItem="czo-Iz-0nb" firstAttribute="top" secondItem="zml-rC-EiW" secondAttribute="bottom" constant="5" id="5on-C8-DHE"/>
                                                 <constraint firstItem="czo-Iz-0nb" firstAttribute="leading" secondItem="kZG-y6-BjE" secondAttribute="trailing" constant="10" id="HXL-V1-js5"/>
                                                 <constraint firstItem="zml-rC-EiW" firstAttribute="top" secondItem="2fU-rZ-hUG" secondAttribute="top" constant="10" id="RYi-15-wqH"/>
-                                                <constraint firstAttribute="trailing" secondItem="imp-KU-451" secondAttribute="trailing" constant="20" id="VlO-LU-0D7"/>
+                                                <constraint firstAttribute="trailing" secondItem="imp-KU-451" secondAttribute="trailing" constant="10" id="VlO-LU-0D7"/>
                                                 <constraint firstAttribute="bottom" secondItem="imp-KU-451" secondAttribute="bottom" constant="5" id="WKH-cL-tbJ"/>
                                                 <constraint firstItem="kZG-y6-BjE" firstAttribute="leading" secondItem="2fU-rZ-hUG" secondAttribute="leading" id="Zsa-Yr-JP3"/>
                                                 <constraint firstItem="zml-rC-EiW" firstAttribute="leading" secondItem="kZG-y6-BjE" secondAttribute="trailing" constant="10" id="hMK-5x-sbr"/>

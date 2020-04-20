@@ -156,9 +156,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="700 000 тенге" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zb6-Nm-92k">
-                                        <rect key="frame" x="190" y="7" width="140" height="18"/>
+                                        <rect key="frame" x="180" y="7" width="150" height="18"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="LiD-M4-hTj"/>
+                                            <constraint firstAttribute="width" constant="150" id="LiD-M4-hTj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <nil key="textColor"/>
@@ -171,10 +171,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aum-Sl-LaB">
-                                        <rect key="frame" x="15" y="69" width="140" height="40"/>
+                                        <rect key="frame" x="15" y="69" width="150" height="40"/>
                                         <color key="backgroundColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="7bg-iu-KmT"/>
+                                            <constraint firstAttribute="width" constant="150" id="7bg-iu-KmT"/>
                                             <constraint firstAttribute="height" constant="40" id="e9t-hG-rSF"/>
                                         </constraints>
                                         <state key="normal" title="Отправить">
@@ -185,11 +185,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVf-QU-H22">
-                                        <rect key="frame" x="190" y="30" width="140" height="30"/>
+                                        <rect key="frame" x="180" y="30" width="150" height="30"/>
                                         <color key="backgroundColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="G5x-Kq-L1B"/>
-                                            <constraint firstAttribute="width" constant="140" id="osf-k4-y2Z"/>
+                                            <constraint firstAttribute="width" constant="150" id="osf-k4-y2Z"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <state key="normal" title="Склад #1">
@@ -200,10 +200,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNc-DF-nNJ">
-                                        <rect key="frame" x="190" y="69" width="140" height="40"/>
+                                        <rect key="frame" x="180" y="69" width="150" height="40"/>
                                         <color key="backgroundColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="AZs-kk-Q3o"/>
+                                            <constraint firstAttribute="width" constant="150" id="AZs-kk-Q3o"/>
                                             <constraint firstAttribute="height" constant="40" id="kzC-NK-HEd"/>
                                         </constraints>
                                         <state key="normal" title="Отмена">
