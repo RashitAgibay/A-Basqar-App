@@ -16,22 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d7z-OW-W9f">
-                                <rect key="frame" x="0.0" y="44" width="375" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Hok-zQ-CB6"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Новая заявка"/>
-                                    <segment title="Текущие заявки"/>
-                                    <segment title="История заявок"/>
-                                </segments>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="switchSegmentAction:" destination="0VK-wb-EsF" eventType="valueChanged" id="3ol-fY-Roi"/>
-                                </connections>
-                            </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bRZ-dI-fBk">
                                 <rect key="frame" x="0.0" y="84" width="375" height="583"/>
                                 <connections>
@@ -50,6 +34,22 @@
                                     <segue destination="22b-Cc-pCd" kind="embed" id="kBh-Kv-qqI"/>
                                 </connections>
                             </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d7z-OW-W9f">
+                                <rect key="frame" x="0.0" y="44" width="375" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Hok-zQ-CB6"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Новая заявка"/>
+                                    <segment title="Текущие заявки"/>
+                                    <segment title="История заявок"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="switchSegmentAction:" destination="0VK-wb-EsF" eventType="valueChanged" id="3ol-fY-Roi"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
