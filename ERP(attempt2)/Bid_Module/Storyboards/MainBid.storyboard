@@ -86,6 +86,9 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="more" id="8VR-Jf-YWe">
                                 <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="cTr-Qa-OUe" kind="presentation" modalPresentationStyle="fullScreen" id="zQQ-uo-yh8"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="scan" id="4SC-Tc-v8l">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -108,13 +111,21 @@
             </objects>
             <point key="canvasLocation" x="1878.985507246377" y="-27.120535714285712"/>
         </scene>
+        <!--BidFirstCategory-->
+        <scene sceneID="Fdz-CR-eAw">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BidFirstCategory" id="cTr-Qa-OUe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="deC-6F-SUl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2873" y="-282"/>
+        </scene>
         <!--menuStoryboadrid-->
         <scene sceneID="is2-v4-jMK">
             <objects>
                 <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="menuStoryboadrid" id="0WR-HV-n6M" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFa-9X-5vs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2570" y="-292"/>
+            <point key="canvasLocation" x="2834" y="-388"/>
         </scene>
         <!--BidsHistory-->
         <scene sceneID="Hgr-Pn-yk0">
@@ -122,7 +133,7 @@
                 <viewControllerPlaceholder storyboardName="BidsHistory" id="22b-Cc-pCd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nK4-oe-LN2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2585" y="-88"/>
+            <point key="canvasLocation" x="2823" y="-213"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nxj-9r-Wi9">
@@ -148,7 +159,7 @@
                 <viewControllerPlaceholder storyboardName="CurrentBids" id="6Tj-yy-FD7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7E-YQ-0u0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2585" y="-148"/>
+            <point key="canvasLocation" x="2823" y="-54"/>
         </scene>
         <!--NewBid-->
         <scene sceneID="bQX-Sq-HoD">
@@ -156,7 +167,7 @@
                 <viewControllerPlaceholder storyboardName="NewBid" id="amm-6v-uWP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PoT-HP-OBP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2585" y="-228"/>
+            <point key="canvasLocation" x="2801" y="-148"/>
         </scene>
     </scenes>
     <resources>

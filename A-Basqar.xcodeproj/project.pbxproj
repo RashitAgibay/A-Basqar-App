@@ -184,6 +184,8 @@
 		613D737C244F657900E0E392 /* NewMovementInBidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613D737B244F657900E0E392 /* NewMovementInBidCell.swift */; };
 		613D737E244F6BA100E0E392 /* BidHistoryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 613D737D244F6BA100E0E392 /* BidHistoryDetail.storyboard */; };
 		613D7380244F6CBB00E0E392 /* BidHistoryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613D737F244F6CBB00E0E392 /* BidHistoryDetailVC.swift */; };
+		613D7382244F75FB00E0E392 /* BidFirstCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 613D7381244F75FB00E0E392 /* BidFirstCategory.storyboard */; };
+		613D7384244F761E00E0E392 /* BidFirstCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613D7383244F761E00E0E392 /* BidFirstCategoryVC.swift */; };
 		61560A81244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61560A80244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard */; };
 		61560A83244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61560A82244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift */; };
 		61560A86244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61560A85244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift */; };
@@ -508,6 +510,8 @@
 		613D737B244F657900E0E392 /* NewMovementInBidCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMovementInBidCell.swift; sourceTree = "<group>"; };
 		613D737D244F6BA100E0E392 /* BidHistoryDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BidHistoryDetail.storyboard; sourceTree = "<group>"; };
 		613D737F244F6CBB00E0E392 /* BidHistoryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidHistoryDetailVC.swift; sourceTree = "<group>"; };
+		613D7381244F75FB00E0E392 /* BidFirstCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BidFirstCategory.storyboard; sourceTree = "<group>"; };
+		613D7383244F761E00E0E392 /* BidFirstCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidFirstCategoryVC.swift; sourceTree = "<group>"; };
 		61560A80244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovementHistoryDetail.storyboard; sourceTree = "<group>"; };
 		61560A82244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementHistoryDeatilVC.swift; sourceTree = "<group>"; };
 		61560A85244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementHistoryDetailCell.swift; sourceTree = "<group>"; };
@@ -1132,9 +1136,9 @@
 			isa = PBXGroup;
 			children = (
 				6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */,
-				6159FA94244DF0E700FE1BED /* NewMovement.storyboard */,
 				61560A8B244E33BE00FAAFB0 /* MovementFirstCategory.storyboard */,
 				61560A8D244E404B00FAAFB0 /* MovementProductList.storyboard */,
+				6159FA94244DF0E700FE1BED /* NewMovement.storyboard */,
 				6159FA96244DF19D00FE1BED /* MovementHistory.storyboard */,
 				61560A80244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard */,
 				6159FA9C244E145A00FE1BED /* PlaceList.storyboard */,
@@ -1146,9 +1150,9 @@
 			isa = PBXGroup;
 			children = (
 				6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */,
-				6159FA90244DF06C00FE1BED /* NewMovementVC.swift */,
 				61560A89244E33A300FAAFB0 /* MovementFirstCategoryVC.swift */,
 				6138C2E6244E44C5005CD38C /* MovementProductListVC.swift */,
+				6159FA90244DF06C00FE1BED /* NewMovementVC.swift */,
 				6159FA92244DF08100FE1BED /* MovementHistoryVC.swift */,
 				61560A82244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift */,
 				6159FA9E244E14DB00FE1BED /* PlaceListVC.swift */,
@@ -1169,6 +1173,7 @@
 			isa = PBXGroup;
 			children = (
 				61F00E6F244F0D64001D0EEE /* MainBidVC.swift */,
+				613D7383244F761E00E0E392 /* BidFirstCategoryVC.swift */,
 				61F00E79244F13BA001D0EEE /* NewBidVC.swift */,
 				61F00E7B244F2047001D0EEE /* CurrentBidsVC.swift */,
 				61F00E86244F2636001D0EEE /* CurrentBidDetailVC.swift */,
@@ -1183,6 +1188,7 @@
 			isa = PBXGroup;
 			children = (
 				61F00E71244F0D71001D0EEE /* MainBid.storyboard */,
+				613D7381244F75FB00E0E392 /* BidFirstCategory.storyboard */,
 				61F00E73244F1060001D0EEE /* NewBid.storyboard */,
 				61F00E75244F1071001D0EEE /* CurrentBids.storyboard */,
 				61F00E84244F2618001D0EEE /* CurrentBidDetail.storyboard */,
@@ -1350,6 +1356,7 @@
 				2812AB002362B45B001D65C8 /* LaunchScreen.storyboard in Resources */,
 				613D737E244F6BA100E0E392 /* BidHistoryDetail.storyboard in Resources */,
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
+				613D7382244F75FB00E0E392 /* BidFirstCategory.storyboard in Resources */,
 				61F00E85244F2618001D0EEE /* CurrentBidDetail.storyboard in Resources */,
 				61560A8C244E33BE00FAAFB0 /* MovementFirstCategory.storyboard in Resources */,
 				613D7378244F64A800E0E392 /* NewMovementInBid.storyboard in Resources */,
@@ -1435,6 +1442,7 @@
 				28B49785239E186C0002C690 /* FinancialReporModel.swift in Sources */,
 				282EBF26236C0104008C3B1F /* ChangePasswordViewController.swift in Sources */,
 				288CC47423A89C38008D5218 /* SDImageFrame.m in Sources */,
+				613D7384244F761E00E0E392 /* BidFirstCategoryVC.swift in Sources */,
 				288CC3D223A89BFD008D5218 /* URLRequest+Alamofire.swift in Sources */,
 				28D76CFB239620AD00D5B055 /* BuyingHistoryItemCell.swift in Sources */,
 				6159FA91244DF06C00FE1BED /* NewMovementVC.swift in Sources */,
