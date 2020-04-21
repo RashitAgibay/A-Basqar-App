@@ -42,6 +42,8 @@ class CurrentBidDetailVC: UIViewController,  UICollectionViewDataSource, UIColle
         navigateToMainBid()
     }
     @IBAction func tapAcceptBidButton(_ sender: Any) {
+        
+        navigateToCreateNewMovement()
     }
     @IBAction func tapDeclineBidButton(_ sender: Any) {
     }
@@ -49,6 +51,10 @@ class CurrentBidDetailVC: UIViewController,  UICollectionViewDataSource, UIColle
     private func navigateToMainBid() {
         performSegue(withIdentifier: "fromCBDtoMB", sender: self)
 
+    }
+    
+    private func navigateToCreateNewMovement() {
+        performSegue(withIdentifier: "fromCBDtoNMB", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

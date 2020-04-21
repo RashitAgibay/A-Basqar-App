@@ -204,6 +204,7 @@
                         <outlet property="senderNameLabel" destination="PcF-Ew-r09" id="HTh-UY-27t"/>
                         <outlet property="senderPlaceNameLabel" destination="xTg-YG-Y3u" id="5kZ-CZ-6tx"/>
                         <segue destination="xse-Qm-NbK" kind="presentation" identifier="fromCBDtoMB" modalPresentationStyle="fullScreen" id="Ykn-Gb-SeF"/>
+                        <segue destination="LAg-zR-565" kind="presentation" identifier="fromCBDtoNMB" modalPresentationStyle="fullScreen" id="LJb-S9-LWQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWD-Jo-8Xd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -216,7 +217,15 @@
                 <viewControllerPlaceholder storyboardName="MainBid" id="xse-Qm-NbK" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7u7-nC-AMb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3070" y="139"/>
+            <point key="canvasLocation" x="3042" y="90"/>
+        </scene>
+        <!--NewMovementInBid-->
+        <scene sceneID="yZm-xD-PKt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewMovementInBid" id="LAg-zR-565" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NLg-QD-U3S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3042" y="9"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="RYH-r0-07r">
