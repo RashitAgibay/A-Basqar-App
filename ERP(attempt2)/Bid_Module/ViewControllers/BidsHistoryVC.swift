@@ -30,5 +30,15 @@ class BidsHistoryVC: UIViewController, UICollectionViewDataSource, UICollectionV
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.navigateToBidHistoryDetail()
+    }
+    
+    private func navigateToBidHistoryDetail() {
+        
+        performSegue(withIdentifier: "fromBHtoBHD", sender: self)
+    }
 
 }

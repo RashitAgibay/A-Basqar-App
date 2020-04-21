@@ -61,6 +61,8 @@ class MainBidVC: UIViewController {
 
     private func setStartState(selectedSegment: Int, segmentView: UISegmentedControl, firstView: UIView, secondView: UIView, thirdView: UIView) {
         
+//        print(selectedSegment)
+        
         if selectedSegment == 0 {
             
             segmentView.selectedSegmentIndex = 0
@@ -79,7 +81,7 @@ class MainBidVC: UIViewController {
         
         if selectedSegment == 2 {
             
-            segmentView.selectedSegmentIndex = 3
+            segmentView.selectedSegmentIndex = 2
             firstView.alpha = 0
             secondView.alpha = 0
             thirdView.alpha = 1

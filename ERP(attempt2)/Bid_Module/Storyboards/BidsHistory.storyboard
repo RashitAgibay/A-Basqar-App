@@ -131,11 +131,20 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="collectionView" destination="7Cs-Ch-7Uy" id="1Fp-Wb-sZP"/>
+                        <segue destination="922-3V-dyC" kind="presentation" identifier="fromBHtoBHD" modalPresentationStyle="fullScreen" id="zhw-57-BQ5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iLp-C0-mvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="83" y="78"/>
+        </scene>
+        <!--BidHistoryDetail-->
+        <scene sceneID="tA0-Iu-Adq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BidHistoryDetail" id="922-3V-dyC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ta-hk-sKE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="860" y="77"/>
         </scene>
     </scenes>
 </document>
