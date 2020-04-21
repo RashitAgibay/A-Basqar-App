@@ -1,5 +1,5 @@
 //
-//  CurrentBidsVC.swift
+//  BidsHistoryVC.swift
 //  A-Basqar
 //
 //  Created by iliyas on 21.04.2020.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CurrentBidsVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class BidsHistoryVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -24,7 +24,7 @@ class CurrentBidsVC: UIViewController, UICollectionViewDataSource, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "currentBidsCell", for: indexPath)  as! CurrentBidsCell
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "bidsHistoryCell", for: indexPath)  as! BidsHistoryCell
         
         
         

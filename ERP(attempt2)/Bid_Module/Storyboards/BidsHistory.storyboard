@@ -1,27 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VaS-J5-NPb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VFC-mf-5fo">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="KVa-Yt-HYQ">
+        <!--Bids HistoryVC-->
+        <scene sceneID="uP0-Lp-iQ9">
             <objects>
-                <viewController id="VaS-J5-NPb" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5pC-br-9H6">
+                <viewController id="VFC-mf-5fo" customClass="BidsHistoryVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DRj-hT-1CY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="BwJ-6G-PN6"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="7Cs-Ch-7Uy">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="u27-Ss-Epb">
+                                    <size key="itemSize" width="350" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="20"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bidsHistoryCell" id="hnY-qF-npQ" customClass="BidsHistoryCell" customModule="A_Basqar" customModuleProvider="target">
+                                        <rect key="frame" x="12.5" y="20" width="350" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ZMj-eL-lty">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заявка: NHKRTV!LHNF" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRC-4m-7kq">
+                                                    <rect key="frame" x="20" y="10" width="310" height="21"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/04/2018" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXO-UW-V21">
+                                                    <rect key="frame" x="20" y="54.5" width="70" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="v7o-ma-zff"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                    <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отправитель:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GpV-2f-TnC">
+                                                    <rect key="frame" x="20" y="34.5" width="86" height="16"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                    <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45646 тенге" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngl-98-I94">
+                                                    <rect key="frame" x="20" y="74.5" width="80" height="16"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                    <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бақтияр Айдар" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6n-DM-V6e">
+                                                    <rect key="frame" x="116" y="34" width="95" height="16"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                    <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Принято" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llD-7c-p3d">
+                                                    <rect key="frame" x="266" y="69" width="69" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.1628331542" green="0.62629038100000001" blue="0.27835986019999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Склад #1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAM-7G-vdk">
+                                                    <rect key="frame" x="98" y="54" width="57" height="16"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                    <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GpV-2f-TnC" firstAttribute="leading" secondItem="ZMj-eL-lty" secondAttribute="leading" constant="20" id="0G4-aE-9w8"/>
+                                                <constraint firstItem="Ngl-98-I94" firstAttribute="leading" secondItem="ZMj-eL-lty" secondAttribute="leading" constant="20" id="1vd-5K-2Jv"/>
+                                                <constraint firstItem="DAM-7G-vdk" firstAttribute="leading" secondItem="XXO-UW-V21" secondAttribute="trailing" constant="8" id="5eS-T5-Zve"/>
+                                                <constraint firstAttribute="trailing" secondItem="fRC-4m-7kq" secondAttribute="trailing" constant="20" id="9d9-ba-8kl"/>
+                                                <constraint firstItem="fRC-4m-7kq" firstAttribute="leading" secondItem="ZMj-eL-lty" secondAttribute="leading" constant="20" id="Gr7-FH-Qi2"/>
+                                                <constraint firstItem="GpV-2f-TnC" firstAttribute="top" secondItem="fRC-4m-7kq" secondAttribute="bottom" constant="3.5" id="RmO-gN-o3y"/>
+                                                <constraint firstItem="O6n-DM-V6e" firstAttribute="top" secondItem="ZMj-eL-lty" secondAttribute="top" constant="34" id="SBm-K2-1e4"/>
+                                                <constraint firstItem="XXO-UW-V21" firstAttribute="top" secondItem="GpV-2f-TnC" secondAttribute="bottom" constant="4" id="SDI-US-Wsn"/>
+                                                <constraint firstItem="XXO-UW-V21" firstAttribute="leading" secondItem="ZMj-eL-lty" secondAttribute="leading" constant="20" id="UKL-VZ-rKK"/>
+                                                <constraint firstAttribute="bottom" secondItem="llD-7c-p3d" secondAttribute="bottom" constant="10" id="VA8-Fg-oUX"/>
+                                                <constraint firstAttribute="trailing" secondItem="llD-7c-p3d" secondAttribute="trailing" constant="15" id="lQX-mG-B2e"/>
+                                                <constraint firstItem="fRC-4m-7kq" firstAttribute="top" secondItem="ZMj-eL-lty" secondAttribute="top" constant="10" id="lXd-9h-JMx"/>
+                                                <constraint firstItem="Ngl-98-I94" firstAttribute="top" secondItem="XXO-UW-V21" secondAttribute="bottom" constant="4" id="m62-UD-eHx"/>
+                                                <constraint firstItem="DAM-7G-vdk" firstAttribute="top" secondItem="O6n-DM-V6e" secondAttribute="bottom" constant="4" id="p4Y-go-K8y"/>
+                                                <constraint firstItem="O6n-DM-V6e" firstAttribute="leading" secondItem="GpV-2f-TnC" secondAttribute="trailing" constant="10" id="ut4-3u-BB8"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="bidNameLabel" destination="fRC-4m-7kq" id="6WG-AM-jlm"/>
+                                            <outlet property="dateLabel" destination="XXO-UW-V21" id="n2w-lg-Cty"/>
+                                            <outlet property="senderNameLabel" destination="O6n-DM-V6e" id="EKU-fd-fd2"/>
+                                            <outlet property="senderPlaceLabel" destination="DAM-7G-vdk" id="c6x-iJ-oRh"/>
+                                            <outlet property="statusLabel" destination="llD-7c-p3d" id="qn8-St-2Ql"/>
+                                            <outlet property="totalMoneyLabel" destination="Ngl-98-I94" id="85F-u8-HU9"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GAq-ej-XcC">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="VFC-mf-5fo" id="6WB-ai-SQZ"/>
+                                    <outlet property="delegate" destination="VFC-mf-5fo" id="KUy-yt-ZnM"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="7Cs-Ch-7Uy" firstAttribute="trailing" secondItem="aaV-5B-yDD" secondAttribute="trailing" id="A1N-0X-MaI"/>
+                            <constraint firstItem="7Cs-Ch-7Uy" firstAttribute="leading" secondItem="aaV-5B-yDD" secondAttribute="leading" id="Fcg-IC-TX0"/>
+                            <constraint firstItem="aaV-5B-yDD" firstAttribute="bottom" secondItem="7Cs-Ch-7Uy" secondAttribute="bottom" id="POB-Di-iVG"/>
+                            <constraint firstItem="7Cs-Ch-7Uy" firstAttribute="top" secondItem="DRj-hT-1CY" secondAttribute="top" id="w1J-F1-tX0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aaV-5B-yDD"/>
                     </view>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="collectionView" destination="7Cs-Ch-7Uy" id="1Fp-Wb-sZP"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ctg-AU-O9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iLp-C0-mvR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="49" y="140"/>
+            <point key="canvasLocation" x="83" y="78"/>
         </scene>
     </scenes>
 </document>

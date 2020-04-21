@@ -41,7 +41,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/04/2018" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbB-he-Mv8">
-                                                    <rect key="frame" x="20" y="54.5" width="69" height="16"/>
+                                                    <rect key="frame" x="20" y="54.5" width="70" height="16"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="naf-ND-bbm"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                     <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -64,9 +67,8 @@
                                                     <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Склад #1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9Y-0Y-dn9">
-                                                    <rect key="frame" x="97" y="54" width="57" height="16"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Склад #1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9Y-0Y-dn9">
+                                                    <rect key="frame" x="98" y="54.5" width="57" height="16"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                     <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -74,6 +76,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="eOX-Ql-l2Y" firstAttribute="top" secondItem="9Rj-2T-Kty" secondAttribute="top" constant="10" id="Bfd-lM-Jhf"/>
+                                                <constraint firstItem="g9Y-0Y-dn9" firstAttribute="top" secondItem="6rv-Yi-84N" secondAttribute="bottom" constant="4" id="JUb-4K-Ye3"/>
                                                 <constraint firstItem="Qyl-ge-lh7" firstAttribute="leading" secondItem="9Rj-2T-Kty" secondAttribute="leading" constant="20" id="NcU-6h-MKK"/>
                                                 <constraint firstItem="eOX-Ql-l2Y" firstAttribute="leading" secondItem="9Rj-2T-Kty" secondAttribute="leading" constant="20" id="Trw-d5-HKy"/>
                                                 <constraint firstItem="6rv-Yi-84N" firstAttribute="leading" secondItem="9Rj-2T-Kty" secondAttribute="leading" constant="20" id="apG-WP-V0E"/>
@@ -83,6 +86,7 @@
                                                 <constraint firstItem="YbB-he-Mv8" firstAttribute="leading" secondItem="9Rj-2T-Kty" secondAttribute="leading" constant="20" id="lZZ-KI-t2X"/>
                                                 <constraint firstItem="6rv-Yi-84N" firstAttribute="top" secondItem="eOX-Ql-l2Y" secondAttribute="bottom" constant="3.5" id="oJn-cA-GtW"/>
                                                 <constraint firstItem="IDY-h8-OYC" firstAttribute="leading" secondItem="6rv-Yi-84N" secondAttribute="trailing" constant="10" id="rpl-Am-DEs"/>
+                                                <constraint firstItem="g9Y-0Y-dn9" firstAttribute="leading" secondItem="YbB-he-Mv8" secondAttribute="trailing" constant="8" id="uYS-GE-pxn"/>
                                                 <constraint firstItem="IDY-h8-OYC" firstAttribute="top" secondItem="9Rj-2T-Kty" secondAttribute="top" constant="34" id="zjA-h2-3l5"/>
                                             </constraints>
                                         </collectionViewCellContentView>

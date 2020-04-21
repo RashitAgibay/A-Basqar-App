@@ -203,6 +203,8 @@
 		61F00E7A244F13BA001D0EEE /* NewBidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E79244F13BA001D0EEE /* NewBidVC.swift */; };
 		61F00E7C244F2047001D0EEE /* CurrentBidsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E7B244F2047001D0EEE /* CurrentBidsVC.swift */; };
 		61F00E7F244F2180001D0EEE /* CurrentBidsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E7E244F2180001D0EEE /* CurrentBidsCell.swift */; };
+		61F00E81244F2363001D0EEE /* BidsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E80244F2363001D0EEE /* BidsHistoryVC.swift */; };
+		61F00E83244F2498001D0EEE /* BidsHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E82244F2498001D0EEE /* BidsHistoryCell.swift */; };
 		AA5DF4DA597D0C7F758AB506 /* Pods_A_Basqar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451E8E7CD502E401E3BBD264 /* Pods_A_Basqar.framework */; };
 		FD3680A423C4712B00914B94 /* SellingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3680A323C4712B00914B94 /* SellingModel.swift */; };
 		FD6F84AC23C7446D0076BE0A /* GoodInBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F84AB23C7446D0076BE0A /* GoodInBasket.swift */; };
@@ -518,6 +520,8 @@
 		61F00E79244F13BA001D0EEE /* NewBidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBidVC.swift; sourceTree = "<group>"; };
 		61F00E7B244F2047001D0EEE /* CurrentBidsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBidsVC.swift; sourceTree = "<group>"; };
 		61F00E7E244F2180001D0EEE /* CurrentBidsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBidsCell.swift; sourceTree = "<group>"; };
+		61F00E80244F2363001D0EEE /* BidsHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidsHistoryVC.swift; sourceTree = "<group>"; };
+		61F00E82244F2498001D0EEE /* BidsHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidsHistoryCell.swift; sourceTree = "<group>"; };
 		C7FC59907306329939555855 /* Pods-A-Basqar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A-Basqar.release.xcconfig"; path = "Target Support Files/Pods-A-Basqar/Pods-A-Basqar.release.xcconfig"; sourceTree = "<group>"; };
 		D5F0E550815B74E5DD782B02 /* Pods-ERP(attempt2).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ERP(attempt2).debug.xcconfig"; path = "Target Support Files/Pods-ERP(attempt2)/Pods-ERP(attempt2).debug.xcconfig"; sourceTree = "<group>"; };
 		FD3680A323C4712B00914B94 /* SellingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingModel.swift; sourceTree = "<group>"; };
@@ -1153,6 +1157,7 @@
 				61F00E6F244F0D64001D0EEE /* MainBidVC.swift */,
 				61F00E79244F13BA001D0EEE /* NewBidVC.swift */,
 				61F00E7B244F2047001D0EEE /* CurrentBidsVC.swift */,
+				61F00E80244F2363001D0EEE /* BidsHistoryVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1172,6 +1177,7 @@
 			isa = PBXGroup;
 			children = (
 				61F00E7E244F2180001D0EEE /* CurrentBidsCell.swift */,
+				61F00E82244F2498001D0EEE /* BidsHistoryCell.swift */,
 			);
 			path = Bids;
 			sourceTree = "<group>";
@@ -1516,6 +1522,7 @@
 				288CC49F23A89C38008D5218 /* SDDisplayLink.m in Sources */,
 				288CC39023A89BB5008D5218 /* MBProgressHUD.m in Sources */,
 				28ACEA40236BEADE0067BD46 /* ProfilePageViewController.swift in Sources */,
+				61F00E83244F2498001D0EEE /* BidsHistoryCell.swift in Sources */,
 				288CC49423A89C38008D5218 /* UIImage+MultiFormat.m in Sources */,
 				288CC46D23A89C38008D5218 /* SDImageCache.m in Sources */,
 				FD7E17482410DD3600F54748 /* PrinterActivate.swift in Sources */,
@@ -1563,6 +1570,7 @@
 				280901A82394D54100CA68BD /* AddBuyerVC.swift in Sources */,
 				288CC48723A89C38008D5218 /* SDWebImageDownloaderResponseModifier.m in Sources */,
 				2812AAF62362B45A001D65C8 /* SceneDelegate.swift in Sources */,
+				61F00E81244F2363001D0EEE /* BidsHistoryVC.swift in Sources */,
 				FDF3C9B523E1342800D2E08D /* IncomeContagentNamesVC.swift in Sources */,
 				288CC47E23A89C38008D5218 /* SDWebImageCacheKeyFilter.m in Sources */,
 				288CC49A23A89C38008D5218 /* MKAnnotationView+WebCache.m in Sources */,
