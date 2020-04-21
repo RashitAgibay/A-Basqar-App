@@ -30,5 +30,15 @@ class CurrentBidsVC: UIViewController, UICollectionViewDataSource, UICollectionV
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.navigateToCurrentBidDetail()
+    }
+    
+    private func navigateToCurrentBidDetail() {
+        performSegue(withIdentifier: "fromCBtoCBD", sender: self)
+    }
+
 
 }
