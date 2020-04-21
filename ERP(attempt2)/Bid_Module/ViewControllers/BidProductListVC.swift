@@ -1,5 +1,5 @@
 //
-//  BidFirstCategoryVC.swift
+//  BidProductListVC.swift
 //  A-Basqar
 //
 //  Created by iliyas on 22.04.2020.
@@ -8,75 +8,52 @@
 
 import UIKit
 
-class BidFirstCategoryVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    
+class BidProductListVC: UIViewController,  UICollectionViewDataSource, UICollectionViewDelegate  {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     var reachability: Reachability?
     var userToken = "userToken"
     
-    var categoryList = NSArray()
+    var productList: Array = [MovementProduct]()
     var categoryID = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        getCategoryListFropApi()
+        if categoryID != nil {
+            getProductsFromApi()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return categoryList.count
+        return productList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "addProd", for: indexPath)  as! AddProdInBuyProdCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "buygoodCell", for: indexPath) as! BuyProductAddGoodCell
+        self.setupCell(cell: cell)
         
-        if categoryList.count != 0 {
+        let singleProduct = productList[indexPath.row]
+        
+        if productList.count != 0 {
             
-            let dict = categoryList[indexPath.row] as! NSDictionary
-            let eachCategory = dict["category"] as! NSDictionary
-            let categoryName = eachCategory["name"] as! String
-            let imageUrl = eachCategory["goods_cat_image"] as! String
-            
-            cell.categoryName.text = categoryName
-            cell.imageView.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named: "img1"))
+            cell.nameLabel.text = singleProduct.productName
+            cell.balanceLabel.text = "\(singleProduct.productCount)"
+            cell.cashLabel.text = "\(singleProduct.productPrice) тенге"
+            cell.googImageView.sd_setImage(with: URL(string: singleProduct.productImageURL), placeholderImage: UIImage(named: "img1"))
         }
         
-        self.setupCell(cell: cell)
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let dict = categoryList[indexPath.row] as! NSDictionary
-        let eachCategory = dict["category"] as! NSDictionary
-        let categoryID = eachCategory["id"]
-        
-        self.categoryID = categoryID as! Int
-        self.navgiateToProductList()
-    
+    private func navigateBack() {
+        performSegue(withIdentifier: "fromBPLtoBFC", sender: self)
     }
     
-    private func navgiateToProductList() {
-
-        performSegue(withIdentifier: "fromBFCtoBPL", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if segue.identifier == "fromBFCtoBPL" {
-
-            if let navigationVC = segue.destination as? UINavigationController,
-                let destVC = navigationVC.topViewController as? BidProductListVC {
-                destVC.categoryID = self.categoryID
-            }
-        }
-    }
-    
-    private func setupCell(cell: AddProdInBuyProdCell) {
+    private func setupCell(cell: BuyProductAddGoodCell) {
         
         cell.contentView.layer.cornerRadius = 10
         cell.layer.shadowColor = UIColor.gray.cgColor
@@ -84,10 +61,17 @@ class BidFirstCategoryVC: UIViewController, UICollectionViewDataSource, UICollec
         cell.layer.shadowOpacity = 0.5
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+        
+        cell.googImageView.layer.cornerRadius = 5
     
     }
     
-    private func getCategoryListFropApi() {
+    @IBAction func tapBackButton(_ sender: Any) {
+        
+        navigateBack()
+    }
+    
+    private func getProductsFromApi() {
         
         do {
             
@@ -103,15 +87,13 @@ class BidFirstCategoryVC: UIViewController, UICollectionViewDataSource, UICollec
             MBProgressHUD.showAdded(to: self.view, animated: true)
             
             let token = UserDefaults.standard.string(forKey: self.userToken) as! String
-            
             let headers: HTTPHeaders = [
                 
                 "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
                 "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
             ]
             
-            let encodeURL = categoryUrl
-            
+            let encodeURL = "\(goodListUrl)?cat_id=\(self.categoryID)"
             let request = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
             request.responseJSON(completionHandler: { (response) -> Void in
@@ -134,7 +116,30 @@ class BidFirstCategoryVC: UIViewController, UICollectionViewDataSource, UICollec
                     else {
                         
                         let arrayData = json as! NSArray
-                        self.categoryList = arrayData
+                        
+                        for item in arrayData {
+                            
+                            let singleProduct = item as! NSDictionary
+                            let product = MovementProduct()
+                            
+                            let goodID = singleProduct["id"] as! Int
+                            let productImportPrice = singleProduct["import_price"] as! Int
+                            
+                            let embededProductsInfo = singleProduct["goods"] as! NSDictionary
+                            let productName = embededProductsInfo["name"] as! String
+                            let productAmount = singleProduct["nums"] as! Int
+                            let categoryDict = embededProductsInfo["category"] as! NSDictionary
+                            let categoryID = categoryDict["id"] as! Int
+                            let productImageUrl = embededProductsInfo["goods_image"] as! String
+                            
+                            product.productName = productName
+                            product.productCount = productAmount
+                            product.productPrice = productImportPrice
+                            product.productImageURL = productImageUrl
+                            
+                            self.productList.append(product)
+                        }
+                        
                         self.collectionView.reloadData()
                     }
                 
@@ -164,5 +169,6 @@ class BidFirstCategoryVC: UIViewController, UICollectionViewDataSource, UICollec
         alertController.addAction(action)
         self.present(alertController,animated: true, completion: nil)
     }
-
 }
+
+

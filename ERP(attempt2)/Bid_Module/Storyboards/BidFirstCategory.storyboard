@@ -93,6 +93,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="collectionView" destination="u50-Ci-VqY" id="yDT-kI-Kyi"/>
+                        <segue destination="ec8-4t-cXg" kind="presentation" identifier="fromBFCtoBPL" modalPresentationStyle="fullScreen" id="Ysp-hl-WsV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0O-eB-ju1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -106,6 +107,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m14-uT-UAc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1372" y="369"/>
+        </scene>
+        <!--BidProductList-->
+        <scene sceneID="SMA-0y-cbb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="BidProductList" id="ec8-4t-cXg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JWk-XI-buf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1439" y="432"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cux-ob-vsf">
