@@ -201,6 +201,8 @@
 		61F00E76244F1071001D0EEE /* CurrentBids.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F00E75244F1071001D0EEE /* CurrentBids.storyboard */; };
 		61F00E78244F1081001D0EEE /* BidsHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F00E77244F1081001D0EEE /* BidsHistory.storyboard */; };
 		61F00E7A244F13BA001D0EEE /* NewBidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E79244F13BA001D0EEE /* NewBidVC.swift */; };
+		61F00E7C244F2047001D0EEE /* CurrentBidsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E7B244F2047001D0EEE /* CurrentBidsVC.swift */; };
+		61F00E7F244F2180001D0EEE /* CurrentBidsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E7E244F2180001D0EEE /* CurrentBidsCell.swift */; };
 		AA5DF4DA597D0C7F758AB506 /* Pods_A_Basqar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451E8E7CD502E401E3BBD264 /* Pods_A_Basqar.framework */; };
 		FD3680A423C4712B00914B94 /* SellingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3680A323C4712B00914B94 /* SellingModel.swift */; };
 		FD6F84AC23C7446D0076BE0A /* GoodInBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F84AB23C7446D0076BE0A /* GoodInBasket.swift */; };
@@ -514,6 +516,8 @@
 		61F00E75244F1071001D0EEE /* CurrentBids.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CurrentBids.storyboard; sourceTree = "<group>"; };
 		61F00E77244F1081001D0EEE /* BidsHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BidsHistory.storyboard; sourceTree = "<group>"; };
 		61F00E79244F13BA001D0EEE /* NewBidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBidVC.swift; sourceTree = "<group>"; };
+		61F00E7B244F2047001D0EEE /* CurrentBidsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBidsVC.swift; sourceTree = "<group>"; };
+		61F00E7E244F2180001D0EEE /* CurrentBidsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBidsCell.swift; sourceTree = "<group>"; };
 		C7FC59907306329939555855 /* Pods-A-Basqar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A-Basqar.release.xcconfig"; path = "Target Support Files/Pods-A-Basqar/Pods-A-Basqar.release.xcconfig"; sourceTree = "<group>"; };
 		D5F0E550815B74E5DD782B02 /* Pods-ERP(attempt2).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ERP(attempt2).debug.xcconfig"; path = "Target Support Files/Pods-ERP(attempt2)/Pods-ERP(attempt2).debug.xcconfig"; sourceTree = "<group>"; };
 		FD3680A323C4712B00914B94 /* SellingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingModel.swift; sourceTree = "<group>"; };
@@ -780,6 +784,7 @@
 		288C79A9238652BE003282C3 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				61F00E7D244F215A001D0EEE /* Bids */,
 				61560A84244E1BD000FAAFB0 /* Movement */,
 				28CAE45C238B924E0015DE56 /* CaterogyCell.swift */,
 				28674294238CF50E008884AF /* BuyProductFirstPageCell.swift */,
@@ -1147,6 +1152,7 @@
 			children = (
 				61F00E6F244F0D64001D0EEE /* MainBidVC.swift */,
 				61F00E79244F13BA001D0EEE /* NewBidVC.swift */,
+				61F00E7B244F2047001D0EEE /* CurrentBidsVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1160,6 +1166,14 @@
 				61F00E77244F1081001D0EEE /* BidsHistory.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		61F00E7D244F215A001D0EEE /* Bids */ = {
+			isa = PBXGroup;
+			children = (
+				61F00E7E244F2180001D0EEE /* CurrentBidsCell.swift */,
+			);
+			path = Bids;
 			sourceTree = "<group>";
 		};
 		6933A8CD5D21CD4797FA02A4 /* Frameworks */ = {
@@ -1456,6 +1470,7 @@
 				288CC3B723A89BFD008D5218 /* CachedResponseHandler.swift in Sources */,
 				288CC47C23A89C38008D5218 /* SDImageTransformer.m in Sources */,
 				288CC47023A89C38008D5218 /* SDImageCachesManager.m in Sources */,
+				61F00E7F244F2180001D0EEE /* CurrentBidsCell.swift in Sources */,
 				2812AB272362B7D1001D65C8 /* MainViewController.swift in Sources */,
 				289087E9239A188D001C53C6 /* IncomeKassaCheckCell.swift in Sources */,
 				288CC48F23A89C38008D5218 /* UIImage+ExtendedCacheData.m in Sources */,
@@ -1490,6 +1505,7 @@
 				61F00E70244F0D64001D0EEE /* MainBidVC.swift in Sources */,
 				288CC48E23A89C38008D5218 /* UIButton+WebCache.m in Sources */,
 				2809019F2394C39A00CA68BD /* AddProdInBuyProdCell.swift in Sources */,
+				61F00E7C244F2047001D0EEE /* CurrentBidsVC.swift in Sources */,
 				288CC3C923A89BFD008D5218 /* Response.swift in Sources */,
 				288CC49823A89C38008D5218 /* UIView+WebCache.m in Sources */,
 				288CC46423A89C38008D5218 /* NSData+ImageContentType.m in Sources */,

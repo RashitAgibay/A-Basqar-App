@@ -49,6 +49,7 @@ class NewMovementVC: UIViewController, UICollectionViewDataSource, UICollectionV
         
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "buyProduct", for: indexPath)  as! BuyProductFirstPageCell
         
+        
         self.setupCell(cell: cell)
         
         
