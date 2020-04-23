@@ -11,6 +11,7 @@ import UIKit
 class MainStoreVC: UIViewController {
 
     
+    
     @IBOutlet weak var storesView: UIView!
     @IBOutlet weak var employeeListView: UIView!
     
