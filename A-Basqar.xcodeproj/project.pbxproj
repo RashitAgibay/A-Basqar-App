@@ -195,6 +195,10 @@
 		61560A8A244E33A300FAAFB0 /* MovementFirstCategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61560A89244E33A300FAAFB0 /* MovementFirstCategoryVC.swift */; };
 		61560A8C244E33BE00FAAFB0 /* MovementFirstCategory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61560A8B244E33BE00FAAFB0 /* MovementFirstCategory.storyboard */; };
 		61560A8E244E404B00FAAFB0 /* MovementProductList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61560A8D244E404B00FAAFB0 /* MovementProductList.storyboard */; };
+		61589B102451A5CC008A18A7 /* MainStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61589B0F2451A5CC008A18A7 /* MainStoreVC.swift */; };
+		61589B122451A725008A18A7 /* MainStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61589B112451A725008A18A7 /* MainStore.storyboard */; };
+		61589B142451C8C3008A18A7 /* Stores.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61589B132451C8C3008A18A7 /* Stores.storyboard */; };
+		61589B162451C8D6008A18A7 /* EmployeeList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61589B152451C8D6008A18A7 /* EmployeeList.storyboard */; };
 		6159FA8D244DEAFD00FE1BED /* MainMovement.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */; };
 		6159FA8F244DEB0F00FE1BED /* MainMovementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */; };
 		6159FA91244DF06C00FE1BED /* NewMovementVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6159FA90244DF06C00FE1BED /* NewMovementVC.swift */; };
@@ -523,6 +527,10 @@
 		61560A89244E33A300FAAFB0 /* MovementFirstCategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementFirstCategoryVC.swift; sourceTree = "<group>"; };
 		61560A8B244E33BE00FAAFB0 /* MovementFirstCategory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovementFirstCategory.storyboard; sourceTree = "<group>"; };
 		61560A8D244E404B00FAAFB0 /* MovementProductList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MovementProductList.storyboard; sourceTree = "<group>"; };
+		61589B0F2451A5CC008A18A7 /* MainStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainStoreVC.swift; sourceTree = "<group>"; };
+		61589B112451A725008A18A7 /* MainStore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainStore.storyboard; sourceTree = "<group>"; };
+		61589B132451C8C3008A18A7 /* Stores.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stores.storyboard; sourceTree = "<group>"; };
+		61589B152451C8D6008A18A7 /* EmployeeList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeeList.storyboard; sourceTree = "<group>"; };
 		6159FA8C244DEAFD00FE1BED /* MainMovement.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainMovement.storyboard; sourceTree = "<group>"; };
 		6159FA8E244DEB0F00FE1BED /* MainMovementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMovementVC.swift; sourceTree = "<group>"; };
 		6159FA90244DF06C00FE1BED /* NewMovementVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMovementVC.swift; sourceTree = "<group>"; };
@@ -651,6 +659,7 @@
 		2812AAF22362B45A001D65C8 /* ERP(attempt2) */ = {
 			isa = PBXGroup;
 			children = (
+				61589B0C2451A507008A18A7 /* Store */,
 				61F00E6C244F0C7C001D0EEE /* Bid_Module */,
 				6159FA89244DEAB900FE1BED /* Movement_Module */,
 				FD7E17462410DD2500F54748 /* PrinterBase */,
@@ -1127,6 +1136,33 @@
 			path = Movement;
 			sourceTree = "<group>";
 		};
+		61589B0C2451A507008A18A7 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				61589B0D2451A5A3008A18A7 /* ViewControllers */,
+				61589B0E2451A5AF008A18A7 /* Storyboards */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		61589B0D2451A5A3008A18A7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				61589B0F2451A5CC008A18A7 /* MainStoreVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		61589B0E2451A5AF008A18A7 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				61589B112451A725008A18A7 /* MainStore.storyboard */,
+				61589B132451C8C3008A18A7 /* Stores.storyboard */,
+				61589B152451C8D6008A18A7 /* EmployeeList.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		6159FA89244DEAB900FE1BED /* Movement_Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -1356,6 +1392,7 @@
 			files = (
 				613D7386244F7A0A00E0E392 /* BidProductList.storyboard in Resources */,
 				6159FA9D244E145B00FE1BED /* PlaceList.storyboard in Resources */,
+				61589B142451C8C3008A18A7 /* Stores.storyboard in Resources */,
 				61F00E78244F1081001D0EEE /* BidsHistory.storyboard in Resources */,
 				61560A8E244E404B00FAAFB0 /* MovementProductList.storyboard in Resources */,
 				6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */,
@@ -1365,8 +1402,10 @@
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
 				613D7382244F75FB00E0E392 /* BidFirstCategory.storyboard in Resources */,
 				61F00E85244F2618001D0EEE /* CurrentBidDetail.storyboard in Resources */,
+				61589B122451A725008A18A7 /* MainStore.storyboard in Resources */,
 				61560A8C244E33BE00FAAFB0 /* MovementFirstCategory.storyboard in Resources */,
 				613D7378244F64A800E0E392 /* NewMovementInBid.storyboard in Resources */,
+				61589B162451C8D6008A18A7 /* EmployeeList.storyboard in Resources */,
 				61560A88244E26E100FAAFB0 /* file in Resources */,
 				61560A81244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard in Resources */,
 				6159FA95244DF0E700FE1BED /* NewMovement.storyboard in Resources */,
@@ -1487,6 +1526,7 @@
 				286E7083239E2447002CD53D /* FinancialReportVC.swift in Sources */,
 				288CC47D23A89C38008D5218 /* SDMemoryCache.m in Sources */,
 				28051B9F2398BCC400A66ADA /* SelleingProdsFirstPageVC.swift in Sources */,
+				61589B102451A5CC008A18A7 /* MainStoreVC.swift in Sources */,
 				2863184D2398C47E00556226 /* AddProdToSellingPageVC.swift in Sources */,
 				FD6F84AC23C7446D0076BE0A /* GoodInBasket.swift in Sources */,
 				FDB6036423E2D1770012D65D /* BuySearchVC.swift in Sources */,

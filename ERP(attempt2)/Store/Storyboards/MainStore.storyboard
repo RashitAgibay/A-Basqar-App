@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ra9-qJ-M0i">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main StoreVC-->
+        <scene sceneID="gFJ-mO-zKH">
+            <objects>
+                <viewController id="9Uf-qJ-Ej6" customClass="MainStoreVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wO8-vp-VBp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DTp-3u-ICM">
+                                <rect key="frame" x="0.0" y="44" width="375" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Gob-Ae-g6Z"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Склады и магазины"/>
+                                    <segment title="Персонал"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="switchSegmentAction:" destination="9Uf-qJ-Ej6" eventType="valueChanged" id="MsD-XY-Gcx"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwg-LN-Lm9" userLabel="Stores View">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <connections>
+                                    <segue destination="0La-ZH-VN9" kind="embed" id="oLK-cB-uiK"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WbO-Hg-ZNq">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <connections>
+                                    <segue destination="Tl3-H2-NCw" kind="embed" id="V2R-bl-YrK"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1XO-QO-wjI" firstAttribute="trailing" secondItem="uwg-LN-Lm9" secondAttribute="trailing" id="6Um-GW-xH3"/>
+                            <constraint firstItem="uwg-LN-Lm9" firstAttribute="bottom" secondItem="1XO-QO-wjI" secondAttribute="bottom" id="LuK-EC-U4s"/>
+                            <constraint firstItem="DTp-3u-ICM" firstAttribute="top" secondItem="1XO-QO-wjI" secondAttribute="top" id="Olm-j1-exM"/>
+                            <constraint firstItem="uwg-LN-Lm9" firstAttribute="top" secondItem="DTp-3u-ICM" secondAttribute="bottom" id="ahD-8v-d7A"/>
+                            <constraint firstItem="1XO-QO-wjI" firstAttribute="trailing" secondItem="DTp-3u-ICM" secondAttribute="trailing" id="bT2-Ef-u4B"/>
+                            <constraint firstAttribute="bottom" secondItem="WbO-Hg-ZNq" secondAttribute="bottom" id="f8c-nn-LVU"/>
+                            <constraint firstItem="DTp-3u-ICM" firstAttribute="leading" secondItem="1XO-QO-wjI" secondAttribute="leading" id="fW3-yS-JHa"/>
+                            <constraint firstItem="WbO-Hg-ZNq" firstAttribute="leading" secondItem="1XO-QO-wjI" secondAttribute="leading" id="lEJ-6L-FLF"/>
+                            <constraint firstItem="WbO-Hg-ZNq" firstAttribute="top" secondItem="DTp-3u-ICM" secondAttribute="bottom" id="pVA-wb-ipd"/>
+                            <constraint firstAttribute="trailing" secondItem="WbO-Hg-ZNq" secondAttribute="trailing" id="qpG-pc-5Xf"/>
+                            <constraint firstItem="uwg-LN-Lm9" firstAttribute="leading" secondItem="wO8-vp-VBp" secondAttribute="leading" id="r4k-0X-hGh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1XO-QO-wjI"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZPt-jb-jup">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="z2r-yV-ejv">
+                            <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="more" id="52F-NU-ohq">
+                            <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="employeeListView" destination="WbO-Hg-ZNq" id="bBu-55-tjo"/>
+                        <outlet property="plusBarButton" destination="52F-NU-ohq" id="0p5-oh-zRQ"/>
+                        <outlet property="segmentView" destination="DTp-3u-ICM" id="yXe-Se-iLO"/>
+                        <outlet property="storesView" destination="uwg-LN-Lm9" id="93Y-b9-56a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8ap-Zs-T1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1878.985507246377" y="-27.120535714285712"/>
+        </scene>
+        <!--EmployeeList-->
+        <scene sceneID="IlT-ap-etQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EmployeeList" id="Tl3-H2-NCw" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WWS-2y-Ukv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2529" y="-49"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TaV-fN-092">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ra9-qJ-M0i" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eh3-PB-rcO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9Uf-qJ-Ej6" kind="relationship" relationship="rootViewController" id="6n5-r9-7KP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y9V-Fi-HGN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968.11594202898561" y="-27.455357142857142"/>
+        </scene>
+        <!--Stores-->
+        <scene sceneID="fes-hY-yjV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Stores" id="0La-ZH-VN9" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CyV-Nd-kSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2528" y="-130"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home" width="30" height="28.5"/>
+        <image name="more" width="30" height="30"/>
+    </resources>
+</document>

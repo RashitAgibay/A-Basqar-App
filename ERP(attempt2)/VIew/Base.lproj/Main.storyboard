@@ -659,6 +659,14 @@
             </objects>
             <point key="canvasLocation" x="-623" y="536"/>
         </scene>
+        <!--MainStore-->
+        <scene sceneID="4r3-Nt-jb5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainStore" id="25i-4O-UWT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jsn-hy-m1e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-626" y="623"/>
+        </scene>
         <!--Menu View Controller-->
         <scene sceneID="JpZ-9f-khu">
             <objects>
@@ -1009,6 +1017,7 @@
                         <segue destination="DVh-34-Tjt" kind="presentation" identifier="toReport" modalPresentationStyle="fullScreen" id="8ZC-1G-YMi"/>
                         <segue destination="AXU-cV-WUe" kind="presentation" identifier="mainToMainMovement" modalPresentationStyle="fullScreen" id="kDw-7J-Hdg"/>
                         <segue destination="f0t-mh-XPk" kind="presentation" identifier="mainToMainBid" modalPresentationStyle="fullScreen" id="6Ve-mI-sMp"/>
+                        <segue destination="25i-4O-UWT" kind="presentation" identifier="mainToManage" modalPresentationStyle="fullScreen" id="DkO-5S-I9i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr4-9I-Q6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

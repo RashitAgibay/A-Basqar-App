@@ -61,6 +61,9 @@ class MenuViewController: UIViewController {
         let tapGestureForOutcomeCard = UITapGestureRecognizer(target: self, action: #selector(tapOutcomeKassaCard))
         cardView6.addGestureRecognizer(tapGestureForOutcomeCard)
         
+        cardView7.isUserInteractionEnabled = true
+        let tapGestureForManageCard = UITapGestureRecognizer(target: self, action: #selector(tapManageCard))
+        cardView7.addGestureRecognizer(tapGestureForManageCard)
         
         cardView8.isUserInteractionEnabled = true
         let tapGestureForReportCard = UITapGestureRecognizer(target: self, action: #selector(tapReportCard))
@@ -83,6 +86,7 @@ class MenuViewController: UIViewController {
         cardViews.insert(cardView4)
         cardViews.insert(cardView5)
         cardViews.insert(cardView6)
+        cardViews.insert(cardView7)
         cardViews.insert(cardView8)
         cardViews.insert(cardView9)
         
@@ -92,7 +96,6 @@ class MenuViewController: UIViewController {
         var unusableCards: Set<UIView> = []
         
 //        unusableCards.insert(cardView2)
-        unusableCards.insert(cardView7)
         unusableCards.insert(cardView10)
         
         
@@ -131,6 +134,10 @@ class MenuViewController: UIViewController {
     
     @objc func tapBidCard(){
         performSegue(withIdentifier: "mainToMainBid", sender: self)
+    }
+    
+    @objc func tapManageCard(){
+        performSegue(withIdentifier: "mainToManage", sender: self)
     }
     
     @objc func tapReportCard(){
