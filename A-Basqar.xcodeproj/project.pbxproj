@@ -217,6 +217,9 @@
 		61A846272453007200DF3371 /* AddEmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A846262453007200DF3371 /* AddEmployeeVC.swift */; };
 		61A846292453040500DF3371 /* EditStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A846282453040500DF3371 /* EditStore.storyboard */; };
 		61A8462B2453042900DF3371 /* EditStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A8462A2453042900DF3371 /* EditStoreVC.swift */; };
+		61A8462D245308DA00DF3371 /* StoresEmployees.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A8462C245308DA00DF3371 /* StoresEmployees.storyboard */; };
+		61A8462F245308FF00DF3371 /* StoresEmployeesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A8462E245308FF00DF3371 /* StoresEmployeesVC.swift */; };
+		61A84631245309E500DF3371 /* StoreEmployeesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A84630245309E500DF3371 /* StoreEmployeesCell.swift */; };
 		61F00E70244F0D64001D0EEE /* MainBidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E6F244F0D64001D0EEE /* MainBidVC.swift */; };
 		61F00E72244F0D71001D0EEE /* MainBid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F00E71244F0D71001D0EEE /* MainBid.storyboard */; };
 		61F00E74244F1060001D0EEE /* NewBid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F00E73244F1060001D0EEE /* NewBid.storyboard */; };
@@ -558,6 +561,9 @@
 		61A846262453007200DF3371 /* AddEmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeVC.swift; sourceTree = "<group>"; };
 		61A846282453040500DF3371 /* EditStore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditStore.storyboard; sourceTree = "<group>"; };
 		61A8462A2453042900DF3371 /* EditStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStoreVC.swift; sourceTree = "<group>"; };
+		61A8462C245308DA00DF3371 /* StoresEmployees.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoresEmployees.storyboard; sourceTree = "<group>"; };
+		61A8462E245308FF00DF3371 /* StoresEmployeesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresEmployeesVC.swift; sourceTree = "<group>"; };
+		61A84630245309E500DF3371 /* StoreEmployeesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreEmployeesCell.swift; sourceTree = "<group>"; };
 		61F00E6F244F0D64001D0EEE /* MainBidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBidVC.swift; sourceTree = "<group>"; };
 		61F00E71244F0D71001D0EEE /* MainBid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainBid.storyboard; sourceTree = "<group>"; };
 		61F00E73244F1060001D0EEE /* NewBid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewBid.storyboard; sourceTree = "<group>"; };
@@ -1173,6 +1179,7 @@
 				61A846222452F6E400DF3371 /* AddStoreVC.swift */,
 				61A846262453007200DF3371 /* AddEmployeeVC.swift */,
 				61A8462A2453042900DF3371 /* EditStoreVC.swift */,
+				61A8462E245308FF00DF3371 /* StoresEmployeesVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1186,6 +1193,7 @@
 				61A846202452F6C600DF3371 /* AddStore.storyboard */,
 				61A846242453004900DF3371 /* AddEmployee.storyboard */,
 				61A846282453040500DF3371 /* EditStore.storyboard */,
+				61A8462C245308DA00DF3371 /* StoresEmployees.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1231,6 +1239,7 @@
 			isa = PBXGroup;
 			children = (
 				61A8461E2452DD4E00DF3371 /* StoreCell.swift */,
+				61A84630245309E500DF3371 /* StoreEmployeesCell.swift */,
 			);
 			path = Managment;
 			sourceTree = "<group>";
@@ -1428,6 +1437,7 @@
 				61A846212452F6C600DF3371 /* AddStore.storyboard in Resources */,
 				613D7386244F7A0A00E0E392 /* BidProductList.storyboard in Resources */,
 				6159FA9D244E145B00FE1BED /* PlaceList.storyboard in Resources */,
+				61A8462D245308DA00DF3371 /* StoresEmployees.storyboard in Resources */,
 				61589B142451C8C3008A18A7 /* Stores.storyboard in Resources */,
 				61F00E78244F1081001D0EEE /* BidsHistory.storyboard in Resources */,
 				61560A8E244E404B00FAAFB0 /* MovementProductList.storyboard in Resources */,
@@ -1558,6 +1568,7 @@
 				28674293238CF30B008884AF /* BuyProductVCSecondPage.swift in Sources */,
 				288CC3D423A89BFD008D5218 /* Validation.swift in Sources */,
 				284EE89B23A9F5B600B470A5 /* BuyProductAddGoodsPageVC.swift in Sources */,
+				61A8462F245308FF00DF3371 /* StoresEmployeesVC.swift in Sources */,
 				288CC47923A89C38008D5218 /* SDImageIOCoder.m in Sources */,
 				2838ED6A239E086700C8FE80 /* OutcomeKassaFirstPage.swift in Sources */,
 				288CC3CD23A89BFD008D5218 /* ServerTrustEvaluation.swift in Sources */,
@@ -1691,6 +1702,7 @@
 				28CE878F23680AF600B4D638 /* EnterTheNewPasswordViewController.swift in Sources */,
 				288CC48023A89C38008D5218 /* SDWebImageCompat.m in Sources */,
 				288CC46B23A89C38008D5218 /* SDDiskCache.m in Sources */,
+				61A84631245309E500DF3371 /* StoreEmployeesCell.swift in Sources */,
 				288CC47323A89C38008D5218 /* SDImageCodersManager.m in Sources */,
 				288CC46E23A89C38008D5218 /* SDImageCacheConfig.m in Sources */,
 				28CD613F239F4D0300079105 /* GoodReportVC.swift in Sources */,

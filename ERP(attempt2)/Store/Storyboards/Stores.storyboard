@@ -100,7 +100,7 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zlj-8u-psm" firstAttribute="leading" secondItem="jxU-1K-WXr" secondAttribute="leading" id="Im0-78-NYZ"/>
                             <constraint firstItem="jxU-1K-WXr" firstAttribute="trailing" secondItem="zlj-8u-psm" secondAttribute="trailing" id="fit-ts-83F"/>
@@ -112,6 +112,7 @@
                     <connections>
                         <outlet property="collectionView" destination="zlj-8u-psm" id="Hyr-Ww-vjr"/>
                         <segue destination="lVh-yT-bUV" kind="presentation" identifier="fromStoES" modalPresentationStyle="fullScreen" id="UrA-wU-Vee"/>
+                        <segue destination="Ck9-0k-ViJ" kind="presentation" identifier="fromStoSE" modalPresentationStyle="fullScreen" id="hx2-YC-E5q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KG-ht-XId" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -125,6 +126,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SdR-3b-kdy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="687" y="-80"/>
+        </scene>
+        <!--StoresEmployees-->
+        <scene sceneID="olw-f0-4kq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StoresEmployees" id="Ck9-0k-ViJ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zfw-qs-h8E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="908" y="-33"/>
         </scene>
     </scenes>
     <resources>

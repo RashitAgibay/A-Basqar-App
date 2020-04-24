@@ -36,6 +36,11 @@ class StoresVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        self.navigateToStoresEmployees()
+    }
+    
     func tapEditButton(cell: StoreCell, id: Int) {
 //        print("test \(id)")
         self.navigateToEditStore()
@@ -43,6 +48,10 @@ class StoresVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
 
     private func navigateToEditStore() {
         performSegue(withIdentifier: "fromStoES", sender: self)
+    }
+    
+    private func navigateToStoresEmployees() {
+        performSegue(withIdentifier: "fromStoSE", sender: self)
     }
 
 }
