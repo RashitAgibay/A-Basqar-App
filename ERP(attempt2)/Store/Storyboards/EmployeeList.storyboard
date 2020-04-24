@@ -111,11 +111,20 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="8yg-Mg-zwI" id="0iQ-Ve-0r6"/>
+                        <segue destination="vXQ-7U-Dv7" kind="presentation" identifier="fromELtoEED" modalPresentationStyle="fullScreen" id="tv0-82-S6E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GVe-hX-EKB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="124" y="114.69265367316342"/>
+        </scene>
+        <!--EditEmployeeData-->
+        <scene sceneID="CVi-e7-YQT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditEmployeeData" id="vXQ-7U-Dv7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f67-MN-xfw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="793" y="24"/>
         </scene>
     </scenes>
     <resources>

@@ -220,6 +220,8 @@
 		61A8462D245308DA00DF3371 /* StoresEmployees.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A8462C245308DA00DF3371 /* StoresEmployees.storyboard */; };
 		61A8462F245308FF00DF3371 /* StoresEmployeesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A8462E245308FF00DF3371 /* StoresEmployeesVC.swift */; };
 		61A84631245309E500DF3371 /* StoreEmployeesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A84630245309E500DF3371 /* StoreEmployeesCell.swift */; };
+		61A8463324530F6E00DF3371 /* EditEmployeeData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A8463224530F6E00DF3371 /* EditEmployeeData.storyboard */; };
+		61A8463524530FB200DF3371 /* EditEmployeeDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A8463424530FB200DF3371 /* EditEmployeeDataVC.swift */; };
 		61F00E70244F0D64001D0EEE /* MainBidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E6F244F0D64001D0EEE /* MainBidVC.swift */; };
 		61F00E72244F0D71001D0EEE /* MainBid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F00E71244F0D71001D0EEE /* MainBid.storyboard */; };
 		61F00E74244F1060001D0EEE /* NewBid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F00E73244F1060001D0EEE /* NewBid.storyboard */; };
@@ -564,6 +566,8 @@
 		61A8462C245308DA00DF3371 /* StoresEmployees.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoresEmployees.storyboard; sourceTree = "<group>"; };
 		61A8462E245308FF00DF3371 /* StoresEmployeesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresEmployeesVC.swift; sourceTree = "<group>"; };
 		61A84630245309E500DF3371 /* StoreEmployeesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreEmployeesCell.swift; sourceTree = "<group>"; };
+		61A8463224530F6E00DF3371 /* EditEmployeeData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditEmployeeData.storyboard; sourceTree = "<group>"; };
+		61A8463424530FB200DF3371 /* EditEmployeeDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmployeeDataVC.swift; sourceTree = "<group>"; };
 		61F00E6F244F0D64001D0EEE /* MainBidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBidVC.swift; sourceTree = "<group>"; };
 		61F00E71244F0D71001D0EEE /* MainBid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainBid.storyboard; sourceTree = "<group>"; };
 		61F00E73244F1060001D0EEE /* NewBid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewBid.storyboard; sourceTree = "<group>"; };
@@ -1180,6 +1184,7 @@
 				61A846262453007200DF3371 /* AddEmployeeVC.swift */,
 				61A8462A2453042900DF3371 /* EditStoreVC.swift */,
 				61A8462E245308FF00DF3371 /* StoresEmployeesVC.swift */,
+				61A8463424530FB200DF3371 /* EditEmployeeDataVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1194,6 +1199,7 @@
 				61A846242453004900DF3371 /* AddEmployee.storyboard */,
 				61A846282453040500DF3371 /* EditStore.storyboard */,
 				61A8462C245308DA00DF3371 /* StoresEmployees.storyboard */,
+				61A8463224530F6E00DF3371 /* EditEmployeeData.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1440,6 +1446,7 @@
 				61A8462D245308DA00DF3371 /* StoresEmployees.storyboard in Resources */,
 				61589B142451C8C3008A18A7 /* Stores.storyboard in Resources */,
 				61F00E78244F1081001D0EEE /* BidsHistory.storyboard in Resources */,
+				61A8463324530F6E00DF3371 /* EditEmployeeData.storyboard in Resources */,
 				61560A8E244E404B00FAAFB0 /* MovementProductList.storyboard in Resources */,
 				6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */,
 				61F00E74244F1060001D0EEE /* NewBid.storyboard in Resources */,
@@ -1720,6 +1727,7 @@
 				288CC3CE23A89BFD008D5218 /* Session.swift in Sources */,
 				288CC48D23A89C38008D5218 /* SDWebImageTransition.m in Sources */,
 				288CC3BD23A89BFD008D5218 /* MultipartFormData.swift in Sources */,
+				61A8463524530FB200DF3371 /* EditEmployeeDataVC.swift in Sources */,
 				288CC3C223A89BFD008D5218 /* ParameterEncoder.swift in Sources */,
 				288CC3C323A89BFD008D5218 /* ParameterEncoding.swift in Sources */,
 				288CC3BB23A89BFD008D5218 /* HTTPMethod.swift in Sources */,

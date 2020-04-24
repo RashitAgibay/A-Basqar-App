@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EmployeeListVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class EmployeeListVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, StoreCellDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -26,9 +26,19 @@ class EmployeeListVC: UIViewController, UICollectionViewDataSource, UICollection
         
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "storeCell", for: indexPath)  as! StoreCell
         
-        
+        cell.delegate = self
         
         return cell
+    }
+    
+    func tapEditButton(cell: StoreCell, id: Int) {
+        
+        self.navigateToEditEmployeeData()
+    }
+    
+    private func navigateToEditEmployeeData() {
+        
+        performSegue(withIdentifier: "fromELtoEED", sender: self)
     }
 
 }
