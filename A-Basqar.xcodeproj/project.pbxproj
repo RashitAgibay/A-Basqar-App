@@ -222,6 +222,8 @@
 		61A84631245309E500DF3371 /* StoreEmployeesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A84630245309E500DF3371 /* StoreEmployeesCell.swift */; };
 		61A8463324530F6E00DF3371 /* EditEmployeeData.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A8463224530F6E00DF3371 /* EditEmployeeData.storyboard */; };
 		61A8463524530FB200DF3371 /* EditEmployeeDataVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A8463424530FB200DF3371 /* EditEmployeeDataVC.swift */; };
+		61A8463724531A4E00DF3371 /* EmployeeFuncs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A8463624531A4E00DF3371 /* EmployeeFuncs.storyboard */; };
+		61A8463924531A7A00DF3371 /* EmployeeeFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A8463824531A7A00DF3371 /* EmployeeeFuncs.swift */; };
 		61F00E70244F0D64001D0EEE /* MainBidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E6F244F0D64001D0EEE /* MainBidVC.swift */; };
 		61F00E72244F0D71001D0EEE /* MainBid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F00E71244F0D71001D0EEE /* MainBid.storyboard */; };
 		61F00E74244F1060001D0EEE /* NewBid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F00E73244F1060001D0EEE /* NewBid.storyboard */; };
@@ -568,6 +570,8 @@
 		61A84630245309E500DF3371 /* StoreEmployeesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreEmployeesCell.swift; sourceTree = "<group>"; };
 		61A8463224530F6E00DF3371 /* EditEmployeeData.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditEmployeeData.storyboard; sourceTree = "<group>"; };
 		61A8463424530FB200DF3371 /* EditEmployeeDataVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEmployeeDataVC.swift; sourceTree = "<group>"; };
+		61A8463624531A4E00DF3371 /* EmployeeFuncs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmployeeFuncs.storyboard; sourceTree = "<group>"; };
+		61A8463824531A7A00DF3371 /* EmployeeeFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeeFuncs.swift; sourceTree = "<group>"; };
 		61F00E6F244F0D64001D0EEE /* MainBidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBidVC.swift; sourceTree = "<group>"; };
 		61F00E71244F0D71001D0EEE /* MainBid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainBid.storyboard; sourceTree = "<group>"; };
 		61F00E73244F1060001D0EEE /* NewBid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewBid.storyboard; sourceTree = "<group>"; };
@@ -1185,6 +1189,7 @@
 				61A8462A2453042900DF3371 /* EditStoreVC.swift */,
 				61A8462E245308FF00DF3371 /* StoresEmployeesVC.swift */,
 				61A8463424530FB200DF3371 /* EditEmployeeDataVC.swift */,
+				61A8463824531A7A00DF3371 /* EmployeeeFuncs.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1200,6 +1205,7 @@
 				61A846282453040500DF3371 /* EditStore.storyboard */,
 				61A8462C245308DA00DF3371 /* StoresEmployees.storyboard */,
 				61A8463224530F6E00DF3371 /* EditEmployeeData.storyboard */,
+				61A8463624531A4E00DF3371 /* EmployeeFuncs.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1454,6 +1460,7 @@
 				613D737E244F6BA100E0E392 /* BidHistoryDetail.storyboard in Resources */,
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
 				613D7382244F75FB00E0E392 /* BidFirstCategory.storyboard in Resources */,
+				61A8463724531A4E00DF3371 /* EmployeeFuncs.storyboard in Resources */,
 				61F00E85244F2618001D0EEE /* CurrentBidDetail.storyboard in Resources */,
 				61A846252453004900DF3371 /* AddEmployee.storyboard in Resources */,
 				61589B122451A725008A18A7 /* MainStore.storyboard in Resources */,
@@ -1537,6 +1544,7 @@
 				288CC49123A89C38008D5218 /* UIImage+GIF.m in Sources */,
 				2809019D2394C12900CA68BD /* AddProductsInBuyProductsVC.swift in Sources */,
 				288CC49B23A89C38008D5218 /* NSBezierPath+RoundedCorners.m in Sources */,
+				61A8463924531A7A00DF3371 /* EmployeeeFuncs.swift in Sources */,
 				FDA8BF7423D56ED0006DFF71 /* BoughtItemsHistoryVC.swift in Sources */,
 				280901AC2394E62800CA68BD /* BuyingHistoryVC.swift in Sources */,
 				288CC47B23A89C38008D5218 /* SDImageLoadersManager.m in Sources */,

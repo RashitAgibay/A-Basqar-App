@@ -31,6 +31,11 @@ class EmployeeListVC: UIViewController, UICollectionViewDataSource, UICollection
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+        self.navigateToEmployeeFuncs()
+    }
+    
     func tapEditButton(cell: StoreCell, id: Int) {
         
         self.navigateToEditEmployeeData()
@@ -39,6 +44,10 @@ class EmployeeListVC: UIViewController, UICollectionViewDataSource, UICollection
     private func navigateToEditEmployeeData() {
         
         performSegue(withIdentifier: "fromELtoEED", sender: self)
+    }
+    
+    private func navigateToEmployeeFuncs() {
+        performSegue(withIdentifier: "fromELtoEF", sender: self)
     }
 
 }
