@@ -50,7 +50,12 @@ class MainStoreVC: UIViewController {
         
     }
     
-
+    @IBAction func tapAddButton(_ sender: Any) {
+        
+        self.ShowAlerWithThreeButtons(title: "Выберите действие", storeButton: "Добавить новый склад/магазин", employeeButton: "Добавить новый персонал" )
+        
+    }
+    
 
     
     private func setStartState(selectedSegment: Int, segmentView: UISegmentedControl, firstView: UIView, secondView: UIView) {
@@ -70,5 +75,24 @@ class MainStoreVC: UIViewController {
         }
         
     }
+    
+    private func navigateToAddStore() {
+        performSegue(withIdentifier: "fromMStoAS", sender: self)
+    }
 
+    func ShowAlerWithThreeButtons(title: String, message: String = "", storeButton: String, employeeButton: String, cancelButton: String = "Отмена") {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let addStoreAction = UIAlertAction(title: storeButton, style: .default) { (alert) in
+            self.navigateToAddStore()
+        }
+        let addEmployeeAction = UIAlertAction(title: employeeButton, style: .default) { (alert) in
+            
+        }
+        let cancelAction = UIAlertAction(title: cancelButton, style: .cancel) { (action) in}
+        alertController.addAction(addStoreAction)
+        alertController.addAction(addEmployeeAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController,animated: true, completion: nil)
+    }
 }

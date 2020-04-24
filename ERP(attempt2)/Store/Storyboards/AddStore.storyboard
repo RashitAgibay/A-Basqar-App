@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U0T-fv-OAj">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add StoreVC-->
+        <scene sceneID="wRl-EJ-YUt">
+            <objects>
+                <viewController id="Q42-Io-gPh" customClass="AddStoreVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XxN-E3-Adj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добавить склад/магазин" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlW-qM-Uk1">
+                                <rect key="frame" x="20" y="84" width="335" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-DT-1io">
+                                <rect key="frame" x="20" y="154" width="335" height="160"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название..." textAlignment="natural" minimumFontSize="17" background="Line_for_TextField" translatesAutoresizingMaskIntoConstraints="NO" id="RFd-cN-rd5">
+                                        <rect key="frame" x="10" y="30" width="315" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="cxH-Aj-Iuy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efM-FC-iKb">
+                                        <rect key="frame" x="10" y="90" width="315" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="niO-pA-0RU"/>
+                                        </constraints>
+                                        <state key="normal" title="   Добавить изображение" image="camera">
+                                            <color key="titleColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tapAddImageButton:" destination="Q42-Io-gPh" eventType="touchUpInside" id="XMr-wd-Nim"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="efM-FC-iKb" firstAttribute="leading" secondItem="ywl-DT-1io" secondAttribute="leading" constant="10" id="2y9-5E-GvW"/>
+                                    <constraint firstItem="RFd-cN-rd5" firstAttribute="top" secondItem="ywl-DT-1io" secondAttribute="top" constant="30" id="7GN-cf-5Dd"/>
+                                    <constraint firstItem="efM-FC-iKb" firstAttribute="top" secondItem="RFd-cN-rd5" secondAttribute="bottom" constant="20" id="Lnb-tv-Cni"/>
+                                    <constraint firstItem="RFd-cN-rd5" firstAttribute="leading" secondItem="ywl-DT-1io" secondAttribute="leading" constant="10" id="U0P-29-v9o"/>
+                                    <constraint firstAttribute="bottom" secondItem="efM-FC-iKb" secondAttribute="bottom" constant="20" id="aaD-8Y-Own"/>
+                                    <constraint firstAttribute="trailing" secondItem="RFd-cN-rd5" secondAttribute="trailing" constant="10" id="o0i-Ot-TAs"/>
+                                    <constraint firstAttribute="trailing" secondItem="efM-FC-iKb" secondAttribute="trailing" constant="10" id="yns-CH-fGK"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzc-IB-Mgd">
+                                <rect key="frame" x="20" y="334" width="335" height="45"/>
+                                <color key="backgroundColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="zYt-zu-kgW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Добавить">
+                                    <color key="titleColor" red="0.91985486130000005" green="0.9183509648" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapSaveButton:" destination="Q42-Io-gPh" eventType="touchUpInside" id="B37-vK-T9A"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="iiT-Lj-5pt" firstAttribute="trailing" secondItem="dlW-qM-Uk1" secondAttribute="trailing" constant="20" id="0B0-IU-w6k"/>
+                            <constraint firstItem="dlW-qM-Uk1" firstAttribute="top" secondItem="iiT-Lj-5pt" secondAttribute="top" constant="40" id="KWI-YU-0Qe"/>
+                            <constraint firstItem="iiT-Lj-5pt" firstAttribute="trailing" secondItem="Qzc-IB-Mgd" secondAttribute="trailing" constant="20" id="OV9-62-M5p"/>
+                            <constraint firstItem="Qzc-IB-Mgd" firstAttribute="leading" secondItem="iiT-Lj-5pt" secondAttribute="leading" constant="20" id="PDo-A3-53H"/>
+                            <constraint firstItem="iiT-Lj-5pt" firstAttribute="trailing" secondItem="ywl-DT-1io" secondAttribute="trailing" constant="20" id="Qmk-7d-Lta"/>
+                            <constraint firstItem="ywl-DT-1io" firstAttribute="top" secondItem="dlW-qM-Uk1" secondAttribute="bottom" constant="40" id="d41-g1-IHU"/>
+                            <constraint firstItem="iiT-Lj-5pt" firstAttribute="trailing" secondItem="dlW-qM-Uk1" secondAttribute="trailing" constant="20" id="f0T-i0-H1F"/>
+                            <constraint firstItem="ywl-DT-1io" firstAttribute="leading" secondItem="iiT-Lj-5pt" secondAttribute="leading" constant="20" id="oNl-hp-SG0"/>
+                            <constraint firstItem="Qzc-IB-Mgd" firstAttribute="top" secondItem="ywl-DT-1io" secondAttribute="bottom" constant="20" id="wlY-06-7Br"/>
+                            <constraint firstItem="dlW-qM-Uk1" firstAttribute="leading" secondItem="iiT-Lj-5pt" secondAttribute="leading" constant="20" id="y9v-Xc-Mk0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iiT-Lj-5pt"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MFB-qt-XPe">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="RHm-6V-2Mj">
+                            <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="4z1-RL-V1y" kind="presentation" modalPresentationStyle="fullScreen" id="qtL-L5-yZ2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="addImageButton" destination="efM-FC-iKb" id="jUJ-tm-gCJ"/>
+                        <outlet property="cardView" destination="ywl-DT-1io" id="4fy-Dw-zkJ"/>
+                        <outlet property="fullnameTextField" destination="RFd-cN-rd5" id="oEn-7Y-qlx"/>
+                        <outlet property="saveButton" destination="Qzc-IB-Mgd" id="yhD-GW-gKi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YNt-dc-Y6c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6065.9420289855079" y="817.96875"/>
+        </scene>
+        <!--MainStore-->
+        <scene sceneID="jFv-Oc-aji">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainStore" id="4z1-RL-V1y" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Br-cq-m3g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6692" y="612"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RbR-Dz-ZqJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="U0T-fv-OAj" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GNb-Ak-AwT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Q42-Io-gPh" kind="relationship" relationship="rootViewController" id="AOj-Us-0LY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v2R-Oc-fuC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5155.072463768116" y="817.63392857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Line_for_TextField" width="284" height="40"/>
+        <image name="back" width="30" height="30"/>
+        <image name="camera" width="50" height="50"/>
+    </resources>
+</document>

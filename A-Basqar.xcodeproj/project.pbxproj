@@ -211,6 +211,8 @@
 		61A8461A2452DBF800DF3371 /* StoresVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A846192452DBF800DF3371 /* StoresVC.swift */; };
 		61A8461C2452DC0A00DF3371 /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A8461B2452DC0A00DF3371 /* EmployeeListVC.swift */; };
 		61A8461F2452DD4E00DF3371 /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A8461E2452DD4E00DF3371 /* StoreCell.swift */; };
+		61A846212452F6C600DF3371 /* AddStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A846202452F6C600DF3371 /* AddStore.storyboard */; };
+		61A846232452F6E400DF3371 /* AddStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A846222452F6E400DF3371 /* AddStoreVC.swift */; };
 		61F00E70244F0D64001D0EEE /* MainBidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E6F244F0D64001D0EEE /* MainBidVC.swift */; };
 		61F00E72244F0D71001D0EEE /* MainBid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F00E71244F0D71001D0EEE /* MainBid.storyboard */; };
 		61F00E74244F1060001D0EEE /* NewBid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F00E73244F1060001D0EEE /* NewBid.storyboard */; };
@@ -546,6 +548,8 @@
 		61A846192452DBF800DF3371 /* StoresVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoresVC.swift; sourceTree = "<group>"; };
 		61A8461B2452DC0A00DF3371 /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
 		61A8461E2452DD4E00DF3371 /* StoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
+		61A846202452F6C600DF3371 /* AddStore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddStore.storyboard; sourceTree = "<group>"; };
+		61A846222452F6E400DF3371 /* AddStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreVC.swift; sourceTree = "<group>"; };
 		61F00E6F244F0D64001D0EEE /* MainBidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBidVC.swift; sourceTree = "<group>"; };
 		61F00E71244F0D71001D0EEE /* MainBid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainBid.storyboard; sourceTree = "<group>"; };
 		61F00E73244F1060001D0EEE /* NewBid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewBid.storyboard; sourceTree = "<group>"; };
@@ -1158,6 +1162,7 @@
 				61589B0F2451A5CC008A18A7 /* MainStoreVC.swift */,
 				61A846192452DBF800DF3371 /* StoresVC.swift */,
 				61A8461B2452DC0A00DF3371 /* EmployeeListVC.swift */,
+				61A846222452F6E400DF3371 /* AddStoreVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1168,6 +1173,7 @@
 				61589B112451A725008A18A7 /* MainStore.storyboard */,
 				61589B132451C8C3008A18A7 /* Stores.storyboard */,
 				61589B152451C8D6008A18A7 /* EmployeeList.storyboard */,
+				61A846202452F6C600DF3371 /* AddStore.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1407,6 +1413,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61A846212452F6C600DF3371 /* AddStore.storyboard in Resources */,
 				613D7386244F7A0A00E0E392 /* BidProductList.storyboard in Resources */,
 				6159FA9D244E145B00FE1BED /* PlaceList.storyboard in Resources */,
 				61589B142451C8C3008A18A7 /* Stores.storyboard in Resources */,
@@ -1518,6 +1525,7 @@
 				28CAE45D238B924E0015DE56 /* CaterogyCell.swift in Sources */,
 				FDB6036823E2E9720012D65D /* SellingSearchVC.swift in Sources */,
 				613D737C244F657900E0E392 /* NewMovementInBidCell.swift in Sources */,
+				61A846232452F6E400DF3371 /* AddStoreVC.swift in Sources */,
 				288CC3C123A89BFD008D5218 /* OperationQueue+Alamofire.swift in Sources */,
 				28D3B0642398D985009627C7 /* SellingHistoryItemVC.swift in Sources */,
 				2867428F238CF2BD008884AF /* BuyProductVCFirstPage.swift in Sources */,

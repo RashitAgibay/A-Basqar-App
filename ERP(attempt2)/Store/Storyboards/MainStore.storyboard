@@ -69,6 +69,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="more" id="52F-NU-ohq">
                             <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="tapAddButton:" destination="9Uf-qJ-Ej6" id="2Oe-Uv-yNv"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
@@ -77,6 +80,7 @@
                         <outlet property="plusBarButton" destination="52F-NU-ohq" id="0p5-oh-zRQ"/>
                         <outlet property="segmentView" destination="DTp-3u-ICM" id="yXe-Se-iLO"/>
                         <outlet property="storesView" destination="uwg-LN-Lm9" id="93Y-b9-56a"/>
+                        <segue destination="hyV-wD-CGn" kind="presentation" identifier="fromMStoAS" modalPresentationStyle="fullScreen" id="u6s-3S-FPh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ap-Zs-T1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -89,7 +93,7 @@
                 <viewControllerPlaceholder storyboardName="EmployeeList" id="Tl3-H2-NCw" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WWS-2y-Ukv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2529" y="-49"/>
+            <point key="canvasLocation" x="2561" y="-188"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TaV-fN-092">
@@ -109,13 +113,21 @@
             </objects>
             <point key="canvasLocation" x="968.11594202898561" y="-27.455357142857142"/>
         </scene>
+        <!--AddStore-->
+        <scene sceneID="3Tv-CN-nuH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddStore" id="hyV-wD-CGn" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eda-Tx-8L5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2602" y="-329"/>
+        </scene>
         <!--menuStoryboadrid-->
         <scene sceneID="OAY-Yx-vI0">
             <objects>
                 <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="menuStoryboadrid" id="uLy-eA-q1m" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OgZ-Pi-yhl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2543" y="-241"/>
+            <point key="canvasLocation" x="2529" y="-375"/>
         </scene>
         <!--Stores-->
         <scene sceneID="fes-hY-yjV">
