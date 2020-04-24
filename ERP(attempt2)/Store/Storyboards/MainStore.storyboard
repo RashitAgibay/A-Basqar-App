@@ -81,6 +81,7 @@
                         <outlet property="segmentView" destination="DTp-3u-ICM" id="yXe-Se-iLO"/>
                         <outlet property="storesView" destination="uwg-LN-Lm9" id="93Y-b9-56a"/>
                         <segue destination="hyV-wD-CGn" kind="presentation" identifier="fromMStoAS" modalPresentationStyle="fullScreen" id="u6s-3S-FPh"/>
+                        <segue destination="42s-lp-umN" kind="presentation" identifier="fromMStoAE" modalPresentationStyle="fullScreen" id="F2i-mJ-ckw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ap-Zs-T1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -93,7 +94,7 @@
                 <viewControllerPlaceholder storyboardName="EmployeeList" id="Tl3-H2-NCw" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WWS-2y-Ukv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2561" y="-188"/>
+            <point key="canvasLocation" x="2647" y="-13"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TaV-fN-092">
@@ -121,6 +122,14 @@
             </objects>
             <point key="canvasLocation" x="2602" y="-329"/>
         </scene>
+        <!--AddEmployee-->
+        <scene sceneID="JRv-g9-GsV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="AddEmployee" id="42s-lp-umN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4q-mO-q4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2712" y="-263"/>
+        </scene>
         <!--menuStoryboadrid-->
         <scene sceneID="OAY-Yx-vI0">
             <objects>
@@ -135,7 +144,7 @@
                 <viewControllerPlaceholder storyboardName="Stores" id="0La-ZH-VN9" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CyV-Nd-kSJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2528" y="-130"/>
+            <point key="canvasLocation" x="2614" y="111"/>
         </scene>
     </scenes>
     <resources>

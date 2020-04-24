@@ -79,6 +79,10 @@ class MainStoreVC: UIViewController {
     private func navigateToAddStore() {
         performSegue(withIdentifier: "fromMStoAS", sender: self)
     }
+    
+    private func navigateToAddEmployee() {
+        performSegue(withIdentifier: "fromMStoAE", sender: self)
+    }
 
     func ShowAlerWithThreeButtons(title: String, message: String = "", storeButton: String, employeeButton: String, cancelButton: String = "Отмена") {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -87,7 +91,7 @@ class MainStoreVC: UIViewController {
             self.navigateToAddStore()
         }
         let addEmployeeAction = UIAlertAction(title: employeeButton, style: .default) { (alert) in
-            
+            self.navigateToAddEmployee()
         }
         let cancelAction = UIAlertAction(title: cancelButton, style: .cancel) { (action) in}
         alertController.addAction(addStoreAction)

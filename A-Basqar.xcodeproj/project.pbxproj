@@ -213,6 +213,8 @@
 		61A8461F2452DD4E00DF3371 /* StoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A8461E2452DD4E00DF3371 /* StoreCell.swift */; };
 		61A846212452F6C600DF3371 /* AddStore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A846202452F6C600DF3371 /* AddStore.storyboard */; };
 		61A846232452F6E400DF3371 /* AddStoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A846222452F6E400DF3371 /* AddStoreVC.swift */; };
+		61A846252453004900DF3371 /* AddEmployee.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61A846242453004900DF3371 /* AddEmployee.storyboard */; };
+		61A846272453007200DF3371 /* AddEmployeeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A846262453007200DF3371 /* AddEmployeeVC.swift */; };
 		61F00E70244F0D64001D0EEE /* MainBidVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E6F244F0D64001D0EEE /* MainBidVC.swift */; };
 		61F00E72244F0D71001D0EEE /* MainBid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F00E71244F0D71001D0EEE /* MainBid.storyboard */; };
 		61F00E74244F1060001D0EEE /* NewBid.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F00E73244F1060001D0EEE /* NewBid.storyboard */; };
@@ -550,6 +552,8 @@
 		61A8461E2452DD4E00DF3371 /* StoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCell.swift; sourceTree = "<group>"; };
 		61A846202452F6C600DF3371 /* AddStore.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddStore.storyboard; sourceTree = "<group>"; };
 		61A846222452F6E400DF3371 /* AddStoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStoreVC.swift; sourceTree = "<group>"; };
+		61A846242453004900DF3371 /* AddEmployee.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddEmployee.storyboard; sourceTree = "<group>"; };
+		61A846262453007200DF3371 /* AddEmployeeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEmployeeVC.swift; sourceTree = "<group>"; };
 		61F00E6F244F0D64001D0EEE /* MainBidVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBidVC.swift; sourceTree = "<group>"; };
 		61F00E71244F0D71001D0EEE /* MainBid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainBid.storyboard; sourceTree = "<group>"; };
 		61F00E73244F1060001D0EEE /* NewBid.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewBid.storyboard; sourceTree = "<group>"; };
@@ -1163,6 +1167,7 @@
 				61A846192452DBF800DF3371 /* StoresVC.swift */,
 				61A8461B2452DC0A00DF3371 /* EmployeeListVC.swift */,
 				61A846222452F6E400DF3371 /* AddStoreVC.swift */,
+				61A846262453007200DF3371 /* AddEmployeeVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1174,6 +1179,7 @@
 				61589B132451C8C3008A18A7 /* Stores.storyboard */,
 				61589B152451C8D6008A18A7 /* EmployeeList.storyboard */,
 				61A846202452F6C600DF3371 /* AddStore.storyboard */,
+				61A846242453004900DF3371 /* AddEmployee.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1426,6 +1432,7 @@
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
 				613D7382244F75FB00E0E392 /* BidFirstCategory.storyboard in Resources */,
 				61F00E85244F2618001D0EEE /* CurrentBidDetail.storyboard in Resources */,
+				61A846252453004900DF3371 /* AddEmployee.storyboard in Resources */,
 				61589B122451A725008A18A7 /* MainStore.storyboard in Resources */,
 				61560A8C244E33BE00FAAFB0 /* MovementFirstCategory.storyboard in Resources */,
 				613D7378244F64A800E0E392 /* NewMovementInBid.storyboard in Resources */,
@@ -1577,6 +1584,7 @@
 				288CC49623A89C38008D5218 /* UIImageView+HighlightedWebCache.m in Sources */,
 				288CC49E23A89C38008D5218 /* SDDeviceHelper.m in Sources */,
 				288CC3B523A89BFD008D5218 /* Alamofire.swift in Sources */,
+				61A846272453007200DF3371 /* AddEmployeeVC.swift in Sources */,
 				288CC46F23A89C38008D5218 /* SDImageCacheDefine.m in Sources */,
 				288CC47F23A89C38008D5218 /* SDWebImageCacheSerializer.m in Sources */,
 				288CC3B723A89BFD008D5218 /* CachedResponseHandler.swift in Sources */,
