@@ -159,7 +159,7 @@
                 <viewControllerPlaceholder storyboardName="CurrentBids" id="6Tj-yy-FD7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7E-YQ-0u0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2823" y="-54"/>
+            <point key="canvasLocation" x="2823" y="-183"/>
         </scene>
         <!--NewBid-->
         <scene sceneID="bQX-Sq-HoD">

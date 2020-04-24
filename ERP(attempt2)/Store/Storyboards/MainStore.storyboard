@@ -63,6 +63,9 @@
                     <navigationItem key="navigationItem" id="ZPt-jb-jup">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="z2r-yV-ejv">
                             <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="uLy-eA-q1m" kind="presentation" modalPresentationStyle="fullScreen" id="m7p-6A-jVi"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="more" id="52F-NU-ohq">
                             <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,6 +108,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y9V-Fi-HGN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="968.11594202898561" y="-27.455357142857142"/>
+        </scene>
+        <!--menuStoryboadrid-->
+        <scene sceneID="OAY-Yx-vI0">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="menuStoryboadrid" id="uLy-eA-q1m" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OgZ-Pi-yhl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2543" y="-241"/>
         </scene>
         <!--Stores-->
         <scene sceneID="fes-hY-yjV">

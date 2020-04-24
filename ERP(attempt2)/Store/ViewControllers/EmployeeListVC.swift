@@ -1,13 +1,14 @@
 //
-//  BidHistoryDetailVC.swift
-//  
+//  EmployeeListVC.swift
+//  A-Basqar
 //
-//  Created by iliyas on 21.04.2020.
+//  Created by iliyas on 24.04.2020.
+//  Copyright © 2020 Ilyas Shomat. All rights reserved.
 //
 
 import UIKit
 
-class BidHistoryDetailVC: UIViewController {
+class EmployeeListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
