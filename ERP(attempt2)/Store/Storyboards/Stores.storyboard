@@ -111,11 +111,20 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="zlj-8u-psm" id="Hyr-Ww-vjr"/>
+                        <segue destination="lVh-yT-bUV" kind="presentation" identifier="fromStoES" modalPresentationStyle="fullScreen" id="UrA-wU-Vee"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1KG-ht-XId" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="124" y="114.69265367316342"/>
+        </scene>
+        <!--EditStore-->
+        <scene sceneID="MQ5-qF-uTK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="EditStore" id="lVh-yT-bUV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SdR-3b-kdy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="687" y="-80"/>
         </scene>
     </scenes>
     <resources>

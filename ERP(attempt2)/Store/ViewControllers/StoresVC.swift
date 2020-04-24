@@ -8,7 +8,9 @@
 
 import UIKit
 
-class StoresVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class StoresVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, StoreCellDelegate {
+
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -27,10 +29,20 @@ class StoresVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
         
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "storeCell", for: indexPath)  as! StoreCell
         
+        cell.storeID = indexPath.row
         
+        cell.delegate = self
         
         return cell
     }
+    
+    func tapEditButton(cell: StoreCell, id: Int) {
+//        print("test \(id)")
+        self.navigateToEditStore()
+    }
 
+    private func navigateToEditStore() {
+        performSegue(withIdentifier: "fromStoES", sender: self)
+    }
 
 }

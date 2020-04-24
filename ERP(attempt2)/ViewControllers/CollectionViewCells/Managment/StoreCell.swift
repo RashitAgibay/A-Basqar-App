@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol StoreCellDelegate {
+    
+    func tapEditButton(cell: StoreCell, id: Int)
+}
+
 class StoreCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
@@ -15,6 +20,8 @@ class StoreCell: UICollectionViewCell {
     @IBOutlet weak var employeeLabel: UILabel!
     @IBOutlet weak var editButton: UIButton!
     
+    var delegate: StoreCellDelegate?
+    var storeID = Int()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,6 +44,8 @@ class StoreCell: UICollectionViewCell {
     }
     
     @IBAction func tapEditButton(_ sender: Any) {
+        
+        delegate?.tapEditButton(cell: self, id: storeID)
         
     }
     
