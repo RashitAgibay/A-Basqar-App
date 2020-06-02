@@ -155,6 +155,16 @@ class BuyProdReadBarCodeVC: UIViewController, AVCaptureMetadataOutputObjectsDele
                     if let x = payload as? Dictionary<String,AnyObject> {
                         
 //                        print(x)
+                        
+                        let resultValue = x["results"] as! NSArray
+                        
+                        self.goodListArray = NSMutableArray(array: resultValue)
+                        
+                        let good = self.goodListArray[0] as! NSDictionary
+                        self.goodID = good["id"] as! Int
+                        
+                        self.SendGoodToBasketApi()
+                        
                     }
                     else {
                         
