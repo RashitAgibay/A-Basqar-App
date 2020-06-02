@@ -130,30 +130,31 @@ class BuyProductAddGoodsPageVC: UIViewController, UICollectionViewDelegate, UICo
     }
     
      func GoodListApi() {
-                   
-                   do {
-                     self.reacibility = try Reachability.init()
-                   }
-                   
-                   catch {
-                    // print("unable to start notifier")
-                    
-                    
-                   }
-                   
-            if ((reacibility!.connection) != .unavailable){
-                                      MBProgressHUD.showAdded(to: self.view, animated: true)
-                       
-                    //MARK: - Токенді optional түрден String типіне алып келу керек, әйтпесе токен дұрыс жіберілмейді.
-                let token = UserDefaults.standard.string(forKey: self.userTokenForUserStandart) as! String
-//                print("token is \(token)")
-                    
-                    let headers: HTTPHeaders = [
-                        "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+        
+        do {
+            
+            self.reacibility = try Reachability.init()
+        }
+        
+        catch {
+            
+            // print("unable to start notifier")
+        }
+        
+        if ((reacibility!.connection) != .unavailable) {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            //MARK: - Токенді optional түрден String типіне алып келу керек, әйтпесе токен дұрыс жіберілмейді.
+            
+            let token = UserDefaults.standard.string(forKey: self.userTokenForUserStandart) as! String
+            
+//            print("token is \(token)")
+            
+            let headers: HTTPHeaders = [
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
                         //"Authorization":"Token 1d61d12c174b38f660f8026bb3d2cc47b5bec66d".trimmingCharacters(in: .whitespacesAndNewlines),
-                        "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-                        
-                       ]
+                "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
                     
 //                    let params = [
 //
@@ -162,78 +163,75 @@ class BuyProductAddGoodsPageVC: UIViewController, UICollectionViewDelegate, UICo
 //
 //
 //                              ]
-                    
-                    
-                    
-                       let encodeURL = goodListUrl
+            
+            let encodeURL = goodListUrl
+            
+            let requestOfApi = AF.request("\(encodeURL)?cat_id=\(idFromCategory)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
                 
+//                print(response.request)
+//                print(response.result)
+//                print(response.response)
+                
+                switch response.result {
+                
+                case .success(let payload):
+                    
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    
+                    if let x = payload as? Dictionary<String,AnyObject> {
                         
-                       
-                let requestOfApi = AF.request("\(encodeURL)?cat_id=\(idFromCategory)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-                       
-                       requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                           
-//                           print(response.request)
-//                           print(response.result)
-//                           print(response.response)
-                           
-                           switch response.result {
-
-                           case .success(let payload):
-                               MBProgressHUD.hide(for: self.view, animated: true)
-
-                               if let x = payload as? Dictionary<String,AnyObject> {
-                                   print(x)
-
-                                   //let resultValue = x as NSMutableArray
-                                   //categoryInfo = NSMutableArray(array: resultValue) as! NSArray
-
-                               }
-
-                               else{
-                                let resultValue = payload as! NSArray
-                                //print("осы жерде категори инфо")
-                                //    print(resultValue)
-
-
-
-
-                                goodListInfo = NSMutableArray(array: resultValue)
-                                self.collectionView.reloadData()
-
-                                //print("осы жерде категори инфо")
-                                //print(categoryInfo)
-
-                            }
-
-                           case .failure(let error):
-                               print(error)
-                               MBProgressHUD.hide(for: self.view, animated: true)
-                               self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-
-                           }
-                      
-                       })
-                       
-                   }
-                   
-                   else{
-                       //print("internet is not working")
+//                        print(x)
+//                        let resultValue = x as NSMutableArray
+//                        categoryInfo = NSMutableArray(array: resultValue) as! NSArray
+                        let resultValue = x["results"] as! NSArray
+                        
+                        goodListInfo = NSMutableArray(array: resultValue)
+                        self.collectionView.reloadData()
+                    }
+                    else {
+                        
+                        let resultValue = payload as! NSArray
+                        
+                        //print("осы жерде категори инфо")
+                        //    print(resultValue)
+                        
+                        goodListInfo = NSMutableArray(array: resultValue)
+                        self.collectionView.reloadData()
+                        
+                        //print("осы жерде категори инфо")
+                        //print(categoryInfo)
+                    
+                    }
+                
+                case .failure(let error):
+                    
+                    print(error)
                     MBProgressHUD.hide(for: self.view, animated: true)
                     self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-                   }
-                   
-               }
+                }
+            })
+        
+        }
+        
+        else {
+                       //print("internet is not working")
             
-            func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
-                
-                 let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-                           let action = UIAlertAction(title: buttomMessage, style: .cancel) { (action) in
-                               
-                           }
-                           alertController.addAction(action)
-                           self.present(alertController,animated: true, completion: nil)
-            }
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
+    
+    func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: buttomMessage, style: .cancel) { (action) in
+        
+        }
+        
+        alertController.addAction(action)
+        self.present(alertController,animated: true, completion: nil)
+    }
             
             func ShowErrorsAlertWithOneCancelButton(message: String) {
                 

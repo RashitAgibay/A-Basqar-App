@@ -10,7 +10,7 @@ import Foundation
 
 
 
-let mainUrl: String = "http://94.103.91.178/"
+let mainUrl: String = "http://abasqar.pythonanywhere.com/"
 
 let loginUrl: String = mainUrl + "user-login"
 

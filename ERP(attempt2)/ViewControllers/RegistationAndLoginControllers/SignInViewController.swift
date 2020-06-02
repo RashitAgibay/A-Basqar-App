@@ -102,62 +102,60 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     
     func LoginApi() {
-           
-           do {
-             self.reacibility = try Reachability.init()
-           }
-           
-           catch {
+        
+        do {
+            
+            self.reacibility = try Reachability.init()
+        }
+        
+        catch {
+            
             print("unable to start notifier")
+        
+        }
+        
+        if ((reacibility!.connection) != .none){
             
+            MBProgressHUD.showAdded(to: self.view, animated: true)
             
-           }
-           
-           if ((reacibility!.connection) != .none){
-                              MBProgressHUD.showAdded(to: self.view, animated: true)
-               
-               let params = [
-               
-                   
-                   "username":self.loginTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
-                   "password":self.passwordTextField2.text?.trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
-                   
-                   
-    
-               ]
+            let params = [
+                
+                "username":self.loginTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
+                "password":self.passwordTextField2.text?.trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
+            ]
             
             let headers: HTTPHeaders = [
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
                 
-               ]
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
             
+            let encodeURL = loginUrl
             
+            print("url: \(encodeURL)")
             
+            let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
-               let encodeURL = loginUrl
-               
-               let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-               
-               requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
                    
                    //print(response.request!)
                    //print(response.result)
                    //print(response.response)
-                   
-                   switch response.result {
-
-                   case .success(let payload):
-                       MBProgressHUD.hide(for: self.view, animated: true)
-                       
-                       if let x = payload as? Dictionary<String,AnyObject> {
-                           print(x)
-
-                           let resultValue = x as NSDictionary
-                       
+                
+                switch response.result {
+                
+                case .success(let payload):
+                    
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    if let x = payload as? Dictionary<String,AnyObject> {
                         
+                        print(x)
+                        
+                        let resultValue = x as NSDictionary
                         
                         //MARK: - (id412) ddictinary ішінде белгілі бір key бар ма жоқ па соны тексеру үшін
+                        
                         if resultValue["error"] != nil {
+                            
                             self.ShowErrorsAlertWithOneCancelButton(message: "Вы ввели логин или пароль не правильно!!!")
                         }
                         
@@ -174,29 +172,26 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
 //                        if resultValue["error"] as! String == "Invalid Credentials"{
 //                            self.ShowErrorsAlertWithOneCancelButton(message: "Вы ввели логин или пароль не правильно!!!")
 //                        }
- 
-                        
-                        
-                       }
-
-                   case .failure(let error):
-                       print(error)
-                       MBProgressHUD.hide(for: self.view, animated: true)
-                       self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-
-                   }
-              
-               })
-               
-           }
-           
-           else{
-               print("internet is not working")
+                    }
+                
+                case .failure(let error):
+                    
+                    print(error)
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом!!!")
+                }
+            })
+        }
+        
+        else {
+            
+            print("internet is not working")
+            
             MBProgressHUD.hide(for: self.view, animated: true)
+            
             self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-           }
-           
-       }
+        }
+    }
     
     
     public func toTheNextPage()  {

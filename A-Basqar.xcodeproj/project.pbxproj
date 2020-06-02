@@ -701,6 +701,7 @@
 				284599B82386607100D9C23E /* VIew */,
 				2812AAF32362B45A001D65C8 /* AppDelegate.swift */,
 				2812AAF52362B45A001D65C8 /* SceneDelegate.swift */,
+				288CC4A623A89CBC008D5218 /* ApiUrls.swift */,
 				2812AAFC2362B45B001D65C8 /* Assets.xcassets */,
 				2812AAFE2362B45B001D65C8 /* LaunchScreen.storyboard */,
 				2812AB012362B45B001D65C8 /* Info.plist */,
@@ -812,7 +813,6 @@
 			isa = PBXGroup;
 			children = (
 				FD3680A223C470F300914B94 /* ModelForSelling */,
-				288CC4A623A89CBC008D5218 /* ApiUrls.swift */,
 				288CC38423A8971F008D5218 /* LoginAndSingUpModels */,
 				286CE103239E149D00E71557 /* Reports */,
 				289087E5239A1814001C53C6 /* IncomeKassaModel */,
