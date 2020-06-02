@@ -47,3 +47,7 @@ let nullIncomeKassaUrl: String = mainUrl + "export-null-checks/"
 let nullOutcomeKassaUrl: String = mainUrl + "import-null-checks/"
 
 
+
+//MARK: - Складттар бойынша
+
+let storeListUrl: String = mainUrl+"/add-depot/"
