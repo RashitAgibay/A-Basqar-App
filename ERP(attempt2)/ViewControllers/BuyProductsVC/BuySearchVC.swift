@@ -41,6 +41,8 @@ extension BuySearchVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tablecell")
         
+//        print(goodListArray)
+        
         let eachGood = goodListArray[indexPath.row] as! NSDictionary
         let goods = eachGood["goods"] as! NSDictionary
         
@@ -93,50 +95,64 @@ extension BuySearchVC: UISearchBarDelegate {
 extension BuySearchVC {
     
     func getGoodByBarCode() {
+        
+        do {
             
-            do {
-                reacibility = try Reachability.init()
-            }
+            reacibility = try Reachability.init()
+        }
+        
+        catch {
+        
+        }
+        
+        if ((reacibility!.connection) != .unavailable) {
             
-            catch {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
             
-            }
+            let token = UserDefaults.standard.string(forKey: userTokenForUserStandart) as! String
             
-            if ((reacibility!.connection) != .unavailable){
-                MBProgressHUD.showAdded(to: self.view, animated: true)
+            let headers: HTTPHeaders = [
                 
-                let token = UserDefaults.standard.string(forKey: userTokenForUserStandart) as! String
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+            let encodeURL = goodListUrl
+            
+            //MARK: -api ға запрос жібергенде кирилиццамен жіберуге мүмкіндік болу үшін
+            let allowedURL = (encodeURL + "?goods_name=\(string)").addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlFragmentAllowed)!
+            
+//            print("url: \(allowedURL)")
+            
+            let requestOfApi = AF.request(allowedURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
                 
-                let headers: HTTPHeaders = [
-                    "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                    "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-                ]
+//                print(response.request)
+//                print(response.result)
+//                print(response.response)
                 
-                let encodeURL = goodListUrl
+                switch response.result {
                 
-                //MARK: -api ға запрос жібергенде кирилиццамен жіберуге мүмкіндік болу үшін
-                let allowedURL = (encodeURL + "?goods_name=\(string)").addingPercentEncoding(withAllowedCharacters: NSCharacterSet.urlFragmentAllowed)!
-                
-                let requestOfApi = AF.request(allowedURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-                requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                case .success(let payload):
                     
-//                    print(response.request)
-//                    print(response.result)
-//                    print(response.response)
+                    MBProgressHUD.hide(for: self.view, animated: true)
                     
-                    switch response.result {
-                    
-                    case .success(let payload):
-                        MBProgressHUD.hide(for: self.view, animated: true)
+                    if let x = payload as? Dictionary<String,AnyObject> {
                         
-                        if let x = payload as? Dictionary<String,AnyObject> {
-                            
-    //                        print(x)
-                        }
-                        else {
-                            
-                            let resultValue = payload as! NSArray
-                            self.goodListArray = NSMutableArray(array: resultValue)
+//                        print(x)
+                        
+//                        print(x["results"])
+                        let resultValue = x["results"] as! NSArray
+                        self.goodListArray = NSMutableArray(array: resultValue)
+                        self.tableView.reloadData()
+                    
+                    }
+                    
+                    else {
+                        
+                        let resultValue = payload as! NSArray
+                        self.goodListArray = NSMutableArray(array: resultValue)
                             
 //                            let good = self.goodListArray[0] as! NSDictionary
 //                            self.goodID = good["id"] as! Int
@@ -144,23 +160,24 @@ extension BuySearchVC {
 //                            self.SendGoodToBasketApi()
                             
 //                            debug_print(message: "here is a goodListArray", object: self.goodListArray)
-                            
-                            self.tableView.reloadData()
-                        }
-                    case .failure(let error):
                         
-                        print(error)
-                        MBProgressHUD.hide(for: self.view, animated: true)
-                        self.ShowErrorsAlertWithOneCancelButton(message: "URL-ға запроста  да бірдеңе дұрыс емес")}
-                })
-            
-            }
-            
-            else {
-                MBProgressHUD.hide(for: self.view, animated: true)
-                self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-            }
+                        self.tableView.reloadData()
+                    }
+                
+                case .failure(let error):
+                    
+//                    print(error)
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    self.ShowErrorsAlertWithOneCancelButton(message: "URL-ға запроста  да бірдеңе дұрыс емес")}
+            })
         }
+        
+        else {
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
     
     
     func SendGoodToBasketApi() {
