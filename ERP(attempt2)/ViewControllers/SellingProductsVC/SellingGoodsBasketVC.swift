@@ -142,7 +142,12 @@ class SellingGoodsBasketVC: UIViewController, UICollectionViewDelegate, UICollec
                     MBProgressHUD.hide(for: self.view, animated: true)
                     
                     if let x = payload as? Dictionary<String,AnyObject> {
-                    
+                        
+                        let resultValue = x["results"] as! NSArray
+                        
+                        goodListInfo = NSMutableArray(array: resultValue)
+                        self.collectionView.reloadData()
+                        
                     }
                     else {
                         

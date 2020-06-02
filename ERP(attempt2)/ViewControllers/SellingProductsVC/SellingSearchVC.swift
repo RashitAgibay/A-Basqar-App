@@ -132,6 +132,9 @@ extension SellingSearchVC {
                         if let x = payload as? Dictionary<String,AnyObject> {
                             
     //                        print(x)
+                            let resultValue = x["results"] as! NSArray
+                            self.goodListArray = NSMutableArray(array: resultValue)
+                            self.tableView.reloadData()
                         }
                         else {
                             
