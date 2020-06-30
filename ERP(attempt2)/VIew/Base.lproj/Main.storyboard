@@ -667,6 +667,14 @@
             </objects>
             <point key="canvasLocation" x="-626" y="623"/>
         </scene>
+        <!--MainImport-->
+        <scene sceneID="aWM-G8-YGV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainImport" id="TVh-Di-Fri" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3hi-aA-qsk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-623" y="769"/>
+        </scene>
         <!--Menu View Controller-->
         <scene sceneID="JpZ-9f-khu">
             <objects>
@@ -1018,6 +1026,7 @@
                         <segue destination="AXU-cV-WUe" kind="presentation" identifier="mainToMainMovement" modalPresentationStyle="fullScreen" id="kDw-7J-Hdg"/>
                         <segue destination="f0t-mh-XPk" kind="presentation" identifier="mainToMainBid" modalPresentationStyle="fullScreen" id="6Ve-mI-sMp"/>
                         <segue destination="25i-4O-UWT" kind="presentation" identifier="mainToManage" modalPresentationStyle="fullScreen" id="DkO-5S-I9i"/>
+                        <segue destination="TVh-Di-Fri" kind="presentation" identifier="fromMainToImport" modalPresentationStyle="fullScreen" id="N7U-ak-r9v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr4-9I-Q6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -7406,8 +7415,8 @@
         <segue reference="jdj-3L-A66"/>
         <segue reference="O4S-9G-Jzh"/>
         <segue reference="6pu-6u-RW8"/>
-        <segue reference="fjk-sw-Ffy"/>
-        <segue reference="JPu-ua-Y0j"/>
+        <segue reference="3LV-1F-9HZ"/>
+        <segue reference="JRa-Xv-mkw"/>
         <segue reference="ZJ2-I0-hTz"/>
         <segue reference="GKp-99-c5l"/>
         <segue reference="H3Y-h8-ahJ"/>
