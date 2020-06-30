@@ -9,6 +9,8 @@
 import UIKit
 import Printer
 
+
+//some changes 
 class OutcomeKassaVC: UIViewController {
 
     @IBOutlet weak var segmentView: UISegmentedControl!
