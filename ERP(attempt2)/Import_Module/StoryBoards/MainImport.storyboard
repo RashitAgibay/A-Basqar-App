@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zZZ-q2-oqg">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main ImportVC-->
+        <scene sceneID="Z15-po-5EL">
+            <objects>
+                <viewController id="quh-Uh-1MA" customClass="MainImportVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aug-hz-fGr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QR9-yl-qZp">
+                                <rect key="frame" x="0.0" y="44" width="375" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="JRk-5y-I4y"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Новая покупка"/>
+                                    <segment title="История покупок"/>
+                                </segments>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O88-ME-1Qd">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <connections>
+                                    <segue destination="2pO-lT-BVs" kind="embed" id="Lhm-ch-s8s"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="QR9-yl-qZp" firstAttribute="top" secondItem="UXY-rb-Msa" secondAttribute="top" id="GTm-IO-hch"/>
+                            <constraint firstItem="UXY-rb-Msa" firstAttribute="trailing" secondItem="QR9-yl-qZp" secondAttribute="trailing" id="Y1D-p4-WNa"/>
+                            <constraint firstItem="UXY-rb-Msa" firstAttribute="bottom" secondItem="O88-ME-1Qd" secondAttribute="bottom" id="dAO-DV-vXC"/>
+                            <constraint firstItem="QR9-yl-qZp" firstAttribute="leading" secondItem="UXY-rb-Msa" secondAttribute="leading" id="flE-KK-AvX"/>
+                            <constraint firstItem="UXY-rb-Msa" firstAttribute="trailing" secondItem="O88-ME-1Qd" secondAttribute="trailing" id="mHz-or-3gV"/>
+                            <constraint firstItem="O88-ME-1Qd" firstAttribute="top" secondItem="QR9-yl-qZp" secondAttribute="bottom" id="rP8-ne-zHu"/>
+                            <constraint firstItem="O88-ME-1Qd" firstAttribute="leading" secondItem="UXY-rb-Msa" secondAttribute="leading" id="tpQ-1a-Zjn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UXY-rb-Msa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6PB-rH-6V1">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Item" image="home" id="RoC-Q9-LAk">
+                                <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="search" id="MPR-r9-EVf">
+                                <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="more" id="wK7-Y2-AhE">
+                                <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="scan" id="pES-vY-CEE">
+                                <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <size key="freeformSize" width="375" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="osb-8o-ogB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1094.9275362318842" y="2952.7901785714284"/>
+        </scene>
+        <!--NewImport-->
+        <scene sceneID="OlY-9N-xAB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewImport" id="2pO-lT-BVs" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X11-Xi-LrJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1809" y="2853"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sSG-Lg-mWO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zZZ-q2-oqg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j3Q-Mo-Pad">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="quh-Uh-1MA" kind="relationship" relationship="rootViewController" id="5DD-Nk-RBU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kqB-Jj-zgl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184.05797101449278" y="2952.4553571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home" width="30" height="28.5"/>
+        <image name="more" width="30" height="30"/>
+        <image name="scan" width="30" height="24"/>
+        <image name="search" width="30" height="30"/>
+    </resources>
+</document>

@@ -245,6 +245,11 @@
 		FDB6036423E2D1770012D65D /* BuySearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6036323E2D1770012D65D /* BuySearchVC.swift */; };
 		FDB6036623E2E6830012D65D /* SellingBarcodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6036523E2E6830012D65D /* SellingBarcodeVC.swift */; };
 		FDB6036823E2E9720012D65D /* SellingSearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6036723E2E9720012D65D /* SellingSearchVC.swift */; };
+		FDB63FBD24AB565900525388 /* MainImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB63FBC24AB565900525388 /* MainImportVC.swift */; };
+		FDB63FBF24AB5A8500525388 /* MainImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDB63FBE24AB5A8500525388 /* MainImport.storyboard */; };
+		FDB63FC124AB5E4600525388 /* NewImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB63FC024AB5E4600525388 /* NewImportVC.swift */; };
+		FDB63FC324AB5EA500525388 /* NewImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDB63FC224AB5EA500525388 /* NewImport.storyboard */; };
+		FDB63FC624AB63A800525388 /* NewImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB63FC524AB63A800525388 /* NewImportCell.swift */; };
 		FDBDD50123D807FE007FE38F /* SellingGoodsBasketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */; };
 		FDC8A5DB23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */; };
 		FDF3C9B523E1342800D2E08D /* IncomeContagentNamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */; };
@@ -594,6 +599,11 @@
 		FDB6036323E2D1770012D65D /* BuySearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySearchVC.swift; sourceTree = "<group>"; };
 		FDB6036523E2E6830012D65D /* SellingBarcodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingBarcodeVC.swift; sourceTree = "<group>"; };
 		FDB6036723E2E9720012D65D /* SellingSearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingSearchVC.swift; sourceTree = "<group>"; };
+		FDB63FBC24AB565900525388 /* MainImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImportVC.swift; sourceTree = "<group>"; };
+		FDB63FBE24AB5A8500525388 /* MainImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainImport.storyboard; sourceTree = "<group>"; };
+		FDB63FC024AB5E4600525388 /* NewImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImportVC.swift; sourceTree = "<group>"; };
+		FDB63FC224AB5EA500525388 /* NewImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewImport.storyboard; sourceTree = "<group>"; };
+		FDB63FC524AB63A800525388 /* NewImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImportCell.swift; sourceTree = "<group>"; };
 		FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingGoodsBasketVC.swift; sourceTree = "<group>"; };
 		FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeKassaHistoryListVC.swift; sourceTree = "<group>"; };
 		FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeContagentNamesVC.swift; sourceTree = "<group>"; };
@@ -691,6 +701,7 @@
 		2812AAF22362B45A001D65C8 /* ERP(attempt2) */ = {
 			isa = PBXGroup;
 			children = (
+				FDB63FB924AB55F000525388 /* Import_Module */,
 				61589B0C2451A507008A18A7 /* Store_Module */,
 				61F00E6C244F0C7C001D0EEE /* Bid_Module */,
 				6159FA89244DEAB900FE1BED /* Movement_Module */,
@@ -851,6 +862,7 @@
 		288C79A9238652BE003282C3 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				FDB63FC424AB637D00525388 /* Import */,
 				61A8461D2452DD2C00DF3371 /* Managment */,
 				61F00E7D244F215A001D0EEE /* Bids */,
 				61560A84244E1BD000FAAFB0 /* Movement */,
@@ -1339,6 +1351,41 @@
 			path = PrinterBase;
 			sourceTree = "<group>";
 		};
+		FDB63FB924AB55F000525388 /* Import_Module */ = {
+			isa = PBXGroup;
+			children = (
+				FDB63FBB24AB561500525388 /* StoryBoards */,
+				FDB63FBA24AB560700525388 /* ViewControllers */,
+			);
+			path = Import_Module;
+			sourceTree = "<group>";
+		};
+		FDB63FBA24AB560700525388 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FDB63FBC24AB565900525388 /* MainImportVC.swift */,
+				FDB63FC024AB5E4600525388 /* NewImportVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FDB63FBB24AB561500525388 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				FDB63FBE24AB5A8500525388 /* MainImport.storyboard */,
+				FDB63FC224AB5EA500525388 /* NewImport.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		FDB63FC424AB637D00525388 /* Import */ = {
+			isa = PBXGroup;
+			children = (
+				FDB63FC524AB63A800525388 /* NewImportCell.swift */,
+			);
+			path = Import;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1452,6 +1499,7 @@
 				61A8462D245308DA00DF3371 /* StoresEmployees.storyboard in Resources */,
 				61589B142451C8C3008A18A7 /* Stores.storyboard in Resources */,
 				61F00E78244F1081001D0EEE /* BidsHistory.storyboard in Resources */,
+				FDB63FBF24AB5A8500525388 /* MainImport.storyboard in Resources */,
 				61A8463324530F6E00DF3371 /* EditEmployeeData.storyboard in Resources */,
 				61560A8E244E404B00FAAFB0 /* MovementProductList.storyboard in Resources */,
 				6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */,
@@ -1459,6 +1507,7 @@
 				2812AB002362B45B001D65C8 /* LaunchScreen.storyboard in Resources */,
 				613D737E244F6BA100E0E392 /* BidHistoryDetail.storyboard in Resources */,
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
+				FDB63FC324AB5EA500525388 /* NewImport.storyboard in Resources */,
 				613D7382244F75FB00E0E392 /* BidFirstCategory.storyboard in Resources */,
 				61A8463724531A4E00DF3371 /* EmployeeFuncs.storyboard in Resources */,
 				61F00E85244F2618001D0EEE /* CurrentBidDetail.storyboard in Resources */,
@@ -1604,6 +1653,7 @@
 				2863184B2398C45500556226 /* AddProdToSellingPageCell.swift in Sources */,
 				288CC48923A89C38008D5218 /* SDWebImageIndicator.m in Sources */,
 				286E7081239E2420002CD53D /* ReportsCell.swift in Sources */,
+				FDB63FBD24AB565900525388 /* MainImportVC.swift in Sources */,
 				281D237F2366B7B800BF8D7A /* SignInViewController.swift in Sources */,
 				FDF3C9DB23E1625500D2E08D /* BuyProdReadBarCodeVC.swift in Sources */,
 				288CC48323A89C38008D5218 /* SDWebImageDownloaderConfig.m in Sources */,
@@ -1650,6 +1700,7 @@
 				288CC46923A89C38008D5218 /* SDAnimatedImageView+WebCache.m in Sources */,
 				286318512398CB7E00556226 /* SellingCategoryCell.swift in Sources */,
 				288CC48623A89C38008D5218 /* SDWebImageDownloaderRequestModifier.m in Sources */,
+				FDB63FC124AB5E4600525388 /* NewImportVC.swift in Sources */,
 				28674295238CF50E008884AF /* BuyProductFirstPageCell.swift in Sources */,
 				2863185A2398D83300556226 /* SellingHistory.swift in Sources */,
 				28D76CFD239620D500D5B055 /* BuyingHistoryItemVC.swift in Sources */,
@@ -1668,6 +1719,7 @@
 				288CC49823A89C38008D5218 /* UIView+WebCache.m in Sources */,
 				288CC46423A89C38008D5218 /* NSData+ImageContentType.m in Sources */,
 				2819E9A52367FC38001D5E06 /* 4DigitsCodePagesViewController.swift in Sources */,
+				FDB63FC624AB63A800525388 /* NewImportCell.swift in Sources */,
 				28B49787239E18830002C690 /* GoodsReportModel.swift in Sources */,
 				289087E0239A0D2E001C53C6 /* IncomeKassaVC.swift in Sources */,
 				288CC3CC23A89BFD008D5218 /* RetryPolicy.swift in Sources */,

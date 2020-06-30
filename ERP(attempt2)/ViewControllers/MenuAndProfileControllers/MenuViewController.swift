@@ -117,7 +117,7 @@ class MenuViewController: UIViewController {
     }
     
     @objc func tapBuyProductsCard(){
-        performSegue(withIdentifier: "buyProducts", sender: self)
+        performSegue(withIdentifier: "fromMainToImport", sender: self)
     }
     
     @objc func tapIncomeKassaCard(){
