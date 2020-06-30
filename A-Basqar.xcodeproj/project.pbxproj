@@ -691,7 +691,7 @@
 		2812AAF22362B45A001D65C8 /* ERP(attempt2) */ = {
 			isa = PBXGroup;
 			children = (
-				61589B0C2451A507008A18A7 /* Store */,
+				61589B0C2451A507008A18A7 /* Store_Module */,
 				61F00E6C244F0C7C001D0EEE /* Bid_Module */,
 				6159FA89244DEAB900FE1BED /* Movement_Module */,
 				FD7E17462410DD2500F54748 /* PrinterBase */,
@@ -1169,13 +1169,13 @@
 			path = Movement;
 			sourceTree = "<group>";
 		};
-		61589B0C2451A507008A18A7 /* Store */ = {
+		61589B0C2451A507008A18A7 /* Store_Module */ = {
 			isa = PBXGroup;
 			children = (
 				61589B0D2451A5A3008A18A7 /* ViewControllers */,
 				61589B0E2451A5AF008A18A7 /* Storyboards */,
 			);
-			path = Store;
+			path = Store_Module;
 			sourceTree = "<group>";
 		};
 		61589B0D2451A5A3008A18A7 /* ViewControllers */ = {
