@@ -1,24 +1,20 @@
 //
-//  NewImportCell.swift
+//  HistoryImportCell.swift
 //  A-Basqar
 //
-//  Created by Ilyas Shomat on 6/30/20.
+//  Created by Ilyas Shomat on 7/1/20.
 //  Copyright © 2020 Ilyas Shomat. All rights reserved.
 //
 
 import UIKit
 
-class NewImportCell: UICollectionViewCell {
-    
+class HistoryImportCell: UICollectionViewCell {
     
     @IBOutlet weak var productImageView: UIImageView!
-    @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var remainedCountLabel: UILabel!
-    @IBOutlet weak var priceCardView: UIView!
+    @IBOutlet weak var importNameLabel: UILabel!
+    @IBOutlet weak var conrtagentNameLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    @IBOutlet weak var amountLabel: UILabel!
-    @IBOutlet weak var totalPriceLabel: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,11 +30,6 @@ class NewImportCell: UICollectionViewCell {
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
         
-        
-        self.priceCardView.layer.cornerRadius = 10
-        self.priceCardView.layer.backgroundColor = UIColor.white.cgColor
-        self.priceCardView.layer.borderWidth = 1
-        self.priceCardView.layer.borderColor = hexStringToUIColor(hex: "#3F639D").cgColor
         
         self.productImageView.layer.cornerRadius = 10
         
