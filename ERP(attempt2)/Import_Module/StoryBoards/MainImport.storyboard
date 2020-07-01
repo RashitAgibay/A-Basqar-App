@@ -16,32 +16,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QR9-yl-qZp">
-                                <rect key="frame" x="0.0" y="44" width="375" height="41"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O88-ME-1Qd">
+                                <rect key="frame" x="0.0" y="79" width="375" height="588"/>
+                                <connections>
+                                    <segue destination="2pO-lT-BVs" kind="embed" id="Lhm-ch-s8s"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HXu-pn-Boi">
+                                <rect key="frame" x="0.0" y="79" width="375" height="588"/>
+                                <connections>
+                                    <segue destination="O9H-Cq-uNP" kind="embed" id="WnZ-JL-5cI"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oQ6-5j-v6V">
+                                <rect key="frame" x="0.0" y="44" width="375" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="JRk-5y-I4y"/>
+                                    <constraint firstAttribute="height" constant="35" id="Egx-oi-jIs"/>
                                 </constraints>
                                 <segments>
                                     <segment title="Новая покупка"/>
                                     <segment title="История покупок"/>
                                 </segments>
-                            </segmentedControl>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O88-ME-1Qd">
-                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
                                 <connections>
-                                    <segue destination="2pO-lT-BVs" kind="embed" id="Lhm-ch-s8s"/>
+                                    <action selector="switchSegment:" destination="quh-Uh-1MA" eventType="valueChanged" id="YrL-In-fPb"/>
                                 </connections>
-                            </containerView>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="QR9-yl-qZp" firstAttribute="top" secondItem="UXY-rb-Msa" secondAttribute="top" id="GTm-IO-hch"/>
-                            <constraint firstItem="UXY-rb-Msa" firstAttribute="trailing" secondItem="QR9-yl-qZp" secondAttribute="trailing" id="Y1D-p4-WNa"/>
-                            <constraint firstItem="UXY-rb-Msa" firstAttribute="bottom" secondItem="O88-ME-1Qd" secondAttribute="bottom" id="dAO-DV-vXC"/>
-                            <constraint firstItem="QR9-yl-qZp" firstAttribute="leading" secondItem="UXY-rb-Msa" secondAttribute="leading" id="flE-KK-AvX"/>
-                            <constraint firstItem="UXY-rb-Msa" firstAttribute="trailing" secondItem="O88-ME-1Qd" secondAttribute="trailing" id="mHz-or-3gV"/>
-                            <constraint firstItem="O88-ME-1Qd" firstAttribute="top" secondItem="QR9-yl-qZp" secondAttribute="bottom" id="rP8-ne-zHu"/>
-                            <constraint firstItem="O88-ME-1Qd" firstAttribute="leading" secondItem="UXY-rb-Msa" secondAttribute="leading" id="tpQ-1a-Zjn"/>
+                            <constraint firstItem="HXu-pn-Boi" firstAttribute="top" secondItem="oQ6-5j-v6V" secondAttribute="bottom" id="EnR-iP-WVl"/>
+                            <constraint firstItem="O88-ME-1Qd" firstAttribute="leading" secondItem="UXY-rb-Msa" secondAttribute="leading" id="FOt-67-Dc3"/>
+                            <constraint firstItem="O88-ME-1Qd" firstAttribute="top" secondItem="oQ6-5j-v6V" secondAttribute="bottom" id="Ml9-ig-lHv"/>
+                            <constraint firstItem="HXu-pn-Boi" firstAttribute="trailing" secondItem="UXY-rb-Msa" secondAttribute="trailing" id="RQp-9H-kF2"/>
+                            <constraint firstItem="HXu-pn-Boi" firstAttribute="leading" secondItem="UXY-rb-Msa" secondAttribute="leading" id="Rx3-gR-R6p"/>
+                            <constraint firstItem="oQ6-5j-v6V" firstAttribute="leading" secondItem="UXY-rb-Msa" secondAttribute="leading" id="SXK-P3-Vuu"/>
+                            <constraint firstItem="O88-ME-1Qd" firstAttribute="trailing" secondItem="UXY-rb-Msa" secondAttribute="trailing" id="WYr-YG-GyS"/>
+                            <constraint firstItem="UXY-rb-Msa" firstAttribute="trailing" secondItem="oQ6-5j-v6V" secondAttribute="trailing" id="XDn-7P-z9V"/>
+                            <constraint firstItem="O88-ME-1Qd" firstAttribute="bottom" secondItem="UXY-rb-Msa" secondAttribute="bottom" id="flQ-ro-evz"/>
+                            <constraint firstItem="HXu-pn-Boi" firstAttribute="bottom" secondItem="UXY-rb-Msa" secondAttribute="bottom" id="kW6-hB-6rr"/>
+                            <constraint firstItem="oQ6-5j-v6V" firstAttribute="top" secondItem="UXY-rb-Msa" secondAttribute="top" id="wp9-2F-W3D"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UXY-rb-Msa"/>
                     </view>
@@ -64,10 +77,15 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="historyImportView" destination="HXu-pn-Boi" id="JmY-Ki-BSU"/>
+                        <outlet property="newImportView" destination="O88-ME-1Qd" id="8IR-DB-26k"/>
+                        <outlet property="segmentControl" destination="oQ6-5j-v6V" id="C64-UA-9Xv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="osb-8o-ogB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1094.9275362318842" y="2952.7901785714284"/>
+            <point key="canvasLocation" x="1093.5999999999999" y="2952.7736131934034"/>
         </scene>
         <!--NewImport-->
         <scene sceneID="OlY-9N-xAB">
@@ -75,7 +93,15 @@
                 <viewControllerPlaceholder storyboardName="NewImport" id="2pO-lT-BVs" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X11-Xi-LrJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1809" y="2853"/>
+            <point key="canvasLocation" x="1842" y="2974"/>
+        </scene>
+        <!--HistoryImport-->
+        <scene sceneID="kAp-No-Jrj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HistoryImport" id="O9H-Cq-uNP" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JNZ-Gw-rZ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856" y="2930"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sSG-Lg-mWO">
