@@ -237,6 +237,12 @@
 		61F00E87244F2636001D0EEE /* CurrentBidDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E86244F2636001D0EEE /* CurrentBidDetailVC.swift */; };
 		AA5DF4DA597D0C7F758AB506 /* Pods_A_Basqar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451E8E7CD502E401E3BBD264 /* Pods_A_Basqar.framework */; };
 		FD3680A423C4712B00914B94 /* SellingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3680A323C4712B00914B94 /* SellingModel.swift */; };
+		FD5AB46E24ADBF1F002BDB0E /* FirstLevelCatImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5AB46D24ADBF1F002BDB0E /* FirstLevelCatImport.storyboard */; };
+		FD5AB47024ADC02E002BDB0E /* FirstLevelCatImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5AB46F24ADC02E002BDB0E /* FirstLevelCatImportVC.swift */; };
+		FD5AB47224ADC1FE002BDB0E /* FirstLevelCatImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5AB47124ADC1FE002BDB0E /* FirstLevelCatImportCell.swift */; };
+		FD5AB47424ADC2EB002BDB0E /* ProductListImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5AB47324ADC2EB002BDB0E /* ProductListImportVC.swift */; };
+		FD5AB47624ADC2F9002BDB0E /* ProductListImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5AB47524ADC2F9002BDB0E /* ProductListImport.storyboard */; };
+		FD5AB47824ADC5CA002BDB0E /* ProductListImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5AB47724ADC5CA002BDB0E /* ProductListImportCell.swift */; };
 		FD6F84AC23C7446D0076BE0A /* GoodInBasket.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F84AB23C7446D0076BE0A /* GoodInBasket.swift */; };
 		FD7AF83224AC74BB0021B131 /* HistoryImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7AF83124AC74BB0021B131 /* HistoryImport.storyboard */; };
 		FD7AF83424AC74E00021B131 /* HistoryImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7AF83324AC74E00021B131 /* HistoryImportVC.swift */; };
@@ -594,6 +600,12 @@
 		C7FC59907306329939555855 /* Pods-A-Basqar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A-Basqar.release.xcconfig"; path = "Target Support Files/Pods-A-Basqar/Pods-A-Basqar.release.xcconfig"; sourceTree = "<group>"; };
 		D5F0E550815B74E5DD782B02 /* Pods-ERP(attempt2).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ERP(attempt2).debug.xcconfig"; path = "Target Support Files/Pods-ERP(attempt2)/Pods-ERP(attempt2).debug.xcconfig"; sourceTree = "<group>"; };
 		FD3680A323C4712B00914B94 /* SellingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingModel.swift; sourceTree = "<group>"; };
+		FD5AB46D24ADBF1F002BDB0E /* FirstLevelCatImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLevelCatImport.storyboard; sourceTree = "<group>"; };
+		FD5AB46F24ADC02E002BDB0E /* FirstLevelCatImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLevelCatImportVC.swift; sourceTree = "<group>"; };
+		FD5AB47124ADC1FE002BDB0E /* FirstLevelCatImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLevelCatImportCell.swift; sourceTree = "<group>"; };
+		FD5AB47324ADC2EB002BDB0E /* ProductListImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListImportVC.swift; sourceTree = "<group>"; };
+		FD5AB47524ADC2F9002BDB0E /* ProductListImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProductListImport.storyboard; sourceTree = "<group>"; };
+		FD5AB47724ADC5CA002BDB0E /* ProductListImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListImportCell.swift; sourceTree = "<group>"; };
 		FD6F84AB23C7446D0076BE0A /* GoodInBasket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodInBasket.swift; sourceTree = "<group>"; };
 		FD7AF83124AC74BB0021B131 /* HistoryImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryImport.storyboard; sourceTree = "<group>"; };
 		FD7AF83324AC74E00021B131 /* HistoryImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryImportVC.swift; sourceTree = "<group>"; };
@@ -1404,6 +1416,8 @@
 				FDB63FBC24AB565900525388 /* MainImportVC.swift */,
 				FDB63FC024AB5E4600525388 /* NewImportVC.swift */,
 				FD7AF83324AC74E00021B131 /* HistoryImportVC.swift */,
+				FD5AB46F24ADC02E002BDB0E /* FirstLevelCatImportVC.swift */,
+				FD5AB47324ADC2EB002BDB0E /* ProductListImportVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1414,6 +1428,8 @@
 				FDB63FBE24AB5A8500525388 /* MainImport.storyboard */,
 				FDB63FC224AB5EA500525388 /* NewImport.storyboard */,
 				FD7AF83124AC74BB0021B131 /* HistoryImport.storyboard */,
+				FD5AB46D24ADBF1F002BDB0E /* FirstLevelCatImport.storyboard */,
+				FD5AB47524ADC2F9002BDB0E /* ProductListImport.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -1423,6 +1439,8 @@
 			children = (
 				FDB63FC524AB63A800525388 /* NewImportCell.swift */,
 				FD7AF84024AC93180021B131 /* HistoryImportCell.swift */,
+				FD5AB47124ADC1FE002BDB0E /* FirstLevelCatImportCell.swift */,
+				FD5AB47724ADC5CA002BDB0E /* ProductListImportCell.swift */,
 			);
 			path = Import;
 			sourceTree = "<group>";
@@ -1540,6 +1558,7 @@
 				61A8462D245308DA00DF3371 /* StoresEmployees.storyboard in Resources */,
 				61589B142451C8C3008A18A7 /* Stores.storyboard in Resources */,
 				61F00E78244F1081001D0EEE /* BidsHistory.storyboard in Resources */,
+				FD5AB47624ADC2F9002BDB0E /* ProductListImport.storyboard in Resources */,
 				FDB63FBF24AB5A8500525388 /* MainImport.storyboard in Resources */,
 				61A8463324530F6E00DF3371 /* EditEmployeeData.storyboard in Resources */,
 				61560A8E244E404B00FAAFB0 /* MovementProductList.storyboard in Resources */,
@@ -1552,6 +1571,7 @@
 				613D7382244F75FB00E0E392 /* BidFirstCategory.storyboard in Resources */,
 				61A8463724531A4E00DF3371 /* EmployeeFuncs.storyboard in Resources */,
 				61F00E85244F2618001D0EEE /* CurrentBidDetail.storyboard in Resources */,
+				FD5AB46E24ADBF1F002BDB0E /* FirstLevelCatImport.storyboard in Resources */,
 				61A846252453004900DF3371 /* AddEmployee.storyboard in Resources */,
 				61589B122451A725008A18A7 /* MainStore.storyboard in Resources */,
 				61560A8C244E33BE00FAAFB0 /* MovementFirstCategory.storyboard in Resources */,
@@ -1689,6 +1709,7 @@
 				2863184D2398C47E00556226 /* AddProdToSellingPageVC.swift in Sources */,
 				FD6F84AC23C7446D0076BE0A /* GoodInBasket.swift in Sources */,
 				FDB6036423E2D1770012D65D /* BuySearchVC.swift in Sources */,
+				FD5AB47824ADC5CA002BDB0E /* ProductListImportCell.swift in Sources */,
 				284EE89D23A9F6A400B470A5 /* BuyProductAddGoodCell.swift in Sources */,
 				288CC4A723A89CBC008D5218 /* ApiUrls.swift in Sources */,
 				28D76CFF2396246A00D5B055 /* BuyingHistoryItemsModel.swift in Sources */,
@@ -1737,6 +1758,7 @@
 				288CC46823A89C38008D5218 /* SDAnimatedImageRep.m in Sources */,
 				288CC4A023A89C38008D5218 /* SDFileAttributeHelper.m in Sources */,
 				6159FA93244DF08100FE1BED /* MovementHistoryVC.swift in Sources */,
+				FD5AB47224ADC1FE002BDB0E /* FirstLevelCatImportCell.swift in Sources */,
 				288CC47223A89C38008D5218 /* SDImageCoderHelper.m in Sources */,
 				288CC3B623A89BFD008D5218 /* AlamofireExtended.swift in Sources */,
 				288CC46923A89C38008D5218 /* SDAnimatedImageView+WebCache.m in Sources */,
@@ -1780,6 +1802,7 @@
 				288CC47823A89C38008D5218 /* SDImageIOAnimatedCoder.m in Sources */,
 				288CC4A323A89C38008D5218 /* SDInternalMacros.m in Sources */,
 				61F00E7A244F13BA001D0EEE /* NewBidVC.swift in Sources */,
+				FD5AB47424ADC2EB002BDB0E /* ProductListImportVC.swift in Sources */,
 				288CC3CB23A89BFD008D5218 /* Result+Alamofire.swift in Sources */,
 				FDF3C9B723E1449800D2E08D /* OutcomeContragentsNamesVC.swift in Sources */,
 				288CC48223A89C38008D5218 /* SDWebImageDownloader.m in Sources */,
@@ -1834,6 +1857,7 @@
 				61A8463524530FB200DF3371 /* EditEmployeeDataVC.swift in Sources */,
 				288CC3C223A89BFD008D5218 /* ParameterEncoder.swift in Sources */,
 				288CC3C323A89BFD008D5218 /* ParameterEncoding.swift in Sources */,
+				FD5AB47024ADC02E002BDB0E /* FirstLevelCatImportVC.swift in Sources */,
 				288CC3BB23A89BFD008D5218 /* HTTPMethod.swift in Sources */,
 				28ACEA42236BFB6E0067BD46 /* EditProfileViewController.swift in Sources */,
 				288CC3C423A89BFD008D5218 /* Protector.swift in Sources */,

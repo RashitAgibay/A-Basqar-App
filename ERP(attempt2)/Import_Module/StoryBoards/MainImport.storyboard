@@ -62,6 +62,9 @@
                         <leftBarButtonItems>
                             <barButtonItem title="Item" image="home" id="RoC-Q9-LAk">
                                 <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="iBu-5y-suS" kind="presentation" modalPresentationStyle="fullScreen" id="I4S-fG-TOQ"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="search" id="MPR-r9-EVf">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -70,6 +73,9 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="more" id="wK7-Y2-AhE">
                                 <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="tXr-S4-EFo" kind="presentation" modalPresentationStyle="fullScreen" id="rD4-gm-U5y"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="scan" id="pES-vY-CEE">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -94,6 +100,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X11-Xi-LrJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1842" y="2974"/>
+        </scene>
+        <!--menuStoryboadrid-->
+        <scene sceneID="Mls-c4-F4B">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="menuStoryboadrid" id="iBu-5y-suS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X3v-Tu-HTs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="2800"/>
+        </scene>
+        <!--FirstLevelCatImport-->
+        <scene sceneID="41b-pI-Vab">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FirstLevelCatImport" id="tXr-S4-EFo" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a6E-K4-KK4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="2882"/>
         </scene>
         <!--HistoryImport-->
         <scene sceneID="kAp-No-Jrj">

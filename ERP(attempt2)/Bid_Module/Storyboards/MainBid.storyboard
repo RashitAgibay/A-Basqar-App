@@ -167,7 +167,7 @@
                 <viewControllerPlaceholder storyboardName="NewBid" id="amm-6v-uWP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PoT-HP-OBP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2854" y="-172"/>
+            <point key="canvasLocation" x="2854" y="-29"/>
         </scene>
     </scenes>
     <resources>
