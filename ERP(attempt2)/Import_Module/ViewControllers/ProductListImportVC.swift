@@ -16,6 +16,8 @@ class ProductListImportVC: UIViewController {
     var reachability: Reachability?
     var productArray = NSArray()
     var categoryID = Int()
+//    var productImportPrice = Int()
+//    var productExportPrice = Int()
     
     
     override func viewDidLoad() {
@@ -69,6 +71,18 @@ extension ProductListImportVC: UICollectionViewDelegate, UICollectionViewDataSou
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let singleProduct = productArray[indexPath.row] as! NSDictionary
+        let product = singleProduct["goods"] as! NSDictionary
+        
+        let importPrice = singleProduct["import_price"] as! Int
+        let exportPrice = singleProduct["export_price"] as! Int
+        
+        
+        self.ShowAlertControllerWithTwoTextFields(importPrice: importPrice, exportPrice: exportPrice)
+    }
+    
     
 }
 
@@ -78,6 +92,7 @@ extension ProductListImportVC {
         
         performSegue(withIdentifier: "fromProdListToFirstLevelCat", sender: self)
     }
+    
 }
 
 
@@ -173,6 +188,58 @@ extension ProductListImportVC {
 }
 
 extension ProductListImportVC {
+    
+    func ShowAlertControllerWithTwoTextFields(importPrice: Int, exportPrice: Int) {
+        
+        let alertController = UIAlertController(title: "", message: "Введите количество...", preferredStyle: .alert)
+        let addAction = UIAlertAction(title: "Добавить", style: .default) { (action) in
+            
+            let amountAlertTextField = alertController.textFields?[0].text
+            let cashAlertTextField  = alertController.textFields?[1].text
+//            self.import_price = cashAlertTextField as! String
+            
+            if amountAlertTextField != "" {
+                
+//                self.amountFromAlert = amountAlertTextField
+            }
+            
+            else {
+                
+//                self.amountFromAlert = "1"
+            
+            }
+            
+//            self.cashFromAlert = cashAlertTextField
+//            self.priceToSendToBuscket = cashAlertTextField as! String
+//
+//            self.SendGoodToBasketApi()
+//            self.SendGoodsPriceToBasketApi()
+//            self.goToTheBackPAge()
+        
+        }
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (action) in
+        
+        }
+        
+        alertController.addTextField { (textfield) in
+            
+            textfield.placeholder = "1"
+            textfield.keyboardType = .numberPad
+        
+        }
+        
+        alertController.addTextField { (textfield) in
+            
+            textfield.placeholder = "\(importPrice)"
+            textfield.keyboardType = .numberPad
+        
+        }
+        
+        alertController.addAction(addAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController,animated: true, completion: nil)
+    }
     
     func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
         
