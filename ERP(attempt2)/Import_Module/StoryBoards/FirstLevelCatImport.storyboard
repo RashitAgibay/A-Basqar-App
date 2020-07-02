@@ -92,6 +92,7 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="collectionView" destination="l00-6x-y3U" id="scj-8G-Sbh"/>
                         <segue destination="1hq-my-igS" kind="presentation" identifier="fromFirstLevelCatToProdList" modalPresentationStyle="fullScreen" id="QUS-sO-8Ac"/>
                     </connections>
                 </viewController>

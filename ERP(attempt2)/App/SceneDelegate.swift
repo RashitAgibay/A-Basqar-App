@@ -12,7 +12,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var userTokenForUserStandart: String = "userToken"
+    var userTokenForUserStandart: String = "new_userTokenKey"
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {

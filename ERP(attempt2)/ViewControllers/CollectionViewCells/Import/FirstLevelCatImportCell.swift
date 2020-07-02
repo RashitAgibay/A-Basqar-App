@@ -28,7 +28,7 @@ class FirstLevelCatImportCell: UICollectionViewCell {
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
         
         
-        self.catImageView.layer.cornerRadius = 10
+        self.catImageView.layer.cornerRadius = 5
         
         
     }

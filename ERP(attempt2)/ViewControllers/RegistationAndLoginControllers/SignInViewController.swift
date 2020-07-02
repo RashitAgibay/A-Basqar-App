@@ -23,7 +23,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginButton: UIButton!
     
     var reacibility: Reachability?
-    var userTokenForUserStandart: String = "userToken"
+    var userTokenForUserStandart: String = "new_userTokenKey"
     
     
     
@@ -129,7 +129,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                 "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
             ]
             
-            let encodeURL = loginUrl
+            let encodeURL = "https://abasqar.pythonanywhere.com/auth/v1/api/login/"
             
             print("url: \(encodeURL)")
             
@@ -162,7 +162,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                         else {
                             let token = resultValue["token"] as! String
                             
-                            
+                            print(token)
                             UserDefaults.standard.set(token, forKey: self.userTokenForUserStandart)
                             
 //                            print("бұл жерде токен соткада сақталады \(String(describing: UserDefaults.standard.string(forKey: self.userTokenForUserStandart)))")
