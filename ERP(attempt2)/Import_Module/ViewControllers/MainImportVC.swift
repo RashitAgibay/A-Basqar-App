@@ -10,21 +10,63 @@ import UIKit
 
 class MainImportVC: UIViewController {
 
+    @IBOutlet weak var segmentControl: UISegmentedControl!
+    @IBOutlet weak var newImportView: UIView!
+    @IBOutlet weak var historyImportView: UIView!
+
+    var selectegTag = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupUI()
+        setupBaseFuncs()
+        
+        
     }
     
 
-    /*
-    // MARK: - Navigation
+    private func setupUI() {
+        
+        segmentControl.setupSimpleView()
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    private func setupBaseFuncs() {
+        
+        switch selectegTag {
+        case 0:
+            
+            newImportView.alpha = 1
+            historyImportView.alpha = 0
+            
+        case 1:
+            
+            newImportView.alpha = 0
+            historyImportView.alpha = 1
+            
+        default:
+            break
+        }
+    }
+    
+    @IBAction func switchSegment(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            
+            newImportView.alpha = 1
+            historyImportView.alpha = 0
+            
+        case 1:
+            
+            newImportView.alpha = 0
+            historyImportView.alpha = 1
+            
+        default:
+            break
+        }
+        
+    }
 
 }

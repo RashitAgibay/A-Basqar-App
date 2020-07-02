@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Приложение ios 13 тен төмен версияларында ашылу үшін
     var window: UIWindow?
-    var userTokenForUserStandart: String = "userToken"
+    var userTokenForUserStandart: String = "new_userTokenKey"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
