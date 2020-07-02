@@ -120,6 +120,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="collectionView" destination="ccL-Ma-bYR" id="RIh-15-J28"/>
                         <segue destination="Y7j-PS-7GR" kind="presentation" identifier="fromProdListToFirstLevelCat" modalPresentationStyle="fullScreen" id="BnU-LY-UxM"/>
                     </connections>
                 </viewController>

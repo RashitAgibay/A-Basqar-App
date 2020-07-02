@@ -12,4 +12,6 @@ let newMainUrl: String = "https://abasqar.pythonanywhere.com/"
 
 //MARK: - Cat list url
 
-let firstLevelCategoryList: String = newMainUrl +  "shop/v1/api/admin/category/"
+let firstLevelCategoryListUrl: String = newMainUrl +  "shop/v1/api/add/category/"
+
+let productListUrl: String = newMainUrl + "shop/v1/api/goods/list/"

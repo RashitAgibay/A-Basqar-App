@@ -15,6 +15,7 @@ class FirstLevelCatImportVC: UIViewController {
     
     var reachability: Reachability?
     var categoryArray = NSArray()
+    var categoryID = Int()
     
     
     override func viewDidLoad() {
@@ -39,15 +40,14 @@ extension FirstLevelCatImportVC: UICollectionViewDelegate, UICollectionViewDataS
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "addProd", for: indexPath) as! FirstLevelCatImportCell
         
         let singleCat = self.categoryArray[indexPath.row] as! NSDictionary
-        
-//        print("singleCat: \(singleCat)")
-        
-        let catName = singleCat["name"] as! String
+        let category = singleCat["category"] as! NSDictionary
+                
+        let catName = category["name"] as! String
         cell.catNameLabel.text = catName
 
-        if singleCat["goods_cat_image"] != nil {
+        if category["goods_cat_image"] != nil {
             
-            let catImageUrl = singleCat["goods_cat_image"] as! String
+            let catImageUrl = category["goods_cat_image"] as! String
             
             cell.catImageView.sd_setImage(with: URL(string: catImageUrl), placeholderImage: UIImage(named: "img1"))
         }
@@ -57,6 +57,12 @@ extension FirstLevelCatImportVC: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let singleCat = self.categoryArray[indexPath.row] as! NSDictionary
+        let category = singleCat["category"] as! NSDictionary
+        let categoryID = category["id"] as! Int
+        
+        self.categoryID = categoryID
         
         self.navigateToProductList()
     }
@@ -68,6 +74,16 @@ extension FirstLevelCatImportVC {
     private func navigateToProductList() {
         
         performSegue(withIdentifier: "fromFirstLevelCatToProdList", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "fromFirstLevelCatToProdList" {
+            if let navigationVC = segue.destination as? UINavigationController,
+                let destVC = navigationVC.topViewController as? ProductListImportVC {
+                destVC.categoryID = self.categoryID
+            }
+        }
     }
 }
 
@@ -95,22 +111,17 @@ extension FirstLevelCatImportVC {
             let headers: HTTPHeaders = [
                 
                 "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                //"Authorization":"Token 1d61d12c174b38f660f8026bb3d2cc47b5bec66d".trimmingCharacters(in: .whitespacesAndNewlines),
                 "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
             ]
             
-//            print("headers: \(headers)")
 
             
-            let encodeURL = firstLevelCategoryList
+            let encodeURL = firstLevelCategoryListUrl
             
             let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
                 
-//                print(response.request!)
-//                print(response.result)
-//                print(response.response)
                 
                 switch response.result {
                 
@@ -119,28 +130,16 @@ extension FirstLevelCatImportVC {
                     MBProgressHUD.hide(for: self.view, animated: true)
                     
                     if let x = payload as? Dictionary<String,AnyObject> {
-//                        print(x)
+
                         
-                        //let resultValue = x as NSMutableArray
-                        //categoryInfo = NSMutableArray(array: resultValue) as! NSArray
-                    
                     }
                     
                     else {
                         
                         let resultValue = payload as! NSArray
-                        // print("осы жерде категори инфо")
-//                        print(resultValue)
-                        
-//                        categoryInfo = NSMutableArray(array: resultValue)
-//                        self.collectionView.reloadData()
-                        
-                        //print("осы жерде категори инфо")
-                        //print(categoryInfo)
                         
                         self.categoryArray = resultValue
                         self.collectionView.reloadData()
-//                        print("catList: \(self.cattegoryArray)")
                     }
                 
                 case .failure(let error):

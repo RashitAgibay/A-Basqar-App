@@ -10,10 +10,18 @@ import UIKit
 
 class ProductListImportVC: UIViewController {
 
+    
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var reachability: Reachability?
+    var productArray = NSArray()
+    var categoryID = Int()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        self.getProductList()
     }
     
 
@@ -29,12 +37,34 @@ extension ProductListImportVC: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 15
+        return productArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "buygoodCell", for: indexPath)
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "buygoodCell", for: indexPath) as! ProductListImportCell
+        
+        let singleProduct = productArray[indexPath.row] as! NSDictionary
+        let product = singleProduct["goods"] as! NSDictionary
+        
+        let importPrice = singleProduct["import_price"] as! Int
+        let exportPrice = singleProduct["export_price"] as! Int
+        let productRemainedCount = singleProduct["nums"] as! Int
+        
+        let productName = product["name"] as! String
+        
+        cell.productNameLabel.text = productName
+        cell.remainedCountLabel.text = "\(productRemainedCount)"
+        cell.priceLabel.text = "\(importPrice) тг"
+        
+        if product["goods_image"] != nil {
+            
+            let productImageUrl = product["goods_image"] as! String
+            
+            cell.productImageView.sd_setImage(with: URL(string: productImageUrl), placeholderImage: UIImage(named: "img1"))
+        }
+        
+        
         
         return cell
     }
@@ -52,3 +82,115 @@ extension ProductListImportVC {
 
 
 
+extension ProductListImportVC {
+    
+    private func getProductList() {
+        
+        do {
+            
+            self.reachability = try Reachability.init()
+        
+        }
+        
+        catch {
+        
+        }
+        
+        if ((reacibility?.connection) != .unavailable){
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            //MARK: - Токенді optional түрден String типіне алып келу керек, әйтпесе токен дұрыс жіберілмейді.
+            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
+            
+            
+            let headers: HTTPHeaders = [
+                
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+//            print("here is a token: \(token)")
+//            print("here is a headers: \(headers)")
+
+            
+            let encodeURL = productListUrl + "?cat_id=\(self.categoryID)"
+            
+//            print("here is a url: \(encodeURL)")
+            
+            let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                
+                
+                switch response.result {
+                
+                case .success(let payload):
+                    
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    
+                    if let x = payload as? Dictionary<String,AnyObject> {
+
+//                        print("here is a data: \(x)")
+                        
+                        let data  = x as! NSDictionary
+                        self.productArray = data["results"] as! NSArray
+                        self.collectionView.reloadData()
+//                        print("here is a array data: \(self.productArray)")
+                        
+                    }
+                    
+                    else {
+                        
+                        let resultValue = payload as! NSArray
+                        
+//                        self.categoryArray = resultValue
+                        self.collectionView.reloadData()
+                    }
+                
+                case .failure(let error):
+                    
+                    print(error)
+                    
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    
+                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+                }
+            
+            })
+        
+        }
+        
+        else {
+            
+            //print("internet is not working")
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+                       
+
+    }
+}
+
+extension ProductListImportVC {
+    
+    func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: buttomMessage, style: .cancel) { (action) in
+        
+        }
+        alertController.addAction(action)
+        self.present(alertController,animated: true, completion: nil)
+    }
+    
+    func ShowErrorsAlertWithOneCancelButton(message: String) {
+        
+        let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Закрыть", style: .cancel) { (action) in
+        
+        }
+        alertController.addAction(action)
+        self.present(alertController,animated: true, completion: nil)
+    }
+}
