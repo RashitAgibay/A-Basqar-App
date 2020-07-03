@@ -223,6 +223,7 @@ extension ProductListImportVC {
             
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
                 
+                MBProgressHUD.hide(for: self.view, animated: true)
 //                print(response.request!)
 //                print(response.result)
 //                print(response.response)

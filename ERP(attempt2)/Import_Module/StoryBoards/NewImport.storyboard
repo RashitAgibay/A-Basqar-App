@@ -244,6 +244,7 @@
                         <outlet property="buyButton" destination="flY-yJ-uRk" id="HEf-rV-m1n"/>
                         <outlet property="cancelButton" destination="GJK-wo-9bb" id="XTZ-Y0-7H0"/>
                         <outlet property="cardView" destination="9jC-9L-k3C" id="kZu-bP-oU7"/>
+                        <outlet property="collectionView" destination="Ee0-Bw-CuV" id="WzJ-pk-5sJ"/>
                         <outlet property="contragentNameButton" destination="2tZ-iJ-d15" id="Ui8-MO-kfR"/>
                         <outlet property="totalSumLabel" destination="EIR-LL-ttL" id="bb4-hd-dFS"/>
                     </connections>
