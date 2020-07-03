@@ -16,9 +16,6 @@ class ProductListImportVC: UIViewController {
     var reachability: Reachability?
     var productArray = NSArray()
     var categoryID = Int()
-//    var productImportPrice = Int()
-//    var productExportPrice = Int()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +78,7 @@ extension ProductListImportVC: UICollectionViewDelegate, UICollectionViewDataSou
         
         let productId = product["id"] as! Int
         
-        self.ShowAlertControllerWithTwoTextFields(importPrice: importPrice, exportPrice: exportPrice, productID: productId)
+        self.ShowAlertControllerWithTwoTextFields(importPrice: "\(importPrice)", exportPrice: "\(exportPrice)", productID: productId)
     }
     
     
@@ -125,14 +122,8 @@ extension ProductListImportVC {
                 "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
             ]
             
-//            print("here is a token: \(token)")
-//            print("here is a headers: \(headers)")
-
-            
             let encodeURL = productListUrl + "?cat_id=\(self.categoryID)"
-            
-//            print("here is a url: \(encodeURL)")
-            
+                        
             let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
@@ -145,21 +136,15 @@ extension ProductListImportVC {
                     MBProgressHUD.hide(for: self.view, animated: true)
                     
                     if let x = payload as? Dictionary<String,AnyObject> {
-
-//                        print("here is a data: \(x)")
                         
                         let data  = x as! NSDictionary
                         self.productArray = data["results"] as! NSArray
                         self.collectionView.reloadData()
-//                        print("here is a array data: \(self.productArray)")
-                        
                     }
                     
                     else {
                         
                         let resultValue = payload as! NSArray
-                        
-//                        self.categoryArray = resultValue
                         self.collectionView.reloadData()
                     }
                 
@@ -177,9 +162,7 @@ extension ProductListImportVC {
         }
         
         else {
-            
-            //print("internet is not working")
-            
+
             MBProgressHUD.hide(for: self.view, animated: true)
             self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
@@ -235,34 +218,86 @@ extension ProductListImportVC {
             self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
     }
+    
+    
+    func sendGoodsPriceToBasketApi(productID: Int, importPrice: String, exportPrice: String) {
+        
+        do {
+            
+            self.reachability = try Reachability.init()
+        }
+        
+        catch {
+            
+            print("unable to start notifier")
+        }
+        
+        if ((reacibility?.connection) != .unavailable) {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
+            
+            let headers: HTTPHeaders = [
+                
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+            
+            let params = [
+                
+                "export_price":exportPrice.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+                "import_price":importPrice.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+            ]
+            
+            let encodeURL = productListUrl + "\(productID)/"
+            
+            let requestOfApi = AF.request(encodeURL, method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                
+                MBProgressHUD.hide(for: self.view, animated: true)
+                
+//                print(response.request!)
+//                print(response.result)
+//                print(response.response)
+                
+            })
+        
+        }
+        
+        else {
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
 }
 
 extension ProductListImportVC {
     
-    func ShowAlertControllerWithTwoTextFields(importPrice: Int, exportPrice: Int, productID: Int) {
+    func ShowAlertControllerWithTwoTextFields(importPrice: String, exportPrice: String, productID: Int) {
         
         var amount = "1"
         
         let alertController = UIAlertController(title: "", message: "Введите количество...", preferredStyle: .alert)
         let addAction = UIAlertAction(title: "Добавить", style: .default) { (action) in
             
-            let amountAlertTextField = alertController.textFields?[0].text
-            let cashAlertTextField  = alertController.textFields?[1].text
+            let amountAlertTextField = alertController.textFields?[0].text as! String
+            let cashAlertTextField  = alertController.textFields?[1].text as! String
 //            self.import_price = cashAlertTextField as! String
             
             if amountAlertTextField != "" {
                 
-                amount = amountAlertTextField!
+                amount = amountAlertTextField
+            }
+            
+            if cashAlertTextField != "" {
+                
+                self.sendGoodsPriceToBasketApi(productID: productID, importPrice: "\(cashAlertTextField)", exportPrice: exportPrice)
             }
             
             self.sendGoodToBasket(productID: productID, amount: amount)
             
-//            self.cashFromAlert = cashAlertTextField
-//            self.priceToSendToBuscket = cashAlertTextField as! String
-//
-//            self.SendGoodToBasketApi()
-//            self.SendGoodsPriceToBasketApi()
-//            self.goToTheBackPAge()
         
         }
         
