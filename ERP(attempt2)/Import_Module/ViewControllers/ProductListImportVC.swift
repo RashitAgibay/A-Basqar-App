@@ -275,6 +275,14 @@ extension ProductListImportVC {
 
 extension ProductListImportVC {
     
+    private func navigateToMainImport() {
+        
+        performSegue(withIdentifier: "fromProductListToMainImport", sender: self)
+    }
+}
+
+extension ProductListImportVC {
+    
     func ShowAlertControllerWithTwoTextFields(importPrice: String, exportPrice: String, productID: Int) {
         
         var amount = "1"
@@ -297,6 +305,7 @@ extension ProductListImportVC {
             }
             
             self.sendGoodToBasket(productID: productID, amount: amount)
+            self.navigateToMainImport()
             
         
         }
@@ -344,3 +353,9 @@ extension ProductListImportVC {
         self.present(alertController,animated: true, completion: nil)
     }
 }
+
+
+
+
+
+

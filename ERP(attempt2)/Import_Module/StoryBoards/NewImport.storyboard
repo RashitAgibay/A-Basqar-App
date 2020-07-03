@@ -94,6 +94,9 @@
                                                     <state key="normal" title="Button" image="trash.fill" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="tappedDeleteButton:" destination="vF2-tu-18U" eventType="touchUpInside" id="SOx-nm-K0K"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 кг" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLx-5r-TbR">
                                                     <rect key="frame" x="140.5" y="27" width="31" height="16"/>

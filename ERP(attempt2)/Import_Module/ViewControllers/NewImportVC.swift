@@ -24,7 +24,7 @@ class NewImportVC: UIViewController {
         super.viewDidLoad()
 
         setupUI()
-        getProductList()
+        updateUI()
     }
     
     private func setupUI() {
@@ -45,6 +45,10 @@ class NewImportVC: UIViewController {
         
     }
     
+    private func updateUI() {
+        
+        self.getProductList()
+    }
     
     @IBAction func tappedContragentNameButton(_ sender: Any) {
         
@@ -56,6 +60,8 @@ class NewImportVC: UIViewController {
     @IBAction func tappedCancelButton(_ sender: Any) {
         
     }
+    
+
     
 }
 
@@ -81,6 +87,8 @@ extension NewImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
         let productCountInCart = singleProduct["nums"] as! Int
         let productTotalPrice = productPrice * productCountInCart
         
+        let productIdInCart = singleProduct["id"] as! Int
+        
         if product["goods_image"] != nil {
             
             let productImageUrl = product["goods_image"] as! String
@@ -88,6 +96,9 @@ extension NewImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
             cell.productImageView.sd_setImage(with: URL(string: productImageUrl), placeholderImage: UIImage(named: "img1"))
         
         }
+        
+        cell.productID = productIdInCart
+        cell.delegate = self
         
         cell.productNameLabel.text = productName
         cell.remainedCountLabel.text = "\(productRemainedCount)"
@@ -186,7 +197,64 @@ extension NewImportVC {
             self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
     }
+    
+    func deleteProductFromCart(productID: Int) {
+        
+        do {
+            
+            self.reachability = try Reachability.init()
+        }
+        
+        catch {
+            
+            print("unable to start notifier")
+        }
+        
+        if ((reacibility?.connection) != .unavailable) {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
+            let headers: HTTPHeaders = [
+                
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+            let encodeURL = importShoppingCartURL + "\(productID)/"
+            
+            let requestOfApi = AF.request(encodeURL, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                
+                MBProgressHUD.hide(for: self.view, animated: true)
+                self.updateUI()
+                
+//                print(response.request!)
+//                print(response.result)
+//                print(response.response)
+            
+            })
+        
+        }
+        
+        else {
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
 
+}
+
+extension NewImportVC: NewImportCellDelegate {
+    
+    func deleteProduct(cell: NewImportCell, id: Int) {
+        
+//        print("tapped product id: \(id)")
+        self.deleteProductFromCart(productID: id)
+    }
+}
+
+extension NewImportVC {
+    
     func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)

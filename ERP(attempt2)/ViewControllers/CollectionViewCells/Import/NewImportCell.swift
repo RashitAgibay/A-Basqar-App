@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol NewImportCellDelegate {
+    
+    func deleteProduct(cell: NewImportCell, id: Int)
+    
+}
+
 class NewImportCell: UICollectionViewCell {
     
     
@@ -19,11 +25,19 @@ class NewImportCell: UICollectionViewCell {
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
     
+    var delegate: NewImportCellDelegate?
+    var productID: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCell()
     }
+    
+    @IBAction func tappedDeleteButton(_ sender: UIButton) {
+        
+        delegate?.deleteProduct(cell: self, id: productID!)
+    }
+    
     
     private func setupCell() {
         
