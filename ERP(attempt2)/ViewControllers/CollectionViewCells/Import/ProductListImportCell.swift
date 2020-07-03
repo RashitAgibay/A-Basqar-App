@@ -31,7 +31,7 @@ class ProductListImportCell: UICollectionViewCell {
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
         
         
-        self.productImageView.layer.cornerRadius = 10
+        self.productImageView.layer.cornerRadius = 5
         
         
     }

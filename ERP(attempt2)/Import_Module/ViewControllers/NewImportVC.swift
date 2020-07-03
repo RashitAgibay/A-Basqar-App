@@ -110,6 +110,24 @@ extension NewImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
         
         return cell
     }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let singleProduct = productArray[indexPath.row] as! NSDictionary
+        let firstGoods = singleProduct["goods"] as! NSDictionary
+        let product = firstGoods["goods"] as! NSDictionary
+        
+        let productName = product["name"] as! String
+        let productImportPrice = firstGoods["import_price"] as! Int
+        let productExportPrice = firstGoods["export_price"] as! Int
+        let productCountInCart = singleProduct["nums"] as! Int
+        let productIdInCart = singleProduct["id"] as! Int
+        let productId = firstGoods["id"] as! Int
+        
+        self.ShowAlertControllerWithTwoTextFields(importPrice: "\(productImportPrice)", exportPrice: "\(productExportPrice)", productCount: productCountInCart,productName: productName, productID: productId, productIdInCart: productIdInCart)
+        
+    }
 }
 
 extension NewImportVC {
@@ -241,6 +259,110 @@ extension NewImportVC {
             self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
     }
+    
+    func editProductPrice(productID: Int, importPrice: String, exportPrice: String) {
+        
+        do {
+            
+            self.reachability = try Reachability.init()
+        }
+        
+        catch {
+            
+            print("unable to start notifier")
+        }
+            
+        
+        if ((reacibility?.connection) != .unavailable) {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
+            
+            let headers: HTTPHeaders = [
+                
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            
+            ]
+            
+            let params = [
+                
+                "export_price":exportPrice.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+                "import_price":importPrice.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
+            ]
+            
+            let encodeURL = productListUrl + "\(productID)/"
+            
+            let requestOfApi = AF.request(encodeURL, method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+                requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                    
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    
+//                    print(response.request!)
+//                    print(response.result)
+//                    print(response.response)
+                
+                })
+        
+        }
+        
+        else {
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
+    
+    private func editProductCountIntCart(productIdInCart: Int, productID: Int, amount: String) {
+        
+        do {
+            
+            self.reachability = try Reachability.init()
+        }
+        
+        catch {
+            
+            print("unable to start notifier")
+        }
+        
+        if ((reacibility?.connection) != .unavailable) {
+            
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
+            
+            let headers: HTTPHeaders = [
+                
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            
+            ]
+            
+            let params = [
+                
+                "goods":"\(productID)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
+                "nums":"\(amount)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
+            ]
+            
+            let encodeURL = importShoppingCartURL + "\(productIdInCart)/"
+            
+            let requestOfApi = AF.request(encodeURL, method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                MBProgressHUD.hide(for: self.view, animated: true)
+                
+    //                print(response.request!)
+    //                print(response.result)
+    //                print(response.response)
+            })
+        }
+        
+        else {
+            
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
 
 }
 
@@ -248,12 +370,59 @@ extension NewImportVC: NewImportCellDelegate {
     
     func deleteProduct(cell: NewImportCell, id: Int) {
         
-//        print("tapped product id: \(id)")
         self.deleteProductFromCart(productID: id)
     }
 }
 
 extension NewImportVC {
+    
+    func ShowAlertControllerWithTwoTextFields(importPrice: String, exportPrice: String, productCount: Int, productName: String, productID: Int, productIdInCart: Int) {
+        
+        var amount = "1"
+        
+        let alertController = UIAlertController(title: productName, message: "", preferredStyle: .alert)
+        let addAction = UIAlertAction(title: "Изменить", style: .default) { (action) in
+            
+            let amountAlertTextField = alertController.textFields?[0].text as! String
+            let cashAlertTextField  = alertController.textFields?[1].text as! String
+            
+            if amountAlertTextField != "" {
+                
+                self.editProductCountIntCart(productIdInCart: productIdInCart, productID: productID, amount: amountAlertTextField)
+            }
+            
+            if cashAlertTextField != "" {
+                
+                self.editProductPrice(productID: productID, importPrice: "\(cashAlertTextField)", exportPrice: exportPrice)
+                
+            }
+            
+//            self.sendGoodToBasket(productID: productID, amount: amount)
+            self.updateUI()
+        
+        }
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (action) in
+        
+        }
+        
+        alertController.addTextField { (textfield) in
+            
+            textfield.placeholder = "\(productCount)"
+            textfield.keyboardType = .numberPad
+        }
+        
+        alertController.addTextField { (textfield) in
+            
+            textfield.placeholder = "\(importPrice) тенге"
+            textfield.keyboardType = .numberPad
+        
+        }
+        
+        alertController.addAction(addAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController,animated: true, completion: nil)
+    }
     
     func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
         

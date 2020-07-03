@@ -220,7 +220,7 @@ extension ProductListImportVC {
     }
     
     
-    func sendGoodsPriceToBasketApi(productID: Int, importPrice: String, exportPrice: String) {
+    func editProductPrice(productID: Int, importPrice: String, exportPrice: String) {
         
         do {
             
@@ -301,7 +301,7 @@ extension ProductListImportVC {
             
             if cashAlertTextField != "" {
                 
-                self.sendGoodsPriceToBasketApi(productID: productID, importPrice: "\(cashAlertTextField)", exportPrice: exportPrice)
+                self.editProductPrice(productID: productID, importPrice: "\(cashAlertTextField)", exportPrice: exportPrice)
             }
             
             self.sendGoodToBasket(productID: productID, amount: amount)

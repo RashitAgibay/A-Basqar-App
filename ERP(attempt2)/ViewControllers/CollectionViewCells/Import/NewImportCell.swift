@@ -54,7 +54,7 @@ class NewImportCell: UICollectionViewCell {
         self.priceCardView.layer.borderWidth = 1
         self.priceCardView.layer.borderColor = hexStringToUIColor(hex: "#3F639D").cgColor
         
-        self.productImageView.layer.cornerRadius = 10
+        self.productImageView.layer.cornerRadius = 5
         
         
     }
