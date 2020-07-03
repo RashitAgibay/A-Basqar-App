@@ -11,7 +11,9 @@ import Foundation
 let newMainUrl: String = "https://abasqar.pythonanywhere.com/"
 
 //MARK: - Cat list url
-
 let firstLevelCategoryListUrl: String = newMainUrl +  "shop/v1/api/add/category/"
 
 let productListUrl: String = newMainUrl + "shop/v1/api/goods/list/"
+
+//MARL: - Import shopping cart
+let importShoppingCartURL: String = newMainUrl + "import/v1/api/import-shopping-cart/"

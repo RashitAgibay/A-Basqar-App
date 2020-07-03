@@ -79,8 +79,9 @@ extension ProductListImportVC: UICollectionViewDelegate, UICollectionViewDataSou
         let importPrice = singleProduct["import_price"] as! Int
         let exportPrice = singleProduct["export_price"] as! Int
         
+        let productId = product["id"] as! Int
         
-        self.ShowAlertControllerWithTwoTextFields(importPrice: importPrice, exportPrice: exportPrice)
+        self.ShowAlertControllerWithTwoTextFields(importPrice: importPrice, exportPrice: exportPrice, productID: productId)
     }
     
     
@@ -111,7 +112,7 @@ extension ProductListImportVC {
         
         }
         
-        if ((reacibility?.connection) != .unavailable){
+        if ((reacibility?.connection) != .unavailable) {
             MBProgressHUD.showAdded(to: self.view, animated: true)
             
             //MARK: - Токенді optional түрден String типіне алып келу керек, әйтпесе токен дұрыс жіберілмейді.
@@ -185,11 +186,61 @@ extension ProductListImportVC {
                        
 
     }
+    
+    private func sendGoodToBasket(productID: Int, amount: String) {
+        
+        do {
+            
+            self.reachability = try Reachability.init()
+        }
+        
+        catch {
+            
+            print("unable to start notifier")
+        }
+        
+        if ((reacibility?.connection) != .unavailable) {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
+            
+            let headers: HTTPHeaders = [
+                
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+            let params = [
+                
+                "goods":"\(productID)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
+                "nums":"\(amount)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
+            
+            ]
+            
+            let encodeURL = importShoppingCartURL
+            
+            let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                
+//                print(response.request!)
+//                print(response.result)
+//                print(response.response)
+            })
+        }
+        else {
+            print("internet is not working")
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
 }
 
 extension ProductListImportVC {
     
-    func ShowAlertControllerWithTwoTextFields(importPrice: Int, exportPrice: Int) {
+    func ShowAlertControllerWithTwoTextFields(importPrice: Int, exportPrice: Int, productID: Int) {
+        
+        var amount = "1"
         
         let alertController = UIAlertController(title: "", message: "Введите количество...", preferredStyle: .alert)
         let addAction = UIAlertAction(title: "Добавить", style: .default) { (action) in
@@ -200,14 +251,10 @@ extension ProductListImportVC {
             
             if amountAlertTextField != "" {
                 
-//                self.amountFromAlert = amountAlertTextField
+                amount = amountAlertTextField!
             }
             
-            else {
-                
-//                self.amountFromAlert = "1"
-            
-            }
+            self.sendGoodToBasket(productID: productID, amount: amount)
             
 //            self.cashFromAlert = cashAlertTextField
 //            self.priceToSendToBuscket = cashAlertTextField as! String
