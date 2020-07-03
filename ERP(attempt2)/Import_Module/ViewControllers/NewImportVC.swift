@@ -48,6 +48,7 @@ class NewImportVC: UIViewController {
     private func updateUI() {
         
         self.getProductList()
+        
     }
     
     @IBAction func tappedContragentNameButton(_ sender: Any) {
@@ -173,27 +174,18 @@ extension NewImportVC {
                     MBProgressHUD.hide(for: self.view, animated: true)
                     
                     if let x = payload as? Dictionary<String,AnyObject> {
-                        
-//                        print(x)
-//
-//                        let resultValue = x as NSMutableArray
-//                        categoryInfo = NSMutableArray(array: resultValue) as! NSArray
-                    
+                                                
                     }
                     
                     else {
                         
                         let resultValue = payload as! NSArray
                         
-//                        print("осы жерде категори инфо")
-//                        print(resultValue)
-                        
                         self.productArray = resultValue
                         self.collectionView.reloadData()
                         
-//                        print("here is a \(goodsInBasket.reversed())")
-//                        print("осы жерде категори инфо")
-//                        print(categoryInfo)
+                        let totalSum = self.calculateTotalSum(array: self.productArray)
+                        self.totalSumLabel.text = "\(totalSum)"
                     
                     }
                 
@@ -204,9 +196,7 @@ extension NewImportVC {
                     self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
                 
                 }
-            
             })
-        
         }
         
         else {
@@ -442,5 +432,30 @@ extension NewImportVC {
         }
         alertController.addAction(action)
         self.present(alertController,animated: true, completion: nil)
+    }
+}
+
+
+extension NewImportVC {
+    
+    private func calculateTotalSum(array: NSArray) -> Int {
+        
+        var totalSum = Int()
+        
+        for item in array {
+            
+            let singleProduct = item as! NSDictionary
+             
+            let firstGoods = singleProduct["goods"] as! NSDictionary
+            let product = firstGoods["goods"] as! NSDictionary
+            
+            let productPrice = firstGoods["import_price"] as! Int
+            let productCountInCart = singleProduct["nums"] as! Int
+            let productTotalPrice = productPrice * productCountInCart
+            
+            totalSum += productTotalPrice
+        }
+        
+        return totalSum
     }
 }
