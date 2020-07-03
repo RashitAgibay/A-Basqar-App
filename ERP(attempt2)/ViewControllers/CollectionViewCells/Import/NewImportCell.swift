@@ -8,6 +8,12 @@
 
 import UIKit
 
+protocol NewImportCellDelegate {
+    
+    func deleteProduct(cell: NewImportCell, id: Int)
+    
+}
+
 class NewImportCell: UICollectionViewCell {
     
     
@@ -19,11 +25,19 @@ class NewImportCell: UICollectionViewCell {
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var totalPriceLabel: UILabel!
     
+    var delegate: NewImportCellDelegate?
+    var productID: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCell()
     }
+    
+    @IBAction func tappedDeleteButton(_ sender: UIButton) {
+        
+        delegate?.deleteProduct(cell: self, id: productID!)
+    }
+    
     
     private func setupCell() {
         
@@ -40,7 +54,7 @@ class NewImportCell: UICollectionViewCell {
         self.priceCardView.layer.borderWidth = 1
         self.priceCardView.layer.borderColor = hexStringToUIColor(hex: "#3F639D").cgColor
         
-        self.productImageView.layer.cornerRadius = 10
+        self.productImageView.layer.cornerRadius = 5
         
         
     }

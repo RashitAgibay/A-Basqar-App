@@ -122,6 +122,7 @@
                     <connections>
                         <outlet property="collectionView" destination="ccL-Ma-bYR" id="RIh-15-J28"/>
                         <segue destination="Y7j-PS-7GR" kind="presentation" identifier="fromProdListToFirstLevelCat" modalPresentationStyle="fullScreen" id="BnU-LY-UxM"/>
+                        <segue destination="Pgk-K3-7aL" kind="presentation" identifier="fromProductListToMainImport" modalPresentationStyle="fullScreen" id="XhO-md-1ec"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ng7-u6-9yd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -135,6 +136,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KUd-pq-K8k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1028" y="1468"/>
+        </scene>
+        <!--MainImport-->
+        <scene sceneID="SFb-Ny-Eqs">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainImport" id="Pgk-K3-7aL" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wdC-eR-BeC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038" y="1568"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tzM-Bk-lPz">

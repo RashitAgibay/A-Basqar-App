@@ -1,24 +1,35 @@
 //
-//  ProductListImportCell.swift
+//  ContragentListCell.swift
 //  A-Basqar
 //
-//  Created by Ilyas Shomat on 7/2/20.
+//  Created by Ilyas Shomat on 7/4/20.
 //  Copyright © 2020 Ilyas Shomat. All rights reserved.
 //
 
 import UIKit
 
-class ProductListImportCell: UICollectionViewCell {
+protocol ContragentListCellDelegate {
     
-    @IBOutlet weak var productImageView: UIImageView!
-    @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var remainedCountLabel: UILabel!
-    @IBOutlet weak var priceLabel: UILabel!
+    func updateContragent(cell: ContragentListCell, id: Int)
     
+}
+
+class ContragentListCell: UICollectionViewCell {
+    
+    @IBOutlet weak var contragentNameLabel: UILabel!
+    
+    var delegate: ContragentListCellDelegate?
+    var productID: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCell()
+    }
+    
+    @IBAction func tappedEditButton(_ sender: UIButton) {
+        
+        delegate?.updateContragent(cell: self, id: productID!)
+
     }
     
     private func setupCell() {
@@ -29,11 +40,7 @@ class ProductListImportCell: UICollectionViewCell {
         self.layer.shadowOpacity = 0.5
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
-        
-        
-        self.productImageView.layer.cornerRadius = 5
-        
-        
+    
     }
     
 }
