@@ -194,6 +194,7 @@
                                         </state>
                                         <connections>
                                             <action selector="tappedContragentNameButton:" destination="nKc-To-rNW" eventType="touchUpInside" id="otH-nl-67F"/>
+                                            <segue destination="cHW-s1-kJz" kind="presentation" modalPresentationStyle="fullScreen" id="9Zx-8K-qHm"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GJK-wo-9bb">
@@ -255,6 +256,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jc2-ev-jPt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2063.0434782608695" y="3715.5133928571427"/>
+        </scene>
+        <!--ContragentListImport-->
+        <scene sceneID="LgA-CP-qMk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ContragentListImport" id="cHW-s1-kJz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2L9-nc-e0b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2630" y="3715"/>
         </scene>
     </scenes>
     <resources>

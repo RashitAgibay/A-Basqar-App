@@ -92,24 +92,6 @@ class MainViewController: UIViewController, UITextFieldDelegate {
     
 }
 
-extension UIView {
-    
-    func dropShadow() {
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor.gray.cgColor
-        layer.shadowOpacity = 0.5
-        layer.shadowOffset = CGSize(width: 0, height: 0.5)
-        layer.shadowRadius = 3
-    }
-}
 
-extension UIButton {
-    func dropShadowforButton() {
-        layer.masksToBounds = false
-        layer.shadowColor = UIColor.gray.cgColor
-        layer.shadowOpacity = 0.5
-        layer.shadowOffset = CGSize(width: 0, height: 0.5)
-        layer.shadowRadius = 3
-    }
 
-}
+

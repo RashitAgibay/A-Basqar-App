@@ -15,16 +15,24 @@ class NewImportVC: UIViewController {
     @IBOutlet weak var contragentNameButton: UIButton!
     @IBOutlet weak var buyButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
-    
     @IBOutlet weak var collectionView: UICollectionView!
+    
     var reachability: Reachability?
     var productArray = NSArray()
+    
+    let refreshControl: UIRefreshControl = {
+        let refControl = UIRefreshControl()
+        refControl.addTarget(self, action: #selector(refreshData(sender:)), for: .valueChanged)
+        return refControl
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupUI()
         updateUI()
+        
+        collectionView.refreshControl = refreshControl
     }
     
     private func setupUI() {
@@ -49,6 +57,13 @@ class NewImportVC: UIViewController {
         
         self.getProductList()
         
+    }
+    
+    @objc private func refreshData(sender: UIRefreshControl) {
+        
+        self.updateUI()
+        sender.endRefreshing()
+    
     }
     
     @IBAction func tappedContragentNameButton(_ sender: Any) {

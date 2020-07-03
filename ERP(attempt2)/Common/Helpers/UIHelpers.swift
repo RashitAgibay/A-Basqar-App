@@ -33,3 +33,8 @@ public func hexStringToUIColor (hex:String) -> UIColor {
 }
 
 
+
+public func freeSpaceOnLeftSideForTextFiedl(someTextField : UITextField){
+    someTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 17, height: someTextField.frame.height))
+    someTextField.leftViewMode = UITextField.ViewMode.always
+}

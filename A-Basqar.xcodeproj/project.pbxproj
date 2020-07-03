@@ -237,6 +237,15 @@
 		61F00E87244F2636001D0EEE /* CurrentBidDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E86244F2636001D0EEE /* CurrentBidDetailVC.swift */; };
 		AA5DF4DA597D0C7F758AB506 /* Pods_A_Basqar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451E8E7CD502E401E3BBD264 /* Pods_A_Basqar.framework */; };
 		FD3680A423C4712B00914B94 /* SellingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3680A323C4712B00914B94 /* SellingModel.swift */; };
+		FD4777B424AFAC6A00E323D3 /* ContragentListImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4777B324AFAC6A00E323D3 /* ContragentListImport.storyboard */; };
+		FD4777B624AFAC8600E323D3 /* ContragentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777B524AFAC8600E323D3 /* ContragentListVC.swift */; };
+		FD4777B824AFADE500E323D3 /* ContragentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777B724AFADE500E323D3 /* ContragentListCell.swift */; };
+		FD4777BA24AFB37600E323D3 /* AddNewContrImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4777B924AFB37600E323D3 /* AddNewContrImport.storyboard */; };
+		FD4777BC24AFB3BD00E323D3 /* AddNewContrImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777BB24AFB3BD00E323D3 /* AddNewContrImportVC.swift */; };
+		FD4777BE24AFB64600E323D3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777BD24AFB64600E323D3 /* UIView+Extensions.swift */; };
+		FD4777C024AFB66300E323D3 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777BF24AFB66300E323D3 /* UIButton+Extensions.swift */; };
+		FD4777C224AFB78400E323D3 /* UpdateContrInfoImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4777C124AFB78400E323D3 /* UpdateContrInfoImport.storyboard */; };
+		FD4777C424AFB79A00E323D3 /* UpdateContrInfoImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777C324AFB79A00E323D3 /* UpdateContrInfoImportVC.swift */; };
 		FD5AB46E24ADBF1F002BDB0E /* FirstLevelCatImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5AB46D24ADBF1F002BDB0E /* FirstLevelCatImport.storyboard */; };
 		FD5AB47024ADC02E002BDB0E /* FirstLevelCatImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5AB46F24ADC02E002BDB0E /* FirstLevelCatImportVC.swift */; };
 		FD5AB47224ADC1FE002BDB0E /* FirstLevelCatImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5AB47124ADC1FE002BDB0E /* FirstLevelCatImportCell.swift */; };
@@ -602,6 +611,15 @@
 		C7FC59907306329939555855 /* Pods-A-Basqar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A-Basqar.release.xcconfig"; path = "Target Support Files/Pods-A-Basqar/Pods-A-Basqar.release.xcconfig"; sourceTree = "<group>"; };
 		D5F0E550815B74E5DD782B02 /* Pods-ERP(attempt2).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ERP(attempt2).debug.xcconfig"; path = "Target Support Files/Pods-ERP(attempt2)/Pods-ERP(attempt2).debug.xcconfig"; sourceTree = "<group>"; };
 		FD3680A323C4712B00914B94 /* SellingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingModel.swift; sourceTree = "<group>"; };
+		FD4777B324AFAC6A00E323D3 /* ContragentListImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContragentListImport.storyboard; sourceTree = "<group>"; };
+		FD4777B524AFAC8600E323D3 /* ContragentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListVC.swift; sourceTree = "<group>"; };
+		FD4777B724AFADE500E323D3 /* ContragentListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListCell.swift; sourceTree = "<group>"; };
+		FD4777B924AFB37600E323D3 /* AddNewContrImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNewContrImport.storyboard; sourceTree = "<group>"; };
+		FD4777BB24AFB3BD00E323D3 /* AddNewContrImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContrImportVC.swift; sourceTree = "<group>"; };
+		FD4777BD24AFB64600E323D3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		FD4777BF24AFB66300E323D3 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
+		FD4777C124AFB78400E323D3 /* UpdateContrInfoImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UpdateContrInfoImport.storyboard; sourceTree = "<group>"; };
+		FD4777C324AFB79A00E323D3 /* UpdateContrInfoImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContrInfoImportVC.swift; sourceTree = "<group>"; };
 		FD5AB46D24ADBF1F002BDB0E /* FirstLevelCatImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLevelCatImport.storyboard; sourceTree = "<group>"; };
 		FD5AB46F24ADC02E002BDB0E /* FirstLevelCatImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLevelCatImportVC.swift; sourceTree = "<group>"; };
 		FD5AB47124ADC1FE002BDB0E /* FirstLevelCatImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLevelCatImportCell.swift; sourceTree = "<group>"; };
@@ -1357,6 +1375,8 @@
 			isa = PBXGroup;
 			children = (
 				FD7AF83624AC802F0021B131 /* UISegmentControl+Extensions.swift */,
+				FD4777BD24AFB64600E323D3 /* UIView+Extensions.swift */,
+				FD4777BF24AFB66300E323D3 /* UIButton+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1421,9 +1441,12 @@
 			children = (
 				FDB63FBC24AB565900525388 /* MainImportVC.swift */,
 				FDB63FC024AB5E4600525388 /* NewImportVC.swift */,
-				FD7AF83324AC74E00021B131 /* HistoryImportVC.swift */,
+				FD4777B524AFAC8600E323D3 /* ContragentListVC.swift */,
+				FD4777BB24AFB3BD00E323D3 /* AddNewContrImportVC.swift */,
+				FD4777C324AFB79A00E323D3 /* UpdateContrInfoImportVC.swift */,
 				FD5AB46F24ADC02E002BDB0E /* FirstLevelCatImportVC.swift */,
 				FD5AB47324ADC2EB002BDB0E /* ProductListImportVC.swift */,
+				FD7AF83324AC74E00021B131 /* HistoryImportVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1433,9 +1456,12 @@
 			children = (
 				FDB63FBE24AB5A8500525388 /* MainImport.storyboard */,
 				FDB63FC224AB5EA500525388 /* NewImport.storyboard */,
-				FD7AF83124AC74BB0021B131 /* HistoryImport.storyboard */,
+				FD4777B324AFAC6A00E323D3 /* ContragentListImport.storyboard */,
+				FD4777B924AFB37600E323D3 /* AddNewContrImport.storyboard */,
+				FD4777C124AFB78400E323D3 /* UpdateContrInfoImport.storyboard */,
 				FD5AB46D24ADBF1F002BDB0E /* FirstLevelCatImport.storyboard */,
 				FD5AB47524ADC2F9002BDB0E /* ProductListImport.storyboard */,
+				FD7AF83124AC74BB0021B131 /* HistoryImport.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -1444,9 +1470,10 @@
 			isa = PBXGroup;
 			children = (
 				FDB63FC524AB63A800525388 /* NewImportCell.swift */,
-				FD7AF84024AC93180021B131 /* HistoryImportCell.swift */,
+				FD4777B724AFADE500E323D3 /* ContragentListCell.swift */,
 				FD5AB47124ADC1FE002BDB0E /* FirstLevelCatImportCell.swift */,
 				FD5AB47724ADC5CA002BDB0E /* ProductListImportCell.swift */,
+				FD7AF84024AC93180021B131 /* HistoryImportCell.swift */,
 			);
 			path = Import;
 			sourceTree = "<group>";
@@ -1560,8 +1587,10 @@
 			files = (
 				61A846212452F6C600DF3371 /* AddStore.storyboard in Resources */,
 				613D7386244F7A0A00E0E392 /* BidProductList.storyboard in Resources */,
+				FD4777C224AFB78400E323D3 /* UpdateContrInfoImport.storyboard in Resources */,
 				6159FA9D244E145B00FE1BED /* PlaceList.storyboard in Resources */,
 				61A8462D245308DA00DF3371 /* StoresEmployees.storyboard in Resources */,
+				FD4777B424AFAC6A00E323D3 /* ContragentListImport.storyboard in Resources */,
 				61589B142451C8C3008A18A7 /* Stores.storyboard in Resources */,
 				61F00E78244F1081001D0EEE /* BidsHistory.storyboard in Resources */,
 				FD5AB47624ADC2F9002BDB0E /* ProductListImport.storyboard in Resources */,
@@ -1574,6 +1603,7 @@
 				613D737E244F6BA100E0E392 /* BidHistoryDetail.storyboard in Resources */,
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
 				FDB63FC324AB5EA500525388 /* NewImport.storyboard in Resources */,
+				FD4777BA24AFB37600E323D3 /* AddNewContrImport.storyboard in Resources */,
 				613D7382244F75FB00E0E392 /* BidFirstCategory.storyboard in Resources */,
 				61A8463724531A4E00DF3371 /* EmployeeFuncs.storyboard in Resources */,
 				61F00E85244F2618001D0EEE /* CurrentBidDetail.storyboard in Resources */,
@@ -1763,6 +1793,7 @@
 				280901A12394CDC200CA68BD /* BuyerCompanyCell.swift in Sources */,
 				288CC4A223A89C38008D5218 /* SDImageCachesManagerOperation.m in Sources */,
 				288CC3BF23A89BFD008D5218 /* NetworkReachabilityManager.swift in Sources */,
+				FD4777B824AFADE500E323D3 /* ContragentListCell.swift in Sources */,
 				288CC46823A89C38008D5218 /* SDAnimatedImageRep.m in Sources */,
 				288CC4A023A89C38008D5218 /* SDFileAttributeHelper.m in Sources */,
 				6159FA93244DF08100FE1BED /* MovementHistoryVC.swift in Sources */,
@@ -1782,6 +1813,7 @@
 				280901A32394CDE400CA68BD /* BuyerCompanyVC.swift in Sources */,
 				280901B02394E66C00CA68BD /* ByuingHistoryViewCell.swift in Sources */,
 				284F4287237BC6F00083933E /* GoodCategoryAndInfo.swift in Sources */,
+				FD4777BE24AFB64600E323D3 /* UIView+Extensions.swift in Sources */,
 				288CC49723A89C38008D5218 /* UIImageView+WebCache.m in Sources */,
 				61F00E70244F0D64001D0EEE /* MainBidVC.swift in Sources */,
 				288CC48E23A89C38008D5218 /* UIButton+WebCache.m in Sources */,
@@ -1808,6 +1840,7 @@
 				61560A8A244E33A300FAAFB0 /* MovementFirstCategoryVC.swift in Sources */,
 				288CC3B823A89BFD008D5218 /* DispatchQueue+Alamofire.swift in Sources */,
 				288CC47823A89C38008D5218 /* SDImageIOAnimatedCoder.m in Sources */,
+				FD4777C424AFB79A00E323D3 /* UpdateContrInfoImportVC.swift in Sources */,
 				288CC4A323A89C38008D5218 /* SDInternalMacros.m in Sources */,
 				61F00E7A244F13BA001D0EEE /* NewBidVC.swift in Sources */,
 				FD5AB47424ADC2EB002BDB0E /* ProductListImportVC.swift in Sources */,
@@ -1830,6 +1863,7 @@
 				FD3680A423C4712B00914B94 /* SellingModel.swift in Sources */,
 				288CC4A423A89C38008D5218 /* SDWeakProxy.m in Sources */,
 				288CC3D123A89BFD008D5218 /* URLEncodedFormEncoder.swift in Sources */,
+				FD4777C024AFB66300E323D3 /* UIButton+Extensions.swift in Sources */,
 				288CC48123A89C38008D5218 /* SDWebImageDefine.m in Sources */,
 				288CC3CF23A89BFD008D5218 /* SessionDelegate.swift in Sources */,
 				288CC3C823A89BFD008D5218 /* RequestTaskMap.swift in Sources */,
@@ -1850,7 +1884,9 @@
 				28CD613F239F4D0300079105 /* GoodReportVC.swift in Sources */,
 				280901A82394D54100CA68BD /* AddBuyerVC.swift in Sources */,
 				288CC48723A89C38008D5218 /* SDWebImageDownloaderResponseModifier.m in Sources */,
+				FD4777B624AFAC8600E323D3 /* ContragentListVC.swift in Sources */,
 				2812AAF62362B45A001D65C8 /* SceneDelegate.swift in Sources */,
+				FD4777BC24AFB3BD00E323D3 /* AddNewContrImportVC.swift in Sources */,
 				61F00E81244F2363001D0EEE /* BidsHistoryVC.swift in Sources */,
 				FDF3C9B523E1342800D2E08D /* IncomeContagentNamesVC.swift in Sources */,
 				288CC47E23A89C38008D5218 /* SDWebImageCacheKeyFilter.m in Sources */,
