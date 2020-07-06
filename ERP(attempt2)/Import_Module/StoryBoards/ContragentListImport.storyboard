@@ -33,7 +33,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="contragentListCell" id="11a-LH-fs7" customClass="ContragentListCell" customModule="A_Basqar" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="contragentListCell" id="11a-LH-fs7" customClass="ContragentListImportCell" customModule="A_Basqar" customModuleProvider="target">
                                         <rect key="frame" x="12.5" y="10" width="350" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="PrZ-Vx-XST">
@@ -103,7 +103,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="8vR-k5-Vg1">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="gOh-Fz-2hY" kind="presentation" modalPresentationStyle="fullScreen" id="zTc-JX-ydB"/>
+                                <action selector="tapBackButton:" destination="1hG-vm-AvP" id="g0H-23-v9o"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="more" id="PVg-XT-nHz">
@@ -117,6 +117,7 @@
                     <connections>
                         <outlet property="collectionView" destination="IxL-Qo-js9" id="sFH-FW-xgu"/>
                         <segue destination="Xze-kJ-xhA" kind="presentation" identifier="fromContrListToUpdateContr" id="2et-iJ-TpE"/>
+                        <segue destination="gOh-Fz-2hY" kind="presentation" identifier="fromContrListToMainImport" modalPresentationStyle="fullScreen" id="Q1t-wK-5Vr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x9Q-gs-nXi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -129,7 +130,7 @@
                 <viewControllerPlaceholder storyboardName="MainImport" id="gOh-Fz-2hY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6fI-dF-GL8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5504" y="3701"/>
+            <point key="canvasLocation" x="5542" y="3978"/>
         </scene>
         <!--AddNewContrImport-->
         <scene sceneID="a02-ns-7Hq">

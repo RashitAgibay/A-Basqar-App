@@ -8,4 +8,6 @@
 
 import Foundation
 
-var userTokenKey: String = "new_userTokenKey"
+let userTokenKey: String = "new_userTokenKey"
+let selectedImportContr: String = "new_selected_import_contr"
+let selectedImportContrID: String = "new_selected_import_contr_id"
