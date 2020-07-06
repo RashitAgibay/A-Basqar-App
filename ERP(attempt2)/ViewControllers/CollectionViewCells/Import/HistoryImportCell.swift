@@ -10,7 +10,6 @@ import UIKit
 
 class HistoryImportCell: UICollectionViewCell {
     
-    @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var importNameLabel: UILabel!
     @IBOutlet weak var conrtagentNameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -30,9 +29,7 @@ class HistoryImportCell: UICollectionViewCell {
         self.layer.masksToBounds = false
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
         
-        
-        self.productImageView.layer.cornerRadius = 5
-        
+                
         
     }
 }

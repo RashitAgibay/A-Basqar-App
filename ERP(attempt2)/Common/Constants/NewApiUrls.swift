@@ -19,3 +19,5 @@ let productListUrl: String = newMainUrl + "shop/v1/api/goods/list/"
 let importShoppingCartURL: String = newMainUrl + "import/v1/api/import-shopping-cart/"
 
 let importContragentsList: String = newMainUrl + "shop/v1/api/buy-company/"
+
+let importHistoryList: String = newMainUrl + "import/v1/api/import-history/"
