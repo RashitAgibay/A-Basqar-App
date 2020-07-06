@@ -55,6 +55,7 @@ class NewImportVC: UIViewController {
     
     private func updateUI() {
         
+        self.getCurrentContr()
         self.getProductList()
         
     }
@@ -472,5 +473,45 @@ extension NewImportVC {
         }
         
         return totalSum
+    }
+    
+    private func getCurrentContrtName() -> String {
+        
+        var contrName = String()
+        
+        contrName = UserDefaults.standard.string(forKey: selectedImportContr) ?? ""
+        
+        return contrName
+        
+    }
+    
+    private func getCurrentContrID() -> Int {
+        
+        var contrID = Int()
+        
+        contrID = UserDefaults.standard.integer(forKey: selectedImportContrID)
+        
+        return contrID
+        
+    }
+    
+    private func getCurrentContr() {
+        
+        var currentContrName = String()
+        var currentContrId = Int()
+        
+        currentContrName = getCurrentContrtName()
+        currentContrId = getCurrentContrID()
+        
+        if currentContrName == "" {
+            
+            self.contragentNameButton.setTitle("Выберите...", for: .normal)
+        }
+        
+        else {
+            
+            self.contragentNameButton.setTitle(currentContrName, for: .normal)
+        }
+        
     }
 }

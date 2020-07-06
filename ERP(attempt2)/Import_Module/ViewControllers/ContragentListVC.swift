@@ -22,7 +22,13 @@ class ContragentListVC: UIViewController {
         self.getContragentsList()
 
     }
-
+    
+    
+    @IBAction func tapBackButton(_ sender: Any) {
+        
+        self.navigateToMainImport()
+    }
+    
 }
 
 
@@ -45,6 +51,19 @@ extension ContragentListVC: UICollectionViewDelegate, UICollectionViewDataSource
         cell.contragentNameLabel.text = contrName
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let singleContr = contragentsArray[indexPath.row] as! NSDictionary
+        
+        let contrID = singleContr["id"] as! Int
+        let contrName = singleContr["company_name"] as! String
+        
+        self.saveLastImportContr(contrName: contrName, contrID: contrID)
+        
+        self.navigateToMainImport()
+        
     }
     
     
@@ -137,6 +156,11 @@ extension ContragentListVC {
         
         performSegue(withIdentifier: "fromContrListToUpdateContr", sender: self)
     }
+    
+    private func navigateToMainImport() {
+        
+        performSegue(withIdentifier: "fromContrListToMainImport", sender: self)
+    }
 }
 
 extension ContragentListVC {
@@ -160,5 +184,14 @@ extension ContragentListVC {
         }
         alertController.addAction(action)
         self.present(alertController,animated: true, completion: nil)
+    }
+}
+
+extension ContragentListVC {
+    
+    private func saveLastImportContr(contrName: String, contrID: Int) {
+        
+        UserDefaults.standard.set(contrName, forKey: selectedImportContr)
+        UserDefaults.standard.set(contrID, forKey: selectedImportContrID)
     }
 }
