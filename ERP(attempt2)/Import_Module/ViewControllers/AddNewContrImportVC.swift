@@ -108,9 +108,9 @@ extension AddNewContrImportVC {
             
                 MBProgressHUD.hide(for: self.view, animated: true)
                 
-                print(response.request)
-                print(response.result)
-                print(response.response)
+//                print(response.request)
+//                print(response.result)
+//                print(response.response)
             })
         
         }
