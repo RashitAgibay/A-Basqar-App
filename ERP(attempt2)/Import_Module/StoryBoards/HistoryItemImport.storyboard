@@ -27,7 +27,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="historyItem" id="BUs-F1-Fec" customClass="BuyingHistoryItemCell" customModule="A_Basqar" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="historyItem" id="BUs-F1-Fec" customClass="HistoryItemImportCell" customModule="A_Basqar" customModuleProvider="target">
                                         <rect key="frame" x="12.5" y="20" width="350" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rBc-93-AHg">
@@ -35,13 +35,13 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jbz-hi-foe">
-                                                    <rect key="frame" x="80" y="5" width="42" height="20.5"/>
-                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <rect key="frame" x="80" y="5" width="44" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="180 тг" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTc-zq-gxg">
-                                                    <rect key="frame" x="80" y="26.5" width="38.5" height="16"/>
+                                                    <rect key="frame" x="80" y="41.5" width="38.5" height="16"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                     <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -94,7 +94,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="dAh-mM-xLg" secondAttribute="bottom" constant="5" id="1Px-PQ-AsX"/>
                                                 <constraint firstItem="jkb-3s-ZnH" firstAttribute="centerY" secondItem="rBc-93-AHg" secondAttribute="centerY" id="6yT-ZU-629"/>
                                                 <constraint firstItem="dAh-mM-xLg" firstAttribute="leading" secondItem="1mV-FX-oAN" secondAttribute="trailing" constant="10" id="BZB-qc-iqC"/>
-                                                <constraint firstItem="dTc-zq-gxg" firstAttribute="top" secondItem="jbz-hi-foe" secondAttribute="bottom" constant="1" id="CRI-p0-Mwn"/>
+                                                <constraint firstItem="dTc-zq-gxg" firstAttribute="top" secondItem="jbz-hi-foe" secondAttribute="bottom" constant="15" id="CRI-p0-Mwn"/>
                                                 <constraint firstAttribute="bottom" secondItem="1mV-FX-oAN" secondAttribute="bottom" constant="5" id="Ie0-iq-4F4"/>
                                                 <constraint firstItem="jbz-hi-foe" firstAttribute="leading" secondItem="jkb-3s-ZnH" secondAttribute="trailing" constant="10" id="fUX-rp-eoQ"/>
                                                 <constraint firstItem="jkb-3s-ZnH" firstAttribute="leading" secondItem="rBc-93-AHg" secondAttribute="leading" id="gnw-qx-z9k"/>
@@ -105,13 +105,13 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="amountCard" destination="1mV-FX-oAN" id="Q6S-Eh-HJt"/>
-                                            <outlet property="imageView" destination="jkb-3s-ZnH" id="stY-va-vAw"/>
-                                            <outlet property="prodeuctTotalPrice" destination="DyF-aj-8XA" id="lJO-mY-tb0"/>
-                                            <outlet property="productAmount" destination="wCa-a0-8xm" id="GcW-WT-0Oe"/>
-                                            <outlet property="productName" destination="jbz-hi-foe" id="HzI-X7-vam"/>
-                                            <outlet property="productPrice" destination="dTc-zq-gxg" id="cGC-Ix-afq"/>
-                                            <outlet property="totalPriceCard" destination="dAh-mM-xLg" id="jAu-2R-qUh"/>
+                                            <outlet property="productAmountCardView" destination="1mV-FX-oAN" id="wao-2h-tHW"/>
+                                            <outlet property="productAmountLabel" destination="wCa-a0-8xm" id="hsx-lZ-zNo"/>
+                                            <outlet property="productImageView" destination="jkb-3s-ZnH" id="Zww-jc-3ry"/>
+                                            <outlet property="productNameLabel" destination="jbz-hi-foe" id="DqI-Cf-BYt"/>
+                                            <outlet property="productPriceLabel" destination="dTc-zq-gxg" id="5GE-cl-lpU"/>
+                                            <outlet property="productTotalPriceCardView" destination="dAh-mM-xLg" id="esP-qc-wM0"/>
+                                            <outlet property="productTotalPriceLabel" destination="DyF-aj-8XA" id="E98-Ax-CBN"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -178,15 +178,30 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="dKf-Bd-XAy">
                             <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="tappedBackButton:" destination="ghn-fg-472" id="KDT-gW-VVg"/>
+                                <action selector="tapBackButton:" destination="ghn-fg-472" id="rQa-wH-q85"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="collectionView" destination="1kM-2X-crb" id="eNn-Fo-PLt"/>
+                        <outlet property="contrNameLabel" destination="a6q-Dv-5fO" id="SJ0-A6-0tp"/>
+                        <outlet property="importNameLabel" destination="y7G-58-eZb" id="Rq4-wp-bSf"/>
+                        <outlet property="totalPriceLabel" destination="7o8-aw-sqX" id="e7L-HU-knc"/>
+                        <segue destination="JqU-vn-g8P" kind="presentation" identifier="fromHistoryitemToMainImport" modalPresentationStyle="fullScreen" id="eiN-ag-aLM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCA-ld-E28" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12492.028985507248" y="5731.8080357142853"/>
+            <point key="canvasLocation" x="4625" y="2591"/>
+        </scene>
+        <!--MainImport-->
+        <scene sceneID="NDi-YV-tlo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainImport" id="JqU-vn-g8P" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VZN-dY-UiL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5205" y="2592"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yY0-Cb-ipN">
@@ -204,7 +219,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Q8-Gh-0I9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11582.608695652174" y="5732.1428571428569"/>
+            <point key="canvasLocation" x="3714" y="2591"/>
         </scene>
     </scenes>
     <resources>

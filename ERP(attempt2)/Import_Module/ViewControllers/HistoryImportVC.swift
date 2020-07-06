@@ -15,11 +15,12 @@ class HistoryImportVC: UIViewController {
     
     var reachability: Reachability?
     var historyArray = NSArray()
+    var historyID = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getProductList() 
+        getHistoryList() 
     }
     
 
@@ -53,12 +54,23 @@ extension HistoryImportVC: UICollectionViewDelegate, UICollectionViewDataSource 
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let singleHistory = historyArray[indexPath.row] as! NSDictionary
+        let historyId = singleHistory["id"] as! Int
+        
+        self.historyID = historyId
+        
+        self.navigateToHistoryItem()
+        
+    }
 }
 
 
 extension HistoryImportVC {
     
-    func getProductList() {
+    func getHistoryList() {
         
         do {
             
@@ -122,6 +134,24 @@ extension HistoryImportVC {
             
             MBProgressHUD.hide(for: self.view, animated: true)
             self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
+}
+
+extension HistoryImportVC {
+    
+    private func navigateToHistoryItem() {
+        
+        performSegue(withIdentifier: "fromHistoryToHistoryItem", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "fromHistoryToHistoryItem" {
+            if let navigationVC = segue.destination as? UINavigationController,
+                let destVC = navigationVC.topViewController as? HistoryItemImportVC {
+                destVC.historyID = self.historyID
+            }
         }
     }
 }

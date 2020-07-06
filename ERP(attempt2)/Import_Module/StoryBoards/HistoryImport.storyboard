@@ -110,11 +110,20 @@
                     <size key="freeformSize" width="375" height="583"/>
                     <connections>
                         <outlet property="collectionView" destination="d08-XR-2tA" id="Kee-RK-mCR"/>
+                        <segue destination="Prf-3U-a00" kind="presentation" identifier="fromHistoryToHistoryItem" modalPresentationStyle="fullScreen" id="nc3-VO-PWX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Qv-sT-Avw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1796" y="832"/>
+        </scene>
+        <!--HistoryItemImport-->
+        <scene sceneID="VJP-4C-Hhf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HistoryItemImport" id="Prf-3U-a00" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YoI-Ed-h6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1196" y="831"/>
         </scene>
     </scenes>
 </document>
