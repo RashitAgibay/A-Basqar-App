@@ -19,6 +19,7 @@ class NewImportVC: UIViewController {
     
     var reachability: Reachability?
     var productArray = NSArray()
+    var totalSum = Int()
     
     let refreshControl: UIRefreshControl = {
         let refControl = UIRefreshControl()
@@ -72,6 +73,12 @@ class NewImportVC: UIViewController {
     }
     
     @IBAction func tappedBuyButton(_ sender: Any) {
+        
+        var contrID = self.getCurrentContrID()
+        
+        self.createNewHistory(contrID: contrID, totalSum: self.totalSum)
+        
+        self.updateUI()
         
     }
     @IBAction func tappedCancelButton(_ sender: Any) {
@@ -201,6 +208,7 @@ extension NewImportVC {
                         self.collectionView.reloadData()
                         
                         let totalSum = self.calculateTotalSum(array: self.productArray)
+                        self.totalSum  = totalSum
                         self.totalSumLabel.text = "\(totalSum)"
                     
                     }
@@ -365,6 +373,60 @@ extension NewImportVC {
         
         else {
             
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
+    
+    private func createNewHistory(contrID: Int, totalSum: Int) {
+        
+        do {
+            
+            self.reachability = try Reachability.init()
+        }
+        
+        catch {
+            
+            print("unable to start notifier")
+        }
+        
+        if ((reacibility?.connection) != .unavailable) {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
+            
+            let headers: HTTPHeaders = [
+                
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+            
+            let params = [
+                
+                "company":contrID,
+                "sum":totalSum
+            ]
+            
+            let encodeURL = importHistoryList
+            
+//            print(params)
+            
+            let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+
+                MBProgressHUD.hide(for: self.view, animated: true)
+
+                print(response.request!)
+                print(response.result)
+                print(response.response)
+            })
+        }
+        
+        else {
+            
+            print("internet is not working")
             MBProgressHUD.hide(for: self.view, animated: true)
             self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
