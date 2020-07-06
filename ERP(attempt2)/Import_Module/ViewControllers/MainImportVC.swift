@@ -40,10 +40,14 @@ class MainImportVC: UIViewController {
             newImportView.alpha = 1
             historyImportView.alpha = 0
             
+            segmentControl.selectedSegmentIndex = 0
+            
         case 1:
             
             newImportView.alpha = 0
             historyImportView.alpha = 1
+            
+            segmentControl.selectedSegmentIndex = 1
             
         default:
             break

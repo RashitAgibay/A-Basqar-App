@@ -236,6 +236,9 @@
 		61F00E85244F2618001D0EEE /* CurrentBidDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61F00E84244F2618001D0EEE /* CurrentBidDetail.storyboard */; };
 		61F00E87244F2636001D0EEE /* CurrentBidDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F00E86244F2636001D0EEE /* CurrentBidDetailVC.swift */; };
 		AA5DF4DA597D0C7F758AB506 /* Pods_A_Basqar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 451E8E7CD502E401E3BBD264 /* Pods_A_Basqar.framework */; };
+		FD117B8E24B358F5008A00E7 /* HistoryItemImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD117B8D24B358F5008A00E7 /* HistoryItemImportVC.swift */; };
+		FD117B9024B3590C008A00E7 /* HistoryItemImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD117B8F24B3590C008A00E7 /* HistoryItemImport.storyboard */; };
+		FD117B9224B35AED008A00E7 /* HistoryItemImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD117B9124B35AED008A00E7 /* HistoryItemImportCell.swift */; };
 		FD3680A423C4712B00914B94 /* SellingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3680A323C4712B00914B94 /* SellingModel.swift */; };
 		FD4777B424AFAC6A00E323D3 /* ContragentListImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4777B324AFAC6A00E323D3 /* ContragentListImport.storyboard */; };
 		FD4777B624AFAC8600E323D3 /* ContragentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777B524AFAC8600E323D3 /* ContragentListVC.swift */; };
@@ -610,6 +613,9 @@
 		61F00E86244F2636001D0EEE /* CurrentBidDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentBidDetailVC.swift; sourceTree = "<group>"; };
 		C7FC59907306329939555855 /* Pods-A-Basqar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-A-Basqar.release.xcconfig"; path = "Target Support Files/Pods-A-Basqar/Pods-A-Basqar.release.xcconfig"; sourceTree = "<group>"; };
 		D5F0E550815B74E5DD782B02 /* Pods-ERP(attempt2).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ERP(attempt2).debug.xcconfig"; path = "Target Support Files/Pods-ERP(attempt2)/Pods-ERP(attempt2).debug.xcconfig"; sourceTree = "<group>"; };
+		FD117B8D24B358F5008A00E7 /* HistoryItemImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemImportVC.swift; sourceTree = "<group>"; };
+		FD117B8F24B3590C008A00E7 /* HistoryItemImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryItemImport.storyboard; sourceTree = "<group>"; };
+		FD117B9124B35AED008A00E7 /* HistoryItemImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemImportCell.swift; sourceTree = "<group>"; };
 		FD3680A323C4712B00914B94 /* SellingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingModel.swift; sourceTree = "<group>"; };
 		FD4777B324AFAC6A00E323D3 /* ContragentListImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContragentListImport.storyboard; sourceTree = "<group>"; };
 		FD4777B524AFAC8600E323D3 /* ContragentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListVC.swift; sourceTree = "<group>"; };
@@ -1447,6 +1453,7 @@
 				FD5AB46F24ADC02E002BDB0E /* FirstLevelCatImportVC.swift */,
 				FD5AB47324ADC2EB002BDB0E /* ProductListImportVC.swift */,
 				FD7AF83324AC74E00021B131 /* HistoryImportVC.swift */,
+				FD117B8D24B358F5008A00E7 /* HistoryItemImportVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1462,6 +1469,7 @@
 				FD5AB46D24ADBF1F002BDB0E /* FirstLevelCatImport.storyboard */,
 				FD5AB47524ADC2F9002BDB0E /* ProductListImport.storyboard */,
 				FD7AF83124AC74BB0021B131 /* HistoryImport.storyboard */,
+				FD117B8F24B3590C008A00E7 /* HistoryItemImport.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -1474,6 +1482,7 @@
 				FD5AB47124ADC1FE002BDB0E /* FirstLevelCatImportCell.swift */,
 				FD5AB47724ADC5CA002BDB0E /* ProductListImportCell.swift */,
 				FD7AF84024AC93180021B131 /* HistoryImportCell.swift */,
+				FD117B9124B35AED008A00E7 /* HistoryItemImportCell.swift */,
 			);
 			path = Import;
 			sourceTree = "<group>";
@@ -1599,6 +1608,7 @@
 				61560A8E244E404B00FAAFB0 /* MovementProductList.storyboard in Resources */,
 				6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */,
 				61F00E74244F1060001D0EEE /* NewBid.storyboard in Resources */,
+				FD117B9024B3590C008A00E7 /* HistoryItemImport.storyboard in Resources */,
 				2812AB002362B45B001D65C8 /* LaunchScreen.storyboard in Resources */,
 				613D737E244F6BA100E0E392 /* BidHistoryDetail.storyboard in Resources */,
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
@@ -1870,6 +1880,7 @@
 				288CC46623A89C38008D5218 /* SDAnimatedImage.m in Sources */,
 				288CC3D323A89BFD008D5218 /* URLSessionConfiguration+Alamofire.swift in Sources */,
 				61560A86244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift in Sources */,
+				FD117B8E24B358F5008A00E7 /* HistoryItemImportVC.swift in Sources */,
 				288CC3CA23A89BFD008D5218 /* ResponseSerialization.swift in Sources */,
 				288CC48A23A89C38008D5218 /* SDWebImageManager.m in Sources */,
 				2838ED68239E03BD00C8FE80 /* OutcomeKassaVC.swift in Sources */,
@@ -1896,6 +1907,7 @@
 				2863184F2398CB5D00556226 /* SellingCategoryVC.swift in Sources */,
 				288CC49923A89C38008D5218 /* UIView+WebCacheOperation.m in Sources */,
 				288CC3CE23A89BFD008D5218 /* Session.swift in Sources */,
+				FD117B9224B35AED008A00E7 /* HistoryItemImportCell.swift in Sources */,
 				288CC48D23A89C38008D5218 /* SDWebImageTransition.m in Sources */,
 				288CC3BD23A89BFD008D5218 /* MultipartFormData.swift in Sources */,
 				61A8463524530FB200DF3371 /* EditEmployeeDataVC.swift in Sources */,

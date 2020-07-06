@@ -35,57 +35,48 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Закуп: NDShbdANB34" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6K-T5-X37">
-                                                    <rect key="frame" x="100" y="10" width="230" height="21"/>
+                                                    <rect key="frame" x="20" y="10" width="310" height="21"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/04/2018" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Uw-3m-WtU">
-                                                    <rect key="frame" x="100" y="54.5" width="69" height="16"/>
+                                                    <rect key="frame" x="20" y="54.5" width="69" height="16"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                     <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поставщик:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycM-Po-dhK">
-                                                    <rect key="frame" x="100" y="34.5" width="75" height="16"/>
+                                                    <rect key="frame" x="20" y="34.5" width="75" height="16"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                     <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xeg-p6-MWq">
-                                                    <rect key="frame" x="10" y="10" width="80" height="80"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="25C-XN-Pvb"/>
-                                                        <constraint firstAttribute="width" constant="80" id="H4L-W4-zTv"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5000 тг" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HiA-Ae-GnZ">
-                                                    <rect key="frame" x="100" y="74.5" width="49" height="16"/>
+                                                    <rect key="frame" x="20" y="74.5" width="49" height="16"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                     <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бақтияр Айдар" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaW-wH-dQj">
-                                                    <rect key="frame" x="185" y="34" width="95" height="16"/>
+                                                    <rect key="frame" x="105" y="34" width="95" height="16"/>
                                                     <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                                     <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="3Uw-3m-WtU" firstAttribute="leading" secondItem="xeg-p6-MWq" secondAttribute="trailing" constant="10" id="8Ko-Ms-yMV"/>
+                                                <constraint firstItem="HiA-Ae-GnZ" firstAttribute="leading" secondItem="Edg-F8-fsd" secondAttribute="leading" constant="20" id="31Q-b4-WaJ"/>
                                                 <constraint firstItem="T6K-T5-X37" firstAttribute="top" secondItem="Edg-F8-fsd" secondAttribute="top" constant="10" id="9vi-CV-ioG"/>
                                                 <constraint firstItem="EaW-wH-dQj" firstAttribute="top" secondItem="Edg-F8-fsd" secondAttribute="top" constant="34" id="GrC-7j-c9J"/>
                                                 <constraint firstItem="ycM-Po-dhK" firstAttribute="top" secondItem="T6K-T5-X37" secondAttribute="bottom" constant="3.5" id="QXT-dt-UMw"/>
                                                 <constraint firstItem="3Uw-3m-WtU" firstAttribute="top" secondItem="ycM-Po-dhK" secondAttribute="bottom" constant="4" id="Uhc-7E-AYT"/>
-                                                <constraint firstItem="xeg-p6-MWq" firstAttribute="centerY" secondItem="Edg-F8-fsd" secondAttribute="centerY" id="W0E-Cq-7O8"/>
-                                                <constraint firstItem="T6K-T5-X37" firstAttribute="leading" secondItem="xeg-p6-MWq" secondAttribute="trailing" constant="10" id="bo3-1Z-dkg"/>
-                                                <constraint firstItem="HiA-Ae-GnZ" firstAttribute="leading" secondItem="xeg-p6-MWq" secondAttribute="trailing" constant="10" id="cDp-OM-TMq"/>
-                                                <constraint firstItem="xeg-p6-MWq" firstAttribute="leading" secondItem="Edg-F8-fsd" secondAttribute="leading" constant="10" id="iqC-XZ-vwX"/>
+                                                <constraint firstItem="T6K-T5-X37" firstAttribute="leading" secondItem="Edg-F8-fsd" secondAttribute="leading" constant="20" id="cTV-wq-n8T"/>
                                                 <constraint firstAttribute="trailing" secondItem="T6K-T5-X37" secondAttribute="trailing" constant="20" id="p5s-Rb-omv"/>
                                                 <constraint firstItem="EaW-wH-dQj" firstAttribute="leading" secondItem="ycM-Po-dhK" secondAttribute="trailing" constant="10" id="tKF-Fo-yu7"/>
-                                                <constraint firstItem="ycM-Po-dhK" firstAttribute="leading" secondItem="xeg-p6-MWq" secondAttribute="trailing" constant="10" id="xee-Y8-ArJ"/>
+                                                <constraint firstItem="ycM-Po-dhK" firstAttribute="leading" secondItem="Edg-F8-fsd" secondAttribute="leading" constant="20" id="yOZ-Hz-xcP"/>
                                                 <constraint firstItem="HiA-Ae-GnZ" firstAttribute="top" secondItem="3Uw-3m-WtU" secondAttribute="bottom" constant="4" id="zFi-wG-qXP"/>
+                                                <constraint firstItem="3Uw-3m-WtU" firstAttribute="leading" secondItem="Edg-F8-fsd" secondAttribute="leading" constant="20" id="zln-ut-26V"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -94,7 +85,6 @@
                                             <outlet property="dateLabel" destination="3Uw-3m-WtU" id="mzp-Bk-O00"/>
                                             <outlet property="importNameLabel" destination="T6K-T5-X37" id="vfb-Ev-QfD"/>
                                             <outlet property="priceLabel" destination="HiA-Ae-GnZ" id="Wum-hd-lZV"/>
-                                            <outlet property="productImageView" destination="xeg-p6-MWq" id="85C-8Y-GF8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -118,10 +108,22 @@
                         <viewLayoutGuide key="safeArea" id="b07-Dl-TER"/>
                     </view>
                     <size key="freeformSize" width="375" height="583"/>
+                    <connections>
+                        <outlet property="collectionView" destination="d08-XR-2tA" id="Kee-RK-mCR"/>
+                        <segue destination="Prf-3U-a00" kind="presentation" identifier="fromHistoryToHistoryItem" modalPresentationStyle="fullScreen" id="nc3-VO-PWX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Qv-sT-Avw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1796" y="832"/>
+        </scene>
+        <!--HistoryItemImport-->
+        <scene sceneID="VJP-4C-Hhf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HistoryItemImport" id="Prf-3U-a00" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YoI-Ed-h6P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1196" y="831"/>
         </scene>
     </scenes>
 </document>

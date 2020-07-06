@@ -47,8 +47,9 @@ extension ContragentListVC: UICollectionViewDelegate, UICollectionViewDataSource
         let contrID = singleContr["id"] as! Int
         let contrName = singleContr["company_name"] as! String
         
-        
+        cell.delegate = self
         cell.contragentNameLabel.text = contrName
+        cell.contrID = contrID
         
         return cell
     }
@@ -143,12 +144,13 @@ extension ContragentListVC {
 
 extension ContragentListVC: ContragentListImportCellDelegate {
     
-    func updateContragent(cell: ContragentListImportCell, id: Int) {
+    func tapToUpdateContragent(cell: ContragentListImportCell, id: Int) {
         
         self.navigateToUpdateContrInfo()
     }
     
 }
+
 
 extension ContragentListVC {
     

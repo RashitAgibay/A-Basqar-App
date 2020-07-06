@@ -78,7 +78,6 @@
                                 </state>
                                 <connections>
                                     <action selector="tappedAddButton:" destination="NDX-Gv-X2C" eventType="touchUpInside" id="zgf-oy-BJQ"/>
-                                    <action selector="tappedAddBuyerButton:" destination="NDX-Gv-X2C" eventType="touchUpInside" id="z65-YG-3hL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -100,7 +99,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="L9Y-LJ-b3h">
                             <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="rzP-uF-sZl" kind="presentation" modalPresentationStyle="fullScreen" id="W9n-N0-Lfj"/>
+                                <action selector="tapBackButton:" destination="NDX-Gv-X2C" id="V6a-GG-v8M"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -111,6 +110,7 @@
                         <outlet property="contrBinTextField" destination="ty1-a0-X2s" id="sNy-Tk-O5d"/>
                         <outlet property="contrNameTextField" destination="EJf-mu-gGS" id="iiX-eb-n6P"/>
                         <outlet property="contrPhoneTextField" destination="6TI-L2-LZl" id="U5I-mx-DNx"/>
+                        <segue destination="rzP-uF-sZl" kind="presentation" identifier="fromAddNewContrToContrList" modalPresentationStyle="fullScreen" id="hpR-eG-vp9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wyf-ug-aUh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

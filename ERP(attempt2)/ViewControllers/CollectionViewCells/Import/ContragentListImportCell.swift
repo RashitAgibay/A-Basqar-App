@@ -10,7 +10,7 @@ import UIKit
 
 protocol ContragentListImportCellDelegate {
     
-    func updateContragent(cell: ContragentListImportCell, id: Int)
+    func tapToUpdateContragent(cell: ContragentListImportCell, id: Int)
     
 }
 
@@ -19,7 +19,7 @@ class ContragentListImportCell: UICollectionViewCell {
     @IBOutlet weak var contragentNameLabel: UILabel!
     
     var delegate: ContragentListImportCellDelegate?
-    var productID: Int?
+    var contrID: Int?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +28,7 @@ class ContragentListImportCell: UICollectionViewCell {
     
     @IBAction func tappedEditButton(_ sender: UIButton) {
         
-        delegate?.updateContragent(cell: self, id: productID!)
+        delegate?.tapToUpdateContragent(cell: self, id: contrID!)
 
     }
     
