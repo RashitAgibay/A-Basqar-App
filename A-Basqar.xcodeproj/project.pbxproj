@@ -239,7 +239,7 @@
 		FD3680A423C4712B00914B94 /* SellingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3680A323C4712B00914B94 /* SellingModel.swift */; };
 		FD4777B424AFAC6A00E323D3 /* ContragentListImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4777B324AFAC6A00E323D3 /* ContragentListImport.storyboard */; };
 		FD4777B624AFAC8600E323D3 /* ContragentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777B524AFAC8600E323D3 /* ContragentListVC.swift */; };
-		FD4777B824AFADE500E323D3 /* ContragentListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777B724AFADE500E323D3 /* ContragentListCell.swift */; };
+		FD4777B824AFADE500E323D3 /* ContragentListImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777B724AFADE500E323D3 /* ContragentListImportCell.swift */; };
 		FD4777BA24AFB37600E323D3 /* AddNewContrImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4777B924AFB37600E323D3 /* AddNewContrImport.storyboard */; };
 		FD4777BC24AFB3BD00E323D3 /* AddNewContrImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777BB24AFB3BD00E323D3 /* AddNewContrImportVC.swift */; };
 		FD4777BE24AFB64600E323D3 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777BD24AFB64600E323D3 /* UIView+Extensions.swift */; };
@@ -613,7 +613,7 @@
 		FD3680A323C4712B00914B94 /* SellingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingModel.swift; sourceTree = "<group>"; };
 		FD4777B324AFAC6A00E323D3 /* ContragentListImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContragentListImport.storyboard; sourceTree = "<group>"; };
 		FD4777B524AFAC8600E323D3 /* ContragentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListVC.swift; sourceTree = "<group>"; };
-		FD4777B724AFADE500E323D3 /* ContragentListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListCell.swift; sourceTree = "<group>"; };
+		FD4777B724AFADE500E323D3 /* ContragentListImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListImportCell.swift; sourceTree = "<group>"; };
 		FD4777B924AFB37600E323D3 /* AddNewContrImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddNewContrImport.storyboard; sourceTree = "<group>"; };
 		FD4777BB24AFB3BD00E323D3 /* AddNewContrImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewContrImportVC.swift; sourceTree = "<group>"; };
 		FD4777BD24AFB64600E323D3 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -1470,7 +1470,7 @@
 			isa = PBXGroup;
 			children = (
 				FDB63FC524AB63A800525388 /* NewImportCell.swift */,
-				FD4777B724AFADE500E323D3 /* ContragentListCell.swift */,
+				FD4777B724AFADE500E323D3 /* ContragentListImportCell.swift */,
 				FD5AB47124ADC1FE002BDB0E /* FirstLevelCatImportCell.swift */,
 				FD5AB47724ADC5CA002BDB0E /* ProductListImportCell.swift */,
 				FD7AF84024AC93180021B131 /* HistoryImportCell.swift */,
@@ -1793,7 +1793,7 @@
 				280901A12394CDC200CA68BD /* BuyerCompanyCell.swift in Sources */,
 				288CC4A223A89C38008D5218 /* SDImageCachesManagerOperation.m in Sources */,
 				288CC3BF23A89BFD008D5218 /* NetworkReachabilityManager.swift in Sources */,
-				FD4777B824AFADE500E323D3 /* ContragentListCell.swift in Sources */,
+				FD4777B824AFADE500E323D3 /* ContragentListImportCell.swift in Sources */,
 				288CC46823A89C38008D5218 /* SDAnimatedImageRep.m in Sources */,
 				288CC4A023A89C38008D5218 /* SDFileAttributeHelper.m in Sources */,
 				6159FA93244DF08100FE1BED /* MovementHistoryVC.swift in Sources */,

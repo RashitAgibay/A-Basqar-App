@@ -8,17 +8,17 @@
 
 import UIKit
 
-protocol ContragentListCellDelegate {
+protocol ContragentListImportCellDelegate {
     
-    func updateContragent(cell: ContragentListCell, id: Int)
+    func updateContragent(cell: ContragentListImportCell, id: Int)
     
 }
 
-class ContragentListCell: UICollectionViewCell {
+class ContragentListImportCell: UICollectionViewCell {
     
     @IBOutlet weak var contragentNameLabel: UILabel!
     
-    var delegate: ContragentListCellDelegate?
+    var delegate: ContragentListImportCellDelegate?
     var productID: Int?
     
     override func awakeFromNib() {
