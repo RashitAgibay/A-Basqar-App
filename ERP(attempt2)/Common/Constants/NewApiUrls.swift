@@ -18,6 +18,8 @@ let productListUrl: String = newMainUrl + "shop/v1/api/goods/list/"
 //MARL: - Import shopping cart
 let importShoppingCartURL: String = newMainUrl + "import/v1/api/import-shopping-cart/"
 
-let importContragentsList: String = newMainUrl + "shop/v1/api/buy-company/"
+let importContragentsListURL: String = newMainUrl + "shop/v1/api/buy-company/"
 
-let importHistoryList: String = newMainUrl + "import/v1/api/import-history/"
+let importHistoryListURL: String = newMainUrl + "import/v1/api/import-history/"
+
+let importCheckURL: String = newMainUrl + "import/v1/api/import-check/"

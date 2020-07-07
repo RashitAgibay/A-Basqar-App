@@ -19,6 +19,7 @@ class NewImportVC: UIViewController {
     
     var reachability: Reachability?
     var productArray = NSArray()
+    var totalSum = Int()
     
     let refreshControl: UIRefreshControl = {
         let refControl = UIRefreshControl()
@@ -72,6 +73,21 @@ class NewImportVC: UIViewController {
     }
     
     @IBAction func tappedBuyButton(_ sender: Any) {
+        
+        if totalSumLabel.text == "0" {
+            
+            ShowErrorsAlertWithOneCancelButton(message: "Корзина пуста")
+        }
+        
+        else {
+            
+            var contrID = self.getCurrentContrID()
+            self.createNewHistory(contrID: contrID, totalSum: self.totalSum)
+            self.updateUI()
+            
+            self.navigateFromNewImportToKassa()
+        }
+        
         
     }
     @IBAction func tappedCancelButton(_ sender: Any) {
@@ -201,7 +217,10 @@ extension NewImportVC {
                         self.collectionView.reloadData()
                         
                         let totalSum = self.calculateTotalSum(array: self.productArray)
-                        self.totalSumLabel.text = "\(totalSum)"
+                        self.totalSum  = totalSum
+                        self.totalSumLabel.text = "\(totalSum) тг"
+                        
+                        
                     
                     }
                 
@@ -369,6 +388,60 @@ extension NewImportVC {
             self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
     }
+    
+    private func createNewHistory(contrID: Int, totalSum: Int) {
+        
+        do {
+            
+            self.reachability = try Reachability.init()
+        }
+        
+        catch {
+            
+            print("unable to start notifier")
+        }
+        
+        if ((reacibility?.connection) != .unavailable) {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
+            
+            let headers: HTTPHeaders = [
+                
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+            
+            let params = [
+                
+                "company":contrID,
+                "sum":totalSum
+            ]
+            
+            let encodeURL = importHistoryListURL
+            
+//            print(params)
+            
+            let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+
+                MBProgressHUD.hide(for: self.view, animated: true)
+
+//                print(response.request!)
+//                print(response.result)
+//                print(response.response)
+            })
+        }
+        
+        else {
+            
+            print("internet is not working")
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
 
 }
 
@@ -378,6 +451,24 @@ extension NewImportVC: NewImportCellDelegate {
         
         self.deleteProductFromCart(productID: id)
     }
+}
+
+extension NewImportVC {
+    
+    private func navigateFromNewImportToKassa() {
+        
+        performSegue(withIdentifier: "fromNewImportToKassa", sender: self)
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if segue.identifier == "fromFirstLevelCatToProdList" {
+//            if let navigationVC = segue.destination as? UINavigationController,
+//                let destVC = navigationVC.topViewController as? ProductListImportVC {
+//                destVC.categoryID = self.categoryID
+//            }
+//        }
+//    }
 }
 
 extension NewImportVC {
@@ -514,4 +605,9 @@ extension NewImportVC {
         }
         
     }
+    
 }
+
+
+
+

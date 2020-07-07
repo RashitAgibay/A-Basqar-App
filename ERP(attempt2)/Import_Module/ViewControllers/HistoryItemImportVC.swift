@@ -99,7 +99,7 @@ extension HistoryItemImportVC {
                 "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
             ]
             
-            let encodeURL = importHistoryList + "\(historyID)/"
+            let encodeURL = importHistoryListURL + "\(historyID)/"
             let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
