@@ -75,10 +75,10 @@ class NewImportVC: UIViewController {
     @IBAction func tappedBuyButton(_ sender: Any) {
         
         var contrID = self.getCurrentContrID()
-        
         self.createNewHistory(contrID: contrID, totalSum: self.totalSum)
-        
         self.updateUI()
+        
+        self.navigateFromNewImportToKassa()
         
     }
     @IBAction func tappedCancelButton(_ sender: Any) {
@@ -210,6 +210,8 @@ extension NewImportVC {
                         let totalSum = self.calculateTotalSum(array: self.productArray)
                         self.totalSum  = totalSum
                         self.totalSumLabel.text = "\(totalSum)"
+                        
+                        
                     
                     }
                 
@@ -418,9 +420,9 @@ extension NewImportVC {
 
                 MBProgressHUD.hide(for: self.view, animated: true)
 
-                print(response.request!)
-                print(response.result)
-                print(response.response)
+//                print(response.request!)
+//                print(response.result)
+//                print(response.response)
             })
         }
         
@@ -440,6 +442,24 @@ extension NewImportVC: NewImportCellDelegate {
         
         self.deleteProductFromCart(productID: id)
     }
+}
+
+extension NewImportVC {
+    
+    private func navigateFromNewImportToKassa() {
+        
+        performSegue(withIdentifier: "fromNewImportToKassa", sender: self)
+    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//
+//        if segue.identifier == "fromFirstLevelCatToProdList" {
+//            if let navigationVC = segue.destination as? UINavigationController,
+//                let destVC = navigationVC.topViewController as? ProductListImportVC {
+//                destVC.categoryID = self.categoryID
+//            }
+//        }
+//    }
 }
 
 extension NewImportVC {
@@ -576,4 +596,9 @@ extension NewImportVC {
         }
         
     }
+    
 }
+
+
+
+

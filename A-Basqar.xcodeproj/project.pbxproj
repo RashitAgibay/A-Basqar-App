@@ -264,6 +264,8 @@
 		FD7AF83A24AC85BA0021B131 /* UIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7AF83924AC85BA0021B131 /* UIHelpers.swift */; };
 		FD7AF84124AC93180021B131 /* HistoryImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7AF84024AC93180021B131 /* HistoryImportCell.swift */; };
 		FD7E17482410DD3600F54748 /* PrinterActivate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7E17472410DD3600F54748 /* PrinterActivate.swift */; };
+		FDA7930524B4347100239685 /* KassaImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDA7930424B4347100239685 /* KassaImport.storyboard */; };
+		FDA7930724B434DB00239685 /* KassaImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7930624B434DB00239685 /* KassaImportVC.swift */; };
 		FDA8BF7423D56ED0006DFF71 /* BoughtItemsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA8BF7323D56ED0006DFF71 /* BoughtItemsHistoryVC.swift */; };
 		FDB6036423E2D1770012D65D /* BuySearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6036323E2D1770012D65D /* BuySearchVC.swift */; };
 		FDB6036623E2E6830012D65D /* SellingBarcodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB6036523E2E6830012D65D /* SellingBarcodeVC.swift */; };
@@ -641,6 +643,8 @@
 		FD7AF83924AC85BA0021B131 /* UIHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelpers.swift; sourceTree = "<group>"; };
 		FD7AF84024AC93180021B131 /* HistoryImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryImportCell.swift; sourceTree = "<group>"; };
 		FD7E17472410DD3600F54748 /* PrinterActivate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterActivate.swift; sourceTree = "<group>"; };
+		FDA7930424B4347100239685 /* KassaImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KassaImport.storyboard; sourceTree = "<group>"; };
+		FDA7930624B434DB00239685 /* KassaImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KassaImportVC.swift; sourceTree = "<group>"; };
 		FDA8BF7323D56ED0006DFF71 /* BoughtItemsHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoughtItemsHistoryVC.swift; sourceTree = "<group>"; };
 		FDB6036323E2D1770012D65D /* BuySearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySearchVC.swift; sourceTree = "<group>"; };
 		FDB6036523E2E6830012D65D /* SellingBarcodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingBarcodeVC.swift; sourceTree = "<group>"; };
@@ -1454,6 +1458,7 @@
 				FD5AB47324ADC2EB002BDB0E /* ProductListImportVC.swift */,
 				FD7AF83324AC74E00021B131 /* HistoryImportVC.swift */,
 				FD117B8D24B358F5008A00E7 /* HistoryItemImportVC.swift */,
+				FDA7930624B434DB00239685 /* KassaImportVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1470,6 +1475,7 @@
 				FD5AB47524ADC2F9002BDB0E /* ProductListImport.storyboard */,
 				FD7AF83124AC74BB0021B131 /* HistoryImport.storyboard */,
 				FD117B8F24B3590C008A00E7 /* HistoryItemImport.storyboard */,
+				FDA7930424B4347100239685 /* KassaImport.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -1625,6 +1631,7 @@
 				61589B162451C8D6008A18A7 /* EmployeeList.storyboard in Resources */,
 				61560A81244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard in Resources */,
 				61A846292453040500DF3371 /* EditStore.storyboard in Resources */,
+				FDA7930524B4347100239685 /* KassaImport.storyboard in Resources */,
 				6159FA95244DF0E700FE1BED /* NewMovement.storyboard in Resources */,
 				61F00E76244F1071001D0EEE /* CurrentBids.storyboard in Resources */,
 				FD7AF83224AC74BB0021B131 /* HistoryImport.storyboard in Resources */,
@@ -1699,6 +1706,7 @@
 			files = (
 				288CC49123A89C38008D5218 /* UIImage+GIF.m in Sources */,
 				2809019D2394C12900CA68BD /* AddProductsInBuyProductsVC.swift in Sources */,
+				FDA7930724B434DB00239685 /* KassaImportVC.swift in Sources */,
 				288CC49B23A89C38008D5218 /* NSBezierPath+RoundedCorners.m in Sources */,
 				61A8463924531A7A00DF3371 /* EmployeeeFuncs.swift in Sources */,
 				FDA8BF7423D56ED0006DFF71 /* BoughtItemsHistoryVC.swift in Sources */,
