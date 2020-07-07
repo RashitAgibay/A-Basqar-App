@@ -74,11 +74,20 @@ class NewImportVC: UIViewController {
     
     @IBAction func tappedBuyButton(_ sender: Any) {
         
-        var contrID = self.getCurrentContrID()
-        self.createNewHistory(contrID: contrID, totalSum: self.totalSum)
-        self.updateUI()
+        if totalSumLabel.text == "0" {
+            
+            ShowErrorsAlertWithOneCancelButton(message: "Корзина пуста")
+        }
         
-        self.navigateFromNewImportToKassa()
+        else {
+            
+            var contrID = self.getCurrentContrID()
+            self.createNewHistory(contrID: contrID, totalSum: self.totalSum)
+            self.updateUI()
+            
+            self.navigateFromNewImportToKassa()
+        }
+        
         
     }
     @IBAction func tappedCancelButton(_ sender: Any) {
@@ -209,7 +218,7 @@ extension NewImportVC {
                         
                         let totalSum = self.calculateTotalSum(array: self.productArray)
                         self.totalSum  = totalSum
-                        self.totalSumLabel.text = "\(totalSum)"
+                        self.totalSumLabel.text = "\(totalSum) тг"
                         
                         
                     
@@ -410,7 +419,7 @@ extension NewImportVC {
                 "sum":totalSum
             ]
             
-            let encodeURL = importHistoryList
+            let encodeURL = importHistoryListURL
             
 //            print(params)
             

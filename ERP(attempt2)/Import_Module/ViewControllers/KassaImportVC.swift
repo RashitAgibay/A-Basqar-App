@@ -22,7 +22,9 @@ class KassaImportVC: UIViewController {
     @IBOutlet weak var cancelButton: UIButton!
     
     var historyID = Int()
+    var factMoney = Int()
     var reachability: Reachability?
+    
 
     
     override func viewDidLoad() {
@@ -74,6 +76,10 @@ class KassaImportVC: UIViewController {
     }
     
     @IBAction func tapAcceptButton(_ sender: Any) {
+        
+        
+        createNewCheck()
+        navigateToMainImport()
     }
     @IBAction func tapCancelButton(_ sender: Any) {
     }
@@ -114,7 +120,7 @@ extension KassaImportVC {
                 "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
             ]
             
-            let encodeURL = importHistoryList
+            let encodeURL = importHistoryListURL
             let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
@@ -159,6 +165,60 @@ extension KassaImportVC {
             self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
     }
+    
+    private func createNewCheck(hitoryID: Int, fact_money: Int, testComments: String) {
+        
+        do {
+            
+            self.reachability = try Reachability.init()
+        }
+        
+        catch {
+            
+            print("unable to start notifier")
+        }
+        
+        if ((reacibility?.connection) != .unavailable) {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
+            
+            let headers: HTTPHeaders = [
+                
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+            let params: Parameters = [
+                
+                "history":historyID,
+                "fac_money":fact_money,
+                "comments":testComments.trimmingCharacters(in: .whitespacesAndNewlines)
+                ]
+            
+            let encodeURL = importCheckURL
+            
+//            print(params)
+            
+            let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                
+                MBProgressHUD.hide(for: self.view, animated: true)
+                
+//                print(response.request!)
+//                print(response.result)
+//                print(response.response)
+            })
+        }
+        
+        else {
+            
+            print("internet is not working")
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
+    }
 }
 
 extension KassaImportVC {
@@ -190,17 +250,50 @@ extension KassaImportVC {
         
         let historyName = dict["history_name"] as! String
         let date = dict["add_time"] as! String
+        let historyID = dict["id"] as! Int
         
         let company = dict["company"] as! NSDictionary
         let contrName = company["company_name"] as! String
         
         let totalSum = dict["sum"] as! Int
         
+        self.historyID = historyID
+        self.factMoney = totalSum
+        
         self.checkNumberLabel.text = historyName
         self.dateLabel.text = date
         self.contrButton.setTitle(contrName, for: .normal)
         self.factsumButton.text = "\(totalSum)"
         self.totalSumLabel.text = "\(totalSum)"
+                
+    }
+    
+    private func createNewCheck() {
         
+        if factsumButton.text == "" {
+            
+            if commentTextField.text == "" {
+                
+                self.createNewCheck(hitoryID: self.historyID, fact_money: self.factMoney, testComments: "*")
+            }
+            
+            else {
+                
+                self.createNewCheck(hitoryID: self.historyID, fact_money: self.factMoney, testComments: commentTextField.text!)
+            }
+        }
+        
+        else {
+            
+            if commentTextField.text == "" {
+                
+                self.createNewCheck(hitoryID: self.historyID, fact_money: self.factMoney, testComments: "*")
+            }
+            
+            else {
+                
+                self.createNewCheck(hitoryID: self.historyID, fact_money: self.factMoney, testComments: commentTextField.text!)
+            }
+        }
     }
 }

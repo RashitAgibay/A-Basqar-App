@@ -96,7 +96,7 @@ extension ContragentListVC {
                 "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
             ]
             
-            let encodeURL = importContragentsList
+            let encodeURL = importContragentsListURL
             let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in

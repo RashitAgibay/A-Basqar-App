@@ -100,7 +100,7 @@ extension AddNewContrImportVC {
                 "mobile":"\(mobileNumber)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
             ]
             
-            let encodeURL = importContragentsList
+            let encodeURL = importContragentsListURL
             
             let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
