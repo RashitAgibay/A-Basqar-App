@@ -68,6 +68,9 @@
                             </barButtonItem>
                             <barButtonItem title="Item" image="search" id="MPR-r9-EVf">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="UAW-U0-FpK" kind="presentation" id="2X4-Im-Pb8"/>
+                                </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
@@ -123,7 +126,15 @@
                 <viewControllerPlaceholder storyboardName="HistoryImport" id="O9H-Cq-uNP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNZ-Gw-rZ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1856" y="2930"/>
+            <point key="canvasLocation" x="1866" y="3042"/>
+        </scene>
+        <!--SearchImport-->
+        <scene sceneID="Vpz-xY-ZNE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchImport" id="UAW-U0-FpK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bdq-in-k5i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1903" y="2842"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sSG-Lg-mWO">
