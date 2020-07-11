@@ -125,7 +125,7 @@ class MenuViewController: UIViewController {
     }
     
     @objc func tapOutcomeKassaCard(){
-        performSegue(withIdentifier: "outcomeKassa", sender: self)
+        performSegue(withIdentifier: "fromMenuToExportKassa", sender: self)
     }
 
     @objc func tapMovementCard(){
@@ -155,7 +155,6 @@ class MenuViewController: UIViewController {
         performSegue(withIdentifier: "AddProductPage", sender: self)
     }
     
-    // MARK: - (2) Рефаторинг для того что бы изменить цвет и огругленность для всех карточек а одном методе, благодаря циклу и set
     func makeCardStandart(someCardViews: Set<UIView>){
         for someCardView in someCardViews {
             someCardView.layer.backgroundColor = UIColor.white.cgColor

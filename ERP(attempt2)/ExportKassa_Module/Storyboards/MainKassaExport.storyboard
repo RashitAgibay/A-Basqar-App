@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WN5-H3-OJK">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main Kassa ExportVC-->
+        <scene sceneID="dwh-hJ-Fg6">
+            <objects>
+                <viewController id="KCC-ld-l7T" customClass="MainKassaExportVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Ue-63-kbs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EYy-s9-1Wh">
+                                <rect key="frame" x="0.0" y="44" width="375" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="SZx-t7-j54"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Новые расходы"/>
+                                    <segment title="История расходов"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchSegment:" destination="KCC-ld-l7T" eventType="valueChanged" id="hwq-fC-LrU"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k3b-6O-qiR">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <connections>
+                                    <segue destination="mVW-Ab-cVr" kind="embed" id="xnv-c1-R3s"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eu6-8X-wLY">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <connections>
+                                    <segue destination="GfY-dh-jy2" kind="embed" id="xC9-ot-uRN"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MMl-1d-z3m" firstAttribute="trailing" secondItem="eu6-8X-wLY" secondAttribute="trailing" id="29S-mK-I5H"/>
+                            <constraint firstItem="MMl-1d-z3m" firstAttribute="bottom" secondItem="eu6-8X-wLY" secondAttribute="bottom" id="7HU-h3-lQG"/>
+                            <constraint firstItem="k3b-6O-qiR" firstAttribute="top" secondItem="EYy-s9-1Wh" secondAttribute="bottom" id="7z5-gX-LPO"/>
+                            <constraint firstItem="EYy-s9-1Wh" firstAttribute="top" secondItem="MMl-1d-z3m" secondAttribute="top" id="CeG-nw-eSZ"/>
+                            <constraint firstItem="MMl-1d-z3m" firstAttribute="trailing" secondItem="k3b-6O-qiR" secondAttribute="trailing" id="E1f-Mq-ueK"/>
+                            <constraint firstItem="eu6-8X-wLY" firstAttribute="top" secondItem="EYy-s9-1Wh" secondAttribute="bottom" id="FNc-i9-Gw4"/>
+                            <constraint firstItem="EYy-s9-1Wh" firstAttribute="leading" secondItem="MMl-1d-z3m" secondAttribute="leading" id="Lfk-f6-cUG"/>
+                            <constraint firstItem="k3b-6O-qiR" firstAttribute="leading" secondItem="MMl-1d-z3m" secondAttribute="leading" id="bI0-6a-NCQ"/>
+                            <constraint firstItem="MMl-1d-z3m" firstAttribute="bottom" secondItem="k3b-6O-qiR" secondAttribute="bottom" id="squ-pZ-mri"/>
+                            <constraint firstItem="MMl-1d-z3m" firstAttribute="trailing" secondItem="EYy-s9-1Wh" secondAttribute="trailing" id="trd-Fe-Old"/>
+                            <constraint firstItem="eu6-8X-wLY" firstAttribute="leading" secondItem="MMl-1d-z3m" secondAttribute="leading" id="wJP-zW-Qo6"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MMl-1d-z3m"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zue-HS-6Sg">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="q43-bn-qYd">
+                            <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="VYQ-Cw-yoa" kind="presentation" modalPresentationStyle="fullScreen" id="eVh-QU-IN6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="printer" id="K1D-nt-RAD">
+                            <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="historyKassaExportView" destination="eu6-8X-wLY" id="uEC-dy-9SH"/>
+                        <outlet property="newKassaExportView" destination="k3b-6O-qiR" id="kQv-yu-kZJ"/>
+                        <outlet property="segmentView" destination="EYy-s9-1Wh" id="Bvv-FP-qE8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9io-kP-G1d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6468.840579710145" y="3710.8258928571427"/>
+        </scene>
+        <!--menuStoryboadrid-->
+        <scene sceneID="s8f-rP-Vqp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="menuStoryboadrid" id="VYQ-Cw-yoa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lq9-ZL-SDW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5719" y="3680"/>
+        </scene>
+        <!--NewKassaExport-->
+        <scene sceneID="yEG-sn-Hho">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewKassaExport" id="mVW-Ab-cVr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MyM-SR-ZsY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5719" y="3735"/>
+        </scene>
+        <!--HistoryKassaExport-->
+        <scene sceneID="sXR-o9-klE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HistoryKassaExport" id="GfY-dh-jy2" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tut-Bq-ERj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5668" y="3802"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qYj-Rd-boz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WN5-H3-OJK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m1m-we-hUd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DOU-Zf-TXq">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="KCC-ld-l7T" kind="relationship" relationship="rootViewController" id="BXZ-Ig-uXc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="43m-Vs-AEU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7378.2608695652179" y="3710.4910714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home" width="30" height="28.5"/>
+        <image name="printer" width="30" height="28"/>
+    </resources>
+</document>

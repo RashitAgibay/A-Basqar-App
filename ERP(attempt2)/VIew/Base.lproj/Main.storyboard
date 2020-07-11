@@ -675,6 +675,14 @@
             </objects>
             <point key="canvasLocation" x="-623" y="769"/>
         </scene>
+        <!--MainKassaExport-->
+        <scene sceneID="dEh-zk-1qY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainKassaExport" id="td3-Re-G2d" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VpS-sr-D1a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-623" y="880"/>
+        </scene>
         <!--Menu View Controller-->
         <scene sceneID="JpZ-9f-khu">
             <objects>
@@ -1027,6 +1035,7 @@
                         <segue destination="f0t-mh-XPk" kind="presentation" identifier="mainToMainBid" modalPresentationStyle="fullScreen" id="6Ve-mI-sMp"/>
                         <segue destination="25i-4O-UWT" kind="presentation" identifier="mainToManage" modalPresentationStyle="fullScreen" id="DkO-5S-I9i"/>
                         <segue destination="TVh-Di-Fri" kind="presentation" identifier="fromMainToImport" modalPresentationStyle="fullScreen" id="N7U-ak-r9v"/>
+                        <segue destination="td3-Re-G2d" kind="presentation" identifier="fromMenuToExportKassa" modalPresentationStyle="fullScreen" id="bUs-pE-FfL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr4-9I-Q6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -6304,7 +6313,7 @@
             <objects>
                 <tableViewController id="NxA-64-dfc" customClass="BluetoothPrinterSelectTableViewController" customModule="Printer" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pmM-a3-JKS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -7408,18 +7417,18 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="8G5-N5-j2I"/>
+        <segue reference="0Nb-3w-rkj"/>
         <segue reference="OFF-qA-Pln"/>
         <segue reference="wj7-S5-WJi"/>
         <segue reference="cV1-SB-D9k"/>
         <segue reference="jdj-3L-A66"/>
-        <segue reference="6VS-bH-r3f"/>
+        <segue reference="O4S-9G-Jzh"/>
         <segue reference="dmo-T6-GN5"/>
         <segue reference="fjk-sw-Ffy"/>
-        <segue reference="RAA-2h-my7"/>
+        <segue reference="JRa-Xv-mkw"/>
         <segue reference="ZJ2-I0-hTz"/>
         <segue reference="GKp-99-c5l"/>
-        <segue reference="H3Y-h8-ahJ"/>
+        <segue reference="zIf-KI-1SE"/>
         <segue reference="4f7-8k-HY9"/>
         <segue reference="9me-9b-5ND"/>
     </inferredMetricsTieBreakers>
