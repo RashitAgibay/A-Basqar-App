@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NewKassaExportVC: UIViewController {
 
@@ -69,22 +70,28 @@ class NewKassaExportVC: UIViewController {
 
 extension NewKassaExportVC {
     
-    private func getCurrentBillInfo() -> Bill? {
+    private func getCurrentBillInfo() -> OutcomeBill? {
         
         
-        let currentBill =  UserDefaults.standard.object(forKey: currentExportBillInfo)
+        var currentBill =  OutcomeBill()
         
-        if currentBill != nil {
+        let realm = try! Realm()
+        var resulsts: Results<OutcomeBill>!
+        resulsts = realm.objects(OutcomeBill.self)
+
+        if resulsts.last != nil {
             
-            let bil = currentBill as! Bill
+            currentBill = resulsts.last!
             
-            return bil
+            return currentBill
+
         }
         
         else {
             
             return nil
         }
+        
                 
     }
     
@@ -98,12 +105,28 @@ extension NewKassaExportVC {
             billNumberLabel.text = currentBill?.billNumber
             dateLabel.text = currentBill?.date
             contragentButton.setTitle(currentBill?.contragent, for: .normal)
-            totalSumLabel.text = "\(currentBill?.totalMoney)"
+            totalSumLabel.text = "\(currentBill?.totalMoney as! Int) тенге"
         }
+        
+        clearCurrentBillnfo()
     }
     
     private func clearCurrentBillnfo() {
         
-        UserDefaults.standard.set(nil, forKey: currentExportBillInfo)
+        let realm = try! Realm()
+        var resulsts: Results<OutcomeBill>!
+        
+        resulsts = realm.objects(OutcomeBill.self)
+                
+        for item in resulsts.enumerated() {
+            
+            let bill = resulsts[0]
+            
+            try! realm.write {
+                
+                realm.delete(bill)
+            }
+        }
+//        UserDefaults.standard.set(nil, forKey: currentExportBillInfo)
     }
 }

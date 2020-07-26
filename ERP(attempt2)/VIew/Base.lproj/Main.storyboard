@@ -6313,7 +6313,7 @@
             <objects>
                 <tableViewController id="NxA-64-dfc" customClass="BluetoothPrinterSelectTableViewController" customModule="Printer" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="pmM-a3-JKS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -7418,8 +7418,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="0Nb-3w-rkj"/>
-        <segue reference="OFF-qA-Pln"/>
-        <segue reference="wj7-S5-WJi"/>
+        <segue reference="6D5-AF-8cA"/>
+        <segue reference="Mlk-h6-hQz"/>
         <segue reference="cV1-SB-D9k"/>
         <segue reference="jdj-3L-A66"/>
         <segue reference="O4S-9G-Jzh"/>
