@@ -25,6 +25,8 @@ class NewKassaExportVC: UIViewController {
     private var factMoneyBaseValue = Int()
     private var currentContrId = Int()
     
+    var reachability: Reachability?
+
     
     override func viewDidLoad() {
         
@@ -67,6 +69,63 @@ class NewKassaExportVC: UIViewController {
     }
 
 
+}
+
+extension NewKassaExportVC {
+    
+    private func createNewCheckToApi(historyID: Int, fact_money: String, comment: String) {
+            
+            do {
+                
+                self.reachability = try Reachability.init()
+            }
+            
+            catch {
+                
+                print("unable to start notifier")
+            }
+            
+            if ((reacibility?.connection) != .unavailable) {
+                MBProgressHUD.showAdded(to: self.view, animated: true)
+                
+                let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
+                
+                let headers: HTTPHeaders = [
+                    
+                    "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                    "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+                ]
+                
+                let params: Parameters = [
+                    
+                    "history":historyID,
+                    "fac_money":fact_money.trimmingCharacters(in: .whitespacesAndNewlines),
+                    "comments":comment.trimmingCharacters(in: .whitespacesAndNewlines)
+                    ]
+                
+                let encodeURL = importCheckURL
+                
+    //            print(params)
+                
+                let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+                
+                requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                    
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    
+    //                print(response.request!)
+    //                print(response.result)
+    //                print(response.response)
+                })
+            }
+            
+            else {
+                
+                print("internet is not working")
+                MBProgressHUD.hide(for: self.view, animated: true)
+                self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+            }
+        }
 }
 
 
@@ -191,5 +250,61 @@ extension NewKassaExportVC {
         }
         
         
+    }
+}
+
+extension NewKassaExportVC {
+    
+    func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: buttomMessage, style: .cancel) { (action) in
+        
+        }
+        alertController.addAction(action)
+        self.present(alertController,animated: true, completion: nil)
+    }
+    
+    func ShowErrorsAlertWithOneCancelButton(message: String) {
+        
+        let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Закрыть", style: .cancel) { (action) in
+        
+        }
+        alertController.addAction(action)
+        self.present(alertController,animated: true, completion: nil)
+    }
+}
+
+extension NewKassaExportVC {
+    
+    
+    private func createNewCheck(historyId: Int, factMoney: Int, comment: String) {
+        
+        if factMoneyTextField.text == "" {
+            
+            if commentLabel.text == "" {
+                
+                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyBaseValue, comment: "*")
+            }
+            
+            else {
+                
+                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyBaseValue, comment: commentLabel.text!)
+            }
+        }
+        
+        else {
+            
+            if commentLabel.text == "" {
+                
+                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyTextField.text, comment: "*")
+            }
+            
+            else {
+                
+                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyTextField.text, comment: commentLabel.text!)
+            }
+        }
     }
 }
