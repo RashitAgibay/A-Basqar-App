@@ -266,6 +266,17 @@
 		FD7AF83A24AC85BA0021B131 /* UIHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7AF83924AC85BA0021B131 /* UIHelpers.swift */; };
 		FD7AF84124AC93180021B131 /* HistoryImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7AF84024AC93180021B131 /* HistoryImportCell.swift */; };
 		FD7E17482410DD3600F54748 /* PrinterActivate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7E17472410DD3600F54748 /* PrinterActivate.swift */; };
+		FD7F096524B9E20300F7709F /* MainKassaExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7F096424B9E20300F7709F /* MainKassaExport.storyboard */; };
+		FD7F096724B9E22100F7709F /* MainKassaExportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F096624B9E22100F7709F /* MainKassaExportVC.swift */; };
+		FD7F096924B9E45C00F7709F /* NewKassaExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7F096824B9E45C00F7709F /* NewKassaExport.storyboard */; };
+		FD7F096B24B9E46B00F7709F /* HistoryKassaExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7F096A24B9E46B00F7709F /* HistoryKassaExport.storyboard */; };
+		FD7F096D24B9E48B00F7709F /* NewKassaExportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F096C24B9E48B00F7709F /* NewKassaExportVC.swift */; };
+		FD7F096F24B9E49B00F7709F /* HistoryKassaExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F096E24B9E49B00F7709F /* HistoryKassaExport.swift */; };
+		FD7F097224B9ECB800F7709F /* HistoryKassaExportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F097124B9ECB800F7709F /* HistoryKassaExportCell.swift */; };
+		FD7F097524B9EE9E00F7709F /* OutcomeBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F097424B9EE9E00F7709F /* OutcomeBill.swift */; };
+		FD7F097724B9F3D000F7709F /* ImportListKassaExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7F097624B9F3D000F7709F /* ImportListKassaExport.storyboard */; };
+		FD7F097924B9F3F700F7709F /* ImportListKassaExportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F097824B9F3F700F7709F /* ImportListKassaExportVC.swift */; };
+		FD7F097B24B9F54000F7709F /* ImportListKassaExportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F097A24B9F54000F7709F /* ImportListKassaExportCell.swift */; };
 		FDA7930524B4347100239685 /* KassaImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDA7930424B4347100239685 /* KassaImport.storyboard */; };
 		FDA7930724B434DB00239685 /* KassaImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7930624B434DB00239685 /* KassaImportVC.swift */; };
 		FDA8BF7423D56ED0006DFF71 /* BoughtItemsHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA8BF7323D56ED0006DFF71 /* BoughtItemsHistoryVC.swift */; };
@@ -279,6 +290,10 @@
 		FDB63FC624AB63A800525388 /* NewImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB63FC524AB63A800525388 /* NewImportCell.swift */; };
 		FDBDD50123D807FE007FE38F /* SellingGoodsBasketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */; };
 		FDC8A5DB23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */; };
+		FDEA7EBB24CF2BB6009D193B /* ContragentListKassaExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDEA7EBA24CF2BB6009D193B /* ContragentListKassaExport.storyboard */; };
+		FDEA7EBD24CF2BDF009D193B /* ContragentListKassaExportListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA7EBC24CF2BDF009D193B /* ContragentListKassaExportListVC.swift */; };
+		FDEA7EBF24CF2C9A009D193B /* ContragentListExportListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA7EBE24CF2C9A009D193B /* ContragentListExportListCell.swift */; };
+		FDEA7EC124CF2E4A009D193B /* ExportKassaContragent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA7EC024CF2E4A009D193B /* ExportKassaContragent.swift */; };
 		FDF3C9B523E1342800D2E08D /* IncomeContagentNamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */; };
 		FDF3C9B723E1449800D2E08D /* OutcomeContragentsNamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9B623E1449800D2E08D /* OutcomeContragentsNamesVC.swift */; };
 		FDF3C9DB23E1625500D2E08D /* BuyProdReadBarCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9DA23E1625500D2E08D /* BuyProdReadBarCodeVC.swift */; };
@@ -647,6 +662,17 @@
 		FD7AF83924AC85BA0021B131 /* UIHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelpers.swift; sourceTree = "<group>"; };
 		FD7AF84024AC93180021B131 /* HistoryImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryImportCell.swift; sourceTree = "<group>"; };
 		FD7E17472410DD3600F54748 /* PrinterActivate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterActivate.swift; sourceTree = "<group>"; };
+		FD7F096424B9E20300F7709F /* MainKassaExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainKassaExport.storyboard; sourceTree = "<group>"; };
+		FD7F096624B9E22100F7709F /* MainKassaExportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainKassaExportVC.swift; sourceTree = "<group>"; };
+		FD7F096824B9E45C00F7709F /* NewKassaExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewKassaExport.storyboard; sourceTree = "<group>"; };
+		FD7F096A24B9E46B00F7709F /* HistoryKassaExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryKassaExport.storyboard; sourceTree = "<group>"; };
+		FD7F096C24B9E48B00F7709F /* NewKassaExportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewKassaExportVC.swift; sourceTree = "<group>"; };
+		FD7F096E24B9E49B00F7709F /* HistoryKassaExport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryKassaExport.swift; sourceTree = "<group>"; };
+		FD7F097124B9ECB800F7709F /* HistoryKassaExportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryKassaExportCell.swift; sourceTree = "<group>"; };
+		FD7F097424B9EE9E00F7709F /* OutcomeBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeBill.swift; sourceTree = "<group>"; };
+		FD7F097624B9F3D000F7709F /* ImportListKassaExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImportListKassaExport.storyboard; sourceTree = "<group>"; };
+		FD7F097824B9F3F700F7709F /* ImportListKassaExportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportListKassaExportVC.swift; sourceTree = "<group>"; };
+		FD7F097A24B9F54000F7709F /* ImportListKassaExportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportListKassaExportCell.swift; sourceTree = "<group>"; };
 		FDA7930424B4347100239685 /* KassaImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KassaImport.storyboard; sourceTree = "<group>"; };
 		FDA7930624B434DB00239685 /* KassaImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KassaImportVC.swift; sourceTree = "<group>"; };
 		FDA8BF7323D56ED0006DFF71 /* BoughtItemsHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoughtItemsHistoryVC.swift; sourceTree = "<group>"; };
@@ -660,6 +686,10 @@
 		FDB63FC524AB63A800525388 /* NewImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImportCell.swift; sourceTree = "<group>"; };
 		FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingGoodsBasketVC.swift; sourceTree = "<group>"; };
 		FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeKassaHistoryListVC.swift; sourceTree = "<group>"; };
+		FDEA7EBA24CF2BB6009D193B /* ContragentListKassaExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContragentListKassaExport.storyboard; sourceTree = "<group>"; };
+		FDEA7EBC24CF2BDF009D193B /* ContragentListKassaExportListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListKassaExportListVC.swift; sourceTree = "<group>"; };
+		FDEA7EBE24CF2C9A009D193B /* ContragentListExportListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListExportListCell.swift; sourceTree = "<group>"; };
+		FDEA7EC024CF2E4A009D193B /* ExportKassaContragent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportKassaContragent.swift; sourceTree = "<group>"; };
 		FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeContagentNamesVC.swift; sourceTree = "<group>"; };
 		FDF3C9B623E1449800D2E08D /* OutcomeContragentsNamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeContragentsNamesVC.swift; sourceTree = "<group>"; };
 		FDF3C9DA23E1625500D2E08D /* BuyProdReadBarCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyProdReadBarCodeVC.swift; sourceTree = "<group>"; };
@@ -755,6 +785,7 @@
 		2812AAF22362B45A001D65C8 /* ERP(attempt2) */ = {
 			isa = PBXGroup;
 			children = (
+				FDECF22724B5CCC500B608E9 /* ExportKassa_Module */,
 				FDB63FB924AB55F000525388 /* Import_Module */,
 				61589B0C2451A507008A18A7 /* Store_Module */,
 				61F00E6C244F0C7C001D0EEE /* Bid_Module */,
@@ -912,6 +943,7 @@
 		288C79A9238652BE003282C3 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				FD7F097024B9EC8000F7709F /* KassaExport */,
 				FDB63FC424AB637D00525388 /* Import */,
 				61A8461D2452DD2C00DF3371 /* Managment */,
 				61F00E7D244F215A001D0EEE /* Bids */,
@@ -1441,6 +1473,25 @@
 			path = PrinterBase;
 			sourceTree = "<group>";
 		};
+		FD7F097024B9EC8000F7709F /* KassaExport */ = {
+			isa = PBXGroup;
+			children = (
+				FD7F097124B9ECB800F7709F /* HistoryKassaExportCell.swift */,
+				FD7F097A24B9F54000F7709F /* ImportListKassaExportCell.swift */,
+				FDEA7EBE24CF2C9A009D193B /* ContragentListExportListCell.swift */,
+			);
+			path = KassaExport;
+			sourceTree = "<group>";
+		};
+		FD7F097324B9EE8A00F7709F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD7F097424B9EE9E00F7709F /* OutcomeBill.swift */,
+				FDEA7EC024CF2E4A009D193B /* ExportKassaContragent.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FDB63FB924AB55F000525388 /* Import_Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -1497,6 +1548,40 @@
 				FD117B9124B35AED008A00E7 /* HistoryItemImportCell.swift */,
 			);
 			path = Import;
+			sourceTree = "<group>";
+		};
+		FDECF22724B5CCC500B608E9 /* ExportKassa_Module */ = {
+			isa = PBXGroup;
+			children = (
+				FD7F097324B9EE8A00F7709F /* Model */,
+				FDECF22924B5CCE400B608E9 /* Storyboards */,
+				FDECF22824B5CCDB00B608E9 /* ViewControllers */,
+			);
+			path = ExportKassa_Module;
+			sourceTree = "<group>";
+		};
+		FDECF22824B5CCDB00B608E9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FD7F096624B9E22100F7709F /* MainKassaExportVC.swift */,
+				FD7F096C24B9E48B00F7709F /* NewKassaExportVC.swift */,
+				FD7F096E24B9E49B00F7709F /* HistoryKassaExport.swift */,
+				FD7F097824B9F3F700F7709F /* ImportListKassaExportVC.swift */,
+				FDEA7EBC24CF2BDF009D193B /* ContragentListKassaExportListVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FDECF22924B5CCE400B608E9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FD7F096424B9E20300F7709F /* MainKassaExport.storyboard */,
+				FD7F096824B9E45C00F7709F /* NewKassaExport.storyboard */,
+				FD7F096A24B9E46B00F7709F /* HistoryKassaExport.storyboard */,
+				FD7F097624B9F3D000F7709F /* ImportListKassaExport.storyboard */,
+				FDEA7EBA24CF2BB6009D193B /* ContragentListKassaExport.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1611,12 +1696,15 @@
 				FD4777C224AFB78400E323D3 /* UpdateContrInfoImport.storyboard in Resources */,
 				6159FA9D244E145B00FE1BED /* PlaceList.storyboard in Resources */,
 				61A8462D245308DA00DF3371 /* StoresEmployees.storyboard in Resources */,
+				FD7F097724B9F3D000F7709F /* ImportListKassaExport.storyboard in Resources */,
+				FD7F096B24B9E46B00F7709F /* HistoryKassaExport.storyboard in Resources */,
 				FD4777B424AFAC6A00E323D3 /* ContragentListImport.storyboard in Resources */,
 				61589B142451C8C3008A18A7 /* Stores.storyboard in Resources */,
 				61F00E78244F1081001D0EEE /* BidsHistory.storyboard in Resources */,
 				FD5AB47624ADC2F9002BDB0E /* ProductListImport.storyboard in Resources */,
 				FDB63FBF24AB5A8500525388 /* MainImport.storyboard in Resources */,
 				61A8463324530F6E00DF3371 /* EditEmployeeData.storyboard in Resources */,
+				FD7F096924B9E45C00F7709F /* NewKassaExport.storyboard in Resources */,
 				61560A8E244E404B00FAAFB0 /* MovementProductList.storyboard in Resources */,
 				6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */,
 				61F00E74244F1060001D0EEE /* NewBid.storyboard in Resources */,
@@ -1640,7 +1728,9 @@
 				FDA7930524B4347100239685 /* KassaImport.storyboard in Resources */,
 				6159FA95244DF0E700FE1BED /* NewMovement.storyboard in Resources */,
 				61F00E76244F1071001D0EEE /* CurrentBids.storyboard in Resources */,
+				FDEA7EBB24CF2BB6009D193B /* ContragentListKassaExport.storyboard in Resources */,
 				FD7AF83224AC74BB0021B131 /* HistoryImport.storyboard in Resources */,
+				FD7F096524B9E20300F7709F /* MainKassaExport.storyboard in Resources */,
 				61F00E72244F0D71001D0EEE /* MainBid.storyboard in Resources */,
 				6159FA8D244DEAFD00FE1BED /* MainMovement.storyboard in Resources */,
 				FD29E75E24B48E6800B5AC2F /* SearchImport.storyboard in Resources */,
@@ -1720,8 +1810,10 @@
 				280901AC2394E62800CA68BD /* BuyingHistoryVC.swift in Sources */,
 				288CC47B23A89C38008D5218 /* SDImageLoadersManager.m in Sources */,
 				FD7AF84124AC93180021B131 /* HistoryImportCell.swift in Sources */,
+				FD7F096D24B9E48B00F7709F /* NewKassaExportVC.swift in Sources */,
 				28B49785239E186C0002C690 /* FinancialReporModel.swift in Sources */,
 				282EBF26236C0104008C3B1F /* ChangePasswordViewController.swift in Sources */,
+				FD7F097224B9ECB800F7709F /* HistoryKassaExportCell.swift in Sources */,
 				FD5AB47C24ADCDDD002BDB0E /* UserConstants.swift in Sources */,
 				61A8462B2453042900DF3371 /* EditStoreVC.swift in Sources */,
 				FD5AB47A24ADC9BF002BDB0E /* NewApiUrls.swift in Sources */,
@@ -1738,6 +1830,7 @@
 				288CC3B423A89BFD008D5218 /* AFError.swift in Sources */,
 				28CAE45D238B924E0015DE56 /* CaterogyCell.swift in Sources */,
 				FDB6036823E2E9720012D65D /* SellingSearchVC.swift in Sources */,
+				FD7F097924B9F3F700F7709F /* ImportListKassaExportVC.swift in Sources */,
 				613D737C244F657900E0E392 /* NewMovementInBidCell.swift in Sources */,
 				61A846232452F6E400DF3371 /* AddStoreVC.swift in Sources */,
 				288CC3C123A89BFD008D5218 /* OperationQueue+Alamofire.swift in Sources */,
@@ -1798,6 +1891,7 @@
 				61A846272453007200DF3371 /* AddEmployeeVC.swift in Sources */,
 				288CC46F23A89C38008D5218 /* SDImageCacheDefine.m in Sources */,
 				288CC47F23A89C38008D5218 /* SDWebImageCacheSerializer.m in Sources */,
+				FDEA7EC124CF2E4A009D193B /* ExportKassaContragent.swift in Sources */,
 				FD085BEF24B584D900B2641D /* SearchImportVC.swift in Sources */,
 				288CC3B723A89BFD008D5218 /* CachedResponseHandler.swift in Sources */,
 				61A8461F2452DD4E00DF3371 /* StoreCell.swift in Sources */,
@@ -1815,6 +1909,7 @@
 				28D76D21239632FC00D5B055 /* KassaDocVC.swift in Sources */,
 				613D7380244F6CBB00E0E392 /* BidHistoryDetailVC.swift in Sources */,
 				288CC46723A89C38008D5218 /* SDAnimatedImagePlayer.m in Sources */,
+				FDEA7EBF24CF2C9A009D193B /* ContragentListExportListCell.swift in Sources */,
 				28051B9D2398B69700A66ADA /* SellingProdVC.swift in Sources */,
 				280901A12394CDC200CA68BD /* BuyerCompanyCell.swift in Sources */,
 				288CC4A223A89C38008D5218 /* SDImageCachesManagerOperation.m in Sources */,
@@ -1850,6 +1945,7 @@
 				288CC46423A89C38008D5218 /* NSData+ImageContentType.m in Sources */,
 				2819E9A52367FC38001D5E06 /* 4DigitsCodePagesViewController.swift in Sources */,
 				FDB63FC624AB63A800525388 /* NewImportCell.swift in Sources */,
+				FD7F096724B9E22100F7709F /* MainKassaExportVC.swift in Sources */,
 				28B49787239E18830002C690 /* GoodsReportModel.swift in Sources */,
 				289087E0239A0D2E001C53C6 /* IncomeKassaVC.swift in Sources */,
 				288CC3CC23A89BFD008D5218 /* RetryPolicy.swift in Sources */,
@@ -1866,6 +1962,7 @@
 				61560A8A244E33A300FAAFB0 /* MovementFirstCategoryVC.swift in Sources */,
 				288CC3B823A89BFD008D5218 /* DispatchQueue+Alamofire.swift in Sources */,
 				288CC47823A89C38008D5218 /* SDImageIOAnimatedCoder.m in Sources */,
+				FD7F097524B9EE9E00F7709F /* OutcomeBill.swift in Sources */,
 				FD4777C424AFB79A00E323D3 /* UpdateContrInfoImportVC.swift in Sources */,
 				288CC4A323A89C38008D5218 /* SDInternalMacros.m in Sources */,
 				61F00E7A244F13BA001D0EEE /* NewBidVC.swift in Sources */,
@@ -1881,6 +1978,7 @@
 				288CC3BA23A89BFD008D5218 /* HTTPHeaders.swift in Sources */,
 				286CE102239E104F00E71557 /* OutcomeKassaHistoryItem.swift in Sources */,
 				288CC47123A89C38008D5218 /* SDImageCoder.m in Sources */,
+				FDEA7EBD24CF2BDF009D193B /* ContragentListKassaExportListVC.swift in Sources */,
 				FD7AF83424AC74E00021B131 /* HistoryImportVC.swift in Sources */,
 				288CC49223A89C38008D5218 /* UIImage+MemoryCacheCost.m in Sources */,
 				6159FA8F244DEB0F00FE1BED /* MainMovementVC.swift in Sources */,
@@ -1906,6 +2004,7 @@
 				288CC48023A89C38008D5218 /* SDWebImageCompat.m in Sources */,
 				288CC46B23A89C38008D5218 /* SDDiskCache.m in Sources */,
 				61A84631245309E500DF3371 /* StoreEmployeesCell.swift in Sources */,
+				FD7F096F24B9E49B00F7709F /* HistoryKassaExport.swift in Sources */,
 				288CC47323A89C38008D5218 /* SDImageCodersManager.m in Sources */,
 				288CC46E23A89C38008D5218 /* SDImageCacheConfig.m in Sources */,
 				28CD613F239F4D0300079105 /* GoodReportVC.swift in Sources */,
@@ -1941,6 +2040,7 @@
 				288CC47723A89C38008D5218 /* SDImageHEICCoder.m in Sources */,
 				288CC49323A89C38008D5218 /* UIImage+Metadata.m in Sources */,
 				2838ED6C239E0B6000C8FE80 /* OutcomeKassaSecondPageVC.swift in Sources */,
+				FD7F097B24B9F54000F7709F /* ImportListKassaExportCell.swift in Sources */,
 				288CC48B23A89C38008D5218 /* SDWebImageOptionsProcessor.m in Sources */,
 				FDFCE7A523D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift in Sources */,
 				28D46D59236A8BFA000DA471 /* MenuViewController.swift in Sources */,

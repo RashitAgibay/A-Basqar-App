@@ -82,6 +82,8 @@ class KassaImportVC: UIViewController {
         navigateToMainImport()
     }
     @IBAction func tapCancelButton(_ sender: Any) {
+        
+        self.navigateToMainImport()
     }
     
 }

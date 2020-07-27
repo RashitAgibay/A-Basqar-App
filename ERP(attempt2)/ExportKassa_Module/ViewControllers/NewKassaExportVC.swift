@@ -1,0 +1,310 @@
+//
+//  NewKassaExportVC.swift
+//  A-Basqar
+//
+//  Created by Ilyas Shomat on 7/11/20.
+//  Copyright © 2020 Ilyas Shomat. All rights reserved.
+//
+
+import UIKit
+import RealmSwift
+
+class NewKassaExportVC: UIViewController {
+
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var importNameButton: UIButton!
+    @IBOutlet weak var billNumberLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var contragentButton: UIButton!
+    @IBOutlet weak var factMoneyTextField: UITextField!
+    @IBOutlet weak var totalSumLabel: UILabel!
+    @IBOutlet weak var commentLabel: UITextField!
+    @IBOutlet weak var acceptButton: UIButton!
+    @IBOutlet weak var declineButton: UIButton!
+    
+    private var factMoneyBaseValue = Int()
+    private var currentContrId = Int()
+    
+    var reachability: Reachability?
+
+    
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        setupView()
+        setupBillValues()
+        setupZeroBillValues()
+
+    }
+    
+
+    private func setupView() {
+        
+        acceptButton.layer.cornerRadius = 20
+        acceptButton.dropShadowforButton()
+        
+        declineButton.layer.backgroundColor = UIColor.white.cgColor
+        declineButton.layer.borderWidth = 1
+        declineButton.layer.borderColor = hexStringToUIColor(hex: "#3F639D").cgColor
+        declineButton.layer.cornerRadius = 20
+        declineButton.dropShadowforButton()
+        
+        cardView.layer.cornerRadius = 10
+        cardView.layer.backgroundColor = UIColor.white.cgColor
+        cardView.dropShadow()
+        
+        importNameButton.layer.cornerRadius = 10
+  
+        
+        contragentButton.layer.cornerRadius = 10
+        contragentButton.layer.backgroundColor = UIColor.white.cgColor
+        contragentButton.layer.borderWidth = 1
+        contragentButton.layer.borderColor = hexStringToUIColor(hex: "#3F639D").cgColor
+        
+        factMoneyTextField.layer.cornerRadius = 10
+        factMoneyTextField.layer.borderWidth = 1
+        factMoneyTextField.layer.backgroundColor = UIColor.white.cgColor
+        factMoneyTextField.layer.borderColor = hexStringToUIColor(hex: "#3F639D").cgColor
+    }
+
+
+}
+
+extension NewKassaExportVC {
+    
+    private func createNewCheckToApi(historyID: Int, fact_money: String, comment: String) {
+            
+            do {
+                
+                self.reachability = try Reachability.init()
+            }
+            
+            catch {
+                
+                print("unable to start notifier")
+            }
+            
+            if ((reacibility?.connection) != .unavailable) {
+                MBProgressHUD.showAdded(to: self.view, animated: true)
+                
+                let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
+                
+                let headers: HTTPHeaders = [
+                    
+                    "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                    "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+                ]
+                
+                let params: Parameters = [
+                    
+                    "history":historyID,
+                    "fac_money":fact_money.trimmingCharacters(in: .whitespacesAndNewlines),
+                    "comments":comment.trimmingCharacters(in: .whitespacesAndNewlines)
+                    ]
+                
+                let encodeURL = importCheckURL
+                
+    //            print(params)
+                
+                let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+                
+                requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                    
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    
+    //                print(response.request!)
+    //                print(response.result)
+    //                print(response.response)
+                })
+            }
+            
+            else {
+                
+                print("internet is not working")
+                MBProgressHUD.hide(for: self.view, animated: true)
+                self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+            }
+        }
+}
+
+
+extension NewKassaExportVC {
+    
+    private func getCurrentBillInfo() -> OutcomeBill? {
+        
+        
+        var currentBill =  OutcomeBill()
+        
+        let realm = try! Realm()
+        var resulsts: Results<OutcomeBill>!
+        resulsts = realm.objects(OutcomeBill.self)
+
+        if resulsts.last != nil {
+            
+            currentBill = resulsts.last!
+            
+            return currentBill
+
+        }
+        
+        else {
+            
+            return nil
+        }
+        
+                
+    }
+    
+    private func getCurrentContrInfo() -> ExportKassaContragent? {
+        
+        var currentContr = ExportKassaContragent()
+        
+        let realm = try! Realm()
+        var resulsts: Results<ExportKassaContragent>!
+        resulsts = realm.objects(ExportKassaContragent.self)
+    
+        if resulsts.last != nil {
+            
+            currentContr = resulsts.last!
+            
+            return currentContr
+        }
+        
+        else {
+            
+            return nil
+        }
+        
+    }
+    
+    private func setupBillValues() {
+        
+        let currentBill = getCurrentBillInfo()
+        
+        if currentBill != nil {
+            
+            importNameButton.setTitle(currentBill?.importNubmer, for: .normal)
+            billNumberLabel.text = currentBill?.billNumber
+            dateLabel.text = currentBill?.date
+            contragentButton.setTitle(currentBill?.contragent, for: .normal)
+            factMoneyTextField.placeholder = "\(currentBill?.totalMoney as! Int) тенге"
+            factMoneyBaseValue = currentBill?.totalMoney as! Int
+            totalSumLabel.text = "\(currentBill?.totalMoney as! Int) тенге"
+        
+        }
+        
+        clearCurrentBillnfo()
+    }
+    
+    private func clearCurrentBillnfo() {
+        
+        let realm = try! Realm()
+        var resulsts: Results<OutcomeBill>!
+        
+        resulsts = realm.objects(OutcomeBill.self)
+                
+        for item in resulsts.enumerated() {
+            
+            let bill = resulsts[0]
+            
+            try! realm.write {
+                
+                realm.delete(bill)
+            }
+        }
+//        UserDefaults.standard.set(nil, forKey: currentExportBillInfo)
+    }
+    
+    private func setupZeroBillValues() {
+        
+        let currentContr = getCurrentContrInfo()
+        
+        if currentContr != nil {
+            
+            contragentButton.setTitle(currentContr?.contragnetName, for: .normal)
+            
+            currentContrId = currentContr?.contragentId as! Int
+
+        }
+        
+        clearCurrentContrInfo()
+        
+    }
+    
+    private func clearCurrentContrInfo() {
+        
+        let realm = try! Realm()
+        var resulsts: Results<ExportKassaContragent>!
+        
+        resulsts = realm.objects(ExportKassaContragent.self)
+                
+        for item in resulsts.enumerated() {
+            
+            let bill = resulsts[0]
+            
+            try! realm.write {
+                
+                realm.delete(bill)
+            }
+        }
+        
+        
+    }
+}
+
+extension NewKassaExportVC {
+    
+    func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: buttomMessage, style: .cancel) { (action) in
+        
+        }
+        alertController.addAction(action)
+        self.present(alertController,animated: true, completion: nil)
+    }
+    
+    func ShowErrorsAlertWithOneCancelButton(message: String) {
+        
+        let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Закрыть", style: .cancel) { (action) in
+        
+        }
+        alertController.addAction(action)
+        self.present(alertController,animated: true, completion: nil)
+    }
+}
+
+extension NewKassaExportVC {
+    
+    
+    private func createNewCheck(historyId: Int, factMoney: Int, comment: String) {
+        
+        if factMoneyTextField.text == "" {
+            
+            if commentLabel.text == "" {
+                
+                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyBaseValue, comment: "*")
+            }
+            
+            else {
+                
+                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyBaseValue, comment: commentLabel.text!)
+            }
+        }
+        
+        else {
+            
+            if commentLabel.text == "" {
+                
+                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyTextField.text, comment: "*")
+            }
+            
+            else {
+                
+                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyTextField.text, comment: commentLabel.text!)
+            }
+        }
+    }
+}
