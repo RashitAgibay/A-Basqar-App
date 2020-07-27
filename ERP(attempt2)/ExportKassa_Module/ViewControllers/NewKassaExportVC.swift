@@ -22,7 +22,8 @@ class NewKassaExportVC: UIViewController {
     @IBOutlet weak var acceptButton: UIButton!
     @IBOutlet weak var declineButton: UIButton!
     
-    
+    private var factMoneyBaseValue = Int()
+    private var currentContrId = Int()
     
     
     override func viewDidLoad() {
@@ -31,6 +32,7 @@ class NewKassaExportVC: UIViewController {
         
         setupView()
         setupBillValues()
+        setupZeroBillValues()
 
     }
     
@@ -95,6 +97,28 @@ extension NewKassaExportVC {
                 
     }
     
+    private func getCurrentContrInfo() -> ExportKassaContragent? {
+        
+        var currentContr = ExportKassaContragent()
+        
+        let realm = try! Realm()
+        var resulsts: Results<ExportKassaContragent>!
+        resulsts = realm.objects(ExportKassaContragent.self)
+    
+        if resulsts.last != nil {
+            
+            currentContr = resulsts.last!
+            
+            return currentContr
+        }
+        
+        else {
+            
+            return nil
+        }
+        
+    }
+    
     private func setupBillValues() {
         
         let currentBill = getCurrentBillInfo()
@@ -105,7 +129,10 @@ extension NewKassaExportVC {
             billNumberLabel.text = currentBill?.billNumber
             dateLabel.text = currentBill?.date
             contragentButton.setTitle(currentBill?.contragent, for: .normal)
+            factMoneyTextField.placeholder = "\(currentBill?.totalMoney as! Int) тенге"
+            factMoneyBaseValue = currentBill?.totalMoney as! Int
             totalSumLabel.text = "\(currentBill?.totalMoney as! Int) тенге"
+        
         }
         
         clearCurrentBillnfo()
@@ -128,5 +155,41 @@ extension NewKassaExportVC {
             }
         }
 //        UserDefaults.standard.set(nil, forKey: currentExportBillInfo)
+    }
+    
+    private func setupZeroBillValues() {
+        
+        let currentContr = getCurrentContrInfo()
+        
+        if currentContr != nil {
+            
+            contragentButton.setTitle(currentContr?.contragnetName, for: .normal)
+            
+            currentContrId = currentContr?.contragentId as! Int
+
+        }
+        
+        clearCurrentContrInfo()
+        
+    }
+    
+    private func clearCurrentContrInfo() {
+        
+        let realm = try! Realm()
+        var resulsts: Results<ExportKassaContragent>!
+        
+        resulsts = realm.objects(ExportKassaContragent.self)
+                
+        for item in resulsts.enumerated() {
+            
+            let bill = resulsts[0]
+            
+            try! realm.write {
+                
+                realm.delete(bill)
+            }
+        }
+        
+        
     }
 }
