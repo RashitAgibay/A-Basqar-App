@@ -68,10 +68,10 @@ extension ImportListKassaExportVC: UICollectionViewDelegate, UICollectionViewDat
         let contragentName = companyName["company_name"] as! String
         let date = singleHistory["add_time"] as! String
         let totalPrice  = singleHistory["sum"] as! Int
-        
+        let historyId = singleHistory["id"] as! Int
 //        print("---", historyName, code)
         
-        self.saveCurrentBillInSystem(importName: historyName, billNumber: code, date: date, contragent: contragentName, totalMoney: totalPrice)
+        self.saveCurrentBillInSystem(importName: historyName, billNumber: code, date: date, contragent: contragentName, totalMoney: totalPrice, historyID: historyId)
         
     }
     
@@ -182,7 +182,7 @@ extension ImportListKassaExportVC {
 
 extension ImportListKassaExportVC {
     
-    private func saveCurrentBillInSystem(importName: String, billNumber: String, date: String, contragent: String, totalMoney: Int) {
+    private func saveCurrentBillInSystem(importName: String, billNumber: String, date: String, contragent: String, totalMoney: Int, historyID: Int) {
         
         var bill = OutcomeBill()
         bill.importNubmer = importName
@@ -190,7 +190,7 @@ extension ImportListKassaExportVC {
         bill.date = date
         bill.contragent = contragent
         bill.totalMoney = totalMoney
-        
+        bill.historyID = historyID
 //        print("bill info: \(bill.billNumber)")
         
         let realm = try! Realm()

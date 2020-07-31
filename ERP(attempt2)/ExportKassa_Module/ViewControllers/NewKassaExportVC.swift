@@ -24,6 +24,7 @@ class NewKassaExportVC: UIViewController {
     
     private var factMoneyBaseValue = Int()
     private var currentContrId = Int()
+    private var currentHistoryID = Int()
     
     var reachability: Reachability?
 
@@ -36,6 +37,22 @@ class NewKassaExportVC: UIViewController {
         setupBillValues()
         setupZeroBillValues()
 
+    }
+    
+    
+    @IBAction func tapAcceptButton(_ sender: Any) {
+        
+        if currentHistoryID != 0 {
+            
+            createNewCheck()
+        }
+        
+    }
+    
+    
+    @IBAction func tapCancelButton(_ sender: Any) {
+        
+        cleanAllInfo()
     }
     
 
@@ -88,7 +105,7 @@ extension NewKassaExportVC {
             if ((reacibility?.connection) != .unavailable) {
                 MBProgressHUD.showAdded(to: self.view, animated: true)
                 
-                let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
+                let token = UserDefaults.standard.string(forKey: userTokenKey) ?? ""
                 
                 let headers: HTTPHeaders = [
                     
@@ -113,9 +130,9 @@ extension NewKassaExportVC {
                     
                     MBProgressHUD.hide(for: self.view, animated: true)
                     
-    //                print(response.request!)
-    //                print(response.result)
-    //                print(response.response)
+                    print(response.request!)
+                    print(response.result)
+                    print(response.response!)
                 })
             }
             
@@ -185,12 +202,16 @@ extension NewKassaExportVC {
         if currentBill != nil {
             
             importNameButton.setTitle(currentBill?.importNubmer, for: .normal)
+            contragentButton.setTitle(currentBill?.contragent, for: .normal)
+
             billNumberLabel.text = currentBill?.billNumber
             dateLabel.text = currentBill?.date
-            contragentButton.setTitle(currentBill?.contragent, for: .normal)
-            factMoneyTextField.placeholder = "\(currentBill?.totalMoney as! Int) тенге"
-            factMoneyBaseValue = currentBill?.totalMoney as! Int
-            totalSumLabel.text = "\(currentBill?.totalMoney as! Int) тенге"
+            
+            factMoneyTextField.placeholder = "\(currentBill?.totalMoney ?? 0) тенге"
+            totalSumLabel.text = "\(currentBill?.totalMoney ?? 0) тенге"
+            
+            factMoneyBaseValue = currentBill?.totalMoney ?? 0
+            currentHistoryID = currentBill?.historyID ?? 0
         
         }
         
@@ -204,7 +225,7 @@ extension NewKassaExportVC {
         
         resulsts = realm.objects(OutcomeBill.self)
                 
-        for item in resulsts.enumerated() {
+        for _ in resulsts.enumerated() {
             
             let bill = resulsts[0]
             
@@ -224,7 +245,7 @@ extension NewKassaExportVC {
             
             contragentButton.setTitle(currentContr?.contragnetName, for: .normal)
             
-            currentContrId = currentContr?.contragentId as! Int
+            currentContrId = currentContr?.contragentId ?? 0
 
         }
         
@@ -239,7 +260,7 @@ extension NewKassaExportVC {
         
         resulsts = realm.objects(ExportKassaContragent.self)
                 
-        for item in resulsts.enumerated() {
+        for _ in resulsts.enumerated() {
             
             let bill = resulsts[0]
             
@@ -279,18 +300,18 @@ extension NewKassaExportVC {
 extension NewKassaExportVC {
     
     
-    private func createNewCheck(historyId: Int, factMoney: Int, comment: String) {
+    private func createNewCheck() {
         
         if factMoneyTextField.text == "" {
             
             if commentLabel.text == "" {
                 
-                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyBaseValue, comment: "*")
+                self.createNewCheckToApi(historyID: currentHistoryID, fact_money: "\(factMoneyBaseValue)", comment: "*")
             }
             
             else {
                 
-                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyBaseValue, comment: commentLabel.text!)
+                self.createNewCheckToApi(historyID: currentHistoryID, fact_money: "\(factMoneyBaseValue)", comment: commentLabel.text!)
             }
         }
         
@@ -298,13 +319,26 @@ extension NewKassaExportVC {
             
             if commentLabel.text == "" {
                 
-                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyTextField.text, comment: "*")
+                self.createNewCheckToApi(historyID: currentHistoryID, fact_money: factMoneyTextField.text ?? "", comment: "*")
             }
             
             else {
                 
-                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyTextField.text, comment: commentLabel.text!)
+                self.createNewCheckToApi(historyID: currentHistoryID, fact_money: factMoneyTextField.text ?? "", comment: commentLabel.text!)
             }
         }
+    }
+    
+    private func cleanAllInfo() {
+        
+        importNameButton.setTitle("Выбрать", for: .normal)
+        billNumberLabel.text = "..."
+        dateLabel.text = "..."
+        contragentButton.setTitle("Выбрать", for: .normal)
+        factMoneyTextField.placeholder = "..."
+        factMoneyBaseValue = 0
+        totalSumLabel.text = "..."
+        commentLabel.text = ""
+        
     }
 }
