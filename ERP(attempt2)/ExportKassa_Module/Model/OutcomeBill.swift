@@ -16,6 +16,7 @@ class OutcomeBill: Object  {
     @objc dynamic var date = String()
     @objc dynamic var contragent = String()
     @objc dynamic var totalMoney = Int()
+    @objc dynamic var historyID = Int()
     
     
 //    func encode(with coder: NSCoder) {

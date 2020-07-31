@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class NewKassaExportVC: UIViewController {
+class NewKassaExportVC: DefaultVC {
 
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var importNameButton: UIButton!
@@ -24,9 +24,7 @@ class NewKassaExportVC: UIViewController {
     
     private var factMoneyBaseValue = Int()
     private var currentContrId = Int()
-    
-    var reachability: Reachability?
-
+    private var currentHistoryID = Int()
     
     override func viewDidLoad() {
         
@@ -36,6 +34,28 @@ class NewKassaExportVC: UIViewController {
         setupBillValues()
         setupZeroBillValues()
 
+    }
+    
+    
+    @IBAction func tapAcceptButton(_ sender: Any) {
+        
+        if currentHistoryID != 0 {
+            
+            createNewCheck()
+            
+        }
+        
+        if currentContrId != 0 {
+            
+            createNullCheck()
+        }
+        
+    }
+    
+    
+    @IBAction func tapCancelButton(_ sender: Any) {
+        
+        cleanAllInfo()
     }
     
 
@@ -88,7 +108,7 @@ extension NewKassaExportVC {
             if ((reacibility?.connection) != .unavailable) {
                 MBProgressHUD.showAdded(to: self.view, animated: true)
                 
-                let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
+                let token = UserDefaults.standard.string(forKey: userTokenKey) ?? ""
                 
                 let headers: HTTPHeaders = [
                     
@@ -113,9 +133,10 @@ extension NewKassaExportVC {
                     
                     MBProgressHUD.hide(for: self.view, animated: true)
                     
-    //                print(response.request!)
-    //                print(response.result)
-    //                print(response.response)
+//                    print(response.request!)
+//                    print(response.result)
+//                    print(response.response!)
+                    self.cleanAllInfo()
                 })
             }
             
@@ -126,6 +147,61 @@ extension NewKassaExportVC {
                 self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
             }
         }
+    
+    private func createNullChechToApi(contrID: Int, fact_money: String, comment: String) {
+                
+                do {
+                    
+                    self.reachability = try Reachability.init()
+                }
+                
+                catch {
+                    
+                    print("unable to start notifier")
+                }
+                
+                if ((reacibility?.connection) != .unavailable) {
+                    MBProgressHUD.showAdded(to: self.view, animated: true)
+                    
+                    let token = UserDefaults.standard.string(forKey: userTokenKey) ?? ""
+                    
+                    let headers: HTTPHeaders = [
+                        
+                        "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                        "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+                    ]
+                    
+                    let params: Parameters = [
+                        
+                        "company":contrID,
+                        "fac_money":fact_money.trimmingCharacters(in: .whitespacesAndNewlines),
+                        "comments":comment.trimmingCharacters(in: .whitespacesAndNewlines)
+                        ]
+                    
+                    let encodeURL = importNullCheckURL
+                                        
+                    let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+                    
+                    requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                        
+                        MBProgressHUD.hide(for: self.view, animated: true)
+                        
+    //                    print(response.request!)
+    //                    print(response.result)
+    //                    print(response.response!)
+                        self.cleanAllInfo()
+                    })
+                }
+                
+                else {
+                    
+                    print("internet is not working")
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+                }
+            }
+    
+    
 }
 
 
@@ -185,12 +261,16 @@ extension NewKassaExportVC {
         if currentBill != nil {
             
             importNameButton.setTitle(currentBill?.importNubmer, for: .normal)
+            contragentButton.setTitle(currentBill?.contragent, for: .normal)
+
             billNumberLabel.text = currentBill?.billNumber
             dateLabel.text = currentBill?.date
-            contragentButton.setTitle(currentBill?.contragent, for: .normal)
-            factMoneyTextField.placeholder = "\(currentBill?.totalMoney as! Int) тенге"
-            factMoneyBaseValue = currentBill?.totalMoney as! Int
-            totalSumLabel.text = "\(currentBill?.totalMoney as! Int) тенге"
+            
+            factMoneyTextField.placeholder = "\(currentBill?.totalMoney ?? 0) тенге"
+            totalSumLabel.text = "\(currentBill?.totalMoney ?? 0) тенге"
+            
+            factMoneyBaseValue = currentBill?.totalMoney ?? 0
+            currentHistoryID = currentBill?.historyID ?? 0
         
         }
         
@@ -204,7 +284,7 @@ extension NewKassaExportVC {
         
         resulsts = realm.objects(OutcomeBill.self)
                 
-        for item in resulsts.enumerated() {
+        for _ in resulsts.enumerated() {
             
             let bill = resulsts[0]
             
@@ -224,7 +304,7 @@ extension NewKassaExportVC {
             
             contragentButton.setTitle(currentContr?.contragnetName, for: .normal)
             
-            currentContrId = currentContr?.contragentId as! Int
+            currentContrId = currentContr?.contragentId ?? 0
 
         }
         
@@ -239,7 +319,7 @@ extension NewKassaExportVC {
         
         resulsts = realm.objects(ExportKassaContragent.self)
                 
-        for item in resulsts.enumerated() {
+        for _ in resulsts.enumerated() {
             
             let bill = resulsts[0]
             
@@ -253,44 +333,22 @@ extension NewKassaExportVC {
     }
 }
 
-extension NewKassaExportVC {
-    
-    func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
-        
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: buttomMessage, style: .cancel) { (action) in
-        
-        }
-        alertController.addAction(action)
-        self.present(alertController,animated: true, completion: nil)
-    }
-    
-    func ShowErrorsAlertWithOneCancelButton(message: String) {
-        
-        let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Закрыть", style: .cancel) { (action) in
-        
-        }
-        alertController.addAction(action)
-        self.present(alertController,animated: true, completion: nil)
-    }
-}
 
 extension NewKassaExportVC {
     
     
-    private func createNewCheck(historyId: Int, factMoney: Int, comment: String) {
+    private func createNewCheck() {
         
         if factMoneyTextField.text == "" {
             
             if commentLabel.text == "" {
                 
-                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyBaseValue, comment: "*")
+                self.createNewCheckToApi(historyID: currentHistoryID, fact_money: "\(factMoneyBaseValue)", comment: "*")
             }
             
             else {
                 
-                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyBaseValue, comment: commentLabel.text!)
+                self.createNewCheckToApi(historyID: currentHistoryID, fact_money: "\(factMoneyBaseValue)", comment: commentLabel.text!)
             }
         }
         
@@ -298,13 +356,50 @@ extension NewKassaExportVC {
             
             if commentLabel.text == "" {
                 
-                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyTextField.text, comment: "*")
+                self.createNewCheckToApi(historyID: currentHistoryID, fact_money: factMoneyTextField.text ?? "", comment: "*")
             }
             
             else {
                 
-                self.createNewCheckToApi(historyID: historyId, fact_money: factMoneyTextField.text, comment: commentLabel.text!)
+                self.createNewCheckToApi(historyID: currentHistoryID, fact_money: factMoneyTextField.text ?? "", comment: commentLabel.text!)
             }
         }
+    }
+    
+    private func createNullCheck() {
+        
+        if factMoneyTextField.text == "" {
+            
+            ShowErrorsAlertWithOneCancelButton(message: "Заполните фактическую сумму")
+        }
+        
+        else {
+            
+            if commentLabel.text == "" {
+                
+                createNullChechToApi(contrID: currentContrId, fact_money: factMoneyTextField.text ?? "", comment: "*")
+            }
+            
+            else {
+                
+                createNullChechToApi(contrID: currentContrId, fact_money: factMoneyTextField.text ?? "", comment: commentLabel.text ?? "")
+
+            }
+        }
+        
+    }
+    
+    private func cleanAllInfo() {
+        
+        importNameButton.setTitle("Выбрать", for: .normal)
+        billNumberLabel.text = "..."
+        dateLabel.text = "..."
+        contragentButton.setTitle("Выбрать", for: .normal)
+        factMoneyTextField.placeholder = "..."
+        factMoneyTextField.text = ""
+        factMoneyBaseValue = 0
+        totalSumLabel.text = "..."
+        commentLabel.text = ""
+        
     }
 }

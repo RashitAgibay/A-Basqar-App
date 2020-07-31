@@ -9,12 +9,11 @@
 import UIKit
 import RealmSwift
 
-class ContragentListKassaExportListVC: UIViewController {
+class ContragentListKassaExportListVC: DefaultVC {
 
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var reachability: Reachability?
     var contragentsArray = NSArray()
     
     override func viewDidLoad() {
@@ -153,29 +152,7 @@ extension ContragentListKassaExportListVC {
     }
 }
 
-extension ContragentListKassaExportListVC {
-    
-    
-    func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
-        
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: buttomMessage, style: .cancel) { (action) in
-        
-        }
-        alertController.addAction(action)
-        self.present(alertController,animated: true, completion: nil)
-    }
-    
-    func ShowErrorsAlertWithOneCancelButton(message: String) {
-        
-        let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Закрыть", style: .cancel) { (action) in
-        
-        }
-        alertController.addAction(action)
-        self.present(alertController,animated: true, completion: nil)
-    }
-}
+
 
 extension ContragentListKassaExportListVC {
     

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2J-GD-DhE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2J-GD-DhE">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -108,10 +108,22 @@
                         <viewLayoutGuide key="safeArea" id="ZBD-86-MdT"/>
                     </view>
                     <size key="freeformSize" width="375" height="583"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Znw-wE-dtH" id="STi-yj-jqC"/>
+                        <segue destination="Y32-cp-atM" kind="presentation" identifier="fromHKEtoHKEI" modalPresentationStyle="fullScreen" id="n3A-Qa-9NA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VT1-eM-Air" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2148" y="4624"/>
+        </scene>
+        <!--HistoryKassaExportItem-->
+        <scene sceneID="3dO-xt-m1I">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HistoryKassaExportItem" id="Y32-cp-atM" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oXr-Ak-Uac" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1555" y="4621"/>
         </scene>
     </scenes>
 </document>
