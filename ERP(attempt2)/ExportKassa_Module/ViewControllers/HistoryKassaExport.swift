@@ -53,13 +53,13 @@ extension HistoryKassaExport: UICollectionViewDelegate, UICollectionViewDataSour
         
         let singleBill = historyKassaExportList[indexPath.row] as! NSDictionary
         let billId = singleBill["id"] as! Int
-        let history = singleBill["history"] as! NSDictionary
+        let billName = singleBill["code"] as! String
+        let date = singleBill["data"] as! String
+
         let company = singleBill["company"] as! NSDictionary
         let price = singleBill["fac_money"] as! Int
         
-        let billName = history["code"] as! String
         let contragent = company["company_name"] as! String
-        let date = history["add_time"] as! String
         
         cell.billLabel.text = billName
         cell.contragentNameLabel.text = contragent

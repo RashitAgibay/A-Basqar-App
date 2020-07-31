@@ -48,6 +48,11 @@ class NewKassaExportVC: UIViewController {
             
         }
         
+        if currentContrId != 0 {
+            
+            createNullCheck()
+        }
+        
     }
     
     
@@ -145,6 +150,61 @@ extension NewKassaExportVC {
                 self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
             }
         }
+    
+    private func createNullChechToApi(contrID: Int, fact_money: String, comment: String) {
+                
+                do {
+                    
+                    self.reachability = try Reachability.init()
+                }
+                
+                catch {
+                    
+                    print("unable to start notifier")
+                }
+                
+                if ((reacibility?.connection) != .unavailable) {
+                    MBProgressHUD.showAdded(to: self.view, animated: true)
+                    
+                    let token = UserDefaults.standard.string(forKey: userTokenKey) ?? ""
+                    
+                    let headers: HTTPHeaders = [
+                        
+                        "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                        "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+                    ]
+                    
+                    let params: Parameters = [
+                        
+                        "company":contrID,
+                        "fac_money":fact_money.trimmingCharacters(in: .whitespacesAndNewlines),
+                        "comments":comment.trimmingCharacters(in: .whitespacesAndNewlines)
+                        ]
+                    
+                    let encodeURL = importNullCheckURL
+                                        
+                    let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+                    
+                    requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                        
+                        MBProgressHUD.hide(for: self.view, animated: true)
+                        
+    //                    print(response.request!)
+    //                    print(response.result)
+    //                    print(response.response!)
+                        self.cleanAllInfo()
+                    })
+                }
+                
+                else {
+                    
+                    print("internet is not working")
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+                }
+            }
+    
+    
 }
 
 
@@ -331,6 +391,29 @@ extension NewKassaExportVC {
         }
     }
     
+    private func createNullCheck() {
+        
+        if factMoneyTextField.text == "" {
+            
+            ShowErrorsAlertWithOneCancelButton(message: "Заполните фактическую сумму")
+        }
+        
+        else {
+            
+            if commentLabel.text == "" {
+                
+                createNullChechToApi(contrID: currentContrId, fact_money: factMoneyTextField.text ?? "", comment: "*")
+            }
+            
+            else {
+                
+                createNullChechToApi(contrID: currentContrId, fact_money: factMoneyTextField.text ?? "", comment: commentLabel.text ?? "")
+
+            }
+        }
+        
+    }
+    
     private func cleanAllInfo() {
         
         importNameButton.setTitle("Выбрать", for: .normal)
@@ -338,6 +421,7 @@ extension NewKassaExportVC {
         dateLabel.text = "..."
         contragentButton.setTitle("Выбрать", for: .normal)
         factMoneyTextField.placeholder = "..."
+        factMoneyTextField.text = ""
         factMoneyBaseValue = 0
         totalSumLabel.text = "..."
         commentLabel.text = ""

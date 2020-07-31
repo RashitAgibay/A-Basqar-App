@@ -24,3 +24,4 @@ let importHistoryListURL: String = newMainUrl + "import/v1/api/import-history/"
 
 let importCheckURL: String = newMainUrl + "import/v1/api/import-check/"
 
+let importNullCheckURL: String = newMainUrl + "import/v1/api/import-null-check/"
