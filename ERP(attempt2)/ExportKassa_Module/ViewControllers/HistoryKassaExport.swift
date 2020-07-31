@@ -8,13 +8,14 @@
 
 import UIKit
 
-class HistoryKassaExport: UIViewController {
+class HistoryKassaExport: DefaultVC {
     
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var reachability: Reachability?
     var historyKassaExportList = NSArray()
+    var checkId = Int()
+    var historyId = Int()
 
     let refreshControl: UIRefreshControl = {
         let refControl = UIRefreshControl()
@@ -52,7 +53,6 @@ extension HistoryKassaExport: UICollectionViewDelegate, UICollectionViewDataSour
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "historyKassaExportCell", for: indexPath) as! HistoryKassaExportCell
         
         let singleBill = historyKassaExportList[indexPath.row] as! NSDictionary
-        let billId = singleBill["id"] as! Int
         let billName = singleBill["code"] as! String
         let date = singleBill["data"] as! String
 
@@ -69,7 +69,23 @@ extension HistoryKassaExport: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let singleBill = historyKassaExportList[indexPath.row] as! NSDictionary
+        let billId = singleBill["id"] as! Int
+        
+        if singleBill["history"] != nil {
+            
+            let history = singleBill["history"] as! NSDictionary
+            let historyId = history["id"] as! Int
+            self.historyId = historyId
+        }
+        
+        self.checkId = billId
+        
+        self.navigateToHistoryKassaItem()
+        
+    }
     
 }
 
@@ -151,24 +167,26 @@ extension HistoryKassaExport {
 
 extension HistoryKassaExport {
     
-    
-    func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
+    private func navigateToHistoryKassaItem() {
         
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: buttomMessage, style: .cancel) { (action) in
-        
-        }
-        alertController.addAction(action)
-        self.present(alertController,animated: true, completion: nil)
+        performSegue(withIdentifier: "fromHKEtoHKEI", sender: self)
     }
     
-    func ShowErrorsAlertWithOneCancelButton(message: String) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Закрыть", style: .cancel) { (action) in
-        
+        if segue.identifier == "fromHKEtoHKEI" {
+            if let navigationVC = segue.destination as? UINavigationController,
+                let destVC = navigationVC.topViewController as? HistoryKassaExportItemVC {
+                destVC.checkID = self.checkId
+                
+                if self.historyId != 0 {
+                    
+                    destVC.historyId = self.historyId
+                }
+            }
         }
-        alertController.addAction(action)
-        self.present(alertController,animated: true, completion: nil)
     }
 }
+
+
+

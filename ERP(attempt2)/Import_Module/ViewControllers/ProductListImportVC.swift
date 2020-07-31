@@ -8,12 +8,11 @@
 
 import UIKit
 
-class ProductListImportVC: UIViewController {
+class ProductListImportVC: DefaultVC {
 
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var reachability: Reachability?
     var productArray = NSArray()
     var categoryID = Int()
     
@@ -330,26 +329,6 @@ extension ProductListImportVC {
         
         alertController.addAction(addAction)
         alertController.addAction(cancelAction)
-        self.present(alertController,animated: true, completion: nil)
-    }
-    
-    func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
-        
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: buttomMessage, style: .cancel) { (action) in
-        
-        }
-        alertController.addAction(action)
-        self.present(alertController,animated: true, completion: nil)
-    }
-    
-    func ShowErrorsAlertWithOneCancelButton(message: String) {
-        
-        let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Закрыть", style: .cancel) { (action) in
-        
-        }
-        alertController.addAction(action)
         self.present(alertController,animated: true, completion: nil)
     }
 }

@@ -290,6 +290,7 @@
 		FDB63FC624AB63A800525388 /* NewImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB63FC524AB63A800525388 /* NewImportCell.swift */; };
 		FDBDD50123D807FE007FE38F /* SellingGoodsBasketVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */; };
 		FDC8A5DB23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */; };
+		FDCADE2C24D4578A007ADFDB /* DefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCADE2B24D4578A007ADFDB /* DefaultVC.swift */; };
 		FDEA7EBB24CF2BB6009D193B /* ContragentListKassaExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDEA7EBA24CF2BB6009D193B /* ContragentListKassaExport.storyboard */; };
 		FDEA7EBD24CF2BDF009D193B /* ContragentListKassaExportListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA7EBC24CF2BDF009D193B /* ContragentListKassaExportListVC.swift */; };
 		FDEA7EBF24CF2C9A009D193B /* ContragentListExportListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA7EBE24CF2C9A009D193B /* ContragentListExportListCell.swift */; };
@@ -297,6 +298,8 @@
 		FDF3C9B523E1342800D2E08D /* IncomeContagentNamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */; };
 		FDF3C9B723E1449800D2E08D /* OutcomeContragentsNamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9B623E1449800D2E08D /* OutcomeContragentsNamesVC.swift */; };
 		FDF3C9DB23E1625500D2E08D /* BuyProdReadBarCodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF3C9DA23E1625500D2E08D /* BuyProdReadBarCodeVC.swift */; };
+		FDF8C71F24D44956000F205F /* HistoryKassaExportItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF8C71E24D44956000F205F /* HistoryKassaExportItem.storyboard */; };
+		FDF8C72224D44986000F205F /* HistoryKassaExportItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF8C72124D44986000F205F /* HistoryKassaExportItemVC.swift */; };
 		FDFCE7A523D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFCE7A423D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -686,6 +689,7 @@
 		FDB63FC524AB63A800525388 /* NewImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImportCell.swift; sourceTree = "<group>"; };
 		FDBDD50023D807FE007FE38F /* SellingGoodsBasketVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingGoodsBasketVC.swift; sourceTree = "<group>"; };
 		FDC8A5DA23D962C500D2B8C4 /* IncomeKassaHistoryListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeKassaHistoryListVC.swift; sourceTree = "<group>"; };
+		FDCADE2B24D4578A007ADFDB /* DefaultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultVC.swift; sourceTree = "<group>"; };
 		FDEA7EBA24CF2BB6009D193B /* ContragentListKassaExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContragentListKassaExport.storyboard; sourceTree = "<group>"; };
 		FDEA7EBC24CF2BDF009D193B /* ContragentListKassaExportListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListKassaExportListVC.swift; sourceTree = "<group>"; };
 		FDEA7EBE24CF2C9A009D193B /* ContragentListExportListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListExportListCell.swift; sourceTree = "<group>"; };
@@ -693,6 +697,8 @@
 		FDF3C9B423E1342800D2E08D /* IncomeContagentNamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeContagentNamesVC.swift; sourceTree = "<group>"; };
 		FDF3C9B623E1449800D2E08D /* OutcomeContragentsNamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutcomeContragentsNamesVC.swift; sourceTree = "<group>"; };
 		FDF3C9DA23E1625500D2E08D /* BuyProdReadBarCodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyProdReadBarCodeVC.swift; sourceTree = "<group>"; };
+		FDF8C71E24D44956000F205F /* HistoryKassaExportItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryKassaExportItem.storyboard; sourceTree = "<group>"; };
+		FDF8C72124D44986000F205F /* HistoryKassaExportItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryKassaExportItemVC.swift; sourceTree = "<group>"; };
 		FDFCE7A423D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyHistoryNameListCellCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1438,6 +1444,7 @@
 		FD7AF83B24AC86F10021B131 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FDCADE2A24D4576C007ADFDB /* Defaults */,
 				FD7AF83D24AC876A0021B131 /* Constants */,
 				FD7E17462410DD2500F54748 /* PrinterBase */,
 				FD7AF83524AC7FBB0021B131 /* Extensions */,
@@ -1550,6 +1557,14 @@
 			path = Import;
 			sourceTree = "<group>";
 		};
+		FDCADE2A24D4576C007ADFDB /* Defaults */ = {
+			isa = PBXGroup;
+			children = (
+				FDCADE2B24D4578A007ADFDB /* DefaultVC.swift */,
+			);
+			path = Defaults;
+			sourceTree = "<group>";
+		};
 		FDECF22724B5CCC500B608E9 /* ExportKassa_Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -1566,6 +1581,7 @@
 				FD7F096624B9E22100F7709F /* MainKassaExportVC.swift */,
 				FD7F096C24B9E48B00F7709F /* NewKassaExportVC.swift */,
 				FD7F096E24B9E49B00F7709F /* HistoryKassaExport.swift */,
+				FDF8C72124D44986000F205F /* HistoryKassaExportItemVC.swift */,
 				FD7F097824B9F3F700F7709F /* ImportListKassaExportVC.swift */,
 				FDEA7EBC24CF2BDF009D193B /* ContragentListKassaExportListVC.swift */,
 			);
@@ -1578,6 +1594,7 @@
 				FD7F096424B9E20300F7709F /* MainKassaExport.storyboard */,
 				FD7F096824B9E45C00F7709F /* NewKassaExport.storyboard */,
 				FD7F096A24B9E46B00F7709F /* HistoryKassaExport.storyboard */,
+				FDF8C71E24D44956000F205F /* HistoryKassaExportItem.storyboard */,
 				FD7F097624B9F3D000F7709F /* ImportListKassaExport.storyboard */,
 				FDEA7EBA24CF2BB6009D193B /* ContragentListKassaExport.storyboard */,
 			);
@@ -1709,6 +1726,7 @@
 				6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */,
 				61F00E74244F1060001D0EEE /* NewBid.storyboard in Resources */,
 				FD117B9024B3590C008A00E7 /* HistoryItemImport.storyboard in Resources */,
+				FDF8C71F24D44956000F205F /* HistoryKassaExportItem.storyboard in Resources */,
 				2812AB002362B45B001D65C8 /* LaunchScreen.storyboard in Resources */,
 				613D737E244F6BA100E0E392 /* BidHistoryDetail.storyboard in Resources */,
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
@@ -1969,6 +1987,8 @@
 				FD5AB47424ADC2EB002BDB0E /* ProductListImportVC.swift in Sources */,
 				288CC3CB23A89BFD008D5218 /* Result+Alamofire.swift in Sources */,
 				FDF3C9B723E1449800D2E08D /* OutcomeContragentsNamesVC.swift in Sources */,
+				FDCADE2C24D4578A007ADFDB /* DefaultVC.swift in Sources */,
+				FDF8C72224D44986000F205F /* HistoryKassaExportItemVC.swift in Sources */,
 				288CC48223A89C38008D5218 /* SDWebImageDownloader.m in Sources */,
 				2812AAF42362B45A001D65C8 /* AppDelegate.swift in Sources */,
 				286318572398D37900556226 /* SellingKassa.swift in Sources */,

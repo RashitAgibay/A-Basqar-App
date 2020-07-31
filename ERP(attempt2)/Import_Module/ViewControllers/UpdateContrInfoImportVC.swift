@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UpdateContrInfoImportVC: UIViewController, UITextFieldDelegate {
+class UpdateContrInfoImportVC: DefaultVC {
 
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var contrNameTextField: UITextField!

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddNewContrImportVC: UIViewController, UITextFieldDelegate {
+class AddNewContrImportVC: DefaultVC {
 
     
     @IBOutlet weak var cardView: UIView!
@@ -17,7 +17,6 @@ class AddNewContrImportVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var contrBinTextField: UITextField!
     @IBOutlet weak var addButton: UIButton!
     
-    var reachability: Reachability?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -136,27 +135,3 @@ extension AddNewContrImportVC {
 }
 
 
-extension AddNewContrImportVC {
-    
-    func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
-        
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: buttomMessage, style: .cancel) { (action) in
-        
-        }
-        
-        alertController.addAction(action)
-        self.present(alertController,animated: true, completion: nil)
-    }
-    
-    func ShowErrorsAlertWithOneCancelButton(message: String) {
-        
-        let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: "Закрыть", style: .cancel) { (action) in
-        
-        }
-        
-        alertController.addAction(action)
-        self.present(alertController,animated: true, completion: nil)
-    }
-}
