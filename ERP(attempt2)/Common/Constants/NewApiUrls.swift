@@ -23,3 +23,4 @@ let importContragentsListURL: String = newMainUrl + "shop/v1/api/buy-company/"
 let importHistoryListURL: String = newMainUrl + "import/v1/api/import-history/"
 
 let importCheckURL: String = newMainUrl + "import/v1/api/import-check/"
+

@@ -45,6 +45,7 @@ class NewKassaExportVC: UIViewController {
         if currentHistoryID != 0 {
             
             createNewCheck()
+            
         }
         
     }
@@ -130,9 +131,10 @@ extension NewKassaExportVC {
                     
                     MBProgressHUD.hide(for: self.view, animated: true)
                     
-                    print(response.request!)
-                    print(response.result)
-                    print(response.response!)
+//                    print(response.request!)
+//                    print(response.result)
+//                    print(response.response!)
+                    self.cleanAllInfo()
                 })
             }
             
