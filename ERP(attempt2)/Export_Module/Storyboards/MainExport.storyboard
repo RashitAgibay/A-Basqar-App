@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main ExportVC-->
+        <scene sceneID="9VN-ca-oag">
+            <objects>
+                <viewController id="KT8-A5-I45" customClass="MainExportVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bG9-9a-0gM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ii4-IE-2tJ">
+                                <rect key="frame" x="0.0" y="79" width="375" height="588"/>
+                                <connections>
+                                    <segue destination="tfa-RT-qoc" kind="embed" id="TwI-Qf-4bX"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCc-co-8c1">
+                                <rect key="frame" x="0.0" y="79" width="375" height="588"/>
+                                <connections>
+                                    <segue destination="d7U-Zn-oo0" kind="embed" id="uVW-Hh-t4T"/>
+                                </connections>
+                            </containerView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="faG-Qk-Kfw">
+                                <rect key="frame" x="0.0" y="44" width="375" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="jGn-yZ-A6O"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Новая покупка"/>
+                                    <segment title="История покупок"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ii4-IE-2tJ" firstAttribute="bottom" secondItem="2C9-bn-du8" secondAttribute="bottom" id="7GU-7r-FFc"/>
+                            <constraint firstItem="ii4-IE-2tJ" firstAttribute="top" secondItem="faG-Qk-Kfw" secondAttribute="bottom" id="Fqz-5V-AOZ"/>
+                            <constraint firstItem="PCc-co-8c1" firstAttribute="top" secondItem="faG-Qk-Kfw" secondAttribute="bottom" id="He3-qH-z90"/>
+                            <constraint firstItem="ii4-IE-2tJ" firstAttribute="trailing" secondItem="2C9-bn-du8" secondAttribute="trailing" id="LvP-Bb-L1l"/>
+                            <constraint firstItem="2C9-bn-du8" firstAttribute="trailing" secondItem="faG-Qk-Kfw" secondAttribute="trailing" id="TGT-PD-0qd"/>
+                            <constraint firstItem="PCc-co-8c1" firstAttribute="leading" secondItem="2C9-bn-du8" secondAttribute="leading" id="Wy2-ud-UTq"/>
+                            <constraint firstItem="ii4-IE-2tJ" firstAttribute="leading" secondItem="2C9-bn-du8" secondAttribute="leading" id="hou-3o-hI6"/>
+                            <constraint firstItem="faG-Qk-Kfw" firstAttribute="leading" secondItem="2C9-bn-du8" secondAttribute="leading" id="ieo-oo-mNg"/>
+                            <constraint firstItem="PCc-co-8c1" firstAttribute="trailing" secondItem="2C9-bn-du8" secondAttribute="trailing" id="tny-Kq-Zar"/>
+                            <constraint firstItem="faG-Qk-Kfw" firstAttribute="top" secondItem="2C9-bn-du8" secondAttribute="top" id="wAF-NG-Jgy"/>
+                            <constraint firstItem="PCc-co-8c1" firstAttribute="bottom" secondItem="2C9-bn-du8" secondAttribute="bottom" id="x51-y6-rk1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2C9-bn-du8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rt2-zQ-tNa">
+                        <leftBarButtonItems>
+                            <barButtonItem title="Item" image="home" id="eYz-Yi-puS">
+                                <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="pmS-oT-6G6" kind="presentation" modalPresentationStyle="fullScreen" id="uaO-do-KnI"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="search" id="n3b-k9-EXI">
+                                <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="4T9-Vc-knc" kind="presentation" id="Ooz-1E-TyR"/>
+                                </connections>
+                            </barButtonItem>
+                        </leftBarButtonItems>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="more" id="eVH-hX-Lh4">
+                                <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="Oc6-y2-V8h" kind="presentation" modalPresentationStyle="fullScreen" id="ZUf-8t-GVG"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="scan" id="zWF-Aa-YDz">
+                                <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <size key="freeformSize" width="375" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="961-L1-jMx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1093.5999999999999" y="2952.7736131934034"/>
+        </scene>
+        <!--NewExport-->
+        <scene sceneID="qvk-d1-onh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewExport" id="tfa-RT-qoc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3UT-Um-6pr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842" y="2974"/>
+        </scene>
+        <!--menuStoryboadrid-->
+        <scene sceneID="3Gg-8V-Whk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="menuStoryboadrid" id="pmS-oT-6G6" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4NL-9w-Yam" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1884" y="2800"/>
+        </scene>
+        <!--FirstLevelCatExport-->
+        <scene sceneID="83U-tT-niu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="FirstLevelCatExport" id="Oc6-y2-V8h" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ccC-ii-cgq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1894" y="2882"/>
+        </scene>
+        <!--HistoryExport-->
+        <scene sceneID="2eM-u1-d1i">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HistoryExport" id="d7U-Zn-oo0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oYr-XN-r4h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1883" y="2930"/>
+        </scene>
+        <!--SearchExport-->
+        <scene sceneID="zjl-kA-Uh8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchExport" id="4T9-Vc-knc" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mng-C0-e0a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1903" y="2842"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hJG-yB-TV2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Db8-I0-Umn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="PoM-gn-aYT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KT8-A5-I45" kind="relationship" relationship="rootViewController" id="0FJ-1L-U6A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AkD-dd-87r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184.05797101449278" y="2952.4553571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home" width="30" height="28.5"/>
+        <image name="more" width="30" height="30"/>
+        <image name="scan" width="30" height="24"/>
+        <image name="search" width="30" height="30"/>
+    </resources>
+</document>

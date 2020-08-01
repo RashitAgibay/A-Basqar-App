@@ -186,11 +186,20 @@
                         <outlet property="factMoneyTextField" destination="zPS-mu-p1Q" id="oc1-WW-b0q"/>
                         <outlet property="importNameLabel" destination="yxD-i8-fFU" id="bQn-Vs-bym"/>
                         <outlet property="totalSumLabel" destination="DRx-We-GES" id="8uF-W6-k8t"/>
+                        <segue destination="Kee-aj-M2e" kind="presentation" identifier="fromHKEItoMKE" modalPresentationStyle="fullScreen" id="G8t-qT-qp4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGt-M9-Hjt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="575" y="6986"/>
+        </scene>
+        <!--MainKassaExport-->
+        <scene sceneID="0Sr-EA-5wx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainKassaExport" id="Kee-aj-M2e" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R97-XA-2HB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1225" y="6986"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ecw-SN-8T9">
