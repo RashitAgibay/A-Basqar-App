@@ -74,12 +74,16 @@ extension HistoryKassaExport: UICollectionViewDelegate, UICollectionViewDataSour
         let singleBill = historyKassaExportList[indexPath.row] as! NSDictionary
         let billId = singleBill["id"] as! Int
         
-        if singleBill["history"] != nil {
-            
+        if singleBill["history"] as? NSDictionary != nil {
+
             let history = singleBill["history"] as! NSDictionary
             let historyId = history["id"] as! Int
             self.historyId = historyId
+//            print("/// history", singleBill["history"])
+
         }
+        
+//        print("/// history", singleBill["history"])
         
         self.checkId = billId
         
@@ -115,6 +119,8 @@ extension HistoryKassaExport {
                 ]
                 
                 let encodeURL = importCheckURL
+//                print("/// -encodeUrl:", encodeURL)
+//                print("/// -headers:",headers)
                                 
                 let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
                 

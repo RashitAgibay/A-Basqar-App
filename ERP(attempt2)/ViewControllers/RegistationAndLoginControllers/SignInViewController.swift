@@ -127,6 +127,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             let headers: HTTPHeaders = [
                 
                 "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                
             ]
             
             let encodeURL = "https://abasqar.pythonanywhere.com/auth/v1/api/login/"
