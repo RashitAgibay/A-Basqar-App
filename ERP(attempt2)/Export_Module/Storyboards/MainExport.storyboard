@@ -31,8 +31,8 @@
                                     <constraint firstAttribute="height" constant="35" id="jGn-yZ-A6O"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Новая покупка"/>
-                                    <segment title="История покупок"/>
+                                    <segment title="Новая продажа"/>
+                                    <segment title="История продаж"/>
                                 </segments>
                                 <connections>
                                     <action selector="switchSegment:" destination="KT8-A5-I45" eventType="valueChanged" id="TPb-80-doS"/>
@@ -70,6 +70,9 @@
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="more" id="eVH-hX-Lh4">
                                 <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="Oc6-y2-V8h" kind="presentation" modalPresentationStyle="fullScreen" id="dl5-o3-Qgp"/>
+                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="scan" id="zWF-Aa-YDz">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
