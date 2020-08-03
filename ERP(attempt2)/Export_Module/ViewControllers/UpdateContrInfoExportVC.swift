@@ -8,23 +8,38 @@
 
 import UIKit
 
-class UpdateContrInfoExportVC: UIViewController {
+class UpdateContrInfoExportVC: DefaultVC {
 
+    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var contrNameTextField: UITextField!
+    @IBOutlet weak var contrPhoneTextField: UITextField!
+    @IBOutlet weak var contrBinTextField: UITextField!
+    @IBOutlet weak var updateButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
 
-        // Do any additional setup after loading the view.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupUI() {
+        
+        cardView.layer.backgroundColor = UIColor.white.cgColor
+        cardView.layer.cornerRadius = 5
+        cardView.dropShadow()
+        
+        updateButton.layer.cornerRadius = 20
+        updateButton.dropShadowforButton()
+        
+        contrNameTextField.delegate = self
+        contrPhoneTextField.delegate = self
+        contrBinTextField.delegate = self
+        
+        freeSpaceOnLeftSideForTextFiedl(someTextField: contrNameTextField)
+        freeSpaceOnLeftSideForTextFiedl(someTextField: contrPhoneTextField)
+        freeSpaceOnLeftSideForTextFiedl(someTextField: contrBinTextField)
     }
-    */
+
 
 }

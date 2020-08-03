@@ -155,7 +155,7 @@ extension ContragentsListExportVC {
     
     private func navigateToUpdateContrInfo() {
         
-//        performSegue(withIdentifier: "fromContrListToUpdateContr", sender: self)
+        performSegue(withIdentifier: "fromCLEtoUCE", sender: self)
     }
     
     private func navigateToMainImport() {

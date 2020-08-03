@@ -117,6 +117,7 @@
                     <connections>
                         <outlet property="collectionView" destination="smh-Jq-xtG" id="xkg-f1-VeO"/>
                         <segue destination="bX1-y7-78O" kind="presentation" identifier="fromCLEtoME" modalPresentationStyle="fullScreen" id="1yb-p8-yVY"/>
+                        <segue destination="BcZ-Qm-oW7" kind="presentation" identifier="fromCLEtoUCE" modalPresentationStyle="fullScreen" id="cs4-Ks-RjE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSw-uG-MB7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
