@@ -141,14 +141,14 @@ extension HistoryExportVC {
     
     private func navigateToHistoryItem() {
         
-        performSegue(withIdentifier: "fromHistoryToHistoryItem", sender: self)
+        performSegue(withIdentifier: "fromHEtoHIE", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "fromHistoryToHistoryItem" {
+        if segue.identifier == "fromHEtoHIE" {
             if let navigationVC = segue.destination as? UINavigationController,
-                let destVC = navigationVC.topViewController as? HistoryItemImportVC {
+                let destVC = navigationVC.topViewController as? HistoryItemExportVC {
                 destVC.historyID = self.historyID
             }
         }
