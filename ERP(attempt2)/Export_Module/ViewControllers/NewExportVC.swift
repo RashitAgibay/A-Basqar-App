@@ -455,7 +455,7 @@ extension NewExportVC {
     
     private func navigateFromNewImportToKassa() {
         
-//        performSegue(withIdentifier: "fromNewImportToKassa", sender: self)
+        performSegue(withIdentifier: "fromNEtoKE", sender: self)
     }
 }
 
