@@ -93,6 +93,7 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="collectionView" destination="mt0-vI-vw7" id="XIy-cd-xKU"/>
+                        <segue destination="vfW-SI-pvO" kind="presentation" identifier="fromFLCEtoPLE" modalPresentationStyle="fullScreen" id="q9k-7B-yWZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LY4-0d-rDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -107,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="-1613" y="47"/>
         </scene>
-        <!--ProductListImport-->
+        <!--ProductListExport-->
         <scene sceneID="MT9-yC-ET8">
             <objects>
-                <viewControllerPlaceholder storyboardName="ProductListImport" id="vfW-SI-pvO" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ProductListExport" id="vfW-SI-pvO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qlk-qq-iZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1580" y="98"/>

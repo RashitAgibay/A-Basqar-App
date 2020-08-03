@@ -72,14 +72,14 @@ extension FirstLevelCatExportVC {
     
     private func navigateToProductList() {
         
-        performSegue(withIdentifier: "fromFirstLevelCatToProdList", sender: self)
+        performSegue(withIdentifier: "fromFLCEtoPLE", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "fromFirstLevelCatToProdList" {
+        if segue.identifier == "fromFLCEtoPLE" {
             if let navigationVC = segue.destination as? UINavigationController,
-                let destVC = navigationVC.topViewController as? ProductListImportVC {
+                let destVC = navigationVC.topViewController as? ProductListExportVC {
                 destVC.categoryID = self.categoryID
             }
         }
