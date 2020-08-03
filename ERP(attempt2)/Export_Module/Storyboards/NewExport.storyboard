@@ -194,6 +194,7 @@
                                         </state>
                                         <connections>
                                             <action selector="tappedContragentNameButton:" destination="uDL-tr-KJa" eventType="touchUpInside" id="FZ7-Fi-D5J"/>
+                                            <segue destination="O2Y-TA-Qld" kind="presentation" modalPresentationStyle="fullScreen" id="Orj-H6-TB8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zZw-An-fur">
@@ -255,6 +256,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzX-Lw-p4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2063.0434782608695" y="3715.5133928571427"/>
+        </scene>
+        <!--ContragentsListExport-->
+        <scene sceneID="jd1-3U-iJB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ContragentsListExport" id="O2Y-TA-Qld" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZcY-AO-OKO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2629" y="3747"/>
+        </scene>
+        <!--KassaImport-->
+        <scene sceneID="NQh-Hc-F69">
+            <objects>
+                <viewControllerPlaceholder storyboardName="KassaImport" id="I0s-Tg-ZrB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c8G-nS-zTt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2630" y="3686"/>
         </scene>
     </scenes>
     <resources>

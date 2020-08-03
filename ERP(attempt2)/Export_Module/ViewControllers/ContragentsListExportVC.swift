@@ -173,3 +173,4 @@ extension ContragentsListExportVC {
         UserDefaults.standard.set(contrID, forKey: selectedExportContrID)
     }
 }
+
