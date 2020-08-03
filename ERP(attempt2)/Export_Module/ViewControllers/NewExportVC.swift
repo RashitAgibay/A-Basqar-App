@@ -73,7 +73,7 @@ class NewExportVC: DefaultVC {
     
     @IBAction func tappedBuyButton(_ sender: Any) {
         
-        if totalSumLabel.text == "0" {
+        if totalSumLabel.text == "0 тг" {
             
             ShowErrorsAlertWithOneCancelButton(message: "Корзина пуста")
         }
@@ -107,7 +107,7 @@ extension NewExportVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "buyProduct", for: indexPath) as! NewImportCell
+        let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "newExportCell", for: indexPath) as! NewExportCell
         
         let singleProduct = productArray[indexPath.row] as! NSDictionary
         let firstGoods = singleProduct["goods"] as! NSDictionary
@@ -189,7 +189,7 @@ extension NewExportVC {
                 
             ]
             
-            let encodeURL = importShoppingCartURL
+            let encodeURL = exportShoppingCartURL
             let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
@@ -262,7 +262,7 @@ extension NewExportVC {
                 "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
             ]
             
-            let encodeURL = importShoppingCartURL + "\(productID)/"
+            let encodeURL = exportShoppingCartURL + "\(productID)/"
             
             let requestOfApi = AF.request(encodeURL, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
@@ -368,7 +368,7 @@ extension NewExportVC {
                 "nums":"\(amount)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
             ]
             
-            let encodeURL = importShoppingCartURL + "\(productIdInCart)/"
+            let encodeURL = exportShoppingCartURL + "\(productIdInCart)/"
             
             let requestOfApi = AF.request(encodeURL, method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
@@ -418,7 +418,7 @@ extension NewExportVC {
                 "sum":totalSum
             ]
             
-            let encodeURL = importHistoryListURL
+            let encodeURL = exportHistoryListURL
             
 //            print(params)
             
@@ -444,9 +444,9 @@ extension NewExportVC {
 
 }
 
-extension NewExportVC: NewImportCellDelegate {
+extension NewExportVC: NewExportCellDelegate {
     
-    func deleteProduct(cell: NewImportCell, id: Int) {
+    func deleteProduct(cell: NewExportCell, id: Int) {
         
         self.deleteProductFromCart(productID: id)
     }
@@ -456,7 +456,7 @@ extension NewExportVC {
     
     private func navigateFromNewImportToKassa() {
         
-        performSegue(withIdentifier: "fromNewImportToKassa", sender: self)
+//        performSegue(withIdentifier: "fromNewImportToKassa", sender: self)
     }
 }
 

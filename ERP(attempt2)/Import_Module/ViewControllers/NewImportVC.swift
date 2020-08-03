@@ -73,7 +73,7 @@ class NewImportVC: DefaultVC {
     
     @IBAction func tappedBuyButton(_ sender: Any) {
         
-        if totalSumLabel.text == "0" {
+        if totalSumLabel.text == "0 тг" {
             
             ShowErrorsAlertWithOneCancelButton(message: "Корзина пуста")
         }
