@@ -113,7 +113,7 @@ class MenuViewController: UIViewController {
     
     
     @objc func tapSellingProductCard(){
-        performSegue(withIdentifier: "toSelling", sender: self)
+        performSegue(withIdentifier: "fromMainToMainExport", sender: self)
     }
     
     @objc func tapBuyProductsCard(){

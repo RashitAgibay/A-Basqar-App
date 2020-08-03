@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Db8-I0-Umn">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -24,9 +24,6 @@
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCc-co-8c1">
                                 <rect key="frame" x="0.0" y="79" width="375" height="588"/>
-                                <connections>
-                                    <segue destination="d7U-Zn-oo0" kind="embed" id="uVW-Hh-t4T"/>
-                                </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="faG-Qk-Kfw">
                                 <rect key="frame" x="0.0" y="44" width="375" height="36"/>
@@ -37,6 +34,9 @@
                                     <segment title="Новая покупка"/>
                                     <segment title="История покупок"/>
                                 </segments>
+                                <connections>
+                                    <action selector="switchSegment:" destination="KT8-A5-I45" eventType="valueChanged" id="TPb-80-doS"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -65,17 +65,11 @@
                             </barButtonItem>
                             <barButtonItem title="Item" image="search" id="n3b-k9-EXI">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <segue destination="4T9-Vc-knc" kind="presentation" id="Ooz-1E-TyR"/>
-                                </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
                             <barButtonItem title="Item" image="more" id="eVH-hX-Lh4">
                                 <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <segue destination="Oc6-y2-V8h" kind="presentation" modalPresentationStyle="fullScreen" id="ZUf-8t-GVG"/>
-                                </connections>
                             </barButtonItem>
                             <barButtonItem title="Item" image="scan" id="zWF-Aa-YDz">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -83,6 +77,11 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="historyExportView" destination="PCc-co-8c1" id="9J7-ux-FJi"/>
+                        <outlet property="newExportView" destination="ii4-IE-2tJ" id="dEY-qz-i76"/>
+                        <outlet property="segmentControl" destination="faG-Qk-Kfw" id="g5i-aC-7qy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="961-L1-jMx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,7 +117,7 @@
                 <viewControllerPlaceholder storyboardName="HistoryExport" id="d7U-Zn-oo0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oYr-XN-r4h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1883" y="2930"/>
+            <point key="canvasLocation" x="1884" y="3053"/>
         </scene>
         <!--SearchExport-->
         <scene sceneID="zjl-kA-Uh8">
