@@ -420,7 +420,6 @@ extension NewExportVC {
             
             let encodeURL = exportHistoryListURL
             
-//            print(params)
             
             let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
@@ -483,7 +482,6 @@ extension NewExportVC {
                 
             }
             
-//            self.sendGoodToBasket(productID: productID, amount: amount)
             self.updateUI()
         
         }
@@ -540,7 +538,7 @@ extension NewExportVC {
         
         var contrName = String()
         
-        contrName = UserDefaults.standard.string(forKey: selectedImportContr) ?? ""
+        contrName = UserDefaults.standard.string(forKey: selectedExportContr) ?? ""
         
         return contrName
         
@@ -550,7 +548,7 @@ extension NewExportVC {
         
         var contrID = Int()
         
-        contrID = UserDefaults.standard.integer(forKey: selectedImportContrID)
+        contrID = UserDefaults.standard.integer(forKey: selectedExportContrID)
         
         return contrID
         

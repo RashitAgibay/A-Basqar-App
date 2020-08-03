@@ -9,6 +9,13 @@
 import Foundation
 
 let userTokenKey: String = "new_userTokenKey"
+
 let selectedImportContr: String = "new_selected_import_contr"
+
 let selectedImportContrID: String = "new_selected_import_contr_id"
+
+let selectedExportContr: String = "new_selected_export_contr"
+
+let selectedExportContrID: String = "new_selected_export_contr_id"
+
 let currentExportBillInfo: String = "currentExportBillInfo"
