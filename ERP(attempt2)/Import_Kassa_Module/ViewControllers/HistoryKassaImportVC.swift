@@ -87,7 +87,7 @@ extension HistoryKassaImportVC: UICollectionViewDelegate, UICollectionViewDataSo
         
         self.checkId = billId
         
-//        self.navigateToHistoryKassaItem()
+        self.navigateToHistoryKassaItem()
         
     }
     
@@ -173,25 +173,25 @@ extension HistoryKassaImportVC {
 
 extension HistoryKassaImportVC {
     
-//    private func navigateToHistoryKassaItem() {
-//
-//        performSegue(withIdentifier: "fromHKEtoHKEI", sender: self)
-//    }
-//
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        
-//        if segue.identifier == "fromHKEtoHKEI" {
-//            if let navigationVC = segue.destination as? UINavigationController,
-//                let destVC = navigationVC.topViewController as? HistoryKassaExportItemVC {
-//                destVC.checkID = self.checkId
-//
-//                if self.historyId != 0 {
-//
-//                    destVC.historyId = self.historyId
-//                }
-//            }
-//        }
-//    }
+    private func navigateToHistoryKassaItem() {
+
+        performSegue(withIdentifier: "fromHKItoHKII", sender: self)
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "fromHKItoHKII" {
+            if let navigationVC = segue.destination as? UINavigationController,
+                let destVC = navigationVC.topViewController as? HistoryKassaImportItemVC {
+                destVC.checkID = self.checkId
+
+                if self.historyId != 0 {
+
+                    destVC.historyId = self.historyId
+                }
+            }
+        }
+    }
 }
 
 

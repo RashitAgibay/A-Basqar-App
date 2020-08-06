@@ -110,16 +110,17 @@
                     <size key="freeformSize" width="375" height="583"/>
                     <connections>
                         <outlet property="collectionView" destination="Fuo-32-ZZ6" id="wPR-pV-xSe"/>
+                        <segue destination="5gJ-Jc-tXo" kind="presentation" identifier="fromHKItoHKII" modalPresentationStyle="fullScreen" id="Toq-U2-wlW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Lb-8M-j7r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2148" y="4624"/>
         </scene>
-        <!--HistoryKassaExportItem-->
+        <!--HistoryKassaImportItem-->
         <scene sceneID="5rv-L3-hC3">
             <objects>
-                <viewControllerPlaceholder storyboardName="HistoryKassaExportItem" id="5gJ-Jc-tXo" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="HistoryKassaImportItem" id="5gJ-Jc-tXo" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJa-BG-Rvf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1555" y="4621"/>
