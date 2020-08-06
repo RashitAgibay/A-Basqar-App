@@ -1,7 +1,130 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Pb-H5-67c">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Main Kassa ImportVC-->
+        <scene sceneID="EOH-3O-ROU">
+            <objects>
+                <viewController id="NyQ-IE-nbZ" customClass="MainKassaImportVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="j0V-Vl-xou">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JVT-Jg-7VZ">
+                                <rect key="frame" x="0.0" y="44" width="375" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jke-2a-AQC"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Новые приходы"/>
+                                    <segment title="История приходов"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchSegment:" destination="NyQ-IE-nbZ" eventType="valueChanged" id="6g6-B0-Dh6"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FFg-dD-Tbg">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <connections>
+                                    <segue destination="59E-be-EJO" kind="embed" id="KMm-95-zGn"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zry-eU-4y6">
+                                <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="zry-eU-4y6" firstAttribute="leading" secondItem="21Z-yx-pIv" secondAttribute="leading" id="0B7-xo-Vkt"/>
+                            <constraint firstItem="21Z-yx-pIv" firstAttribute="trailing" secondItem="FFg-dD-Tbg" secondAttribute="trailing" id="0CA-yT-Uqv"/>
+                            <constraint firstItem="FFg-dD-Tbg" firstAttribute="top" secondItem="JVT-Jg-7VZ" secondAttribute="bottom" id="5ci-9f-NWd"/>
+                            <constraint firstItem="zry-eU-4y6" firstAttribute="top" secondItem="JVT-Jg-7VZ" secondAttribute="bottom" id="Dqs-WO-zQ0"/>
+                            <constraint firstItem="21Z-yx-pIv" firstAttribute="bottom" secondItem="zry-eU-4y6" secondAttribute="bottom" id="E2X-B1-VXD"/>
+                            <constraint firstItem="21Z-yx-pIv" firstAttribute="trailing" secondItem="JVT-Jg-7VZ" secondAttribute="trailing" id="HvE-Gu-4AX"/>
+                            <constraint firstItem="JVT-Jg-7VZ" firstAttribute="top" secondItem="21Z-yx-pIv" secondAttribute="top" id="eJ6-0y-DZ1"/>
+                            <constraint firstItem="JVT-Jg-7VZ" firstAttribute="leading" secondItem="21Z-yx-pIv" secondAttribute="leading" id="eTQ-s5-LXQ"/>
+                            <constraint firstItem="FFg-dD-Tbg" firstAttribute="leading" secondItem="21Z-yx-pIv" secondAttribute="leading" id="iEc-kX-yhe"/>
+                            <constraint firstItem="21Z-yx-pIv" firstAttribute="trailing" secondItem="zry-eU-4y6" secondAttribute="trailing" id="iP7-eM-cku"/>
+                            <constraint firstItem="21Z-yx-pIv" firstAttribute="bottom" secondItem="FFg-dD-Tbg" secondAttribute="bottom" id="lG6-Kp-ajS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="21Z-yx-pIv"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0KX-Fw-tdl">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="Cj4-fT-Tmb">
+                            <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Nt2-nX-EOl" kind="presentation" modalPresentationStyle="fullScreen" id="O9S-N5-7ee"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="printer" id="VTC-yK-g0H">
+                            <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="historyKassaImportView" destination="zry-eU-4y6" id="peS-CY-NMg"/>
+                        <outlet property="newKassaImportView" destination="FFg-dD-Tbg" id="ICT-GI-qPh"/>
+                        <outlet property="segmentView" destination="JVT-Jg-7VZ" id="NHk-l8-f0d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3hG-nc-KhL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-6468.840579710145" y="3710.8258928571427"/>
+        </scene>
+        <!--menuStoryboadrid-->
+        <scene sceneID="SgQ-fW-gDL">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="menuStoryboadrid" id="Nt2-nX-EOl" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EY9-WE-3wt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5719" y="3680"/>
+        </scene>
+        <!--NewKassaImport-->
+        <scene sceneID="TDy-LV-rIx">
+            <objects>
+                <viewControllerPlaceholder storyboardName="NewKassaImport" id="59E-be-EJO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HMM-uK-og9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5719" y="3735"/>
+        </scene>
+        <!--HistoryKassaExport-->
+        <scene sceneID="tbL-5Z-teG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HistoryKassaExport" id="8IC-Od-ctY" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MdT-Bf-F64" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5668" y="3802"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gj4-77-bOH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Pb-H5-67c" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fMe-HP-gx9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1s3-gg-UOm">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="NyQ-IE-nbZ" kind="relationship" relationship="rootViewController" id="hDu-mj-Zic"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cdG-Ln-TkF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7378.2608695652179" y="3710.4910714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home" width="30" height="28.5"/>
+        <image name="printer" width="30" height="28"/>
+    </resources>
 </document>

@@ -7,3 +7,15 @@
 //
 
 import Foundation
+import RealmSwift
+
+class IncomeBill: Object  {
+    
+    @objc dynamic var importNubmer = String()
+    @objc dynamic var billNumber = String()
+    @objc dynamic var date = String()
+    @objc dynamic var contragent = String()
+    @objc dynamic var totalMoney = Int()
+    @objc dynamic var historyID = Int()
+    
+}

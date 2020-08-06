@@ -10,21 +10,67 @@ import UIKit
 
 class MainKassaImportVC: UIViewController {
 
+    
+    @IBOutlet weak var newKassaImportView: UIView!
+    @IBOutlet weak var historyKassaImportView: UIView!
+    @IBOutlet weak var segmentView: UISegmentedControl!
+    
+    var selectegTag = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
+        setupBaseFuncs()
 
-        // Do any additional setup after loading the view.
+
     }
     
+    private func setupUI() {
+        
+        segmentView.setupSimpleView()
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
+    
+    private func setupBaseFuncs() {
+        
+        switch selectegTag {
+        case 0:
+            
+            newKassaImportView.alpha = 1
+            historyKassaImportView.alpha = 0
+            
+            segmentView.selectedSegmentIndex = 0
+            
+        case 1:
+            
+            newKassaImportView.alpha = 0
+            historyKassaImportView.alpha = 1
+            
+            segmentView.selectedSegmentIndex = 1
+            
+        default:
+            break
+        }
+    }
+    
+    @IBAction func switchSegment(_ sender: UISegmentedControl) {
+        
+        switch sender.selectedSegmentIndex {
+        case 0:
+            
+            newKassaImportView.alpha = 1
+            historyKassaImportView.alpha = 0
+            
+        case 1:
+            
+            newKassaImportView.alpha = 0
+            historyKassaImportView.alpha = 1
+            
+        default:
+            break
+        }
+    }
+    
 
 }

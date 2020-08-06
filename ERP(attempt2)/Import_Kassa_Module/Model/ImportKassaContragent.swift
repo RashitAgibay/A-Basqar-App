@@ -7,3 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
+
+class ImportKassaContragent: Object {
+    
+    @objc dynamic var contragnetName = String()
+    @objc dynamic var contragentId = Int()
+
+}

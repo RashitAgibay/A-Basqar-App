@@ -1723,8 +1723,8 @@
 		FDE7A65424DB8623000E86B5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FDE7A65724DB865B000E86B5 /* ImportKassaContragent.swift */,
 				FDE7A65924DB8667000E86B5 /* IncomeBill.swift */,
+				FDE7A65724DB865B000E86B5 /* ImportKassaContragent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
