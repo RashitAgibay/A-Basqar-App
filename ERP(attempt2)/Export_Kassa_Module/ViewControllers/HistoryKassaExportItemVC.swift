@@ -105,10 +105,10 @@ extension HistoryKassaExportItemVC {
             ]
             
             let encodeURL = importCheckURL
-//            print("/// encodeUrl:", encodeURL)
-//            print("/// headers:",headers)
+            print("/// encodeUrl:", encodeURL)
+            print("/// headers:",headers)
 
-            let requestOfApi = AF.request("http://abasqar.pythonanywhere.com/import/v1/api/import-check/13", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            let requestOfApi = AF.request("https://abasqar.pythonanywhere.com/import/v1/api/import-check/13", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
                 

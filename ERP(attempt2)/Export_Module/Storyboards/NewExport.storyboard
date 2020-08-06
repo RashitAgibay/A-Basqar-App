@@ -251,6 +251,7 @@
                         <outlet property="collectionView" destination="AtS-a2-PcG" id="e1U-CR-ir2"/>
                         <outlet property="contragentNameButton" destination="4Xy-og-bln" id="9zI-zg-24p"/>
                         <outlet property="totalSumLabel" destination="v8Y-8o-ZoE" id="bqn-LM-Jbp"/>
+                        <segue destination="I0s-Tg-ZrB" kind="presentation" identifier="fromNEtoKE" modalPresentationStyle="fullScreen" id="nh0-ky-84e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FzX-Lw-p4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -263,15 +264,15 @@
                 <viewControllerPlaceholder storyboardName="ContragentsListExport" id="O2Y-TA-Qld" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZcY-AO-OKO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2629" y="3747"/>
+            <point key="canvasLocation" x="2686" y="3732"/>
         </scene>
-        <!--KassaImport-->
+        <!--KassaExport-->
         <scene sceneID="NQh-Hc-F69">
             <objects>
-                <viewControllerPlaceholder storyboardName="KassaImport" id="I0s-Tg-ZrB" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="KassaExport" id="I0s-Tg-ZrB" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8G-nS-zTt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2630" y="3686"/>
+            <point key="canvasLocation" x="2630" y="3698"/>
         </scene>
     </scenes>
     <resources>
