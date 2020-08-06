@@ -37,6 +37,9 @@
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zry-eU-4y6">
                                 <rect key="frame" x="0.0" y="84" width="375" height="583"/>
+                                <connections>
+                                    <segue destination="8IC-Od-ctY" kind="embed" id="NAi-eR-DSG"/>
+                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -91,15 +94,15 @@
                 <viewControllerPlaceholder storyboardName="NewKassaImport" id="59E-be-EJO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HMM-uK-og9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5719" y="3735"/>
+            <point key="canvasLocation" x="-5658" y="3801"/>
         </scene>
-        <!--HistoryKassaExport-->
+        <!--HistoryKassaImport-->
         <scene sceneID="tbL-5Z-teG">
             <objects>
-                <viewControllerPlaceholder storyboardName="HistoryKassaExport" id="8IC-Od-ctY" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="HistoryKassaImport" id="8IC-Od-ctY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdT-Bf-F64" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5668" y="3802"/>
+            <point key="canvasLocation" x="-5673" y="3748"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gj4-77-bOH">
