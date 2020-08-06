@@ -39,15 +39,22 @@ class NewKassaExportVC: DefaultVC {
     
     @IBAction func tapAcceptButton(_ sender: Any) {
         
-        if currentHistoryID != 0 {
+        if contragentButton.titleLabel?.text == "Выбрать" {
             
-            createNewCheck()
-            
+            ShowErrorsAlertWithOneCancelButton(message: "Отсутствует информация")
         }
         
-        if currentContrId != 0 {
+        else {
             
-            createNullCheck()
+            if currentHistoryID != 0 {
+                
+                createNewCheck()
+            }
+            
+            if currentContrId != 0 {
+                
+                createNullCheck()
+            }
         }
         
     }
@@ -55,8 +62,15 @@ class NewKassaExportVC: DefaultVC {
     
     @IBAction func tapCancelButton(_ sender: Any) {
         
-        cleanAllInfo()
-    }
+        if contragentButton.titleLabel?.text == "Выбрать" {
+            
+            ShowErrorsAlertWithOneCancelButton(message: "Отсутствует информация")
+        }
+        
+        else {
+            
+            cleanAllInfo()
+        }    }
     
 
     private func setupView() {
