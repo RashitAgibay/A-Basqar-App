@@ -121,7 +121,7 @@ class MenuViewController: UIViewController {
     }
     
     @objc func tapIncomeKassaCard(){
-        performSegue(withIdentifier: "incomeKassa", sender: self)
+        performSegue(withIdentifier: "fromMenuToImportKassa", sender: self)
     }
     
     @objc func tapOutcomeKassaCard(){

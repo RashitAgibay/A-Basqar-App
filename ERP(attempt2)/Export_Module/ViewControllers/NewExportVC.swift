@@ -427,9 +427,9 @@ extension NewExportVC {
 
                 MBProgressHUD.hide(for: self.view, animated: true)
 
-//                print(response.request!)
-//                print(response.result)
-//                print(response.response)
+                print(response.request!)
+                print(response.result)
+                print(response.response)
             })
         }
         
@@ -455,7 +455,7 @@ extension NewExportVC {
     
     private func navigateFromNewImportToKassa() {
         
-//        performSegue(withIdentifier: "fromNewImportToKassa", sender: self)
+        performSegue(withIdentifier: "fromNEtoKE", sender: self)
     }
 }
 

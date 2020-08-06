@@ -1,7 +1,129 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0fE-fd-LbH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--History ExportVC-->
+        <scene sceneID="UNo-p2-Ztd">
+            <objects>
+                <viewController id="0fE-fd-LbH" customClass="HistoryExportVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mji-x1-a1l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="583"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MP2-1I-m2Y">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="583"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ac5-UQ-Nut">
+                                    <size key="itemSize" width="350" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="20"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="historyExportCell" id="bqJ-Hk-7v3" customClass="HistoryExportCell" customModule="A_Basqar" customModuleProvider="target">
+                                        <rect key="frame" x="12.5" y="20" width="350" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6ot-j0-2dh">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Закуп: NDShbdANB34" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beF-zr-x5L">
+                                                    <rect key="frame" x="20" y="10" width="310" height="21"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/04/2018" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Syr-73-wun">
+                                                    <rect key="frame" x="20" y="54.5" width="69" height="16"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                    <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Поставщик:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VUL-wq-4Vh">
+                                                    <rect key="frame" x="20" y="34.5" width="75" height="16"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                    <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5000 тг" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUQ-hb-X8z">
+                                                    <rect key="frame" x="20" y="74.5" width="49" height="16"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                    <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Бақтияр Айдар" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fE-p3-qLh">
+                                                    <rect key="frame" x="105" y="34" width="95" height="16"/>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
+                                                    <color key="textColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Syr-73-wun" firstAttribute="leading" secondItem="6ot-j0-2dh" secondAttribute="leading" constant="20" id="3Un-u2-0El"/>
+                                                <constraint firstItem="5fE-p3-qLh" firstAttribute="top" secondItem="6ot-j0-2dh" secondAttribute="top" constant="34" id="6IF-d7-rvE"/>
+                                                <constraint firstAttribute="trailing" secondItem="beF-zr-x5L" secondAttribute="trailing" constant="20" id="AXp-Jq-FWS"/>
+                                                <constraint firstItem="5fE-p3-qLh" firstAttribute="leading" secondItem="VUL-wq-4Vh" secondAttribute="trailing" constant="10" id="CUC-DY-6PM"/>
+                                                <constraint firstItem="beF-zr-x5L" firstAttribute="leading" secondItem="6ot-j0-2dh" secondAttribute="leading" constant="20" id="IIh-UB-MLX"/>
+                                                <constraint firstItem="Syr-73-wun" firstAttribute="top" secondItem="VUL-wq-4Vh" secondAttribute="bottom" constant="4" id="M33-1b-ldR"/>
+                                                <constraint firstItem="YUQ-hb-X8z" firstAttribute="leading" secondItem="6ot-j0-2dh" secondAttribute="leading" constant="20" id="R14-aK-QZX"/>
+                                                <constraint firstItem="YUQ-hb-X8z" firstAttribute="top" secondItem="Syr-73-wun" secondAttribute="bottom" constant="4" id="kLO-rL-mXn"/>
+                                                <constraint firstItem="VUL-wq-4Vh" firstAttribute="leading" secondItem="6ot-j0-2dh" secondAttribute="leading" constant="20" id="pv1-fz-aaJ"/>
+                                                <constraint firstItem="VUL-wq-4Vh" firstAttribute="top" secondItem="beF-zr-x5L" secondAttribute="bottom" constant="3.5" id="ufi-Ti-gBb"/>
+                                                <constraint firstItem="beF-zr-x5L" firstAttribute="top" secondItem="6ot-j0-2dh" secondAttribute="top" constant="10" id="zoT-Ml-lbZ"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="conrtagentNameLabel" destination="5fE-p3-qLh" id="Zks-dp-UTX"/>
+                                            <outlet property="dateLabel" destination="Syr-73-wun" id="6cl-F8-7Qi"/>
+                                            <outlet property="exportNameLabel" destination="beF-zr-x5L" id="BmW-tn-9Jh"/>
+                                            <outlet property="priceLabel" destination="YUQ-hb-X8z" id="HB4-Wl-cFh"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="NJC-eD-9aO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="0fE-fd-LbH" id="AhU-fE-fPQ"/>
+                                    <outlet property="delegate" destination="0fE-fd-LbH" id="8YT-rZ-Byu"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="MP2-1I-m2Y" firstAttribute="bottom" secondItem="0KE-gt-OnW" secondAttribute="bottom" id="43p-fQ-F5U"/>
+                            <constraint firstItem="MP2-1I-m2Y" firstAttribute="trailing" secondItem="0KE-gt-OnW" secondAttribute="trailing" id="7MZ-e2-tPF"/>
+                            <constraint firstItem="MP2-1I-m2Y" firstAttribute="top" secondItem="Mji-x1-a1l" secondAttribute="top" id="AUy-bv-nVa"/>
+                            <constraint firstItem="MP2-1I-m2Y" firstAttribute="leading" secondItem="0KE-gt-OnW" secondAttribute="leading" id="Trx-j4-5ov"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0KE-gt-OnW"/>
+                    </view>
+                    <size key="freeformSize" width="375" height="583"/>
+                    <connections>
+                        <outlet property="collectionView" destination="MP2-1I-m2Y" id="dGu-pG-m2I"/>
+                        <segue destination="KXT-Db-tpS" kind="presentation" identifier="fromHEtoHIE" modalPresentationStyle="fullScreen" id="Nhg-Ud-lQW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VdU-cx-oU8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1796" y="832"/>
+        </scene>
+        <!--HistoryItemExport-->
+        <scene sceneID="5ip-0K-sMm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="HistoryItemExport" id="KXT-Db-tpS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p9c-EK-ebb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1196" y="831"/>
+        </scene>
+    </scenes>
 </document>

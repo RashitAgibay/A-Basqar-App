@@ -691,6 +691,14 @@
             </objects>
             <point key="canvasLocation" x="-625" y="934"/>
         </scene>
+        <!--MainKassaImport-->
+        <scene sceneID="d5I-W9-2Nf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainKassaImport" id="WBI-eB-de3" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VN8-W0-82f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-674" y="1077"/>
+        </scene>
         <!--Menu View Controller-->
         <scene sceneID="JpZ-9f-khu">
             <objects>
@@ -1045,6 +1053,7 @@
                         <segue destination="TVh-Di-Fri" kind="presentation" identifier="fromMainToImport" modalPresentationStyle="fullScreen" id="N7U-ak-r9v"/>
                         <segue destination="td3-Re-G2d" kind="presentation" identifier="fromMenuToExportKassa" modalPresentationStyle="fullScreen" id="bUs-pE-FfL"/>
                         <segue destination="vdw-RR-pLd" kind="presentation" identifier="fromMainToMainExport" modalPresentationStyle="fullScreen" id="FC3-Gf-WWX"/>
+                        <segue destination="WBI-eB-de3" kind="presentation" identifier="fromMenuToImportKassa" modalPresentationStyle="fullScreen" id="j5G-pv-kP1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr4-9I-Q6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
