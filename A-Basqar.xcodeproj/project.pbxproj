@@ -246,6 +246,8 @@
 		FD31605324E95BE000621BEF /* GoodReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD31605224E95BE000621BEF /* GoodReport.storyboard */; };
 		FD31605524E96B0500621BEF /* SearchByBarcodeImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD31605424E96B0500621BEF /* SearchByBarcodeImport.storyboard */; };
 		FD31605724E96B2200621BEF /* SearchByBarcodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD31605624E96B2200621BEF /* SearchByBarcodeVC.swift */; };
+		FD31605924E96DB200621BEF /* SearchByBarCodeExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD31605824E96DB200621BEF /* SearchByBarCodeExport.storyboard */; };
+		FD31605B24E96DCF00621BEF /* SearchByBarcodeExportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD31605A24E96DCF00621BEF /* SearchByBarcodeExportVC.swift */; };
 		FD3680A423C4712B00914B94 /* SellingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3680A323C4712B00914B94 /* SellingModel.swift */; };
 		FD4777B424AFAC6A00E323D3 /* ContragentListImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4777B324AFAC6A00E323D3 /* ContragentListImport.storyboard */; };
 		FD4777B624AFAC8600E323D3 /* ContragentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777B524AFAC8600E323D3 /* ContragentListVC.swift */; };
@@ -693,6 +695,8 @@
 		FD31605224E95BE000621BEF /* GoodReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GoodReport.storyboard; sourceTree = "<group>"; };
 		FD31605424E96B0500621BEF /* SearchByBarcodeImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = SearchByBarcodeImport.storyboard; path = "ERP(attempt2)/Import_Module/StoryBoards/SearchByBarcodeImport.storyboard"; sourceTree = SOURCE_ROOT; };
 		FD31605624E96B2200621BEF /* SearchByBarcodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByBarcodeVC.swift; sourceTree = "<group>"; };
+		FD31605824E96DB200621BEF /* SearchByBarCodeExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchByBarCodeExport.storyboard; sourceTree = "<group>"; };
+		FD31605A24E96DCF00621BEF /* SearchByBarcodeExportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByBarcodeExportVC.swift; sourceTree = "<group>"; };
 		FD3680A323C4712B00914B94 /* SellingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellingModel.swift; sourceTree = "<group>"; };
 		FD4777B324AFAC6A00E323D3 /* ContragentListImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContragentListImport.storyboard; sourceTree = "<group>"; };
 		FD4777B524AFAC8600E323D3 /* ContragentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListVC.swift; sourceTree = "<group>"; };
@@ -1704,6 +1708,7 @@
 				FDBBFF6A24D56B3700A2D283 /* HistoryItemExportVC.swift */,
 				FDBBFF6C24D56B4F00A2D283 /* KassaExportVC.swift */,
 				FDBBFF6E24D56B6300A2D283 /* SearchExportVC.swift */,
+				FD31605A24E96DCF00621BEF /* SearchByBarcodeExportVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -1722,6 +1727,7 @@
 				FDBBFF8024D56C3100A2D283 /* HistoryItemExport.storyboard */,
 				FDBBFF8224D56C3F00A2D283 /* KassaExport.storyboard */,
 				FDBBFF8424D56C4E00A2D283 /* SearchExport.storyboard */,
+				FD31605824E96DB200621BEF /* SearchByBarCodeExport.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1964,6 +1970,7 @@
 				6159FA97244DF19D00FE1BED /* MovementHistory.storyboard in Resources */,
 				61F00E74244F1060001D0EEE /* NewBid.storyboard in Resources */,
 				FD117B9024B3590C008A00E7 /* HistoryItemImport.storyboard in Resources */,
+				FD31605924E96DB200621BEF /* SearchByBarCodeExport.storyboard in Resources */,
 				FDF8C71F24D44956000F205F /* HistoryKassaExportItem.storyboard in Resources */,
 				FDBBFF8324D56C3F00A2D283 /* KassaExport.storyboard in Resources */,
 				FDE7A65C24DB869E000E86B5 /* MainKassaImport.storyboard in Resources */,
@@ -2108,6 +2115,7 @@
 				288CC46A23A89C38008D5218 /* SDAnimatedImageView.m in Sources */,
 				280901A62394CFB800CA68BD /* BuyerCompanies.swift in Sources */,
 				FD93BE7C24D791D9009CFBDE /* HistoryItemExportCell.swift in Sources */,
+				FD31605B24E96DCF00621BEF /* SearchByBarcodeExportVC.swift in Sources */,
 				FD93BE6E24D79126009CFBDE /* NewExportCell.swift in Sources */,
 				289087E7239A1832001C53C6 /* IncomeKassaModel.swift in Sources */,
 				FD93BE7624D79199009CFBDE /* FirstLevelCatExportCell.swift in Sources */,

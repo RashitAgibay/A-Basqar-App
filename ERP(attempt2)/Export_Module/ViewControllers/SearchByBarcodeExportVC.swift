@@ -1,5 +1,5 @@
 //
-//  SearchByBarcodeVC.swift
+//  SearchByBarcodeExportVC.swift
 //  A-Basqar
 //
 //  Created by Ilyas Shomat on 8/16/20.
@@ -11,7 +11,7 @@ import AVFoundation
 
 
 //MARK: - barcode, штрих код оқу жасап тұр осы клас ішінде
-class SearchByBarcodeVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate  {
+class SearchByBarcodeExportVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate  {
 
     
     @IBOutlet weak var videoView: UIView!
@@ -29,6 +29,8 @@ class SearchByBarcodeVC: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        debug_print(message: "", object: "")
+        
         do {
             
             try scanQrCode()
@@ -54,7 +56,7 @@ class SearchByBarcodeVC: UIViewController, AVCaptureMetadataOutputObjectsDelegat
 //                testForApi()
                 connection.isEnabled = false // MARK: - код бір ақ рет шығару үшін
                 getGoodByBarCode()
-                performSegue(withIdentifier: "frombarcodetoimport", sender: self)
+                performSegue(withIdentifier: "frombarcodetoexport", sender: self)
                 
                 }
             if machineReadableCode.type == AVMetadataObject.ObjectType.qr {
@@ -65,19 +67,19 @@ class SearchByBarcodeVC: UIViewController, AVCaptureMetadataOutputObjectsDelegat
 //                testForApi()
                 connection.isEnabled = false // MARK: - код бір ақ рет шығару үшін
                 getGoodByBarCode()
-                performSegue(withIdentifier: "frombarcodetoimport", sender: self)
+                performSegue(withIdentifier: "frombarcodetoexport", sender: self)
             }
         }
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//          if segue.identifier == "frombarcodetoimport" {
-//              if let destVC = segue.destination as? UINavigationController,
-//                  let targetController = destVC.topViewController as? BuyProductVC {
-//                  targetController.barcode = string
-//              }
-//          }
-//      }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          if segue.identifier == "frombarcodetoexport" {
+              if let destVC = segue.destination as? UINavigationController,
+                  let targetController = destVC.topViewController as? BuyProductVC {
+                  targetController.barcode = string
+              }
+          }
+      }
     
     
     
@@ -222,7 +224,7 @@ class SearchByBarcodeVC: UIViewController, AVCaptureMetadataOutputObjectsDelegat
             ]
             
             
-            let encodeURL = importShoppingCartURL
+            let encodeURL = exportShoppingCartURL
 
             let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in

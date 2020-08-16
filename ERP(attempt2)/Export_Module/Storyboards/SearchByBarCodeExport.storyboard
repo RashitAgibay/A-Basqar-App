@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="93c-Ql-8vL">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search By Barcode ExportVC-->
+        <scene sceneID="dFK-Uu-1ea">
+            <objects>
+                <viewController id="qOc-Qv-eVN" customClass="SearchByBarcodeExportVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CDv-FV-Qbw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Yl-DM-ycI">
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Cro-tG-gOp" firstAttribute="bottom" secondItem="2Yl-DM-ycI" secondAttribute="bottom" id="3hX-Cz-dbB"/>
+                            <constraint firstItem="Cro-tG-gOp" firstAttribute="trailing" secondItem="2Yl-DM-ycI" secondAttribute="trailing" id="U5Y-sy-sdf"/>
+                            <constraint firstItem="2Yl-DM-ycI" firstAttribute="leading" secondItem="Cro-tG-gOp" secondAttribute="leading" id="noK-K4-EU4"/>
+                            <constraint firstItem="2Yl-DM-ycI" firstAttribute="top" secondItem="Cro-tG-gOp" secondAttribute="top" id="oEs-eS-URm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Cro-tG-gOp"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="PhF-0b-wde">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="QXz-CX-3O0">
+                            <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="o4O-ql-mag" kind="presentation" modalPresentationStyle="fullScreen" id="vnO-48-vCq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="videoView" destination="2Yl-DM-ycI" id="yub-SE-6aJ"/>
+                        <segue destination="o4O-ql-mag" kind="presentation" identifier="frombarcodetoexport" modalPresentationStyle="fullScreen" id="Ak4-gb-npN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mFd-Aj-VXg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7279.1999999999998" y="2952.7736131934034"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="clu-fh-15S">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="93c-Ql-8vL" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="edz-3S-Xrd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qOc-Qv-eVN" kind="relationship" relationship="rootViewController" id="Fkt-PN-xBV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ctf-dE-6Cc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6340" y="2952.7736131934034"/>
+        </scene>
+        <!--MainExport-->
+        <scene sceneID="MDG-3O-EyE">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainExport" id="o4O-ql-mag" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tfn-vr-jwl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7830" y="2952"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Ak4-gb-npN"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="back" width="30" height="30"/>
+    </resources>
+</document>

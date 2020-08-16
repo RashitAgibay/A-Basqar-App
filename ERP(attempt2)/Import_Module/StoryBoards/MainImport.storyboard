@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zZZ-q2-oqg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zZZ-q2-oqg">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -82,6 +82,9 @@
                             </barButtonItem>
                             <barButtonItem title="Item" image="scan" id="pES-vY-CEE">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="9Fe-ph-jda" kind="presentation" id="ZMN-zQ-eLp"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -118,7 +121,7 @@
                 <viewControllerPlaceholder storyboardName="FirstLevelCatImport" id="tXr-S4-EFo" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a6E-K4-KK4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1894" y="2882"/>
+            <point key="canvasLocation" x="1932" y="2931"/>
         </scene>
         <!--HistoryImport-->
         <scene sceneID="kAp-No-Jrj">
@@ -126,7 +129,15 @@
                 <viewControllerPlaceholder storyboardName="HistoryImport" id="O9H-Cq-uNP" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JNZ-Gw-rZ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1883" y="2930"/>
+            <point key="canvasLocation" x="1883" y="3043"/>
+        </scene>
+        <!--SearchByBarcodeImport-->
+        <scene sceneID="I2p-XG-aKe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchByBarcodeImport" id="9Fe-ph-jda" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="as5-QC-rQM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1942" y="2885"/>
         </scene>
         <!--SearchImport-->
         <scene sceneID="Vpz-xY-ZNE">
