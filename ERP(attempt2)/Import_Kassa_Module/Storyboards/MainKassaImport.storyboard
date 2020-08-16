@@ -102,7 +102,7 @@
                 <viewControllerPlaceholder storyboardName="HistoryKassaImport" id="8IC-Od-ctY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MdT-Bf-F64" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5673" y="3748"/>
+            <point key="canvasLocation" x="-5644" y="3945"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gj4-77-bOH">

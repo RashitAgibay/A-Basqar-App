@@ -142,7 +142,7 @@ class MenuViewController: UIViewController {
     
     @objc func tapReportCard(){
          // MARK: - (3) Card-ты басу арқылы профиль бетін ашу
-         performSegue(withIdentifier: "toReport", sender: self)
+         performSegue(withIdentifier: "fromMainToMainReport", sender: self)
     }
     
     @objc func tapProfileCard(){

@@ -699,6 +699,14 @@
             </objects>
             <point key="canvasLocation" x="-674" y="1077"/>
         </scene>
+        <!--MainReport-->
+        <scene sceneID="Yfg-Lp-KLG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainReport" id="Rq4-3b-yPX" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q6P-Zn-sZf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-668" y="1149"/>
+        </scene>
         <!--Menu View Controller-->
         <scene sceneID="JpZ-9f-khu">
             <objects>
@@ -1054,6 +1062,7 @@
                         <segue destination="td3-Re-G2d" kind="presentation" identifier="fromMenuToExportKassa" modalPresentationStyle="fullScreen" id="bUs-pE-FfL"/>
                         <segue destination="vdw-RR-pLd" kind="presentation" identifier="fromMainToMainExport" modalPresentationStyle="fullScreen" id="FC3-Gf-WWX"/>
                         <segue destination="WBI-eB-de3" kind="presentation" identifier="fromMenuToImportKassa" modalPresentationStyle="fullScreen" id="j5G-pv-kP1"/>
+                        <segue destination="Rq4-3b-yPX" kind="presentation" identifier="fromMainToMainReport" modalPresentationStyle="fullScreen" id="psP-Pz-Kcf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr4-9I-Q6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -7435,7 +7444,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0Nb-3w-rkj"/>
+        <segue reference="8G5-N5-j2I"/>
         <segue reference="OFF-qA-Pln"/>
         <segue reference="wj7-S5-WJi"/>
         <segue reference="cV1-SB-D9k"/>
@@ -7446,7 +7455,7 @@
         <segue reference="JRa-Xv-mkw"/>
         <segue reference="ZJ2-I0-hTz"/>
         <segue reference="GKp-99-c5l"/>
-        <segue reference="zIf-KI-1SE"/>
+        <segue reference="YA4-PZ-t87"/>
         <segue reference="4f7-8k-HY9"/>
         <segue reference="9me-9b-5ND"/>
     </inferredMetricsTieBreakers>

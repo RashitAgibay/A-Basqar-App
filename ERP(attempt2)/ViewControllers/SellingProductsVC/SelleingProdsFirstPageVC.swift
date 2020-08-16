@@ -806,6 +806,6 @@ func sumValues(array: Array<Int>) ->Int {
 }
 
 
-func debug_print (message: String, object: Any) {
-    print("\(message) : \(object)")
+func debug_print (message: String = "", object: Any) {
+    print("/// \(message) : \(object)")
 }

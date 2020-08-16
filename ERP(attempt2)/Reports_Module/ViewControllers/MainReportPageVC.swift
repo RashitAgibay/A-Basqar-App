@@ -18,8 +18,7 @@ class MainReportPageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        segmentView.removeBorder()
-        segmentView.addUnderlineForSelectedSegment()
+        segmentView.setupSimpleView()
     }
     
     @IBAction func switchSegment(_ sender: UISegmentedControl) {
