@@ -68,6 +68,9 @@
                             </barButtonItem>
                             <barButtonItem title="Item" image="search" id="n3b-k9-EXI">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="4T9-Vc-knc" kind="presentation" modalPresentationStyle="automatic" id="ihl-CF-SGm"/>
+                                </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
@@ -79,6 +82,9 @@
                             </barButtonItem>
                             <barButtonItem title="Item" image="scan" id="zWF-Aa-YDz">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="YA0-5A-gkI" kind="presentation" id="z5u-cZ-jly"/>
+                                </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
@@ -99,7 +105,7 @@
                 <viewControllerPlaceholder storyboardName="NewExport" id="tfa-RT-qoc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3UT-Um-6pr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1842" y="2974"/>
+            <point key="canvasLocation" x="1847" y="3196"/>
         </scene>
         <!--menuStoryboadrid-->
         <scene sceneID="3Gg-8V-Whk">
@@ -115,7 +121,15 @@
                 <viewControllerPlaceholder storyboardName="FirstLevelCatExport" id="Oc6-y2-V8h" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ccC-ii-cgq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1894" y="2882"/>
+            <point key="canvasLocation" x="1912" y="3000"/>
+        </scene>
+        <!--SearchByBarCodeExport-->
+        <scene sceneID="Py4-5j-6Bk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchByBarCodeExport" id="YA0-5A-gkI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kfl-CS-xjD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1846" y="2958"/>
         </scene>
         <!--HistoryExport-->
         <scene sceneID="2eM-u1-d1i">

@@ -104,20 +104,21 @@ extension HistoryKassaExportItemVC {
                 "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
             ]
             
-            let encodeURL = importCheckURL
+            let encodeURL = importCheckURL + "\(checkID)/"
             print("/// encodeUrl:", encodeURL)
-            print("/// headers:",headers)
+            
+//            print("/// headers:",headers)
 
-            let requestOfApi = AF.request("https://abasqar.pythonanywhere.com/import/v1/api/import-check/13", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
                 
                 MBProgressHUD.hide(for: self.view, animated: true)
                 
                 
-                print(response.request!)
-                print(response.result)
-                print(response.response!)
+//                print(response.request!)
+//                print(response.result)
+//                print(response.response!)
 
             
                 switch response.result {
@@ -126,10 +127,32 @@ extension HistoryKassaExportItemVC {
                     
                     MBProgressHUD.hide(for: self.view, animated: true)
                     
-                    if let x = payload as? Dictionary<String,AnyObject> {
+                    if let data = payload as? Dictionary<String,AnyObject> {
                         
-                        print("///", x)
+//                        print("///", x)
+//                        let history = data["history"] as! NSDictionary
+                        let company = data["company"] as! NSDictionary
+                        let companyName = company["company_name"] as! String
+ 
+                        let code = data["code"] as! String
+                        let date = data["data"] as! String
+                        let factMoney = data["fac_money"] as! Int
+                        let sumMoney = data["sum_money"] as! Int
                         
+                        if data["comment"] != nil {
+                            
+                            let comment = data["comment"] as! String
+                            self.commentLabel.text = comment
+
+                        }
+                        
+                        
+                        self.importNameLabel.text = code
+                        self.billNumberLabel.text = code
+                        self.dateLabel.text = date
+                        self.contragentButton.setTitle(companyName, for: .normal)
+                        self.factMoneyTextField.text = "\(factMoney)"
+                        self.totalSumLabel.text = "\(sumMoney)"
                     
                     }
                     

@@ -182,26 +182,27 @@ extension GoodReportVC {
             MBProgressHUD.showAdded(to: self.view, animated: true)
             
             //MARK: - Токенді optional түрден String типіне алып келу керек, әйтпесе токен дұрыс жіберілмейді.
-            let token = UserDefaults.standard.string(forKey: userTokenForUserStandart) as! String
+            let token = UserDefaults.standard.string(forKey: userTokenKey) ?? ""
             
             let headers: HTTPHeaders = [
                 
                 "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
             ]
             
             
-            let encodeURL = goodReportUrl
+            let encodeURL = goodsReportURL + "?start_date=\(startDateString)&end_date=\(endDateString)"
             
-//            debug_print(message: "full url", object: encodeURL + "?start_date=\(startDateString)&end_date=\(endDateString)")
+            debug_print(message: "token", object: token)
+            debug_print(object: encodeURL)
             
-            let requestOfApi = AF.request(encodeURL + "?start_date=\(startDateString)&end_date=\(endDateString)", method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                           
-//                           print(response.request)
-//                           print(response.result)
-//                           print(response.response)
+                
+                print(response.request)
+                print(response.result)
+                print(response.response)
                 
                 switch response.result {
                 
