@@ -1,7 +1,106 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ocz-fJ-eVd">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Search ExportVC-->
+        <scene sceneID="2MO-Dm-pf2">
+            <objects>
+                <viewController id="zmL-Gw-OrG" customClass="SearchExportVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yyp-ic-tMW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cgX-GK-sBG">
+                                <rect key="frame" x="0.0" y="100" width="375" height="567"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="searchImportCell" id="wyd-Mg-q3W">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wyd-Mg-q3W" id="SQx-PL-PmI">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="zmL-Gw-OrG" id="LdN-lf-RUC"/>
+                                    <outlet property="delegate" destination="zmL-Gw-OrG" id="1Fl-Ws-wcs"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="lmb-oX-MOb">
+                                <rect key="frame" x="0.0" y="44" width="375" height="56"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="zmL-Gw-OrG" id="xHs-C4-Nao"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cgX-GK-sBG" firstAttribute="leading" secondItem="hak-Sn-QUq" secondAttribute="leading" id="7NS-xV-8vd"/>
+                            <constraint firstItem="cgX-GK-sBG" firstAttribute="top" secondItem="lmb-oX-MOb" secondAttribute="bottom" symbolic="YES" id="HkM-he-OBa"/>
+                            <constraint firstItem="lmb-oX-MOb" firstAttribute="trailing" secondItem="hak-Sn-QUq" secondAttribute="trailing" id="JaW-aB-QDQ"/>
+                            <constraint firstItem="hak-Sn-QUq" firstAttribute="trailing" secondItem="cgX-GK-sBG" secondAttribute="trailing" id="Q7b-KQ-tpi"/>
+                            <constraint firstItem="hak-Sn-QUq" firstAttribute="bottom" secondItem="cgX-GK-sBG" secondAttribute="bottom" id="UXq-r8-uZw"/>
+                            <constraint firstItem="lmb-oX-MOb" firstAttribute="top" secondItem="hak-Sn-QUq" secondAttribute="top" id="Uiz-ZB-AIt"/>
+                            <constraint firstItem="lmb-oX-MOb" firstAttribute="leading" secondItem="hak-Sn-QUq" secondAttribute="leading" id="VAd-hT-pDl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hak-Sn-QUq"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wYc-of-683">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="ayX-Pf-Ryp">
+                            <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="tappedBackButton:" destination="zmL-Gw-OrG" id="QYd-Hn-BUA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="lmb-oX-MOb" id="JWB-Hd-Jmf"/>
+                        <outlet property="tableView" destination="cgX-GK-sBG" id="BT0-xo-7wu"/>
+                        <segue destination="Y97-zF-whf" kind="presentation" identifier="fromSearchProdsToMainImport" modalPresentationStyle="fullScreen" id="psv-PF-Jid"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ipo-Qz-8of" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7279.1999999999998" y="2193.5532233883059"/>
+        </scene>
+        <!--MainExport-->
+        <scene sceneID="cCp-PE-AOa">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MainExport" id="Y97-zF-whf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nbo-SS-wA9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7898" y="2171"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="obE-jA-oOQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ocz-fJ-eVd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aMc-KN-gVa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zmL-Gw-OrG" kind="relationship" relationship="rootViewController" id="rbf-4Y-Jz3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RGg-b4-Doq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6340" y="2193.5532233883059"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="30" height="30"/>
+    </resources>
 </document>

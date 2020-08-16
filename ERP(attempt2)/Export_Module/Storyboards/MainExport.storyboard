@@ -68,6 +68,9 @@
                             </barButtonItem>
                             <barButtonItem title="Item" image="search" id="n3b-k9-EXI">
                                 <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="4T9-Vc-knc" kind="presentation" modalPresentationStyle="automatic" id="ihl-CF-SGm"/>
+                                </connections>
                             </barButtonItem>
                         </leftBarButtonItems>
                         <rightBarButtonItems>
