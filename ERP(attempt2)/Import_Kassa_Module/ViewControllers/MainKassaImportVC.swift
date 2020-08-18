@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Printer
 
 class MainKassaImportVC: UIViewController {
 
@@ -72,5 +73,16 @@ class MainKassaImportVC: UIViewController {
         }
     }
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as?
+            BluetoothPrinterSelectTableViewController {
+            
+            let bluetoothPrinterManager = appDelegate.bluetoothPrinterManager
+
+            vc.sectionTitle = "Choose Bluetooth Printer"
+            vc.printerManager = bluetoothPrinterManager
+        }
+    }
 }

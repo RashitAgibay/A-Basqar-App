@@ -67,6 +67,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="printer" id="VTC-yK-g0H">
                             <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="cEC-BB-Myi" kind="show" id="val-aw-dFA"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
@@ -80,13 +83,23 @@
             </objects>
             <point key="canvasLocation" x="-6468.840579710145" y="3710.8258928571427"/>
         </scene>
+        <!--BluetoothPrinters-->
+        <scene sceneID="r9w-ZO-Qd5">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="BluetoothPrinterSelectTableViewController" storyboardName="BluetoothPrinters" id="cEC-BB-Myi" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="qAc-j4-XYX"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZY3-nR-FUl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5682" y="3517"/>
+        </scene>
         <!--menuStoryboadrid-->
         <scene sceneID="SgQ-fW-gDL">
             <objects>
                 <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="menuStoryboadrid" id="Nt2-nX-EOl" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EY9-WE-3wt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5719" y="3680"/>
+            <point key="canvasLocation" x="-5716" y="3385"/>
         </scene>
         <!--NewKassaImport-->
         <scene sceneID="TDy-LV-rIx">
