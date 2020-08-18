@@ -8,11 +8,14 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import Printer
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    public let bluetoothPrinterManager = BluetoothPrinterManager()
+//    public let dummyPrinter = DummyPrinter()
     
     // MARK: - Приложение ios 13 тен төмен версияларында ашылу үшін
     var window: UIWindow?

@@ -15,6 +15,7 @@ class IncomeKassaVC: UIViewController {
     @IBOutlet weak var firstPageView: UIView!
     @IBOutlet weak var segmentViewPage: UIView!
     
+    
     var history_id_from_list: Int = 0
     var segment_id: Int = 0
     
@@ -38,6 +39,9 @@ class IncomeKassaVC: UIViewController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let bluetoothPrinterManager = appDelegate.bluetoothPrinterManager
         
         if let vc = segue.destination as? BluetoothPrinterSelectTableViewController {
             

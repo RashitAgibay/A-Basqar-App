@@ -240,6 +240,7 @@
 		FD117B8E24B358F5008A00E7 /* HistoryItemImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD117B8D24B358F5008A00E7 /* HistoryItemImportVC.swift */; };
 		FD117B9024B3590C008A00E7 /* HistoryItemImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD117B8F24B3590C008A00E7 /* HistoryItemImport.storyboard */; };
 		FD117B9224B35AED008A00E7 /* HistoryItemImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD117B9124B35AED008A00E7 /* HistoryItemImportCell.swift */; };
+		FD20B4D924EA0CF0003A813A /* BluetoothPrinters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD20B4D824EA0CF0003A813A /* BluetoothPrinters.storyboard */; };
 		FD29E75E24B48E6800B5AC2F /* SearchImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD29E75D24B48E6800B5AC2F /* SearchImport.storyboard */; };
 		FD31604F24E95BBE00621BEF /* MainReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD31604E24E95BBE00621BEF /* MainReport.storyboard */; };
 		FD31605124E95BD000621BEF /* FinancialReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD31605024E95BD000621BEF /* FinancialReport.storyboard */; };
@@ -689,6 +690,7 @@
 		FD117B8D24B358F5008A00E7 /* HistoryItemImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemImportVC.swift; sourceTree = "<group>"; };
 		FD117B8F24B3590C008A00E7 /* HistoryItemImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryItemImport.storyboard; sourceTree = "<group>"; };
 		FD117B9124B35AED008A00E7 /* HistoryItemImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemImportCell.swift; sourceTree = "<group>"; };
+		FD20B4D824EA0CF0003A813A /* BluetoothPrinters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BluetoothPrinters.storyboard; sourceTree = "<group>"; };
 		FD29E75D24B48E6800B5AC2F /* SearchImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchImport.storyboard; sourceTree = "<group>"; };
 		FD31604E24E95BBE00621BEF /* MainReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainReport.storyboard; sourceTree = "<group>"; };
 		FD31605024E95BD000621BEF /* FinancialReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinancialReport.storyboard; sourceTree = "<group>"; };
@@ -892,6 +894,7 @@
 		2812AAF22362B45A001D65C8 /* ERP(attempt2) */ = {
 			isa = PBXGroup;
 			children = (
+				FD20B4D524EA0BC2003A813A /* Main_Module */,
 				28B49788239E197D0002C690 /* Reports_Module */,
 				FDE7A65324DB85DE000E86B5 /* Import_Kassa_Module */,
 				FDBBFF5724D569C200A2D283 /* Export_Module */,
@@ -1518,6 +1521,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FD20B4D524EA0BC2003A813A /* Main_Module */ = {
+			isa = PBXGroup;
+			children = (
+				FD20B4D724EA0BF9003A813A /* Storyboards */,
+				FD20B4D624EA0BEA003A813A /* ViewControllers */,
+			);
+			path = Main_Module;
+			sourceTree = "<group>";
+		};
+		FD20B4D624EA0BEA003A813A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FD20B4D724EA0BF9003A813A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FD20B4D824EA0CF0003A813A /* BluetoothPrinters.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		FD31604D24E95B9D00621BEF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -1941,6 +1968,7 @@
 				61A846212452F6C600DF3371 /* AddStore.storyboard in Resources */,
 				FDBBFF7124D56B7900A2D283 /* MainExport.storyboard in Resources */,
 				613D7386244F7A0A00E0E392 /* BidProductList.storyboard in Resources */,
+				FD20B4D924EA0CF0003A813A /* BluetoothPrinters.storyboard in Resources */,
 				FD4777C224AFB78400E323D3 /* UpdateContrInfoImport.storyboard in Resources */,
 				6159FA9D244E145B00FE1BED /* PlaceList.storyboard in Resources */,
 				FDE7A66224DB86F9000E86B5 /* HistoryKassaImportItem.storyboard in Resources */,

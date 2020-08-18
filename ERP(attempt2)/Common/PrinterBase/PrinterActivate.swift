@@ -10,5 +10,5 @@ import Foundation
 import Printer
 
 
-public let bluetoothPrinterManager = BluetoothPrinterManager()
-public let dummyPrinter = DummyPrinter()
+//public let bluetoothPrinterManager = BluetoothPrinterManager()
+//public let dummyPrinter = DummyPrinter()

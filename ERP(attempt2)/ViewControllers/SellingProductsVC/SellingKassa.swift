@@ -26,6 +26,7 @@ class SellingKassa: UIViewController,  UITextFieldDelegate {
     @IBOutlet weak var cancelButton: UIButton!
     
     
+    
     var history_list: NSArray = []
     var reversed_history_list: NSArray = []
     var checkName: String = ""
@@ -80,7 +81,11 @@ class SellingKassa: UIViewController,  UITextFieldDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if let vc = segue.destination as? BluetoothPrinterSelectTableViewController {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let bluetoothPrinterManager = appDelegate.bluetoothPrinterManager
+        
+        if let vc = segue.destination as? BluetoothPrinterSelectTableViewController {
                vc.sectionTitle = "Выберите принтер"
                vc.printerManager = bluetoothPrinterManager
            }
@@ -123,6 +128,9 @@ class SellingKassa: UIViewController,  UITextFieldDelegate {
             .plainText("--------------------------------")
             
         )
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let bluetoothPrinterManager = appDelegate.bluetoothPrinterManager
         
         if bluetoothPrinterManager.canPrint {
             bluetoothPrinterManager.print(ticket)

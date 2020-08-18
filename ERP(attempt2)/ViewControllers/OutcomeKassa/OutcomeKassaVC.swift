@@ -23,6 +23,8 @@ class OutcomeKassaVC: UIViewController {
     var company_id: Int = 0
     var company_name: String = ""
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -62,6 +64,9 @@ class OutcomeKassaVC: UIViewController {
    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     
     if let vc = segue.destination as? BluetoothPrinterSelectTableViewController {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let bluetoothPrinterManager = appDelegate.bluetoothPrinterManager
         
         vc.sectionTitle = "Выберите принтер"
         vc.printerManager = bluetoothPrinterManager

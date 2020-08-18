@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import Printer
+
 
 class NewKassaImportVC: DefaultVC {
 
@@ -39,23 +41,26 @@ class NewKassaImportVC: DefaultVC {
     
     @IBAction func tapAcceptButton(_ sender: Any) {
         
-        if contragentButton.titleLabel?.text == "Выбрать" {
-            
-            ShowErrorsAlertWithOneCancelButton(message: "Отсутствует информация")
-        }
+//        if contragentButton.titleLabel?.text == "Выбрать" {
+//
+//            ShowErrorsAlertWithOneCancelButton(message: "Отсутствует информация")
+//        }
+//
+//        else {
+//
+//            if currentHistoryID != 0 {
+//
+//                createNewCheck()
+//            }
+//
+//            if currentContrId != 0 {
+//
+//                createNullCheck()
+//            }
+//        }
         
-        else {
-            
-            if currentHistoryID != 0 {
-                
-                createNewCheck()
-            }
-            
-            if currentContrId != 0 {
-                
-                createNullCheck()
-            }
-        }
+        generateBillToPrint(number: "", date: "", contr: "dsad", factMoney: "dsad", totalSum: "dsadas", comment: "dsada")
+        
     }
     
     
@@ -416,5 +421,28 @@ extension NewKassaImportVC {
         totalSumLabel.text = "..."
         commentLabel.text = ""
         
+    }
+    
+    private func generateBillToPrint(number: String, date: String, contr: String, factMoney: String, totalSum: String, comment: String) {
+        
+        
+        
+        let ticket = Ticket(
+            .plainText("--------------------------------"),
+            .plainText("Nomer checka: \(number)"),
+            .plainText("Data: \(date)"),
+            .plainText("fact summa: \(factMoney)"),
+            .plainText("summa pokupki: \(totalSum)"),
+            .plainText("---- made in DalaService.kz ----"),
+            .plainText("--------------------------------")
+            
+        )
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let bluetoothPrinterManager = appDelegate.bluetoothPrinterManager
+        
+        if bluetoothPrinterManager.canPrint {
+            bluetoothPrinterManager.print(ticket)
+        }
     }
 }

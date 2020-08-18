@@ -180,6 +180,9 @@ class FirstPageVC: UIViewController,  UITextFieldDelegate {
             
         )
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let bluetoothPrinterManager = appDelegate.bluetoothPrinterManager
+        
         if bluetoothPrinterManager.canPrint {
             bluetoothPrinterManager.print(ticket)
         }

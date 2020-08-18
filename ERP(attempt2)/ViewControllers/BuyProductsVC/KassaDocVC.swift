@@ -30,6 +30,8 @@ class KassaDocVC: UIViewController,  UITextFieldDelegate {
     
     @IBOutlet weak var collectionView: UIView!
     
+
+    
     var history_list: NSArray = []
     var reversed_history_list: NSArray = []
     var checkName: String = ""
@@ -101,6 +103,10 @@ class KassaDocVC: UIViewController,  UITextFieldDelegate {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? BluetoothPrinterSelectTableViewController {
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let bluetoothPrinterManager = appDelegate.bluetoothPrinterManager
+            
             vc.sectionTitle = "Выберите принтер"
             vc.printerManager = bluetoothPrinterManager
         }
@@ -148,7 +154,12 @@ class KassaDocVC: UIViewController,  UITextFieldDelegate {
             
         )
         
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let bluetoothPrinterManager = appDelegate.bluetoothPrinterManager
+        
         if bluetoothPrinterManager.canPrint {
+            
+            
             bluetoothPrinterManager.print(ticket)
         }
     }
