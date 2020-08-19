@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Printer
+
 
 class KassaImportVC: DefaultVC {
 
@@ -24,6 +26,7 @@ class KassaImportVC: DefaultVC {
     var historyID = Int()
     var factMoney = Int()
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     
     override func viewDidLoad() {
@@ -78,6 +81,19 @@ class KassaImportVC: DefaultVC {
         
         
         createNewCheck()
+        
+//        var factSumm = String()
+//        if factsumButton.text == "" {
+//            factSumm = String(totalSumLabel.text?.split(separator: " ").first ?? "") + " tenge"
+//        }
+        
+        generateBillToPrint(number: checkNumberLabel.text ?? "",
+                            date: dateLabel.text ?? "",
+                            contr: contrButton.titleLabel?.text ?? "",
+                            factMoney: String(factsumButton.text?.split(separator: " ").first ?? "") + " tenge",
+                            totalSum: String(totalSumLabel.text?.split(separator: " ").first ?? "") + " tenge",
+                            comment: commentTextField.text ?? "")
+        
         navigateToMainImport()
     }
     @IBAction func tapCancelButton(_ sender: Any) {
@@ -92,6 +108,19 @@ extension KassaImportVC {
     private func navigateToMainImport() {
         
         performSegue(withIdentifier: "fromKassaToMainImport", sender: self)
+    }
+    
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as?
+            BluetoothPrinterSelectTableViewController {
+            
+            let bluetoothPrinterManager = appDelegate.bluetoothPrinterManager
+
+            vc.sectionTitle = "Choose Bluetooth Printer"
+            vc.printerManager = bluetoothPrinterManager
+        }
     }
 }
 
@@ -273,6 +302,30 @@ extension KassaImportVC {
                 
                 self.createNewCheck(hitoryID: self.historyID, fact_money: self.factMoney, testComments: commentTextField.text!)
             }
+        }
+    }
+    
+    private func generateBillToPrint(number: String, date: String, contr: String, factMoney: String, totalSum: String, comment: String) {
+        
+        
+        
+        let ticket = Ticket(
+            .plainText("--------------------------------"),
+            .plainText("////////////////////////////////"),
+            .plainText("Nomer checka: \(number)"),
+            .plainText("Data: \(date)"),
+            .plainText("fact summa: \(factMoney)"),
+            .plainText("summa pokupki: \(totalSum)"),
+            .plainText("---- made in DalaService.kz ----"),
+            .plainText("--------------------------------")
+            
+        )
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let bluetoothPrinterManager = appDelegate.bluetoothPrinterManager
+        
+        if bluetoothPrinterManager.canPrint {
+            bluetoothPrinterManager.print(ticket)
         }
     }
 }
