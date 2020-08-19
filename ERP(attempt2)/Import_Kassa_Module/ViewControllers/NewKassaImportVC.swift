@@ -41,25 +41,38 @@ class NewKassaImportVC: DefaultVC {
     
     @IBAction func tapAcceptButton(_ sender: Any) {
         
-//        if contragentButton.titleLabel?.text == "Выбрать" {
-//
-//            ShowErrorsAlertWithOneCancelButton(message: "Отсутствует информация")
-//        }
-//
-//        else {
-//
-//            if currentHistoryID != 0 {
-//
-//                createNewCheck()
-//            }
-//
-//            if currentContrId != 0 {
-//
-//                createNullCheck()
-//            }
-//        }
+        if contragentButton.titleLabel?.text == "Выбрать" {
+
+            ShowErrorsAlertWithOneCancelButton(message: "Отсутствует информация")
+        }
+
+        else {
+
+            if currentHistoryID != 0 {
+
+                createNewCheck()
+                
+            }
+
+            if currentContrId != 0 {
+
+                createNullCheck()
+            }
+            
+            var factSumm = String()
+            if factMoneyTextField.text == "" {
+                factSumm = String(totalSumLabel.text?.split(separator: " ").first ?? "") + " tenge"
+            }
+            
+            generateBillToPrint(number: billNumberLabel.text ?? "",
+                                date: dateLabel.text ?? "",
+                                contr: contragentButton.titleLabel?.text ?? "",
+                                factMoney: factSumm,
+                                totalSum: String(totalSumLabel.text?.split(separator: " ").first ?? "") + " tenge",
+                                comment: commentLabel.text ?? "")
+        }
         
-        generateBillToPrint(number: "", date: "", contr: "dsad", factMoney: "dsad", totalSum: "dsadas", comment: "dsada")
+
         
     }
     
@@ -429,6 +442,7 @@ extension NewKassaImportVC {
         
         let ticket = Ticket(
             .plainText("--------------------------------"),
+            .plainText("////////////////////////////////"),
             .plainText("Nomer checka: \(number)"),
             .plainText("Data: \(date)"),
             .plainText("fact summa: \(factMoney)"),

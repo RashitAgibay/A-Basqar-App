@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import Printer
+
 
 class NewKassaExportVC: DefaultVC {
 
@@ -55,6 +57,18 @@ class NewKassaExportVC: DefaultVC {
                 
                 createNullCheck()
             }
+            
+            var factSumm = String()
+            if factMoneyTextField.text == "" {
+                factSumm = String(totalSumLabel.text?.split(separator: " ").first ?? "") + " tenge"
+            }
+            
+            generateBillToPrint(number: billNumberLabel.text ?? "",
+                                date: dateLabel.text ?? "",
+                                contr: contragentButton.titleLabel?.text ?? "",
+                                factMoney: factSumm,
+                                totalSum: String(totalSumLabel.text?.split(separator: " ").first ?? "") + " tenge",
+                                comment: commentLabel.text ?? "")
         }
         
     }
@@ -415,5 +429,29 @@ extension NewKassaExportVC {
         totalSumLabel.text = "..."
         commentLabel.text = ""
         
+    }
+    
+    private func generateBillToPrint(number: String, date: String, contr: String, factMoney: String, totalSum: String, comment: String) {
+        
+        
+        
+        let ticket = Ticket(
+            .plainText("--------------------------------"),
+            .plainText("////////////////////////////////"),
+            .plainText("Nomer checka: \(number)"),
+            .plainText("Data: \(date)"),
+            .plainText("fact summa: \(factMoney)"),
+            .plainText("summa pokupki: \(totalSum)"),
+            .plainText("---- made in DalaService.kz ----"),
+            .plainText("--------------------------------")
+            
+        )
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let bluetoothPrinterManager = appDelegate.bluetoothPrinterManager
+        
+        if bluetoothPrinterManager.canPrint {
+            bluetoothPrinterManager.print(ticket)
+        }
     }
 }

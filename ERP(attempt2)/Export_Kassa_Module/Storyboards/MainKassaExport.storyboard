@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WN5-H3-OJK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WN5-H3-OJK">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -67,6 +67,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="printer" id="K1D-nt-RAD">
                             <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="Iow-5y-gQj" kind="show" id="baE-BI-GPK"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
@@ -86,7 +89,7 @@
                 <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="menuStoryboadrid" id="VYQ-Cw-yoa" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lq9-ZL-SDW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5719" y="3680"/>
+            <point key="canvasLocation" x="-5711" y="3404"/>
         </scene>
         <!--NewKassaExport-->
         <scene sceneID="yEG-sn-Hho">
@@ -124,6 +127,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43m-Vs-AEU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-7378.2608695652179" y="3710.4910714285711"/>
+        </scene>
+        <!--BluetoothPrinters-->
+        <scene sceneID="X0m-Iv-cqk">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="BluetoothPrinterSelectTableViewController" storyboardName="BluetoothPrinters" id="Iow-5y-gQj" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="G5K-ns-TgZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GsZ-gY-0gF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5682" y="3517"/>
         </scene>
     </scenes>
     <resources>
