@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1v4-qn-JXp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1v4-qn-JXp">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -193,6 +193,7 @@
                             <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="tapCheckButton:" destination="E0U-KD-Ydc" id="JWD-CJ-nG7"/>
+                                <segue destination="XoZ-zb-ieQ" kind="show" id="R4g-CS-ra6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -239,6 +240,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37N-99-Rvd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1972.4637681159422" y="3790.1785714285711"/>
+        </scene>
+        <!--BluetoothPrinters-->
+        <scene sceneID="n6F-Yu-Fzh">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="BluetoothPrinterSelectTableViewController" storyboardName="BluetoothPrinters" id="XoZ-zb-ieQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="a4W-GM-dno"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ULY-gu-g0V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-432" y="3670"/>
         </scene>
     </scenes>
     <resources>

@@ -193,6 +193,7 @@
                             <color key="tintColor" red="0.31700813770000003" green="0.48607450720000001" blue="0.70722419020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="tapCheckButton:" destination="hTQ-1H-PJy" id="4g7-Zd-qXh"/>
+                                <segue destination="1IH-nv-8gS" kind="show" id="awU-4I-gi0"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -239,6 +240,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDi-WX-Q5W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1972.4637681159422" y="3790.1785714285711"/>
+        </scene>
+        <!--BluetoothPrinters-->
+        <scene sceneID="0Ug-Wm-oc0">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="BluetoothPrinterSelectTableViewController" storyboardName="BluetoothPrinters" id="1IH-nv-8gS" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cOO-oq-v0L"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iUX-nm-8l9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-432" y="3670"/>
         </scene>
     </scenes>
     <resources>

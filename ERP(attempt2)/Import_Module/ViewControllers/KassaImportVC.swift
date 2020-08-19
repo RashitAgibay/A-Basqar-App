@@ -82,10 +82,6 @@ class KassaImportVC: DefaultVC {
         
         createNewCheck()
         
-//        var factSumm = String()
-//        if factsumButton.text == "" {
-//            factSumm = String(totalSumLabel.text?.split(separator: " ").first ?? "") + " tenge"
-//        }
         
         generateBillToPrint(number: checkNumberLabel.text ?? "",
                             date: dateLabel.text ?? "",
