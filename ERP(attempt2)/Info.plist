@@ -28,9 +28,9 @@
 		<true/>
 	</dict>
 	<key>NSBluetoothAlwaysUsageDescription</key>
-	<string>Пожалуйста предоставьте доступ к bluetooth</string>
+	<string>Пожалуйста предоставьте доступ к bluetooth для подключения термопринтера при распечатке чека</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>Пожалуйста предоставьте доступ к bluetooth</string>
+	<string>Пожалуйста предоставьте доступ к bluetooth для подключения термопринтера при распечатке чека</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Пожалуйста предоставьте доступ к вашей камер для сканирования qr кода</string>
 	<key>UIApplicationSceneManifest</key>
