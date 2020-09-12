@@ -293,6 +293,9 @@
 		FD7F097724B9F3D000F7709F /* ImportListKassaExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7F097624B9F3D000F7709F /* ImportListKassaExport.storyboard */; };
 		FD7F097924B9F3F700F7709F /* ImportListKassaExportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F097824B9F3F700F7709F /* ImportListKassaExportVC.swift */; };
 		FD7F097B24B9F54000F7709F /* ImportListKassaExportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F097A24B9F54000F7709F /* ImportListKassaExportCell.swift */; };
+		FD8E9033250CCD7B0003AD7A /* NewPassCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8E9032250CCD7B0003AD7A /* NewPassCode.storyboard */; };
+		FD8E9035250CCD8F0003AD7A /* NewPasscodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8E9034250CCD8F0003AD7A /* NewPasscodeVC.swift */; };
+		FD8E9037250CE5C10003AD7A /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8E9036250CE5C10003AD7A /* AppSetup.swift */; };
 		FD93BE6E24D79126009CFBDE /* NewExportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD93BE6D24D79126009CFBDE /* NewExportCell.swift */; };
 		FD93BE7424D79184009CFBDE /* ContragentListExportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD93BE7324D79184009CFBDE /* ContragentListExportCell.swift */; };
 		FD93BE7624D79199009CFBDE /* FirstLevelCatExportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD93BE7524D79199009CFBDE /* FirstLevelCatExportCell.swift */; };
@@ -751,6 +754,9 @@
 		FD7F097624B9F3D000F7709F /* ImportListKassaExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImportListKassaExport.storyboard; sourceTree = "<group>"; };
 		FD7F097824B9F3F700F7709F /* ImportListKassaExportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportListKassaExportVC.swift; sourceTree = "<group>"; };
 		FD7F097A24B9F54000F7709F /* ImportListKassaExportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportListKassaExportCell.swift; sourceTree = "<group>"; };
+		FD8E9032250CCD7B0003AD7A /* NewPassCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPassCode.storyboard; sourceTree = "<group>"; };
+		FD8E9034250CCD8F0003AD7A /* NewPasscodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasscodeVC.swift; sourceTree = "<group>"; };
+		FD8E9036250CE5C10003AD7A /* AppSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetup.swift; sourceTree = "<group>"; };
 		FD93BE6D24D79126009CFBDE /* NewExportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExportCell.swift; sourceTree = "<group>"; };
 		FD93BE7324D79184009CFBDE /* ContragentListExportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListExportCell.swift; sourceTree = "<group>"; };
 		FD93BE7524D79199009CFBDE /* FirstLevelCatExportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLevelCatExportCell.swift; sourceTree = "<group>"; };
@@ -1596,6 +1602,7 @@
 				FD6C71D4250B1B460072552D /* Registration.storyboard */,
 				FD6C71D8250B1C6B0072552D /* ForgetPassword.storyboard */,
 				FD6C71DC250B1CF10072552D /* SMSCode.storyboard */,
+				FD8E9032250CCD7B0003AD7A /* NewPassCode.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -1607,6 +1614,7 @@
 				FD6C71D6250B1B6C0072552D /* RegistrationVC.swift */,
 				FD6C71DA250B1C8D0072552D /* ForgetPasswordVC.swift */,
 				FD6C71DE250B1D3D0072552D /* SMSCodeVC.swift */,
+				FD8E9034250CCD8F0003AD7A /* NewPasscodeVC.swift */,
 			);
 			path = ViewContollers;
 			sourceTree = "<group>";
@@ -1646,6 +1654,7 @@
 			children = (
 				2812AAF32362B45A001D65C8 /* AppDelegate.swift */,
 				2812AAF52362B45A001D65C8 /* SceneDelegate.swift */,
+				FD8E9036250CE5C10003AD7A /* AppSetup.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -2026,6 +2035,7 @@
 				FDBBFF7324D56B8500A2D283 /* NewExport.storyboard in Resources */,
 				FD7F097724B9F3D000F7709F /* ImportListKassaExport.storyboard in Resources */,
 				FD7F096B24B9E46B00F7709F /* HistoryKassaExport.storyboard in Resources */,
+				FD8E9033250CCD7B0003AD7A /* NewPassCode.storyboard in Resources */,
 				FD4777B424AFAC6A00E323D3 /* ContragentListImport.storyboard in Resources */,
 				FD31604F24E95BBE00621BEF /* MainReport.storyboard in Resources */,
 				FDE7A66024DB86E6000E86B5 /* HistoryKassaImport.storyboard in Resources */,
@@ -2185,6 +2195,7 @@
 				28CAE45D238B924E0015DE56 /* CaterogyCell.swift in Sources */,
 				FDB6036823E2E9720012D65D /* SellingSearchVC.swift in Sources */,
 				FD7F097924B9F3F700F7709F /* ImportListKassaExportVC.swift in Sources */,
+				FD8E9035250CCD8F0003AD7A /* NewPasscodeVC.swift in Sources */,
 				613D737C244F657900E0E392 /* NewMovementInBidCell.swift in Sources */,
 				61A846232452F6E400DF3371 /* AddStoreVC.swift in Sources */,
 				288CC3C123A89BFD008D5218 /* OperationQueue+Alamofire.swift in Sources */,
@@ -2333,6 +2344,7 @@
 				288CC48523A89C38008D5218 /* SDWebImageDownloaderOperation.m in Sources */,
 				FDB6036623E2E6830012D65D /* SellingBarcodeVC.swift in Sources */,
 				61560A8A244E33A300FAAFB0 /* MovementFirstCategoryVC.swift in Sources */,
+				FD8E9037250CE5C10003AD7A /* AppSetup.swift in Sources */,
 				288CC3B823A89BFD008D5218 /* DispatchQueue+Alamofire.swift in Sources */,
 				288CC47823A89C38008D5218 /* SDImageIOAnimatedCoder.m in Sources */,
 				FD7F097524B9EE9E00F7709F /* OutcomeBill.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="acJ-3F-2ZH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="acJ-3F-2ZH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign In View Controller-->
+        <!--LoginVC-->
         <scene sceneID="tVY-ZA-en5">
             <objects>
-                <viewController storyboardIdentifier="LoginPage" id="acJ-3F-2ZH" customClass="SignInViewController" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="acJ-3F-2ZH" customClass="LoginVC" customModule="A_Basqar" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KoL-xN-Iy2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -67,7 +67,7 @@
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="LoginButtonTapped:" destination="acJ-3F-2ZH" eventType="touchUpInside" id="ZWh-sU-YOl"/>
+                                    <action selector="tapLoginButton:" destination="acJ-3F-2ZH" eventType="touchUpInside" id="QS6-Vl-dkw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -88,15 +88,24 @@
                     <navigationItem key="navigationItem" id="9V4-6R-f87"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="cardView2" destination="BGr-bX-tnm" id="6nv-jw-tPR"/>
-                        <outlet property="loginButton" destination="CcW-xm-Eg5" id="qrc-eT-0V0"/>
-                        <outlet property="loginTextField" destination="Cfk-or-0ZJ" id="dQK-Co-J2b"/>
-                        <outlet property="passwordTextField2" destination="nWQ-Fa-eVx" id="jqU-Eb-hxf"/>
+                        <outlet property="cardView" destination="BGr-bX-tnm" id="psC-6Z-Pwg"/>
+                        <outlet property="loginButton" destination="CcW-xm-Eg5" id="NBO-cb-lAg"/>
+                        <outlet property="loginTextField" destination="Cfk-or-0ZJ" id="Cku-9Q-TFl"/>
+                        <outlet property="passwordTextField" destination="nWQ-Fa-eVx" id="ClT-bj-OUm"/>
+                        <segue destination="etX-qc-8xB" kind="presentation" identifier="fromLogintoMain" modalPresentationStyle="fullScreen" id="gFm-Tb-yeZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="08P-cr-RJg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="503" y="-561"/>
+        </scene>
+        <!--menuStoryboadrid-->
+        <scene sceneID="TVc-OC-BI2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="menuStoryboadrid" id="etX-qc-8xB" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zht-cG-MUb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1025" y="-562"/>
         </scene>
     </scenes>
     <resources>

@@ -43,7 +43,7 @@ class NewKassaExportVC: DefaultVC {
         
         if contragentButton.titleLabel?.text == "Выбрать" {
             
-            ShowErrorsAlertWithOneCancelButton(message: "Отсутствует информация")
+            showErrorsAlertWithOneCancelButton(message: "Отсутствует информация")
         }
         
         else {
@@ -78,7 +78,7 @@ class NewKassaExportVC: DefaultVC {
         
         if contragentButton.titleLabel?.text == "Выбрать" {
             
-            ShowErrorsAlertWithOneCancelButton(message: "Отсутствует информация")
+            showErrorsAlertWithOneCancelButton(message: "Отсутствует информация")
         }
         
         else {
@@ -172,7 +172,7 @@ extension NewKassaExportVC {
                 
                 print("internet is not working")
                 MBProgressHUD.hide(for: self.view, animated: true)
-                self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+                self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
             }
         }
     
@@ -225,7 +225,7 @@ extension NewKassaExportVC {
                     
                     print("internet is not working")
                     MBProgressHUD.hide(for: self.view, animated: true)
-                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+                    self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
                 }
             }
     
@@ -398,7 +398,7 @@ extension NewKassaExportVC {
         
         if factMoneyTextField.text == "" {
             
-            ShowErrorsAlertWithOneCancelButton(message: "Заполните фактическую сумму")
+            showErrorsAlertWithOneCancelButton(message: "Заполните фактическую сумму")
         }
         
         else {

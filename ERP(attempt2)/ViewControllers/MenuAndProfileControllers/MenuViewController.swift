@@ -32,7 +32,7 @@ class MenuViewController: UIViewController {
         } 
         super.viewDidLoad()
         
-        
+        print("/// menu")
         
         
         

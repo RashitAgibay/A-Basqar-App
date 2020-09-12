@@ -128,7 +128,7 @@ extension ContragentListKassaExportListVC {
                     
                     print(error)
                     MBProgressHUD.hide(for: self.view, animated: true)
-                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+                    self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
                 }
             })
         
@@ -137,7 +137,7 @@ extension ContragentListKassaExportListVC {
         else {
             
             MBProgressHUD.hide(for: self.view, animated: true)
-            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
     }
 }

@@ -144,14 +144,14 @@ extension SearchImportVC {
                 case .failure(let error):
                     
                     MBProgressHUD.hide(for: self.view, animated: true)
-                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")}
+                    self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")}
             })
         }
         
         else {
             
             MBProgressHUD.hide(for: self.view, animated: true)
-            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
     }
     
@@ -203,7 +203,7 @@ extension SearchImportVC {
             
             print("internet is not working")
             MBProgressHUD.hide(for: self.view, animated: true)
-            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
     }
 }
