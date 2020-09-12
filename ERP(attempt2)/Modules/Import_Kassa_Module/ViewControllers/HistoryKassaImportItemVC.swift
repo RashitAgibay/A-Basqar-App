@@ -92,7 +92,7 @@ extension HistoryKassaImportItemVC {
             print("unable to start notifier")
         }
         
-        if ((reacibility?.connection) != .unavailable) {
+        if ((reachability?.connection) != .unavailable) {
             
             MBProgressHUD.showAdded(to: self.view, animated: true)
             

@@ -81,7 +81,7 @@ extension HistoryImportVC {
             print("unable to start notifier")
         }
         
-        if ((reacibility?.connection) != .unavailable) {
+        if ((reachability?.connection) != .unavailable) {
             MBProgressHUD.showAdded(to: self.view, animated: true)
             
             let token = UserDefaults.standard.string(forKey: userTokenKey) as! String

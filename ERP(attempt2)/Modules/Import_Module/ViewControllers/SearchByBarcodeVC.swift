@@ -11,7 +11,7 @@ import AVFoundation
 
 
 //MARK: - barcode, штрих код оқу жасап тұр осы клас ішінде
-class SearchByBarcodeVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate  {
+class SearchByBarcodeVC: DefaultVC, AVCaptureMetadataOutputObjectsDelegate  {
 
     
     @IBOutlet weak var videoView: UIView!
@@ -120,14 +120,14 @@ class SearchByBarcodeVC: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     func getGoodByBarCode() {
         
         do {
-            reacibility = try Reachability.init()
+            reachability = try Reachability.init()
         }
         
         catch {
         
         }
         
-        if ((reacibility!.connection) != .unavailable){
+        if ((reachability!.connection) != .unavailable){
             MBProgressHUD.showAdded(to: self.view, animated: true)
             
             let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
@@ -197,13 +197,13 @@ class SearchByBarcodeVC: UIViewController, AVCaptureMetadataOutputObjectsDelegat
     
     func SendGoodToBasketApi() {
         do {
-            reacibility = try Reachability.init()
+            reachability = try Reachability.init()
         }
         catch {
             print("unable to start notifier")
         }
         
-        if ((reacibility!.connection) != .none){
+        if ((reachability!.connection) != .none){
             
             MBProgressHUD.showAdded(to: self.view, animated: true)
             

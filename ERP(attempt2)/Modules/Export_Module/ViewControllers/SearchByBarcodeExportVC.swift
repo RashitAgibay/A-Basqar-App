@@ -11,7 +11,7 @@ import AVFoundation
 
 
 //MARK: - barcode, штрих код оқу жасап тұр осы клас ішінде
-class SearchByBarcodeExportVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate  {
+class SearchByBarcodeExportVC: DefaultVC, AVCaptureMetadataOutputObjectsDelegate  {
 
     
     @IBOutlet weak var videoView: UIView!
@@ -72,17 +72,7 @@ class SearchByBarcodeExportVC: UIViewController, AVCaptureMetadataOutputObjectsD
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-          if segue.identifier == "frombarcodetoexport" {
-              if let destVC = segue.destination as? UINavigationController,
-                  let targetController = destVC.topViewController as? BuyProductVC {
-                  targetController.barcode = string
-              }
-          }
-      }
-    
-    
-    
+        
    func scanQrCode() throws {
         let avCaptureSession = AVCaptureSession()
         
@@ -122,14 +112,14 @@ class SearchByBarcodeExportVC: UIViewController, AVCaptureMetadataOutputObjectsD
     func getGoodByBarCode() {
         
         do {
-            reacibility = try Reachability.init()
+            reachability = try Reachability.init()
         }
         
         catch {
         
         }
         
-        if ((reacibility!.connection) != .unavailable){
+        if ((reachability!.connection) != .unavailable){
             MBProgressHUD.showAdded(to: self.view, animated: true)
             
             let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
@@ -199,13 +189,13 @@ class SearchByBarcodeExportVC: UIViewController, AVCaptureMetadataOutputObjectsD
     
     func SendGoodToBasketApi() {
         do {
-            reacibility = try Reachability.init()
+            reachability = try Reachability.init()
         }
         catch {
             print("unable to start notifier")
         }
         
-        if ((reacibility!.connection) != .none){
+        if ((reachability!.connection) != .none){
             
             MBProgressHUD.showAdded(to: self.view, animated: true)
             

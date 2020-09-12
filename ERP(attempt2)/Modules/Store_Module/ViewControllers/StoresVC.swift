@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StoresVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, StoreCellDelegate {
+class StoresVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDelegate, StoreCellDelegate {
 
     
     
@@ -72,16 +72,16 @@ class StoresVC: UIViewController, UICollectionViewDataSource, UICollectionViewDe
             
             do {
                 
-                reacibility = try Reachability.init()
+                reachability = try Reachability.init()
             }
             catch {
                 
             }
         
-            if ((reacibility!.connection) != .unavailable){
+            if ((reachability!.connection) != .unavailable){
                 MBProgressHUD.showAdded(to: self.view, animated: true)
                 
-                let token = UserDefaults.standard.string(forKey: userTokenForUserStandart) as! String
+                let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
                 
                 let headers: HTTPHeaders = [
                     "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),

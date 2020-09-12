@@ -169,14 +169,14 @@ extension FinancialReportVC {
     func get_goods_report_api() {
         
         do {
-            reacibility = try Reachability.init()
+            reachability = try Reachability.init()
         }
         
         catch {
         
         }
         
-        if ((reacibility!.connection) != .unavailable){
+        if ((reachability!.connection) != .unavailable){
             
             MBProgressHUD.showAdded(to: self.view, animated: true)
             

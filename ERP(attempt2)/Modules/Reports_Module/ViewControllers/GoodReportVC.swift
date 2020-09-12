@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GoodReportVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
+class GoodReportVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDelegate  {
 
     @IBOutlet weak var cardview: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -170,14 +170,14 @@ extension GoodReportVC {
     func get_goods_report_api() {
         
         do {
-            reacibility = try Reachability.init()
+            reachability = try Reachability.init()
         }
         
         catch {
         
         }
         
-        if ((reacibility!.connection) != .unavailable){
+        if ((reachability!.connection) != .unavailable){
             
             MBProgressHUD.showAdded(to: self.view, animated: true)
             
@@ -193,8 +193,7 @@ extension GoodReportVC {
             
             let encodeURL = goodsReportURL + "?start_date=\(startDateString)&end_date=\(endDateString)"
             
-            debug_print(message: "token", object: token)
-            debug_print(object: encodeURL)
+
             
             let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             

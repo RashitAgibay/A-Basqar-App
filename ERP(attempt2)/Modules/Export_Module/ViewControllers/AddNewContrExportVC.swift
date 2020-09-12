@@ -80,7 +80,7 @@ extension AddNewContrExportVC {
         
         }
         
-        if ((reacibility?.connection) != .unavailable) {
+        if ((reachability?.connection) != .unavailable) {
             
             MBProgressHUD.showAdded(to: self.view, animated: true)
             

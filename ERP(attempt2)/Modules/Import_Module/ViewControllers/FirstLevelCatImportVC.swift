@@ -100,7 +100,7 @@ extension FirstLevelCatImportVC {
         
         }
         
-        if ((reacibility?.connection) != .unavailable){
+        if ((reachability?.connection) != .unavailable){
             MBProgressHUD.showAdded(to: self.view, animated: true)
             
             //MARK: - Токенді optional түрден String типіне алып келу керек, әйтпесе токен дұрыс жіберілмейді.

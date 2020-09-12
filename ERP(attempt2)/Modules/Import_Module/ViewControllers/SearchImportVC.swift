@@ -90,14 +90,14 @@ extension SearchImportVC {
         
         do {
             
-            reacibility = try Reachability.init()
+            reachability = try Reachability.init()
         }
         
         catch {
         
         }
         
-        if ((reacibility?.connection) != .unavailable) {
+        if ((reachability?.connection) != .unavailable) {
             MBProgressHUD.showAdded(to: self.view, animated: true)
             
             let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
@@ -168,7 +168,7 @@ extension SearchImportVC {
         
         }
         
-        if ((reacibility?.connection) != .unavailable) {
+        if ((reachability?.connection) != .unavailable) {
             
             MBProgressHUD.showAdded(to: self.view, animated: true)
             
