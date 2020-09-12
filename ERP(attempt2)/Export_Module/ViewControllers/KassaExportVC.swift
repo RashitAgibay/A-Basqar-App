@@ -176,7 +176,7 @@ extension KassaExportVC {
                     
                     print(error)
                     MBProgressHUD.hide(for: self.view, animated: true)
-                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+                    self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
                 }
             })
         }
@@ -184,7 +184,7 @@ extension KassaExportVC {
         else {
             
             MBProgressHUD.hide(for: self.view, animated: true)
-            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
     }
     
@@ -238,7 +238,7 @@ extension KassaExportVC {
             
             print("internet is not working")
             MBProgressHUD.hide(for: self.view, animated: true)
-            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
     }
 }

@@ -14,37 +14,16 @@ import Printer
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    public let bluetoothPrinterManager = BluetoothPrinterManager()
-//    public let dummyPrinter = DummyPrinter()
-    
-    // MARK: - Приложение ios 13 тен төмен версияларында ашылу үшін
+    public let bluetoothPrinterManager = BluetoothPrinterManager()    
     var window: UIWindow?
-    var userTokenForUserStandart: String = "new_userTokenKey"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         
         //MARK: клавиатураны реттейтін библеотека
         IQKeyboardManager.shared.enable = true
-        
-        
-        //MARK: - Осының арқасында логин жасаған болсам сразу меню бетіне өтіп кетем
-        let mainStoryBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        let token = UserDefaults.standard.string(forKey: self.userTokenForUserStandart)
-        
-        if token == nil {
-            let homePage = mainStoryBoard.instantiateViewController(withIdentifier:  "LoginPage") as! SignInViewController
-            self.window?.rootViewController = homePage
-        }
-        
-        if token != nil {
-            let homePage = mainStoryBoard.instantiateViewController(withIdentifier:  "menuStoryboadrid") as! MenuViewController
-            self.window?.rootViewController = homePage
-        }
-        
-        
-        
+        window = UIWindow()
+        AppSetup.shared.setupRootViewController(window: window!)
         
         return true
     }

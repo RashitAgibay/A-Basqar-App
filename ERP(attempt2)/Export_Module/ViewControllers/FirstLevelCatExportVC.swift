@@ -147,7 +147,7 @@ extension FirstLevelCatExportVC {
                     
                     MBProgressHUD.hide(for: self.view, animated: true)
                     
-                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+                    self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
                 }
             
             })
@@ -159,7 +159,7 @@ extension FirstLevelCatExportVC {
             //print("internet is not working")
             
             MBProgressHUD.hide(for: self.view, animated: true)
-            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
                        
 

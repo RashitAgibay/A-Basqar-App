@@ -21,8 +21,11 @@ class DefaultVC: UIViewController, UITextFieldDelegate {
 
 extension DefaultVC {
     
+    func activateDelegateForTextField(oneTextField : UITextField){
+         oneTextField.delegate = self
+     }
     
-    func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
+    func showErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: buttomMessage, style: .cancel) { (action) in
@@ -32,7 +35,7 @@ extension DefaultVC {
         self.present(alertController,animated: true, completion: nil)
     }
     
-    func ShowErrorsAlertWithOneCancelButton(message: String) {
+    func showErrorsAlertWithOneCancelButton(message: String) {
         
         let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Закрыть", style: .cancel) { (action) in
@@ -41,4 +44,5 @@ extension DefaultVC {
         alertController.addAction(action)
         self.present(alertController,animated: true, completion: nil)
     }
+    
 }
