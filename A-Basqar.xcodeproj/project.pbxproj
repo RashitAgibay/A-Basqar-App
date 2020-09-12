@@ -1353,7 +1353,6 @@
 		28ACEA43236BFBC70067BD46 /* MenuAndProfileControllers */ = {
 			isa = PBXGroup;
 			children = (
-				28D46D58236A8BFA000DA471 /* MenuViewController.swift */,
 				28ACEA3F236BEADE0067BD46 /* ProfilePageViewController.swift */,
 				28ACEA41236BFB6E0067BD46 /* EditProfileViewController.swift */,
 				282EBF25236C0104008C3B1F /* ChangePasswordViewController.swift */,
@@ -1537,6 +1536,7 @@
 		FD20B4D624EA0BEA003A813A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				28D46D58236A8BFA000DA471 /* MenuViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

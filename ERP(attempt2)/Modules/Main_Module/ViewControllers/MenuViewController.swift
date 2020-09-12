@@ -30,13 +30,8 @@ class MenuViewController: UIViewController {
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } 
-        super.viewDidLoad()
+        super.viewDidLoad()        
         
-        print("/// menu")
-        
-        
-        
-        // MARK: - (1) Card-ты басу арқылы бір action жасауға мүмкіндік береді
         cardView1.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapBuyProductsCard))
         cardView1.addGestureRecognizer(tapGesture)
