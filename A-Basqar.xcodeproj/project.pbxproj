@@ -20,7 +20,6 @@
 		2812AB002362B45B001D65C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2812AAFE2362B45B001D65C8 /* LaunchScreen.storyboard */; };
 		2812AB0B2362B45B001D65C8 /* ERP_attempt2_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2812AB0A2362B45B001D65C8 /* ERP_attempt2_Tests.swift */; };
 		2812AB162362B45B001D65C8 /* ERP_attempt2_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2812AB152362B45B001D65C8 /* ERP_attempt2_UITests.swift */; };
-		282EBF26236C0104008C3B1F /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282EBF25236C0104008C3B1F /* ChangePasswordViewController.swift */; };
 		284EE89D23A9F6A400B470A5 /* BuyProductAddGoodCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284EE89C23A9F6A400B470A5 /* BuyProductAddGoodCell.swift */; };
 		284F4287237BC6F00083933E /* GoodCategoryAndInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284F4286237BC6F00083933E /* GoodCategoryAndInfo.swift */; };
 		2863184B2398C45500556226 /* AddProdToSellingPageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863184A2398C45500556226 /* AddProdToSellingPageCell.swift */; };
@@ -134,8 +133,6 @@
 		288CC4A723A89CBC008D5218 /* ApiUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC4A623A89CBC008D5218 /* ApiUrls.swift */; };
 		289087E7239A1832001C53C6 /* IncomeKassaModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289087E6239A1832001C53C6 /* IncomeKassaModel.swift */; };
 		289087E9239A188D001C53C6 /* IncomeKassaCheckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289087E8239A188D001C53C6 /* IncomeKassaCheckCell.swift */; };
-		28ACEA40236BEADE0067BD46 /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACEA3F236BEADE0067BD46 /* ProfilePageViewController.swift */; };
-		28ACEA42236BFB6E0067BD46 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28ACEA41236BFB6E0067BD46 /* EditProfileViewController.swift */; };
 		28B49785239E186C0002C690 /* FinancialReporModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B49784239E186C0002C690 /* FinancialReporModel.swift */; };
 		28B49787239E18830002C690 /* GoodsReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B49786239E18830002C690 /* GoodsReportModel.swift */; };
 		28B4978A239E199A0002C690 /* MainReportPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B49789239E199A0002C690 /* MainReportPageVC.swift */; };
@@ -367,7 +364,6 @@
 		2812AB112362B45B001D65C8 /* A-BasqarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "A-BasqarUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2812AB152362B45B001D65C8 /* ERP_attempt2_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ERP_attempt2_UITests.swift; sourceTree = "<group>"; };
 		2812AB172362B45B001D65C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		282EBF25236C0104008C3B1F /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		284EE89C23A9F6A400B470A5 /* BuyProductAddGoodCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyProductAddGoodCell.swift; sourceTree = "<group>"; };
 		284F4286237BC6F00083933E /* GoodCategoryAndInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodCategoryAndInfo.swift; sourceTree = "<group>"; };
 		2863184A2398C45500556226 /* AddProdToSellingPageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProdToSellingPageCell.swift; sourceTree = "<group>"; };
@@ -556,8 +552,6 @@
 		288CC4A623A89CBC008D5218 /* ApiUrls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiUrls.swift; sourceTree = "<group>"; };
 		289087E6239A1832001C53C6 /* IncomeKassaModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeKassaModel.swift; sourceTree = "<group>"; };
 		289087E8239A188D001C53C6 /* IncomeKassaCheckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeKassaCheckCell.swift; sourceTree = "<group>"; };
-		28ACEA3F236BEADE0067BD46 /* ProfilePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
-		28ACEA41236BFB6E0067BD46 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		28B49784239E186C0002C690 /* FinancialReporModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialReporModel.swift; sourceTree = "<group>"; };
 		28B49786239E18830002C690 /* GoodsReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsReportModel.swift; sourceTree = "<group>"; };
 		28B49789239E199A0002C690 /* MainReportPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainReportPageVC.swift; sourceTree = "<group>"; };
@@ -890,7 +884,6 @@
 			isa = PBXGroup;
 			children = (
 				288CC4A623A89CBC008D5218 /* ApiUrls.swift */,
-				28ACEA43236BFBC70067BD46 /* MenuAndProfileControllers */,
 				288C79A9238652BE003282C3 /* CollectionViewCells */,
 			);
 			path = "Old files";
@@ -1178,16 +1171,6 @@
 				289087E6239A1832001C53C6 /* IncomeKassaModel.swift */,
 			);
 			path = IncomeKassaModel;
-			sourceTree = "<group>";
-		};
-		28ACEA43236BFBC70067BD46 /* MenuAndProfileControllers */ = {
-			isa = PBXGroup;
-			children = (
-				28ACEA3F236BEADE0067BD46 /* ProfilePageViewController.swift */,
-				28ACEA41236BFB6E0067BD46 /* EditProfileViewController.swift */,
-				282EBF25236C0104008C3B1F /* ChangePasswordViewController.swift */,
-			);
-			path = MenuAndProfileControllers;
 			sourceTree = "<group>";
 		};
 		28B49788239E197D0002C690 /* Reports_Module */ = {
@@ -2055,7 +2038,6 @@
 				FD7F096D24B9E48B00F7709F /* NewKassaExportVC.swift in Sources */,
 				FDE7A66C24DB8815000E86B5 /* HistoryKassaImportVC.swift in Sources */,
 				28B49785239E186C0002C690 /* FinancialReporModel.swift in Sources */,
-				282EBF26236C0104008C3B1F /* ChangePasswordViewController.swift in Sources */,
 				FD7F097224B9ECB800F7709F /* HistoryKassaExportCell.swift in Sources */,
 				FD5AB47C24ADCDDD002BDB0E /* UserConstants.swift in Sources */,
 				FDE7A67024DB8849000E86B5 /* ExportListKassaImportVC.swift in Sources */,
@@ -2189,7 +2171,6 @@
 				288CC3CC23A89BFD008D5218 /* RetryPolicy.swift in Sources */,
 				288CC49F23A89C38008D5218 /* SDDisplayLink.m in Sources */,
 				288CC39023A89BB5008D5218 /* MBProgressHUD.m in Sources */,
-				28ACEA40236BEADE0067BD46 /* ProfilePageViewController.swift in Sources */,
 				61F00E83244F2498001D0EEE /* BidsHistoryCell.swift in Sources */,
 				288CC49423A89C38008D5218 /* UIImage+MultiFormat.m in Sources */,
 				288CC46D23A89C38008D5218 /* SDImageCache.m in Sources */,
@@ -2271,7 +2252,6 @@
 				288CC3C323A89BFD008D5218 /* ParameterEncoding.swift in Sources */,
 				FD5AB47024ADC02E002BDB0E /* FirstLevelCatImportVC.swift in Sources */,
 				288CC3BB23A89BFD008D5218 /* HTTPMethod.swift in Sources */,
-				28ACEA42236BFB6E0067BD46 /* EditProfileViewController.swift in Sources */,
 				288CC3C423A89BFD008D5218 /* Protector.swift in Sources */,
 				61A8461C2452DC0A00DF3371 /* EmployeeListVC.swift in Sources */,
 				288CC48C23A89C38008D5218 /* SDWebImagePrefetcher.m in Sources */,

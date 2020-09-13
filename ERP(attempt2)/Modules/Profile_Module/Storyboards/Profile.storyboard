@@ -139,6 +139,9 @@
                     <navigationItem key="navigationItem" id="N4H-KJ-TQr">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="home" id="niB-IQ-L1f">
                             <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="hn1-06-TPV" kind="presentation" modalPresentationStyle="fullScreen" id="TXF-rd-0my"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="exit" id="pNF-Hp-wTW">
                             <color key="tintColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -170,7 +173,15 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Oa-mu-r3F" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4925" y="739"/>
+            <point key="canvasLocation" x="4934" y="822"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="grq-nM-cc7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="hn1-06-TPV" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CVC-0Y-0vQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4957" y="685"/>
         </scene>
         <!--EditPassword-->
         <scene sceneID="Nja-Gy-iUI">
@@ -188,7 +199,7 @@
                 <viewControllerPlaceholder storyboardName="Login" id="MiZ-YS-u0F" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ijJ-CU-oTS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4950" y="587"/>
+            <point key="canvasLocation" x="4959" y="755"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="adm-Bx-HiS">
