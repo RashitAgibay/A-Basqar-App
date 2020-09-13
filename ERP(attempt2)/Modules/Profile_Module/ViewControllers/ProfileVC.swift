@@ -17,9 +17,7 @@ class ProfileVC: DefaultVC {
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var editDataButton: UIButton!
     @IBOutlet weak var editPasswordButton: UIButton!
-    
-    var userTokenForUserStandart: String = "userToken"
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,7 +49,7 @@ extension ProfileVC {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: buttomMessage, style: .default) { (action) in
             
-            UserDefaults.standard.set(nil, forKey: self.userTokenForUserStandart)
+            UserDefaults.standard.set(nil, forKey: userTokenKey)
             self.performSegue(withIdentifier: "fromProfileToLogin", sender: self)
         }
         let secondAction = UIAlertAction(title: "Отмена", style: .cancel) { (action) in
