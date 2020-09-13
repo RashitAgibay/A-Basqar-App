@@ -298,6 +298,12 @@
 		FDBBFF8324D56C3F00A2D283 /* KassaExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBBFF8224D56C3F00A2D283 /* KassaExport.storyboard */; };
 		FDBBFF8524D56C4E00A2D283 /* SearchExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBBFF8424D56C4E00A2D283 /* SearchExport.storyboard */; };
 		FDCADE2C24D4578A007ADFDB /* DefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCADE2B24D4578A007ADFDB /* DefaultVC.swift */; };
+		FDD807B7250E4A0F00447B8D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD807B6250E4A0F00447B8D /* Profile.storyboard */; };
+		FDD807B9250E4A2100447B8D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD807B8250E4A2100447B8D /* ProfileVC.swift */; };
+		FDD807BB250E4A3E00447B8D /* EditProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD807BA250E4A3E00447B8D /* EditProfile.storyboard */; };
+		FDD807BD250E4A4E00447B8D /* EditPassword.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD807BC250E4A4E00447B8D /* EditPassword.storyboard */; };
+		FDD807BF250E4A8A00447B8D /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD807BE250E4A8A00447B8D /* EditProfileVC.swift */; };
+		FDD807C1250E4AAD00447B8D /* EditPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD807C0250E4AAD00447B8D /* EditPasswordVC.swift */; };
 		FDDC3D8624E80B11005B9E2B /* Readme in Resources */ = {isa = PBXBuildFile; fileRef = FDDC3D8524E80B11005B9E2B /* Readme */; };
 		FDE7A65824DB865B000E86B5 /* ImportKassaContragent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7A65724DB865B000E86B5 /* ImportKassaContragent.swift */; };
 		FDE7A65A24DB8667000E86B5 /* IncomeBill.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE7A65924DB8667000E86B5 /* IncomeBill.swift */; };
@@ -716,6 +722,12 @@
 		FDBBFF8224D56C3F00A2D283 /* KassaExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KassaExport.storyboard; sourceTree = "<group>"; };
 		FDBBFF8424D56C4E00A2D283 /* SearchExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchExport.storyboard; sourceTree = "<group>"; };
 		FDCADE2B24D4578A007ADFDB /* DefaultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultVC.swift; sourceTree = "<group>"; };
+		FDD807B6250E4A0F00447B8D /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		FDD807B8250E4A2100447B8D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		FDD807BA250E4A3E00447B8D /* EditProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditProfile.storyboard; sourceTree = "<group>"; };
+		FDD807BC250E4A4E00447B8D /* EditPassword.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditPassword.storyboard; sourceTree = "<group>"; };
+		FDD807BE250E4A8A00447B8D /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
+		FDD807C0250E4AAD00447B8D /* EditPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPasswordVC.swift; sourceTree = "<group>"; };
 		FDDC3D8524E80B11005B9E2B /* Readme */ = {isa = PBXFileReference; lastKnownFileType = text; path = Readme; sourceTree = "<group>"; };
 		FDE7A65724DB865B000E86B5 /* ImportKassaContragent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportKassaContragent.swift; sourceTree = "<group>"; };
 		FDE7A65924DB8667000E86B5 /* IncomeBill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeBill.swift; sourceTree = "<group>"; };
@@ -817,8 +829,8 @@
 				FD8E9038250CEBD00003AD7A /* Resources */,
 				2867428C238CF18D008884AF /* Models */,
 				2867428D238CF1A0008884AF /* Old files */,
-				2812AB012362B45B001D65C8 /* Info.plist */,
 				288CC38723A89B15008D5218 /* Libraries */,
+				2812AB012362B45B001D65C8 /* Info.plist */,
 			);
 			path = "ERP(attempt2)";
 			sourceTree = "<group>";
@@ -877,6 +889,7 @@
 		2867428D238CF1A0008884AF /* Old files */ = {
 			isa = PBXGroup;
 			children = (
+				288CC4A623A89CBC008D5218 /* ApiUrls.swift */,
 				28ACEA43236BFBC70067BD46 /* MenuAndProfileControllers */,
 				288C79A9238652BE003282C3 /* CollectionViewCells */,
 			);
@@ -1462,7 +1475,6 @@
 		FD7AF83D24AC876A0021B131 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				288CC4A623A89CBC008D5218 /* ApiUrls.swift */,
 				FD5AB47924ADC9BF002BDB0E /* NewApiUrls.swift */,
 				FD5AB47B24ADCDDD002BDB0E /* UserConstants.swift */,
 			);
@@ -1508,6 +1520,7 @@
 		FD8E9039250CEC650003AD7A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FDD49BE4250CF45D00998A0D /* Profile_Module */,
 				FD6C71CD250B18F90072552D /* Auth_Module */,
 				FD20B4D524EA0BC2003A813A /* Main_Module */,
 				28B49788239E197D0002C690 /* Reports_Module */,
@@ -1661,6 +1674,35 @@
 				61560A84244E1BD000FAAFB0 /* Movement */,
 			);
 			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		FDD49BE4250CF45D00998A0D /* Profile_Module */ = {
+			isa = PBXGroup;
+			children = (
+				FDD49BE5250CF47F00998A0D /* ViewControllers */,
+				FDD49BE6250CF48C00998A0D /* Storyboards */,
+			);
+			path = Profile_Module;
+			sourceTree = "<group>";
+		};
+		FDD49BE5250CF47F00998A0D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FDD807B8250E4A2100447B8D /* ProfileVC.swift */,
+				FDD807BE250E4A8A00447B8D /* EditProfileVC.swift */,
+				FDD807C0250E4AAD00447B8D /* EditPasswordVC.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FDD49BE6250CF48C00998A0D /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FDD807B6250E4A0F00447B8D /* Profile.storyboard */,
+				FDD807BA250E4A3E00447B8D /* EditProfile.storyboard */,
+				FDD807BC250E4A4E00447B8D /* EditPassword.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		FDDC3D8724E80B6B005B9E2B /* ViewControllers */ = {
@@ -1869,6 +1911,7 @@
 				6159FA9D244E145B00FE1BED /* PlaceList.storyboard in Resources */,
 				FDE7A66224DB86F9000E86B5 /* HistoryKassaImportItem.storyboard in Resources */,
 				61A8462D245308DA00DF3371 /* StoresEmployees.storyboard in Resources */,
+				FDD807BB250E4A3E00447B8D /* EditProfile.storyboard in Resources */,
 				FDBBFF8524D56C4E00A2D283 /* SearchExport.storyboard in Resources */,
 				FDE7A66424DB871E000E86B5 /* ExportListKassaImport.storyboard in Resources */,
 				FDBBFF7324D56B8500A2D283 /* NewExport.storyboard in Resources */,
@@ -1903,6 +1946,7 @@
 				2812AB002362B45B001D65C8 /* LaunchScreen.storyboard in Resources */,
 				613D737E244F6BA100E0E392 /* BidHistoryDetail.storyboard in Resources */,
 				2812AAFD2362B45B001D65C8 /* Assets.xcassets in Resources */,
+				FDD807B7250E4A0F00447B8D /* Profile.storyboard in Resources */,
 				FD6C71D5250B1B460072552D /* Registration.storyboard in Resources */,
 				FDB63FC324AB5EA500525388 /* NewImport.storyboard in Resources */,
 				FD4777BA24AFB37600E323D3 /* AddNewContrImport.storyboard in Resources */,
@@ -1920,6 +1964,7 @@
 				61589B162451C8D6008A18A7 /* EmployeeList.storyboard in Resources */,
 				61560A81244E1A8500FAAFB0 /* MovementHistoryDetail.storyboard in Resources */,
 				61A846292453040500DF3371 /* EditStore.storyboard in Resources */,
+				FDD807BD250E4A4E00447B8D /* EditPassword.storyboard in Resources */,
 				FDA7930524B4347100239685 /* KassaImport.storyboard in Resources */,
 				6159FA95244DF0E700FE1BED /* NewMovement.storyboard in Resources */,
 				FDDC3D8624E80B11005B9E2B /* Readme in Resources */,
@@ -2092,6 +2137,7 @@
 				288CC47C23A89C38008D5218 /* SDImageTransformer.m in Sources */,
 				288CC47023A89C38008D5218 /* SDImageCachesManager.m in Sources */,
 				61F00E7F244F2180001D0EEE /* CurrentBidsCell.swift in Sources */,
+				FDD807C1250E4AAD00447B8D /* EditPasswordVC.swift in Sources */,
 				613D7388244F7A2200E0E392 /* BidProductListVC.swift in Sources */,
 				289087E9239A188D001C53C6 /* IncomeKassaCheckCell.swift in Sources */,
 				288CC48F23A89C38008D5218 /* UIImage+ExtendedCacheData.m in Sources */,
@@ -2159,6 +2205,7 @@
 				FD4777C424AFB79A00E323D3 /* UpdateContrInfoImportVC.swift in Sources */,
 				288CC4A323A89C38008D5218 /* SDInternalMacros.m in Sources */,
 				61F00E7A244F13BA001D0EEE /* NewBidVC.swift in Sources */,
+				FDD807BF250E4A8A00447B8D /* EditProfileVC.swift in Sources */,
 				FD5AB47424ADC2EB002BDB0E /* ProductListImportVC.swift in Sources */,
 				FDE7A66E24DB8835000E86B5 /* HistoryKassaImportItemVC.swift in Sources */,
 				FD6C71D7250B1B6C0072552D /* RegistrationVC.swift in Sources */,
@@ -2190,6 +2237,7 @@
 				288CC3D323A89BFD008D5218 /* URLSessionConfiguration+Alamofire.swift in Sources */,
 				61560A86244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift in Sources */,
 				FD117B8E24B358F5008A00E7 /* HistoryItemImportVC.swift in Sources */,
+				FDD807B9250E4A2100447B8D /* ProfileVC.swift in Sources */,
 				288CC3CA23A89BFD008D5218 /* ResponseSerialization.swift in Sources */,
 				FDE7A67224DB886B000E86B5 /* ContragenListKassaImportVC.swift in Sources */,
 				288CC48A23A89C38008D5218 /* SDWebImageManager.m in Sources */,

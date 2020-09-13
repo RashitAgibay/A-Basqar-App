@@ -72,6 +72,14 @@
             </objects>
             <point key="canvasLocation" x="1134" y="1396"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="qJD-js-kzQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="huJ-zF-6kd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mkx-Fn-iB9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1463" y="1395"/>
+        </scene>
         <!--Menu View Controller-->
         <scene sceneID="JpZ-9f-khu">
             <objects>
@@ -413,7 +421,6 @@
                         <outlet property="cardView7" destination="aZR-Lc-t3v" id="eEJ-Dj-sIE"/>
                         <outlet property="cardView8" destination="qQT-Nl-Acs" id="ZKn-hV-bYx"/>
                         <outlet property="cardView9" destination="kcB-Vc-9kx" id="j2t-i6-pmR"/>
-                        <segue destination="o8t-yZ-BJZ" kind="presentation" identifier="ProfilePage" modalPresentationStyle="fullScreen" id="GKp-99-c5l"/>
                         <segue destination="AXU-cV-WUe" kind="presentation" identifier="mainToMainMovement" modalPresentationStyle="fullScreen" id="kDw-7J-Hdg"/>
                         <segue destination="f0t-mh-XPk" kind="presentation" identifier="mainToMainBid" modalPresentationStyle="fullScreen" id="6Ve-mI-sMp"/>
                         <segue destination="25i-4O-UWT" kind="presentation" identifier="mainToManage" modalPresentationStyle="fullScreen" id="DkO-5S-I9i"/>
@@ -422,6 +429,7 @@
                         <segue destination="vdw-RR-pLd" kind="presentation" identifier="fromMainToMainExport" modalPresentationStyle="fullScreen" id="FC3-Gf-WWX"/>
                         <segue destination="WBI-eB-de3" kind="presentation" identifier="fromMenuToImportKassa" modalPresentationStyle="fullScreen" id="j5G-pv-kP1"/>
                         <segue destination="Rq4-3b-yPX" kind="presentation" identifier="fromMainToMainReport" modalPresentationStyle="fullScreen" id="psP-Pz-Kcf"/>
+                        <segue destination="huJ-zF-6kd" kind="presentation" identifier="fromMainToProfile" modalPresentationStyle="fullScreen" id="e3w-0V-hor"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fr4-9I-Q6a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -850,7 +858,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="GKp-99-c5l"/>
+        <segue reference="58n-MK-Ayc"/>
+        <segue reference="tFr-7S-Ir6"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Line_for_TextField" width="284" height="40"/>

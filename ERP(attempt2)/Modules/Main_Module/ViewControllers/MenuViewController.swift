@@ -142,7 +142,7 @@ class MenuViewController: UIViewController {
     
     @objc func tapProfileCard(){
          // MARK: - (3) Card-ты басу арқылы профиль бетін ашу
-         performSegue(withIdentifier: "ProfilePage", sender: self)
+         performSegue(withIdentifier: "fromMainToProfile", sender: self)
     }
     
     @objc func tapAddProductCard(){
