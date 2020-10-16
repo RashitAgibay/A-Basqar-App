@@ -121,6 +121,9 @@ extension FirstLevelCatImportVC {
             
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
                 
+//                print("///", response.result)
+//                print("///", response.response)
+//                print("///", response.request)
                 
                 switch response.result {
                 

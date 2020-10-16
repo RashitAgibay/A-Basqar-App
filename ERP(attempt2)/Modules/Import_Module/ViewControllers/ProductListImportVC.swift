@@ -127,6 +127,10 @@ extension ProductListImportVC {
             
             requestOfApi.responseJSON(completionHandler: {(response)-> Void in
                 
+//                print("///", response.result)
+//                print("///", response.response)
+//                print("///", response.request)
+
                 
                 switch response.result {
                 
@@ -138,6 +142,7 @@ extension ProductListImportVC {
                         
                         let data  = x as! NSDictionary
                         self.productArray = data["results"] as! NSArray
+//                        print("/// X:", x)
                         self.collectionView.reloadData()
                     }
                     
