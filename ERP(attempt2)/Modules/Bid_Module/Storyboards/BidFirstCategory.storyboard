@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HKE-vo-20s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HKE-vo-20s">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="u50-Ci-VqY">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="cwE-Fc-iOa">
                                     <size key="itemSize" width="350" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="20"/>
@@ -27,7 +28,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addProd" id="7DJ-1H-UGq" customClass="AddProdInBuyProdCell" customModule="A_Basqar" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="addProd" id="7DJ-1H-UGq" customClass="FirstLevelCatImportCell" customModule="A_Basqar" customModuleProvider="target">
                                         <rect key="frame" x="12.5" y="20" width="350" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3NZ-06-nXr">
@@ -57,8 +58,8 @@
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="categoryName" destination="Gbx-dA-sGs" id="TmH-fB-dAO"/>
-                                            <outlet property="imageView" destination="fKH-Uo-Y5w" id="Nbk-kK-Wyc"/>
+                                            <outlet property="catImageView" destination="fKH-Uo-Y5w" id="kJp-LV-Kl3"/>
+                                            <outlet property="catNameLabel" destination="Gbx-dA-sGs" id="szf-kq-fRP"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -72,7 +73,8 @@
                                 </connections>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="UZC-yK-BSe"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="UZC-yK-BSe" firstAttribute="bottom" secondItem="u50-Ci-VqY" secondAttribute="bottom" id="d9K-vA-nn1"/>
@@ -80,7 +82,6 @@
                             <constraint firstItem="u50-Ci-VqY" firstAttribute="leading" secondItem="UZC-yK-BSe" secondAttribute="leading" id="t1q-A4-qpU"/>
                             <constraint firstItem="UZC-yK-BSe" firstAttribute="trailing" secondItem="u50-Ci-VqY" secondAttribute="trailing" id="ycQ-QK-WAx"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="UZC-yK-BSe"/>
                     </view>
                     <navigationItem key="navigationItem" id="ATe-ZQ-1Rg">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="9CS-Dj-TjC">
@@ -137,5 +138,8 @@
     </scenes>
     <resources>
         <image name="back" width="30" height="30"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

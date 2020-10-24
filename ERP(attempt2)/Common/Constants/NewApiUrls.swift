@@ -43,4 +43,9 @@ let exportNullCheckURL: String  = newMainUrl + "export/v1/api/export-null-check/
 //MARK: - Report
 
 let financialReportURL: String = newMainUrl + "billing/v1/api/money-billing/"
-let goodsReportURL: String = newMainUrl + "/billing/v1/api/goods-billing/"
+let goodsReportURL: String = newMainUrl + "billing/v1/api/goods-billing/"
+
+
+//MARK: - Profile
+
+let profileURL: String = newMainUrl + "auth/v1/api/user-register/{12}/"
