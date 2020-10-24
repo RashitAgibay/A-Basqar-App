@@ -22,6 +22,7 @@ class ProfileVC: DefaultVC {
         super.viewDidLoad()
 
         setupUI()
+        getProfileInfo()
     }
     
 
@@ -39,6 +40,72 @@ class ProfileVC: DefaultVC {
         
         showErrorsAlertWithTwoButton(title: "Выйти", message: "Вы хотите выйти из аккаунта?", buttomMessage: "Выйти")
         
+    }
+}
+
+extension ProfileVC {
+    
+    private func getProfileInfo() {
+        do {
+            self.reachability = try Reachability.init()
+        }
+            
+        catch {
+            print("unable to start notifier")
+        }
+        
+        if ((reachability?.connection) != .unavailable) {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            
+            let token = UserDefaults.standard.string(forKey: userTokenKey) ?? ""
+            let headers: HTTPHeaders = [
+                
+                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+            ]
+            
+            let encodeURL = profileURL
+            let requestOfApi = AF.request(encodeURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+            
+            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+                MBProgressHUD.hide(for: self.view, animated: true)
+//                    print(response.request!)
+//                    print(response.result)
+//                    print(response.response!)
+                
+                switch response.result {
+                case .success(let payload):
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    
+                    print("/// payload", payload)
+                    if let x = payload as? Dictionary<String,AnyObject> {
+                        print("dict", x)
+                    }
+                    else {
+                        let data = payload as! NSArray
+                        let currentData = data.firstObject as! NSDictionary
+                        let companyData = currentData["company"] as! NSDictionary
+                        
+//                        self.profileImageView.image = UIImage(named: currentData["avatar"] as! String)
+                        self.profileImageView.sd_setImage(with: URL(string: currentData["avatar"] as! String), placeholderImage: UIImage(named: "porfile_page_default_icon_user"))
+
+                        self.fullnameLabel.text = currentData["full_name"] as! String
+//                        self.businessNameLabel.text = companyData["company_id"] as! String
+                        
+                        
+                    }
+                case .failure(let error):
+                    print(error)
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    self.showErrorsAlertWithOneCancelButton(message: "\(error)")
+                }
+            })
+        }
+        else {
+            print("internet is not working")
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+        }
     }
 }
 

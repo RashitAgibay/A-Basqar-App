@@ -100,12 +100,12 @@ extension LoginVC {
                 case .success(let payload):
                     
                     MBProgressHUD.hide(for: self.view, animated: true)
-                    
+               
                     if let x = payload as? Dictionary<String,AnyObject> {
                             
                         let resultValue = x as NSDictionary
                         
-                        if resultValue["error"] != nil {
+                        if resultValue["non_field_errors"] != nil {
                             
                             self.showErrorsAlertWithOneCancelButton(message: "Вы ввели логин или пароль не правильно!!!")
                         }

@@ -19,8 +19,12 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="porfile_page_default_icon_user" translatesAutoresizingMaskIntoConstraints="NO" id="dEl-5A-KKb">
                                 <rect key="frame" x="110" y="94" width="155" height="161"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="155" id="9P8-bd-20j"/>
+                                    <constraint firstAttribute="height" constant="161" id="UMw-hI-hoQ"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ильяс Шомат" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSc-LE-rnE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSc-LE-rnE">
                                 <rect key="frame" x="20" y="265" width="335" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
