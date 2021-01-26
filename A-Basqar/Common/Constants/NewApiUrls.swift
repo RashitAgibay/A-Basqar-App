@@ -8,8 +8,11 @@
 
 import Foundation
 
+#if DEBUG
+let newMainUrl: String = "http://127.0.0.1:8000/"
+#else
 let newMainUrl: String = "https://abasqar.pythonanywhere.com/"
-
+#endif
 //MARK: - Cat list url
 let firstLevelCategoryListUrl: String = newMainUrl +  "shop/v1/api/add/category/"
 

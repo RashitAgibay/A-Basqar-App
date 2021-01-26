@@ -1,5 +1,10 @@
 PODS:
+  - Alamofire (5.4.1)
   - IQKeyboardManagerSwift (6.5.1)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
   - Printer (4.0.1)
   - Realm (5.3.2):
     - Realm/Headers (= 5.3.2)
@@ -10,25 +15,30 @@ PODS:
 
 DEPENDENCIES:
   - IQKeyboardManagerSwift
+  - Moya (~> 14.0)
   - Printer
   - RealmSwift
   - SwipeCellKit
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - IQKeyboardManagerSwift
+    - Moya
     - Printer
     - Realm
     - RealmSwift
     - SwipeCellKit
 
 SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   IQKeyboardManagerSwift: 9ac7524fad9f9fe9a3b98c927e7772471ca546d2
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   Printer: 9054c0de769f1e25eb06356c70769f9fcf074e33
   Realm: c6794276ca8884808ba168a22f9d71362b170b85
   RealmSwift: 42ec6cec3170aeeda407f797f07268a7d055ebc7
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: c5a23d092641ae94e132114d8a111d86c7c1a795
+PODFILE CHECKSUM: d25d9fc5f1a84ae3886719d120edf99b50dd7496
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

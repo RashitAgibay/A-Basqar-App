@@ -111,14 +111,10 @@ class SearchByBarcodeVC: DefaultVC, AVCaptureMetadataOutputObjectsDelegate  {
         self.videoView.layer.addSublayer(avCaptureVideoPreviewLayer)
         
         avCaptureSession.startRunning()
-        
-       
-        
     }
     
     
     func getGoodByBarCode() {
-        
         do {
             reachability = try Reachability.init()
         }
