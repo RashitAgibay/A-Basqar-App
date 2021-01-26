@@ -11,6 +11,7 @@ target 'A-Basqar' do
  pod 'SwipeCellKit'
  pod 'Printer'
  pod 'RealmSwift'
+ pod 'Moya', '~> 14.0'
 
 
 end
