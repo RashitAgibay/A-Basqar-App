@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class MovementProductListVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate  {
 

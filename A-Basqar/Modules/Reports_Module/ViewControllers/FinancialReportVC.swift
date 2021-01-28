@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class FinancialReportVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDelegate {
     

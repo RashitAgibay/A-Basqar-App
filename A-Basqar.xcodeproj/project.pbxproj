@@ -24,38 +24,6 @@
 		286E7083239E2447002CD53D /* FinancialReportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 286E7082239E2447002CD53D /* FinancialReportVC.swift */; };
 		288CC38A23A89B60008D5218 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC38923A89B60008D5218 /* Reachability.swift */; };
 		288CC39023A89BB5008D5218 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 288CC38D23A89BB5008D5218 /* MBProgressHUD.m */; };
-		288CC3B423A89BFD008D5218 /* AFError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC39223A89BFD008D5218 /* AFError.swift */; };
-		288CC3B523A89BFD008D5218 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC39423A89BFD008D5218 /* Alamofire.swift */; };
-		288CC3B623A89BFD008D5218 /* AlamofireExtended.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC39523A89BFD008D5218 /* AlamofireExtended.swift */; };
-		288CC3B723A89BFD008D5218 /* CachedResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC39623A89BFD008D5218 /* CachedResponseHandler.swift */; };
-		288CC3B823A89BFD008D5218 /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC39723A89BFD008D5218 /* DispatchQueue+Alamofire.swift */; };
-		288CC3B923A89BFD008D5218 /* EventMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC39823A89BFD008D5218 /* EventMonitor.swift */; };
-		288CC3BA23A89BFD008D5218 /* HTTPHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC39923A89BFD008D5218 /* HTTPHeaders.swift */; };
-		288CC3BB23A89BFD008D5218 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC39A23A89BFD008D5218 /* HTTPMethod.swift */; };
-		288CC3BD23A89BFD008D5218 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC39C23A89BFD008D5218 /* MultipartFormData.swift */; };
-		288CC3BE23A89BFD008D5218 /* MultipartUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC39D23A89BFD008D5218 /* MultipartUpload.swift */; };
-		288CC3BF23A89BFD008D5218 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC39E23A89BFD008D5218 /* NetworkReachabilityManager.swift */; };
-		288CC3C023A89BFD008D5218 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC39F23A89BFD008D5218 /* Notifications.swift */; };
-		288CC3C123A89BFD008D5218 /* OperationQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3A023A89BFD008D5218 /* OperationQueue+Alamofire.swift */; };
-		288CC3C223A89BFD008D5218 /* ParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3A123A89BFD008D5218 /* ParameterEncoder.swift */; };
-		288CC3C323A89BFD008D5218 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3A223A89BFD008D5218 /* ParameterEncoding.swift */; };
-		288CC3C423A89BFD008D5218 /* Protector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3A323A89BFD008D5218 /* Protector.swift */; };
-		288CC3C523A89BFD008D5218 /* RedirectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3A423A89BFD008D5218 /* RedirectHandler.swift */; };
-		288CC3C623A89BFD008D5218 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3A523A89BFD008D5218 /* Request.swift */; };
-		288CC3C723A89BFD008D5218 /* RequestInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3A623A89BFD008D5218 /* RequestInterceptor.swift */; };
-		288CC3C823A89BFD008D5218 /* RequestTaskMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3A723A89BFD008D5218 /* RequestTaskMap.swift */; };
-		288CC3C923A89BFD008D5218 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3A823A89BFD008D5218 /* Response.swift */; };
-		288CC3CA23A89BFD008D5218 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3A923A89BFD008D5218 /* ResponseSerialization.swift */; };
-		288CC3CB23A89BFD008D5218 /* Result+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3AA23A89BFD008D5218 /* Result+Alamofire.swift */; };
-		288CC3CC23A89BFD008D5218 /* RetryPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3AB23A89BFD008D5218 /* RetryPolicy.swift */; };
-		288CC3CD23A89BFD008D5218 /* ServerTrustEvaluation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3AC23A89BFD008D5218 /* ServerTrustEvaluation.swift */; };
-		288CC3CE23A89BFD008D5218 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3AD23A89BFD008D5218 /* Session.swift */; };
-		288CC3CF23A89BFD008D5218 /* SessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3AE23A89BFD008D5218 /* SessionDelegate.swift */; };
-		288CC3D023A89BFD008D5218 /* URLConvertible+URLRequestConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3AF23A89BFD008D5218 /* URLConvertible+URLRequestConvertible.swift */; };
-		288CC3D123A89BFD008D5218 /* URLEncodedFormEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3B023A89BFD008D5218 /* URLEncodedFormEncoder.swift */; };
-		288CC3D223A89BFD008D5218 /* URLRequest+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3B123A89BFD008D5218 /* URLRequest+Alamofire.swift */; };
-		288CC3D323A89BFD008D5218 /* URLSessionConfiguration+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3B223A89BFD008D5218 /* URLSessionConfiguration+Alamofire.swift */; };
-		288CC3D423A89BFD008D5218 /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3B323A89BFD008D5218 /* Validation.swift */; };
 		288CC46323A89C38008D5218 /* NSButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3D823A89C38008D5218 /* NSButton+WebCache.m */; };
 		288CC46423A89C38008D5218 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3DA23A89C38008D5218 /* NSData+ImageContentType.m */; };
 		288CC46523A89C38008D5218 /* NSImage+Compatibility.m in Sources */ = {isa = PBXBuildFile; fileRef = 288CC3DC23A89C38008D5218 /* NSImage+Compatibility.m */; };
@@ -193,6 +161,10 @@
 		FD117B9024B3590C008A00E7 /* HistoryItemImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD117B8F24B3590C008A00E7 /* HistoryItemImport.storyboard */; };
 		FD117B9224B35AED008A00E7 /* HistoryItemImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD117B9124B35AED008A00E7 /* HistoryItemImportCell.swift */; };
 		FD1A4DA525C02B2700716A81 /* SearchByBarcodeImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD1A4DA425C02B2700716A81 /* SearchByBarcodeImport.storyboard */; };
+		FD1A4DB125C0385100716A81 /* AuthApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A4DB025C0385100716A81 /* AuthApi.swift */; };
+		FD1A4DB625C03D2E00716A81 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A4DB525C03D2E00716A81 /* AuthModel.swift */; };
+		FD1A4E3C25C1663F00716A81 /* AuthApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A4E3B25C1663F00716A81 /* AuthApiService.swift */; };
+		FD1A4F1425C17D9B00716A81 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A4F1325C17D9A00716A81 /* EndPoint.swift */; };
 		FD20B4D924EA0CF0003A813A /* BluetoothPrinters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD20B4D824EA0CF0003A813A /* BluetoothPrinters.storyboard */; };
 		FD29E75E24B48E6800B5AC2F /* SearchImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD29E75D24B48E6800B5AC2F /* SearchImport.storyboard */; };
 		FD31604F24E95BBE00621BEF /* MainReport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD31604E24E95BBE00621BEF /* MainReport.storyboard */; };
@@ -337,39 +309,6 @@
 		288CC38D23A89BB5008D5218 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		288CC38E23A89BB5008D5218 /* MBProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
 		288CC38F23A89BB5008D5218 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		288CC39223A89BFD008D5218 /* AFError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AFError.swift; sourceTree = "<group>"; };
-		288CC39323A89BFD008D5218 /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
-		288CC39423A89BFD008D5218 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
-		288CC39523A89BFD008D5218 /* AlamofireExtended.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireExtended.swift; sourceTree = "<group>"; };
-		288CC39623A89BFD008D5218 /* CachedResponseHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CachedResponseHandler.swift; sourceTree = "<group>"; };
-		288CC39723A89BFD008D5218 /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		288CC39823A89BFD008D5218 /* EventMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventMonitor.swift; sourceTree = "<group>"; };
-		288CC39923A89BFD008D5218 /* HTTPHeaders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPHeaders.swift; sourceTree = "<group>"; };
-		288CC39A23A89BFD008D5218 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		288CC39C23A89BFD008D5218 /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
-		288CC39D23A89BFD008D5218 /* MultipartUpload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartUpload.swift; sourceTree = "<group>"; };
-		288CC39E23A89BFD008D5218 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
-		288CC39F23A89BFD008D5218 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
-		288CC3A023A89BFD008D5218 /* OperationQueue+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OperationQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		288CC3A123A89BFD008D5218 /* ParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoder.swift; sourceTree = "<group>"; };
-		288CC3A223A89BFD008D5218 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
-		288CC3A323A89BFD008D5218 /* Protector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protector.swift; sourceTree = "<group>"; };
-		288CC3A423A89BFD008D5218 /* RedirectHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedirectHandler.swift; sourceTree = "<group>"; };
-		288CC3A523A89BFD008D5218 /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		288CC3A623A89BFD008D5218 /* RequestInterceptor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestInterceptor.swift; sourceTree = "<group>"; };
-		288CC3A723A89BFD008D5218 /* RequestTaskMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestTaskMap.swift; sourceTree = "<group>"; };
-		288CC3A823A89BFD008D5218 /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		288CC3A923A89BFD008D5218 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
-		288CC3AA23A89BFD008D5218 /* Result+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Result+Alamofire.swift"; sourceTree = "<group>"; };
-		288CC3AB23A89BFD008D5218 /* RetryPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetryPolicy.swift; sourceTree = "<group>"; };
-		288CC3AC23A89BFD008D5218 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustEvaluation.swift; sourceTree = "<group>"; };
-		288CC3AD23A89BFD008D5218 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
-		288CC3AE23A89BFD008D5218 /* SessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionDelegate.swift; sourceTree = "<group>"; };
-		288CC3AF23A89BFD008D5218 /* URLConvertible+URLRequestConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLConvertible+URLRequestConvertible.swift"; sourceTree = "<group>"; };
-		288CC3B023A89BFD008D5218 /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
-		288CC3B123A89BFD008D5218 /* URLRequest+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Alamofire.swift"; sourceTree = "<group>"; };
-		288CC3B223A89BFD008D5218 /* URLSessionConfiguration+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLSessionConfiguration+Alamofire.swift"; sourceTree = "<group>"; };
-		288CC3B323A89BFD008D5218 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		288CC3D723A89C38008D5218 /* NSButton+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSButton+WebCache.h"; sourceTree = "<group>"; };
 		288CC3D823A89C38008D5218 /* NSButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSButton+WebCache.m"; sourceTree = "<group>"; };
 		288CC3D923A89C38008D5218 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -580,6 +519,10 @@
 		FD117B8F24B3590C008A00E7 /* HistoryItemImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryItemImport.storyboard; sourceTree = "<group>"; };
 		FD117B9124B35AED008A00E7 /* HistoryItemImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryItemImportCell.swift; sourceTree = "<group>"; };
 		FD1A4DA425C02B2700716A81 /* SearchByBarcodeImport.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SearchByBarcodeImport.storyboard; path = "A-Basqar/Modules/Import_Module/StoryBoards/SearchByBarcodeImport.storyboard"; sourceTree = SOURCE_ROOT; };
+		FD1A4DB025C0385100716A81 /* AuthApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApi.swift; sourceTree = "<group>"; };
+		FD1A4DB525C03D2E00716A81 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		FD1A4E3B25C1663F00716A81 /* AuthApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthApiService.swift; sourceTree = "<group>"; };
+		FD1A4F1325C17D9A00716A81 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		FD20B4D824EA0CF0003A813A /* BluetoothPrinters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BluetoothPrinters.storyboard; sourceTree = "<group>"; };
 		FD29E75D24B48E6800B5AC2F /* SearchImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchImport.storyboard; sourceTree = "<group>"; };
 		FD31604E24E95BBE00621BEF /* MainReport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainReport.storyboard; sourceTree = "<group>"; };
@@ -789,7 +732,6 @@
 			isa = PBXGroup;
 			children = (
 				288CC3D523A89C38008D5218 /* SDWebImage */,
-				288CC39123A89BFD008D5218 /* Alamofire */,
 				288CC38B23A89BA3008D5218 /* MBProgressHUD */,
 				288CC38823A89B32008D5218 /* Reachability */,
 			);
@@ -813,46 +755,6 @@
 				288CC38D23A89BB5008D5218 /* MBProgressHUD.m */,
 			);
 			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		288CC39123A89BFD008D5218 /* Alamofire */ = {
-			isa = PBXGroup;
-			children = (
-				288CC39223A89BFD008D5218 /* AFError.swift */,
-				288CC39323A89BFD008D5218 /* Alamofire.h */,
-				288CC39423A89BFD008D5218 /* Alamofire.swift */,
-				288CC39523A89BFD008D5218 /* AlamofireExtended.swift */,
-				288CC39623A89BFD008D5218 /* CachedResponseHandler.swift */,
-				288CC39723A89BFD008D5218 /* DispatchQueue+Alamofire.swift */,
-				288CC39823A89BFD008D5218 /* EventMonitor.swift */,
-				288CC39923A89BFD008D5218 /* HTTPHeaders.swift */,
-				288CC39A23A89BFD008D5218 /* HTTPMethod.swift */,
-				288CC39C23A89BFD008D5218 /* MultipartFormData.swift */,
-				288CC39D23A89BFD008D5218 /* MultipartUpload.swift */,
-				288CC39E23A89BFD008D5218 /* NetworkReachabilityManager.swift */,
-				288CC39F23A89BFD008D5218 /* Notifications.swift */,
-				288CC3A023A89BFD008D5218 /* OperationQueue+Alamofire.swift */,
-				288CC3A123A89BFD008D5218 /* ParameterEncoder.swift */,
-				288CC3A223A89BFD008D5218 /* ParameterEncoding.swift */,
-				288CC3A323A89BFD008D5218 /* Protector.swift */,
-				288CC3A423A89BFD008D5218 /* RedirectHandler.swift */,
-				288CC3A523A89BFD008D5218 /* Request.swift */,
-				288CC3A623A89BFD008D5218 /* RequestInterceptor.swift */,
-				288CC3A723A89BFD008D5218 /* RequestTaskMap.swift */,
-				288CC3A823A89BFD008D5218 /* Response.swift */,
-				288CC3A923A89BFD008D5218 /* ResponseSerialization.swift */,
-				288CC3AA23A89BFD008D5218 /* Result+Alamofire.swift */,
-				288CC3AB23A89BFD008D5218 /* RetryPolicy.swift */,
-				288CC3AC23A89BFD008D5218 /* ServerTrustEvaluation.swift */,
-				288CC3AD23A89BFD008D5218 /* Session.swift */,
-				288CC3AE23A89BFD008D5218 /* SessionDelegate.swift */,
-				288CC3AF23A89BFD008D5218 /* URLConvertible+URLRequestConvertible.swift */,
-				288CC3B023A89BFD008D5218 /* URLEncodedFormEncoder.swift */,
-				288CC3B123A89BFD008D5218 /* URLRequest+Alamofire.swift */,
-				288CC3B223A89BFD008D5218 /* URLSessionConfiguration+Alamofire.swift */,
-				288CC3B323A89BFD008D5218 /* Validation.swift */,
-			);
-			path = Alamofire;
 			sourceTree = "<group>";
 		};
 		288CC3D523A89C38008D5218 /* SDWebImage */ = {
@@ -1191,7 +1093,8 @@
 		FD1A4D7425C0225A00716A81 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				FD1A4D7825C023C400716A81 /* Api */,
+				FD1A4DB325C03D0100716A81 /* Model */,
+				FD1A4DAF25C0383C00716A81 /* Network */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1199,8 +1102,51 @@
 		FD1A4D7825C023C400716A81 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				FD1A4DB025C0385100716A81 /* AuthApi.swift */,
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		FD1A4DAF25C0383C00716A81 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FD1A4F1225C17D6800716A81 /* Common */,
+				FD1A4E3A25C1661000716A81 /* ApiService */,
+				FD1A4D7825C023C400716A81 /* Api */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FD1A4DB325C03D0100716A81 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FD1A4DB425C03D0700716A81 /* Auth */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FD1A4DB425C03D0700716A81 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				FD1A4DB525C03D2E00716A81 /* AuthModel.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		FD1A4E3A25C1661000716A81 /* ApiService */ = {
+			isa = PBXGroup;
+			children = (
+				FD1A4E3B25C1663F00716A81 /* AuthApiService.swift */,
+			);
+			path = ApiService;
+			sourceTree = "<group>";
+		};
+		FD1A4F1225C17D6800716A81 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FD1A4F1325C17D9A00716A81 /* EndPoint.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		FD20B4D524EA0BC2003A813A /* Main_Module */ = {
@@ -1825,6 +1771,7 @@
 				61A8463924531A7A00DF3371 /* EmployeeeFuncs.swift in Sources */,
 				288CC47B23A89C38008D5218 /* SDImageLoadersManager.m in Sources */,
 				FD7AF84124AC93180021B131 /* HistoryImportCell.swift in Sources */,
+				FD1A4F1425C17D9B00716A81 /* EndPoint.swift in Sources */,
 				FD7F096D24B9E48B00F7709F /* NewKassaExportVC.swift in Sources */,
 				FDE7A66C24DB8815000E86B5 /* HistoryKassaImportVC.swift in Sources */,
 				FD7F097224B9ECB800F7709F /* HistoryKassaExportCell.swift in Sources */,
@@ -1834,21 +1781,16 @@
 				FD5AB47A24ADC9BF002BDB0E /* NewApiUrls.swift in Sources */,
 				288CC47423A89C38008D5218 /* SDImageFrame.m in Sources */,
 				613D7384244F761E00E0E392 /* BidFirstCategoryVC.swift in Sources */,
-				288CC3D223A89BFD008D5218 /* URLRequest+Alamofire.swift in Sources */,
 				28D76CFB239620AD00D5B055 /* BuyingHistoryItemCell.swift in Sources */,
 				FD6C71D3250B1A710072552D /* LoginVC.swift in Sources */,
 				6159FA91244DF06C00FE1BED /* NewMovementVC.swift in Sources */,
 				6138C2E7244E44C5005CD38C /* MovementProductListVC.swift in Sources */,
-				288CC3C523A89BFD008D5218 /* RedirectHandler.swift in Sources */,
 				288CC49523A89C38008D5218 /* UIImage+Transform.m in Sources */,
-				288CC3B423A89BFD008D5218 /* AFError.swift in Sources */,
 				28CAE45D238B924E0015DE56 /* CaterogyCell.swift in Sources */,
 				FD7F097924B9F3F700F7709F /* ImportListKassaExportVC.swift in Sources */,
 				FD8E9035250CCD8F0003AD7A /* NewPasscodeVC.swift in Sources */,
 				613D737C244F657900E0E392 /* NewMovementInBidCell.swift in Sources */,
 				61A846232452F6E400DF3371 /* AddStoreVC.swift in Sources */,
-				288CC3C123A89BFD008D5218 /* OperationQueue+Alamofire.swift in Sources */,
-				288CC3B923A89BFD008D5218 /* EventMonitor.swift in Sources */,
 				FDBBFF6924D56B1F00A2D283 /* HistoryExportVC.swift in Sources */,
 				288CC46A23A89C38008D5218 /* SDAnimatedImageView.m in Sources */,
 				FD93BE7C24D791D9009CFBDE /* HistoryItemExportCell.swift in Sources */,
@@ -1862,13 +1804,11 @@
 				6159FA9F244E14DB00FE1BED /* PlaceListVC.swift in Sources */,
 				FDE7A66A24DB87F8000E86B5 /* NewKassaImportVC.swift in Sources */,
 				288CC47623A89C38008D5218 /* SDImageGraphics.m in Sources */,
-				288CC3D423A89BFD008D5218 /* Validation.swift in Sources */,
+				FD1A4E3C25C1663F00716A81 /* AuthApiService.swift in Sources */,
 				61A8462F245308FF00DF3371 /* StoresEmployeesVC.swift in Sources */,
 				288CC47923A89C38008D5218 /* SDImageIOCoder.m in Sources */,
-				288CC3CD23A89BFD008D5218 /* ServerTrustEvaluation.swift in Sources */,
 				288CC49C23A89C38008D5218 /* SDAssociatedObject.m in Sources */,
 				288CC46C23A89C38008D5218 /* SDImageAPNGCoder.m in Sources */,
-				288CC3C023A89BFD008D5218 /* Notifications.swift in Sources */,
 				286E7083239E2447002CD53D /* FinancialReportVC.swift in Sources */,
 				288CC47D23A89C38008D5218 /* SDMemoryCache.m in Sources */,
 				61589B102451A5CC008A18A7 /* MainStoreVC.swift in Sources */,
@@ -1883,21 +1823,18 @@
 				288CC48323A89C38008D5218 /* SDWebImageDownloaderConfig.m in Sources */,
 				FDBBFF6524D56AD800A2D283 /* FirstLevelCatExportVC.swift in Sources */,
 				6159FA9B244E0E9A00FE1BED /* MovementHistoryCell.swift in Sources */,
-				288CC3D023A89BFD008D5218 /* URLConvertible+URLRequestConvertible.swift in Sources */,
 				288CC49D23A89C38008D5218 /* SDAsyncBlockOperation.m in Sources */,
 				FDBBFF5D24D56A3200A2D283 /* NewExportVC.swift in Sources */,
 				288CC47523A89C38008D5218 /* SDImageGIFCoder.m in Sources */,
 				28051BA12398BD1000A66ADA /* SellingProdsCell.swift in Sources */,
 				288CC49623A89C38008D5218 /* UIImageView+HighlightedWebCache.m in Sources */,
 				288CC49E23A89C38008D5218 /* SDDeviceHelper.m in Sources */,
-				288CC3B523A89BFD008D5218 /* Alamofire.swift in Sources */,
 				FD93BE7A24D791C5009CFBDE /* HistoryExportCell.swift in Sources */,
 				61A846272453007200DF3371 /* AddEmployeeVC.swift in Sources */,
 				288CC46F23A89C38008D5218 /* SDImageCacheDefine.m in Sources */,
 				288CC47F23A89C38008D5218 /* SDWebImageCacheSerializer.m in Sources */,
 				FDEA7EC124CF2E4A009D193B /* ExportKassaContragent.swift in Sources */,
 				FD085BEF24B584D900B2641D /* SearchImportVC.swift in Sources */,
-				288CC3B723A89BFD008D5218 /* CachedResponseHandler.swift in Sources */,
 				61A8461F2452DD4E00DF3371 /* StoreCell.swift in Sources */,
 				288CC47C23A89C38008D5218 /* SDImageTransformer.m in Sources */,
 				288CC47023A89C38008D5218 /* SDImageCachesManager.m in Sources */,
@@ -1914,14 +1851,12 @@
 				FD93BE7824D791B2009CFBDE /* ProductListExportCell.swift in Sources */,
 				280901A12394CDC200CA68BD /* BuyerCompanyCell.swift in Sources */,
 				288CC4A223A89C38008D5218 /* SDImageCachesManagerOperation.m in Sources */,
-				288CC3BF23A89BFD008D5218 /* NetworkReachabilityManager.swift in Sources */,
 				FD4777B824AFADE500E323D3 /* ContragentListImportCell.swift in Sources */,
 				288CC46823A89C38008D5218 /* SDAnimatedImageRep.m in Sources */,
 				288CC4A023A89C38008D5218 /* SDFileAttributeHelper.m in Sources */,
 				6159FA93244DF08100FE1BED /* MovementHistoryVC.swift in Sources */,
 				FD5AB47224ADC1FE002BDB0E /* FirstLevelCatImportCell.swift in Sources */,
 				288CC47223A89C38008D5218 /* SDImageCoderHelper.m in Sources */,
-				288CC3B623A89BFD008D5218 /* AlamofireExtended.swift in Sources */,
 				288CC46923A89C38008D5218 /* SDAnimatedImageView+WebCache.m in Sources */,
 				FDBBFF6D24D56B4F00A2D283 /* KassaExportVC.swift in Sources */,
 				286318512398CB7E00556226 /* SellingCategoryCell.swift in Sources */,
@@ -1929,7 +1864,6 @@
 				FDB63FC124AB5E4600525388 /* NewImportVC.swift in Sources */,
 				28674295238CF50E008884AF /* BuyProductFirstPageCell.swift in Sources */,
 				288CC46323A89C38008D5218 /* NSButton+WebCache.m in Sources */,
-				288CC3C623A89BFD008D5218 /* Request.swift in Sources */,
 				FDBBFF6124D56AA700A2D283 /* AddNewContrExportVC.swift in Sources */,
 				61560A83244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift in Sources */,
 				FDBBFF6B24D56B3700A2D283 /* HistoryItemExportVC.swift in Sources */,
@@ -1943,12 +1877,10 @@
 				288CC48E23A89C38008D5218 /* UIButton+WebCache.m in Sources */,
 				2809019F2394C39A00CA68BD /* AddProdInBuyProdCell.swift in Sources */,
 				61F00E7C244F2047001D0EEE /* CurrentBidsVC.swift in Sources */,
-				288CC3C923A89BFD008D5218 /* Response.swift in Sources */,
 				288CC49823A89C38008D5218 /* UIView+WebCache.m in Sources */,
 				288CC46423A89C38008D5218 /* NSData+ImageContentType.m in Sources */,
 				FDB63FC624AB63A800525388 /* NewImportCell.swift in Sources */,
 				FD7F096724B9E22100F7709F /* MainKassaExportVC.swift in Sources */,
-				288CC3CC23A89BFD008D5218 /* RetryPolicy.swift in Sources */,
 				288CC49F23A89C38008D5218 /* SDDisplayLink.m in Sources */,
 				288CC39023A89BB5008D5218 /* MBProgressHUD.m in Sources */,
 				61F00E83244F2498001D0EEE /* BidsHistoryCell.swift in Sources */,
@@ -1959,7 +1891,6 @@
 				288CC48523A89C38008D5218 /* SDWebImageDownloaderOperation.m in Sources */,
 				61560A8A244E33A300FAAFB0 /* MovementFirstCategoryVC.swift in Sources */,
 				FD8E9037250CE5C10003AD7A /* AppSetup.swift in Sources */,
-				288CC3B823A89BFD008D5218 /* DispatchQueue+Alamofire.swift in Sources */,
 				288CC47823A89C38008D5218 /* SDImageIOAnimatedCoder.m in Sources */,
 				FD7F097524B9EE9E00F7709F /* OutcomeBill.swift in Sources */,
 				FD4777C424AFB79A00E323D3 /* UpdateContrInfoImportVC.swift in Sources */,
@@ -1969,15 +1900,14 @@
 				FD5AB47424ADC2EB002BDB0E /* ProductListImportVC.swift in Sources */,
 				FDE7A66E24DB8835000E86B5 /* HistoryKassaImportItemVC.swift in Sources */,
 				FD6C71D7250B1B6C0072552D /* RegistrationVC.swift in Sources */,
-				288CC3CB23A89BFD008D5218 /* Result+Alamofire.swift in Sources */,
 				FDCADE2C24D4578A007ADFDB /* DefaultVC.swift in Sources */,
 				FDF8C72224D44986000F205F /* HistoryKassaExportItemVC.swift in Sources */,
 				288CC48223A89C38008D5218 /* SDWebImageDownloader.m in Sources */,
+				FD1A4DB125C0385100716A81 /* AuthApi.swift in Sources */,
 				2812AAF42362B45A001D65C8 /* AppDelegate.swift in Sources */,
 				FD6C71DB250B1C8D0072552D /* ForgetPasswordVC.swift in Sources */,
 				FD7AF83724AC80300021B131 /* UISegmentControl+Extensions.swift in Sources */,
 				288CC4A523A89C38008D5218 /* UIColor+HexString.m in Sources */,
-				288CC3BA23A89BFD008D5218 /* HTTPHeaders.swift in Sources */,
 				288CC47123A89C38008D5218 /* SDImageCoder.m in Sources */,
 				FDEA7EBD24CF2BDF009D193B /* ContragentListKassaExportListVC.swift in Sources */,
 				FD7AF83424AC74E00021B131 /* HistoryImportVC.swift in Sources */,
@@ -1986,23 +1916,18 @@
 				613D737A244F64BE00E0E392 /* NewMovementInBidVC.swift in Sources */,
 				288CC4A123A89C38008D5218 /* SDImageAssetManager.m in Sources */,
 				288CC4A423A89C38008D5218 /* SDWeakProxy.m in Sources */,
-				288CC3D123A89BFD008D5218 /* URLEncodedFormEncoder.swift in Sources */,
 				FD4777C024AFB66300E323D3 /* UIButton+Extensions.swift in Sources */,
 				288CC48123A89C38008D5218 /* SDWebImageDefine.m in Sources */,
 				FDBBFF6724D56B0D00A2D283 /* ProductListExportVC.swift in Sources */,
-				288CC3CF23A89BFD008D5218 /* SessionDelegate.swift in Sources */,
-				288CC3C823A89BFD008D5218 /* RequestTaskMap.swift in Sources */,
 				288CC46623A89C38008D5218 /* SDAnimatedImage.m in Sources */,
-				288CC3D323A89BFD008D5218 /* URLSessionConfiguration+Alamofire.swift in Sources */,
 				61560A86244E1BF100FAAFB0 /* MovementHistoryDetailCell.swift in Sources */,
 				FD117B8E24B358F5008A00E7 /* HistoryItemImportVC.swift in Sources */,
 				FDD807B9250E4A2100447B8D /* ProfileVC.swift in Sources */,
-				288CC3CA23A89BFD008D5218 /* ResponseSerialization.swift in Sources */,
 				FDE7A67224DB886B000E86B5 /* ContragenListKassaImportVC.swift in Sources */,
 				288CC48A23A89C38008D5218 /* SDWebImageManager.m in Sources */,
-				288CC3C723A89BFD008D5218 /* RequestInterceptor.swift in Sources */,
 				288CC48023A89C38008D5218 /* SDWebImageCompat.m in Sources */,
 				288CC46B23A89C38008D5218 /* SDDiskCache.m in Sources */,
+				FD1A4DB625C03D2E00716A81 /* AuthModel.swift in Sources */,
 				61A84631245309E500DF3371 /* StoreEmployeesCell.swift in Sources */,
 				FD7F096F24B9E49B00F7709F /* HistoryKassaExport.swift in Sources */,
 				288CC47323A89C38008D5218 /* SDImageCodersManager.m in Sources */,
@@ -2017,21 +1942,15 @@
 				288CC49A23A89C38008D5218 /* MKAnnotationView+WebCache.m in Sources */,
 				288CC48423A89C38008D5218 /* SDWebImageDownloaderDecryptor.m in Sources */,
 				288CC49923A89C38008D5218 /* UIView+WebCacheOperation.m in Sources */,
-				288CC3CE23A89BFD008D5218 /* Session.swift in Sources */,
 				FDBBFF5B24D56A1C00A2D283 /* MainExportVC.swift in Sources */,
 				FD93BE7424D79184009CFBDE /* ContragentListExportCell.swift in Sources */,
 				FD117B9224B35AED008A00E7 /* HistoryItemImportCell.swift in Sources */,
 				FDE7A65824DB865B000E86B5 /* ImportKassaContragent.swift in Sources */,
 				288CC48D23A89C38008D5218 /* SDWebImageTransition.m in Sources */,
-				288CC3BD23A89BFD008D5218 /* MultipartFormData.swift in Sources */,
 				61A8463524530FB200DF3371 /* EditEmployeeDataVC.swift in Sources */,
 				FD9FCB2625BFEDC100E93211 /* ApiConstants.swift in Sources */,
 				FD31605724E96B2200621BEF /* SearchByBarcodeVC.swift in Sources */,
-				288CC3C223A89BFD008D5218 /* ParameterEncoder.swift in Sources */,
-				288CC3C323A89BFD008D5218 /* ParameterEncoding.swift in Sources */,
 				FD5AB47024ADC02E002BDB0E /* FirstLevelCatImportVC.swift in Sources */,
-				288CC3BB23A89BFD008D5218 /* HTTPMethod.swift in Sources */,
-				288CC3C423A89BFD008D5218 /* Protector.swift in Sources */,
 				61A8461C2452DC0A00DF3371 /* EmployeeListVC.swift in Sources */,
 				288CC48C23A89C38008D5218 /* SDWebImagePrefetcher.m in Sources */,
 				288CC46523A89C38008D5218 /* NSImage+Compatibility.m in Sources */,
@@ -2043,7 +1962,6 @@
 				288CC48B23A89C38008D5218 /* SDWebImageOptionsProcessor.m in Sources */,
 				FDFCE7A523D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift in Sources */,
 				28D46D59236A8BFA000DA471 /* MenuViewController.swift in Sources */,
-				288CC3BE23A89BFD008D5218 /* MultipartUpload.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

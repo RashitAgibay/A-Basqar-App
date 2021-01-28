@@ -8,6 +8,7 @@
 
 import UIKit
 import Printer
+import Alamofire
 
 
 class KassaExportVC: DefaultVC {
