@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class StoresVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDelegate, StoreCellDelegate {
 

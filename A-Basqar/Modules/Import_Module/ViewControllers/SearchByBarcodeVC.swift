@@ -8,6 +8,8 @@
 
 import UIKit
 import AVFoundation
+import Alamofire
+
 
 
 //MARK: - barcode, штрих код оқу жасап тұр осы клас ішінде

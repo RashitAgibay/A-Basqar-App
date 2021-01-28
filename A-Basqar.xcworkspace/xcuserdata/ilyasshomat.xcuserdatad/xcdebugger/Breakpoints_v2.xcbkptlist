@@ -3,4 +3,54 @@
    uuid = "9B09566D-9ABA-4B32-B578-9D71C1793AD9"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E9BD479-6B53-4E50-8E98-364E921537A7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "A-Basqar/Modules/Export_Module/ViewControllers/SearchByBarcodeExportVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "scanQrCode()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1E9BD479-6B53-4E50-8E98-364E921537A7 - 2f292fcd77712169"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "A_Basqar.SearchByBarcodeExportVC.scanQrCode() throws -&gt; ()"
+                  moduleName = "A-Basqar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ilyasshomat/Google%20Drive/code/Swift/Projects/A-Basqar/A-Basqar/Modules/Export_Module/ViewControllers/SearchByBarcodeExportVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "79"
+                  endingLineNumber = "79"
+                  offsetFromSymbolStart = "212">
+               </Location>
+               <Location
+                  uuid = "1E9BD479-6B53-4E50-8E98-364E921537A7 - 2f292fcd7771210a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "A_Basqar.SearchByBarcodeExportVC.scanQrCode() throws -&gt; ()"
+                  moduleName = "A-Basqar"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ilyasshomat/Google%20Drive/code/Swift/Projects/A-Basqar/A-Basqar/Modules/Export_Module/ViewControllers/SearchByBarcodeExportVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "78"
+                  endingLineNumber = "78"
+                  offsetFromSymbolStart = "2665">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

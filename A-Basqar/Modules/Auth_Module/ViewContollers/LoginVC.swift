@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Alamofire
+
 
 class LoginVC: DefaultVC {
 
+    let authApiService = AuthNetworkManager()
     
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var loginTextField: UITextField!
@@ -21,7 +24,7 @@ class LoginVC: DefaultVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("/// loginVC")
+//        print("/// loginVC")
         setupUI()
     }
     
@@ -53,7 +56,14 @@ class LoginVC: DefaultVC {
         
         else {
             
-            loginApi()
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            var userInfo = UserInfo(username: loginTextField.text ?? "", password: passwordTextField.text ?? "")
+            authApiService.login(userInfo: userInfo) { (token, error) in
+                print("/// token:", token)
+                print("/// error:", error)
+                MBProgressHUD.hide(for: self.view, animated: true)
+            }
+//            loginApi()
         }
     }
 }
@@ -74,7 +84,7 @@ extension LoginVC {
         
         if ((reachability!.connection) != .none) {
             
-            MBProgressHUD.showAdded(to: self.view, animated: true)
+//            MBProgressHUD.showAdded(to: self.view, animated: true)
             
             let params = [
                     "username":self.loginTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
@@ -85,7 +95,7 @@ extension LoginVC {
                 "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
             ]
             
-            let encodeURL = "https://abasqar.pythonanywhere.com/auth/v1/api/login/"
+            let encodeURL = "http://127.0.0.1:8000/api/account/login"
                         
             let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
             
