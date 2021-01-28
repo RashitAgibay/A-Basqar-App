@@ -8,6 +8,7 @@
 
 import Foundation
 
+// Sending
 struct UserInfo: Codable {
     var username: String
     var password: String
@@ -19,9 +20,11 @@ struct UserInfo: Codable {
 }
 
 struct Token: Codable {
-    var token: String
+    var token: String?
+    var not_exist: Array<String>?
     
     enum CodingKeys: String, CodingKey {
         case token
+        case not_exist = "non_field_errors"
     }
 }

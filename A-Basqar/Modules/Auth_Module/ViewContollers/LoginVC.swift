@@ -58,10 +58,18 @@ class LoginVC: DefaultVC {
             
             MBProgressHUD.showAdded(to: self.view, animated: true)
             var userInfo = UserInfo(username: loginTextField.text ?? "", password: passwordTextField.text ?? "")
-            authApiService.login(userInfo: userInfo) { (token, error) in
-                print("/// token:", token)
-                print("/// error:", error)
+            authApiService.login(userInfo: userInfo) { (tokenData, error) in
                 MBProgressHUD.hide(for: self.view, animated: true)
+
+                if tokenData?.not_exist == nil {
+                    let token = tokenData?.token as! String
+                    UserDefaults.standard.set(token, forKey: self.userTokenForUserStandart)
+                    self.navigateToMain()
+                }
+                else {
+                    self.showErrorsAlertWithOneCancelButton(message: "Вы ввели логин или пароль не правильно!!!")
+
+                }
             }
 //            loginApi()
         }
