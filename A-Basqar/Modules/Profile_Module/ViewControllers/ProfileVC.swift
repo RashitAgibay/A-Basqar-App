@@ -15,6 +15,8 @@ class ProfileVC: DefaultVC {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var fullnameLabel: UILabel!
     
+    @IBOutlet weak var username: UILabel!
+    @IBOutlet weak var userIdLabel: UILabel!
     @IBOutlet weak var businessNameLabel: UILabel!
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var editDataButton: UIButton!
@@ -48,14 +50,16 @@ class ProfileVC: DefaultVC {
 extension ProfileVC {
     
     private func getProfileInfo() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         let profileNetworkManager = ProfileNetworManager()
         
         profileNetworkManager.getProfileInfo { (userProfileData, error) in
-            print("/// userProfileData", userProfileData)
-            print("/// error", error)
-            
+            MBProgressHUD.hide(for: self.view, animated: true)
             self.fullnameLabel.text = userProfileData?.fullname
             self.businessNameLabel.text = userProfileData?.store.company.name
+            self.idLabel.text = userProfileData?.status
+            self.username.text = userProfileData?.username
+            self.userIdLabel.text = "\(userProfileData?.id as! Int)"
 
         }
     }
