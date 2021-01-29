@@ -8,13 +8,15 @@
 
 import Foundation
 
-class EndPoint {
-    public static let shared = EndPoint()
-}
-
-extension EndPoint {
-    //Auth
-    func getLoginEndPoint() -> String {
-        return "/api/account/login"
+struct EndPoint {
+    
+    struct Auth {
+        static let login = "/api/account/login"
+    }
+    
+    struct Profile {
+        static let getProfileInfo = "/api/account/profile"
+        static let editProfileData = "/api/account/profile/update"
+        static let editUserPassword = "/api/account/change_password"
     }
 }

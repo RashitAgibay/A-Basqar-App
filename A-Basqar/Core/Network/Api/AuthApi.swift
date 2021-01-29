@@ -12,25 +12,11 @@ enum AuthApi {
     case login(userInfo: UserInfo)
 }
 
-extension AuthApi: TargetType {
-    var baseURL: URL {
-        #if DEBUG
-        guard let url = URL(string: "http://127.0.0.1:8000") else {
-            fatalError()
-        }
-        return url
-        #else
-        guard let url = URL(string: "") else {
-            fatalError()
-        }
-        return url
-        #endif
-    }
-    
+extension AuthApi: BaseApiDelegate {
     var path: String {
         switch self {
         case .login:
-            return EndPoint.shared.getLoginEndPoint()
+            return EndPoint.Auth.login
         }
     }
     
@@ -45,18 +31,10 @@ extension AuthApi: TargetType {
         return Data()
     }
     
-    
     var task: Task {
         switch self {
         case .login(let userInfo):
             return .requestJSONEncodable(userInfo)
-        }
-    }
-    
-    var headers: [String : String]? {
-        switch self {
-        case .login:
-            return ["Content-type": "application/json; charset=UTF-8"]
         }
     }
 }
