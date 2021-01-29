@@ -12,6 +12,7 @@ target 'A-Basqar' do
  pod 'Printer'
  pod 'RealmSwift'
  pod 'Moya', '~> 14.0'
+ pod 'SkyFloatingLabelTextField', '~> 3.0'
 
 
 end

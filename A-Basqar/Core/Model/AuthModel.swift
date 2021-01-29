@@ -19,6 +19,7 @@ struct UserInfo: Codable {
     }
 }
 
+// Getting
 struct Token: Codable {
     var token: String?
     var not_exist: Array<String>?
