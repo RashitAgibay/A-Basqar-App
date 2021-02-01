@@ -28,7 +28,7 @@ struct EditingPasswordModel: Codable {
     
     enum CodingKeys: String, CodingKey {
         case oldPassword = "old_password"
-        case newPassword = "new_passsord"
+        case newPassword = "new_password"
     }
 }
 

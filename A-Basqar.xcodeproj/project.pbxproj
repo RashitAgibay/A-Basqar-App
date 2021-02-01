@@ -258,6 +258,7 @@
 		FDBBFF8124D56C3100A2D283 /* HistoryItemExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBBFF8024D56C3100A2D283 /* HistoryItemExport.storyboard */; };
 		FDBBFF8324D56C3F00A2D283 /* KassaExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBBFF8224D56C3F00A2D283 /* KassaExport.storyboard */; };
 		FDBBFF8524D56C4E00A2D283 /* SearchExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBBFF8424D56C4E00A2D283 /* SearchExport.storyboard */; };
+		FDBC1A5325C7C53100B5FF4F /* CommonApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC1A5225C7C53100B5FF4F /* CommonApiResponse.swift */; };
 		FDCADE2C24D4578A007ADFDB /* DefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCADE2B24D4578A007ADFDB /* DefaultVC.swift */; };
 		FDD807B7250E4A0F00447B8D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD807B6250E4A0F00447B8D /* Profile.storyboard */; };
 		FDD807B9250E4A2100447B8D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD807B8250E4A2100447B8D /* ProfileVC.swift */; };
@@ -621,6 +622,7 @@
 		FDBBFF8024D56C3100A2D283 /* HistoryItemExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryItemExport.storyboard; sourceTree = "<group>"; };
 		FDBBFF8224D56C3F00A2D283 /* KassaExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KassaExport.storyboard; sourceTree = "<group>"; };
 		FDBBFF8424D56C4E00A2D283 /* SearchExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchExport.storyboard; sourceTree = "<group>"; };
+		FDBC1A5225C7C53100B5FF4F /* CommonApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonApiResponse.swift; sourceTree = "<group>"; };
 		FDCADE2B24D4578A007ADFDB /* DefaultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultVC.swift; sourceTree = "<group>"; };
 		FDD807B6250E4A0F00447B8D /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		FDD807B8250E4A2100447B8D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -1134,6 +1136,7 @@
 				FD1A4DB525C03D2E00716A81 /* AuthModel.swift */,
 				FD1A4FC025C3D3F500716A81 /* ProfileModel.swift */,
 				FD1A4FC325C3D93500716A81 /* ManagementModel.swift */,
+				FDBC1A5225C7C53100B5FF4F /* CommonApiResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1796,6 +1799,7 @@
 				288CC49523A89C38008D5218 /* UIImage+Transform.m in Sources */,
 				28CAE45D238B924E0015DE56 /* CaterogyCell.swift in Sources */,
 				FD7F097924B9F3F700F7709F /* ImportListKassaExportVC.swift in Sources */,
+				FDBC1A5325C7C53100B5FF4F /* CommonApiResponse.swift in Sources */,
 				FD8E9035250CCD8F0003AD7A /* NewPasscodeVC.swift in Sources */,
 				613D737C244F657900E0E392 /* NewMovementInBidCell.swift in Sources */,
 				61A846232452F6E400DF3371 /* AddStoreVC.swift in Sources */,

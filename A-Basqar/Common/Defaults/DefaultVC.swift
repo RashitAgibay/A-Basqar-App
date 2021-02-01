@@ -25,6 +25,13 @@ extension DefaultVC {
          oneTextField.delegate = self
      }
     
+    func showSimpleAlert(title: String? = "", message: String) {
+        let aletController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Закрыть", style: .cancel)
+        aletController.addAction(action)
+        self.present(aletController, animated: true, completion: nil)
+    }
+    
     func showErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
