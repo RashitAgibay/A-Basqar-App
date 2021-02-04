@@ -21,7 +21,7 @@ class HistoryImportVC: DefaultVC {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        getHistoryList() 
+//        getHistoryList() 
     }
     
 

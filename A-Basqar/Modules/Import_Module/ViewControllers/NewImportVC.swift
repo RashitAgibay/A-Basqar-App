@@ -97,6 +97,7 @@ class NewImportVC: DefaultVC {
     private func getCurrentImportObject() {
         apiManager.getCurrentCart { (importCart, error) in
             self.productList = importCart?.cartProduct ?? []
+            self.collectionView.reloadData()
 //            print("/// importCart:", importCart)
 //            print("/// error:", error)x
         }
@@ -110,44 +111,22 @@ class NewImportVC: DefaultVC {
 extension NewImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return productArray.count
+        return productList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "buyProduct", for: indexPath) as! NewImportCell
-        
-        let singleProduct = productArray[indexPath.row] as! NSDictionary
-        let firstGoods = singleProduct["goods"] as! NSDictionary
-        let product = firstGoods["goods"] as! NSDictionary
-        
-        let productName = product["name"] as! String
-        let productRemainedCount = firstGoods["nums"] as! Int
-        let productPrice = firstGoods["import_price"] as! Int
-        let productCountInCart = singleProduct["nums"] as! Int
-        let productTotalPrice = productPrice * productCountInCart
-        
-        let productIdInCart = singleProduct["id"] as! Int
-        
-        if product["goods_image"] != nil {
-            
-            let productImageUrl = product["goods_image"] as! String
-            
-            cell.productImageView.sd_setImage(with: URL(string: productImageUrl), placeholderImage: UIImage(named: "img1"))
-        
-        }
-        
-        cell.productID = productIdInCart
         cell.delegate = self
+
+        let currentProduct = productList[indexPath.row]
+
+        cell.productID = currentProduct.productId
+        cell.productNameLabel.text = currentProduct.importProduct?.product?.productName
+        cell.remainedCountLabel.text = "\(currentProduct.importProduct?.amount ?? 0)"
+        cell.priceLabel.text = "\(currentProduct.importProduct?.product?.productImportPrice ?? 0) тг"
+        cell.amountLabel.text = "\(currentProduct.amount ?? 0)"
         
-        cell.productNameLabel.text = productName
-        cell.remainedCountLabel.text = "\(productRemainedCount)"
-        cell.priceLabel.text = "\(productPrice) тг"
-        cell.amountLabel.text = "\(productCountInCart)"
-        cell.totalPriceLabel.text = "\(productTotalPrice) тг"
-        
-//        print("products: \(singleProduct)")
+        cell.totalPriceLabel.text = "\(calculateTotalSum(importProduct: currentProduct)) тг"
         
         return cell
     }
@@ -172,82 +151,6 @@ extension NewImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
 }
 
 extension NewImportVC {
-    
-     func getProductList() {
-        
-        do {
-            
-            self.reachability = try Reachability.init()
-        
-        }
-        
-        catch {
-            
-//            print("unable to start notifier")
-        }
-        
-        if ((reachability?.connection) != .unavailable) {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
-            
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-                
-            ]
-            
-            let encodeURL = importShoppingCartURL
-            let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-            
-            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                
-//                print(response.request)
-//                print(response.result)
-//                print(response.response)
-                
-                switch response.result {
-                
-                case .success(let payload):
-                    
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    
-                    if let x = payload as? Dictionary<String,AnyObject> {
-                                                
-                    }
-                    
-                    else {
-                        
-                        let resultValue = payload as! NSArray
-                        
-                        self.productArray = resultValue
-                        self.collectionView.reloadData()
-                        
-                        let totalSum = self.calculateTotalSum(array: self.productArray)
-                        self.totalSum  = totalSum
-                        self.totalSumLabel.text = "\(totalSum) тг"
-                        
-                        
-                    
-                    }
-                
-                case .failure(let error):
-                    
-                    print(error)
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-                
-                }
-            })
-        }
-        
-        else {
-            
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
     
     func deleteProductFromCart(productID: Int) {
         
@@ -289,7 +192,7 @@ extension NewImportVC {
         
         else {
             MBProgressHUD.hide(for: self.view, animated: true)
-            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+//            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
         }
     }
     
@@ -534,23 +437,10 @@ extension NewImportVC {
 
 extension NewImportVC {
     
-    private func calculateTotalSum(array: NSArray) -> Int {
-        
+    private func calculateTotalSum(importProduct: ImportCartProduct) -> Int {
         var totalSum = Int()
         
-        for item in array {
-            
-            let singleProduct = item as! NSDictionary
-             
-            let firstGoods = singleProduct["goods"] as! NSDictionary
-            let product = firstGoods["goods"] as! NSDictionary
-            
-            let productPrice = firstGoods["import_price"] as! Int
-            let productCountInCart = singleProduct["nums"] as! Int
-            let productTotalPrice = productPrice * productCountInCart
-            
-            totalSum += productTotalPrice
-        }
+        totalSum = (importProduct.importProduct?.product?.productImportPrice ?? 0) * (importProduct.amount ?? 0)
         
         return totalSum
     }

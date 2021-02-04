@@ -12,7 +12,7 @@ struct Product: Codable {
     var productId: Int?
     var productName: String?
     var productBarcode: String?
-    var productImportPprice: Int?
+    var productImportPrice: Int?
     var productExportPrice: Int?
     var productCategory: Int?
     var productCompany: Int?
@@ -21,7 +21,7 @@ struct Product: Codable {
         case productId = "product_id"
         case productName = "product_name"
         case productBarcode = "product_barcode"
-        case productImportPprice = "product_import_price"
+        case productImportPrice = "product_import_price"
         case productExportPrice = "product_export_price"
         case productCategory = "product_category"
         case productCompany = "product_company"
