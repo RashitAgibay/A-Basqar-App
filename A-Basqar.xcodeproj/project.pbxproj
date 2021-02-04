@@ -259,6 +259,8 @@
 		FDBBFF8324D56C3F00A2D283 /* KassaExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBBFF8224D56C3F00A2D283 /* KassaExport.storyboard */; };
 		FDBBFF8524D56C4E00A2D283 /* SearchExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBBFF8424D56C4E00A2D283 /* SearchExport.storyboard */; };
 		FDBC1A5325C7C53100B5FF4F /* CommonApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC1A5225C7C53100B5FF4F /* CommonApiResponse.swift */; };
+		FDBC1A5625C7D69400B5FF4F /* ImporApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC1A5525C7D69400B5FF4F /* ImporApi.swift */; };
+		FDBC1A5A25C7D6CE00B5FF4F /* ImportNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC1A5925C7D6CE00B5FF4F /* ImportNetworkManager.swift */; };
 		FDCADE2C24D4578A007ADFDB /* DefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCADE2B24D4578A007ADFDB /* DefaultVC.swift */; };
 		FDD807B7250E4A0F00447B8D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD807B6250E4A0F00447B8D /* Profile.storyboard */; };
 		FDD807B9250E4A2100447B8D /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD807B8250E4A2100447B8D /* ProfileVC.swift */; };
@@ -285,6 +287,8 @@
 		FDEA7EBD24CF2BDF009D193B /* ContragentListKassaExportListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA7EBC24CF2BDF009D193B /* ContragentListKassaExportListVC.swift */; };
 		FDEA7EBF24CF2C9A009D193B /* ContragentListExportListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA7EBE24CF2C9A009D193B /* ContragentListExportListCell.swift */; };
 		FDEA7EC124CF2E4A009D193B /* ExportKassaContragent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEA7EC024CF2E4A009D193B /* ExportKassaContragent.swift */; };
+		FDEAD94825C928BC0075F122 /* ImportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEAD94725C928BC0075F122 /* ImportModel.swift */; };
+		FDEAD98825C960EB0075F122 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDEAD98725C960EB0075F122 /* ProductModel.swift */; };
 		FDF8C71F24D44956000F205F /* HistoryKassaExportItem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDF8C71E24D44956000F205F /* HistoryKassaExportItem.storyboard */; };
 		FDF8C72224D44986000F205F /* HistoryKassaExportItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF8C72124D44986000F205F /* HistoryKassaExportItemVC.swift */; };
 		FDFCE7A523D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFCE7A423D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift */; };
@@ -623,6 +627,8 @@
 		FDBBFF8224D56C3F00A2D283 /* KassaExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KassaExport.storyboard; sourceTree = "<group>"; };
 		FDBBFF8424D56C4E00A2D283 /* SearchExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchExport.storyboard; sourceTree = "<group>"; };
 		FDBC1A5225C7C53100B5FF4F /* CommonApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonApiResponse.swift; sourceTree = "<group>"; };
+		FDBC1A5525C7D69400B5FF4F /* ImporApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImporApi.swift; sourceTree = "<group>"; };
+		FDBC1A5925C7D6CE00B5FF4F /* ImportNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportNetworkManager.swift; sourceTree = "<group>"; };
 		FDCADE2B24D4578A007ADFDB /* DefaultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultVC.swift; sourceTree = "<group>"; };
 		FDD807B6250E4A0F00447B8D /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		FDD807B8250E4A2100447B8D /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
@@ -649,6 +655,8 @@
 		FDEA7EBC24CF2BDF009D193B /* ContragentListKassaExportListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListKassaExportListVC.swift; sourceTree = "<group>"; };
 		FDEA7EBE24CF2C9A009D193B /* ContragentListExportListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListExportListCell.swift; sourceTree = "<group>"; };
 		FDEA7EC024CF2E4A009D193B /* ExportKassaContragent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportKassaContragent.swift; sourceTree = "<group>"; };
+		FDEAD94725C928BC0075F122 /* ImportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportModel.swift; sourceTree = "<group>"; };
+		FDEAD98725C960EB0075F122 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		FDF8C71E24D44956000F205F /* HistoryKassaExportItem.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HistoryKassaExportItem.storyboard; sourceTree = "<group>"; };
 		FDF8C72124D44986000F205F /* HistoryKassaExportItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryKassaExportItemVC.swift; sourceTree = "<group>"; };
 		FDFCE7A423D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyHistoryNameListCellCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1105,49 +1113,53 @@
 		FD1A4D7425C0225A00716A81 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				FD1A4DB325C03D0100716A81 /* Model */,
+				FD1A4DB325C03D0100716A81 /* Models */,
 				FD1A4DAF25C0383C00716A81 /* Network */,
 			);
 			path = Core;
 			sourceTree = "<group>";
 		};
-		FD1A4D7825C023C400716A81 /* Api */ = {
+		FD1A4D7825C023C400716A81 /* Providers */ = {
 			isa = PBXGroup;
 			children = (
 				FD1A4FB725C3D3A300716A81 /* ProfileApi.swift */,
 				FD1A4DB025C0385100716A81 /* AuthApi.swift */,
+				FDBC1A5525C7D69400B5FF4F /* ImporApi.swift */,
 			);
-			path = Api;
+			path = Providers;
 			sourceTree = "<group>";
 		};
 		FD1A4DAF25C0383C00716A81 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				FD1A4F1225C17D6800716A81 /* Common */,
-				FD1A4E3A25C1661000716A81 /* ApiService */,
-				FD1A4D7825C023C400716A81 /* Api */,
+				FD1A4E3A25C1661000716A81 /* ApiManagers */,
+				FD1A4D7825C023C400716A81 /* Providers */,
 			);
 			path = Network;
 			sourceTree = "<group>";
 		};
-		FD1A4DB325C03D0100716A81 /* Model */ = {
+		FD1A4DB325C03D0100716A81 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				FD1A4DB525C03D2E00716A81 /* AuthModel.swift */,
+				FDEAD98725C960EB0075F122 /* ProductModel.swift */,
 				FD1A4FC025C3D3F500716A81 /* ProfileModel.swift */,
 				FD1A4FC325C3D93500716A81 /* ManagementModel.swift */,
 				FDBC1A5225C7C53100B5FF4F /* CommonApiResponse.swift */,
+				FDEAD94725C928BC0075F122 /* ImportModel.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		FD1A4E3A25C1661000716A81 /* ApiService */ = {
+		FD1A4E3A25C1661000716A81 /* ApiManagers */ = {
 			isa = PBXGroup;
 			children = (
 				FD1A4E3B25C1663F00716A81 /* AuthNetworkManager.swift */,
 				FD1A4FBD25C3D3E200716A81 /* ProfileNetworManager.swift */,
+				FDBC1A5925C7D6CE00B5FF4F /* ImportNetworkManager.swift */,
 			);
-			path = ApiService;
+			path = ApiManagers;
 			sourceTree = "<group>";
 		};
 		FD1A4F1225C17D6800716A81 /* Common */ = {
@@ -1809,6 +1821,7 @@
 				FD31605B24E96DCF00621BEF /* SearchByBarcodeExportVC.swift in Sources */,
 				FD93BE6E24D79126009CFBDE /* NewExportCell.swift in Sources */,
 				FD93BE7624D79199009CFBDE /* FirstLevelCatExportCell.swift in Sources */,
+				FDBC1A5A25C7D6CE00B5FF4F /* ImportNetworkManager.swift in Sources */,
 				FD7AF83A24AC85BA0021B131 /* UIHelpers.swift in Sources */,
 				61A8461A2452DBF800DF3371 /* StoresVC.swift in Sources */,
 				288CC38A23A89B60008D5218 /* Reachability.swift in Sources */,
@@ -1886,6 +1899,7 @@
 				FD1A4FBE25C3D3E200716A81 /* ProfileNetworManager.swift in Sources */,
 				FD6C71DF250B1D3D0072552D /* SMSCodeVC.swift in Sources */,
 				FDBBFF5F24D56A8200A2D283 /* ContragentsListExportVC.swift in Sources */,
+				FDBC1A5625C7D69400B5FF4F /* ImporApi.swift in Sources */,
 				280901B02394E66C00CA68BD /* ByuingHistoryViewCell.swift in Sources */,
 				FD4777BE24AFB64600E323D3 /* UIView+Extensions.swift in Sources */,
 				288CC49723A89C38008D5218 /* UIImageView+WebCache.m in Sources */,
@@ -1957,6 +1971,7 @@
 				288CC47E23A89C38008D5218 /* SDWebImageCacheKeyFilter.m in Sources */,
 				288CC49A23A89C38008D5218 /* MKAnnotationView+WebCache.m in Sources */,
 				288CC48423A89C38008D5218 /* SDWebImageDownloaderDecryptor.m in Sources */,
+				FDEAD94825C928BC0075F122 /* ImportModel.swift in Sources */,
 				288CC49923A89C38008D5218 /* UIView+WebCacheOperation.m in Sources */,
 				FDBBFF5B24D56A1C00A2D283 /* MainExportVC.swift in Sources */,
 				FD93BE7424D79184009CFBDE /* ContragentListExportCell.swift in Sources */,
@@ -1974,6 +1989,7 @@
 				288CC47A23A89C38008D5218 /* SDImageLoader.m in Sources */,
 				288CC47723A89C38008D5218 /* SDImageHEICCoder.m in Sources */,
 				288CC49323A89C38008D5218 /* UIImage+Metadata.m in Sources */,
+				FDEAD98825C960EB0075F122 /* ProductModel.swift in Sources */,
 				FD7F097B24B9F54000F7709F /* ImportListKassaExportCell.swift in Sources */,
 				288CC48B23A89C38008D5218 /* SDWebImageOptionsProcessor.m in Sources */,
 				FDFCE7A523D561FC00026452 /* BuyHistoryNameListCellCollectionViewCell.swift in Sources */,

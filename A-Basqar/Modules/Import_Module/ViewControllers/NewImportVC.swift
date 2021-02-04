@@ -18,6 +18,8 @@ class NewImportVC: DefaultVC {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private var apiManager = ImportNetworkManager()
+    var productList = [ImportCartProduct]()
     var productArray = NSArray()
     var totalSum = Int()
     
@@ -29,15 +31,12 @@ class NewImportVC: DefaultVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
         updateUI()
-        
-        collectionView.refreshControl = refreshControl
+//        webService =
     }
     
     private func setupUI() {
-        
          cardView.layer.cornerRadius = 10
          cardView.dropShadow()
          cardView.layer.backgroundColor = UIColor.white.cgColor
@@ -51,14 +50,14 @@ class NewImportVC: DefaultVC {
          contragentNameButton.layer.cornerRadius = 10
          contragentNameButton.dropShadowforButton()
 
+         collectionView.refreshControl = refreshControl
         
     }
     
     private func updateUI() {
-        
-        self.getCurrentContr()
-        self.getProductList()
-        
+//        self.getCurrentContr()
+//        self.getProductList()
+        getCurrentImportObject()
     }
     
     @objc private func refreshData(sender: UIRefreshControl) {
@@ -90,11 +89,20 @@ class NewImportVC: DefaultVC {
         
         
     }
+    
     @IBAction func tappedCancelButton(_ sender: Any) {
         
     }
     
+    private func getCurrentImportObject() {
+        apiManager.getCurrentCart { (importCart, error) in
+            self.productList = importCart?.cartProduct ?? []
+//            print("/// importCart:", importCart)
+//            print("/// error:", error)x
+        }
+    }
 
+    
     
 }
 

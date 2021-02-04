@@ -33,3 +33,19 @@ struct Company: Codable {
         case bin = "company_bin"
     }
 }
+
+struct Contragent: Codable {
+    var id: Int?
+    var name: String?
+    var bin: String?
+    var phoneNumber: String?
+    var companyID: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "contragent_id"
+        case name = "name"
+        case bin = "bin"
+        case phoneNumber = "phone_number"
+        case companyID = "company"
+    }
+}

@@ -20,3 +20,4 @@ struct CommonApiResponse: Codable {
         case response
     }
 }
+
