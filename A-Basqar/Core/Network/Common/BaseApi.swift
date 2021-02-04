@@ -9,9 +9,7 @@
 import Foundation
 import Moya
 
-protocol BaseApiDelegate: TargetType {
-    
-}
+protocol BaseApiDelegate: TargetType {}
 
 extension BaseApiDelegate {
     var baseURL: URL {

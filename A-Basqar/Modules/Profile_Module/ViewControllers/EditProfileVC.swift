@@ -18,8 +18,8 @@ class EditProfileVC: DefaultVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
+        setupActions()
     }
     
 
@@ -40,5 +40,18 @@ class EditProfileVC: DefaultVC {
         freeSpaceOnLeftSideForTextFiedl(someTextField: fullNameTextField)
         freeSpaceOnLeftSideForTextFiedl(someTextField: phoneNumberTextField)
         freeSpaceOnLeftSideForTextFiedl(someTextField: businessNameTextField)
+    }
+    
+    private func setupActions() {
+        saveDataButton.addTarget(self, action: #selector(tapSaveButton), for: .touchUpInside)
+    }
+    
+    @objc private func tapSaveButton() {
+        saveData()
+    }
+    
+    private func saveData() {
+//        let edititngProfileModel = EditingProfileModel(fullname: fullNameTextField.text ?? "", username: nil, status: <#T##String#>)
+//        ProfileNetworManager.service.editProfileData(editingProfileModel: <#T##EditingProfileModel#>, comletion: <#T##(CommonApiResponse?, Error?) -> ()#>)
     }
 }
