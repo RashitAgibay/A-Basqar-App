@@ -30,4 +30,8 @@ struct EndPoint {
         static let historyItem = "/api/ex_im_prods/get_import_history_item/"
         static let makeHistory = "/api/ex_im_prods/buy_new_products"
     }
+    
+    struct Product {
+        static let firstLevetCat = "/api/products/categories"
+    }
 }

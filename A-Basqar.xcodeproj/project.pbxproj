@@ -219,6 +219,8 @@
 		FD7F097724B9F3D000F7709F /* ImportListKassaExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7F097624B9F3D000F7709F /* ImportListKassaExport.storyboard */; };
 		FD7F097924B9F3F700F7709F /* ImportListKassaExportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F097824B9F3F700F7709F /* ImportListKassaExportVC.swift */; };
 		FD7F097B24B9F54000F7709F /* ImportListKassaExportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F097A24B9F54000F7709F /* ImportListKassaExportCell.swift */; };
+		FD88A0E425CD094F00C31AA5 /* ProductApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD88A0E325CD094F00C31AA5 /* ProductApi.swift */; };
+		FD88A0E825CD0F6D00C31AA5 /* ProductNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD88A0E725CD0F6D00C31AA5 /* ProductNetworkManager.swift */; };
 		FD8E9033250CCD7B0003AD7A /* NewPassCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8E9032250CCD7B0003AD7A /* NewPassCode.storyboard */; };
 		FD8E9035250CCD8F0003AD7A /* NewPasscodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8E9034250CCD8F0003AD7A /* NewPasscodeVC.swift */; };
 		FD8E9037250CE5C10003AD7A /* AppSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8E9036250CE5C10003AD7A /* AppSetup.swift */; };
@@ -259,7 +261,7 @@
 		FDBBFF8324D56C3F00A2D283 /* KassaExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBBFF8224D56C3F00A2D283 /* KassaExport.storyboard */; };
 		FDBBFF8524D56C4E00A2D283 /* SearchExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDBBFF8424D56C4E00A2D283 /* SearchExport.storyboard */; };
 		FDBC1A5325C7C53100B5FF4F /* CommonApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC1A5225C7C53100B5FF4F /* CommonApiResponse.swift */; };
-		FDBC1A5625C7D69400B5FF4F /* ImporApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC1A5525C7D69400B5FF4F /* ImporApi.swift */; };
+		FDBC1A5625C7D69400B5FF4F /* ImportApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC1A5525C7D69400B5FF4F /* ImportApi.swift */; };
 		FDBC1A5A25C7D6CE00B5FF4F /* ImportNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDBC1A5925C7D6CE00B5FF4F /* ImportNetworkManager.swift */; };
 		FDCADE2C24D4578A007ADFDB /* DefaultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCADE2B24D4578A007ADFDB /* DefaultVC.swift */; };
 		FDD807B7250E4A0F00447B8D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD807B6250E4A0F00447B8D /* Profile.storyboard */; };
@@ -587,6 +589,8 @@
 		FD7F097624B9F3D000F7709F /* ImportListKassaExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImportListKassaExport.storyboard; sourceTree = "<group>"; };
 		FD7F097824B9F3F700F7709F /* ImportListKassaExportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportListKassaExportVC.swift; sourceTree = "<group>"; };
 		FD7F097A24B9F54000F7709F /* ImportListKassaExportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportListKassaExportCell.swift; sourceTree = "<group>"; };
+		FD88A0E325CD094F00C31AA5 /* ProductApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductApi.swift; sourceTree = "<group>"; };
+		FD88A0E725CD0F6D00C31AA5 /* ProductNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNetworkManager.swift; sourceTree = "<group>"; };
 		FD8E9032250CCD7B0003AD7A /* NewPassCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPassCode.storyboard; sourceTree = "<group>"; };
 		FD8E9034250CCD8F0003AD7A /* NewPasscodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPasscodeVC.swift; sourceTree = "<group>"; };
 		FD8E9036250CE5C10003AD7A /* AppSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetup.swift; sourceTree = "<group>"; };
@@ -627,7 +631,7 @@
 		FDBBFF8224D56C3F00A2D283 /* KassaExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KassaExport.storyboard; sourceTree = "<group>"; };
 		FDBBFF8424D56C4E00A2D283 /* SearchExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchExport.storyboard; sourceTree = "<group>"; };
 		FDBC1A5225C7C53100B5FF4F /* CommonApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonApiResponse.swift; sourceTree = "<group>"; };
-		FDBC1A5525C7D69400B5FF4F /* ImporApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImporApi.swift; sourceTree = "<group>"; };
+		FDBC1A5525C7D69400B5FF4F /* ImportApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportApi.swift; sourceTree = "<group>"; };
 		FDBC1A5925C7D6CE00B5FF4F /* ImportNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportNetworkManager.swift; sourceTree = "<group>"; };
 		FDCADE2B24D4578A007ADFDB /* DefaultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultVC.swift; sourceTree = "<group>"; };
 		FDD807B6250E4A0F00447B8D /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -1124,7 +1128,8 @@
 			children = (
 				FD1A4FB725C3D3A300716A81 /* ProfileApi.swift */,
 				FD1A4DB025C0385100716A81 /* AuthApi.swift */,
-				FDBC1A5525C7D69400B5FF4F /* ImporApi.swift */,
+				FDBC1A5525C7D69400B5FF4F /* ImportApi.swift */,
+				FD88A0E325CD094F00C31AA5 /* ProductApi.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -1158,6 +1163,7 @@
 				FD1A4E3B25C1663F00716A81 /* AuthNetworkManager.swift */,
 				FD1A4FBD25C3D3E200716A81 /* ProfileNetworManager.swift */,
 				FDBC1A5925C7D6CE00B5FF4F /* ImportNetworkManager.swift */,
+				FD88A0E725CD0F6D00C31AA5 /* ProductNetworkManager.swift */,
 			);
 			path = ApiManagers;
 			sourceTree = "<group>";
@@ -1877,6 +1883,7 @@
 				FDEA7EBF24CF2C9A009D193B /* ContragentListExportListCell.swift in Sources */,
 				FD93BE7824D791B2009CFBDE /* ProductListExportCell.swift in Sources */,
 				280901A12394CDC200CA68BD /* BuyerCompanyCell.swift in Sources */,
+				FD88A0E425CD094F00C31AA5 /* ProductApi.swift in Sources */,
 				288CC4A223A89C38008D5218 /* SDImageCachesManagerOperation.m in Sources */,
 				FD4777B824AFADE500E323D3 /* ContragentListImportCell.swift in Sources */,
 				288CC46823A89C38008D5218 /* SDAnimatedImageRep.m in Sources */,
@@ -1899,7 +1906,7 @@
 				FD1A4FBE25C3D3E200716A81 /* ProfileNetworManager.swift in Sources */,
 				FD6C71DF250B1D3D0072552D /* SMSCodeVC.swift in Sources */,
 				FDBBFF5F24D56A8200A2D283 /* ContragentsListExportVC.swift in Sources */,
-				FDBC1A5625C7D69400B5FF4F /* ImporApi.swift in Sources */,
+				FDBC1A5625C7D69400B5FF4F /* ImportApi.swift in Sources */,
 				280901B02394E66C00CA68BD /* ByuingHistoryViewCell.swift in Sources */,
 				FD4777BE24AFB64600E323D3 /* UIView+Extensions.swift in Sources */,
 				288CC49723A89C38008D5218 /* UIImageView+WebCache.m in Sources */,
@@ -1942,6 +1949,7 @@
 				FDEA7EBD24CF2BDF009D193B /* ContragentListKassaExportListVC.swift in Sources */,
 				FD7AF83424AC74E00021B131 /* HistoryImportVC.swift in Sources */,
 				288CC49223A89C38008D5218 /* UIImage+MemoryCacheCost.m in Sources */,
+				FD88A0E825CD0F6D00C31AA5 /* ProductNetworkManager.swift in Sources */,
 				6159FA8F244DEB0F00FE1BED /* MainMovementVC.swift in Sources */,
 				613D737A244F64BE00E0E392 /* NewMovementInBidVC.swift in Sources */,
 				288CC4A123A89C38008D5218 /* SDImageAssetManager.m in Sources */,

@@ -26,6 +26,10 @@ extension BaseApiDelegate {
         #endif
     }
     
+    var sampleData: Data {
+        return Data()
+    }
+    
     var headers: [String : String]? {
         let token = UserDefaults.standard.string(forKey: "new_userTokenKey") as! String
         if token != nil {

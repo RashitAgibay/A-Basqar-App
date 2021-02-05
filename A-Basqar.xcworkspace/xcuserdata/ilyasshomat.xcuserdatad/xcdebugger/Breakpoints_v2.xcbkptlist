@@ -20,14 +20,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "1E9BD479-6B53-4E50-8E98-364E921537A7 - 2f292fcd77712169"
+                  uuid = "1E9BD479-6B53-4E50-8E98-364E921537A7 - 779117bf5b01d6a9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "A_Basqar.SearchByBarcodeExportVC.scanQrCode() throws -&gt; ()"
                   moduleName = "A-Basqar"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ilyasshomat/Google%20Drive/code/Swift/Projects/A-Basqar/A-Basqar/Modules/Export_Module/ViewControllers/SearchByBarcodeExportVC.swift"
+                  urlString = "file:///Users/ilyasshomat/Google%20Drive/code/Swift/Projects/a-basqar/A-Basqar/Modules/Export_Module/ViewControllers/SearchByBarcodeExportVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "79"
@@ -35,14 +35,14 @@
                   offsetFromSymbolStart = "212">
                </Location>
                <Location
-                  uuid = "1E9BD479-6B53-4E50-8E98-364E921537A7 - 2f292fcd7771210a"
+                  uuid = "1E9BD479-6B53-4E50-8E98-364E921537A7 - 779117bf5b01d14a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "A_Basqar.SearchByBarcodeExportVC.scanQrCode() throws -&gt; ()"
                   moduleName = "A-Basqar"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ilyasshomat/Google%20Drive/code/Swift/Projects/A-Basqar/A-Basqar/Modules/Export_Module/ViewControllers/SearchByBarcodeExportVC.swift"
+                  urlString = "file:///Users/ilyasshomat/Google%20Drive/code/Swift/Projects/a-basqar/A-Basqar/Modules/Export_Module/ViewControllers/SearchByBarcodeExportVC.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "78"

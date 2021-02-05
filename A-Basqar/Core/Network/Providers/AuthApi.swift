@@ -27,10 +27,6 @@ extension AuthApi: BaseApiDelegate {
         }
     }
     
-    var sampleData: Data {
-        return Data()
-    }
-    
     var task: Task {
         switch self {
         case .login(let userInfo):
