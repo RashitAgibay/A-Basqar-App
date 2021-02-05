@@ -12,47 +12,38 @@ import Alamofire
 
 class FirstLevelCatImportVC: DefaultVC {
 
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var categoryArray = NSArray()
     var categoryID = Int()
-    
+    var cats = [FirstLevelCat]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
-        self.getCatList()
+        getCats()
+//        self.getCatList()
     }
     
-    
+    private func getCats() {
+        ProductNetworkManager.service.getFirstLevelCats { (categories, error) in
+            self.cats = categories ?? [FirstLevelCat]()
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 extension FirstLevelCatImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return categoryArray.count
+        return cats.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "addProd", for: indexPath) as! FirstLevelCatImportCell
         
-        let singleCat = self.categoryArray[indexPath.row] as! NSDictionary
-        let category = singleCat["category"] as! NSDictionary
-                
-        let catName = category["name"] as! String
-        cell.catNameLabel.text = catName
-
-        if category["goods_cat_image"] != nil {
-            
-            let catImageUrl = category["goods_cat_image"] as! String
-            
-            cell.catImageView.sd_setImage(with: URL(string: catImageUrl), placeholderImage: UIImage(named: "img1"))
-        }
-        
+        let currentCat = cats[indexPath.row]
+        cell.catNameLabel.text = currentCat.name
         
         return cell
     }
