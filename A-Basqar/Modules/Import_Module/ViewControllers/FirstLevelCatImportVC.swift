@@ -50,12 +50,12 @@ extension FirstLevelCatImportVC: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let singleCat = self.categoryArray[indexPath.row] as! NSDictionary
-        let category = singleCat["category"] as! NSDictionary
-        let categoryID = category["id"] as! Int
+//        let singleCat = self.categoryArray[indexPath.row] as! NSDictionary
+//        let category = singleCat["category"] as! NSDictionary
+//        let categoryID = category["id"] as! Int
         
-        self.categoryID = categoryID
-        
+        let currentCat = cats[indexPath.row]
+        self.categoryID = currentCat.id!
         self.navigateToProductList()
     }
     

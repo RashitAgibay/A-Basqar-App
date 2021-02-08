@@ -14,6 +14,7 @@ protocol ProductNetworkable {
     var provider: MoyaProvider<ProductApi> { get }
     
     func getFirstLevelCats(completion: @escaping ([FirstLevelCat]?, Error?) -> ())
+    func getExactCatProds(catId: Int, completion: @escaping ([StoreProduct]?, Error?) -> ())
 }
 
 class ProductNetworkManager: ProductNetworkable {
@@ -30,6 +31,24 @@ class ProductNetworkManager: ProductNetworkable {
                 do {
                     let categories = try decoder.decode([FirstLevelCat].self, from: response.data)
                     completion(categories, nil)
+                }
+                catch let error {
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+    func getExactCatProds(catId: Int, completion: @escaping ([StoreProduct]?, Error?) -> ()) {
+        provider.request(.getExactCatProds(catId: catId)) { (result) in
+            switch result {
+            case .success(let response):
+                let decoder = JSONDecoder()
+                do {
+                    let prods = try decoder.decode([StoreProduct].self, from: response.data)
+                    completion(prods, nil)
                 }
                 catch let error {
                     completion(nil, error)

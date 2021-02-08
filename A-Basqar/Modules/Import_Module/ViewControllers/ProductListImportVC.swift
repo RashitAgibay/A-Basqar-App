@@ -12,16 +12,16 @@ import Alamofire
 
 class ProductListImportVC: DefaultVC {
 
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var products = [StoreProduct]()
     var productArray = NSArray()
     var categoryID = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.getProductList()
+        getProds()
+//        self.getProductList()
     }
     
 
@@ -30,39 +30,46 @@ class ProductListImportVC: DefaultVC {
         self.navigateToFirstLevelCat()
     }
     
-
+    private func getProds() {
+        ProductNetworkManager.service.getExactCatProds(catId: categoryID) { (products, error) in
+            self.products = products ?? [StoreProduct]()
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 extension ProductListImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return productArray.count
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "buygoodCell", for: indexPath) as! ProductListImportCell
         
-        let singleProduct = productArray[indexPath.row] as! NSDictionary
-        let product = singleProduct["goods"] as! NSDictionary
+//        let singleProduct = productArray[indexPath.row] as! NSDictionary
+//        let product = singleProduct["goods"] as! NSDictionary
+//
+//        let importPrice = singleProduct["import_price"] as! Int
+//        let exportPrice = singleProduct["export_price"] as! Int
+//        let productRemainedCount = singleProduct["nums"] as! Int
+//
+//        let productName = product["name"] as! String
         
-        let importPrice = singleProduct["import_price"] as! Int
-        let exportPrice = singleProduct["export_price"] as! Int
-        let productRemainedCount = singleProduct["nums"] as! Int
+        let storeProd = products[indexPath.row]
+        let product = storeProd.product
         
-        let productName = product["name"] as! String
+        cell.productNameLabel.text = product?.productName
+        cell.remainedCountLabel.text = "\(storeProd.amount ?? 0)"
+        cell.priceLabel.text = "\(product?.productImportPrice ?? 0) тг"
         
-        cell.productNameLabel.text = productName
-        cell.remainedCountLabel.text = "\(productRemainedCount)"
-        cell.priceLabel.text = "\(importPrice) тг"
-        
-        if product["goods_image"] != nil {
-            
-            let productImageUrl = product["goods_image"] as! String
-            
-            cell.productImageView.sd_setImage(with: URL(string: productImageUrl), placeholderImage: UIImage(named: "img1"))
-        }
+//        if product["goods_image"] != nil {
+//
+//            let productImageUrl = product["goods_image"] as! String
+//
+//            cell.productImageView.sd_setImage(with: URL(string: productImageUrl), placeholderImage: UIImage(named: "img1"))
+//        }
         
         
         
