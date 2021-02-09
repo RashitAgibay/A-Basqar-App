@@ -31,7 +31,10 @@ extension BaseApiDelegate {
     }
     
     var headers: [String : String]? {
-        let token = UserDefaults.standard.string(forKey: "new_userTokenKey") as! String
+        var token = ""
+        if UserDefaults.standard.string(forKey: "new_userTokenKey") != nil {
+            token = UserDefaults.standard.string(forKey: "new_userTokenKey") as! String
+        }
         if token != nil {
             return [
                 "Content-type": "application/json; charset=UTF-8",

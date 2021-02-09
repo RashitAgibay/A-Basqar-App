@@ -8,6 +8,17 @@
 
 import Foundation
 
+struct EditingProductPrices: Codable {
+    var importPrice: Int?
+    var exportPrice: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case importPrice = "product_import_price"
+        case exportPrice = "product_export_price"
+    }
+}
+
+// Getting
 struct Product: Codable {
     var productId: Int?
     var productName: String?
@@ -28,7 +39,7 @@ struct Product: Codable {
     }
 }
 
-
+// Getting
 struct StoreProduct: Codable {
     var id: Int?
     var product: Product?
@@ -46,6 +57,7 @@ struct StoreProduct: Codable {
     }
 }
 
+// Getting
 struct FirstLevelCat: Codable {
     var id: Int?
     var name: String?

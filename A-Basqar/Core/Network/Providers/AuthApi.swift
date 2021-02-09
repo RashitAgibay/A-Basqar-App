@@ -27,6 +27,12 @@ extension AuthApi: BaseApiDelegate {
         }
     }
     
+    var headers: [String : String]? {
+        return [
+            "Content-type": "application/json; charset=UTF-8",
+        ]
+    }
+    
     var task: Task {
         switch self {
         case .login(let userInfo):

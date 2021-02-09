@@ -12,6 +12,7 @@ import Moya
 enum ProductApi {
     case getFirstLevelCats
     case getExactCatProds(catId: Int)
+    case editPrices(prodId: Int, editingProdPrices: EditingProductPrices)
 }
 
 extension ProductApi: BaseApiDelegate {
@@ -22,6 +23,8 @@ extension ProductApi: BaseApiDelegate {
             return EndPoint.Product.firstLevelCat
         case .getExactCatProds(let catId):
             return EndPoint.Product.exactCatprods + "\(catId)"
+        case .editPrices(let prodId, _):
+            return EndPoint.Product.editPrices + "\(prodId)"
         }
     }
     
@@ -31,6 +34,8 @@ extension ProductApi: BaseApiDelegate {
             return .get
         case .getExactCatProds:
             return .get
+        case .editPrices:
+            return .put
         }
     }
     
@@ -40,6 +45,8 @@ extension ProductApi: BaseApiDelegate {
             return .requestPlain
         case .getExactCatProds:
             return .requestPlain
+        case .editPrices(_, let editingProdPrices):
+            return .requestJSONEncodable(editingProdPrices)
         }
     }
 }

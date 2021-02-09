@@ -34,5 +34,6 @@ struct EndPoint {
     struct Product {
         static let firstLevelCat = "/api/products/categories"
         static let exactCatprods = "/api/ex_im_prods/get_prods/"
+        static let editPrices = "/api/products/edit_import_export_prices/"
     }
 }
