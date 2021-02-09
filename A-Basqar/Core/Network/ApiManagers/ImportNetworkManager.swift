@@ -15,7 +15,8 @@ protocol ImportNetworkable {
 
     func checkCart(completion: @escaping (CommonImportApiResponse?, Error?) -> ())
     func getCurrentCart(comletion: @escaping (ImportCart?, Error?) -> ())
-//    func createNewCart(completion: @escaping () -> ())
+    func createNewCart(completion: @escaping (CommonImportApiResponse?, Error?) -> ())
+    func addProdsToCart(product: AddingImportProd, comletion: @escaping (CommonImportApiResponse?, Error?) -> ())
 }
 
 class ImportNetworkManager: ImportNetworkable {
@@ -36,6 +37,41 @@ class ImportNetworkManager: ImportNetworkable {
                 do {
                     let currentCart = try decoder.decode(ImportCart.self, from: response.data)
                     comletion(currentCart, nil)
+                }
+                catch let error {
+                    comletion(nil, error)
+                }
+            case .failure(let error):
+                comletion(nil, error)
+            }
+        }
+    }
+    
+    func createNewCart(completion: @escaping (CommonImportApiResponse?, Error?) -> ()) {
+        provider.request(.createNewCart) { (reslut) in
+            switch reslut {
+            case .success(let response):
+                let decoder = JSONDecoder()
+                do {
+                    let message = try decoder.decode(CommonImportApiResponse.self, from: response.data)
+                    completion(message, nil)
+                }
+                catch let error {
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+    func addProdsToCart(product: AddingImportProd, comletion: @escaping (CommonImportApiResponse?, Error?) -> ()) {
+        provider.request(.addProdsToCart(addingProd: product)) { (result) in
+            switch result {
+            case .success(let response):
+                do {
+                    let message = try JSONDecoder().decode(CommonImportApiResponse.self, from: response.data)
+                    comletion(message, nil)
                 }
                 catch let error {
                     comletion(nil, error)
