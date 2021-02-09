@@ -54,9 +54,13 @@ struct ImportCartModel: Codable {
 //Getting
 struct CommonImportApiResponse: Codable {
     var importObject: String?
+    var message: String?
+    var desc: String?
     
     enum CodingKeys: String, CodingKey {
         case importObject = "import_object"
+        case message
+        case desc
     }
 }
 

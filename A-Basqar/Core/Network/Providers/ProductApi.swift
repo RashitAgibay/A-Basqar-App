@@ -11,6 +11,7 @@ import Moya
 
 enum ProductApi {
     case getFirstLevelCats
+    case getExactCatProds(catId: Int)
 }
 
 extension ProductApi: BaseApiDelegate {
@@ -18,7 +19,9 @@ extension ProductApi: BaseApiDelegate {
     var path: String {
         switch self {
         case .getFirstLevelCats:
-            return EndPoint.Product.firstLevetCat
+            return EndPoint.Product.firstLevelCat
+        case .getExactCatProds(let catId):
+            return EndPoint.Product.exactCatprods + "\(catId)"
         }
     }
     
@@ -26,12 +29,16 @@ extension ProductApi: BaseApiDelegate {
         switch self {
         case .getFirstLevelCats:
             return .get
+        case .getExactCatProds:
+            return .get
         }
     }
     
     var task: Task {
         switch self {
         case .getFirstLevelCats:
+            return .requestPlain
+        case .getExactCatProds:
             return .requestPlain
         }
     }

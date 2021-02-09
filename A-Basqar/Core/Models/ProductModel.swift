@@ -28,6 +28,24 @@ struct Product: Codable {
     }
 }
 
+
+struct StoreProduct: Codable {
+    var id: Int?
+    var product: Product?
+    var amount: Int?
+    var category: Int?
+    var store: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "product_id"
+        case product = "company_product"
+        case amount = "product_amount"
+        case category = "categor"
+        case store = "store"
+        
+    }
+}
+
 struct FirstLevelCat: Codable {
     var id: Int?
     var name: String?
