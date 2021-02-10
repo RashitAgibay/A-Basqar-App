@@ -17,6 +17,7 @@ class ProductListImportVC: DefaultVC {
     var products = [StoreProduct]()
     var productArray = NSArray()
     var categoryID = Int()
+    var selectedProdImportPrice = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +36,10 @@ class ProductListImportVC: DefaultVC {
         }
     }
     
-    private func createCartObject(productId: Int, amount: Int) {
+    private func createCartObject(productId: Int, companyProdId:Int, amount: Int, editingPrices: EditingProductPrices) {
         ImportNetworkManager.service.createNewCart { (response, error) in
             self.addProductToCart(productId: productId, amount: amount)
+            self.editProdPrices(prodId: companyProdId, editingPrices: editingPrices)
         }
     }
     
@@ -48,6 +50,14 @@ class ProductListImportVC: DefaultVC {
             }
             else {
                 self.navigateToMainImport()
+            }
+        }
+    }
+    
+    private func editProdPrices(prodId: Int, editingPrices: EditingProductPrices) {
+        ProductNetworkManager.service.editPrices(prodId: prodId, editingPrices: editingPrices) { (message, error) in
+            if message?.status == "success" {
+                
             }
         }
     }
@@ -79,7 +89,8 @@ extension ProductListImportVC: UICollectionViewDelegate, UICollectionViewDataSou
         guard let prodId = storeProd.id else {
             return
         }
-        showAlertControllerWithTwoTextFields(productId: prodId)
+        selectedProdImportPrice = storeProd.product?.productImportPrice ?? Int()
+        showAlertControllerWithTwoTextFields(productId: prodId, companyProdId: (storeProd.product?.productId)!)
     }
     
     
@@ -100,7 +111,7 @@ extension ProductListImportVC {
 }
 
 extension ProductListImportVC {
-    func showAlertControllerWithTwoTextFields(productId: Int) {
+    func showAlertControllerWithTwoTextFields(productId: Int, companyProdId: Int) {
         var amount = 1
         
         let alertController = UIAlertController(title: "", message: "Введите количество...", preferredStyle: .alert)
@@ -111,8 +122,13 @@ extension ProductListImportVC {
                 let amountString = alertController.textFields?[0].text as! String
                 amount = Int(amountString)!
             }
+            if alertController.textFields?[1].text != "" {
+                let cashString = alertController.textFields?[1].text as! String
+                self.selectedProdImportPrice = Int(cashString)!
+            }
+            
 
-            self.createCartObject(productId: productId, amount: amount)
+            self.createCartObject(productId: productId, companyProdId: companyProdId, amount: amount, editingPrices: EditingProductPrices(importPrice: self.selectedProdImportPrice))
         }
         
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (action) in
@@ -123,12 +139,12 @@ extension ProductListImportVC {
             textfield.keyboardType = .numberPad
         
         }
-//        alertController.addTextField { (textfield) in
-//
-//            textfield.placeholder = "\(importPrice)"
-//            textfield.keyboardType = .numberPad
-//
-//        }
+        alertController.addTextField { (textfield) in
+
+            textfield.placeholder = "\(self.selectedProdImportPrice) тенге"
+            textfield.keyboardType = .numberPad
+
+        }
         alertController.addAction(addAction)
         alertController.addAction(cancelAction)
         self.present(alertController,animated: true, completion: nil)
