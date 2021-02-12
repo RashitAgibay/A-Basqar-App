@@ -107,7 +107,7 @@ class NewImportVC: DefaultVC {
     private func editPrices(prodId: Int, importProdId:Int, amount: Int, editingPrices: EditingProductPrices) {
         ProductNetworkManager.service.editPrices(prodId: prodId, editingPrices: editingPrices) { (message, error) in
             if message?.status == "success" {
-                print("/// message editPrices:", message)
+//                print("/// message editPrices:", message)
                 self.editProdCount(importProdId: importProdId, amount: amount)
             }
         }
@@ -116,13 +116,19 @@ class NewImportVC: DefaultVC {
     private func editProdCount(importProdId: Int, amount: Int) {
         ImportNetworkManager.service.editProdAmount(editImportProd: EditingImportProd(product_id: importProdId, amount: amount)) { (message, error) in
             if message?.message == "edited" {
-                print("/// message editProdCount:", message)
-//                self.collectionView.reloadData()
+//                print("/// message editProdCount:", message)
+                self.getCurrentImportObject()
             }
         }
     }
 
-    
+    private func deleteProd(deletingProdId: Int) {
+        ImportNetworkManager.service.deleteProdInCart(deletingProdId: deletingProdId) { (message, error) in
+            if message?.message == "deleted" {
+                self.getCurrentImportObject()
+            }
+        }
+    }
     
 }
 
@@ -144,8 +150,8 @@ extension NewImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.remainedCountLabel.text = "\(currentProduct.importProduct?.amount ?? 0)"
         cell.priceLabel.text = "\(currentProduct.importProduct?.product?.productImportPrice ?? 0) тг"
         cell.amountLabel.text = "\(currentProduct.amount ?? 0)"
-        
         cell.totalPriceLabel.text = "\(calculateTotalSum(importProduct: currentProduct)) тг"
+        cell.productID = currentProduct.productId
         
         return cell
     }
@@ -163,7 +169,7 @@ extension NewImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
 extension NewImportVC: NewImportCellDelegate {
     
     func deleteProduct(cell: NewImportCell, id: Int) {
-        
+        deleteProd(deletingProdId: id)
 //        self.deleteProductFromCart(productID: id)
     }
 }
@@ -178,10 +184,10 @@ extension NewImportVC {
     
     func showAlertControllerWithTwoTextFields(productId: Int, companyProdId: Int) {
         
-        print("/// productId:", productId)
-        print("/// companyProdId:", companyProdId)
-        print("/// selectedProdImportPrice", selectedProdImportPrice)
-        print("/// selectedProdAmount", selectedProdAmount)
+//        print("/// productId:", productId)
+//        print("/// companyProdId:", companyProdId)
+//        print("/// selectedProdImportPrice", selectedProdImportPrice)
+//        print("/// selectedProdAmount", selectedProdAmount)
         
 //
         let alertController = UIAlertController(title: "", message: "Введите количество и цену...", preferredStyle: .alert)

@@ -99,4 +99,22 @@ class ImportNetworkManager: ImportNetworkable {
             }
         }
     }
+    
+    func deleteProdInCart(deletingProdId: Int, completion: @escaping (CommonApiResponse?, Error?) -> ()) {
+        provider.request(.deleteProdInCart(deletingProd: DeletingImportProd(product_id: deletingProdId))) { (result) in
+            switch result {
+            case .success(let response):
+                do {
+                    let message = try
+                        JSONDecoder().decode(CommonApiResponse.self, from: response.data)
+                    completion(message, nil)
+                }
+                catch let error {
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
 }
