@@ -17,6 +17,7 @@ protocol ImportNetworkable {
     func getCurrentCart(comletion: @escaping (ImportCart?, Error?) -> ())
     func createNewCart(completion: @escaping (CommonImportApiResponse?, Error?) -> ())
     func addProdsToCart(product: AddingImportProd, comletion: @escaping (CommonImportApiResponse?, Error?) -> ())
+    func editProdAmount(editImportProd: EditingImportProd, completion: @escaping (CommonApiResponse?, Error?) -> ())
 }
 
 class ImportNetworkManager: ImportNetworkable {
@@ -78,6 +79,23 @@ class ImportNetworkManager: ImportNetworkable {
                 }
             case .failure(let error):
                 comletion(nil, error)
+            }
+        }
+    }
+    
+    func editProdAmount(editImportProd: EditingImportProd, completion: @escaping (CommonApiResponse?, Error?) -> ()) {
+        provider.request(.editProdInCart(edititngProd: editImportProd)) { (result) in
+            switch result {
+            case .success(let response):
+                do {
+                    let message = try JSONDecoder().decode(CommonApiResponse.self, from: response.data)
+                    completion(message, nil)
+                }
+                catch let error {
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                completion(nil, error)
             }
         }
     }

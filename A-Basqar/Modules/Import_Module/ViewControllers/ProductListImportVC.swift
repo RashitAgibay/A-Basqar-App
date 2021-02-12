@@ -117,7 +117,6 @@ extension ProductListImportVC {
         let alertController = UIAlertController(title: "", message: "Введите количество...", preferredStyle: .alert)
         let addAction = UIAlertAction(title: "Добавить", style: .default) { (action) in
             
-//            let cashAlertTextField  = alertController.textFields?[1].text as! String
             if alertController.textFields?[0].text != "" {
                 let amountString = alertController.textFields?[0].text as! String
                 amount = Int(amountString)!
@@ -127,7 +126,6 @@ extension ProductListImportVC {
                 self.selectedProdImportPrice = Int(cashString)!
             }
             
-
             self.createCartObject(productId: productId, companyProdId: companyProdId, amount: amount, editingPrices: EditingProductPrices(importPrice: self.selectedProdImportPrice))
         }
         

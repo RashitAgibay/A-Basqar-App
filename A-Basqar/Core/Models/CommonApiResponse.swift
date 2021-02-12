@@ -13,11 +13,13 @@ struct CommonApiResponse: Codable {
     var status: String?
     var desc: String?
     var response: String?
+    var message: String?
     
     enum CodingKeys: String, CodingKey {
         case status
         case desc
         case response
+        case message
     }
 }
 

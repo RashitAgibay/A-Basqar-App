@@ -22,6 +22,8 @@ class NewImportVC: DefaultVC {
     var productList = [ImportCartProduct]()
     var productArray = NSArray()
     var totalSum = Int()
+    var selectedProdImportPrice = Int()
+    var selectedProdAmount = Int()
     
     let refreshControl: UIRefreshControl = {
         let refControl = UIRefreshControl()
@@ -33,7 +35,6 @@ class NewImportVC: DefaultVC {
         super.viewDidLoad()
         setupUI()
         updateUI()
-//        webService =
     }
     
     private func setupUI() {
@@ -81,7 +82,7 @@ class NewImportVC: DefaultVC {
         else {
             
             var contrID = self.getCurrentContrID()
-            self.createNewHistory(contrID: contrID, totalSum: self.totalSum)
+//            self.createNewHistory(contrID: contrID, totalSum: self.totalSum)
             self.updateUI()
             
             self.navigateFromNewImportToKassa()
@@ -100,6 +101,24 @@ class NewImportVC: DefaultVC {
             self.collectionView.reloadData()
 //            print("/// importCart:", importCart)
 //            print("/// error:", error)x
+        }
+    }
+    
+    private func editPrices(prodId: Int, importProdId:Int, amount: Int, editingPrices: EditingProductPrices) {
+        ProductNetworkManager.service.editPrices(prodId: prodId, editingPrices: editingPrices) { (message, error) in
+            if message?.status == "success" {
+                print("/// message editPrices:", message)
+                self.editProdCount(importProdId: importProdId, amount: amount)
+            }
+        }
+    }
+    
+    private func editProdCount(importProdId: Int, amount: Int) {
+        ImportNetworkManager.service.editProdAmount(editImportProd: EditingImportProd(product_id: importProdId, amount: amount)) { (message, error) in
+            if message?.message == "edited" {
+                print("/// message editProdCount:", message)
+//                self.collectionView.reloadData()
+            }
         }
     }
 
@@ -133,300 +152,67 @@ extension NewImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let singleProduct = productArray[indexPath.row] as! NSDictionary
-        let firstGoods = singleProduct["goods"] as! NSDictionary
-        let product = firstGoods["goods"] as! NSDictionary
-        
-        let productName = product["name"] as! String
-        let productImportPrice = firstGoods["import_price"] as! Int
-        let productExportPrice = firstGoods["export_price"] as! Int
-        let productCountInCart = singleProduct["nums"] as! Int
-        let productIdInCart = singleProduct["id"] as! Int
-        let productId = firstGoods["id"] as! Int
-        
-        self.ShowAlertControllerWithTwoTextFields(importPrice: "\(productImportPrice)", exportPrice: "\(productExportPrice)", productCount: productCountInCart,productName: productName, productID: productId, productIdInCart: productIdInCart)
+        let currentProd = productList[indexPath.row]
+        selectedProdImportPrice = currentProd.importProduct?.product?.productImportPrice ?? Int()
+        selectedProdAmount = currentProd.amount ?? Int()
+        showAlertControllerWithTwoTextFields(productId: (currentProd.importProduct?.product?.productId)!, companyProdId: currentProd.productId!)
         
     }
-}
-
-extension NewImportVC {
-    
-    func deleteProductFromCart(productID: Int) {
-        
-        do {
-            
-            self.reachability = try Reachability.init()
-        }
-        
-        catch {
-            
-            print("unable to start notifier")
-        }
-        
-        if ((reachability?.connection) != .unavailable) {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-            ]
-            
-            let encodeURL = importShoppingCartURL + "\(productID)/"
-            
-            let requestOfApi = AF.request(encodeURL, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                
-                MBProgressHUD.hide(for: self.view, animated: true)
-                self.updateUI()
-                
-//                print(response.request!)
-//                print(response.result)
-//                print(response.response)
-            
-            })
-        
-        }
-        
-        else {
-            MBProgressHUD.hide(for: self.view, animated: true)
-//            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
-    
-    func editProductPrice(productID: Int, importPrice: String, exportPrice: String) {
-        
-        do {
-            
-            self.reachability = try Reachability.init()
-        }
-        
-        catch {
-            
-            print("unable to start notifier")
-        }
-            
-        
-        if ((reachability?.connection) != .unavailable) {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
-            
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-            
-            ]
-            
-            let params = [
-                
-                "export_price":exportPrice.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
-                "import_price":importPrice.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
-            ]
-            
-            let encodeURL = productListUrl + "\(productID)/"
-            
-            let requestOfApi = AF.request(encodeURL, method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-                requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                    
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    
-//                    print(response.request!)
-//                    print(response.result)
-//                    print(response.response)
-                
-                })
-        
-        }
-        
-        else {
-            
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
-    
-    private func editProductCountIntCart(productIdInCart: Int, productID: Int, amount: String) {
-        
-        do {
-            
-            self.reachability = try Reachability.init()
-        }
-        
-        catch {
-            
-            print("unable to start notifier")
-        }
-        
-        if ((reachability?.connection) != .unavailable) {
-            
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
-            
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-            
-            ]
-            
-            let params = [
-                
-                "goods":"\(productID)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
-                "nums":"\(amount)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
-            ]
-            
-            let encodeURL = importShoppingCartURL + "\(productIdInCart)/"
-            
-            let requestOfApi = AF.request(encodeURL, method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-            
-            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                MBProgressHUD.hide(for: self.view, animated: true)
-                
-    //                print(response.request!)
-    //                print(response.result)
-    //                print(response.response)
-            })
-        }
-        
-        else {
-            
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
-    
-    private func createNewHistory(contrID: Int, totalSum: Int) {
-        
-        do {
-            
-            self.reachability = try Reachability.init()
-        }
-        
-        catch {
-            
-            print("unable to start notifier")
-        }
-        
-        if ((reachability?.connection) != .unavailable) {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
-            
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-            ]
-            
-            
-            let params = [
-                
-                "company":contrID,
-                "sum":totalSum
-            ]
-            
-            let encodeURL = importHistoryListURL
-            
-//            print(params)
-            
-            let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-            
-            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-
-                MBProgressHUD.hide(for: self.view, animated: true)
-
-//                print(response.request!)
-//                print(response.result)
-//                print(response.response)
-            })
-        }
-        
-        else {
-            
-            print("internet is not working")
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
-
 }
 
 extension NewImportVC: NewImportCellDelegate {
     
     func deleteProduct(cell: NewImportCell, id: Int) {
         
-        self.deleteProductFromCart(productID: id)
+//        self.deleteProductFromCart(productID: id)
     }
 }
 
 extension NewImportVC {
-    
     private func navigateFromNewImportToKassa() {
-        
         performSegue(withIdentifier: "fromNewImportToKassa", sender: self)
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        if segue.identifier == "fromFirstLevelCatToProdList" {
-//            if let navigationVC = segue.destination as? UINavigationController,
-//                let destVC = navigationVC.topViewController as? ProductListImportVC {
-//                destVC.categoryID = self.categoryID
-//            }
-//        }
-//    }
 }
 
 extension NewImportVC {
     
-    func ShowAlertControllerWithTwoTextFields(importPrice: String, exportPrice: String, productCount: Int, productName: String, productID: Int, productIdInCart: Int) {
+    func showAlertControllerWithTwoTextFields(productId: Int, companyProdId: Int) {
         
-        var amount = "1"
+        print("/// productId:", productId)
+        print("/// companyProdId:", companyProdId)
+        print("/// selectedProdImportPrice", selectedProdImportPrice)
+        print("/// selectedProdAmount", selectedProdAmount)
         
-        let alertController = UIAlertController(title: productName, message: "", preferredStyle: .alert)
+//
+        let alertController = UIAlertController(title: "", message: "Введите количество и цену...", preferredStyle: .alert)
         let addAction = UIAlertAction(title: "Изменить", style: .default) { (action) in
-            
-            let amountAlertTextField = alertController.textFields?[0].text as! String
-            let cashAlertTextField  = alertController.textFields?[1].text as! String
-            
-            if amountAlertTextField != "" {
-                
-                self.editProductCountIntCart(productIdInCart: productIdInCart, productID: productID, amount: amountAlertTextField)
+
+            if alertController.textFields?[0].text != "" {
+                let amountString = alertController.textFields?[0].text as! String
+                self.selectedProdAmount = Int(amountString)!
             }
-            
-            if cashAlertTextField != "" {
-                
-                self.editProductPrice(productID: productID, importPrice: "\(cashAlertTextField)", exportPrice: exportPrice)
-                
+            if alertController.textFields?[1].text != "" {
+                let cashString = alertController.textFields?[1].text as! String
+                self.selectedProdImportPrice = Int(cashString)!
             }
-            
-//            self.sendGoodToBasket(productID: productID, amount: amount)
-            self.updateUI()
-        
+
+            self.editPrices(prodId: productId, importProdId: companyProdId, amount: self.selectedProdAmount, editingPrices: EditingProductPrices(importPrice: self.selectedProdImportPrice))
         }
-        
+
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (action) in
-        
+
         }
-        
         alertController.addTextField { (textfield) in
-            
-            textfield.placeholder = "\(productCount)"
+            textfield.placeholder = "\(self.selectedProdAmount)"
             textfield.keyboardType = .numberPad
+
         }
-        
         alertController.addTextField { (textfield) in
-            
-            textfield.placeholder = "\(importPrice) тенге"
+
+            textfield.placeholder = "\(self.selectedProdImportPrice) тенге"
             textfield.keyboardType = .numberPad
-        
+
         }
-        
         alertController.addAction(addAction)
         alertController.addAction(cancelAction)
         self.present(alertController,animated: true, completion: nil)
