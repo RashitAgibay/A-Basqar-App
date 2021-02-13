@@ -51,14 +51,9 @@ extension HistoryImportVC: UICollectionViewDelegate, UICollectionViewDataSource 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-//        let singleHistory = historyArray[indexPath.row] as! NSDictionary
-//        let historyId = singleHistory["id"] as! Int
-//
-//        self.historyID = historyId
-//
-//        self.navigateToHistoryItem()
-        
+        let currentHistory = historyList[indexPath.row]
+        self.historyID = currentHistory.id!
+        self.navigateToHistoryItem()
     }
 }
 
@@ -66,12 +61,10 @@ extension HistoryImportVC: UICollectionViewDelegate, UICollectionViewDataSource 
 extension HistoryImportVC {
     
     private func navigateToHistoryItem() {
-        
         performSegue(withIdentifier: "fromHistoryToHistoryItem", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "fromHistoryToHistoryItem" {
             if let navigationVC = segue.destination as? UINavigationController,
                 let destVC = navigationVC.topViewController as? HistoryItemImportVC {

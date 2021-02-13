@@ -19,6 +19,8 @@ protocol ImportNetworkable {
     func addProdsToCart(product: AddingImportProd, comletion: @escaping (CommonImportApiResponse?, Error?) -> ())
     func editProdAmount(editImportProd: EditingImportProd, completion: @escaping (CommonApiResponse?, Error?) -> ())
     func getHistory(completion: @escaping ([ImportCartObject]?, Error?) -> ())
+    func getHistoryItem(historyId:Int, completion: @escaping (ImportCart?, Error?) -> ())
+
 }
 
 class ImportNetworkManager: ImportNetworkable {
@@ -125,6 +127,23 @@ class ImportNetworkManager: ImportNetworkable {
             case .success(let response):
                 do {
                     let history = try JSONDecoder().decode([ImportCartObject].self, from: response.data)
+                    completion(history, nil)
+                }
+                catch let error {
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+    func getHistoryItem(historyId: Int,completion: @escaping (ImportCart?, Error?) -> ()) {
+        provider.request(.getImportHistoryItem(historyItem: historyId)) { (result) in
+            switch result {
+            case .success(let response):
+                do {
+                    let history = try JSONDecoder().decode(ImportCart.self, from: response.data)
                     completion(history, nil)
                 }
                 catch let error {
