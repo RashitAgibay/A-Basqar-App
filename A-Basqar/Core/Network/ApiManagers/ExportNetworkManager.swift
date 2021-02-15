@@ -1,40 +1,40 @@
 //
-//  ImportNetworkManager.swift
+//  ExportNetworkManager.swift
 //  A-Basqar
 //
-//  Created by Ilyas Shomat on 01.02.2021.
+//  Created by Ilyas Shomat on 15.02.2021.
 //  Copyright © 2021 Ilyas Shomat. All rights reserved.
 //
 
 import Foundation
 import Moya
 
-protocol ImportNetworkable {
+protocol ExportNetworkable {
     
-    var provider: MoyaProvider<ImportApi> { get }
+    var provider: MoyaProvider<ExportApi> { get }
 
-    func getCurrentCart(comletion: @escaping (ImportCart?, Error?) -> ())
-    func createNewCart(completion: @escaping (CommonImportApiResponse?, Error?) -> ())
-    func addProdsToCart(product: AddingImportProd, comletion: @escaping (CommonImportApiResponse?, Error?) -> ())
-    func editProdAmount(editImportProd: EditingImportProd, completion: @escaping (CommonApiResponse?, Error?) -> ())
-    func getHistory(completion: @escaping ([ImportCartObject]?, Error?) -> ())
-    func getHistoryItem(historyId:Int, completion: @escaping (ImportCart?, Error?) -> ())
-    func makeHistory(cartObject: ImportCartModel, completion: @escaping (CommonApiResponse?, Error?) -> ())
-
+    func getCurrentCart(comletion: @escaping (ExportCart?, Error?) -> ())
+    func createNewCart(completion: @escaping (CommonExportApiResponse?, Error?) -> ())
+    func addProdsToCart(product: AddingExportProd, comletion: @escaping (CommonExportApiResponse?, Error?) -> ())
+    func editProdAmount(editExportProd: EditingExportProd, completion: @escaping (CommonApiResponse?, Error?) -> ())
+    func getHistory(completion: @escaping ([ExportCartObject]?, Error?) -> ())
+    func getHistoryItem(historyId:Int, completion: @escaping (ExportCart?, Error?) -> ())
+    func makeHistory(cartObject: ExportCartModel, completion: @escaping (CommonApiResponse?, Error?) -> ())
 }
 
-class ImportNetworkManager: ImportNetworkable {
+
+class ExportNetworkManager: ExportNetworkable {
     
-    public static let service = ImportNetworkManager()
-    var provider = MoyaProvider<ImportApi>(plugins: [NetworkLoggerPlugin(configuration: NetworkLoggerPlugin.Configuration(logOptions: .verbose))])
+    public static let service = ExportNetworkManager()
+    var provider = MoyaProvider<ExportApi>(plugins: [NetworkLoggerPlugin(configuration: NetworkLoggerPlugin.Configuration(logOptions: .verbose))])
     
-    func getCurrentCart(comletion: @escaping (ImportCart?, Error?) -> ()) {
+    func getCurrentCart(comletion: @escaping (ExportCart?, Error?) -> ()) {
         provider.request(.getCurrentCart) { (result) in
             switch result {
             case .success(let response):
                 let decoder = JSONDecoder()
                 do {
-                    let currentCart = try decoder.decode(ImportCart.self, from: response.data)
+                    let currentCart = try decoder.decode(ExportCart.self, from: response.data)
                     comletion(currentCart, nil)
                 }
                 catch let error {
@@ -46,13 +46,13 @@ class ImportNetworkManager: ImportNetworkable {
         }
     }
     
-    func createNewCart(completion: @escaping (CommonImportApiResponse?, Error?) -> ()) {
+    func createNewCart(completion: @escaping (CommonExportApiResponse?, Error?) -> ()) {
         provider.request(.createNewCart) { (reslut) in
             switch reslut {
             case .success(let response):
                 let decoder = JSONDecoder()
                 do {
-                    let message = try decoder.decode(CommonImportApiResponse.self, from: response.data)
+                    let message = try decoder.decode(CommonExportApiResponse.self, from: response.data)
                     completion(message, nil)
                 }
                 catch let error {
@@ -64,12 +64,12 @@ class ImportNetworkManager: ImportNetworkable {
         }
     }
     
-    func addProdsToCart(product: AddingImportProd, comletion: @escaping (CommonImportApiResponse?, Error?) -> ()) {
+    func addProdsToCart(product: AddingExportProd, comletion: @escaping (CommonExportApiResponse?, Error?) -> ()) {
         provider.request(.addProdsToCart(addingProd: product)) { (result) in
             switch result {
             case .success(let response):
                 do {
-                    let message = try JSONDecoder().decode(CommonImportApiResponse.self, from: response.data)
+                    let message = try JSONDecoder().decode(CommonExportApiResponse.self, from: response.data)
                     comletion(message, nil)
                 }
                 catch let error {
@@ -81,8 +81,8 @@ class ImportNetworkManager: ImportNetworkable {
         }
     }
     
-    func editProdAmount(editImportProd: EditingImportProd, completion: @escaping (CommonApiResponse?, Error?) -> ()) {
-        provider.request(.editProdInCart(edititngProd: editImportProd)) { (result) in
+    func editProdAmount(editExportProd: EditingExportProd, completion: @escaping (CommonApiResponse?, Error?) -> ()) {
+        provider.request(.editProdInCart(edititngProd: editExportProd)) { (result) in
             switch result {
             case .success(let response):
                 do {
@@ -99,7 +99,7 @@ class ImportNetworkManager: ImportNetworkable {
     }
     
     func deleteProdInCart(deletingProdId: Int, completion: @escaping (CommonApiResponse?, Error?) -> ()) {
-        provider.request(.deleteProdInCart(deletingProd: DeletingImportProd(product_id: deletingProdId))) { (result) in
+        provider.request(.deleteProdInCart(deletingProd: DeletingExportProd(product_id: deletingProdId))) { (result) in
             switch result {
             case .success(let response):
                 do {
@@ -116,12 +116,12 @@ class ImportNetworkManager: ImportNetworkable {
         }
     }
     
-    func getHistory(completion: @escaping ([ImportCartObject]?, Error?) -> ()) {
-        provider.request(.getImportHistory) { (result) in
+    func getHistory(completion: @escaping ([ExportCartObject]?, Error?) -> ()) {
+        provider.request(.getExportHistory) { (result) in
             switch result {
             case .success(let response):
                 do {
-                    let history = try JSONDecoder().decode([ImportCartObject].self, from: response.data)
+                    let history = try JSONDecoder().decode([ExportCartObject].self, from: response.data)
                     completion(history, nil)
                 }
                 catch let error {
@@ -133,12 +133,12 @@ class ImportNetworkManager: ImportNetworkable {
         }
     }
     
-    func getHistoryItem(historyId: Int,completion: @escaping (ImportCart?, Error?) -> ()) {
-        provider.request(.getImportHistoryItem(historyItem: historyId)) { (result) in
+    func getHistoryItem(historyId: Int,completion: @escaping (ExportCart?, Error?) -> ()) {
+        provider.request(.getExportHistoryItem(historyItem: historyId)) { (result) in
             switch result {
             case .success(let response):
                 do {
-                    let history = try JSONDecoder().decode(ImportCart.self, from: response.data)
+                    let history = try JSONDecoder().decode(ExportCart.self, from: response.data)
                     completion(history, nil)
                 }
                 catch let error {
@@ -150,8 +150,8 @@ class ImportNetworkManager: ImportNetworkable {
         }
     }
     
-    func makeHistory(cartObject: ImportCartModel, completion: @escaping (CommonApiResponse?, Error?) -> ()) {
-        provider.request(.makeImportHistory(importCart: cartObject)) { (result) in
+    func makeHistory(cartObject: ExportCartModel, completion: @escaping (CommonApiResponse?, Error?) -> ()) {
+        provider.request(.makeExportHistory(exportCart: cartObject)) { (result) in
             switch result {
             case .success(let response):
                 do {

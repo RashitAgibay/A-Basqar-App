@@ -31,6 +31,18 @@ struct EndPoint {
         static let makeHistory = "/api/ex_im_prods/buy_new_products"
     }
     
+    struct Export {
+        static let checkCart = "/api/ex_im_prods/get_current_export_object"
+        static let getCart = "/api/ex_im_prods/export_cart"
+        static let createNewCart = "/api/ex_im_prods/create_new_export_cart_object"
+        static let addProdToCart = "/api/ex_im_prods/add_prods_to_ex_shop"
+        static let editCartProd = "/api/ex_im_prods/edit_product_count_in_export_cart"
+        static let deleteCartProd = "/api/ex_im_prods/delete_product_count_in_export_cart"
+        static let history = "api/ex_im_prods/get_export_history"
+        static let historyItem = "/api/ex_im_prods/get_export_history_item/"
+        static let makeHistory = "/api/ex_im_prods/sell_new_products"
+    }
+    
     struct Product {
         static let firstLevelCat = "/api/products/categories"
         static let exactCatprods = "/api/ex_im_prods/get_prods/"
