@@ -187,6 +187,8 @@
 		FD4777C024AFB66300E323D3 /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777BF24AFB66300E323D3 /* UIButton+Extensions.swift */; };
 		FD4777C224AFB78400E323D3 /* UpdateContrInfoImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4777C124AFB78400E323D3 /* UpdateContrInfoImport.storyboard */; };
 		FD4777C424AFB79A00E323D3 /* UpdateContrInfoImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777C324AFB79A00E323D3 /* UpdateContrInfoImportVC.swift */; };
+		FD4BECCD25DA6D9B005611DF /* ManagementApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4BECCC25DA6D9A005611DF /* ManagementApi.swift */; };
+		FD4BECD025DA717A005611DF /* ManagementNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4BECCF25DA717A005611DF /* ManagementNetworkManager.swift */; };
 		FD5AB46E24ADBF1F002BDB0E /* FirstLevelCatImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD5AB46D24ADBF1F002BDB0E /* FirstLevelCatImport.storyboard */; };
 		FD5AB47024ADC02E002BDB0E /* FirstLevelCatImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5AB46F24ADC02E002BDB0E /* FirstLevelCatImportVC.swift */; };
 		FD5AB47224ADC1FE002BDB0E /* FirstLevelCatImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5AB47124ADC1FE002BDB0E /* FirstLevelCatImportCell.swift */; };
@@ -557,6 +559,8 @@
 		FD4777BF24AFB66300E323D3 /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		FD4777C124AFB78400E323D3 /* UpdateContrInfoImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = UpdateContrInfoImport.storyboard; sourceTree = "<group>"; };
 		FD4777C324AFB79A00E323D3 /* UpdateContrInfoImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateContrInfoImportVC.swift; sourceTree = "<group>"; };
+		FD4BECCC25DA6D9A005611DF /* ManagementApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementApi.swift; sourceTree = "<group>"; };
+		FD4BECCF25DA717A005611DF /* ManagementNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagementNetworkManager.swift; sourceTree = "<group>"; };
 		FD5AB46D24ADBF1F002BDB0E /* FirstLevelCatImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstLevelCatImport.storyboard; sourceTree = "<group>"; };
 		FD5AB46F24ADC02E002BDB0E /* FirstLevelCatImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLevelCatImportVC.swift; sourceTree = "<group>"; };
 		FD5AB47124ADC1FE002BDB0E /* FirstLevelCatImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLevelCatImportCell.swift; sourceTree = "<group>"; };
@@ -1130,6 +1134,7 @@
 				FD1A4DB025C0385100716A81 /* AuthApi.swift */,
 				FDBC1A5525C7D69400B5FF4F /* ImportApi.swift */,
 				FD88A0E325CD094F00C31AA5 /* ProductApi.swift */,
+				FD4BECCC25DA6D9A005611DF /* ManagementApi.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -1164,6 +1169,7 @@
 				FD1A4FBD25C3D3E200716A81 /* ProfileNetworManager.swift */,
 				FDBC1A5925C7D6CE00B5FF4F /* ImportNetworkManager.swift */,
 				FD88A0E725CD0F6D00C31AA5 /* ProductNetworkManager.swift */,
+				FD4BECCF25DA717A005611DF /* ManagementNetworkManager.swift */,
 			);
 			path = ApiManagers;
 			sourceTree = "<group>";
@@ -1892,6 +1898,7 @@
 				FD5AB47224ADC1FE002BDB0E /* FirstLevelCatImportCell.swift in Sources */,
 				288CC47223A89C38008D5218 /* SDImageCoderHelper.m in Sources */,
 				288CC46923A89C38008D5218 /* SDAnimatedImageView+WebCache.m in Sources */,
+				FD4BECD025DA717A005611DF /* ManagementNetworkManager.swift in Sources */,
 				FDBBFF6D24D56B4F00A2D283 /* KassaExportVC.swift in Sources */,
 				286318512398CB7E00556226 /* SellingCategoryCell.swift in Sources */,
 				288CC48623A89C38008D5218 /* SDWebImageDownloaderRequestModifier.m in Sources */,
@@ -1900,6 +1907,7 @@
 				28674295238CF50E008884AF /* BuyProductFirstPageCell.swift in Sources */,
 				288CC46323A89C38008D5218 /* NSButton+WebCache.m in Sources */,
 				FDBBFF6124D56AA700A2D283 /* AddNewContrExportVC.swift in Sources */,
+				FD4BECCD25DA6D9B005611DF /* ManagementApi.swift in Sources */,
 				61560A83244E1ABF00FAAFB0 /* MovementHistoryDeatilVC.swift in Sources */,
 				FDBBFF6B24D56B3700A2D283 /* HistoryItemExportVC.swift in Sources */,
 				FDBBFF6F24D56B6300A2D283 /* SearchExportVC.swift in Sources */,

@@ -36,4 +36,8 @@ struct EndPoint {
         static let exactCatprods = "/api/ex_im_prods/get_prods/"
         static let editPrices = "/api/products/edit_import_export_prices/"
     }
+    
+    struct Managment {
+        static let contList = "/api/management/contragent"
+    }
 }
