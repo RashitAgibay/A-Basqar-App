@@ -59,6 +59,7 @@ class NewImportVC: DefaultVC {
 //        self.getCurrentContr()
 //        self.getProductList()
         getCurrentImportObject()
+        getCurrentContr()
     }
     
     @objc private func refreshData(sender: UIRefreshControl) {
@@ -75,17 +76,13 @@ class NewImportVC: DefaultVC {
     @IBAction func tappedBuyButton(_ sender: Any) {
         
         if totalSumLabel.text == "0 тг" {
-            
             showErrorsAlertWithOneCancelButton(message: "Корзина пуста")
         }
         
         else {
-            
             var contrID = self.getCurrentContrID()
-//            self.createNewHistory(contrID: contrID, totalSum: self.totalSum)
+            makeHistory(contr: contrID, cash: "\(totalSum)")
             self.updateUI()
-            
-            self.navigateFromNewImportToKassa()
         }
         
         
@@ -98,6 +95,7 @@ class NewImportVC: DefaultVC {
     private func getCurrentImportObject() {
         apiManager.getCurrentCart { (importCart, error) in
             self.productList = importCart?.cartProduct ?? []
+            self.getProdsFinalCash(products: importCart?.cartProduct ?? [])
             self.collectionView.reloadData()
 //            print("/// importCart:", importCart)
 //            print("/// error:", error)x
@@ -126,6 +124,14 @@ class NewImportVC: DefaultVC {
         ImportNetworkManager.service.deleteProdInCart(deletingProdId: deletingProdId) { (message, error) in
             if message?.message == "deleted" {
                 self.getCurrentImportObject()
+            }
+        }
+    }
+    
+    private func makeHistory(contr: Int, cash: String) {
+        ImportNetworkManager.service.makeHistory(cartObject: ImportCartModel(contragent_id: contr, cash: cash)) { (message, error) in
+            if message?.message == "success" {
+                self.navigateFromNewImportToKassa()
             }
         }
     }
@@ -231,10 +237,18 @@ extension NewImportVC {
     
     private func calculateTotalSum(importProduct: ImportCartProduct) -> Int {
         var totalSum = Int()
-        
         totalSum = (importProduct.importProduct?.product?.productImportPrice ?? 0) * (importProduct.amount ?? 0)
         
         return totalSum
+    }
+    
+    private func getProdsFinalCash(products: [ImportCartProduct]) {
+        var cash = Int()
+        for item in products {
+            cash += (item.importProduct?.product?.productImportPrice ?? 0) * (item.amount ?? 0)
+        }
+        totalSum = cash
+        totalSumLabel.text = "\(cash) тг"
     }
     
     private func getCurrentContrtName() -> String {
