@@ -76,17 +76,13 @@ class NewImportVC: DefaultVC {
     @IBAction func tappedBuyButton(_ sender: Any) {
         
         if totalSumLabel.text == "0 тг" {
-            
             showErrorsAlertWithOneCancelButton(message: "Корзина пуста")
         }
         
         else {
-            
             var contrID = self.getCurrentContrID()
-//            self.createNewHistory(contrID: contrID, totalSum: self.totalSum)
+            makeHistory(contr: contrID, cash: "\(totalSum)")
             self.updateUI()
-            
-            self.navigateFromNewImportToKassa()
         }
         
         
@@ -128,6 +124,14 @@ class NewImportVC: DefaultVC {
         ImportNetworkManager.service.deleteProdInCart(deletingProdId: deletingProdId) { (message, error) in
             if message?.message == "deleted" {
                 self.getCurrentImportObject()
+            }
+        }
+    }
+    
+    private func makeHistory(contr: Int, cash: String) {
+        ImportNetworkManager.service.makeHistory(cartObject: ImportCartModel(contragent_id: contr, cash: cash)) { (message, error) in
+            if message?.message == "success" {
+                self.navigateFromNewImportToKassa()
             }
         }
     }
@@ -243,6 +247,7 @@ extension NewImportVC {
         for item in products {
             cash += (item.importProduct?.product?.productImportPrice ?? 0) * (item.amount ?? 0)
         }
+        totalSum = cash
         totalSumLabel.text = "\(cash) тг"
     }
     
