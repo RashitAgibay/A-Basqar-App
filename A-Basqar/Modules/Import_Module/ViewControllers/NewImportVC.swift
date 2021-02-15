@@ -59,6 +59,7 @@ class NewImportVC: DefaultVC {
 //        self.getCurrentContr()
 //        self.getProductList()
         getCurrentImportObject()
+        getCurrentContr()
     }
     
     @objc private func refreshData(sender: UIRefreshControl) {
@@ -98,6 +99,7 @@ class NewImportVC: DefaultVC {
     private func getCurrentImportObject() {
         apiManager.getCurrentCart { (importCart, error) in
             self.productList = importCart?.cartProduct ?? []
+            self.getProdsFinalCash(products: importCart?.cartProduct ?? [])
             self.collectionView.reloadData()
 //            print("/// importCart:", importCart)
 //            print("/// error:", error)x
@@ -231,10 +233,17 @@ extension NewImportVC {
     
     private func calculateTotalSum(importProduct: ImportCartProduct) -> Int {
         var totalSum = Int()
-        
         totalSum = (importProduct.importProduct?.product?.productImportPrice ?? 0) * (importProduct.amount ?? 0)
         
         return totalSum
+    }
+    
+    private func getProdsFinalCash(products: [ImportCartProduct]) {
+        var cash = Int()
+        for item in products {
+            cash += (item.importProduct?.product?.productImportPrice ?? 0) * (item.amount ?? 0)
+        }
+        totalSumLabel.text = "\(cash) тг"
     }
     
     private func getCurrentContrtName() -> String {
