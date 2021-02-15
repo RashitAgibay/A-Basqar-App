@@ -11,6 +11,8 @@ import Moya
 
 enum ManagementApi {
     case getContrList
+    case createNewContr(contr: ContrSending)
+    case editContrData(contr: ContrSending)
 }
 
 extension ManagementApi: BaseApiDelegate {
@@ -18,6 +20,10 @@ extension ManagementApi: BaseApiDelegate {
         switch self {
         case .getContrList:
             return EndPoint.Managment.contList
+        case .createNewContr:
+            return EndPoint.Managment.createContr
+        case .editContrData:
+            return EndPoint.Managment.editContr
         }
     }
     
@@ -25,6 +31,10 @@ extension ManagementApi: BaseApiDelegate {
         switch self {
         case .getContrList:
             return .get
+        case .createNewContr:
+            return .post
+        case .editContrData:
+            return .put
         }
     }
     
@@ -32,6 +42,10 @@ extension ManagementApi: BaseApiDelegate {
         switch self {
         case .getContrList:
             return .requestPlain
+        case .createNewContr(let contr):
+            return .requestJSONEncodable(contr)
+        case .editContrData(let contr):
+            return .requestJSONEncodable(contr)
         }
     }
     

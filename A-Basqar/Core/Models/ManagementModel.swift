@@ -34,6 +34,7 @@ struct Company: Codable {
     }
 }
 
+// Getting
 struct Contragent: Codable {
     var id: Int?
     var name: String?
@@ -47,5 +48,18 @@ struct Contragent: Codable {
         case bin = "bin"
         case phoneNumber = "phone_number"
         case companyID = "company"
+    }
+}
+
+// Sending
+struct ContrSending: Codable {
+    var name: String?
+    var bin: String?
+    var phoneNumber: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case name = "name"
+        case bin = "bin"
+        case phoneNumber = "phone_number"
     }
 }

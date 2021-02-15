@@ -39,5 +39,7 @@ struct EndPoint {
     
     struct Managment {
         static let contList = "/api/management/contragent"
+        static let createContr = "/api/management/contragent/add"
+        static let editContr = "/api/management/contragent/edit"
     }
 }
