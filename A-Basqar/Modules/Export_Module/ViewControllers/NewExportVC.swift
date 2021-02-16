@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 
-
 class NewExportVC: DefaultVC {
     
     @IBOutlet weak var cardView: UIView!
@@ -19,8 +18,10 @@ class NewExportVC: DefaultVC {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var productArray = NSArray()
+    var productList = [ExportCartProduct]()
     var totalSum = Int()
+    var selectedProdExportPrice = Int()
+    var selectedProdAmount = Int()
     
     let refreshControl: UIRefreshControl = {
         let refControl = UIRefreshControl()
@@ -30,534 +31,211 @@ class NewExportVC: DefaultVC {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
         updateUI()
+    }
+    
+    private func setupUI() {
+        cardView.layer.cornerRadius = 10
+        cardView.dropShadow()
+        cardView.layer.backgroundColor = UIColor.white.cgColor
+
+        buyButton.layer.cornerRadius = 15
+        buyButton.dropShadowforButton()
+         
+        cancelButton.layer.cornerRadius = 15
+        cancelButton.dropShadowforButton()
+         
+        contragentNameButton.layer.cornerRadius = 10
+        contragentNameButton.dropShadowforButton()
         
         collectionView.refreshControl = refreshControl
     }
     
-    private func setupUI() {
-        
-         cardView.layer.cornerRadius = 10
-         cardView.dropShadow()
-         cardView.layer.backgroundColor = UIColor.white.cgColor
-
-         buyButton.layer.cornerRadius = 15
-         buyButton.dropShadowforButton()
-         
-         cancelButton.layer.cornerRadius = 15
-         cancelButton.dropShadowforButton()
-         
-         contragentNameButton.layer.cornerRadius = 10
-         contragentNameButton.dropShadowforButton()
-
-        
-    }
-    
     private func updateUI() {
-        
-        self.getCurrentContr()
-        self.getProductList()
-        
+        getCurrentExportObject()
+        getCurrentContr()
     }
     
     @objc private func refreshData(sender: UIRefreshControl) {
-        
         self.updateUI()
         sender.endRefreshing()
-    
-    }
+        }
     
     @IBAction func tappedContragentNameButton(_ sender: Any) {
         
     }
     
     @IBAction func tappedBuyButton(_ sender: Any) {
-        
         if totalSumLabel.text == "0 тг" {
-            
             showErrorsAlertWithOneCancelButton(message: "Корзина пуста")
         }
-        
         else {
-            
             var contrID = self.getCurrentContrID()
-            self.createNewHistory(contrID: contrID, totalSum: self.totalSum)
+            makeHistory(contr: contrID, cash: "\(totalSum)")
             self.updateUI()
-            
-            self.navigateFromNewImportToKassa()
         }
-        
-        
     }
+    
     @IBAction func tappedCancelButton(_ sender: Any) {
         
     }
     
-
+    private func getCurrentExportObject() {
+        ExportNetworkManager.service.getCurrentCart { (exportCart, error) in
+            self.productList = exportCart?.cartProduct ?? []
+            self.getProdsFinalCash(products: exportCart?.cartProduct ?? [])
+            self.collectionView.reloadData()
+        }
+    }
     
+    private func editPrices(prodId: Int, exportProdId:Int, amount: Int, editingPrices: EditingProductPrices) {
+        ProductNetworkManager.service.editPrices(prodId: prodId, editingPrices: editingPrices) { (message, error) in
+            if message?.status == "success" {
+                self.editProdCount(exportProdId: exportProdId, amount: amount)
+            }
+        }
+    }
+    
+    private func editProdCount(exportProdId: Int, amount: Int) {
+        ExportNetworkManager.service.editProdAmount(editExportProd: EditingExportProd(product_id: exportProdId, amount: amount)) { (message, error) in
+            if message?.message == "edited" {
+                self.getCurrentExportObject()
+            }
+        }
+    }
+    
+    private func deleteProd(deletingProdId: Int) {
+        ExportNetworkManager.service.deleteProdInCart(deletingProdId: deletingProdId) { (message, error) in
+            if message?.message == "deleted" {
+                self.getCurrentExportObject()
+            }
+        }
+    }
+    
+    private func makeHistory(contr: Int, cash: String) {
+        ExportNetworkManager.service.makeHistory(cartObject: ExportCartModel(contragent_id: contr, cash: cash)) { (message, error) in
+            if message?.message == "success" {
+                self.navigateFromNewExportToKassa()
+            }
+        }
+    }
 }
 
 //MARK: - CollectionView workflow
 extension NewExportVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return productArray.count
+        return productList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "newExportCell", for: indexPath) as! NewExportCell
         
-        let singleProduct = productArray[indexPath.row] as! NSDictionary
-        let firstGoods = singleProduct["goods"] as! NSDictionary
-        let product = firstGoods["goods"] as! NSDictionary
-        
-        let productName = product["name"] as! String
-        let productRemainedCount = firstGoods["nums"] as! Int
-        let productPrice = firstGoods["import_price"] as! Int
-        let productCountInCart = singleProduct["nums"] as! Int
-        let productTotalPrice = productPrice * productCountInCart
-        
-        let productIdInCart = singleProduct["id"] as! Int
-        
-        if product["goods_image"] != nil {
-            
-            let productImageUrl = product["goods_image"] as! String
-            
-            cell.productImageView.sd_setImage(with: URL(string: productImageUrl), placeholderImage: UIImage(named: "img1"))
-        
-        }
-        
-        cell.productID = productIdInCart
-        cell.delegate = self
-        
-        cell.productNameLabel.text = productName
-        cell.remainedCountLabel.text = "\(productRemainedCount)"
-        cell.priceLabel.text = "\(productPrice) тг"
-        cell.amountLabel.text = "\(productCountInCart)"
-        cell.totalPriceLabel.text = "\(productTotalPrice) тг"
-        
-//        print("products: \(singleProduct)")
+        let currentProduct = productList[indexPath.row]
+
+        cell.productID = currentProduct.productId
+        cell.productNameLabel.text = currentProduct.exportProduct?.product?.productName
+        cell.remainedCountLabel.text = "\(currentProduct.exportProduct?.amount ?? 0)"
+        cell.priceLabel.text = "\(currentProduct.exportProduct?.product?.productExportPrice ?? 0) тг"
+        cell.amountLabel.text = "\(currentProduct.amount ?? 0)"
+        cell.totalPriceLabel.text = "\(calculateTotalSum(exportProduct: currentProduct)) тг"
+        cell.productID = currentProduct.productId
         
         return cell
     }
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let singleProduct = productArray[indexPath.row] as! NSDictionary
-        let firstGoods = singleProduct["goods"] as! NSDictionary
-        let product = firstGoods["goods"] as! NSDictionary
-        
-        let productName = product["name"] as! String
-        let productImportPrice = firstGoods["import_price"] as! Int
-        let productExportPrice = firstGoods["export_price"] as! Int
-        let productCountInCart = singleProduct["nums"] as! Int
-        let productIdInCart = singleProduct["id"] as! Int
-        let productId = firstGoods["id"] as! Int
-        
-        self.ShowAlertControllerWithTwoTextFields(importPrice: "\(productImportPrice)", exportPrice: "\(productExportPrice)", productCount: productCountInCart,productName: productName, productID: productId, productIdInCart: productIdInCart)
-        
+        let currentProd = productList[indexPath.row]
+        selectedProdExportPrice = currentProd.exportProduct?.product?.productExportPrice ?? Int()
+        selectedProdAmount = currentProd.amount ?? Int()
+        showAlertControllerWithTwoTextFields(productId: (currentProd.exportProduct?.product?.productId)!, companyProdId: currentProd.productId!)
     }
-}
-
-extension NewExportVC {
-    
-     func getProductList() {
-        
-        do {
-            
-            self.reachability = try Reachability.init()
-        
-        }
-        
-        catch {
-            
-//            print("unable to start notifier")
-        }
-        
-        if ((reachability?.connection) != .unavailable) {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
-            
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-                
-            ]
-            
-            let encodeURL = exportShoppingCartURL
-            let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-            
-            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                
-//                print(response.request)
-//                print(response.result)
-//                print(response.response)
-                
-                switch response.result {
-                
-                case .success(let payload):
-                    
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    
-                    if let x = payload as? Dictionary<String,AnyObject> {
-                                                
-                    }
-                    
-                    else {
-                        
-                        let resultValue = payload as! NSArray
-                        
-                        self.productArray = resultValue
-                        self.collectionView.reloadData()
-                        
-                        let totalSum = self.calculateTotalSum(array: self.productArray)
-                        self.totalSum  = totalSum
-                        self.totalSumLabel.text = "\(totalSum) тг"
-                        
-                        
-                    
-                    }
-                
-                case .failure(let error):
-                    
-                    print(error)
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-                
-                }
-            })
-        }
-        
-        else {
-            
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
-    
-    func deleteProductFromCart(productID: Int) {
-        
-        do {
-            
-            self.reachability = try Reachability.init()
-        }
-        
-        catch {
-            
-            print("unable to start notifier")
-        }
-        
-        if ((reachability?.connection) != .unavailable) {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-            ]
-            
-            let encodeURL = exportShoppingCartURL + "\(productID)/"
-            
-            let requestOfApi = AF.request(encodeURL, method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                
-                MBProgressHUD.hide(for: self.view, animated: true)
-                self.updateUI()
-                
-//                print(response.request!)
-//                print(response.result)
-//                print(response.response)
-            
-            })
-        
-        }
-        
-        else {
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
-    
-    func editProductPrice(productID: Int, importPrice: String, exportPrice: String) {
-        
-        do {
-            
-            self.reachability = try Reachability.init()
-        }
-        
-        catch {
-            
-            print("unable to start notifier")
-        }
-            
-        
-        if ((reachability?.connection) != .unavailable) {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
-            
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-            
-            ]
-            
-            let params = [
-                
-                "export_price":exportPrice.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
-                "import_price":importPrice.trimmingCharacters(in: .whitespacesAndNewlines) as! String,
-            ]
-            
-            let encodeURL = productListUrl + "\(productID)/"
-            
-            let requestOfApi = AF.request(encodeURL, method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-                requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                    
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    
-//                    print(response.request!)
-//                    print(response.result)
-//                    print(response.response)
-                
-                })
-        
-        }
-        
-        else {
-            
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
-    
-    private func editProductCountIntCart(productIdInCart: Int, productID: Int, amount: String) {
-        
-        do {
-            
-            self.reachability = try Reachability.init()
-        }
-        
-        catch {
-            
-            print("unable to start notifier")
-        }
-        
-        if ((reachability?.connection) != .unavailable) {
-            
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
-            
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-            
-            ]
-            
-            let params = [
-                
-                "goods":"\(productID)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
-                "nums":"\(amount)".trimmingCharacters(in: .whitespacesAndNewlines) as AnyObject,
-            ]
-            
-            let encodeURL = exportShoppingCartURL + "\(productIdInCart)/"
-            
-            let requestOfApi = AF.request(encodeURL, method: .put, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-            
-            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                MBProgressHUD.hide(for: self.view, animated: true)
-                
-    //                print(response.request!)
-    //                print(response.result)
-    //                print(response.response)
-            })
-        }
-        
-        else {
-            
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
-    
-    private func createNewHistory(contrID: Int, totalSum: Int) {
-        
-        do {
-            
-            self.reachability = try Reachability.init()
-        }
-        
-        catch {
-            
-            print("unable to start notifier")
-        }
-        
-        if ((reachability?.connection) != .unavailable) {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
-            
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-            ]
-            
-            
-            let params = [
-                
-                "company":contrID,
-                "sum":totalSum
-            ]
-            
-            let encodeURL = exportHistoryListURL
-            
-            
-            let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-            
-            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-
-                MBProgressHUD.hide(for: self.view, animated: true)
-
-                print(response.request!)
-                print(response.result)
-                print(response.response)
-            })
-        }
-        
-        else {
-            
-            print("internet is not working")
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
-
 }
 
 extension NewExportVC: NewExportCellDelegate {
-    
     func deleteProduct(cell: NewExportCell, id: Int) {
-        
-        self.deleteProductFromCart(productID: id)
+        deleteProd(deletingProdId: id)
     }
 }
 
 extension NewExportVC {
-    
-    private func navigateFromNewImportToKassa() {
-        
+    private func navigateFromNewExportToKassa() {
         performSegue(withIdentifier: "fromNEtoKE", sender: self)
     }
 }
 
 extension NewExportVC {
-    
-    func ShowAlertControllerWithTwoTextFields(importPrice: String, exportPrice: String, productCount: Int, productName: String, productID: Int, productIdInCart: Int) {
-        
-        var amount = "1"
-        
-        let alertController = UIAlertController(title: productName, message: "", preferredStyle: .alert)
+    func showAlertControllerWithTwoTextFields(productId: Int, companyProdId: Int) {
+
+        let alertController = UIAlertController(title: "", message: "Введите количество и цену...", preferredStyle: .alert)
         let addAction = UIAlertAction(title: "Изменить", style: .default) { (action) in
-            
-            let amountAlertTextField = alertController.textFields?[0].text as! String
-            let cashAlertTextField  = alertController.textFields?[1].text as! String
-            
-            if amountAlertTextField != "" {
-                
-                self.editProductCountIntCart(productIdInCart: productIdInCart, productID: productID, amount: amountAlertTextField)
+
+            if alertController.textFields?[0].text != "" {
+                let amountString = alertController.textFields?[0].text as! String
+                self.selectedProdAmount = Int(amountString)!
             }
-            
-            if cashAlertTextField != "" {
-                
-                self.editProductPrice(productID: productID, importPrice: "\(cashAlertTextField)", exportPrice: exportPrice)
-                
+            if alertController.textFields?[1].text != "" {
+                let cashString = alertController.textFields?[1].text as! String
+                self.selectedProdExportPrice = Int(cashString)!
             }
-            
-            self.updateUI()
-        
+
+            self.editPrices(prodId: productId, exportProdId: companyProdId, amount: self.selectedProdAmount, editingPrices: EditingProductPrices(exportPrice: self.selectedProdExportPrice))
         }
-        
+
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (action) in
-        
         }
-        
         alertController.addTextField { (textfield) in
-            
-            textfield.placeholder = "\(productCount)"
+            textfield.placeholder = "\(self.selectedProdAmount)"
             textfield.keyboardType = .numberPad
+
         }
-        
         alertController.addTextField { (textfield) in
-            
-            textfield.placeholder = "\(importPrice) тенге"
+            textfield.placeholder = "\(self.selectedProdExportPrice) тенге"
             textfield.keyboardType = .numberPad
-        
+
         }
-        
         alertController.addAction(addAction)
         alertController.addAction(cancelAction)
         self.present(alertController,animated: true, completion: nil)
     }
-    
 }
 
 
 extension NewExportVC {
-    
-    private func calculateTotalSum(array: NSArray) -> Int {
-        
+    private func calculateTotalSum(exportProduct: ExportCartProduct) -> Int {
         var totalSum = Int()
-        
-        for item in array {
-            
-            let singleProduct = item as! NSDictionary
-             
-            let firstGoods = singleProduct["goods"] as! NSDictionary
-            let product = firstGoods["goods"] as! NSDictionary
-            
-            let productPrice = firstGoods["import_price"] as! Int
-            let productCountInCart = singleProduct["nums"] as! Int
-            let productTotalPrice = productPrice * productCountInCart
-            
-            totalSum += productTotalPrice
-        }
+        totalSum = (exportProduct.exportProduct?.product?.productExportPrice ?? 0) * (exportProduct.amount ?? 0)
         
         return totalSum
     }
     
+    private func getProdsFinalCash(products: [ExportCartProduct]) {
+        var cash = Int()
+        for item in products {
+            cash += (item.exportProduct?.product?.productExportPrice ?? 0) * (item.amount ?? 0)
+        }
+        totalSum = cash
+        totalSumLabel.text = "\(cash) тг"
+    }
+    
     private func getCurrentContrtName() -> String {
-        
         var contrName = String()
-        
         contrName = UserDefaults.standard.string(forKey: selectedExportContr) ?? ""
         
         return contrName
-        
     }
     
     private func getCurrentContrID() -> Int {
-        
         var contrID = Int()
-        
         contrID = UserDefaults.standard.integer(forKey: selectedExportContrID)
         
         return contrID
-        
     }
     
     private func getCurrentContr() {
-        
         var currentContrName = String()
         var currentContrId = Int()
         
@@ -565,17 +243,12 @@ extension NewExportVC {
         currentContrId = getCurrentContrID()
         
         if currentContrName == "" {
-            
             self.contragentNameButton.setTitle("Выберите...", for: .normal)
         }
-        
         else {
-            
             self.contragentNameButton.setTitle(currentContrName, for: .normal)
         }
-        
     }
-    
 }
 
 

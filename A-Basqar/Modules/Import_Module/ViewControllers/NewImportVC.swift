@@ -18,9 +18,7 @@ class NewImportVC: DefaultVC {
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var apiManager = ImportNetworkManager()
     var productList = [ImportCartProduct]()
-    var productArray = NSArray()
     var totalSum = Int()
     var selectedProdImportPrice = Int()
     var selectedProdAmount = Int()
@@ -52,21 +50,16 @@ class NewImportVC: DefaultVC {
          contragentNameButton.dropShadowforButton()
 
          collectionView.refreshControl = refreshControl
-        
     }
     
     private func updateUI() {
-//        self.getCurrentContr()
-//        self.getProductList()
         getCurrentImportObject()
         getCurrentContr()
     }
     
     @objc private func refreshData(sender: UIRefreshControl) {
-        
         self.updateUI()
         sender.endRefreshing()
-    
     }
     
     @IBAction func tappedContragentNameButton(_ sender: Any) {
@@ -74,18 +67,14 @@ class NewImportVC: DefaultVC {
     }
     
     @IBAction func tappedBuyButton(_ sender: Any) {
-        
         if totalSumLabel.text == "0 тг" {
             showErrorsAlertWithOneCancelButton(message: "Корзина пуста")
         }
-        
         else {
             var contrID = self.getCurrentContrID()
             makeHistory(contr: contrID, cash: "\(totalSum)")
             self.updateUI()
         }
-        
-        
     }
     
     @IBAction func tappedCancelButton(_ sender: Any) {
@@ -93,19 +82,16 @@ class NewImportVC: DefaultVC {
     }
     
     private func getCurrentImportObject() {
-        apiManager.getCurrentCart { (importCart, error) in
+        ImportNetworkManager.service.getCurrentCart { (importCart, error) in
             self.productList = importCart?.cartProduct ?? []
             self.getProdsFinalCash(products: importCart?.cartProduct ?? [])
             self.collectionView.reloadData()
-//            print("/// importCart:", importCart)
-//            print("/// error:", error)x
         }
     }
     
     private func editPrices(prodId: Int, importProdId:Int, amount: Int, editingPrices: EditingProductPrices) {
         ProductNetworkManager.service.editPrices(prodId: prodId, editingPrices: editingPrices) { (message, error) in
             if message?.status == "success" {
-//                print("/// message editPrices:", message)
                 self.editProdCount(importProdId: importProdId, amount: amount)
             }
         }
@@ -114,7 +100,6 @@ class NewImportVC: DefaultVC {
     private func editProdCount(importProdId: Int, amount: Int) {
         ImportNetworkManager.service.editProdAmount(editImportProd: EditingImportProd(product_id: importProdId, amount: amount)) { (message, error) in
             if message?.message == "edited" {
-//                print("/// message editProdCount:", message)
                 self.getCurrentImportObject()
             }
         }
@@ -135,7 +120,6 @@ class NewImportVC: DefaultVC {
             }
         }
     }
-    
 }
 
 //MARK: - CollectionView workflow
@@ -168,15 +152,12 @@ extension NewImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
         selectedProdImportPrice = currentProd.importProduct?.product?.productImportPrice ?? Int()
         selectedProdAmount = currentProd.amount ?? Int()
         showAlertControllerWithTwoTextFields(productId: (currentProd.importProduct?.product?.productId)!, companyProdId: currentProd.productId!)
-        
     }
 }
 
 extension NewImportVC: NewImportCellDelegate {
-    
     func deleteProduct(cell: NewImportCell, id: Int) {
         deleteProd(deletingProdId: id)
-//        self.deleteProductFromCart(productID: id)
     }
 }
 
@@ -187,15 +168,8 @@ extension NewImportVC {
 }
 
 extension NewImportVC {
-    
     func showAlertControllerWithTwoTextFields(productId: Int, companyProdId: Int) {
-        
-//        print("/// productId:", productId)
-//        print("/// companyProdId:", companyProdId)
-//        print("/// selectedProdImportPrice", selectedProdImportPrice)
-//        print("/// selectedProdAmount", selectedProdAmount)
-        
-//
+
         let alertController = UIAlertController(title: "", message: "Введите количество и цену...", preferredStyle: .alert)
         let addAction = UIAlertAction(title: "Изменить", style: .default) { (action) in
 
@@ -212,7 +186,6 @@ extension NewImportVC {
         }
 
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (action) in
-
         }
         alertController.addTextField { (textfield) in
             textfield.placeholder = "\(self.selectedProdAmount)"
@@ -220,7 +193,6 @@ extension NewImportVC {
 
         }
         alertController.addTextField { (textfield) in
-
             textfield.placeholder = "\(self.selectedProdImportPrice) тенге"
             textfield.keyboardType = .numberPad
 
@@ -229,12 +201,10 @@ extension NewImportVC {
         alertController.addAction(cancelAction)
         self.present(alertController,animated: true, completion: nil)
     }
-    
 }
 
 
 extension NewImportVC {
-    
     private func calculateTotalSum(importProduct: ImportCartProduct) -> Int {
         var totalSum = Int()
         totalSum = (importProduct.importProduct?.product?.productImportPrice ?? 0) * (importProduct.amount ?? 0)
@@ -252,27 +222,20 @@ extension NewImportVC {
     }
     
     private func getCurrentContrtName() -> String {
-        
         var contrName = String()
-        
         contrName = UserDefaults.standard.string(forKey: selectedImportContr) ?? ""
         
         return contrName
-        
     }
     
     private func getCurrentContrID() -> Int {
-        
         var contrID = Int()
-        
         contrID = UserDefaults.standard.integer(forKey: selectedImportContrID)
         
         return contrID
-        
     }
     
     private func getCurrentContr() {
-        
         var currentContrName = String()
         var currentContrId = Int()
         
@@ -280,17 +243,12 @@ extension NewImportVC {
         currentContrId = getCurrentContrID()
         
         if currentContrName == "" {
-            
             self.contragentNameButton.setTitle("Выберите...", for: .normal)
         }
-        
         else {
-            
             self.contragentNameButton.setTitle(currentContrName, for: .normal)
         }
-        
     }
-    
 }
 
 

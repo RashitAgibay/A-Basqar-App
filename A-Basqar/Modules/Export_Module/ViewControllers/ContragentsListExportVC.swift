@@ -9,168 +9,73 @@
 import UIKit
 import Alamofire
 
-
 class ContragentsListExportVC: DefaultVC {
-
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var contragentsArray = NSArray()
-    
+    var contrList = [Contragent]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.getContragentsList()
-
+        getConrtList()
     }
     
-    
     @IBAction func tapBackButton(_ sender: Any) {
-        
         self.navigateToMainImport()
     }
     
+    private func getConrtList() {
+        ManagementNetworkManager.service.getContrList { (contrs, error) in
+            self.contrList = contrs ?? [Contragent]()
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 
 extension ContragentsListExportVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return contragentsArray.count
+        return contrList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "contragentListExportCell", for: indexPath) as! ContragentListExportCell
         
-        let singleContr = contragentsArray[indexPath.row] as! NSDictionary
-        
-        let contrID = singleContr["id"] as! Int
-        let contrName = singleContr["company_name"] as! String
-        
+        let currentContr = contrList[indexPath.row]
         cell.delegate = self
-        cell.contragentNameLabel.text = contrName
-        cell.contrID = contrID
+        cell.contrID = currentContr.id
+        cell.contragentNameLabel.text = currentContr.name
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let currentContr = contrList[indexPath.row]
         
-        let singleContr = contragentsArray[indexPath.row] as! NSDictionary
-        
-        let contrID = singleContr["id"] as! Int
-        let contrName = singleContr["company_name"] as! String
-        
-        self.saveLastImportContr(contrName: contrName, contrID: contrID)
-        
+        self.saveLastImportContr(contrName: currentContr.name ?? "", contrID: currentContr.id ?? 0)
         self.navigateToMainImport()
-        
-    }
-    
-    
-    
-}
-
-extension ContragentsListExportVC {
-    
-    func getContragentsList() {
-        
-        do {
-            
-            self.reachability = try Reachability.init()
-        
-        }
-        
-        catch {
-            
-//            print("unable to start notifier")
-        }
-        
-        if ((reachability?.connection) != .unavailable) {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-            ]
-            
-            let encodeURL = importContragentsListURL
-            let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-            
-            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                
-//                print(response.request)
-//                print(response.result)
-//                print(response.response)
-                
-                switch response.result {
-                
-                case .success(let payload):
-                    
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    
-                    if let x = payload as? Dictionary<String,AnyObject> {
-                    
-                    }
-                    
-                    else {
-                        
-                        let resultValue = payload as! NSArray
-                        
-                        self.contragentsArray = resultValue
-                        self.collectionView.reloadData()
-                    
-                    }
-                
-                case .failure(let error):
-                    
-                    print(error)
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-                }
-            })
-        
-        }
-        
-        else {
-            
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
     }
 }
 
 extension ContragentsListExportVC: ContragentListExportCellDelegate {
-    
     func tapToUpdateContragent(cell: ContragentListExportCell, id: Int) {
-        
         self.navigateToUpdateContrInfo()
     }
-    
 }
 
-
 extension ContragentsListExportVC {
-    
     private func navigateToUpdateContrInfo() {
-        
         performSegue(withIdentifier: "fromCLEtoUCE", sender: self)
     }
     
     private func navigateToMainImport() {
-        
         performSegue(withIdentifier: "fromCLEtoME", sender: self)
     }
 }
 
-
 extension ContragentsListExportVC {
-    
     private func saveLastImportContr(contrName: String, contrID: Int) {
-        
         UserDefaults.standard.set(contrName, forKey: selectedExportContr)
         UserDefaults.standard.set(contrID, forKey: selectedExportContrID)
     }

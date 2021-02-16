@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 
-
 class HistoryImportVC: DefaultVC {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -29,7 +28,6 @@ class HistoryImportVC: DefaultVC {
             self.collectionView.reloadData()
         }
     }
-    
 }
 
 extension HistoryImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -57,9 +55,7 @@ extension HistoryImportVC: UICollectionViewDelegate, UICollectionViewDataSource 
     }
 }
 
-
 extension HistoryImportVC {
-    
     private func navigateToHistoryItem() {
         performSegue(withIdentifier: "fromHistoryToHistoryItem", sender: self)
     }

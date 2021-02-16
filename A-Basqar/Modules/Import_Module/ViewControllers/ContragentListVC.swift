@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 
-
 class ContragentListVC: DefaultVC {
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -31,7 +30,6 @@ class ContragentListVC: DefaultVC {
             self.collectionView.reloadData()
         }
     }
-    
 }
 
 
@@ -60,10 +58,8 @@ extension ContragentListVC: UICollectionViewDelegate, UICollectionViewDataSource
     }
 }
 
-
 extension ContragentListVC: ContragentListImportCellDelegate {
     func tapToUpdateContragent(cell: ContragentListImportCell, id: Int) {
-        
         self.navigateToUpdateContrInfo()
     }
 }

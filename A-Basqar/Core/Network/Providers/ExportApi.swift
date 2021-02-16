@@ -1,47 +1,47 @@
 //
-//  ImportApi.swift
+//  ExportApi.swift
 //  A-Basqar
 //
-//  Created by Ilyas Shomat on 01.02.2021.
+//  Created by Ilyas Shomat on 15.02.2021.
 //  Copyright © 2021 Ilyas Shomat. All rights reserved.
 //
 
 import Foundation
 import Moya
 
-enum ImportApi {
+enum ExportApi {
     case checkCurrentCart
     case getCurrentCart
     case createNewCart
-    case addProdsToCart(addingProd: AddingImportProd)
-    case editProdInCart(edititngProd: EditingImportProd)
-    case deleteProdInCart(deletingProd: DeletingImportProd)
-    case getImportHistory
-    case getImportHistoryItem(historyItem: Int)
-    case makeImportHistory(importCart: ImportCartModel)
+    case addProdsToCart(addingProd: AddingExportProd)
+    case editProdInCart(edititngProd: EditingExportProd)
+    case deleteProdInCart(deletingProd: DeletingExportProd)
+    case getExportHistory
+    case getExportHistoryItem(historyItem: Int)
+    case makeExportHistory(exportCart: ExportCartModel)
 }
 
-extension ImportApi: BaseApiDelegate {
+extension ExportApi: BaseApiDelegate {
     var path: String {
         switch self {
         case .checkCurrentCart:
-            return EndPoint.Import.checkCart
+            return EndPoint.Export.checkCart
         case .getCurrentCart:
-            return EndPoint.Import.getCart
+            return EndPoint.Export.getCart
         case .createNewCart:
-            return EndPoint.Import.createNewCart
+            return EndPoint.Export.createNewCart
         case .addProdsToCart:
-            return EndPoint.Import.addProdToCart
+            return EndPoint.Export.addProdToCart
         case .editProdInCart:
-            return EndPoint.Import.editCartProd
+            return EndPoint.Export.editCartProd
         case .deleteProdInCart:
-            return EndPoint.Import.deleteCartProd
-        case .getImportHistory:
-            return EndPoint.Import.history
-        case .getImportHistoryItem(let historyItem):
-            return EndPoint.Import.historyItem + "\(historyItem)"
-        case .makeImportHistory:
-            return EndPoint.Import.makeHistory
+            return EndPoint.Export.deleteCartProd
+        case .getExportHistory:
+            return EndPoint.Export.history
+        case .getExportHistoryItem(let historyItem):
+            return EndPoint.Export.historyItem + "\(historyItem)"
+        case .makeExportHistory:
+            return EndPoint.Export.makeHistory
         }
     }
     
@@ -59,11 +59,11 @@ extension ImportApi: BaseApiDelegate {
             return .put
         case .deleteProdInCart:
             return .delete
-        case .getImportHistory:
+        case .getExportHistory:
             return .get
-        case .getImportHistoryItem:
+        case .getExportHistoryItem:
             return .get
-        case .makeImportHistory:
+        case .makeExportHistory:
             return .post
         }
     }
@@ -86,12 +86,12 @@ extension ImportApi: BaseApiDelegate {
             return .requestJSONEncodable(edititngProd)
         case .deleteProdInCart(let deletingProd):
             return .requestJSONEncodable(deletingProd)
-        case .getImportHistory:
+        case .getExportHistory:
             return .requestPlain
-        case .getImportHistoryItem:
+        case .getExportHistoryItem:
             return .requestPlain
-        case .makeImportHistory(let importCart):
-            return .requestJSONEncodable(importCart)
+        case .makeExportHistory(let exportCart):
+            return .requestJSONEncodable(exportCart)
         }
     }
 }
