@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 
-
 class AddNewContrImportVC: DefaultVC {
 
     @IBOutlet weak var cardView: UIView!
@@ -26,17 +25,14 @@ class AddNewContrImportVC: DefaultVC {
     @IBAction func tapBackButton(_ sender: Any) {
         self.navigateToContrList()
     }
-    
 
     @IBAction func tappedAddButton(_ sender: Any) {
         if contrNameTextField.text == "" {
             self.showErrorsAlertWithOneCancelButton(message: "Название не может быть пустым")
         }
-        
         else {
             createNewContr(name: contrNameTextField.text!, bin: contrBinTextField.text ?? "", phone: contrPhoneTextField.text ?? "")
         }
-        
     }
     
     private func setupUI() {
@@ -74,7 +70,6 @@ class AddNewContrImportVC: DefaultVC {
             }
         }
     }
-
 }
 
 extension AddNewContrImportVC {
