@@ -19,12 +19,9 @@ class UpdateContrInfoExportVC: DefaultVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-
     }
-    
 
     private func setupUI() {
-        
         cardView.layer.backgroundColor = UIColor.white.cgColor
         cardView.layer.cornerRadius = 5
         cardView.dropShadow()
@@ -40,6 +37,4 @@ class UpdateContrInfoExportVC: DefaultVC {
         freeSpaceOnLeftSideForTextFiedl(someTextField: contrPhoneTextField)
         freeSpaceOnLeftSideForTextFiedl(someTextField: contrBinTextField)
     }
-
-
 }

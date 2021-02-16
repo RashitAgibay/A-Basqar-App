@@ -9,19 +9,16 @@
 import UIKit
 import Alamofire
 
-
 class FirstLevelCatImportVC: DefaultVC {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var categoryArray = NSArray()
     var categoryID = Int()
     var cats = [FirstLevelCat]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getCats()
-//        self.getCatList()
     }
     
     private func getCats() {
@@ -35,7 +32,6 @@ class FirstLevelCatImportVC: DefaultVC {
 extension FirstLevelCatImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return cats.count
     }
     
@@ -49,27 +45,18 @@ extension FirstLevelCatImportVC: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-//        let singleCat = self.categoryArray[indexPath.row] as! NSDictionary
-//        let category = singleCat["category"] as! NSDictionary
-//        let categoryID = category["id"] as! Int
-        
         let currentCat = cats[indexPath.row]
         self.categoryID = currentCat.id!
         self.navigateToProductList()
     }
-    
 }
 
 extension FirstLevelCatImportVC {
-    
     private func navigateToProductList() {
-        
         performSegue(withIdentifier: "fromFirstLevelCatToProdList", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "fromFirstLevelCatToProdList" {
             if let navigationVC = segue.destination as? UINavigationController,
                 let destVC = navigationVC.topViewController as? ProductListImportVC {
