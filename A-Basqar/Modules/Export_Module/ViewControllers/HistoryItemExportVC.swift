@@ -34,7 +34,7 @@ class HistoryItemExportVC: DefaultVC {
             self.collectionView.reloadData()
             self.importNameLabel.text = "Продажа #\(exportObject?.cartObject?.id ?? 0)"
             self.contrNameLabel.text = exportObject?.cartObject?.contragent?.name
-            self.totalPriceLabel.text = "\(self.calculateTotalSun(list: (exportObject?.cartProduct)!)) тг"
+            self.totalPriceLabel.text = "\(self.calculateTotalSun(list: (exportObject?.cartProduct) ?? [ExportCartProduct]())) тг"
         }
     }
 }
@@ -50,9 +50,9 @@ extension HistoryItemExportVC: UICollectionViewDelegate, UICollectionViewDataSou
         
         let singleProd = exportCartObject.cartProduct?[indexPath.row]
         cell.productNameLabel.text = singleProd?.exportProduct?.product?.productName
-        cell.productPriceLabel.text = "\(singleProd?.exportProduct?.product?.productImportPrice ?? 0) тг"
+        cell.productPriceLabel.text = "\(singleProd?.exportProduct?.product?.productExportPrice ?? 0) тг"
         cell.productAmountLabel.text = "\(singleProd?.amount ?? 0)"
-        cell.productTotalPriceLabel.text = "\((singleProd?.exportProduct?.product?.productImportPrice ?? 0) * (singleProd?.amount ?? 0)) тг"
+        cell.productTotalPriceLabel.text = "\((singleProd?.exportProduct?.product?.productExportPrice ?? 0) * (singleProd?.amount ?? 0)) тг"
         
         return cell
     }
@@ -60,7 +60,7 @@ extension HistoryItemExportVC: UICollectionViewDelegate, UICollectionViewDataSou
     private func calculateTotalSun(list: [ExportCartProduct]) -> Int {
         var totalSum = Int()
         for item in list {
-            totalSum += (item.exportProduct?.product?.productImportPrice ?? 0) * (item.amount ?? 0)
+            totalSum += (item.exportProduct?.product?.productExportPrice ?? 0) * (item.amount ?? 0)
         }
         return totalSum
     }
@@ -75,7 +75,7 @@ extension HistoryItemExportVC {
         
         if segue.identifier == "fromHIEtoME" {
             if let navigationVC = segue.destination as? UINavigationController,
-                let destVC = navigationVC.topViewController as? MainImportVC {
+                let destVC = navigationVC.topViewController as? MainExportVC {
                 destVC.selectegTag = 1
             }
         }
