@@ -39,7 +39,6 @@ class HistoryItemImportVC: DefaultVC {
     }
 }
 
-
 extension HistoryItemImportVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -65,11 +64,9 @@ extension HistoryItemImportVC: UICollectionViewDelegate, UICollectionViewDataSou
         }
         return totalSum
     }
-    
 }
 
 extension HistoryItemImportVC {
-
     private func navigateToMainImport() {
         performSegue(withIdentifier: "fromHistoryitemToMainImport", sender: self)
     }

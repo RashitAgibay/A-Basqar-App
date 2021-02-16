@@ -89,7 +89,7 @@ struct ExportCartProduct: Codable {
     
     enum CodingKeys: String, CodingKey {
         case productId = "ex_prod_id"
-        case importProduct = "export_product"
+        case exportProduct = "export_product"
         case amount = "prod_amount_in_cart"
         case date = "date"
         case accountId = "account"

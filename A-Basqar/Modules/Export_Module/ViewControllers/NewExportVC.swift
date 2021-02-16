@@ -132,6 +132,7 @@ extension NewExportVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "newExportCell", for: indexPath) as! NewExportCell
+        cell.delegate = self
         
         let currentProduct = productList[indexPath.row]
 
