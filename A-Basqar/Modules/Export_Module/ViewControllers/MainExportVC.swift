@@ -18,61 +18,39 @@ class MainExportVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
         setupBaseFuncs()
-        
-        
     }
-    
 
     private func setupUI() {
-        
         segmentControl.setupSimpleView()
-
     }
     
     private func setupBaseFuncs() {
-        
         switch selectegTag {
         case 0:
-            
             newExportView.alpha = 1
             historyExportView.alpha = 0
-            
             segmentControl.selectedSegmentIndex = 0
-            
         case 1:
-            
             newExportView.alpha = 0
             historyExportView.alpha = 1
-            
             segmentControl.selectedSegmentIndex = 1
-            
         default:
             break
         }
     }
     
     @IBAction func switchSegment(_ sender: UISegmentedControl) {
-        
         switch sender.selectedSegmentIndex {
         case 0:
-            
             newExportView.alpha = 1
             historyExportView.alpha = 0
-            
         case 1:
-            
             newExportView.alpha = 0
             historyExportView.alpha = 1
-            
         default:
             break
         }
-        
     }
-    
-
-
 }

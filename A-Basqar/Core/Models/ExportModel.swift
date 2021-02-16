@@ -81,7 +81,7 @@ struct ExportProduct: Codable {
 //Getting
 struct ExportCartProduct: Codable {
     var productId: Int?
-    var importProduct: ExportProduct?
+    var exportProduct: ExportProduct?
     var amount: Int?
     var date: String?
     var accountId: Int?

@@ -18,59 +18,40 @@ class MainImportVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
         setupBaseFuncs()
-        
-        
     }
-    
 
     private func setupUI() {
-        
         segmentControl.setupSimpleView()
-
     }
     
     private func setupBaseFuncs() {
-        
         switch selectegTag {
         case 0:
-            
             newImportView.alpha = 1
             historyImportView.alpha = 0
-            
             segmentControl.selectedSegmentIndex = 0
-            
         case 1:
-            
             newImportView.alpha = 0
             historyImportView.alpha = 1
-            
             segmentControl.selectedSegmentIndex = 1
-            
         default:
             break
         }
     }
     
     @IBAction func switchSegment(_ sender: UISegmentedControl) {
-        
         switch sender.selectedSegmentIndex {
         case 0:
-            
             newImportView.alpha = 1
             historyImportView.alpha = 0
-            
         case 1:
-            
             newImportView.alpha = 0
             historyImportView.alpha = 1
-            
         default:
             break
         }
-        
     }
 
 }
