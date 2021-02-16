@@ -9,13 +9,11 @@
 import UIKit
 import Alamofire
 
-
 class ProductListImportVC: DefaultVC {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     var products = [StoreProduct]()
-    var productArray = NSArray()
     var categoryID = Int()
     var selectedProdImportPrice = Int()
     
@@ -24,7 +22,6 @@ class ProductListImportVC: DefaultVC {
         getProds()
     }
     
-
     @IBAction func tappedBackButton(_ sender: Any) {
         self.navigateToFirstLevelCat()
     }
@@ -92,21 +89,15 @@ extension ProductListImportVC: UICollectionViewDelegate, UICollectionViewDataSou
         selectedProdImportPrice = storeProd.product?.productImportPrice ?? Int()
         showAlertControllerWithTwoTextFields(productId: prodId, companyProdId: (storeProd.product?.productId)!)
     }
-    
-    
 }
-
-extension ProductListImportVC {
-    private func navigateToFirstLevelCat() {
-        performSegue(withIdentifier: "fromProdListToFirstLevelCat", sender: self)
-    }
-    
-}
-
 
 extension ProductListImportVC {
     private func navigateToMainImport() {
         performSegue(withIdentifier: "fromProductListToMainImport", sender: self)
+    }
+    
+    private func navigateToFirstLevelCat() {
+        performSegue(withIdentifier: "fromProdListToFirstLevelCat", sender: self)
     }
 }
 
@@ -147,11 +138,4 @@ extension ProductListImportVC {
         alertController.addAction(cancelAction)
         self.present(alertController,animated: true, completion: nil)
     }
-    
 }
-
-
-
-
-
-
