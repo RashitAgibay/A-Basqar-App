@@ -224,6 +224,9 @@
 		FD7F097724B9F3D000F7709F /* ImportListKassaExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD7F097624B9F3D000F7709F /* ImportListKassaExport.storyboard */; };
 		FD7F097924B9F3F700F7709F /* ImportListKassaExportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F097824B9F3F700F7709F /* ImportListKassaExportVC.swift */; };
 		FD7F097B24B9F54000F7709F /* ImportListKassaExportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD7F097A24B9F54000F7709F /* ImportListKassaExportCell.swift */; };
+		FD861B3725DD246B00C35B15 /* ExpensesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD861B3625DD246B00C35B15 /* ExpensesModel.swift */; };
+		FD861B3A25DD26E300C35B15 /* ExpensesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD861B3925DD26E300C35B15 /* ExpensesApi.swift */; };
+		FD861B3D25DD281600C35B15 /* ExpensesNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD861B3C25DD281600C35B15 /* ExpensesNetworkManager.swift */; };
 		FD88A0E425CD094F00C31AA5 /* ProductApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD88A0E325CD094F00C31AA5 /* ProductApi.swift */; };
 		FD88A0E825CD0F6D00C31AA5 /* ProductNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD88A0E725CD0F6D00C31AA5 /* ProductNetworkManager.swift */; };
 		FD8E9033250CCD7B0003AD7A /* NewPassCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD8E9032250CCD7B0003AD7A /* NewPassCode.storyboard */; };
@@ -599,6 +602,9 @@
 		FD7F097624B9F3D000F7709F /* ImportListKassaExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImportListKassaExport.storyboard; sourceTree = "<group>"; };
 		FD7F097824B9F3F700F7709F /* ImportListKassaExportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportListKassaExportVC.swift; sourceTree = "<group>"; };
 		FD7F097A24B9F54000F7709F /* ImportListKassaExportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportListKassaExportCell.swift; sourceTree = "<group>"; };
+		FD861B3625DD246B00C35B15 /* ExpensesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesModel.swift; sourceTree = "<group>"; };
+		FD861B3925DD26E300C35B15 /* ExpensesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesApi.swift; sourceTree = "<group>"; };
+		FD861B3C25DD281600C35B15 /* ExpensesNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesNetworkManager.swift; sourceTree = "<group>"; };
 		FD88A0E325CD094F00C31AA5 /* ProductApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductApi.swift; sourceTree = "<group>"; };
 		FD88A0E725CD0F6D00C31AA5 /* ProductNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductNetworkManager.swift; sourceTree = "<group>"; };
 		FD8E9032250CCD7B0003AD7A /* NewPassCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewPassCode.storyboard; sourceTree = "<group>"; };
@@ -1142,6 +1148,7 @@
 				FD4BECD525DA9B0F005611DF /* ExportApi.swift */,
 				FD88A0E325CD094F00C31AA5 /* ProductApi.swift */,
 				FD4BECCC25DA6D9A005611DF /* ManagementApi.swift */,
+				FD861B3925DD26E300C35B15 /* ExpensesApi.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -1166,6 +1173,7 @@
 				FDBC1A5225C7C53100B5FF4F /* CommonApiResponse.swift */,
 				FDEAD94725C928BC0075F122 /* ImportModel.swift */,
 				FD4BECD225DA995F005611DF /* ExportModel.swift */,
+				FD861B3625DD246B00C35B15 /* ExpensesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1179,6 +1187,7 @@
 				FD4BECD825DA9E1F005611DF /* ExportNetworkManager.swift */,
 				FD88A0E725CD0F6D00C31AA5 /* ProductNetworkManager.swift */,
 				FD4BECCF25DA717A005611DF /* ManagementNetworkManager.swift */,
+				FD861B3C25DD281600C35B15 /* ExpensesNetworkManager.swift */,
 			);
 			path = ApiManagers;
 			sourceTree = "<group>";
@@ -1913,6 +1922,7 @@
 				288CC48623A89C38008D5218 /* SDWebImageDownloaderRequestModifier.m in Sources */,
 				FD1A4FC425C3D93600716A81 /* ManagementModel.swift in Sources */,
 				FDB63FC124AB5E4600525388 /* NewImportVC.swift in Sources */,
+				FD861B3D25DD281600C35B15 /* ExpensesNetworkManager.swift in Sources */,
 				28674295238CF50E008884AF /* BuyProductFirstPageCell.swift in Sources */,
 				288CC46323A89C38008D5218 /* NSButton+WebCache.m in Sources */,
 				FDBBFF6124D56AA700A2D283 /* AddNewContrExportVC.swift in Sources */,
@@ -1961,6 +1971,7 @@
 				FD1A4DB125C0385100716A81 /* AuthApi.swift in Sources */,
 				2812AAF42362B45A001D65C8 /* AppDelegate.swift in Sources */,
 				FD6C71DB250B1C8D0072552D /* ForgetPasswordVC.swift in Sources */,
+				FD861B3725DD246B00C35B15 /* ExpensesModel.swift in Sources */,
 				FD7AF83724AC80300021B131 /* UISegmentControl+Extensions.swift in Sources */,
 				288CC4A523A89C38008D5218 /* UIColor+HexString.m in Sources */,
 				288CC47123A89C38008D5218 /* SDImageCoder.m in Sources */,
@@ -1984,6 +1995,7 @@
 				288CC48A23A89C38008D5218 /* SDWebImageManager.m in Sources */,
 				288CC48023A89C38008D5218 /* SDWebImageCompat.m in Sources */,
 				288CC46B23A89C38008D5218 /* SDDiskCache.m in Sources */,
+				FD861B3A25DD26E300C35B15 /* ExpensesApi.swift in Sources */,
 				FD1A4DB625C03D2E00716A81 /* AuthModel.swift in Sources */,
 				61A84631245309E500DF3371 /* StoreEmployeesCell.swift in Sources */,
 				FD7F096F24B9E49B00F7709F /* HistoryKassaExport.swift in Sources */,

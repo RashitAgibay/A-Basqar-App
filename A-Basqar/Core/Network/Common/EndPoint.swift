@@ -54,4 +54,8 @@ struct EndPoint {
         static let createContr = "/api/management/contragent/add"
         static let editContr = "/api/management/contragent/edit"
     }
+    
+    struct Expenses {
+        static let getExpensesHistory = "/api/kassa/expense_kassa_history"
+    }
 }
