@@ -18,7 +18,7 @@ struct Expense: Codable {
     var cash_sum: String?
     var comment: String?
     var date: String?
-    var contragent: Int?
+    var contragent: Contragent?
     var account: Int?
     
     enum CodingKeys: String, CodingKey {

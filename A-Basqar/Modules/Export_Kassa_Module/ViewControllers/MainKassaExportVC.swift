@@ -25,6 +25,8 @@ class MainKassaExportVC: UIViewController {
         setupUI()
         setupBaseFuncs()
 
+        print("/// expense module")
+
 
     }
     

@@ -9,13 +9,11 @@
 import UIKit
 import Alamofire
 
-
 class HistoryKassaExport: DefaultVC {
-    
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var historyKassaExportList = NSArray()
+    var histories = [Expense]()
     var checkId = Int()
     var historyId = Int()
 
@@ -27,68 +25,43 @@ class HistoryKassaExport: DefaultVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getChecksList()
         collectionView.refreshControl = refreshControl
-
+        getCheckHistory()
     }
-    
     
     @objc private func refreshData(sender: UIRefreshControl) {
-        
-        getChecksList()
+        getCheckHistory()
         sender.endRefreshing()
-    
     }
     
+    private func getCheckHistory() {
+        ExpensesNetworkManager.service.getExpensesHistory { (expenses, error) in
+            self.histories = expenses ?? [Expense]()
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 extension HistoryKassaExport: UICollectionViewDelegate, UICollectionViewDataSource {
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return historyKassaExportList.count
+        return histories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "historyKassaExportCell", for: indexPath) as! HistoryKassaExportCell
         
-        let singleBill = historyKassaExportList[indexPath.row] as! NSDictionary
-        let billName = singleBill["code"] as! String
-        let date = singleBill["data"] as! String
-
-        let company = singleBill["company"] as! NSDictionary
-        let price = singleBill["fac_money"] as! Int
-        
-        let contragent = company["company_name"] as! String
-        
-        cell.billLabel.text = billName
-        cell.contragentNameLabel.text = contragent
-        cell.dateLabel.text = date
-        cell.priceLabel.text = "\(price) тенге"
+        let singleExpense = histories[indexPath.row]
+        cell.billLabel.text = "Расходая касса#\(singleExpense.id ?? 0)"
+        cell.contragentNameLabel.text = singleExpense.contragent?.name
+        cell.dateLabel.text = singleExpense.date
+        cell.priceLabel.text = "\(singleExpense.cash_sum ?? "") тенге"
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let singleBill = historyKassaExportList[indexPath.row] as! NSDictionary
-        let billId = singleBill["id"] as! Int
-        
-        if singleBill["history"] as? NSDictionary != nil {
-
-            let history = singleBill["history"] as! NSDictionary
-            let historyId = history["id"] as! Int
-            self.historyId = historyId
-//            print("/// history", singleBill["history"])
-
-        }
-        
-//        print("/// history", singleBill["history"])
-        
-        self.checkId = billId
-        
+        let singleExpense = histories[indexPath.row]
+        self.checkId = singleExpense.id ?? 0
         self.navigateToHistoryKassaItem()
         
     }
@@ -96,99 +69,17 @@ extension HistoryKassaExport: UICollectionViewDelegate, UICollectionViewDataSour
 }
 
 extension HistoryKassaExport {
-    
-    private func getChecksList() {
-            
-            do {
-                
-                self.reachability = try Reachability.init()
-            }
-            
-            catch {
-                
-                print("unable to start notifier")
-            }
-            
-            if ((reachability?.connection) != .unavailable) {
-                MBProgressHUD.showAdded(to: self.view, animated: true)
-                
-                let token = UserDefaults.standard.string(forKey: userTokenKey) ?? ""
-                
-                let headers: HTTPHeaders = [
-                    
-                    "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                    "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-                ]
-                
-                let encodeURL = importCheckURL
-//                print("/// -encodeUrl:", encodeURL)
-//                print("/// -headers:",headers)
-                                
-                let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-                
-                requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                    
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    
-//                    print(response.request!)
-//                    print(response.result)
-//                    print(response.response!)
-                    
-                    switch response.result {
-                    
-                    case .success(let payload):
-                        
-                        MBProgressHUD.hide(for: self.view, animated: true)
-                        
-                        if let x = payload as? Dictionary<String,AnyObject> {
-                        
-                        }
-                        
-                        else {
-                            
-                            let resultValue = payload as! NSArray
-                            
-                            self.historyKassaExportList = resultValue
-                            self.historyKassaExportList = self.historyKassaExportList.reversed() as NSArray
-                            self.collectionView.reloadData()
-                        
-                        }
-                    
-                    case .failure(let error):
-                        
-                        print(error)
-                        MBProgressHUD.hide(for: self.view, animated: true)
-                        self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-                    }
-                })
-            }
-            
-            else {
-                
-                print("internet is not working")
-                MBProgressHUD.hide(for: self.view, animated: true)
-                self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-            }
-        }
-    
-}
-
-extension HistoryKassaExport {
-    
     private func navigateToHistoryKassaItem() {
-        
         performSegue(withIdentifier: "fromHKEtoHKEI", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         if segue.identifier == "fromHKEtoHKEI" {
             if let navigationVC = segue.destination as? UINavigationController,
                 let destVC = navigationVC.topViewController as? HistoryKassaExportItemVC {
                 destVC.checkID = self.checkId
                 
                 if self.historyId != 0 {
-                    
                     destVC.historyId = self.historyId
                 }
             }

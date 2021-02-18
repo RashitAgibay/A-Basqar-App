@@ -12,7 +12,6 @@ import Printer
 import Alamofire
 
 
-
 class NewKassaExportVC: DefaultVC {
 
     @IBOutlet weak var cardView: UIView!
@@ -31,13 +30,10 @@ class NewKassaExportVC: DefaultVC {
     private var currentHistoryID = Int()
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
         setupView()
-        setupBillValues()
-        setupZeroBillValues()
-
+//        setupBillValues()
+//        setupZeroBillValues()
     }
     
     
