@@ -57,6 +57,7 @@ struct EndPoint {
     
     struct Expenses {
         static let getExpensesHistory = "/api/kassa/expense_kassa_history"
+        static let getExpenseHistoryItem = "/api/kassa/expense_history/"
         static let createExpenseByImport = "/api/kassa/create_new_expense_export"
         static let createExpenseByContr = "/api/kassa/create_new_expense_contr"
     }

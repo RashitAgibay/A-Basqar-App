@@ -11,6 +11,7 @@ import Moya
 
 enum ExpencesApi {
     case getExpensesHistory
+    case getExpenseHistoryItem(historyId: Int)
     case createCheckByImport(expenseByImport: ExpenseByImport)
     case cretaCheckByContr(expenseByContr: ExpenseByContr)
 }
@@ -20,6 +21,8 @@ extension ExpencesApi: BaseApiDelegate {
         switch self {
         case .getExpensesHistory:
             return EndPoint.Expenses.getExpensesHistory
+        case .getExpenseHistoryItem(let historyId):
+            return EndPoint.Expenses.getExpenseHistoryItem + "\(historyId)"
         case .createCheckByImport:
             return EndPoint.Expenses.createExpenseByImport
         case .cretaCheckByContr:
@@ -31,6 +34,8 @@ extension ExpencesApi: BaseApiDelegate {
         switch self {
         case .getExpensesHistory:
             return .get
+        case .getExpenseHistoryItem:
+            return .get
         case .createCheckByImport:
             return .post
         case .cretaCheckByContr:
@@ -41,6 +46,8 @@ extension ExpencesApi: BaseApiDelegate {
     var task: Task {
         switch self {
         case .getExpensesHistory:
+            return .requestPlain
+        case .getExpenseHistoryItem(let historyId):
             return .requestPlain
         case .createCheckByImport(let expenseByImport):
             return .requestJSONEncodable(expenseByImport)

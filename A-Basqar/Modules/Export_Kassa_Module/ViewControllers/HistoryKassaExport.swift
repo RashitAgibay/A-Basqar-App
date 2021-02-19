@@ -62,7 +62,7 @@ extension HistoryKassaExport: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let singleExpense = histories[indexPath.row]
-        self.checkId = singleExpense.id ?? 0
+        self.checkId = singleExpense.id!
         self.navigateToHistoryKassaItem()
         
     }
@@ -79,10 +79,6 @@ extension HistoryKassaExport {
             if let navigationVC = segue.destination as? UINavigationController,
                 let destVC = navigationVC.topViewController as? HistoryKassaExportItemVC {
                 destVC.checkID = self.checkId
-                
-                if self.historyId != 0 {
-                    destVC.historyId = self.historyId
-                }
             }
         }
     }

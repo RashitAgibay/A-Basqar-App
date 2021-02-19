@@ -13,6 +13,7 @@ protocol ExpensesNetworkable {
     var provider: MoyaProvider<ExpencesApi> { get }
     
     func getExpensesHistory(completion: @escaping ([Expense]?, Error?) -> ())
+    func getExpensesHistoryItem(historyId: Int, completion: @escaping (Expense?, Error?) -> ())
     func createExpenseByImport(expenseByImport: ExpenseByImport, comletion: @escaping (CommonApiResponse?, Error?) -> ())
     func createExpenseByContr(expenseByContr: ExpenseByContr, completion: @escaping (CommonApiResponse?, Error?) -> ())
 }
@@ -27,6 +28,23 @@ class ExpensesNetworkManager: ExpensesNetworkable {
             case .success(let response):
                 do {
                     let history = try JSONDecoder().decode([Expense].self, from: response.data)
+                    completion(history, nil)
+                }
+                catch let error {
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+    func getExpensesHistoryItem(historyId: Int, completion: @escaping (Expense?, Error?) -> ()) {
+        provider.request(.getExpenseHistoryItem(historyId: historyId)) { (result) in
+            switch result {
+            case .success(let response):
+                do {
+                    let history = try JSONDecoder().decode(Expense.self, from: response.data)
                     completion(history, nil)
                 }
                 catch let error {
