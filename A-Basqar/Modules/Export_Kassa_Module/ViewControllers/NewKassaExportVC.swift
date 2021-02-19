@@ -100,6 +100,7 @@ class NewKassaExportVC: DefaultVC {
     
     private func postNewExpenseByImport(importObject: Int, cash: String, comment: String) {
         let expenseByImport = ExpenseByImport(importObject: importObject, cash: cash, comment: comment)
+        print("/// expenseByImport:", expenseByImport)
         ExpensesNetworkManager.service.createExpenseByImport(expenseByImport: expenseByImport) { (message, error) in
             if message?.message == "success" {
                 self.cleanAllInfo()

@@ -55,7 +55,7 @@ extension HistoryKassaExport: UICollectionViewDelegate, UICollectionViewDataSour
         cell.billLabel.text = "Расходая касса#\(singleExpense.id ?? 0)"
         cell.contragentNameLabel.text = singleExpense.contragent?.name
         cell.dateLabel.text = singleExpense.date
-        cell.priceLabel.text = "\(singleExpense.cash_sum ?? "") тенге"
+        cell.priceLabel.text = "\(singleExpense.fact_cash ?? "") тенге"
         
         return cell
     }

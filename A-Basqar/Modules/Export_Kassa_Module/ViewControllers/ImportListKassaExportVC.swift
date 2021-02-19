@@ -27,6 +27,7 @@ class ImportListKassaExportVC: DefaultVC {
     private func getImportsList() {
         ImportNetworkManager.service.getHistory { (imports, error) in
             self.importList = imports ?? [ImportCartObject]()
+            self.importList.reverse()
             self.collectionView.reloadData()
         }
     }
