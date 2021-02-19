@@ -178,6 +178,9 @@
 		FD31605724E96B2200621BEF /* SearchByBarcodeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD31605624E96B2200621BEF /* SearchByBarcodeVC.swift */; };
 		FD31605924E96DB200621BEF /* SearchByBarCodeExport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD31605824E96DB200621BEF /* SearchByBarCodeExport.storyboard */; };
 		FD31605B24E96DCF00621BEF /* SearchByBarcodeExportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD31605A24E96DCF00621BEF /* SearchByBarcodeExportVC.swift */; };
+		FD437A8325DFCF6C00CA3A4A /* IncomesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD437A8225DFCF6C00CA3A4A /* IncomesModel.swift */; };
+		FD437A8625DFD0D300CA3A4A /* IncomesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD437A8525DFD0D300CA3A4A /* IncomesApi.swift */; };
+		FD437A8925DFD29100CA3A4A /* IncomesNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD437A8825DFD29100CA3A4A /* IncomesNetworkManager.swift */; };
 		FD4777B424AFAC6A00E323D3 /* ContragentListImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD4777B324AFAC6A00E323D3 /* ContragentListImport.storyboard */; };
 		FD4777B624AFAC8600E323D3 /* ContragentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777B524AFAC8600E323D3 /* ContragentListVC.swift */; };
 		FD4777B824AFADE500E323D3 /* ContragentListImportCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD4777B724AFADE500E323D3 /* ContragentListImportCell.swift */; };
@@ -556,6 +559,9 @@
 		FD31605624E96B2200621BEF /* SearchByBarcodeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByBarcodeVC.swift; sourceTree = "<group>"; };
 		FD31605824E96DB200621BEF /* SearchByBarCodeExport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchByBarCodeExport.storyboard; sourceTree = "<group>"; };
 		FD31605A24E96DCF00621BEF /* SearchByBarcodeExportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchByBarcodeExportVC.swift; sourceTree = "<group>"; };
+		FD437A8225DFCF6C00CA3A4A /* IncomesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomesModel.swift; sourceTree = "<group>"; };
+		FD437A8525DFD0D300CA3A4A /* IncomesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomesApi.swift; sourceTree = "<group>"; };
+		FD437A8825DFD29100CA3A4A /* IncomesNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomesNetworkManager.swift; sourceTree = "<group>"; };
 		FD4777B324AFAC6A00E323D3 /* ContragentListImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContragentListImport.storyboard; sourceTree = "<group>"; };
 		FD4777B524AFAC8600E323D3 /* ContragentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListVC.swift; sourceTree = "<group>"; };
 		FD4777B724AFADE500E323D3 /* ContragentListImportCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContragentListImportCell.swift; sourceTree = "<group>"; };
@@ -1149,6 +1155,7 @@
 				FD88A0E325CD094F00C31AA5 /* ProductApi.swift */,
 				FD4BECCC25DA6D9A005611DF /* ManagementApi.swift */,
 				FD861B3925DD26E300C35B15 /* ExpensesApi.swift */,
+				FD437A8525DFD0D300CA3A4A /* IncomesApi.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -1174,6 +1181,7 @@
 				FDEAD94725C928BC0075F122 /* ImportModel.swift */,
 				FD4BECD225DA995F005611DF /* ExportModel.swift */,
 				FD861B3625DD246B00C35B15 /* ExpensesModel.swift */,
+				FD437A8225DFCF6C00CA3A4A /* IncomesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1188,6 +1196,7 @@
 				FD88A0E725CD0F6D00C31AA5 /* ProductNetworkManager.swift */,
 				FD4BECCF25DA717A005611DF /* ManagementNetworkManager.swift */,
 				FD861B3C25DD281600C35B15 /* ExpensesNetworkManager.swift */,
+				FD437A8825DFD29100CA3A4A /* IncomesNetworkManager.swift */,
 			);
 			path = ApiManagers;
 			sourceTree = "<group>";
@@ -1865,6 +1874,7 @@
 				288CC49C23A89C38008D5218 /* SDAssociatedObject.m in Sources */,
 				288CC46C23A89C38008D5218 /* SDImageAPNGCoder.m in Sources */,
 				FD1A4FC725C3E80B00716A81 /* BaseApi.swift in Sources */,
+				FD437A8325DFCF6C00CA3A4A /* IncomesModel.swift in Sources */,
 				286E7083239E2447002CD53D /* FinancialReportVC.swift in Sources */,
 				288CC47D23A89C38008D5218 /* SDMemoryCache.m in Sources */,
 				61589B102451A5CC008A18A7 /* MainStoreVC.swift in Sources */,
@@ -1915,6 +1925,7 @@
 				6159FA93244DF08100FE1BED /* MovementHistoryVC.swift in Sources */,
 				FD5AB47224ADC1FE002BDB0E /* FirstLevelCatImportCell.swift in Sources */,
 				288CC47223A89C38008D5218 /* SDImageCoderHelper.m in Sources */,
+				FD437A8625DFD0D300CA3A4A /* IncomesApi.swift in Sources */,
 				288CC46923A89C38008D5218 /* SDAnimatedImageView+WebCache.m in Sources */,
 				FD4BECD025DA717A005611DF /* ManagementNetworkManager.swift in Sources */,
 				FDBBFF6D24D56B4F00A2D283 /* KassaExportVC.swift in Sources */,
@@ -1936,6 +1947,7 @@
 				FDBC1A5625C7D69400B5FF4F /* ImportApi.swift in Sources */,
 				280901B02394E66C00CA68BD /* ByuingHistoryViewCell.swift in Sources */,
 				FD4777BE24AFB64600E323D3 /* UIView+Extensions.swift in Sources */,
+				FD437A8925DFD29100CA3A4A /* IncomesNetworkManager.swift in Sources */,
 				288CC49723A89C38008D5218 /* UIImageView+WebCache.m in Sources */,
 				61F00E70244F0D64001D0EEE /* MainBidVC.swift in Sources */,
 				288CC48E23A89C38008D5218 /* UIButton+WebCache.m in Sources */,
