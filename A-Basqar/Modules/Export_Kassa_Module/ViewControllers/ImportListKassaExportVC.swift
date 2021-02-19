@@ -8,169 +8,76 @@
 
 import UIKit
 import RealmSwift
-import Alamofire
-
 
 class ImportListKassaExportVC: DefaultVC {
-
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var importHistoryArray = NSArray()
+    var importList = [ImportCartObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        getImportHistoryList()
-
+        getImportsList()
     }
     
     @IBAction func tapBackButton(_ sender: Any) {
-        
         navigateToMainKassaExport()
     }
     
-
-
+    private func getImportsList() {
+        ImportNetworkManager.service.getHistory { (imports, error) in
+            self.importList = imports ?? [ImportCartObject]()
+            self.importList.reverse()
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 extension ImportListKassaExportVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return importHistoryArray.count
+        return importList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "importListKassaExportCell", for: indexPath) as! ImportListKassaExportCell
         
-        let singleHistory = importHistoryArray[indexPath.row] as! NSDictionary
-        
-        let companyName = singleHistory["company"] as! NSDictionary
-        let contragentName = companyName["company_name"] as! String
-        let date = singleHistory["add_time"] as! String
-        let totalPrice  = singleHistory["sum"] as! Int
-        
-        cell.contragentNameLabel.text = contragentName
-        cell.dateLabel.text = date
-        cell.priceLabel.text = "\(totalPrice) тенге"
+        let singleImport = importList[indexPath.row]
+        cell.contragentNameLabel.text = singleImport.contragent?.name
+        cell.dateLabel.text = singleImport.date
+        cell.priceLabel.text = singleImport.cashSum
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let singleImport = importList[indexPath.row]
         
-        let singleHistory = importHistoryArray[indexPath.row] as! NSDictionary
-        
-        let historyName = singleHistory["history_name"] as! String
-        let code = singleHistory["code"] as! String
-        let companyName = singleHistory["company"] as! NSDictionary
-        let contragentName = companyName["company_name"] as! String
-        let date = singleHistory["add_time"] as! String
-        let totalPrice  = singleHistory["sum"] as! Int
-        let historyId = singleHistory["id"] as! Int
-//        print("---", historyName, code)
-        
-        self.saveCurrentBillInSystem(importName: historyName, billNumber: code, date: date, contragent: contragentName, totalMoney: totalPrice, historyID: historyId)
+        saveCurrentBillInSystem(importName: "Закуп #\(singleImport.id ?? 0)", billNumber: "Чек #\(singleImport.id ?? 0)", date: singleImport.date ?? "", contragent: singleImport.contragent?.name ?? "", totalMoney: singleImport.cashSum ?? "", importId: singleImport.id!)
         
     }
     
 }
 
 extension ImportListKassaExportVC {
-    
     private func navigateToMainKassaExport() {
-        
         performSegue(withIdentifier: "fromImportListKassaExportToMainKassaExport", sender: self)
     }
 }
 
 
-extension ImportListKassaExportVC {
-    
-    func getImportHistoryList() {
-        
-        do {
-            
-            self.reachability = try Reachability.init()
-        }
-        
-        catch {
-            
-            print("unable to start notifier")
-        }
-        
-        if ((reachability?.connection) != .unavailable) {
-            
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            let token = UserDefaults.standard.string(forKey: userTokenKey) as! String
-            
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-            ]
-            
-            let encodeURL = importHistoryListURL
-            let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-            
-            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                
-//                print(response.request)
-//                print(response.result)
-//                print(response.response)
-                switch response.result {
-                
-                case .success(let payload):
-                    
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    
-                    if let x = payload as? Dictionary<String,AnyObject> {
-                    
-                    }
-                    
-                    else {
-                        
-                        let resultValue = payload as! NSArray
-                        
-                        self.importHistoryArray = resultValue
-                        self.collectionView.reloadData()
-                    }
-                
-                case .failure(let error):
-                    
-                    print(error)
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-                }
-            })
-        }
-        
-        else {
-            
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
-    
-}
-
-
 
 extension ImportListKassaExportVC {
     
-    private func saveCurrentBillInSystem(importName: String, billNumber: String, date: String, contragent: String, totalMoney: Int, historyID: Int) {
+    private func saveCurrentBillInSystem(importName: String, billNumber: String, date: String, contragent: String, totalMoney: String, importId: Int) {
         
-        var bill = OutcomeBill()
+        let bill = OutcomeBill()
         bill.importNubmer = importName
         bill.billNumber = billNumber
         bill.date = date
         bill.contragent = contragent
         bill.totalMoney = totalMoney
-        bill.historyID = historyID
-//        print("bill info: \(bill.billNumber)")
+        bill.importId = importId
         
         let realm = try! Realm()
         try! realm.write {
@@ -179,27 +86,7 @@ extension ImportListKassaExportVC {
         
         var resulsts: Results<OutcomeBill>!
         resulsts = realm.objects(OutcomeBill.self)
-        
-        if resulsts.last != nil {
-             
 
-//            print(resulsts.last as! Bill)
-            
-//             for item in resulsts {
-//
-//                 print("--- ", item.contragent)
-//                 print("--- ", item.billNumber)
-//                 print("--- ", item.date)
-//                 print("--- ", item.importNubmer)
-//
-//             }
-
-         }
-
-        
-//        UserDefaults.standard.set(bill, forKey: "currentExportBillInfo")
-        
         navigateToMainKassaExport()
-        
     }
 }
