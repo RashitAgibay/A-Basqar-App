@@ -127,6 +127,7 @@ extension NewKassaImportVC {
 
         if resulsts.last != nil {
             currentBill = resulsts.last!
+            self.exportId = currentBill.historyID
             return currentBill
 
         }
