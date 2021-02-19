@@ -35,3 +35,28 @@ struct Expense: Codable {
     }
 }
 
+//Sending
+struct ExpenseByImport: Codable {
+    var importObject: Int?
+    var cash: String?
+    var comment: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case importObject = "import_object"
+        case cash = "fact_cash"
+        case comment
+    }
+}
+
+//Sending
+struct ExpenseByContr: Codable {
+    var contragent: Int?
+    var cash: String?
+    var comment: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case contragent
+        case cash = "fact_cash"
+        case comment
+    }
+}

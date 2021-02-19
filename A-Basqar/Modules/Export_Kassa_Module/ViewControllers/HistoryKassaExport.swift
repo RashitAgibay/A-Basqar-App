@@ -37,6 +37,7 @@ class HistoryKassaExport: DefaultVC {
     private func getCheckHistory() {
         ExpensesNetworkManager.service.getExpensesHistory { (expenses, error) in
             self.histories = expenses ?? [Expense]()
+            self.histories.reverse()
             self.collectionView.reloadData()
         }
     }

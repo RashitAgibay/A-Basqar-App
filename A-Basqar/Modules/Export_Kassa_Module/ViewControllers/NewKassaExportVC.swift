@@ -25,42 +25,32 @@ class NewKassaExportVC: DefaultVC {
     @IBOutlet weak var acceptButton: UIButton!
     @IBOutlet weak var declineButton: UIButton!
     
-    private var factMoneyBaseValue = Int()
+    private var factMoneyBaseValue = String()
+    private var importId = Int()
     private var currentContrId = Int()
-    private var currentHistoryID = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-//        setupBillValues()
-//        setupZeroBillValues()
+        setupBillValues()
+        setupZeroBillValues()
     }
     
-    
     @IBAction func tapAcceptButton(_ sender: Any) {
-        
         if contragentButton.titleLabel?.text == "Выбрать" {
-            
             showErrorsAlertWithOneCancelButton(message: "Отсутствует информация")
         }
-        
         else {
-            
-            if currentHistoryID != 0 {
-                
+            if importId != 0 {
                 createNewCheck()
             }
-            
             if currentContrId != 0 {
-                
                 createNullCheck()
             }
-            
             var factSumm = String()
             if factMoneyTextField.text == "" {
                 factSumm = String(totalSumLabel.text?.split(separator: " ").first ?? "") + " tenge"
             }
-            
             generateBillToPrint(number: billNumberLabel.text ?? "",
                                 date: dateLabel.text ?? "",
                                 contr: contragentButton.titleLabel?.text ?? "",
@@ -68,22 +58,16 @@ class NewKassaExportVC: DefaultVC {
                                 totalSum: String(totalSumLabel.text?.split(separator: " ").first ?? "") + " tenge",
                                 comment: commentLabel.text ?? "")
         }
-        
     }
     
-    
     @IBAction func tapCancelButton(_ sender: Any) {
-        
         if contragentButton.titleLabel?.text == "Выбрать" {
-            
             showErrorsAlertWithOneCancelButton(message: "Отсутствует информация")
         }
-        
         else {
-            
             cleanAllInfo()
-        }    }
-    
+        }
+    }
 
     private func setupView() {
         
@@ -113,129 +97,29 @@ class NewKassaExportVC: DefaultVC {
         factMoneyTextField.layer.backgroundColor = UIColor.white.cgColor
         factMoneyTextField.layer.borderColor = hexStringToUIColor(hex: "#3F639D").cgColor
     }
-
-
-}
-
-extension NewKassaExportVC {
     
-    private func createNewCheckToApi(historyID: Int, fact_money: String, comment: String) {
-            
-            do {
-                
-                self.reachability = try Reachability.init()
-            }
-            
-            catch {
-                
-                print("unable to start notifier")
-            }
-            
-            if ((reachability?.connection) != .unavailable) {
-                MBProgressHUD.showAdded(to: self.view, animated: true)
-                
-                let token = UserDefaults.standard.string(forKey: userTokenKey) ?? ""
-                
-                let headers: HTTPHeaders = [
-                    
-                    "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                    "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-                ]
-                
-                let params: Parameters = [
-                    
-                    "history":historyID,
-                    "fac_money":fact_money.trimmingCharacters(in: .whitespacesAndNewlines),
-                    "comments":comment.trimmingCharacters(in: .whitespacesAndNewlines)
-                    ]
-                
-                let encodeURL = importCheckURL
-                
-    //            print(params)
-                
-                let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-                
-                requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                    
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    
-//                    print(response.request!)
-//                    print(response.result)
-//                    print(response.response!)
-                    self.cleanAllInfo()
-                })
-            }
-            
-            else {
-                
-                print("internet is not working")
-                MBProgressHUD.hide(for: self.view, animated: true)
-                self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+    private func postNewExpenseByImport(importObject: Int, cash: String, comment: String) {
+        let expenseByImport = ExpenseByImport(importObject: importObject, cash: cash, comment: comment)
+        ExpensesNetworkManager.service.createExpenseByImport(expenseByImport: expenseByImport) { (message, error) in
+            if message?.message == "success" {
+                self.cleanAllInfo()
             }
         }
+    }
     
-    private func createNullChechToApi(contrID: Int, fact_money: String, comment: String) {
-                
-                do {
-                    
-                    self.reachability = try Reachability.init()
-                }
-                
-                catch {
-                    
-                    print("unable to start notifier")
-                }
-                
-                if ((reachability?.connection) != .unavailable) {
-                    MBProgressHUD.showAdded(to: self.view, animated: true)
-                    
-                    let token = UserDefaults.standard.string(forKey: userTokenKey) ?? ""
-                    
-                    let headers: HTTPHeaders = [
-                        
-                        "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                        "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-                    ]
-                    
-                    let params: Parameters = [
-                        
-                        "company":contrID,
-                        "fac_money":fact_money.trimmingCharacters(in: .whitespacesAndNewlines),
-                        "comments":comment.trimmingCharacters(in: .whitespacesAndNewlines)
-                        ]
-                    
-                    let encodeURL = importNullCheckURL
-                                        
-                    let requestOfApi = AF.request(encodeURL, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-                    
-                    requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                        
-                        MBProgressHUD.hide(for: self.view, animated: true)
-                        
-    //                    print(response.request!)
-    //                    print(response.result)
-    //                    print(response.response!)
-                        self.cleanAllInfo()
-                    })
-                }
-                
-                else {
-                    
-                    print("internet is not working")
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-                }
+    private func postNewExpenseByContr(contrId: Int, cash: String, comment: String) {
+        let expenseByContr = ExpenseByContr(contragent: contrId, cash: cash, comment: comment)
+        ExpensesNetworkManager.service.createExpenseByContr(expenseByContr: expenseByContr) { (message, error) in
+            if message?.message == "success" {
+                self.cleanAllInfo()
             }
-    
-    
+        }
+    }
 }
-
 
 extension NewKassaExportVC {
     
     private func getCurrentBillInfo() -> OutcomeBill? {
-        
-        
         var currentBill =  OutcomeBill()
         
         let realm = try! Realm()
@@ -243,23 +127,16 @@ extension NewKassaExportVC {
         resulsts = realm.objects(OutcomeBill.self)
 
         if resulsts.last != nil {
-            
             currentBill = resulsts.last!
-            
+            self.importId = currentBill.importId
             return currentBill
-
         }
-        
         else {
-            
             return nil
         }
-        
-                
     }
     
     private func getCurrentContrInfo() -> ExportKassaContragent? {
-        
         var currentContr = ExportKassaContragent()
         
         let realm = try! Realm()
@@ -267,172 +144,120 @@ extension NewKassaExportVC {
         resulsts = realm.objects(ExportKassaContragent.self)
     
         if resulsts.last != nil {
-            
             currentContr = resulsts.last!
-            
+            self.currentContrId = currentContr.contragentId
             return currentContr
         }
-        
         else {
-            
             return nil
         }
-        
     }
     
     private func setupBillValues() {
-        
         let currentBill = getCurrentBillInfo()
         
         if currentBill != nil {
-            
             importNameButton.setTitle(currentBill?.importNubmer, for: .normal)
             contragentButton.setTitle(currentBill?.contragent, for: .normal)
-
             billNumberLabel.text = currentBill?.billNumber
             dateLabel.text = currentBill?.date
-            
-            factMoneyTextField.placeholder = "\(currentBill?.totalMoney ?? 0) тенге"
-            totalSumLabel.text = "\(currentBill?.totalMoney ?? 0) тенге"
-            
-            factMoneyBaseValue = currentBill?.totalMoney ?? 0
-            currentHistoryID = currentBill?.historyID ?? 0
-        
+            factMoneyTextField.placeholder = "\(currentBill?.totalMoney ?? "") тенге"
+            totalSumLabel.text = "\(currentBill?.totalMoney ?? "") тенге"
+            factMoneyBaseValue = currentBill?.totalMoney ?? ""
         }
-        
         clearCurrentBillnfo()
     }
     
     private func clearCurrentBillnfo() {
-        
         let realm = try! Realm()
         var resulsts: Results<OutcomeBill>!
         
         resulsts = realm.objects(OutcomeBill.self)
                 
         for _ in resulsts.enumerated() {
-            
             let bill = resulsts[0]
-            
             try! realm.write {
-                
                 realm.delete(bill)
             }
         }
-//        UserDefaults.standard.set(nil, forKey: currentExportBillInfo)
     }
     
     private func setupZeroBillValues() {
-        
         let currentContr = getCurrentContrInfo()
         
         if currentContr != nil {
-            
             contragentButton.setTitle(currentContr?.contragnetName, for: .normal)
-            
             currentContrId = currentContr?.contragentId ?? 0
-
         }
-        
         clearCurrentContrInfo()
         
     }
     
     private func clearCurrentContrInfo() {
-        
         let realm = try! Realm()
         var resulsts: Results<ExportKassaContragent>!
         
         resulsts = realm.objects(ExportKassaContragent.self)
                 
         for _ in resulsts.enumerated() {
-            
             let bill = resulsts[0]
-            
             try! realm.write {
-                
                 realm.delete(bill)
             }
         }
-        
-        
     }
 }
 
-
 extension NewKassaExportVC {
     
-    
     private func createNewCheck() {
-        
         if factMoneyTextField.text == "" {
-            
             if commentLabel.text == "" {
-                
-                self.createNewCheckToApi(historyID: currentHistoryID, fact_money: "\(factMoneyBaseValue)", comment: "*")
+                self.postNewExpenseByImport(importObject: importId, cash: factMoneyBaseValue, comment: "*")
             }
             
             else {
-                
-                self.createNewCheckToApi(historyID: currentHistoryID, fact_money: "\(factMoneyBaseValue)", comment: commentLabel.text!)
+                self.postNewExpenseByImport(importObject: importId, cash: factMoneyBaseValue, comment: commentLabel.text!)
             }
         }
-        
         else {
-            
             if commentLabel.text == "" {
-                
-                self.createNewCheckToApi(historyID: currentHistoryID, fact_money: factMoneyTextField.text ?? "", comment: "*")
+                self.postNewExpenseByImport(importObject: importId, cash: factMoneyTextField.text ?? "", comment: "*")
             }
-            
             else {
-                
-                self.createNewCheckToApi(historyID: currentHistoryID, fact_money: factMoneyTextField.text ?? "", comment: commentLabel.text!)
+                self.postNewExpenseByImport(importObject: importId, cash: factMoneyTextField.text ?? "", comment: commentLabel.text!)
             }
         }
     }
     
     private func createNullCheck() {
-        
         if factMoneyTextField.text == "" {
-            
             showErrorsAlertWithOneCancelButton(message: "Заполните фактическую сумму")
         }
-        
         else {
-            
             if commentLabel.text == "" {
-                
-                createNullChechToApi(contrID: currentContrId, fact_money: factMoneyTextField.text ?? "", comment: "*")
+                self.postNewExpenseByContr(contrId: currentContrId, cash: factMoneyTextField.text ?? "", comment: "*")
             }
-            
             else {
-                
-                createNullChechToApi(contrID: currentContrId, fact_money: factMoneyTextField.text ?? "", comment: commentLabel.text ?? "")
-
+                self.postNewExpenseByContr(contrId: currentContrId, cash: factMoneyTextField.text ?? "", comment: commentLabel.text ?? "")
             }
         }
         
     }
     
     private func cleanAllInfo() {
-        
         importNameButton.setTitle("Выбрать", for: .normal)
         billNumberLabel.text = "..."
         dateLabel.text = "..."
         contragentButton.setTitle("Выбрать", for: .normal)
         factMoneyTextField.placeholder = "..."
         factMoneyTextField.text = ""
-        factMoneyBaseValue = 0
+        factMoneyBaseValue = "0"
         totalSumLabel.text = "..."
         commentLabel.text = ""
-        
     }
     
     private func generateBillToPrint(number: String, date: String, contr: String, factMoney: String, totalSum: String, comment: String) {
-        
-        
-        
         let ticket = Ticket(
             .plainText("--------------------------------"),
             .plainText("////////////////////////////////"),
@@ -440,14 +265,14 @@ extension NewKassaExportVC {
             .plainText("Data: \(date)"),
             .plainText("fact summa: \(factMoney)"),
             .plainText("summa pokupki: \(totalSum)"),
-            .plainText("---- made in DalaService.kz ----"),
+            .plainText("---- made in dalasoft.kz ----"),
             .plainText("--------------------------------")
             
         )
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let bluetoothPrinterManager = appDelegate.bluetoothPrinterManager
-        
+
         if bluetoothPrinterManager.canPrint {
             bluetoothPrinterManager.print(ticket)
         }
