@@ -79,5 +79,4 @@ extension ContragentListKassaExportListVC {
             realm.add(contr)
         }
     }
-    
 }

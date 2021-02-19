@@ -54,9 +54,7 @@ extension ImportListKassaExportVC: UICollectionViewDelegate, UICollectionViewDat
         let singleImport = importList[indexPath.row]
         
         saveCurrentBillInSystem(importName: "Закуп #\(singleImport.id ?? 0)", billNumber: "Чек #\(singleImport.id ?? 0)", date: singleImport.date ?? "", contragent: singleImport.contragent?.name ?? "", totalMoney: singleImport.cashSum ?? "", importId: singleImport.id!)
-        
     }
-    
 }
 
 extension ImportListKassaExportVC {
@@ -64,8 +62,6 @@ extension ImportListKassaExportVC {
         performSegue(withIdentifier: "fromImportListKassaExportToMainKassaExport", sender: self)
     }
 }
-
-
 
 extension ImportListKassaExportVC {
     
