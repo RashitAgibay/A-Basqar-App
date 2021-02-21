@@ -52,7 +52,7 @@ class MainStoreVC: UIViewController {
     
     @IBAction func tapAddButton(_ sender: Any) {
         
-        self.ShowAlerWithThreeButtons(title: "Выберите действие", storeButton: "Добавить новый склад/магазин", employeeButton: "Добавить новый персонал" )
+        self.showAlerWithThreeButtons(title: "Выберите действие", storeButton: "Добавить новый склад/магазин", employeeButton: "Добавить новый персонал" )
         
     }
     
@@ -84,7 +84,7 @@ class MainStoreVC: UIViewController {
         performSegue(withIdentifier: "fromMStoAE", sender: self)
     }
 
-    func ShowAlerWithThreeButtons(title: String, message: String = "", storeButton: String, employeeButton: String, cancelButton: String = "Отмена") {
+    func showAlerWithThreeButtons(title: String, message: String = "", storeButton: String, employeeButton: String, cancelButton: String = "Отмена") {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let addStoreAction = UIAlertAction(title: storeButton, style: .default) { (alert) in
