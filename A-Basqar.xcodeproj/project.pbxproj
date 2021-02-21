@@ -244,6 +244,9 @@
 		FD9FCB2625BFEDC100E93211 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9FCB2525BFEDC100E93211 /* ApiConstants.swift */; };
 		FDA7930524B4347100239685 /* KassaImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDA7930424B4347100239685 /* KassaImport.storyboard */; };
 		FDA7930724B434DB00239685 /* KassaImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7930624B434DB00239685 /* KassaImportVC.swift */; };
+		FDADF64E25E22B580008B95F /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDADF64D25E22B580008B95F /* ReportModel.swift */; };
+		FDADF65125E233FD0008B95F /* ReportApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDADF65025E233FD0008B95F /* ReportApi.swift */; };
+		FDADF65425E235D40008B95F /* ReportNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDADF65325E235D40008B95F /* ReportNetworkManager.swift */; };
 		FDB63FBD24AB565900525388 /* MainImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB63FBC24AB565900525388 /* MainImportVC.swift */; };
 		FDB63FBF24AB5A8500525388 /* MainImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDB63FBE24AB5A8500525388 /* MainImport.storyboard */; };
 		FDB63FC124AB5E4600525388 /* NewImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB63FC024AB5E4600525388 /* NewImportVC.swift */; };
@@ -625,6 +628,9 @@
 		FD9FCB2525BFEDC100E93211 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
 		FDA7930424B4347100239685 /* KassaImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = KassaImport.storyboard; sourceTree = "<group>"; };
 		FDA7930624B434DB00239685 /* KassaImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KassaImportVC.swift; sourceTree = "<group>"; };
+		FDADF64D25E22B580008B95F /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
+		FDADF65025E233FD0008B95F /* ReportApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportApi.swift; sourceTree = "<group>"; };
+		FDADF65325E235D40008B95F /* ReportNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportNetworkManager.swift; sourceTree = "<group>"; };
 		FDB63FBC24AB565900525388 /* MainImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImportVC.swift; sourceTree = "<group>"; };
 		FDB63FBE24AB5A8500525388 /* MainImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainImport.storyboard; sourceTree = "<group>"; };
 		FDB63FC024AB5E4600525388 /* NewImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImportVC.swift; sourceTree = "<group>"; };
@@ -1156,6 +1162,7 @@
 				FD4BECCC25DA6D9A005611DF /* ManagementApi.swift */,
 				FD861B3925DD26E300C35B15 /* ExpensesApi.swift */,
 				FD437A8525DFD0D300CA3A4A /* IncomesApi.swift */,
+				FDADF65025E233FD0008B95F /* ReportApi.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -1182,6 +1189,7 @@
 				FD4BECD225DA995F005611DF /* ExportModel.swift */,
 				FD861B3625DD246B00C35B15 /* ExpensesModel.swift */,
 				FD437A8225DFCF6C00CA3A4A /* IncomesModel.swift */,
+				FDADF64D25E22B580008B95F /* ReportModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1197,6 +1205,7 @@
 				FD4BECCF25DA717A005611DF /* ManagementNetworkManager.swift */,
 				FD861B3C25DD281600C35B15 /* ExpensesNetworkManager.swift */,
 				FD437A8825DFD29100CA3A4A /* IncomesNetworkManager.swift */,
+				FDADF65325E235D40008B95F /* ReportNetworkManager.swift */,
 			);
 			path = ApiManagers;
 			sourceTree = "<group>";
@@ -1909,6 +1918,7 @@
 				FDD807C1250E4AAD00447B8D /* EditPasswordVC.swift in Sources */,
 				613D7388244F7A2200E0E392 /* BidProductListVC.swift in Sources */,
 				289087E9239A188D001C53C6 /* IncomeKassaCheckCell.swift in Sources */,
+				FDADF64E25E22B580008B95F /* ReportModel.swift in Sources */,
 				288CC48F23A89C38008D5218 /* UIImage+ExtendedCacheData.m in Sources */,
 				288CC49023A89C38008D5218 /* UIImage+ForceDecode.m in Sources */,
 				61F00E87244F2636001D0EEE /* CurrentBidDetailVC.swift in Sources */,
@@ -1933,6 +1943,7 @@
 				288CC48623A89C38008D5218 /* SDWebImageDownloaderRequestModifier.m in Sources */,
 				FD1A4FC425C3D93600716A81 /* ManagementModel.swift in Sources */,
 				FDB63FC124AB5E4600525388 /* NewImportVC.swift in Sources */,
+				FDADF65125E233FD0008B95F /* ReportApi.swift in Sources */,
 				FD861B3D25DD281600C35B15 /* ExpensesNetworkManager.swift in Sources */,
 				28674295238CF50E008884AF /* BuyProductFirstPageCell.swift in Sources */,
 				288CC46323A89C38008D5218 /* NSButton+WebCache.m in Sources */,
@@ -2018,6 +2029,7 @@
 				FD4777B624AFAC8600E323D3 /* ContragentListVC.swift in Sources */,
 				2812AAF62362B45A001D65C8 /* SceneDelegate.swift in Sources */,
 				FD4777BC24AFB3BD00E323D3 /* AddNewContrImportVC.swift in Sources */,
+				FDADF65425E235D40008B95F /* ReportNetworkManager.swift in Sources */,
 				61F00E81244F2363001D0EEE /* BidsHistoryVC.swift in Sources */,
 				288CC47E23A89C38008D5218 /* SDWebImageCacheKeyFilter.m in Sources */,
 				288CC49A23A89C38008D5218 /* MKAnnotationView+WebCache.m in Sources */,

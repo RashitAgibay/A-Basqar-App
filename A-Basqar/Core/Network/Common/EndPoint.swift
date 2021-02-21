@@ -68,4 +68,9 @@ struct EndPoint {
         static let createIncomeByExport = "/api/kassa/create_new_income_export"
         static let createIncomeByContr = "/api/kassa/create_new_income_contr" 
     }
+    
+    struct Report {
+        static let getCash = "/api/report/cash_report"
+        static let getProcuts = "/api/report/prod_report"
+    }
 }
