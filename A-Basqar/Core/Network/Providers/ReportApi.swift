@@ -27,9 +27,9 @@ extension ReportApi: BaseApiDelegate {
     var method: Moya.Method {
         switch self {
         case .getCashReport:
-            return .get
+            return .post
         case .getProductReport:
-            return .get
+            return .post
         }
     }
     

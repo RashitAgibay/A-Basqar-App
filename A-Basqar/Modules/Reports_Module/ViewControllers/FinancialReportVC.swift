@@ -26,8 +26,7 @@ class FinancialReportVC: DefaultVC, UICollectionViewDataSource, UICollectionView
     var endDateString: String = ""
     
     private var datePicker: UIDatePicker?
-    
-    var report_list: NSArray = []
+    var cashReport = CashReport()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +50,11 @@ class FinancialReportVC: DefaultVC, UICollectionViewDataSource, UICollectionView
         if #available(iOS 13.4, *) {
             datePicker?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 250.0)
             datePicker?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 250.0)
-            datePicker?.preferredDatePickerStyle = .wheels
+            if #available(iOS 14.0, *) {
+                datePicker?.preferredDatePickerStyle = .wheels
+            } else {
+                datePicker?.preferredDatePickerStyle = .wheels
+            }
         }
     }
     
@@ -99,19 +102,20 @@ class FinancialReportVC: DefaultVC, UICollectionViewDataSource, UICollectionView
         endDateString = formatter.string(from: endDatePlusOneDay)
     }
     
-    
     @IBAction func tappedSendButton(_ sender: Any) {
         getCashReport()
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return report_list.count
+        if cashReport.totalBalance != nil {
+            return 1
+        }
+        else {
+            return 0
+        }
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reportsCell", for: indexPath) as! ReportsCell
         
         cell.contentView.layer.cornerRadius = 10
@@ -121,113 +125,28 @@ class FinancialReportVC: DefaultVC, UICollectionViewDataSource, UICollectionView
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
         
-        let eachReport  = report_list[indexPath.row] as! NSDictionary
-        
-        let start_balance = eachReport["old_money"] as! Int
-        let outcome_money = eachReport["import_money"] as! Int
-        let income_money = eachReport["export_money"] as! Int
-        let end_balance = eachReport["next_money"] as! Int
-        let date = eachReport["add_time"] as! String
-        
-        cell.financialStartBalanceLabel.text = "\(start_balance)"
-        cell.financialIncomeLabel.text = "\(income_money)"
-        cell.financialExpensesLabel.text = "\(outcome_money)"
-        cell.financialEndBalanceLabel.text = "\(end_balance)"
-        
-        
+        if cashReport.totalBalance != nil {
+            cell.financialStartBalanceLabel.text = "\(cashReport.totalStartBalance ?? 0) тг"
+            cell.financialIncomeLabel.text = "\(cashReport.totalIncome ?? 0) тг"
+            cell.financialExpensesLabel.text = "\(cashReport.totalExpense ?? 0) тг"
+            cell.financialEndBalanceLabel.text = "\(cashReport.totalBalance ?? 0) тг"
+        }
         return cell
     }
 
     func desingComponents() {
-        
         cardView.layer.cornerRadius = 20
         cardView.dropShadow()
-        
         startTextField.layer.cornerRadius = 20
         endTextField.layer.cornerRadius = 20
-        
         sendButton.layer.cornerRadius = 20
         sendButton.dropShadowforButton()
        }
     
     private func getCashReport() {
-        print("/// \(startDateString) \(endDateString)")
+        ReportNetworkManager.service.getCashReport(dates: ReportDate(startDate: startDateString, endDate: endDateString)) { (cashReport, error) in
+            self.cashReport = cashReport ?? CashReport()
+            self.collectionVIew.reloadData()
+        }
     }
 }
-
-extension FinancialReportVC {
-    
-//    func get_goods_report_api() {
-//
-//        do {
-//            reachability = try Reachability.init()
-//        }
-//
-//        catch {
-//
-//        }
-//
-//        if ((reachability!.connection) != .unavailable){
-//
-//            MBProgressHUD.showAdded(to: self.view, animated: true)
-//
-//            //MARK: - Токенді optional түрден String типіне алып келу керек, әйтпесе токен дұрыс жіберілмейді.
-//            let token = UserDefaults.standard.string(forKey: userTokenKey) ?? ""
-//
-//            let headers: HTTPHeaders = [
-//
-//                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-//                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-//            ]
-//
-//
-//            let encodeURL = financialReportURL + "?start_date=\(startDateString)&end_date=\(endDateString)"
-//
-////            debug_print(message: "full url", object: encodeURL + "?start_date=\(startDateString)&end_date=\(endDateString)")
-//
-//            let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-//
-//            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-//
-//                print(response.request)
-//                print(response.result)
-//                print(response.response)
-//
-//                switch response.result {
-//
-//                case .success(let payload):
-//
-//                    MBProgressHUD.hide(for: self.view, animated: true)
-//
-//                    if let x = payload as? Dictionary<String,AnyObject> {
-//
-//                    }
-//
-//                    else {
-//
-//                        let resultValue = payload as! NSArray
-//                        self.report_list = resultValue as! NSArray
-//                        self.collectionVIew.reloadData()
-//
-//
-//
-//                    }
-//
-//                case .failure(let error):
-//                    print(error)
-//                    MBProgressHUD.hide(for: self.view, animated: true)
-//                    self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-//                }
-//            })
-//        }
-//
-//        else {
-//
-//            //print("internet is not working")
-//            MBProgressHUD.hide(for: self.view, animated: true)
-//            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-//        }
-//    }
-//
-}
-
