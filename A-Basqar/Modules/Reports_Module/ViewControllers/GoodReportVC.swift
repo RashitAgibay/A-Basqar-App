@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 
-
 class GoodReportVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDelegate  {
 
     @IBOutlet weak var cardview: UIView!
@@ -17,7 +16,6 @@ class GoodReportVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDeleg
     @IBOutlet weak var startDateTextField: UITextField!
     @IBOutlet weak var endDateTextField: UITextField!
     @IBOutlet weak var sendButton: UIButton!
-    
     
     var startDate = Date()
     var endDate = Date()
@@ -28,13 +26,12 @@ class GoodReportVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDeleg
     var startDateString: String = ""
     var endDateString: String = ""
     
-    var reports_list: NSArray = []
+    var reportProducts = [ProductReport]()
     
     private var datePicker: UIDatePicker?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         desingComponents()
         
         datePicker  = UIDatePicker()
@@ -52,12 +49,18 @@ class GoodReportVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDeleg
         startDateTextField.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(changeStartDate))
         endDateTextField.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(changeEndingDate))
         
+        if #available(iOS 13.4, *) {
+            datePicker?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 250.0)
+            datePicker?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 250.0)
+            if #available(iOS 14.0, *) {
+                datePicker?.preferredDatePickerStyle = .wheels
+            } else {
+                datePicker?.preferredDatePickerStyle = .wheels
+            }
+        }
     }
     
-    
     func makeStartDateTextFiledsDate() {
-        
-        
         let date = Date()
         startDate = date
         startDateMinusOneDay = Calendar.current.date(byAdding: .day, value: 0, to: startDate)!
@@ -67,13 +70,9 @@ class GoodReportVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDeleg
         
         startDateTextField.text = formatter.string(from: startDate)
         startDateString = formatter.string(from: startDateMinusOneDay)
-        
     }
     
-    
     func makeEndDateTextFiledsDate() {
-        
-        
         let date = Date()
         endDate = date
         endDatePlusOneDay = Calendar.current.date(byAdding: .day, value: 1, to: endDate)!
@@ -83,11 +82,9 @@ class GoodReportVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDeleg
         
         endDateTextField.text = formatter.string(from: endDate)
         endDateString = formatter.string(from: endDatePlusOneDay)
-        
     }
 
     @objc func changeStartDate (){
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         startDateTextField.text = formatter.string(from: datePicker!.date)
@@ -95,11 +92,9 @@ class GoodReportVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDeleg
         startDate = datePicker!.date
         startDateMinusOneDay = Calendar.current.date(byAdding: .day, value: 0, to: startDate)!
         startDateString = formatter.string(from: startDateMinusOneDay)
-        
     }
     
     @objc func changeEndingDate (){
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         endDateTextField.text = formatter.string(from: datePicker!.date)
@@ -107,16 +102,14 @@ class GoodReportVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDeleg
         endDate = datePicker!.date
         endDatePlusOneDay = Calendar.current.date(byAdding: .day, value: 1, to: endDate)!
         endDateString = formatter.string(from: endDatePlusOneDay)
-        
     }
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return reports_list.count
+        return reportProducts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reportsCell", for: indexPath) as! ReportsCell
         
         cell.contentView.layer.cornerRadius = 10
@@ -126,136 +119,33 @@ class GoodReportVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDeleg
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
         
-        let each_reports = reports_list[indexPath.row] as! NSDictionary
-
-        let good_name = each_reports["goods_name"] as! String
-        let start_balance = each_reports["old_goods"] as! Int
-        let todays_income_balance = each_reports["import_goods"] as! Int
-        let todays_export_balance = each_reports["export_goods"] as! Int
-        let end_balance = each_reports["next_goods"] as! Int
-        let date = each_reports["add_time"] as! String
-        
-        cell.nameLabel.text = good_name
-//        cell.financialDateReportLabel.text = date
-        cell.financialStartBalanceLabel.text = "\(start_balance)"
-        cell.financialIncomeLabel.text = "\(todays_income_balance)"
-        cell.financialExpensesLabel.text = "\(todays_export_balance)"
-        cell.financialEndBalanceLabel.text = "\(end_balance)"
-        
+        let currentReport = reportProducts[indexPath.row]
+        cell.nameLabel.text = currentReport.name
+        cell.financialStartBalanceLabel.text = currentReport.startCount
+        cell.financialEndBalanceLabel.text = currentReport.endCount
+        cell.financialIncomeLabel.text = currentReport.importCount
+        cell.financialExpensesLabel.text = currentReport.exportCount
         
         return cell
     }
     
     @IBAction func tappedSendButton(_ sender: Any) {
-        
-        
-         get_goods_report_api()
-//        debug_print(message: "here is a start date", object: startDateString)
-//        debug_print(message: "here is a end date", object: endDateString)
+        getReportProducts()
     }
-    
     
     func desingComponents() {
         cardview.layer.cornerRadius = 20
         cardview.dropShadow()
-        
         startDateTextField.layer.cornerRadius = 20
         endDateTextField.layer.cornerRadius = 20
-        
         sendButton.layer.cornerRadius = 20
         sendButton.dropShadowforButton()
     }
-}
-
-extension GoodReportVC {
     
-    func get_goods_report_api() {
-        
-        do {
-            reachability = try Reachability.init()
+    private func getReportProducts() {
+        ReportNetworkManager.service.getProductsReport(dates: ReportDate(startDate: startDateString, endDate: endDateString)) { (reportProds, error) in
+            self.reportProducts = reportProds ?? [ProductReport]()
+            self.collectionView.reloadData()
         }
-        
-        catch {
-        
-        }
-        
-        if ((reachability!.connection) != .unavailable){
-            
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            //MARK: - Токенді optional түрден String типіне алып келу керек, әйтпесе токен дұрыс жіберілмейді.
-            let token = UserDefaults.standard.string(forKey: userTokenKey) ?? ""
-            
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-            ]
-            
-            
-            let encodeURL = goodsReportURL + "?start_date=\(startDateString)&end_date=\(endDateString)"
-            
-
-            
-            let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-            
-            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                
-                print(response.request)
-                print(response.result)
-                print(response.response)
-                
-                switch response.result {
-                
-                case .success(let payload):
-                    
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    
-                    if let x = payload as? Dictionary<String,AnyObject> {
-                    
-                    }
-                    
-                    else {
-                        
-                        let resultValue = payload as! NSArray
-                        self.reports_list = resultValue as! NSArray
-                        self.collectionView.reloadData()
-                    
-                    }
-                
-                case .failure(let error):
-                    print(error)
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-                }
-            })
-        }
-        
-        else {
-            
-            //print("internet is not working")
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
-    
-    func ShowErrorsAlertWithOneCancelButton(title: String, message: String, buttomMessage: String) {
-        
-         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-                   let action = UIAlertAction(title: buttomMessage, style: .cancel) { (action) in
-                       
-                   }
-                   alertController.addAction(action)
-                   self.present(alertController,animated: true, completion: nil)
-    }
-    
-    func ShowErrorsAlertWithOneCancelButton(message: String) {
-        
-         let alertController = UIAlertController(title: "Ошибка", message: message, preferredStyle: .alert)
-                   let action = UIAlertAction(title: "Закрыть", style: .cancel) { (action) in
-                       
-                   }
-                   alertController.addAction(action)
-                   self.present(alertController,animated: true, completion: nil)
     }
 }
