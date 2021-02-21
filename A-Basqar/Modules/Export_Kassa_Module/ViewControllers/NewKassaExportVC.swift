@@ -11,7 +11,6 @@ import RealmSwift
 import Printer
 import Alamofire
 
-
 class NewKassaExportVC: DefaultVC {
 
     @IBOutlet weak var cardView: UIView!
@@ -27,7 +26,7 @@ class NewKassaExportVC: DefaultVC {
     
     private var factMoneyBaseValue = String()
     private var importId = Int()
-    private var currentContrId = Int()
+    private var contrId = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +43,7 @@ class NewKassaExportVC: DefaultVC {
             if importId != 0 {
                 createNewCheck()
             }
-            if currentContrId != 0 {
+            if contrId != 0 {
                 createNullCheck()
             }
             var factSumm = String()
@@ -100,7 +99,6 @@ class NewKassaExportVC: DefaultVC {
     
     private func postNewExpenseByImport(importObject: Int, cash: String, comment: String) {
         let expenseByImport = ExpenseByImport(importObject: importObject, cash: cash, comment: comment)
-        print("/// expenseByImport:", expenseByImport)
         ExpensesNetworkManager.service.createExpenseByImport(expenseByImport: expenseByImport) { (message, error) in
             if message?.message == "success" {
                 self.cleanAllInfo()
@@ -146,7 +144,7 @@ extension NewKassaExportVC {
     
         if resulsts.last != nil {
             currentContr = resulsts.last!
-            self.currentContrId = currentContr.contragentId
+            self.contrId = currentContr.contragentId
             return currentContr
         }
         else {
@@ -188,10 +186,9 @@ extension NewKassaExportVC {
         
         if currentContr != nil {
             contragentButton.setTitle(currentContr?.contragnetName, for: .normal)
-            currentContrId = currentContr?.contragentId ?? 0
+            contrId = currentContr?.contragentId ?? 0
         }
         clearCurrentContrInfo()
-        
     }
     
     private func clearCurrentContrInfo() {
@@ -237,13 +234,12 @@ extension NewKassaExportVC {
         }
         else {
             if commentLabel.text == "" {
-                self.postNewExpenseByContr(contrId: currentContrId, cash: factMoneyTextField.text ?? "", comment: "*")
+                self.postNewExpenseByContr(contrId: contrId, cash: factMoneyTextField.text ?? "", comment: "*")
             }
             else {
-                self.postNewExpenseByContr(contrId: currentContrId, cash: factMoneyTextField.text ?? "", comment: commentLabel.text ?? "")
+                self.postNewExpenseByContr(contrId: contrId, cash: factMoneyTextField.text ?? "", comment: commentLabel.text ?? "")
             }
         }
-        
     }
     
     private func cleanAllInfo() {

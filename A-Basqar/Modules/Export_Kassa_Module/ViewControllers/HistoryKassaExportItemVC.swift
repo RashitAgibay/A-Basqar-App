@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 
-
 class HistoryKassaExportItemVC: DefaultVC {
 
     @IBOutlet weak var cardView: UIView!
@@ -37,19 +36,16 @@ class HistoryKassaExportItemVC: DefaultVC {
         cardView.layer.cornerRadius = 10
         cardView.layer.backgroundColor = UIColor.white.cgColor
         cardView.dropShadow()
-        
         contragentButton.layer.cornerRadius = 10
         contragentButton.layer.backgroundColor = UIColor.white.cgColor
         contragentButton.layer.borderWidth = 1
         contragentButton.layer.borderColor = hexStringToUIColor(hex: "#3F639D").cgColor
         contragentButton.isUserInteractionEnabled = false
-        
         factMoneyTextField.layer.cornerRadius = 10
         factMoneyTextField.layer.borderWidth = 1
         factMoneyTextField.layer.backgroundColor = UIColor.white.cgColor
         factMoneyTextField.layer.borderColor = hexStringToUIColor(hex: "#3F639D").cgColor
         factMoneyTextField.isUserInteractionEnabled = false
-        
         commentLabel.isUserInteractionEnabled = false
       }
     

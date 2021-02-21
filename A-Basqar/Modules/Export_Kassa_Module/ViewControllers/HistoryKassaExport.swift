@@ -64,9 +64,7 @@ extension HistoryKassaExport: UICollectionViewDelegate, UICollectionViewDataSour
         let singleExpense = histories[indexPath.row]
         self.checkId = singleExpense.id!
         self.navigateToHistoryKassaItem()
-        
     }
-    
 }
 
 extension HistoryKassaExport {

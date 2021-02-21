@@ -14,17 +14,13 @@ class MainReportPageVC: UIViewController {
     @IBOutlet weak var firstPage: UIView!
     @IBOutlet weak var secondPage: UIView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         segmentView.setupSimpleView()
     }
     
     @IBAction func switchSegment(_ sender: UISegmentedControl) {
-        
         segmentView.changeUnderlinePosition()
-        
         switch sender.selectedSegmentIndex {
         case 0:
             firstPage.alpha  = 0
@@ -37,9 +33,5 @@ class MainReportPageVC: UIViewController {
         default:
             break
         }
-        
     }
-    
-   
-
 }

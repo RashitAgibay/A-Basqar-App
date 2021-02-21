@@ -47,7 +47,7 @@ extension ExpencesApi: BaseApiDelegate {
         switch self {
         case .getExpensesHistory:
             return .requestPlain
-        case .getExpenseHistoryItem(let historyId):
+        case .getExpenseHistoryItem:
             return .requestPlain
         case .createCheckByImport(let expenseByImport):
             return .requestJSONEncodable(expenseByImport)
