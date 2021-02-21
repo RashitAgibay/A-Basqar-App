@@ -7,11 +7,8 @@
 //
 
 import UIKit
-import Alamofire
-
 
 class FinancialReportVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDelegate {
-    
 
     @IBOutlet weak var collectionVIew: UICollectionView!
     @IBOutlet weak var cardView: UIView!
@@ -34,7 +31,6 @@ class FinancialReportVC: DefaultVC, UICollectionViewDataSource, UICollectionView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         desingComponents()
         
         datePicker  = UIDatePicker()
@@ -46,21 +42,20 @@ class FinancialReportVC: DefaultVC, UICollectionViewDataSource, UICollectionView
         startTextField.inputView = datePicker
         endTextField.inputView = datePicker
         
-        
         makeStartDateTextFiledsDate()
         makeEndDateTextFiledsDate()
         
         startTextField.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(changeStartDate))
         endTextField.keyboardToolbar.doneBarButton.setTarget(self, action: #selector(changeEndingDate))
         
+        if #available(iOS 13.4, *) {
+            datePicker?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 250.0)
+            datePicker?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 250.0)
+            datePicker?.preferredDatePickerStyle = .wheels
+        }
     }
     
-    
-    
-
     func makeStartDateTextFiledsDate() {
-        
-        
         let date = Date()
         startDate = date
         startDateMinusOneDay = Calendar.current.date(byAdding: .day, value: 0, to: startDate)!
@@ -70,13 +65,9 @@ class FinancialReportVC: DefaultVC, UICollectionViewDataSource, UICollectionView
         
         startTextField.text = formatter.string(from: startDate)
         startDateString = formatter.string(from: startDateMinusOneDay)
-        
     }
     
-    
     func makeEndDateTextFiledsDate() {
-        
-        
         let date = Date()
         endDate = date
         endDatePlusOneDay = Calendar.current.date(byAdding: .day, value: 1, to: endDate)!
@@ -86,11 +77,9 @@ class FinancialReportVC: DefaultVC, UICollectionViewDataSource, UICollectionView
         
         endTextField.text = formatter.string(from: endDate)
         endDateString = formatter.string(from: endDatePlusOneDay)
-        
     }
 
     @objc func changeStartDate (){
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         startTextField.text = formatter.string(from: datePicker!.date)
@@ -98,11 +87,9 @@ class FinancialReportVC: DefaultVC, UICollectionViewDataSource, UICollectionView
         startDate = datePicker!.date
         startDateMinusOneDay = Calendar.current.date(byAdding: .day, value: 0, to: startDate)!
         startDateString = formatter.string(from: startDateMinusOneDay)
-        
     }
     
     @objc func changeEndingDate (){
-        
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         endTextField.text = formatter.string(from: datePicker!.date)
@@ -110,14 +97,13 @@ class FinancialReportVC: DefaultVC, UICollectionViewDataSource, UICollectionView
         endDate = datePicker!.date
         endDatePlusOneDay = Calendar.current.date(byAdding: .day, value: 1, to: endDate)!
         endDateString = formatter.string(from: endDatePlusOneDay)
-        
     }
     
     
     @IBAction func tappedSendButton(_ sender: Any) {
-        
-        get_goods_report_api()
+        getCashReport()
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return report_list.count
@@ -164,81 +150,84 @@ class FinancialReportVC: DefaultVC, UICollectionViewDataSource, UICollectionView
         sendButton.dropShadowforButton()
        }
     
+    private func getCashReport() {
+        print("/// \(startDateString) \(endDateString)")
+    }
 }
 
 extension FinancialReportVC {
     
-    func get_goods_report_api() {
-        
-        do {
-            reachability = try Reachability.init()
-        }
-        
-        catch {
-        
-        }
-        
-        if ((reachability!.connection) != .unavailable){
-            
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            //MARK: - Токенді optional түрден String типіне алып келу керек, әйтпесе токен дұрыс жіберілмейді.
-            let token = UserDefaults.standard.string(forKey: userTokenKey) ?? ""
-
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-            ]
-            
-            
-            let encodeURL = financialReportURL + "?start_date=\(startDateString)&end_date=\(endDateString)"
-            
-//            debug_print(message: "full url", object: encodeURL + "?start_date=\(startDateString)&end_date=\(endDateString)")
-            
-            let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-            
-            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
-                
-                print(response.request)
-                print(response.result)
-                print(response.response)
-                
-                switch response.result {
-                
-                case .success(let payload):
-                    
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    
-                    if let x = payload as? Dictionary<String,AnyObject> {
-                    
-                    }
-                    
-                    else {
-                        
-                        let resultValue = payload as! NSArray
-                        self.report_list = resultValue as! NSArray
-                        self.collectionVIew.reloadData()
-                        
-                        
-                    
-                    }
-                
-                case .failure(let error):
-                    print(error)
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-                }
-            })
-        }
-        
-        else {
-            
-            //print("internet is not working")
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
-    
+//    func get_goods_report_api() {
+//
+//        do {
+//            reachability = try Reachability.init()
+//        }
+//
+//        catch {
+//
+//        }
+//
+//        if ((reachability!.connection) != .unavailable){
+//
+//            MBProgressHUD.showAdded(to: self.view, animated: true)
+//
+//            //MARK: - Токенді optional түрден String типіне алып келу керек, әйтпесе токен дұрыс жіберілмейді.
+//            let token = UserDefaults.standard.string(forKey: userTokenKey) ?? ""
+//
+//            let headers: HTTPHeaders = [
+//
+//                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
+//                "Authorization":"JWT \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
+//            ]
+//
+//
+//            let encodeURL = financialReportURL + "?start_date=\(startDateString)&end_date=\(endDateString)"
+//
+////            debug_print(message: "full url", object: encodeURL + "?start_date=\(startDateString)&end_date=\(endDateString)")
+//
+//            let requestOfApi = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
+//
+//            requestOfApi.responseJSON(completionHandler: {(response)-> Void in
+//
+//                print(response.request)
+//                print(response.result)
+//                print(response.response)
+//
+//                switch response.result {
+//
+//                case .success(let payload):
+//
+//                    MBProgressHUD.hide(for: self.view, animated: true)
+//
+//                    if let x = payload as? Dictionary<String,AnyObject> {
+//
+//                    }
+//
+//                    else {
+//
+//                        let resultValue = payload as! NSArray
+//                        self.report_list = resultValue as! NSArray
+//                        self.collectionVIew.reloadData()
+//
+//
+//
+//                    }
+//
+//                case .failure(let error):
+//                    print(error)
+//                    MBProgressHUD.hide(for: self.view, animated: true)
+//                    self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+//                }
+//            })
+//        }
+//
+//        else {
+//
+//            //print("internet is not working")
+//            MBProgressHUD.hide(for: self.view, animated: true)
+//            self.showErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
+//        }
+//    }
+//
 }
 
