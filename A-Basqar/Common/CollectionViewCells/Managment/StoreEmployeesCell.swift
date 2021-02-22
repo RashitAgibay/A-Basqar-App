@@ -11,7 +11,6 @@ import UIKit
 protocol StoreEmployeesCellDelegate {
     
     func tapEditButton(cell: StoreEmployeesCell, id: Int)
-    
     func tapDeleteButton(cell: StoreEmployeesCell, id: Int)
 }
 
@@ -41,7 +40,7 @@ class StoreEmployeesCell: UICollectionViewCell {
         self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.contentView.layer.cornerRadius).cgPath
         
         self.imageView.layer.cornerRadius = 30
-        self.editButton.layer.cornerRadius = 10
+//        self.editButton.layer.cornerRadius = 10
         
         
     }

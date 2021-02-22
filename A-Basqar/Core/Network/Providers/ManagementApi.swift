@@ -15,6 +15,7 @@ enum ManagementApi {
     case editContrData(contr: ContrSending)
     case getUserStores
     case getCompanyUsers
+    case getExactStoreUser(storeId: Int)
 }
 
 extension ManagementApi: BaseApiDelegate {
@@ -30,6 +31,8 @@ extension ManagementApi: BaseApiDelegate {
             return EndPoint.Managment.userStores
         case .getCompanyUsers:
             return EndPoint.Managment.getCompanyAllUsers
+        case .getExactStoreUser(let storeId):
+            return EndPoint.Managment.storeUsers + "\(storeId)"
         }
     }
     
@@ -45,6 +48,8 @@ extension ManagementApi: BaseApiDelegate {
             return .get
         case .getCompanyUsers:
             return .get
+        case .getExactStoreUser:
+            return .get
         }
     }
     
@@ -59,6 +64,8 @@ extension ManagementApi: BaseApiDelegate {
         case .getUserStores:
             return .requestPlain
         case .getCompanyUsers:
+            return .requestPlain
+        case .getExactStoreUser:
             return .requestPlain
         }
     }    
