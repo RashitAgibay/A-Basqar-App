@@ -39,8 +39,8 @@ class StoresVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDelegate,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let singleStore = stores[indexPath.row]
-        self.storeId = singleStore.id
-        self.storeName = singleStore.name
+        self.storeId = singleStore.id ?? Int()
+        self.storeName = singleStore.name ?? String()
         self.navigateToStoresEmployees()
     }
     

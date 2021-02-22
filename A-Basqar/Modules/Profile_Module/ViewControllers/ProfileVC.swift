@@ -55,7 +55,7 @@ extension ProfileVC {
         profileNetworkManager.getProfileInfo { (userProfileData, error) in
             MBProgressHUD.hide(for: self.view, animated: true)
             self.fullnameLabel.text = userProfileData?.fullname
-            self.businessNameLabel.text = userProfileData?.store.company.name
+            self.businessNameLabel.text = userProfileData?.store.company?.name
             self.idLabel.text = userProfileData?.status
             self.username.text = userProfileData?.username
             self.userIdLabel.text = "\(userProfileData?.id as! Int)"

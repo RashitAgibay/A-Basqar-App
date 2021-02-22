@@ -16,6 +16,7 @@ enum ManagementApi {
     case getUserStores
     case getCompanyUsers
     case getExactStoreUser(storeId: Int)
+    case createNewStore(storeName: Store)
 }
 
 extension ManagementApi: BaseApiDelegate {
@@ -33,6 +34,8 @@ extension ManagementApi: BaseApiDelegate {
             return EndPoint.Managment.getCompanyAllUsers
         case .getExactStoreUser(let storeId):
             return EndPoint.Managment.storeUsers + "\(storeId)"
+        case .createNewStore:
+            return EndPoint.Managment.newStore
         }
     }
     
@@ -50,6 +53,8 @@ extension ManagementApi: BaseApiDelegate {
             return .get
         case .getExactStoreUser:
             return .get
+        case .createNewStore:
+            return .post
         }
     }
     
@@ -67,6 +72,8 @@ extension ManagementApi: BaseApiDelegate {
             return .requestPlain
         case .getExactStoreUser:
             return .requestPlain
+        case .createNewStore(let storeName):
+            return .requestJSONEncodable(storeName)
         }
     }    
 }
