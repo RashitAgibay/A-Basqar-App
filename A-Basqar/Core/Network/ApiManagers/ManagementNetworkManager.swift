@@ -19,6 +19,7 @@ protocol ManagementNetworkable {
     func getCompanyAllUsers(completion: @escaping ([UserProfile]?, Error?) -> ())
     func getExactStoreUsers(storeId: Int, completion: @escaping ([UserProfile]?, Error?) -> ())
     func createNewStore(store: Store, completion: @escaping (CommonApiResponse?, Error?) -> ())
+    func editStoreName(storeId: Int, storeName: Store, completion: @escaping (CommonApiResponse?, Error?) -> ())
 }
 
 class ManagementNetworkManager: ManagementNetworkable {
@@ -136,6 +137,23 @@ class ManagementNetworkManager: ManagementNetworkable {
                     completion(message, nil)
                 }
                 catch let error {
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+    func editStoreName(storeId: Int, storeName: Store, completion: @escaping (CommonApiResponse?, Error?) -> ()) {
+        provider.request(.editStore(storeId: storeId, storeName: storeName)) { (result) in
+            switch result {
+            case .success(let respone):
+                do {
+                    let message = try JSONDecoder().decode(CommonApiResponse.self, from: respone.data)
+                    completion(message, nil)
+                }
+                catch {
                     completion(nil, error)
                 }
             case .failure(let error):

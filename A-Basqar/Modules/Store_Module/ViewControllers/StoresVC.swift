@@ -34,6 +34,7 @@ class StoresVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDelegate,
         let singleStore = stores[indexPath.row]
         cell.storeNameLabel.text = singleStore.name
         cell.delegate = self
+        cell.storeID = singleStore.id ?? 0
         return cell
     }
     
@@ -45,6 +46,7 @@ class StoresVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDelegate,
     }
     
     func tapEditButton(cell: StoreCell, id: Int) {
+        storeId = id
         self.navigateToEditStore()
     }
 
@@ -70,6 +72,12 @@ class StoresVC: DefaultVC, UICollectionViewDataSource, UICollectionViewDelegate,
                 let destVC = navigationVC.topViewController as? StoresEmployeesVC {
                 destVC.storeId = storeId
                 destVC.nameOfStore = storeName
+            }
+        }
+        if segue.identifier == "fromStoES" {
+            if let navigationVC = segue.destination as? UINavigationController,
+                let destVC = navigationVC.topViewController as? EditStoreVC {
+                destVC.storeId = storeId
             }
         }
     }
