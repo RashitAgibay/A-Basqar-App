@@ -10,9 +10,9 @@ import Foundation
 
 // Getting
 struct Store: Codable {
-    var id: Int
-    var company: Company
-    var name: String
+    var id: Int?
+    var company: Company?
+    var name: String?
     
     enum CodingKeys: String, CodingKey {
         case id = "store_id"

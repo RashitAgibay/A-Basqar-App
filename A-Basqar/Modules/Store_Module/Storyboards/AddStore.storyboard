@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U0T-fv-OAj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="U0T-fv-OAj">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ywl-DT-1io">
-                                <rect key="frame" x="20" y="154" width="335" height="160"/>
+                                <rect key="frame" x="20" y="154" width="335" height="90"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Название..." textAlignment="natural" minimumFontSize="17" background="Line_for_TextField" translatesAutoresizingMaskIntoConstraints="NO" id="RFd-cN-rd5">
                                         <rect key="frame" x="10" y="30" width="315" height="40"/>
@@ -33,32 +34,17 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efM-FC-iKb">
-                                        <rect key="frame" x="10" y="90" width="315" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="niO-pA-0RU"/>
-                                        </constraints>
-                                        <state key="normal" title="   Добавить изображение" image="camera">
-                                            <color key="titleColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tapAddImageButton:" destination="Q42-Io-gPh" eventType="touchUpInside" id="XMr-wd-Nim"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <constraints>
-                                    <constraint firstItem="efM-FC-iKb" firstAttribute="leading" secondItem="ywl-DT-1io" secondAttribute="leading" constant="10" id="2y9-5E-GvW"/>
                                     <constraint firstItem="RFd-cN-rd5" firstAttribute="top" secondItem="ywl-DT-1io" secondAttribute="top" constant="30" id="7GN-cf-5Dd"/>
-                                    <constraint firstItem="efM-FC-iKb" firstAttribute="top" secondItem="RFd-cN-rd5" secondAttribute="bottom" constant="20" id="Lnb-tv-Cni"/>
                                     <constraint firstItem="RFd-cN-rd5" firstAttribute="leading" secondItem="ywl-DT-1io" secondAttribute="leading" constant="10" id="U0P-29-v9o"/>
-                                    <constraint firstAttribute="bottom" secondItem="efM-FC-iKb" secondAttribute="bottom" constant="20" id="aaD-8Y-Own"/>
+                                    <constraint firstAttribute="bottom" secondItem="RFd-cN-rd5" secondAttribute="bottom" constant="20" id="n6V-d8-wGO"/>
                                     <constraint firstAttribute="trailing" secondItem="RFd-cN-rd5" secondAttribute="trailing" constant="10" id="o0i-Ot-TAs"/>
-                                    <constraint firstAttribute="trailing" secondItem="efM-FC-iKb" secondAttribute="trailing" constant="10" id="yns-CH-fGK"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzc-IB-Mgd">
-                                <rect key="frame" x="20" y="334" width="335" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzc-IB-Mgd">
+                                <rect key="frame" x="20" y="264" width="335" height="45"/>
                                 <color key="backgroundColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="zYt-zu-kgW"/>
@@ -73,7 +59,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="iiT-Lj-5pt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="iiT-Lj-5pt" firstAttribute="trailing" secondItem="dlW-qM-Uk1" secondAttribute="trailing" constant="20" id="0B0-IU-w6k"/>
                             <constraint firstItem="dlW-qM-Uk1" firstAttribute="top" secondItem="iiT-Lj-5pt" secondAttribute="top" constant="40" id="KWI-YU-0Qe"/>
@@ -86,22 +73,22 @@
                             <constraint firstItem="Qzc-IB-Mgd" firstAttribute="top" secondItem="ywl-DT-1io" secondAttribute="bottom" constant="20" id="wlY-06-7Br"/>
                             <constraint firstItem="dlW-qM-Uk1" firstAttribute="leading" secondItem="iiT-Lj-5pt" secondAttribute="leading" constant="20" id="y9v-Xc-Mk0"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="iiT-Lj-5pt"/>
                     </view>
                     <navigationItem key="navigationItem" id="MFB-qt-XPe">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="back" id="RHm-6V-2Mj">
                             <color key="tintColor" red="0.65843504669999997" green="0.65854781870000001" blue="0.65842014550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <segue destination="4z1-RL-V1y" kind="presentation" modalPresentationStyle="fullScreen" id="qtL-L5-yZ2"/>
+                                <action selector="tapBackButton:" destination="Q42-Io-gPh" id="msn-E2-WZa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
-                        <outlet property="addImageButton" destination="efM-FC-iKb" id="jUJ-tm-gCJ"/>
+                        <outlet property="backButton" destination="RHm-6V-2Mj" id="eiL-pl-O5m"/>
                         <outlet property="cardView" destination="ywl-DT-1io" id="4fy-Dw-zkJ"/>
                         <outlet property="fullnameTextField" destination="RFd-cN-rd5" id="oEn-7Y-qlx"/>
                         <outlet property="saveButton" destination="Qzc-IB-Mgd" id="yhD-GW-gKi"/>
+                        <segue destination="4z1-RL-V1y" kind="presentation" identifier="fromAStoMS" modalPresentationStyle="fullScreen" id="YAC-bW-NPz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YNt-dc-Y6c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -138,6 +125,11 @@
     <resources>
         <image name="Line_for_TextField" width="284" height="40"/>
         <image name="back" width="30" height="30"/>
-        <image name="camera" width="50" height="50"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

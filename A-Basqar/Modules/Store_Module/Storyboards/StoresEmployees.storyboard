@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xid-TK-mj4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xid-TK-mj4">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +20,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="d9h-1z-QwV">
                                 <rect key="frame" x="0.0" y="114" width="375" height="553"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Jel-EN-Qfh">
                                     <size key="itemSize" width="340" height="100"/>
                                     <size key="headerReferenceSize" width="0.0" height="10"/>
@@ -42,65 +43,30 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Шомат Ілияс" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1r1-NA-t3L">
-                                                    <rect key="frame" x="95" y="10" width="235" height="23"/>
+                                                    <rect key="frame" x="95" y="25" width="235" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PIa-aJ-IoC">
-                                                    <rect key="frame" x="300" y="58" width="30" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="hoE-d5-ACl"/>
-                                                        <constraint firstAttribute="height" constant="30" id="lFu-bO-xF7"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <state key="normal" image="trash.fill" catalog="system">
-                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="tapDeleteButton:" destination="jan-a8-RMn" eventType="touchUpInside" id="vLt-k3-WHC"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Склад #1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oK0-7Q-eqL">
-                                                    <rect key="frame" x="95" y="38" width="65" height="18"/>
+                                                    <rect key="frame" x="95" y="53" width="64" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Fa-fV-Hdi">
-                                                    <rect key="frame" x="95" y="61" width="100" height="30"/>
-                                                    <color key="backgroundColor" red="0.27725660800000002" green="0.43474572900000003" blue="0.66325002909999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="100" id="5Dt-kS-kyM"/>
-                                                        <constraint firstAttribute="height" constant="30" id="utr-dR-VwQ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <state key="normal" title="Редактировать">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="tapEditButton:" destination="jan-a8-RMn" eventType="touchUpInside" id="1Qa-DU-Bl1"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="sNh-wX-w0y" firstAttribute="leading" secondItem="nuD-lM-r6G" secondAttribute="leading" constant="15" id="4Fa-fC-oqW"/>
-                                                <constraint firstItem="6Fa-fV-Hdi" firstAttribute="top" secondItem="oK0-7Q-eqL" secondAttribute="bottom" constant="5" id="5r1-3c-iCN"/>
-                                                <constraint firstItem="1r1-NA-t3L" firstAttribute="top" secondItem="nuD-lM-r6G" secondAttribute="top" constant="10" id="B8g-bD-F4U"/>
+                                                <constraint firstItem="1r1-NA-t3L" firstAttribute="top" secondItem="nuD-lM-r6G" secondAttribute="top" constant="25" id="B8g-bD-F4U"/>
                                                 <constraint firstAttribute="trailing" secondItem="1r1-NA-t3L" secondAttribute="trailing" constant="10" id="Jrw-WJ-X3k"/>
-                                                <constraint firstItem="PIa-aJ-IoC" firstAttribute="top" secondItem="1r1-NA-t3L" secondAttribute="bottom" constant="25" id="Lgy-a2-ANl"/>
                                                 <constraint firstItem="oK0-7Q-eqL" firstAttribute="top" secondItem="1r1-NA-t3L" secondAttribute="bottom" constant="5" id="aZ2-fV-Bmu"/>
-                                                <constraint firstItem="6Fa-fV-Hdi" firstAttribute="leading" secondItem="sNh-wX-w0y" secondAttribute="trailing" constant="10" id="cuf-Rg-V75"/>
                                                 <constraint firstItem="oK0-7Q-eqL" firstAttribute="leading" secondItem="sNh-wX-w0y" secondAttribute="trailing" constant="10" id="iWx-QT-fU2"/>
                                                 <constraint firstItem="1r1-NA-t3L" firstAttribute="leading" secondItem="sNh-wX-w0y" secondAttribute="trailing" constant="10" id="llb-T0-xG4"/>
-                                                <constraint firstAttribute="trailing" secondItem="PIa-aJ-IoC" secondAttribute="trailing" constant="10" id="oE7-B4-8fr"/>
                                                 <constraint firstItem="sNh-wX-w0y" firstAttribute="centerY" secondItem="nuD-lM-r6G" secondAttribute="centerY" id="uhu-vW-Wip"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="deleteButton" destination="PIa-aJ-IoC" id="PS7-3p-hsN"/>
-                                            <outlet property="editButton" destination="6Fa-fV-Hdi" id="Gqe-UA-OeJ"/>
                                             <outlet property="employeeNameLabel" destination="1r1-NA-t3L" id="qqn-YG-qDg"/>
                                             <outlet property="imageView" destination="sNh-wX-w0y" id="4ut-UM-xZx"/>
                                             <outlet property="storeNameLabel" destination="oK0-7Q-eqL" id="tgn-j3-JrQ"/>
@@ -123,6 +89,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="tAv-zz-x65"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tAv-zz-x65" firstAttribute="trailing" secondItem="d9h-1z-QwV" secondAttribute="trailing" id="EDM-m7-fZ0"/>
@@ -133,7 +100,6 @@
                             <constraint firstItem="tAv-zz-x65" firstAttribute="trailing" secondItem="Ah1-KK-3nw" secondAttribute="trailing" constant="20" id="knQ-co-dLD"/>
                             <constraint firstItem="Ah1-KK-3nw" firstAttribute="leading" secondItem="tAv-zz-x65" secondAttribute="leading" constant="20" id="pDg-lF-g3n"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="tAv-zz-x65"/>
                     </view>
                     <navigationItem key="navigationItem" id="wA6-hY-CSf">
                         <barButtonItem key="leftBarButtonItem" image="back" id="v5c-PP-sA5">
@@ -182,6 +148,8 @@
     <resources>
         <image name="back" width="30" height="30"/>
         <image name="menu_icon_9" width="53" height="53"/>
-        <image name="trash.fill" catalog="system" width="121" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

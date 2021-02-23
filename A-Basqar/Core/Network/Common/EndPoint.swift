@@ -53,6 +53,15 @@ struct EndPoint {
         static let contList = "/api/management/contragent"
         static let createContr = "/api/management/contragent/add"
         static let editContr = "/api/management/contragent/edit"
+        static let userStores = "/api/management/stores/"
+        static let storeUsers = "/api/management/stores/users_list/"
+        static let newStore = "/api/management/stores/create"
+        static let editStore = "/api/management/stores/update/"
+        static let deleteStore = "/api/management/stores/delete/"
+        static let getCompanyAllUsers = "/api/management/company/users"
+        static let getExactUser = "/api/management/company/users/"
+        static let getUsersAccessFuncs = "/api/management/company/users/accesses/"
+        static let editUsersAccessFuncs = "/api/management/company/users/accesses/edit/"
     }
     
     struct Expenses {
