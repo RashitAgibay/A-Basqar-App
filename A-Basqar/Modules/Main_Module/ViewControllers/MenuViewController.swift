@@ -30,7 +30,9 @@ class MenuViewController: UIViewController {
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } 
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        
+        getAccessFuns()
         
         cardView1.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapBuyProductsCard))
@@ -166,7 +168,47 @@ class MenuViewController: UIViewController {
         }
         
     }
+    
+    private func makeCardNonInteractable(view: UIView) {
+        view.layer.backgroundColor = UIColor.lightGray.cgColor
+        view.isUserInteractionEnabled = false
+    }
 
+    private func getAccessFuns() {
+        ProfileNetworManager.service.getProfileInfo { (user, error) in
+            ManagementNetworkManager.service.getUserAccessFuns(user: user?.id ?? 0) { (accesses, error) in
+                self.setupAcceses(acesses: accesses ?? AccessFuncs())
+            }
+        }
+    }
+    
+    private func setupAcceses(acesses: AccessFuncs){
+        if acesses.importProduct == false {
+            
+        }
+        if acesses.exportProduct == false {
+            
+        }
+        if acesses.application == false {
+            
+        }
+        if acesses.expense == false {
+            
+        }
+        if acesses.income == false {
+            
+        }
+        if acesses.management == false {
+            
+        }
+        if acesses.movement == false {
+            
+        }
+        if acesses.reports == false {
+            makeCardNonInteractable(view: cardView8)
+        }
+    }
+    
 }
 
 

@@ -53,7 +53,7 @@ class EditStoreVC: UIViewController, UITextFieldDelegate {
     private func editStoreName() {
         ManagementNetworkManager.service.editStoreName(storeId: storeId, storeName: Store(name: fullnameTextField.text)) { (message, error) in
             if message?.status == "success" {
-//                self.navigateBack()
+                self.navigateBack()
             }
         }
     }

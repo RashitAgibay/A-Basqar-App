@@ -51,6 +51,35 @@ struct Contragent: Codable {
     }
 }
 
+// Getting
+struct AccessFuncs: Codable {
+    var id: Int?
+    var importProduct: Bool?
+    var exportProduct: Bool?
+    var income: Bool?
+    var expense: Bool?
+    var movement: Bool?
+    var application: Bool?
+    var management: Bool?
+    var reports: Bool?
+    var profile: Bool?
+    var user: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "access_id"
+        case importProduct = "import_products"
+        case exportProduct = "export_products"
+        case income = "import_kassa"
+        case expense = "export_kassa"
+        case movement
+        case application
+        case management
+        case reports
+        case profile
+        case user
+    }
+}
+
 // Sending
 struct ContrSending: Codable {
     var name: String?
