@@ -184,31 +184,30 @@ class MenuViewController: UIViewController {
     
     private func setupAcceses(acesses: AccessFuncs){
         if acesses.importProduct == false {
-            
+            makeCardNonInteractable(view: cardView1)
         }
         if acesses.exportProduct == false {
-            
+            makeCardNonInteractable(view: cardView3)
         }
         if acesses.application == false {
-            
+            makeCardNonInteractable(view: cardView5)
         }
         if acesses.expense == false {
-            
+            makeCardNonInteractable(view: cardView6)
         }
         if acesses.income == false {
-            
+            makeCardNonInteractable(view: cardView4)
         }
         if acesses.management == false {
-            
+            makeCardNonInteractable(view: cardView7)
         }
         if acesses.movement == false {
-            
+            makeCardNonInteractable(view: cardView2)
         }
         if acesses.reports == false {
             makeCardNonInteractable(view: cardView8)
         }
     }
-    
 }
 
 
