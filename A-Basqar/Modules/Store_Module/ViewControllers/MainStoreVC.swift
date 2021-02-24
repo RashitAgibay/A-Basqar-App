@@ -51,8 +51,8 @@ class MainStoreVC: UIViewController {
     }
     
     @IBAction func tapAddButton(_ sender: Any) {
-        
-        self.showAlerWithThreeButtons(title: "Выберите действие", storeButton: "Добавить новый склад/магазин", employeeButton: "Добавить новый персонал" )
+        self.navigateToAddStore()
+//        self.showAlerWithThreeButtons(title: "Выберите действие", storeButton: "Добавить новый склад/магазин", employeeButton: "Добавить новый персонал" )
         
     }
     
