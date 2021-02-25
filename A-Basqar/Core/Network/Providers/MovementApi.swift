@@ -11,6 +11,8 @@ import Moya
 
 enum MovementApi {
     case getCurrentCart
+    case createNewCartObject
+    case addProdToCard(addingMovemetProd: AddingMovementProd)
 }
 
 extension MovementApi: BaseApiDelegate {
@@ -18,6 +20,10 @@ extension MovementApi: BaseApiDelegate {
         switch self {
         case .getCurrentCart:
             return EndPoint.Movement.getCurrentCart
+        case .createNewCartObject:
+            return EndPoint.Movement.createNewCart
+        case .addProdToCard:
+            return EndPoint.Movement.addProdsToCart
         }
     }
     
@@ -25,6 +31,10 @@ extension MovementApi: BaseApiDelegate {
         switch self {
         case .getCurrentCart:
             return .get
+        case .createNewCartObject:
+            return .post
+        case .addProdToCard:
+            return .post
         }
     }
     
@@ -32,6 +42,10 @@ extension MovementApi: BaseApiDelegate {
         switch self {
         case .getCurrentCart:
             return .requestPlain
+        case .createNewCartObject:
+            return .requestPlain
+        case .addProdToCard(let addingMovemetProd):
+            return .requestJSONEncodable(addingMovemetProd)
         }
     }
 }

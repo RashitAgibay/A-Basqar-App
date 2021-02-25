@@ -17,20 +17,19 @@ class BidProductListVC: UIViewController,  UICollectionViewDataSource, UICollect
     var reachability: Reachability?
     var userToken = "userToken"
     
-    var productList: Array = [MovementProduct]()
+//    var productList: Array = [MovementProduct]()
     var categoryID = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if categoryID != nil {
-            getProductsFromApi()
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return productList.count
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -38,15 +37,15 @@ class BidProductListVC: UIViewController,  UICollectionViewDataSource, UICollect
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "buygoodCell", for: indexPath) as! BuyProductAddGoodCell
         self.setupCell(cell: cell)
         
-        let singleProduct = productList[indexPath.row]
-        
-        if productList.count != 0 {
-            
-            cell.nameLabel.text = singleProduct.productName
-            cell.balanceLabel.text = "\(singleProduct.productCount)"
-            cell.cashLabel.text = "\(singleProduct.productPrice) тенге"
-            cell.googImageView.sd_setImage(with: URL(string: singleProduct.productImageURL), placeholderImage: UIImage(named: "img1"))
-        }
+//        let singleProduct = productList[indexPath.row]
+//
+//        if productList.count != 0 {
+//
+//            cell.nameLabel.text = singleProduct.productName
+//            cell.balanceLabel.text = "\(singleProduct.productCount)"
+//            cell.cashLabel.text = "\(singleProduct.productPrice) тенге"
+//            cell.googImageView.sd_setImage(with: URL(string: singleProduct.productImageURL), placeholderImage: UIImage(named: "img1"))
+//        }
         
         return cell
     }
@@ -73,93 +72,7 @@ class BidProductListVC: UIViewController,  UICollectionViewDataSource, UICollect
         navigateBack()
     }
     
-    private func getProductsFromApi() {
-        
-        do {
-            
-            self.reachability = try Reachability.init()
-        }
-        
-        catch {
-        
-        }
-        
-        if ((reachability!.connection) != .unavailable) {
-            
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            
-            let token = UserDefaults.standard.string(forKey: self.userToken) as! String
-            let headers: HTTPHeaders = [
-                
-                "Content-Type": "application/json".trimmingCharacters(in: .whitespacesAndNewlines),
-                "Authorization":"Token \(token)".trimmingCharacters(in: .whitespacesAndNewlines),
-            ]
-            
-            let encodeURL = "\(goodListUrl)?cat_id=\(self.categoryID)"
-            let request = AF.request(encodeURL, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: headers, interceptor: nil)
-            
-            request.responseJSON(completionHandler: { (response) -> Void in
-                
-//                print(response.request!)
-//                print(response.result)
-//                print(response.response)
-                
-                switch response.result {
-                
-                case .success(let json):
-                    
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    
-                    if let data = json as? NSDictionary {
-                        
-                        print(data)
-                    }
-                    
-                    else {
-                        
-                        let arrayData = json as! NSArray
-                        
-                        for item in arrayData {
-                            
-                            let singleProduct = item as! NSDictionary
-                            let product = MovementProduct()
-                            
-                            let goodID = singleProduct["id"] as! Int
-                            let productImportPrice = singleProduct["import_price"] as! Int
-                            
-                            let embededProductsInfo = singleProduct["goods"] as! NSDictionary
-                            let productName = embededProductsInfo["name"] as! String
-                            let productAmount = singleProduct["nums"] as! Int
-                            let categoryDict = embededProductsInfo["category"] as! NSDictionary
-                            let categoryID = categoryDict["id"] as! Int
-                            let productImageUrl = embededProductsInfo["goods_image"] as! String
-                            
-                            product.productName = productName
-                            product.productCount = productAmount
-                            product.productPrice = productImportPrice
-                            product.productImageURL = productImageUrl
-                            
-                            self.productList.append(product)
-                        }
-                        
-                        self.collectionView.reloadData()
-                    }
-                
-                case .failure(let error):
-                    
-                    print(error)
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-                }
-            })
-        }
-        
-        else {
-            
-            MBProgressHUD.hide(for: self.view, animated: true)
-            self.ShowErrorsAlertWithOneCancelButton(message: "Проверьте соединение с интернетом")
-        }
-    }
+    
     
     func ShowErrorsAlertWithOneCancelButton(message: String) {
         

@@ -8,6 +8,31 @@
 
 import Foundation
 
+
+//Setting
+struct AddingMovementProd: Codable {
+    var product_id: Int?
+    var amount: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case product_id = "movement_product"
+        case amount = "product_amount"
+    }
+}
+
+//Getting
+struct CommomMovementResponse: Codable {
+    var movementObject: String?
+    var message: String?
+    var desc: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case movementObject = "movement_object"
+        case message
+        case desc
+    }
+}
+
 //Getting
 struct MovementCart: Codable {
     var movementObject: MovementObject?
