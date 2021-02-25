@@ -19,3 +19,7 @@ let selectedExportContr: String = "new_selected_export_contr"
 let selectedExportContrID: String = "new_selected_export_contr_id"
 
 let currentExportBillInfo: String = "currentExportBillInfo"
+
+let selectedStoreName = "UserDefaults_selectedStoreName"
+
+let selectedStoreId = "UserDefaults_selectedStoreId"

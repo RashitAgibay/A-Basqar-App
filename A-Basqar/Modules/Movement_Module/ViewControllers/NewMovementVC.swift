@@ -18,6 +18,7 @@ class NewMovementVC: UIViewController, UICollectionViewDataSource, UICollectionV
     @IBOutlet weak var cancelButton: UIButton!
     
     var cartProds = [MovementCartProd]()
+    var storeId = Int()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +74,9 @@ class NewMovementVC: UIViewController, UICollectionViewDataSource, UICollectionV
         cancelButton.dropShadowforButton()
         movementPlaceButton.layer.cornerRadius = 10
         movementPlaceButton.dropShadowforButton()
+        
+        movementPlaceButton.setTitle(getStoreName(), for: .normal)
+        storeId = getStoreId()
     }
     
     private func setupCell(cell: BuyProductFirstPageCell) {
@@ -131,6 +135,19 @@ class NewMovementVC: UIViewController, UICollectionViewDataSource, UICollectionV
         alertController.addAction(addAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    private func getStoreId() -> Int {
+        return UserDefaults.standard.integer(forKey: selectedStoreId)
+    }
+    
+    private func getStoreName() -> String {
+        if UserDefaults.standard.string(forKey: selectedStoreName) != nil {
+            return UserDefaults.standard.string(forKey: selectedStoreName)!
+        }
+        else {
+            return "Выберите"
+        }
     }
 }
 
