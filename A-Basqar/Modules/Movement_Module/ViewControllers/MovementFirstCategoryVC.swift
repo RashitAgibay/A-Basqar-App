@@ -55,13 +55,13 @@ extension MovementFirstCategoryVC: UICollectionViewDelegate, UICollectionViewDat
 extension MovementFirstCategoryVC {
     
     private func navigateToProductList() {
-        performSegue(withIdentifier: "fromFirstLevelCatToProdList", sender: self)
+        performSegue(withIdentifier: "fromMFCtoMPL", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "fromFirstLevelCatToProdList" {
+        if segue.identifier == "fromMFCtoMPL" {
             if let navigationVC = segue.destination as? UINavigationController,
-                let destVC = navigationVC.topViewController as? ProductListImportVC {
+                let destVC = navigationVC.topViewController as? MovementProductListVC {
                 destVC.categoryID = self.categoryID
             }
         }
