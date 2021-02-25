@@ -44,9 +44,10 @@ class NewMovementVC: UIViewController, UICollectionViewDataSource, UICollectionV
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell  = collectionView.dequeueReusableCell(withReuseIdentifier: "buyProduct", for: indexPath)  as! BuyProductFirstPageCell
         self.setupCell(cell: cell)
+        cell.delegate = self
         
         let currentProd = cartProds[indexPath.row]
-        
+                
         cell.idOfGood = currentProd.id
         cell.nameOfProduct.text = currentProd.product?.product?.productName
         cell.balanceText.text = "\(currentProd.product?.amount ?? 0)"
@@ -97,6 +98,14 @@ class NewMovementVC: UIViewController, UICollectionViewDataSource, UICollectionV
         }
     }
     
+    private func deleteCartAmount(prodId: Int) {
+        MovementNetworkManager.service.deleteCardProd(deletingProd: DeletingMovementProd(prodId: prodId)) { (message, error) in
+            if message?.message == "deleted" {
+                self.getCurrentCart()
+            }
+        }
+    }
+    
     func showAlertControllerWithTwoTextFields(productId: Int) {
         var amount = 1
         
@@ -122,5 +131,11 @@ class NewMovementVC: UIViewController, UICollectionViewDataSource, UICollectionV
         alertController.addAction(addAction)
         alertController.addAction(cancelAction)
         self.present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension NewMovementVC: BuyingGoodsCellDelegate {
+    func didTappedBuyingDeleteButton(buyingProdsCell: BuyProductFirstPageCell, id: Int) {
+        deleteCartAmount(prodId: id)
     }
 }

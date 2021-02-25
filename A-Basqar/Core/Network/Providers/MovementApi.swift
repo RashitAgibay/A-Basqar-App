@@ -14,6 +14,7 @@ enum MovementApi {
     case createNewCartObject
     case addProdToCard(addingMovementProd: AddingMovementProd)
     case editCartProdCount(editingMovementProd: EditingMovementProd)
+    case deleteCartProd(deleteCartProd: DeletingMovementProd)
 }
 
 extension MovementApi: BaseApiDelegate {
@@ -27,6 +28,8 @@ extension MovementApi: BaseApiDelegate {
             return EndPoint.Movement.addProdsToCart
         case .editCartProdCount:
             return EndPoint.Movement.editProdCount
+        case .deleteCartProd:
+            return EndPoint.Movement.deleteProd
         }
     }
     
@@ -40,6 +43,8 @@ extension MovementApi: BaseApiDelegate {
             return .post
         case .editCartProdCount:
             return .put
+        case .deleteCartProd:
+            return .delete
         }
     }
     
@@ -53,6 +58,8 @@ extension MovementApi: BaseApiDelegate {
             return .requestJSONEncodable(addingMovemetProd)
         case .editCartProdCount(let editingMovementProd):
             return .requestJSONEncodable(editingMovementProd)
+        case .deleteCartProd(let deleteCartProd):
+            return .requestJSONEncodable(deleteCartProd)
         }
     }
 }

@@ -31,6 +31,15 @@ struct EditingMovementProd: Codable {
     }
 }
 
+//Setting
+struct DeletingMovementProd: Codable {
+    var prodId: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case prodId = "movement_prod_id"
+    }
+}
+
 //Getting
 struct CommonMovementResponse: Codable {
     var movementObject: String?

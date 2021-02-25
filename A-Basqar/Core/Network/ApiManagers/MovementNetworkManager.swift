@@ -16,6 +16,7 @@ protocol MovementNetworkable {
     func createNewCartObject(completion: @escaping (CommonMovementResponse?, Error?) -> ())
     func addProdToCart(addingProd: AddingMovementProd, completion: @escaping (CommonMovementResponse?, Error?) -> ())
     func editCartProdCount(editingCartProd: EditingMovementProd, completion: @escaping (CommonMovementResponse?, Error?) -> ())
+    func deleteCardProd(deletingProd: DeletingMovementProd, comletion: @escaping (CommonMovementResponse?, Error?) -> ())
 }
 
 class MovementNetworkManager: MovementNetworkable {
@@ -86,6 +87,23 @@ class MovementNetworkManager: MovementNetworkable {
                 }
             case .failure(let error):
                 completion(nil, error)
+            }
+        }
+    }
+    
+    func deleteCardProd(deletingProd: DeletingMovementProd, comletion: @escaping (CommonMovementResponse?, Error?) -> ()) {
+        provider.request(.deleteCartProd(deleteCartProd: deletingProd)) { (result) in
+            switch result {
+            case .success(let response):
+                do {
+                    let message = try JSONDecoder().decode(CommonMovementResponse.self, from: response.data)
+                    comletion(message, nil)
+                }
+                catch let error {
+                    comletion(nil, error)
+                }
+            case .failure(let error):
+                comletion(nil, error)
             }
         }
     }
