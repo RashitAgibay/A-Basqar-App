@@ -20,8 +20,19 @@ struct AddingMovementProd: Codable {
     }
 }
 
+//Setting
+struct EditingMovementProd: Codable {
+    var prodId: Int?
+    var amount: Int?
+    
+    enum CodingKeys: String, CodingKey {
+        case prodId = "movement_prod_id"
+        case amount = "product_amount"
+    }
+}
+
 //Getting
-struct CommomMovementResponse: Codable {
+struct CommonMovementResponse: Codable {
     var movementObject: String?
     var message: String?
     var desc: String?

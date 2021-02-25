@@ -13,8 +13,9 @@ protocol MovementNetworkable {
     var provider: MoyaProvider<MovementApi> { get }
     
     func getCurrentCart(completion: @escaping (MovementCart?, Error?) -> ())
-    func createNewCartObject(completion: @escaping (CommomMovementResponse?, Error?) -> ())
-    func addProdToCart(addingProd: AddingMovementProd, completion: @escaping (CommomMovementResponse?, Error?) -> ())
+    func createNewCartObject(completion: @escaping (CommonMovementResponse?, Error?) -> ())
+    func addProdToCart(addingProd: AddingMovementProd, completion: @escaping (CommonMovementResponse?, Error?) -> ())
+    func editCartProdCount(editingCartProd: EditingMovementProd, completion: @escaping (CommonMovementResponse?, Error?) -> ())
 }
 
 class MovementNetworkManager: MovementNetworkable {
@@ -38,12 +39,12 @@ class MovementNetworkManager: MovementNetworkable {
         }
     }
     
-    func createNewCartObject(completion: @escaping (CommomMovementResponse?, Error?) -> ()) {
+    func createNewCartObject(completion: @escaping (CommonMovementResponse?, Error?) -> ()) {
         provider.request(.createNewCartObject) { (result) in
             switch result {
             case .success(let response):
                 do {
-                    let message = try JSONDecoder().decode(CommomMovementResponse.self, from: response.data)
+                    let message = try JSONDecoder().decode(CommonMovementResponse.self, from: response.data)
                     completion(message, nil)
                 }
                 catch let error {
@@ -55,12 +56,29 @@ class MovementNetworkManager: MovementNetworkable {
         }
     }
     
-    func addProdToCart(addingProd: AddingMovementProd, completion: @escaping (CommomMovementResponse?, Error?) -> ()) {
-        provider.request(.addProdToCard(addingMovemetProd: addingProd)) { (reslut) in
+    func addProdToCart(addingProd: AddingMovementProd, completion: @escaping (CommonMovementResponse?, Error?) -> ()) {
+        provider.request(.addProdToCard(addingMovementProd: addingProd)) { (reslut) in
             switch reslut {
             case .success(let response):
                 do {
-                    let message = try JSONDecoder().decode(CommomMovementResponse.self, from: response.data)
+                    let message = try JSONDecoder().decode(CommonMovementResponse.self, from: response.data)
+                    completion(message, nil)
+                }
+                catch let error {
+                    completion(nil, error)
+                }
+            case .failure(let error):
+                completion(nil, error)
+            }
+        }
+    }
+    
+    func editCartProdCount(editingCartProd: EditingMovementProd, completion: @escaping (CommonMovementResponse?, Error?) -> ()) {
+        provider.request(.editCartProdCount(editingMovementProd: editingCartProd)) { (result) in
+            switch result {
+            case .success(let response):
+                do {
+                    let message = try JSONDecoder().decode(CommonMovementResponse.self, from: response.data)
                     completion(message, nil)
                 }
                 catch let error {

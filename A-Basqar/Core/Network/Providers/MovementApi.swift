@@ -12,7 +12,8 @@ import Moya
 enum MovementApi {
     case getCurrentCart
     case createNewCartObject
-    case addProdToCard(addingMovemetProd: AddingMovementProd)
+    case addProdToCard(addingMovementProd: AddingMovementProd)
+    case editCartProdCount(editingMovementProd: EditingMovementProd)
 }
 
 extension MovementApi: BaseApiDelegate {
@@ -24,6 +25,8 @@ extension MovementApi: BaseApiDelegate {
             return EndPoint.Movement.createNewCart
         case .addProdToCard:
             return EndPoint.Movement.addProdsToCart
+        case .editCartProdCount:
+            return EndPoint.Movement.editProdCount
         }
     }
     
@@ -35,6 +38,8 @@ extension MovementApi: BaseApiDelegate {
             return .post
         case .addProdToCard:
             return .post
+        case .editCartProdCount:
+            return .put
         }
     }
     
@@ -46,6 +51,8 @@ extension MovementApi: BaseApiDelegate {
             return .requestPlain
         case .addProdToCard(let addingMovemetProd):
             return .requestJSONEncodable(addingMovemetProd)
+        case .editCartProdCount(let editingMovementProd):
+            return .requestJSONEncodable(editingMovementProd)
         }
     }
 }

@@ -27,7 +27,6 @@ class NewMovementVC: UIViewController, UICollectionViewDataSource, UICollectionV
     
     @IBAction func tapMovemnetPlaceButton(_ sender: Any) {
         performSegue(withIdentifier: "fromNewMovemnetToSelectPlace", sender: self)
-        
     }
     
     @IBAction func tapSendButton(_ sender: Any) {
@@ -56,6 +55,13 @@ class NewMovementVC: UIViewController, UICollectionViewDataSource, UICollectionV
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let currentProd = cartProds[indexPath.row]
+        guard let prodId = currentProd.id else {
+            return
+        }
+        showAlertControllerWithTwoTextFields(productId: prodId)
+    }
     private func setupUI() {
         bottomCardView.layer.cornerRadius = 10
         bottomCardView.dropShadow()
@@ -83,5 +89,38 @@ class NewMovementVC: UIViewController, UICollectionViewDataSource, UICollectionV
             self.cartProds = cart?.movementProds ?? [MovementCartProd]()
             self.collectionView.reloadData()
         }
+    }
+    
+    private func editProdAmount(prodId: Int, amount: Int) {
+        MovementNetworkManager.service.editCartProdCount(editingCartProd: EditingMovementProd(prodId: prodId, amount: amount)) { (message, error) in
+            self.getCurrentCart()
+        }
+    }
+    
+    func showAlertControllerWithTwoTextFields(productId: Int) {
+        var amount = 1
+        
+        let alertController = UIAlertController(title: "", message: "Введите количество...", preferredStyle: .alert)
+        let addAction = UIAlertAction(title: "Изменить", style: .default) { (action) in
+            
+            if alertController.textFields?[0].text != "" {
+                let amountString = alertController.textFields?[0].text as! String
+                amount = Int(amountString)!
+            }
+            
+            self.editProdAmount(prodId: productId, amount: amount)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (action) in
+        
+        }
+        alertController.addTextField { (textfield) in
+            textfield.placeholder = "1"
+            textfield.keyboardType = .numberPad
+        
+        }
+        alertController.addAction(addAction)
+        alertController.addAction(cancelAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
