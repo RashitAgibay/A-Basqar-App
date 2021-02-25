@@ -24,7 +24,6 @@ protocol ImportNetworkable {
 }
 
 class ImportNetworkManager: ImportNetworkable {
-    
     public static let service = ImportNetworkManager()
     var provider = MoyaProvider<ImportApi>(plugins: [NetworkLoggerPlugin(configuration: NetworkLoggerPlugin.Configuration(logOptions: .verbose))])
     

@@ -8,17 +8,12 @@
 
 import UIKit
 
-
 //MARK: - Cell ішіндегі кнопканы басу үшін
 protocol BuyingGoodsCellDelegate {
       func didTappedBuyingDeleteButton(buyingProdsCell: BuyProductFirstPageCell, id: Int)
   }
 
 class BuyProductFirstPageCell: UICollectionViewCell {
-    
-    
-  
-    
     @IBOutlet weak var cellImageView: UIImageView!
     @IBOutlet weak var nameOfProduct: UILabel!
     @IBOutlet weak var balanceText: UILabel!
@@ -28,13 +23,10 @@ class BuyProductFirstPageCell: UICollectionViewCell {
     @IBOutlet weak var totalPriceText: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     
-    //MARK: - Cell ішіндегі кнопканы басу үшін
     var delegate: BuyingGoodsCellDelegate?
     var idOfGood: Int?
     
     @IBAction func deleteButton(_ sender: UIButton) {
-        
-        //MARK: - Cell ішіндегі кнопканы басу үшін
         delegate?.didTappedBuyingDeleteButton(buyingProdsCell: self, id: idOfGood!)
     }
 }

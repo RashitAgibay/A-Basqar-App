@@ -82,4 +82,15 @@ struct EndPoint {
         static let getCash = "/api/report/cash_report"
         static let getProcuts = "/api/report/prod_report"
     }
+    
+    struct Movement {
+        static let getCurrentCart = "/api/move_order/movement_cart"
+        static let createNewCart = "/api/move_order/create_movement_object"
+        static let addProdsToCart = "/api/move_order/add_prod_to_movement_cart"
+        static let editProdCount = "/api/move_order/edit_prod_count_in_movement_cart"
+        static let deleteProd = "/api/move_order/delete_prod_in_movement_cart"
+        static let makeHistory = "/api/move_order/make_movement_history"
+        static let getHistory = "/api/move_order/get_movement_history"
+        static let getHistoryItem = "/api/move_order/get_movement_history/"
+    }
 }

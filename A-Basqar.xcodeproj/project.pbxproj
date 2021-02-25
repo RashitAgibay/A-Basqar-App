@@ -247,6 +247,9 @@
 		FDADF64E25E22B580008B95F /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDADF64D25E22B580008B95F /* ReportModel.swift */; };
 		FDADF65125E233FD0008B95F /* ReportApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDADF65025E233FD0008B95F /* ReportApi.swift */; };
 		FDADF65425E235D40008B95F /* ReportNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDADF65325E235D40008B95F /* ReportNetworkManager.swift */; };
+		FDADF65725E50FF40008B95F /* MovementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDADF65625E50FF40008B95F /* MovementModel.swift */; };
+		FDADF65A25E678330008B95F /* MovementApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDADF65925E678330008B95F /* MovementApi.swift */; };
+		FDADF65D25E679850008B95F /* MovementNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDADF65C25E679850008B95F /* MovementNetworkManager.swift */; };
 		FDB63FBD24AB565900525388 /* MainImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB63FBC24AB565900525388 /* MainImportVC.swift */; };
 		FDB63FBF24AB5A8500525388 /* MainImport.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDB63FBE24AB5A8500525388 /* MainImport.storyboard */; };
 		FDB63FC124AB5E4600525388 /* NewImportVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB63FC024AB5E4600525388 /* NewImportVC.swift */; };
@@ -631,6 +634,9 @@
 		FDADF64D25E22B580008B95F /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
 		FDADF65025E233FD0008B95F /* ReportApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportApi.swift; sourceTree = "<group>"; };
 		FDADF65325E235D40008B95F /* ReportNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportNetworkManager.swift; sourceTree = "<group>"; };
+		FDADF65625E50FF40008B95F /* MovementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementModel.swift; sourceTree = "<group>"; };
+		FDADF65925E678330008B95F /* MovementApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementApi.swift; sourceTree = "<group>"; };
+		FDADF65C25E679850008B95F /* MovementNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementNetworkManager.swift; sourceTree = "<group>"; };
 		FDB63FBC24AB565900525388 /* MainImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainImportVC.swift; sourceTree = "<group>"; };
 		FDB63FBE24AB5A8500525388 /* MainImport.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainImport.storyboard; sourceTree = "<group>"; };
 		FDB63FC024AB5E4600525388 /* NewImportVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewImportVC.swift; sourceTree = "<group>"; };
@@ -1163,6 +1169,7 @@
 				FD861B3925DD26E300C35B15 /* ExpensesApi.swift */,
 				FD437A8525DFD0D300CA3A4A /* IncomesApi.swift */,
 				FDADF65025E233FD0008B95F /* ReportApi.swift */,
+				FDADF65925E678330008B95F /* MovementApi.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -1190,6 +1197,7 @@
 				FD861B3625DD246B00C35B15 /* ExpensesModel.swift */,
 				FD437A8225DFCF6C00CA3A4A /* IncomesModel.swift */,
 				FDADF64D25E22B580008B95F /* ReportModel.swift */,
+				FDADF65625E50FF40008B95F /* MovementModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1206,6 +1214,7 @@
 				FD861B3C25DD281600C35B15 /* ExpensesNetworkManager.swift */,
 				FD437A8825DFD29100CA3A4A /* IncomesNetworkManager.swift */,
 				FDADF65325E235D40008B95F /* ReportNetworkManager.swift */,
+				FDADF65C25E679850008B95F /* MovementNetworkManager.swift */,
 			);
 			path = ApiManagers;
 			sourceTree = "<group>";
@@ -1877,6 +1886,7 @@
 				6159FA9F244E14DB00FE1BED /* PlaceListVC.swift in Sources */,
 				FDE7A66A24DB87F8000E86B5 /* NewKassaImportVC.swift in Sources */,
 				288CC47623A89C38008D5218 /* SDImageGraphics.m in Sources */,
+				FDADF65725E50FF40008B95F /* MovementModel.swift in Sources */,
 				FD1A4E3C25C1663F00716A81 /* AuthNetworkManager.swift in Sources */,
 				61A8462F245308FF00DF3371 /* StoresEmployeesVC.swift in Sources */,
 				288CC47923A89C38008D5218 /* SDImageIOCoder.m in Sources */,
@@ -1909,6 +1919,7 @@
 				61A846272453007200DF3371 /* AddEmployeeVC.swift in Sources */,
 				288CC46F23A89C38008D5218 /* SDImageCacheDefine.m in Sources */,
 				288CC47F23A89C38008D5218 /* SDWebImageCacheSerializer.m in Sources */,
+				FDADF65D25E679850008B95F /* MovementNetworkManager.swift in Sources */,
 				FDEA7EC124CF2E4A009D193B /* ExportKassaContragent.swift in Sources */,
 				FD085BEF24B584D900B2641D /* SearchImportVC.swift in Sources */,
 				61A8461F2452DD4E00DF3371 /* StoreCell.swift in Sources */,
@@ -1943,6 +1954,7 @@
 				288CC48623A89C38008D5218 /* SDWebImageDownloaderRequestModifier.m in Sources */,
 				FD1A4FC425C3D93600716A81 /* ManagementModel.swift in Sources */,
 				FDB63FC124AB5E4600525388 /* NewImportVC.swift in Sources */,
+				FDADF65A25E678330008B95F /* MovementApi.swift in Sources */,
 				FDADF65125E233FD0008B95F /* ReportApi.swift in Sources */,
 				FD861B3D25DD281600C35B15 /* ExpensesNetworkManager.swift in Sources */,
 				28674295238CF50E008884AF /* BuyProductFirstPageCell.swift in Sources */,

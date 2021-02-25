@@ -28,16 +28,11 @@ class MainMovementVC: UIViewController {
         if selectedView != nil {
             setStartState(selectedSegment: selectedView, segmentView: segmentView, firstView: newMovementView, secondView: movementHistoryView)
         }
-            
-        segmentView.addUnderlineForSelectedSegment()
-
+        segmentView.setupSimpleView()
     }
     
 
     @IBAction func switchSegmentAction(_ sender: UISegmentedControl) {
-        
-        segmentView.changeUnderlinePosition()
-
         switch sender.selectedSegmentIndex {
         case 0:
             newMovementView.alpha  = 1
@@ -55,20 +50,14 @@ class MainMovementVC: UIViewController {
     private func setStartState(selectedSegment: Int, segmentView: UISegmentedControl, firstView: UIView, secondView: UIView) {
         
         if selectedSegment == 0 {
-            
             segmentView.selectedSegmentIndex = 0
             firstView.alpha = 1
             secondView.alpha = 0
         }
-        
         if selectedSegment == 1 {
-            
             segmentView.selectedSegmentIndex = 1
             firstView.alpha = 0
             secondView.alpha = 1
         }
-        
     }
-    
-
 }
